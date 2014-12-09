@@ -12,13 +12,31 @@ class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 照片墙
-        let photoWallStoryBoard = UIStoryboard(name: "PhotoWall", bundle: nil)
-        let photoWallVC = photoWallStoryBoard.instantiateInitialViewController() as UINavigationController
-        photoWallVC.tabBarItem.title = "首页"
-        self.addChildViewController(photoWallVC)
 
+        // 发现
+        let findStoryBoard = UIStoryboard(name: "Find", bundle: nil)
+        let findVC = findStoryBoard.instantiateInitialViewController() as UINavigationController
+        findVC.tabBarItem.title = "发现"
+        self.addChildViewController(findVC)
+        
+        // 广场
+        let squareStoryBoard = UIStoryboard(name: "Square", bundle: nil)
+        let squareVC = squareStoryBoard.instantiateInitialViewController() as UINavigationController
+        squareVC.tabBarItem.title = "广场"
+        self.addChildViewController(squareVC)
+        
+        // 百科
+        let wikiStoryBoard = UIStoryboard(name: "Wiki", bundle: nil)
+        let wikiVC = wikiStoryBoard.instantiateInitialViewController() as UINavigationController
+        wikiVC.tabBarItem.title = "百科"
+        self.addChildViewController(wikiVC)
+        
+        // 特卖
+        let saleStoryBoard = UIStoryboard(name: "Sale", bundle: nil)
+        let saleVC = saleStoryBoard.instantiateInitialViewController() as UINavigationController
+        saleVC.tabBarItem.title = "特卖"
+        self.addChildViewController(saleVC)
+        
         // 我
         let aboutMeStoryBoard = UIStoryboard(name: "AboutMe", bundle: nil)
         let aboutMeVC = aboutMeStoryBoard.instantiateInitialViewController() as UINavigationController

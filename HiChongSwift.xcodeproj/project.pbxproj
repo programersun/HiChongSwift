@@ -13,11 +13,13 @@
 		2802C99D1A2F5151001130ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2802C99C1A2F5151001130ED /* Images.xcassets */; };
 		2802C9A01A2F5151001130ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2802C99E1A2F5151001130ED /* LaunchScreen.xib */; };
 		2802C9AC1A2F5151001130ED /* HiChongSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802C9AB1A2F5151001130ED /* HiChongSwiftTests.swift */; };
+		282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D6BE21A301B9A00942F60 /* LCYNetworking.swift */; };
+		28C166321A36BFC30090E061 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166311A36BFC30090E061 /* Find.storyboard */; };
+		28C166341A36BFD50090E061 /* Wiki.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166331A36BFD50090E061 /* Wiki.storyboard */; };
+		28C166361A36BFDF0090E061 /* Square.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166351A36BFDF0090E061 /* Square.storyboard */; };
+		28C166381A36BFEA0090E061 /* Sale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166371A36BFEA0090E061 /* Sale.storyboard */; };
 		28C6DAAE1A2FF25900068848 /* AboutMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */; };
 		28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAAF1A2FF28900068848 /* MainViewController.swift */; };
-		28C6DAB21A2FF58500068848 /* PhotoWall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C6DAB11A2FF58500068848 /* PhotoWall.storyboard */; };
-		28C6DAB51A2FF70500068848 /* PhotoWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAB41A2FF70500068848 /* PhotoWallViewController.swift */; };
-		28C6DAB71A2FF78800068848 /* PhotoWallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAB61A2FF78800068848 /* PhotoWallCell.swift */; };
 		28C6DACA1A2FFDF600068848 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 28C6DABA1A2FFDF600068848 /* MJRefresh.bundle */; };
 		28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DABD1A2FFDF600068848 /* MJRefreshBaseView.m */; };
 		28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DABF1A2FFDF600068848 /* MJRefreshConst.m */; };
@@ -51,11 +53,13 @@
 		2802C9A51A2F5151001130ED /* HiChongSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiChongSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2802C9AA1A2F5151001130ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2802C9AB1A2F5151001130ED /* HiChongSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiChongSwiftTests.swift; sourceTree = "<group>"; };
+		282D6BE21A301B9A00942F60 /* LCYNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYNetworking.swift; sourceTree = "<group>"; };
+		28C166311A36BFC30090E061 /* Find.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
+		28C166331A36BFD50090E061 /* Wiki.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wiki.storyboard; sourceTree = "<group>"; };
+		28C166351A36BFDF0090E061 /* Square.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Square.storyboard; sourceTree = "<group>"; };
+		28C166371A36BFEA0090E061 /* Sale.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sale.storyboard; sourceTree = "<group>"; };
 		28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutMe.storyboard; sourceTree = "<group>"; };
 		28C6DAAF1A2FF28900068848 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		28C6DAB11A2FF58500068848 /* PhotoWall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoWall.storyboard; sourceTree = "<group>"; };
-		28C6DAB41A2FF70500068848 /* PhotoWallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoWallViewController.swift; sourceTree = "<group>"; };
-		28C6DAB61A2FF78800068848 /* PhotoWallCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoWallCell.swift; sourceTree = "<group>"; };
 		28C6DABA1A2FFDF600068848 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		28C6DABB1A2FFDF600068848 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		28C6DABC1A2FFDF600068848 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 		28C6DAC81A2FFDF600068848 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		28C6DAC91A2FFDF600068848 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		28C6DAD81A30000200068848 /* HiChongSwift-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiChongSwift-BridgingHeader.h"; sourceTree = "<group>"; };
+		28E1A87B1A31898B00B19FD1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		3FDA3B0316BD51D4638A11E8 /* Pods-HiChongSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChongSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiChongSwift/Pods-HiChongSwift.release.xcconfig"; sourceTree = "<group>"; };
 		6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HiChongSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,13 +124,17 @@
 		2802C98F1A2F5151001130ED /* HiChongSwift */ = {
 			isa = PBXGroup;
 			children = (
+				282D6BE11A301B0F00942F60 /* Common */,
 				28C6DAB81A2FFDB300068848 /* Libs */,
 				2802C9921A2F5151001130ED /* AppDelegate.swift */,
 				28C6DAAF1A2FF28900068848 /* MainViewController.swift */,
-				28C6DAB31A2FF6EC00068848 /* PhotoWall */,
 				2802C9991A2F5151001130ED /* Main.storyboard */,
+				28C166311A36BFC30090E061 /* Find.storyboard */,
+				28C166351A36BFDF0090E061 /* Square.storyboard */,
+				28C166331A36BFD50090E061 /* Wiki.storyboard */,
+				28C166371A36BFEA0090E061 /* Sale.storyboard */,
 				28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */,
-				28C6DAB11A2FF58500068848 /* PhotoWall.storyboard */,
+				28E1A87B1A31898B00B19FD1 /* MyPlayground.playground */,
 				2802C99C1A2F5151001130ED /* Images.xcassets */,
 				2802C99E1A2F5151001130ED /* LaunchScreen.xib */,
 				2802C9941A2F5151001130ED /* HiChongSwift.xcdatamodeld */,
@@ -160,13 +169,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		28C6DAB31A2FF6EC00068848 /* PhotoWall */ = {
+		282D6BE11A301B0F00942F60 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				28C6DAB41A2FF70500068848 /* PhotoWallViewController.swift */,
-				28C6DAB61A2FF78800068848 /* PhotoWallCell.swift */,
+				282D6BE21A301B9A00942F60 /* LCYNetworking.swift */,
 			);
-			name = PhotoWall;
+			name = Common;
 			sourceTree = "<group>";
 		};
 		28C6DAB81A2FFDB300068848 /* Libs */ = {
@@ -299,12 +307,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28C6DAB21A2FF58500068848 /* PhotoWall.storyboard in Resources */,
 				2802C99B1A2F5151001130ED /* Main.storyboard in Resources */,
+				28C166361A36BFDF0090E061 /* Square.storyboard in Resources */,
 				28C6DACA1A2FFDF600068848 /* MJRefresh.bundle in Resources */,
 				2802C9A01A2F5151001130ED /* LaunchScreen.xib in Resources */,
 				28C6DAAE1A2FF25900068848 /* AboutMe.storyboard in Resources */,
+				28C166381A36BFEA0090E061 /* Sale.storyboard in Resources */,
 				2802C99D1A2F5151001130ED /* Images.xcassets in Resources */,
+				28C166341A36BFD50090E061 /* Wiki.storyboard in Resources */,
+				28C166321A36BFC30090E061 /* Find.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,18 +366,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */,
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
-				28C6DAB51A2FF70500068848 /* PhotoWallViewController.swift in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
-				28C6DAB71A2FF78800068848 /* PhotoWallCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
