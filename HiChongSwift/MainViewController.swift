@@ -12,35 +12,46 @@ class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(12), NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(12), NSForegroundColorAttributeName: UIColor.LCYThemeColor()], forState: UIControlState.Selected)
+        
+        UITabBar.appearance().barTintColor = UIColor.LCYTabBarBarTintColor()
+        UITabBar.appearance().tintColor = UIColor.LCYThemeColor()
 
         // 发现
         let findStoryBoard = UIStoryboard(name: "Find", bundle: nil)
         let findVC = findStoryBoard.instantiateInitialViewController() as UINavigationController
         findVC.tabBarItem.title = "发现"
+        findVC.tabBarItem.image = UIImage(named: "find")
         self.addChildViewController(findVC)
         
         // 广场
         let squareStoryBoard = UIStoryboard(name: "Square", bundle: nil)
         let squareVC = squareStoryBoard.instantiateInitialViewController() as UINavigationController
         squareVC.tabBarItem.title = "广场"
+        squareVC.tabBarItem.image = UIImage(named: "square")
         self.addChildViewController(squareVC)
         
         // 百科
         let wikiStoryBoard = UIStoryboard(name: "Wiki", bundle: nil)
         let wikiVC = wikiStoryBoard.instantiateInitialViewController() as UINavigationController
         wikiVC.tabBarItem.title = "百科"
+        wikiVC.tabBarItem.image = UIImage(named: "wiki")
         self.addChildViewController(wikiVC)
         
         // 特卖
         let saleStoryBoard = UIStoryboard(name: "Sale", bundle: nil)
         let saleVC = saleStoryBoard.instantiateInitialViewController() as UINavigationController
         saleVC.tabBarItem.title = "特卖"
+        saleVC.tabBarItem.image = UIImage(named: "sale")
         self.addChildViewController(saleVC)
         
         // 我
         let aboutMeStoryBoard = UIStoryboard(name: "AboutMe", bundle: nil)
         let aboutMeVC = aboutMeStoryBoard.instantiateInitialViewController() as UINavigationController
         aboutMeVC.tabBarItem.title = "我"
+        aboutMeVC.tabBarItem.image = UIImage(named: "me")
         self.addChildViewController(aboutMeVC)
         
     }

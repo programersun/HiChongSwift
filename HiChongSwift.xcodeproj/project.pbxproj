@@ -18,6 +18,9 @@
 		28C166341A36BFD50090E061 /* Wiki.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166331A36BFD50090E061 /* Wiki.storyboard */; };
 		28C166361A36BFDF0090E061 /* Square.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166351A36BFDF0090E061 /* Square.storyboard */; };
 		28C166381A36BFEA0090E061 /* Sale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166371A36BFEA0090E061 /* Sale.storyboard */; };
+		28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C166391A36E0A50090E061 /* ColorExtension.swift */; };
+		28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C1663C1A36E69E0090E061 /* SquareViewController.swift */; };
+		28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C1663E1A36EBCF0090E061 /* SquareAdCell.swift */; };
 		28C6DAAE1A2FF25900068848 /* AboutMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */; };
 		28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAAF1A2FF28900068848 /* MainViewController.swift */; };
 		28C6DACA1A2FFDF600068848 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 28C6DABA1A2FFDF600068848 /* MJRefresh.bundle */; };
@@ -58,6 +61,9 @@
 		28C166331A36BFD50090E061 /* Wiki.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wiki.storyboard; sourceTree = "<group>"; };
 		28C166351A36BFDF0090E061 /* Square.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Square.storyboard; sourceTree = "<group>"; };
 		28C166371A36BFEA0090E061 /* Sale.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sale.storyboard; sourceTree = "<group>"; };
+		28C166391A36E0A50090E061 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		28C1663C1A36E69E0090E061 /* SquareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareViewController.swift; sourceTree = "<group>"; };
+		28C1663E1A36EBCF0090E061 /* SquareAdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAdCell.swift; sourceTree = "<group>"; };
 		28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutMe.storyboard; sourceTree = "<group>"; };
 		28C6DAAF1A2FF28900068848 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		28C6DABA1A2FFDF600068848 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 		2802C98F1A2F5151001130ED /* HiChongSwift */ = {
 			isa = PBXGroup;
 			children = (
+				28C1663B1A36E6550090E061 /* Square */,
 				282D6BE11A301B0F00942F60 /* Common */,
 				28C6DAB81A2FFDB300068848 /* Libs */,
 				2802C9921A2F5151001130ED /* AppDelegate.swift */,
@@ -173,8 +180,18 @@
 			isa = PBXGroup;
 			children = (
 				282D6BE21A301B9A00942F60 /* LCYNetworking.swift */,
+				28C166391A36E0A50090E061 /* ColorExtension.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		28C1663B1A36E6550090E061 /* Square */ = {
+			isa = PBXGroup;
+			children = (
+				28C1663C1A36E69E0090E061 /* SquareViewController.swift */,
+				28C1663E1A36EBCF0090E061 /* SquareAdCell.swift */,
+			);
+			name = Square;
 			sourceTree = "<group>";
 		};
 		28C6DAB81A2FFDB300068848 /* Libs */ = {
@@ -369,8 +386,11 @@
 				282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */,
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
+				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
+				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
+				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,

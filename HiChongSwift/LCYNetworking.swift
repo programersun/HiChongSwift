@@ -7,7 +7,7 @@
 //
 
 class LCYNetworking {
-    let hostURL = ""
+    private let hostURL = "http://123.57.7.88/admin/index.php/Api/"
     class var sharedInstance: LCYNetworking {
         struct Singleton {
             static let instance = LCYNetworking()
