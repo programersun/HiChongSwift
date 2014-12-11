@@ -31,6 +31,10 @@
 		28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC51A2FFDF600068848 /* UIScrollView+Extension.m */; };
 		28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC71A2FFDF600068848 /* UIScrollView+MJRefresh.m */; };
 		28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC91A2FFDF600068848 /* UIView+Extension.m */; };
+		28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */; };
+		28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */; };
+		28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */; };
+		28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */; };
 		BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,12 @@
 		28C6DAC91A2FFDF600068848 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		28C6DAD81A30000200068848 /* HiChongSwift-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiChongSwift-BridgingHeader.h"; sourceTree = "<group>"; };
 		28E1A87B1A31898B00B19FD1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		28E5B4CB1A397667009951FF /* LCYGetSquareCategoryListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYGetSquareCategoryListInfo.h; sourceTree = "<group>"; };
+		28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYGetSquareCategoryListInfo.m; sourceTree = "<group>"; };
+		28E5B4CD1A397667009951FF /* LCYGetSquareCategoryResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYGetSquareCategoryResult.h; sourceTree = "<group>"; };
+		28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYGetSquareCategoryResult.m; sourceTree = "<group>"; };
+		28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareMainButtonCell.swift; sourceTree = "<group>"; };
+		28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareSmallButtonCell.swift; sourceTree = "<group>"; };
 		3FDA3B0316BD51D4638A11E8 /* Pods-HiChongSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChongSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiChongSwift/Pods-HiChongSwift.release.xcconfig"; sourceTree = "<group>"; };
 		6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HiChongSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,8 +198,11 @@
 		28C1663B1A36E6550090E061 /* Square */ = {
 			isa = PBXGroup;
 			children = (
+				28E5B4CA1A39765D009951FF /* Model */,
 				28C1663C1A36E69E0090E061 /* SquareViewController.swift */,
 				28C1663E1A36EBCF0090E061 /* SquareAdCell.swift */,
+				28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */,
+				28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */,
 			);
 			name = Square;
 			sourceTree = "<group>";
@@ -223,6 +236,17 @@
 				28C6DAC91A2FFDF600068848 /* UIView+Extension.m */,
 			);
 			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		28E5B4CA1A39765D009951FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28E5B4CB1A397667009951FF /* LCYGetSquareCategoryListInfo.h */,
+				28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */,
+				28E5B4CD1A397667009951FF /* LCYGetSquareCategoryResult.h */,
+				28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		2A41A38E2915F355616F7D28 /* Frameworks */ = {
@@ -384,19 +408,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */,
+				28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */,
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
+				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
 				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
+				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
+				28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

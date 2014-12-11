@@ -8,12 +8,13 @@
 
 import UIKit
 
-let SquareAdCellIdentifier = "SquareAdCellIdentifier"
-
 class SquareAdCell: UITableViewCell {
     
     @IBOutlet weak var icyScrollView: UIScrollView!
     
+    class func identifier() -> String {
+        return "SquareAdCellIdentifier"
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
