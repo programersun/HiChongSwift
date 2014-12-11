@@ -10,6 +10,10 @@ import UIKit
 
 class SquareViewController: UITableViewController {
     
+    var categoryData: LCYGetSquareCategoryResult?
+    
+    private let sectionHeaderHeight: CGFloat = 30.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,11 +23,13 @@ class SquareViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        
-        LCYNetworking.sharedInstance.POST(LCYApi.SquareGetSquareCategory, parameters: nil, success: { (object) -> Void in
-            
-        }) { (error) -> Void in
-            
+        self.showHUD()
+        LCYNetworking.sharedInstance.POST(LCYApi.SquareGetSquareCategory, parameters: nil, success: { [unowned self] (object) -> Void in
+            self.hideHUD()
+            self.categoryData = LCYGetSquareCategoryResult.modelObjectWithDictionary(object)
+            self.tableView.reloadData()
+        }) { [unowned self] (error) -> Void in
+            self.hideHUD()
         }
     }
     
@@ -36,7 +42,11 @@ class SquareViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
-        return 2
+        if let unwrappedData = self.categoryData {
+            return 2
+        } else {
+            return 0
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +56,7 @@ class SquareViewController: UITableViewController {
         case 0:
             number = 2
         case 1:
-            number = 30
+            number = self.categoryData!.listInfo.count >= 5 ? self.categoryData!.listInfo.count - 5 : 0
         default:
             break
             
@@ -68,7 +78,8 @@ class SquareViewController: UITableViewController {
         } else if indexPath.section == 1 {
             cell = tableView.dequeueReusableCellWithIdentifier(SquareSmallButtonCell.identifier()) as SquareSmallButtonCell
             let cell = cell as SquareSmallButtonCell
-            cell.icyLabel.text = "aaaaaa"
+            let listInfo = self.categoryData!.listInfo[indexPath.row + 5] as LCYGetSquareCategoryListInfo
+            cell.icyLabel.text = listInfo.cateName
         }
         return cell
     }
@@ -80,7 +91,7 @@ class SquareViewController: UITableViewController {
             case 0:
                 return UIScreen.mainScreen().bounds.size.width / 2.0
             case 1:
-                return UIScreen.mainScreen().bounds.size.width / 40.0 * 26.0
+                return UIScreen.mainScreen().bounds.size.width / 40.0 * 26.0 + 8.0
             default:
                 return 44.0
             }
@@ -97,7 +108,7 @@ class SquareViewController: UITableViewController {
         case 0:
             break;
         case 1:
-            height = 44.0
+            height = self.sectionHeaderHeight
         default:
             break;
         }
@@ -108,10 +119,12 @@ class SquareViewController: UITableViewController {
         var view: UIView?
         switch section {
         case 1:
-            view = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: UIScreen.mainScreen().bounds.size.width, height: 44.0)))
+            view = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: UIScreen.mainScreen().bounds.size.width, height: self.sectionHeaderHeight)))
             view?.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
             let label = UILabel()
             label.text = "其他服务"
+            label.font = UIFont.systemFontOfSize(14.0)
+            label.textColor = UIColor.LCYThemeOrange()
             label.sizeToFit()
             view?.addSubview(label)
             label.center = CGPoint(x: 0.0, y: view!.bounds.size.height / 2.0)

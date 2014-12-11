@@ -33,6 +33,7 @@
 		28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC91A2FFDF600068848 /* UIView+Extension.m */; };
 		28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */; };
 		28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */; };
+		28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */; };
 		28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */; };
 		28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */; };
 		BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */; };
@@ -92,6 +93,7 @@
 		28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYGetSquareCategoryListInfo.m; sourceTree = "<group>"; };
 		28E5B4CD1A397667009951FF /* LCYGetSquareCategoryResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYGetSquareCategoryResult.h; sourceTree = "<group>"; };
 		28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYGetSquareCategoryResult.m; sourceTree = "<group>"; };
+		28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareMainButtonCell.swift; sourceTree = "<group>"; };
 		28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareSmallButtonCell.swift; sourceTree = "<group>"; };
 		3FDA3B0316BD51D4638A11E8 /* Pods-HiChongSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChongSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiChongSwift/Pods-HiChongSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				282D6BE21A301B9A00942F60 /* LCYNetworking.swift */,
 				28C166391A36E0A50090E061 /* ColorExtension.swift */,
+				28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
+				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,

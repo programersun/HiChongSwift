@@ -9,6 +9,7 @@
 #import "MJRefresh.h"
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 // Square/getSquareCategory
 #import "LCYGetSquareCategoryListInfo.h"
