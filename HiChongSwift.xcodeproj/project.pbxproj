@@ -14,6 +14,7 @@
 		2802C9A01A2F5151001130ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2802C99E1A2F5151001130ED /* LaunchScreen.xib */; };
 		2802C9AC1A2F5151001130ED /* HiChongSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802C9AB1A2F5151001130ED /* HiChongSwiftTests.swift */; };
 		282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D6BE21A301B9A00942F60 /* LCYNetworking.swift */; };
+		287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287722C71A39A39700D5F957 /* SquareListViewController.swift */; };
 		28C166321A36BFC30090E061 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166311A36BFC30090E061 /* Find.storyboard */; };
 		28C166341A36BFD50090E061 /* Wiki.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166331A36BFD50090E061 /* Wiki.storyboard */; };
 		28C166361A36BFDF0090E061 /* Square.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166351A36BFDF0090E061 /* Square.storyboard */; };
@@ -62,6 +63,7 @@
 		2802C9AA1A2F5151001130ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2802C9AB1A2F5151001130ED /* HiChongSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiChongSwiftTests.swift; sourceTree = "<group>"; };
 		282D6BE21A301B9A00942F60 /* LCYNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYNetworking.swift; sourceTree = "<group>"; };
+		287722C71A39A39700D5F957 /* SquareListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareListViewController.swift; sourceTree = "<group>"; };
 		28C166311A36BFC30090E061 /* Find.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
 		28C166331A36BFD50090E061 /* Wiki.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wiki.storyboard; sourceTree = "<group>"; };
 		28C166351A36BFDF0090E061 /* Square.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Square.storyboard; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				28C1663E1A36EBCF0090E061 /* SquareAdCell.swift */,
 				28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */,
 				28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */,
+				287722C71A39A39700D5F957 /* SquareListViewController.swift */,
 			);
 			name = Square;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
+				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,

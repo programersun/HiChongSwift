@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Wiki-->
         <scene sceneID="wNE-JZ-qF0">
             <objects>
                 <tableViewController id="AUl-OI-QTd" sceneMemberID="viewController">
@@ -26,11 +26,11 @@
                             <outlet property="delegate" destination="AUl-OI-QTd" id="edI-f2-6FM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="lvp-Xl-PNj"/>
+                    <navigationItem key="navigationItem" title="Wiki" id="lvp-Xl-PNj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhf-gu-yXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1712" y="189"/>
+            <point key="canvasLocation" x="1470" y="179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eQD-a6-Ob6">
@@ -46,7 +46,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIO-1D-3Mb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892" y="189"/>
+            <point key="canvasLocation" x="768" y="185"/>
         </scene>
     </scenes>
 </document>

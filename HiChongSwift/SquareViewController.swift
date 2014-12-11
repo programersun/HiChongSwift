@@ -31,11 +31,20 @@ class SquareViewController: UITableViewController {
         }) { [unowned self] (error) -> Void in
             self.hideHUD()
         }
+        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            let destination = segue.destinationViewController as SquareListViewController
+            destination.categoryInfo = self.categoryData!.listInfo[(self.tableView.indexPathForSelectedRow() as NSIndexPath!).row + 5] as LCYGetSquareCategoryListInfo
+        }
     }
     
     // MARK: - Table view data source
@@ -133,5 +142,11 @@ class SquareViewController: UITableViewController {
             break
         }
         return view
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            self.performSegueWithIdentifier("showDetail", sender: nil)
+        }
     }
 }
