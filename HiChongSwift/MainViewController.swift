@@ -14,10 +14,10 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         
         UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(12), NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(12), NSForegroundColorAttributeName: UIColor.LCYThemeColor()], forState: UIControlState.Selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(12), NSForegroundColorAttributeName: UIColor.LCYThemeDarkText()], forState: UIControlState.Selected)
         
         UITabBar.appearance().barTintColor = UIColor.LCYTabBarBarTintColor()
-        UITabBar.appearance().tintColor = UIColor.LCYThemeColor()
+        UITabBar.appearance().tintColor = UIColor.LCYThemeDarkText()
 
         // 发现
         let findStoryBoard = UIStoryboard(name: "Find", bundle: nil)

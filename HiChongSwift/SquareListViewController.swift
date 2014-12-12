@@ -24,7 +24,7 @@ class SquareListViewController: UIViewController {
         self.icySegmentControl.setBackgroundImage(UIImage(named: "sqSegmentNormal"), forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
         self.icySegmentControl.setBackgroundImage(UIImage(named: "sqSegmentSelected"), forState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)
         self.icySegmentControl.setDividerImage(UIImage(named: "sqSegmentNormal"), forLeftSegmentState: UIControlState.Normal, rightSegmentState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)
-        self.icySegmentControl.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.LCYThemeColor(), NSFontAttributeName: UIFont.boldSystemFontOfSize(16.0)], forState: UIControlState.Normal)
+        self.icySegmentControl.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.LCYThemeDarkText(), NSFontAttributeName: UIFont.boldSystemFontOfSize(16.0)], forState: UIControlState.Normal)
         self.icySegmentControl.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.LCYThemeOrange(), NSFontAttributeName: UIFont.boldSystemFontOfSize(16.0)], forState: UIControlState.Selected)
         
         self.title = self.categoryInfo.cateName
@@ -69,5 +69,9 @@ extension SquareListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 76.0
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showDetail", sender: nil)
     }
 }

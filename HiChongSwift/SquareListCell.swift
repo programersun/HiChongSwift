@@ -39,9 +39,9 @@ class SquareListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.nameLabel.textColor = UIColor.LCYThemeColor()
-        self.detailLabel.textColor = UIColor.LCYThemeColor()
-        self.distanceLabel.textColor = UIColor.LCYThemeColor()
+        self.nameLabel.textColor = UIColor.LCYThemeDarkText()
+        self.detailLabel.textColor = UIColor.LCYThemeDarkText()
+        self.distanceLabel.textColor = UIColor.LCYThemeDarkText()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

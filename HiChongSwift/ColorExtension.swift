@@ -24,7 +24,16 @@ extension UIColor {
     :returns: 颜色值UIColor
     */
     class func LCYThemeColor() -> UIColor {
-        return UIColor(red: 88.0/255.0, green: 158.0/255.0, blue: 188.0/255.0, alpha: 1.0)
+        return UIColor(red: 142.0/255.0, green: 197.0/255.0, blue: 223.0/255.0, alpha: 1.0)
+    }
+    
+    /**
+    嗨宠主题文字颜色（深蓝）
+    
+    :returns: 颜色值UIColor
+    */
+    class func LCYThemeDarkText() -> UIColor {
+        return UIColor(red: 88.0/255.0, green: 158.0/255.0, blue: 190.0/255.0, alpha: 1.0)
     }
     
     /**

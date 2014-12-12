@@ -1,25 +1,24 @@
 //
-//  SquareSmallButtonCell.swift
+//  SquareDetailHeadCell.swift
 //  HiChongSwift
 //
-//  Created by eagle on 14/12/11.
+//  Created by eagle on 14/12/12.
 //  Copyright (c) 2014年 Duostec. All rights reserved.
 //
 
 import UIKit
 
-class SquareSmallButtonCell: UITableViewCell {
-    
-    @IBOutlet weak var icyLabel: UILabel!
+class SquareDetailHeadCell: UITableViewCell {
+
     
     class func identifier() -> String {
-        return "SquareSmallButtonCellIdentifier"
+        return "SquareDetailHeadCellIdentifier"
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.icyLabel.textColor = UIColor.LCYThemeDarkText()
+        self.backgroundColor = UIColor.LCYThemeColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
