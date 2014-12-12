@@ -47,3 +47,27 @@ class SquareListViewController: UIViewController {
     */
 
 }
+
+extension SquareListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 12
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(SquareListCell.identifier()) as SquareListCell
+        switch indexPath.row % 2 {
+        case 0:
+            cell.backgroundColor = UIColor.LCYTableLightGray()
+        case 1:
+            cell.backgroundColor = UIColor.LCYTableLightBlue()
+        default:
+            break
+        }
+        cell.icyScore = 0.5 * CGFloat(indexPath.row)
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 76.0
+    }
+}

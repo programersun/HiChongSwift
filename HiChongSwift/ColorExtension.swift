@@ -35,4 +35,22 @@ extension UIColor {
     class func LCYThemeOrange() -> UIColor {
         return UIColor(red: 250.0/255.0, green: 150.0/255.0, blue: 130.0/255.0, alpha: 1.0)
     }
+    
+    /**
+    列表区分颜色（浅蓝）
+    
+    :returns: 颜色值UIColor
+    */
+    class func LCYTableLightBlue() -> UIColor {
+        return UIColor(red: 228.0/255.0, green: 247.0/255.0, blue: 254.0/255.0, alpha: 1.0)
+    }
+    
+    /**
+    列表区分颜色（浅灰）
+    
+    :returns: 颜色值UIColor
+    */
+    class func LCYTableLightGray() -> UIColor {
+        return UIColor(white: 236.0/255.0, alpha: 1.0)
+    }
 }
