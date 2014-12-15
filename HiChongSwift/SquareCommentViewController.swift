@@ -12,6 +12,8 @@ class SquareCommentViewController: UITableViewController {
     
     private var cellOnceToken: dispatch_once_t = 0
     
+    private var starCell: SquareAddStarCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,6 +58,8 @@ class SquareCommentViewController: UITableViewController {
             
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier(SquareAddStarCell.identifier()) as SquareAddStarCell
+            let cell = cell as SquareAddStarCell
+            self.starCell = cell
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier("title") as UITableViewCell
         default:
@@ -65,4 +69,39 @@ class SquareCommentViewController: UITableViewController {
         return cell
     }
 
+
+}
+
+extension SquareCommentViewController: UIGestureRecognizerDelegate {
+    
+    @IBAction func panGestureHandler(sender: UIPanGestureRecognizer) {
+        
+        let xInView = sender.locationInView(sender.view).x
+        if (xInView < 14.0) || (xInView > 180.0) {
+            return
+        }
+        
+        if xInView > 144.0 {
+            self.starCell.imageWidth = 144.0
+        } else {
+            self.starCell.imageWidth = xInView
+        }
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        let xInView = touch.locationInView(gestureRecognizer.view).x
+        if (xInView < 14.0) || (xInView > 180.0) {
+            if xInView < 14.0 {
+                self.starCell.imageWidth = 16.0
+            }
+            return true
+        }
+        if xInView > 144.0 {
+            self.starCell.imageWidth = 144.0
+        } else {
+            self.starCell.imageWidth = xInView
+        }
+        return true
+    }
+    
 }
