@@ -21,6 +21,8 @@
 		28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */; };
 		28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */; };
 		28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */; };
+		28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */; };
+		28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */; };
 		28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C15E541A3AD5EE0058F215 /* SquareDetailMiddleCell.swift */; };
 		28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C15E561A3AD96F0058F215 /* SquareDetailDynamicCell.swift */; };
 		28C166321A36BFC30090E061 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166311A36BFC30090E061 /* Find.storyboard */; };
@@ -78,6 +80,8 @@
 		28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListViewController.swift; sourceTree = "<group>"; };
 		28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListCell.swift; sourceTree = "<group>"; };
 		28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtensions.swift; sourceTree = "<group>"; };
+		28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentViewController.swift; sourceTree = "<group>"; };
+		28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddStarCell.swift; sourceTree = "<group>"; };
 		28C15E541A3AD5EE0058F215 /* SquareDetailMiddleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailMiddleCell.swift; sourceTree = "<group>"; };
 		28C15E561A3AD96F0058F215 /* SquareDetailDynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailDynamicCell.swift; sourceTree = "<group>"; };
 		28C166311A36BFC30090E061 /* Find.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				28C15E561A3AD96F0058F215 /* SquareDetailDynamicCell.swift */,
 				28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */,
 				28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */,
+				28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */,
+				28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */,
 			);
 			name = Square;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 			files = (
 				282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */,
 				28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */,
+				28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */,
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
@@ -450,6 +457,7 @@
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
 				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
+				28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,

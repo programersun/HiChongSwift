@@ -34,7 +34,7 @@ class SquareCommentListViewController: UITableViewController {
     }
     
     func rightButtonPressed(sender: AnyObject) {
-        println("123")
+        self.performSegueWithIdentifier("showAdd", sender: nil)
     }
 
     // MARK: - Table view data source

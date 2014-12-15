@@ -559,30 +559,45 @@
                     <connections>
                         <outlet property="icyTableView" destination="Zjp-Iu-oae" id="Cqv-0i-wNh"/>
                         <segue destination="wZs-R4-Gcf" kind="show" identifier="showCommentList" id="15q-xF-tpN"/>
-                        <segue destination="uB0-gW-bJJ" kind="show" identifier="showAdd" id="DlN-R6-nuy"/>
+                        <segue destination="Axt-jg-4SC" kind="show" identifier="showAdd" id="LiE-ao-Chi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLy-S0-JHB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1974" y="164"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="TWL-od-Yq2">
+        <!--Square Comment View Controller-->
+        <scene sceneID="Kly-oQ-PHJ">
             <objects>
-                <viewController id="uB0-gW-bJJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KBQ-5W-GuS"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Do-Kx-SvJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Yoe-KE-O9D">
+                <tableViewController id="Axt-jg-4SC" customClass="SquareCommentViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SX7-75-Tgv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vsl-Rn-CMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="title" id="yr2-9V-sTc">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yr2-9V-sTc" id="6nW-G1-3rz">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SquareAddStarCellIdentifier" id="nPi-41-FH5" customClass="SquareAddStarCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPi-41-FH5" id="vXX-w9-w3H">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Axt-jg-4SC" id="XgS-lq-c8O"/>
+                            <outlet property="delegate" destination="Axt-jg-4SC" id="In3-nJ-Oh4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BlD-jm-yKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2885" y="504"/>
+            <point key="canvasLocation" x="2807" y="491"/>
         </scene>
         <!--Square Comment List View Controller-->
         <scene sceneID="lYO-GE-Vac">
@@ -645,7 +660,7 @@
                                         <constraint firstItem="k4r-gY-AJl" firstAttribute="leading" secondItem="vPc-RP-NjN" secondAttribute="trailing" constant="4" id="96p-g7-RZG"/>
                                         <constraint firstItem="vUJ-1h-JEA" firstAttribute="leading" secondItem="rXh-9d-Yc4" secondAttribute="leading" constant="8" id="Cjf-Vj-ecc"/>
                                         <constraint firstItem="Ivu-Ub-whp" firstAttribute="leading" secondItem="EY3-90-KZl" secondAttribute="trailing" constant="8" id="NtY-Iz-t7D"/>
-                                        <constraint firstAttribute="trailing" secondItem="qve-i9-OoX" secondAttribute="trailing" priority="750" constant="8" id="TJ0-jb-2hM"/>
+                                        <constraint firstAttribute="trailing" secondItem="qve-i9-OoX" secondAttribute="trailing" constant="8" id="TJ0-jb-2hM"/>
                                         <constraint firstItem="lBS-Bl-har" firstAttribute="leading" secondItem="tmQ-P8-Vtb" secondAttribute="trailing" constant="4" id="TxZ-FN-ssO"/>
                                         <constraint firstItem="tmQ-P8-Vtb" firstAttribute="leading" secondItem="PWn-fz-rVM" secondAttribute="trailing" constant="4" id="eWC-WO-3qp"/>
                                         <constraint firstItem="qve-i9-OoX" firstAttribute="leading" secondItem="vUJ-1h-JEA" secondAttribute="trailing" constant="8" id="fUE-6O-0E6"/>
@@ -677,7 +692,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="uB0-gW-bJJ" kind="show" identifier="showAdd" id="TxE-z9-zcL"/>
+                        <segue destination="Axt-jg-4SC" kind="show" identifier="showAdd" id="JBD-0N-mEb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Jl-nv-lqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -713,6 +728,6 @@
         <image name="sqYongpin" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TxE-z9-zcL"/>
+        <segue reference="JBD-0N-mEb"/>
     </inferredMetricsTieBreakers>
 </document>

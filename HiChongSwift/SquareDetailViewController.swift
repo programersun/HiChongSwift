@@ -21,7 +21,7 @@ class SquareDetailViewController: UIViewController {
         
         // tool bar 内容
         let flex1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        let comment = UIBarButtonItem(image: UIImage(named: "sqIWantComment"), style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        let comment = UIBarButtonItem(image: UIImage(named: "sqIWantComment"), style: UIBarButtonItemStyle.Plain, target: self, action: "wantCommentButtonPressed:")
         let flex2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         let share = UIBarButtonItem(image: UIImage(named: "sqIWantShare"), style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         let flex3 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
@@ -52,6 +52,10 @@ class SquareDetailViewController: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.setToolbarHidden(true, animated: false)
+    }
+    
+    func wantCommentButtonPressed(sender: AnyObject) {
+        self.performSegueWithIdentifier("showAdd", sender: nil)
     }
     
 

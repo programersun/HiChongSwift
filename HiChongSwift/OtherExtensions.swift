@@ -15,3 +15,10 @@ extension UIImageView {
         self.layer.cornerRadius = radius
     }
 }
+
+extension UITableView {
+    func hideExtraSeprator() {
+        let emptyView = UIView(frame: CGRectZero)
+        self.tableFooterView = emptyView
+    }
+}
