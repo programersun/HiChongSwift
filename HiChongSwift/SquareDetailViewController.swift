@@ -104,10 +104,13 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
             switch indexPath.row {
             case 0:
                 cell.cellType = .Location
+                cell.icyLabel.text = "北京市海淀区上地十街10号"
             case 1:
                 cell.cellType = .Phone
+                cell.icyLabel.text = "13812345678"
             case 2:
                 cell.cellType = .Comment
+                cell.icyLabel.text = "共计102条评论"
             default:
                 break
             }

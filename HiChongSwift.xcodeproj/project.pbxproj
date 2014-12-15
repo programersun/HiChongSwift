@@ -18,6 +18,9 @@
 		286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */; };
 		286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */; };
 		287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287722C71A39A39700D5F957 /* SquareListViewController.swift */; };
+		28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */; };
+		28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */; };
+		28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */; };
 		28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C15E541A3AD5EE0058F215 /* SquareDetailMiddleCell.swift */; };
 		28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C15E561A3AD96F0058F215 /* SquareDetailDynamicCell.swift */; };
 		28C166321A36BFC30090E061 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166311A36BFC30090E061 /* Find.storyboard */; };
@@ -72,6 +75,9 @@
 		286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailViewController.swift; sourceTree = "<group>"; };
 		286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailHeadCell.swift; sourceTree = "<group>"; };
 		287722C71A39A39700D5F957 /* SquareListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareListViewController.swift; sourceTree = "<group>"; };
+		28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListViewController.swift; sourceTree = "<group>"; };
+		28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListCell.swift; sourceTree = "<group>"; };
+		28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtensions.swift; sourceTree = "<group>"; };
 		28C15E541A3AD5EE0058F215 /* SquareDetailMiddleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailMiddleCell.swift; sourceTree = "<group>"; };
 		28C15E561A3AD96F0058F215 /* SquareDetailDynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailDynamicCell.swift; sourceTree = "<group>"; };
 		28C166311A36BFC30090E061 /* Find.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
@@ -206,6 +212,7 @@
 				282D6BE21A301B9A00942F60 /* LCYNetworking.swift */,
 				28C166391A36E0A50090E061 /* ColorExtension.swift */,
 				28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */,
+				28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -224,6 +231,8 @@
 				286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */,
 				28C15E541A3AD5EE0058F215 /* SquareDetailMiddleCell.swift */,
 				28C15E561A3AD96F0058F215 /* SquareDetailDynamicCell.swift */,
+				28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */,
+				28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */,
 			);
 			name = Square;
 			sourceTree = "<group>";
@@ -442,6 +451,7 @@
 				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
 				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
+				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
@@ -449,9 +459,11 @@
 				28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */,
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
+				28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
+				28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */,
 				28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
