@@ -41,6 +41,7 @@ class SquareAddStarCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.scoreLabel.textColor = UIColor.LCYThemeDarkText()
+        self.backgroundColor = UIColor.LCYThemeColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

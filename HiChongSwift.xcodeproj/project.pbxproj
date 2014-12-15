@@ -18,6 +18,8 @@
 		286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */; };
 		286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */; };
 		287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287722C71A39A39700D5F957 /* SquareListViewController.swift */; };
+		2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */; };
+		289255901A3EEEB90056606F /* LCYCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558F1A3EEEB90056606F /* LCYCommon.swift */; };
 		28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */; };
 		28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */; };
 		28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */; };
@@ -77,6 +79,8 @@
 		286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailViewController.swift; sourceTree = "<group>"; };
 		286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailHeadCell.swift; sourceTree = "<group>"; };
 		287722C71A39A39700D5F957 /* SquareListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareListViewController.swift; sourceTree = "<group>"; };
+		2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddCommentCell.swift; sourceTree = "<group>"; };
+		2892558F1A3EEEB90056606F /* LCYCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYCommon.swift; sourceTree = "<group>"; };
 		28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListViewController.swift; sourceTree = "<group>"; };
 		28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListCell.swift; sourceTree = "<group>"; };
 		28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtensions.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				282D6BE21A301B9A00942F60 /* LCYNetworking.swift */,
+				2892558F1A3EEEB90056606F /* LCYCommon.swift */,
 				28C166391A36E0A50090E061 /* ColorExtension.swift */,
 				28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */,
 				28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */,
@@ -239,6 +244,7 @@
 				28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */,
 				28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */,
 				28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */,
+				2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */,
 			);
 			name = Square;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
+				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
@@ -469,6 +476,7 @@
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
 				28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
+				289255901A3EEEB90056606F /* LCYCommon.swift in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
 				28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */,

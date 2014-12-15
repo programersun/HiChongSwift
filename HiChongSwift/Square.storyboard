@@ -570,10 +570,9 @@
         <scene sceneID="Kly-oQ-PHJ">
             <objects>
                 <tableViewController id="Axt-jg-4SC" customClass="SquareCommentViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SX7-75-Tgv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SX7-75-Tgv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="title" id="yr2-9V-sTc">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -599,13 +598,13 @@
                                             </connections>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOI-qe-D7Y">
-                                            <rect key="frame" x="562" y="12" width="30" height="18"/>
+                                            <rect key="frame" x="562" y="13" width="30" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEN-EN-bD3">
-                                            <rect key="frame" x="8" y="5" width="150" height="32"/>
+                                            <rect key="frame" x="8" y="6" width="150" height="32"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="6Q1-IB-MrT">
                                                     <rect key="frame" x="8" y="6" width="20" height="20"/>
@@ -652,12 +651,38 @@
                                 <connections>
                                     <outlet property="scoreLabel" destination="tOI-qe-D7Y" id="O7R-qs-n53"/>
                                     <outlet property="testImage" destination="6fw-QM-uDW" id="4X9-Uc-3PK"/>
-                                    <outletCollection property="heartImageViews" destination="6Q1-IB-MrT" id="jfm-s3-RB5"/>
-                                    <outletCollection property="heartImageViews" destination="o3z-PH-9pO" id="oMI-q9-60T"/>
-                                    <outletCollection property="heartImageViews" destination="7if-vL-319" id="R6v-h2-M9v"/>
-                                    <outletCollection property="heartImageViews" destination="plg-Et-tsX" id="ay2-cW-WY8"/>
-                                    <outletCollection property="heartImageViews" destination="FVa-oc-HzB" id="lyu-cF-xUC"/>
+                                    <outletCollection property="heartImageViews" destination="6Q1-IB-MrT" collectionClass="NSMutableArray" id="jfm-s3-RB5"/>
+                                    <outletCollection property="heartImageViews" destination="o3z-PH-9pO" collectionClass="NSMutableArray" id="oMI-q9-60T"/>
+                                    <outletCollection property="heartImageViews" destination="7if-vL-319" collectionClass="NSMutableArray" id="R6v-h2-M9v"/>
+                                    <outletCollection property="heartImageViews" destination="plg-Et-tsX" collectionClass="NSMutableArray" id="ay2-cW-WY8"/>
+                                    <outletCollection property="heartImageViews" destination="FVa-oc-HzB" collectionClass="NSMutableArray" id="lyu-cF-xUC"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SquareAddCommentCellIdentifier" rowHeight="170" id="Ib6-E3-Lks" customClass="SquareAddCommentCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ib6-E3-Lks" id="A0O-2x-W4d">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5y-DW-SQk">
+                                            <rect key="frame" x="8" y="8" width="584" height="154"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="i5y-DW-SQk" secondAttribute="bottom" constant="8" id="0km-3H-qBp"/>
+                                        <constraint firstItem="i5y-DW-SQk" firstAttribute="top" secondItem="A0O-2x-W4d" secondAttribute="top" constant="8" id="6PM-MU-MhE"/>
+                                        <constraint firstAttribute="trailing" secondItem="i5y-DW-SQk" secondAttribute="trailing" constant="8" id="9PQ-ru-BBV"/>
+                                        <constraint firstItem="i5y-DW-SQk" firstAttribute="leading" secondItem="A0O-2x-W4d" secondAttribute="leading" constant="8" id="Qxl-I1-cDA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
