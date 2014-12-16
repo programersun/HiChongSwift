@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C68m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindCircleViewController" customModule="HiChongSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarImageView" destination="hze-jU-Tdu" id="CP8-bo-OkT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UIControl">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hze-jU-Tdu">
+                    <rect key="frame" x="268" y="268" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="b5C-8a-5bd"/>
+                        <constraint firstAttribute="width" constant="65" id="xdA-GA-sCx"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-8Q-i4T">
+                    <rect key="frame" x="286" y="341" width="28" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轻触设置相册封面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMC-SP-1JW">
+                    <rect key="frame" x="252" y="233" width="96" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Yu4-8Q-i4T" firstAttribute="top" secondItem="hze-jU-Tdu" secondAttribute="bottom" constant="8" id="XuX-bl-mOc"/>
+                <constraint firstItem="hze-jU-Tdu" firstAttribute="top" secondItem="qMC-SP-1JW" secondAttribute="bottom" constant="20" id="bfP-gR-s6n"/>
+                <constraint firstAttribute="centerY" secondItem="hze-jU-Tdu" secondAttribute="centerY" id="bxi-8Y-Sww"/>
+                <constraint firstAttribute="centerX" secondItem="qMC-SP-1JW" secondAttribute="centerX" id="ef9-10-85e"/>
+                <constraint firstAttribute="centerX" secondItem="hze-jU-Tdu" secondAttribute="centerX" id="g3a-fq-daK"/>
+                <constraint firstAttribute="centerX" secondItem="Yu4-8Q-i4T" secondAttribute="centerX" id="rQc-93-lh6"/>
+            </constraints>
+            <connections>
+                <action selector="headerBackgroundTouched:" destination="-1" eventType="touchDown" id="Vtp-bE-KGl"/>
+            </connections>
+            <point key="canvasLocation" x="503" y="455.5"/>
+        </view>
+    </objects>
+</document>

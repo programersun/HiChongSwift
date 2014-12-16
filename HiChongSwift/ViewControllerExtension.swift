@@ -20,4 +20,8 @@ extension UIViewController{
     func hideHUD() {
         MBProgressHUD.hideHUDForView(self.view, animated: true)
     }
+    
+    func screenWidth() -> CGFloat {
+        return UIScreen.mainScreen().bounds.width
+    }
 }
