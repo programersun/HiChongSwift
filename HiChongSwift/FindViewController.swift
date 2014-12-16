@@ -58,7 +58,6 @@ class FindViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
         cell.textLabel?.textColor = UIColor.LCYThemeDarkText()
-        cell.imageView?.image = UIImage(named: "sqDetailPhone")
         
         switch indexPath.section {
         case 0:
@@ -66,21 +65,26 @@ class FindViewController: UITableViewController {
             case 0:
                 cell.textLabel?.text = "宠物圈"
                 cell.backgroundColor = UIColor.LCYTableLightGray()
+                cell.imageView?.image = UIImage(named: "findCircle")
             case 1:
                 cell.textLabel?.text = "附近"
                 cell.backgroundColor = UIColor.LCYTableLightBlue()
+                cell.imageView?.image = UIImage(named: "findNearby")
             case 2:
                 cell.textLabel?.text = "宠友"
                 cell.backgroundColor = UIColor.LCYTableLightGray()
+                cell.imageView?.image = UIImage(named: "findFriends")
             case 3:
                 cell.textLabel?.text = "搜索"
                 cell.backgroundColor = UIColor.LCYTableLightBlue()
+                cell.imageView?.image = UIImage(named: "findSearch")
             default:
                 break
             }
         case 1:
             cell.textLabel?.text = "宠友录"
             cell.backgroundColor = UIColor.LCYTableLightBlue()
+            cell.imageView?.image = UIImage(named: "findContact")
             break
         default:
             break

@@ -46,7 +46,7 @@
                 <constraint firstAttribute="centerX" secondItem="Yu4-8Q-i4T" secondAttribute="centerX" id="rQc-93-lh6"/>
             </constraints>
             <connections>
-                <action selector="headerBackgroundTouched:" destination="-1" eventType="touchDown" id="Vtp-bE-KGl"/>
+                <action selector="headerBackgroundTouched:" destination="-1" eventType="touchUpInside" id="dT8-Ua-GBi"/>
             </connections>
             <point key="canvasLocation" x="503" y="455.5"/>
         </view>

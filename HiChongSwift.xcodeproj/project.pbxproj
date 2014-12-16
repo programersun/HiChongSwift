@@ -21,6 +21,7 @@
 		287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */; };
 		287EDFE01A3FD461005B6A57 /* FindCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */; };
 		287EDFE21A3FD7C9005B6A57 /* FindCircleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287EDFE11A3FD7C9005B6A57 /* FindCircleHeader.xib */; };
+		287EDFE41A3FED0C005B6A57 /* FindCircleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFE31A3FED0C005B6A57 /* FindCircleListCell.swift */; };
 		2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */; };
 		289255901A3EEEB90056606F /* LCYCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558F1A3EEEB90056606F /* LCYCommon.swift */; };
 		28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */; };
@@ -85,6 +86,7 @@
 		287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleViewController.swift; sourceTree = "<group>"; };
 		287EDFE11A3FD7C9005B6A57 /* FindCircleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindCircleHeader.xib; sourceTree = "<group>"; };
+		287EDFE31A3FED0C005B6A57 /* FindCircleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleListCell.swift; sourceTree = "<group>"; };
 		2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddCommentCell.swift; sourceTree = "<group>"; };
 		2892558F1A3EEEB90056606F /* LCYCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYCommon.swift; sourceTree = "<group>"; };
 		28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */,
 				287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */,
 				287EDFE11A3FD7C9005B6A57 /* FindCircleHeader.xib */,
+				287EDFE31A3FED0C005B6A57 /* FindCircleListCell.swift */,
 			);
 			name = Find;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			files = (
 				282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */,
 				28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */,
+				287EDFE41A3FED0C005B6A57 /* FindCircleListCell.swift in Sources */,
 				28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */,
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
