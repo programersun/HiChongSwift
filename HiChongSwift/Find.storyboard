@@ -155,8 +155,8 @@ So as I pray, Unlimited Blade Works.</mutableString>
                                                 <constraint firstAttribute="bottom" secondItem="VVi-Ur-WoU" secondAttribute="bottom" constant="8" id="zx2-i4-IzC"/>
                                             </constraints>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-9K-XR6" userLabel="seprator">
-                                            <rect key="frame" x="8" y="484" width="584" height="1"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-9K-XR6" userLabel="seprator">
+                                            <rect key="frame" x="8" y="348" width="584" height="1"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="qb2-Of-M62"/>
                                             </constraints>
@@ -200,7 +200,7 @@ So as I pray, Unlimited Blade Works.</mutableString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-z0-2yJ">
-                                                    <rect key="frame" x="28" y="29" width="35" height="35"/>
+                                                    <rect key="frame" x="28" y="30" width="35" height="35"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="bS4-f8-U0C"/>
@@ -208,7 +208,7 @@ So as I pray, Unlimited Blade Works.</mutableString>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-3X-vEi">
-                                                    <rect key="frame" x="23" y="72" width="44" height="14"/>
+                                                    <rect key="frame" x="23" y="73" width="44" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -263,10 +263,54 @@ So as I pray, Unlimited Blade Works.</mutableString>
                             <outlet property="delegate" destination="JQh-hr-VQl" id="n5a-3Q-6dA"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="yrX-Ed-aMq" kind="show" identifier="showAdd" id="8dj-82-A85"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65q-7N-UZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034" y="559"/>
+        </scene>
+        <!--Find Circle Add New View Controller-->
+        <scene sceneID="mRl-X5-ITb">
+            <objects>
+                <tableViewController id="yrX-Ed-aMq" customClass="FindCircleAddNewViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" id="mom-t0-Uac">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindCircleAddTextCellIdentifier" rowHeight="149" id="1ob-UL-Pcy" customClass="FindCircleAddTextCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1ob-UL-Pcy" id="Tjf-yh-P97">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9p-eT-Jq5">
+                                            <rect key="frame" x="8" y="8" width="584" height="133"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="S9p-eT-Jq5" firstAttribute="leading" secondItem="Tjf-yh-P97" secondAttribute="leading" constant="8" id="9Ty-U4-BFy"/>
+                                        <constraint firstAttribute="trailing" secondItem="S9p-eT-Jq5" secondAttribute="trailing" constant="8" id="GF7-bQ-iQh"/>
+                                        <constraint firstAttribute="bottom" secondItem="S9p-eT-Jq5" secondAttribute="bottom" constant="8" id="fLN-iE-XsW"/>
+                                        <constraint firstItem="S9p-eT-Jq5" firstAttribute="top" secondItem="Tjf-yh-P97" secondAttribute="top" constant="8" id="rPU-Cq-5Tf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yrX-Ed-aMq" id="QcO-Vc-QTn"/>
+                            <outlet property="delegate" destination="yrX-Ed-aMq" id="xe1-Fm-J1N"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCv-u1-yZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="495"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="onn-YM-vHf">

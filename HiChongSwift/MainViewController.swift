@@ -18,6 +18,8 @@ class MainViewController: UITabBarController {
         
         UITabBar.appearance().barTintColor = UIColor.LCYTabBarBarTintColor()
         UITabBar.appearance().tintColor = UIColor.LCYThemeDarkText()
+        
+        UIActionSheet.appearance().tintColor = UIColor.LCYThemeDarkText()
 
         // 发现
         let findStoryBoard = UIStoryboard(name: "Find", bundle: nil)
