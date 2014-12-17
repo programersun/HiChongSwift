@@ -117,6 +117,12 @@ class FindViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 self.performSegueWithIdentifier("showCircle", sender: nil)
+            case 1:
+                self.performSegueWithIdentifier("showSearchResult", sender: nil)
+            case 2:
+                self.performSegueWithIdentifier("showSearchResult", sender: nil)
+            case 3:
+                self.performSegueWithIdentifier("showSearch", sender: nil)
             default:
                 break
             }

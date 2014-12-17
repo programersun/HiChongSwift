@@ -30,6 +30,8 @@
                     <connections>
                         <segue destination="JQh-hr-VQl" kind="show" identifier="showCircle" id="Kab-5b-uOR"/>
                         <segue destination="Klp-QJ-bF3" kind="show" identifier="showCatalog" id="8By-Ia-Pef"/>
+                        <segue destination="iMP-GH-Tqk" kind="show" identifier="showSearch" id="4m3-CC-seh"/>
+                        <segue destination="Vcn-ah-duv" kind="show" identifier="showSearchResult" id="Ufa-8l-Vyh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQG-SQ-YLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,6 +274,132 @@ So as I pray, Unlimited Blade Works.</string>
             </objects>
             <point key="canvasLocation" x="1034" y="559"/>
         </scene>
+        <!--Find Search View Controller-->
+        <scene sceneID="Ocx-be-z1s">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="iMP-GH-Tqk" customClass="FindSearchViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CAH-9W-F0C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="sqt-0v-TCI" detailTextLabel="Rxg-Zn-vtR" style="IBUITableViewCellStyleValue1" id="pnx-Tf-efT">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pnx-Tf-efT" id="fZc-lK-QZR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sqt-0v-TCI">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rxg-Zn-vtR">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iMP-GH-Tqk" id="W1D-Uh-rpA"/>
+                            <outlet property="delegate" destination="iMP-GH-Tqk" id="TJq-eF-so4"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="Vcn-ah-duv" kind="show" identifier="showSearchResult" id="ngD-9V-Cvd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5H-vy-wYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1034" y="1390"/>
+        </scene>
+        <!--Find Search Result View Controller-->
+        <scene sceneID="Lk1-PM-B0p">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Vcn-ah-duv" customClass="FindSearchResultViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" id="sj0-Ku-woi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindSearchResultCellIdentifier" rowHeight="116" id="HIi-3g-yis" customClass="FindSearchResultCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HIi-3g-yis" id="x3L-Sv-JRv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物：2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3o-n2-4E4">
+                                            <rect key="frame" x="546" y="92" width="47" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cII-qe-bRm">
+                                            <rect key="frame" x="8" y="28" width="60" height="60"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="0Ud-Vw-uQ4"/>
+                                                <constraint firstAttribute="height" constant="60" id="gMG-So-dEb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物签名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv5-Wq-s50">
+                                            <rect key="frame" x="76" y="92" width="52" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqFemale" translatesAutoresizingMaskIntoConstraints="NO" id="bdl-az-pax">
+                                            <rect key="frame" x="76" y="8" width="15" height="15"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ve-mF-PBL">
+                                            <rect key="frame" x="99" y="8" width="60" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OlS-YW-SNa">
+                                            <rect key="frame" x="8" y="106" width="584" height="10"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="XRQ-yQ-jjz"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dv5-Wq-s50" firstAttribute="leading" secondItem="cII-qe-bRm" secondAttribute="trailing" constant="8" id="18D-bZ-G06"/>
+                                        <constraint firstAttribute="trailing" secondItem="z3o-n2-4E4" secondAttribute="trailing" constant="8" id="1ZX-kD-68p"/>
+                                        <constraint firstAttribute="centerY" secondItem="cII-qe-bRm" secondAttribute="centerY" id="Bdf-Y2-6An"/>
+                                        <constraint firstItem="bdl-az-pax" firstAttribute="leading" secondItem="cII-qe-bRm" secondAttribute="trailing" constant="8" id="BsZ-lD-6Pb"/>
+                                        <constraint firstAttribute="bottom" secondItem="dv5-Wq-s50" secondAttribute="bottom" constant="8" id="Nm7-WJ-dIB"/>
+                                        <constraint firstItem="8ve-mF-PBL" firstAttribute="top" secondItem="x3L-Sv-JRv" secondAttribute="top" constant="8" id="WwB-bs-zz9"/>
+                                        <constraint firstItem="cII-qe-bRm" firstAttribute="leading" secondItem="x3L-Sv-JRv" secondAttribute="leading" constant="8" id="YnM-As-CMY"/>
+                                        <constraint firstItem="bdl-az-pax" firstAttribute="top" secondItem="x3L-Sv-JRv" secondAttribute="top" constant="8" id="aef-ZQ-EPz"/>
+                                        <constraint firstAttribute="trailing" secondItem="OlS-YW-SNa" secondAttribute="trailing" constant="8" id="gW8-82-T4K"/>
+                                        <constraint firstItem="8ve-mF-PBL" firstAttribute="leading" secondItem="bdl-az-pax" secondAttribute="trailing" constant="8" id="mV7-Oj-Ju5"/>
+                                        <constraint firstAttribute="bottom" secondItem="z3o-n2-4E4" secondAttribute="bottom" constant="8" id="uzq-c5-k2d"/>
+                                        <constraint firstAttribute="bottom" secondItem="OlS-YW-SNa" secondAttribute="bottom" id="v0J-HL-ksD"/>
+                                        <constraint firstItem="OlS-YW-SNa" firstAttribute="leading" secondItem="x3L-Sv-JRv" secondAttribute="leading" constant="8" id="zZZ-wf-AvF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="sepratorHeightConstraint" destination="XRQ-yQ-jjz" id="TjP-mV-n1T"/>
+                                    <outlet property="sepratorImageView" destination="OlS-YW-SNa" id="gMB-Vl-wYV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Vcn-ah-duv" id="WUe-lA-DbW"/>
+                            <outlet property="delegate" destination="Vcn-ah-duv" id="D1h-Tz-dc7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcw-jR-ori" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="1390"/>
+        </scene>
         <!--Find Catalog View Controller-->
         <scene sceneID="bwV-2J-I6K">
             <objects>
@@ -309,8 +437,8 @@ So as I pray, Unlimited Blade Works.</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="宠物：2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-PI-G4L">
-                                            <rect key="frame" x="540" y="8" width="52" height="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物：2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-PI-G4L">
+                                            <rect key="frame" x="546" y="8" width="47" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -338,7 +466,7 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstItem="xRB-bC-3GZ" firstAttribute="leading" secondItem="SB8-op-zKJ" secondAttribute="leading" constant="8" id="xIv-iw-CF9"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.27058823529999998" green="0.54901960780000003" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="sepratorHeightConstraint" destination="T6l-bK-Rfd" id="dvU-OT-qiN"/>
                                     <outlet property="sepratorImageView" destination="F8V-kk-7gB" id="9Tq-8j-tUj"/>
@@ -477,4 +605,7 @@ So as I pray, Unlimited Blade Works.</string>
         <image name="findCircleCellUp" width="50" height="20"/>
         <image name="sqFemale" width="15" height="15"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ngD-9V-Cvd"/>
+    </inferredMetricsTieBreakers>
 </document>
