@@ -10,11 +10,12 @@ import UIKit
 
 class FindAddImageCell: UITableViewCell {
     
+    weak var collectionDataSource: FindAddImageSource?
+    
     class func identifier() -> String {
         return "FindAddImageCellIdentifier"
     }
-
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,10 +32,28 @@ class FindAddImageCell: UITableViewCell {
 
 extension FindAddImageCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if let dataSource = self.collectionDataSource {
+            return 1 + dataSource.addImageCount()
+        } else {
+            return 1
+        }
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("identifier", forIndexPath: indexPath) as UICollectionViewCell
         return cell
     }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let unwrapped = self.collectionDataSource {
+            if indexPath.row == unwrapped.addImageCount() {
+                unwrapped.addImageWillTakePicture()
+            }
+        }
+    }
 }
+
+protocol FindAddImageSource: class {
+    func addImageCount() -> Int
+    func addImageAt(index: Int) -> UIImage?
+    func addImageWillTakePicture()
+}
+

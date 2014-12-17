@@ -108,6 +108,8 @@ class FindCircleAddNewViewController: UITableViewController {
             }
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier(FindAddImageCell.identifier()) as UITableViewCell
+            let cell = cell as FindAddImageCell
+            cell.collectionDataSource = self
         default:
             break
         }
@@ -129,4 +131,16 @@ class FindCircleAddNewViewController: UITableViewController {
         }
     }
     
+}
+
+extension FindCircleAddNewViewController: FindAddImageSource {
+    func addImageWillTakePicture() {
+        println("will take picture")
+    }
+    func addImageCount() -> Int {
+        return 0
+    }
+    func addImageAt(index: Int) -> UIImage? {
+        return nil
+    }
 }
