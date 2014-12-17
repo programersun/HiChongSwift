@@ -1,23 +1,31 @@
 //
-//  FindCircleAddTextCell.swift
+//  FindCatalogCell.swift
 //  HiChongSwift
 //
-//  Created by eagle on 14/12/16.
+//  Created by eagle on 14/12/17.
 //  Copyright (c) 2014年 多思科技. All rights reserved.
 //
 
 import UIKit
 
-class FindCircleAddTextCell: UITableViewCell {
+class FindCatalogCell: UITableViewCell {
+    
+    @IBOutlet weak var sepratorHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var sepratorImageView: UIImageView!
     
     class func identifier() -> String {
-        return "FindCircleAddTextCellIdentifier"
+        return "FindCatalogCellIdentifier"
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         self.backgroundColor = UIColor.LCYThemeColor()
+        
+        self.sepratorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
+        self.sepratorImageView.image = LCYCommon.sharedInstance.artSepratorImage
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

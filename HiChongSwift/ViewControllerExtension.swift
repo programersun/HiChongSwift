@@ -24,4 +24,16 @@ extension UIViewController{
     func screenWidth() -> CGFloat {
         return UIScreen.mainScreen().bounds.width
     }
+    
+    func addRightButton(buttonTitle: String, action: Selector) {
+        let doneButton = UIButton(frame: CGRect(origin: CGPointZero, size: LCYCommon.sharedInstance.rightButtonSize))
+        doneButton.addTarget(self, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        doneButton.backgroundColor = UIColor.LCYThemeDarkText()
+        let doneString = NSAttributedString(string: buttonTitle, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(12.0)])
+        doneButton.setAttributedTitle(doneString, forState: UIControlState.Normal)
+        doneButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        doneButton.layer.cornerRadius = 4.0
+        let rightItem = UIBarButtonItem(customView: doneButton)
+        self.navigationItem.rightBarButtonItem = rightItem
+    }
 }

@@ -29,6 +29,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="YaC-i6-z7u"/>
                     <connections>
                         <segue destination="JQh-hr-VQl" kind="show" identifier="showCircle" id="Kab-5b-uOR"/>
+                        <segue destination="Klp-QJ-bF3" kind="show" identifier="showCatalog" id="8By-Ia-Pef"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQG-SQ-YLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,14 +66,14 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="900" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBR-8l-Vcz">
                                             <rect key="frame" x="76" y="34" width="434" height="134"/>
-                                            <mutableString key="text">I am the bone of my sword.
+                                            <string key="text">I am the bone of my sword.
 Steel is my body,and fire is my blood.
 I have created over a thousand blades.
 Unknown to Death.
 Nor known to Life.
 Have withstood pain to create many weapons.
 Yet, those hands will never hold anything.
-So as I pray, Unlimited Blade Works.</mutableString>
+So as I pray, Unlimited Blade Works.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -271,11 +272,105 @@ So as I pray, Unlimited Blade Works.</mutableString>
             </objects>
             <point key="canvasLocation" x="1034" y="559"/>
         </scene>
+        <!--Find Catalog View Controller-->
+        <scene sceneID="bwV-2J-I6K">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Klp-QJ-bF3" customClass="FindCatalogViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" sectionHeaderHeight="22" sectionFooterHeight="22" id="oUC-7A-G31">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindCatalogCellIdentifier" rowHeight="76" id="Igb-2f-Ve7" customClass="FindCatalogCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Igb-2f-Ve7" id="SB8-op-zKJ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xRB-bC-3GZ">
+                                            <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="7fx-1B-v9m"/>
+                                                <constraint firstAttribute="width" constant="60" id="PIn-Yc-3pi"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqFemale" translatesAutoresizingMaskIntoConstraints="NO" id="vCf-tO-n98">
+                                            <rect key="frame" x="76" y="8" width="15" height="15"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GT-4X-Fas">
+                                            <rect key="frame" x="99" y="8" width="60" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物签名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh9-rj-30E">
+                                            <rect key="frame" x="76" y="52" width="52" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="宠物：2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-PI-G4L">
+                                            <rect key="frame" x="540" y="8" width="52" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F8V-kk-7gB">
+                                            <rect key="frame" x="8" y="66" width="584" height="10"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="T6l-bK-Rfd"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="F8V-kk-7gB" secondAttribute="bottom" id="0BJ-Eu-X1b"/>
+                                        <constraint firstAttribute="trailing" secondItem="F8V-kk-7gB" secondAttribute="trailing" constant="8" id="1aN-fm-hAt"/>
+                                        <constraint firstAttribute="bottom" secondItem="Rh9-rj-30E" secondAttribute="bottom" constant="8" id="90F-1h-FrI"/>
+                                        <constraint firstItem="AkE-PI-G4L" firstAttribute="top" secondItem="SB8-op-zKJ" secondAttribute="top" constant="8" id="C6e-o0-CCo"/>
+                                        <constraint firstItem="F8V-kk-7gB" firstAttribute="leading" secondItem="SB8-op-zKJ" secondAttribute="leading" constant="8" id="EIp-Hm-PJT"/>
+                                        <constraint firstItem="4GT-4X-Fas" firstAttribute="leading" secondItem="vCf-tO-n98" secondAttribute="trailing" constant="8" id="MyV-29-em1"/>
+                                        <constraint firstItem="Rh9-rj-30E" firstAttribute="leading" secondItem="xRB-bC-3GZ" secondAttribute="trailing" constant="8" id="Og8-d7-9yh"/>
+                                        <constraint firstAttribute="centerY" secondItem="xRB-bC-3GZ" secondAttribute="centerY" id="Zwr-DP-i8Y"/>
+                                        <constraint firstItem="vCf-tO-n98" firstAttribute="leading" secondItem="xRB-bC-3GZ" secondAttribute="trailing" constant="8" id="gID-t9-k8f"/>
+                                        <constraint firstAttribute="trailing" secondItem="AkE-PI-G4L" secondAttribute="trailing" constant="8" id="lxB-Bg-nnw"/>
+                                        <constraint firstItem="4GT-4X-Fas" firstAttribute="top" secondItem="SB8-op-zKJ" secondAttribute="top" constant="8" id="n5W-EL-fJ6"/>
+                                        <constraint firstItem="vCf-tO-n98" firstAttribute="top" secondItem="SB8-op-zKJ" secondAttribute="top" constant="8" id="rkl-4H-IaJ"/>
+                                        <constraint firstItem="xRB-bC-3GZ" firstAttribute="leading" secondItem="SB8-op-zKJ" secondAttribute="leading" constant="8" id="xIv-iw-CF9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.54901960780000003" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="sepratorHeightConstraint" destination="T6l-bK-Rfd" id="dvU-OT-qiN"/>
+                                    <outlet property="sepratorImageView" destination="F8V-kk-7gB" id="9Tq-8j-tUj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Klp-QJ-bF3" id="7t2-Lk-hEG"/>
+                            <outlet property="delegate" destination="Klp-QJ-bF3" id="1xe-p6-qiU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BCC-Zu-vHC">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="u6t-2f-hHo">
+                            <rect key="frame" x="210" y="7" width="180" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="粉丝"/>
+                                <segment title="关注"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9A-P6-ha7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="1366"/>
+        </scene>
         <!--Find Circle Add New View Controller-->
         <scene sceneID="mRl-X5-ITb">
             <objects>
                 <tableViewController id="yrX-Ed-aMq" customClass="FindCircleAddNewViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" id="mom-t0-Uac">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" id="mom-t0-Uac">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,7 +383,6 @@ So as I pray, Unlimited Blade Works.</mutableString>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9p-eT-Jq5">
                                             <rect key="frame" x="8" y="8" width="584" height="133"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -301,6 +395,54 @@ So as I pray, Unlimited Blade Works.</mutableString>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pickerCell" rowHeight="44" id="GCs-IZ-tuZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GCs-IZ-tuZ" id="OQe-Fa-Tni">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindAddImageCellIdentifier" rowHeight="86" id="Yvq-Ir-Emw" customClass="FindAddImageCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yvq-Ir-Emw" id="0yn-Vq-nVd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5rt-Sr-kQH">
+                                            <rect key="frame" x="8" y="8" width="584" height="70"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oDn-ho-Zhv">
+                                                <size key="itemSize" width="70" height="70"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="identifier" id="GlR-gf-NO5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <color key="backgroundColor" red="1" green="0.5824369855" blue="0.52160284420000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="Yvq-Ir-Emw" id="yCy-ur-02A"/>
+                                                <outlet property="delegate" destination="Yvq-Ir-Emw" id="nUE-Xq-EUj"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="5rt-Sr-kQH" secondAttribute="bottom" constant="8" id="2ic-zN-fUq"/>
+                                        <constraint firstItem="5rt-Sr-kQH" firstAttribute="leading" secondItem="0yn-Vq-nVd" secondAttribute="leading" constant="8" id="CWm-cF-lmM"/>
+                                        <constraint firstItem="5rt-Sr-kQH" firstAttribute="top" secondItem="0yn-Vq-nVd" secondAttribute="top" constant="8" id="gUw-vJ-eeq"/>
+                                        <constraint firstAttribute="trailing" secondItem="5rt-Sr-kQH" secondAttribute="trailing" constant="8" id="xps-sU-6Qt"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="yrX-Ed-aMq" id="QcO-Vc-QTn"/>
@@ -310,7 +452,7 @@ So as I pray, Unlimited Blade Works.</mutableString>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCv-u1-yZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992" y="495"/>
+            <point key="canvasLocation" x="1976" y="559"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="onn-YM-vHf">
@@ -333,5 +475,6 @@ So as I pray, Unlimited Blade Works.</mutableString>
         <image name="findCircleCellComment" width="50" height="20"/>
         <image name="findCircleCellShare" width="50" height="20"/>
         <image name="findCircleCellUp" width="50" height="20"/>
+        <image name="sqFemale" width="15" height="15"/>
     </resources>
 </document>

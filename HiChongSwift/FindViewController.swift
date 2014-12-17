@@ -120,6 +120,8 @@ class FindViewController: UITableViewController {
             default:
                 break
             }
+        case 1:
+            self.performSegueWithIdentifier("showCatalog", sender: nil)
         default:
             break
         }

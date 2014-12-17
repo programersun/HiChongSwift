@@ -31,6 +31,9 @@
 		28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */; };
 		28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */; };
 		28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */; };
+		28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */; };
+		28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */; };
+		28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */; };
 		28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C15E541A3AD5EE0058F215 /* SquareDetailMiddleCell.swift */; };
 		28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C15E561A3AD96F0058F215 /* SquareDetailDynamicCell.swift */; };
 		28C166321A36BFC30090E061 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C166311A36BFC30090E061 /* Find.storyboard */; };
@@ -98,6 +101,9 @@
 		28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtensions.swift; sourceTree = "<group>"; };
 		28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentViewController.swift; sourceTree = "<group>"; };
 		28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddStarCell.swift; sourceTree = "<group>"; };
+		28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindAddImageCell.swift; sourceTree = "<group>"; };
+		28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCatalogViewController.swift; sourceTree = "<group>"; };
+		28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCatalogCell.swift; sourceTree = "<group>"; };
 		28C15E541A3AD5EE0058F215 /* SquareDetailMiddleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailMiddleCell.swift; sourceTree = "<group>"; };
 		28C15E561A3AD96F0058F215 /* SquareDetailDynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailDynamicCell.swift; sourceTree = "<group>"; };
 		28C166311A36BFC30090E061 /* Find.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
@@ -243,13 +249,32 @@
 			isa = PBXGroup;
 			children = (
 				287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */,
+				28BE7C781A412CDE00F3BC2A /* Circle */,
+				28BE7C771A412CD700F3BC2A /* Catalog */,
+			);
+			name = Find;
+			sourceTree = "<group>";
+		};
+		28BE7C771A412CD700F3BC2A /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */,
+				28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */,
+			);
+			name = Catalog;
+			sourceTree = "<group>";
+		};
+		28BE7C781A412CDE00F3BC2A /* Circle */ = {
+			isa = PBXGroup;
+			children = (
 				287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */,
 				287EDFE11A3FD7C9005B6A57 /* FindCircleHeader.xib */,
 				287EDFE31A3FED0C005B6A57 /* FindCircleListCell.swift */,
 				287EDFE51A403928005B6A57 /* FindCircleAddNewViewController.swift */,
 				287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */,
+				28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */,
 			);
-			name = Find;
+			name = Circle;
 			sourceTree = "<group>";
 		};
 		28C1663B1A36E6550090E061 /* Square */ = {
@@ -484,6 +509,7 @@
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
+				28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */,
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
@@ -499,9 +525,11 @@
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
+				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
 				28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */,
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
+				28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
 				28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,

@@ -30,7 +30,7 @@ class FindCircleListCell: UITableViewCell {
         backgroundColor = UIColor.LCYThemeColor()
         
         self.sepratorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
-        self.sepratorImageView.image = UIImage(named: "artSeprator")?.resizableImageWithCapInsets(UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0))
+        self.sepratorImageView.image = LCYCommon.sharedInstance.artSepratorImage
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

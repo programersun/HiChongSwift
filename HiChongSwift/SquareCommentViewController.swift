@@ -30,15 +30,7 @@ class SquareCommentViewController: UITableViewController {
         self.title = "评价"
         
         // 添加一个确定按钮
-        let doneButton = UIButton(frame: CGRect(origin: CGPointZero, size: LCYCommon.sharedInstance.rightButtonSize))
-        doneButton.addTarget(self, action: "rightButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
-        doneButton.backgroundColor = UIColor.LCYThemeDarkText()
-        let doneString = NSAttributedString(string: "确定", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(12.0)])
-        doneButton.setAttributedTitle(doneString, forState: UIControlState.Normal)
-        doneButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        doneButton.layer.cornerRadius = 4.0
-        let rightItem = UIBarButtonItem(customView: doneButton)
-        self.navigationItem.rightBarButtonItem = rightItem
+        self.addRightButton("确定", action: "rightButtonPressed:")
     }
     
     override func didReceiveMemoryWarning() {

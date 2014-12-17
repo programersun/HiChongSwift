@@ -18,4 +18,9 @@ class LCYCommon {
 
     let rightButtonSize = CGSize(width: 50.0, height: 24.0)
     
+    var artSepratorImage: UIImage? {
+        get {
+            return UIImage(named: "artSeprator")?.resizableImageWithCapInsets(UIEdgeInsets(top: 0.0, left: 60.0, bottom: 0.0, right: 60.0))
+        }
+    }
 }
