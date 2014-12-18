@@ -11,6 +11,8 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
+#import "UIImage+Resize.h"
+
 // Square/getSquareCategory
 #import "LCYGetSquareCategoryListInfo.h"
 #import "LCYGetSquareCategoryResult.h"

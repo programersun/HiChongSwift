@@ -36,4 +36,9 @@ extension UIViewController{
         let rightItem = UIBarButtonItem(customView: doneButton)
         self.navigationItem.rightBarButtonItem = rightItem
     }
+    
+    func alert(message: String) {
+        let alert = UIAlertView(title: nil, message: message, delegate: nil, cancelButtonTitle: "确定")
+        alert.show()
+    }
 }

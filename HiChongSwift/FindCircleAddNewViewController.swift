@@ -135,12 +135,46 @@ class FindCircleAddNewViewController: UITableViewController {
 
 extension FindCircleAddNewViewController: FindAddImageSource {
     func addImageWillTakePicture() {
-        println("will take picture")
+        let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "我要拍照", "从照片库选取", "取消")
+        actionSheet.destructiveButtonIndex = 2
+        actionSheet.showInView(self.view)
     }
     func addImageCount() -> Int {
         return 0
     }
     func addImageAt(index: Int) -> UIImage? {
         return nil
+    }
+}
+
+extension FindCircleAddNewViewController: UIActionSheetDelegate {
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        switch buttonIndex {
+        case 0:
+            // 我要拍照
+            let imagePicker = UIImagePickerController()
+            imagePicker.videoQuality = UIImagePickerControllerQualityType.Type640x480
+            imagePicker.sourceType = .Camera
+            imagePicker.delegate = self
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+            break
+        case 1:
+            // 从照片库中选择
+            break
+        default:
+            break
+        }
+    }
+}
+
+extension FindCircleAddNewViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        self.showHUDWithTips("处理中")
+        
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFitToSize: CGSize(width: 600, height: 600))
+        UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
+        // 处理上传之后，隐藏HUD
+        self.hideHUD()
     }
 }
