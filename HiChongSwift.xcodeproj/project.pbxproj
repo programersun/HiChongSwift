@@ -25,6 +25,16 @@
 		287EDFE61A403928005B6A57 /* FindCircleAddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFE51A403928005B6A57 /* FindCircleAddNewViewController.swift */; };
 		287EDFE81A403FD9005B6A57 /* FindCircleAddTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */; };
 		28876B1E1A427C7D0002F635 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 28876B1D1A427C7D0002F635 /* UIImage+Resize.m */; };
+		28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B201A429DDA0002F635 /* AboutMeViewController.swift */; };
+		28876B231A429E760002F635 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28876B221A429E760002F635 /* Welcome.storyboard */; };
+		28876B261A42A3AB0002F635 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B251A42A3AB0002F635 /* WelcomeViewController.swift */; };
+		28876B281A42A4050002F635 /* WelcomeSinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B271A42A4050002F635 /* WelcomeSinglePageViewController.swift */; };
+		28876B2A1A42BACB0002F635 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28876B291A42BACB0002F635 /* Login.storyboard */; };
+		28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B2C1A42C2370002F635 /* LoginViewController.swift */; };
+		28876B2F1A42C8CA0002F635 /* LoginInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B2E1A42C8CA0002F635 /* LoginInputCell.swift */; };
+		28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B301A42D71F0002F635 /* LoginCodeCell.swift */; };
+		28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B321A42E3630002F635 /* LoginSingleButtonCell.swift */; };
+		28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B341A42E6720002F635 /* LoginForgetCell.swift */; };
 		2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */; };
 		289255901A3EEEB90056606F /* LCYCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558F1A3EEEB90056606F /* LCYCommon.swift */; };
 		28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */; };
@@ -100,6 +110,16 @@
 		287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleAddTextCell.swift; sourceTree = "<group>"; };
 		28876B1C1A427C7D0002F635 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		28876B1D1A427C7D0002F635 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		28876B201A429DDA0002F635 /* AboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		28876B221A429E760002F635 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		28876B251A42A3AB0002F635 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		28876B271A42A4050002F635 /* WelcomeSinglePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSinglePageViewController.swift; sourceTree = "<group>"; };
+		28876B291A42BACB0002F635 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		28876B2C1A42C2370002F635 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		28876B2E1A42C8CA0002F635 /* LoginInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInputCell.swift; sourceTree = "<group>"; };
+		28876B301A42D71F0002F635 /* LoginCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCodeCell.swift; sourceTree = "<group>"; };
+		28876B321A42E3630002F635 /* LoginSingleButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSingleButtonCell.swift; sourceTree = "<group>"; };
+		28876B341A42E6720002F635 /* LoginForgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginForgetCell.swift; sourceTree = "<group>"; };
 		2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddCommentCell.swift; sourceTree = "<group>"; };
 		2892558F1A3EEEB90056606F /* LCYCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYCommon.swift; sourceTree = "<group>"; };
 		28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +215,9 @@
 		2802C98F1A2F5151001130ED /* HiChongSwift */ = {
 			isa = PBXGroup;
 			children = (
+				28876B2B1A42C21F0002F635 /* Login */,
+				28876B241A42A39C0002F635 /* Welcome */,
+				28876B1F1A429DC10002F635 /* AboutMe */,
 				287EDFDC1A3FC795005B6A57 /* Find */,
 				28C1663B1A36E6550090E061 /* Square */,
 				282D6BE11A301B0F00942F60 /* Common */,
@@ -207,6 +230,8 @@
 				28C166331A36BFD50090E061 /* Wiki.storyboard */,
 				28C166371A36BFEA0090E061 /* Sale.storyboard */,
 				28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */,
+				28876B221A429E760002F635 /* Welcome.storyboard */,
+				28876B291A42BACB0002F635 /* Login.storyboard */,
 				28E1A87B1A31898B00B19FD1 /* MyPlayground.playground */,
 				2802C99C1A2F5151001130ED /* Images.xcassets */,
 				2802C99E1A2F5151001130ED /* LaunchScreen.xib */,
@@ -263,6 +288,35 @@
 				28BE7C771A412CD700F3BC2A /* Catalog */,
 			);
 			name = Find;
+			sourceTree = "<group>";
+		};
+		28876B1F1A429DC10002F635 /* AboutMe */ = {
+			isa = PBXGroup;
+			children = (
+				28876B201A429DDA0002F635 /* AboutMeViewController.swift */,
+			);
+			name = AboutMe;
+			sourceTree = "<group>";
+		};
+		28876B241A42A39C0002F635 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				28876B251A42A3AB0002F635 /* WelcomeViewController.swift */,
+				28876B271A42A4050002F635 /* WelcomeSinglePageViewController.swift */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		28876B2B1A42C21F0002F635 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				28876B2C1A42C2370002F635 /* LoginViewController.swift */,
+				28876B2E1A42C8CA0002F635 /* LoginInputCell.swift */,
+				28876B301A42D71F0002F635 /* LoginCodeCell.swift */,
+				28876B321A42E3630002F635 /* LoginSingleButtonCell.swift */,
+				28876B341A42E6720002F635 /* LoginForgetCell.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		28BE7C771A412CD700F3BC2A /* Catalog */ = {
@@ -471,6 +525,8 @@
 				28C6DAAE1A2FF25900068848 /* AboutMe.storyboard in Resources */,
 				28C166381A36BFEA0090E061 /* Sale.storyboard in Resources */,
 				2802C99D1A2F5151001130ED /* Images.xcassets in Resources */,
+				28876B2A1A42BACB0002F635 /* Login.storyboard in Resources */,
+				28876B231A429E760002F635 /* Welcome.storyboard in Resources */,
 				28C166341A36BFD50090E061 /* Wiki.storyboard in Resources */,
 				28C166321A36BFC30090E061 /* Find.storyboard in Resources */,
 			);
@@ -528,17 +584,22 @@
 				287EDFE41A3FED0C005B6A57 /* FindCircleListCell.swift in Sources */,
 				28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */,
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
+				28876B261A42A3AB0002F635 /* WelcomeViewController.swift in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
+				28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
 				28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */,
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
+				28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
 				28BE7C821A41554200F3BC2A /* FindSearchResultViewController.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
+				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
+				28876B2F1A42C8CA0002F635 /* LoginInputCell.swift in Sources */,
 				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
 				287EDFE81A403FD9005B6A57 /* FindCircleAddTextCell.swift in Sources */,
 				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
@@ -546,13 +607,16 @@
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
+				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				28BE7C841A4157FC00F3BC2A /* FindSearchResultCell.swift in Sources */,
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
+				28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */,
 				28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */,
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
+				28876B281A42A4050002F635 /* WelcomeSinglePageViewController.swift in Sources */,
 				28BE7C801A41353D00F3BC2A /* FindSearchViewController.swift in Sources */,
 				28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,

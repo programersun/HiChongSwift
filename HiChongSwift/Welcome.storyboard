@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sf4-sS-YN9">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="vT8-hh-Rem">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Sf4-sS-YN9" customClass="WelcomeViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aq8-kK-2XX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237" y="587"/>
+        </scene>
+        <!--Welcome Single Page View Controller-->
+        <scene sceneID="xtQ-0u-HRf">
+            <objects>
+                <viewController storyboardIdentifier="singlePage" id="Cg9-9n-R3E" customClass="WelcomeSinglePageViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LEW-cN-GJr"/>
+                        <viewControllerLayoutGuide type="bottom" id="O8W-Lp-hXf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xLK-HF-3EZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cnu-cu-yJG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEm-mA-cWb">
+                                <rect key="frame" x="215" y="540" width="170" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="dqj-zQ-NdC"/>
+                                    <constraint firstAttribute="height" constant="30" id="kZY-EB-QbT"/>
+                                </constraints>
+                                <state key="normal" title="注册/登录嗨宠社区">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="enterButtonPressed:" destination="Cg9-9n-R3E" eventType="touchUpInside" id="pwZ-Lj-ezh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Cnu-cu-yJG" secondAttribute="trailing" id="RXj-YW-Kr1"/>
+                            <constraint firstItem="Cnu-cu-yJG" firstAttribute="top" secondItem="xLK-HF-3EZ" secondAttribute="top" id="RcK-Uq-or8"/>
+                            <constraint firstItem="O8W-Lp-hXf" firstAttribute="top" secondItem="HEm-mA-cWb" secondAttribute="bottom" constant="30" id="VYS-uh-4h4"/>
+                            <constraint firstAttribute="centerX" secondItem="HEm-mA-cWb" secondAttribute="centerX" id="ei2-ws-IHK"/>
+                            <constraint firstItem="O8W-Lp-hXf" firstAttribute="top" secondItem="Cnu-cu-yJG" secondAttribute="bottom" id="nrY-Zb-Whp"/>
+                            <constraint firstItem="Cnu-cu-yJG" firstAttribute="leading" secondItem="xLK-HF-3EZ" secondAttribute="leading" id="v6c-80-zKe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enterButton" destination="HEm-mA-cWb" id="5yu-vk-b1J"/>
+                        <outlet property="icyImageView" destination="Cnu-cu-yJG" id="qf2-Rz-roW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nBV-Td-clm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937" y="587"/>
+        </scene>
+    </scenes>
+</document>

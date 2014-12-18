@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iS0-a1-GZT">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="YiD-BT-Jrg">
+            <objects>
+                <tableViewController id="9gP-GA-iJW" customClass="LoginViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="JWu-ju-Hx7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginForgetCellIdentifier" rowHeight="60" id="kHl-yW-sbS" customClass="LoginForgetCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kHl-yW-sbS" id="x8q-TE-gyC">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izp-Rr-oZM">
+                                            <rect key="frame" x="8" y="8" width="75" height="30"/>
+                                            <state key="normal" title="忘记密码？">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Izp-Rr-oZM" firstAttribute="top" secondItem="x8q-TE-gyC" secondAttribute="topMargin" id="8gw-HT-E22"/>
+                                        <constraint firstItem="Izp-Rr-oZM" firstAttribute="leading" secondItem="x8q-TE-gyC" secondAttribute="leadingMargin" id="zSV-m3-j95"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginInputCellIdentifier" rowHeight="60" id="5Kl-Ph-Xdw" customClass="LoginInputCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Kl-Ph-Xdw" id="UAh-U3-8sy">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9C-V6-eMS">
+                                            <rect key="frame" x="8" y="16" width="584" height="44"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginPhone" translatesAutoresizingMaskIntoConstraints="NO" id="cEs-fs-EPP">
+                                                    <rect key="frame" x="8" y="9" width="25" height="25"/>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-Ql-HbH">
+                                                    <rect key="frame" x="41" y="7" width="535" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="DuS-E4-RuT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="cEs-fs-EPP" secondAttribute="centerY" id="6ex-jT-nad"/>
+                                                <constraint firstAttribute="centerY" secondItem="pdo-Ql-HbH" secondAttribute="centerY" id="K8J-wH-cHP"/>
+                                                <constraint firstItem="cEs-fs-EPP" firstAttribute="leading" secondItem="j9C-V6-eMS" secondAttribute="leading" constant="8" id="MS9-0W-7cD"/>
+                                                <constraint firstItem="pdo-Ql-HbH" firstAttribute="leading" secondItem="cEs-fs-EPP" secondAttribute="trailing" constant="8" id="djK-RD-v0h"/>
+                                                <constraint firstAttribute="trailing" secondItem="pdo-Ql-HbH" secondAttribute="trailing" constant="8" id="spE-JR-FbN"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="j9C-V6-eMS" secondAttribute="trailing" constant="8" id="6Dz-FD-0vI"/>
+                                        <constraint firstItem="j9C-V6-eMS" firstAttribute="leading" secondItem="UAh-U3-8sy" secondAttribute="leading" constant="8" id="C7e-sp-wTL"/>
+                                        <constraint firstItem="j9C-V6-eMS" firstAttribute="top" secondItem="UAh-U3-8sy" secondAttribute="top" constant="16" id="VtE-tv-kzF"/>
+                                        <constraint firstAttribute="bottom" secondItem="j9C-V6-eMS" secondAttribute="bottom" id="dUV-jY-RF7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icyImageView" destination="cEs-fs-EPP" id="8LY-cY-TWK"/>
+                                    <outlet property="icyTextField" destination="pdo-Ql-HbH" id="6Ba-1h-G0t"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCodeCellIdentifier" rowHeight="60" id="JF7-1T-3b5" customClass="LoginCodeCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JF7-1T-3b5" id="rPC-37-jKq">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8n5-N7-NxD">
+                                            <rect key="frame" x="8" y="16" width="476" height="44"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginCode" translatesAutoresizingMaskIntoConstraints="NO" id="EAU-W8-H8O">
+                                                    <rect key="frame" x="8" y="9" width="25" height="25"/>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2N-sM-dKF">
+                                                    <rect key="frame" x="41" y="7" width="427" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="hAV-6A-yrQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="I2N-sM-dKF" secondAttribute="trailing" constant="8" id="2k0-v6-7xm"/>
+                                                <constraint firstItem="EAU-W8-H8O" firstAttribute="leading" secondItem="8n5-N7-NxD" secondAttribute="leading" constant="8" id="5yk-Ds-MdJ"/>
+                                                <constraint firstItem="I2N-sM-dKF" firstAttribute="leading" secondItem="EAU-W8-H8O" secondAttribute="trailing" constant="8" id="FS1-4M-JdP"/>
+                                                <constraint firstAttribute="centerY" secondItem="EAU-W8-H8O" secondAttribute="centerY" id="Kn8-36-hgs"/>
+                                                <constraint firstAttribute="centerY" secondItem="I2N-sM-dKF" secondAttribute="centerY" id="kg9-Lv-rF5"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCr-vO-b8K">
+                                            <rect key="frame" x="492" y="16" width="100" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="3td-MD-nfJ"/>
+                                                <constraint firstAttribute="width" constant="100" id="yv8-zV-5dS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="发送验证码">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="icyButtonPressed:" destination="JF7-1T-3b5" eventType="touchUpInside" id="JA0-Dk-3F2"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8n5-N7-NxD" firstAttribute="leading" secondItem="rPC-37-jKq" secondAttribute="leading" constant="8" id="0Ab-Dc-zoR"/>
+                                        <constraint firstItem="GCr-vO-b8K" firstAttribute="trailing" secondItem="rPC-37-jKq" secondAttribute="trailingMargin" id="7j9-bo-jzj"/>
+                                        <constraint firstItem="GCr-vO-b8K" firstAttribute="leading" secondItem="8n5-N7-NxD" secondAttribute="trailing" constant="8" id="MUO-zS-slt"/>
+                                        <constraint firstItem="8n5-N7-NxD" firstAttribute="top" secondItem="rPC-37-jKq" secondAttribute="top" constant="16" id="Txz-HZ-SoO"/>
+                                        <constraint firstAttribute="bottom" secondItem="8n5-N7-NxD" secondAttribute="bottom" id="Vi4-Jn-LAY"/>
+                                        <constraint firstAttribute="bottom" secondItem="GCr-vO-b8K" secondAttribute="bottom" id="h6N-PC-u5W"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icyButton" destination="GCr-vO-b8K" id="clx-oS-8cx"/>
+                                    <outlet property="icyTextField" destination="I2N-sM-dKF" id="UzR-nN-NCq"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginSingleButtonCellIdentifier" rowHeight="60" id="m6J-ja-PAN" customClass="LoginSingleButtonCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m6J-ja-PAN" id="U0g-DU-7YJ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyC-5o-Nv2">
+                                            <rect key="frame" x="8" y="16" width="584" height="44"/>
+                                            <state key="normal" title="按钮">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zyC-5o-Nv2" firstAttribute="top" secondItem="U0g-DU-7YJ" secondAttribute="top" constant="16" id="6jq-cZ-Yrz"/>
+                                        <constraint firstItem="zyC-5o-Nv2" firstAttribute="leading" secondItem="U0g-DU-7YJ" secondAttribute="leading" constant="8" id="Iji-cf-3Hq"/>
+                                        <constraint firstAttribute="bottom" secondItem="zyC-5o-Nv2" secondAttribute="bottom" id="Tpy-dC-pOg"/>
+                                        <constraint firstAttribute="trailing" secondItem="zyC-5o-Nv2" secondAttribute="trailing" constant="8" id="ibj-yL-G1x"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icyButton" destination="zyC-5o-Nv2" id="1qi-Ff-4dt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9gP-GA-iJW" id="Grr-iQ-OFB"/>
+                            <outlet property="delegate" destination="9gP-GA-iJW" id="BWc-et-5FB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qmj-eE-yBQ">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="QCb-qG-jdD">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="手机号注册"/>
+                                <segment title="手机号登录"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentValueChanged:" destination="9gP-GA-iJW" eventType="valueChanged" id="tAk-so-8fL"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65j-dP-hla" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-219" y="408"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hiw-EJ-uUE">
+            <objects>
+                <navigationController id="iS0-a1-GZT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L2q-BO-0dt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9gP-GA-iJW" kind="relationship" relationship="rootViewController" id="as7-gG-Jyp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0j-nc-tzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1039" y="408"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LoginCode" width="25" height="25"/>
+        <image name="LoginPhone" width="25" height="25"/>
+    </resources>
+</document>

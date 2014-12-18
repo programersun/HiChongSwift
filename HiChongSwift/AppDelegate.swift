@@ -21,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.LCYThemeDarkText()]
         UINavigationBar.appearance().tintColor = UIColor.LCYThemeDarkText()
         
+        if !LCYCommon.sharedInstance.welcomeGuide {
+            let storyBoard = UIStoryboard(name: "Welcome", bundle: nil)
+            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController) // 这里能够确定UIViewController的存在
+        } else if !LCYCommon.sharedInstance.userLogin {
+            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController)
+        }
+        
         return true
     }
 
