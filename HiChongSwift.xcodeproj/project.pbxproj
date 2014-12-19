@@ -773,6 +773,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "797ee597-b6f3-4a78-8e8c-516e127cdf5c";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/icy/Documents/Programming/iOS/HiChongSwift/HiChongSwift/HiChongSwift-BridgingHeader.h";
 			};
 			name = Release;
