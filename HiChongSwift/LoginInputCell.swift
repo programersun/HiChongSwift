@@ -62,6 +62,10 @@ extension LoginInputCell: UITextFieldDelegate {
     func textFieldDidEndEditing(textField: UITextField) {
         delegate?.loginInputDidEndEditing(icyCellType, text: textField.text)
     }
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        delegate?.loginInputDidEndEditing(icyCellType, text: textField.text)
+        return true
+    }
 }
 
 protocol LoginInputCellDelegate: class {

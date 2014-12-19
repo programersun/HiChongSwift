@@ -66,7 +66,20 @@ class LoginViewController: UITableViewController {
     }
     
     func login() {
-        
+        if userInfo.LoginName == nil {
+            alert("请输入手机号")
+            return
+        }
+        if userInfo.UserPassword == nil {
+            alert("请输入6-18位的密码")
+            return
+        }
+        if let unwrapped = userInfo.UserPassword {
+            if (unwrapped as NSString).length <= 8 || (unwrapped as NSString).length >= 16 {
+                alert("请输入6-18位的密码==>\((unwrapped as NSString).length)")
+                return
+            }
+        }
     }
     
     // MARK: - Table view data source
