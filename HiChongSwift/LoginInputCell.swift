@@ -8,16 +8,18 @@
 
 import UIKit
 
+enum LoginInputCellType {
+    case PhoneNumber
+    case Password
+}
+
 class LoginInputCell: UITableViewCell {
     
     @IBOutlet private weak var icyImageView: UIImageView!
     
     @IBOutlet private weak var icyTextField: UITextField!
     
-    enum LoginInputCellType {
-        case PhoneNumber
-        case Password
-    }
+    weak var delegate: LoginInputCellDelegate?
     
     var icyCellType: LoginInputCellType = .PhoneNumber {
         didSet {
@@ -54,4 +56,14 @@ class LoginInputCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension LoginInputCell: UITextFieldDelegate {
+    func textFieldDidEndEditing(textField: UITextField) {
+        delegate?.loginInputDidEndEditing(icyCellType, text: textField.text)
+    }
+}
+
+protocol LoginInputCellDelegate: class {
+    func loginInputDidEndEditing(cellType: LoginInputCellType, text: String)
 }

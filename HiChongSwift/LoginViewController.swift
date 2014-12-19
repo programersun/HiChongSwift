@@ -77,10 +77,12 @@ class LoginViewController: UITableViewController {
             cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as UITableViewCell
             let cell = cell as LoginInputCell
             cell.icyCellType = .PhoneNumber
+            cell.delegate = self
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as UITableViewCell
             let cell = cell as LoginInputCell
             cell.icyCellType = .Password
+            cell.delegate = self
         case 2:
             switch currentType {
             case .register:
@@ -110,5 +112,16 @@ class LoginViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60.0
+    }
+}
+
+extension LoginViewController: LoginInputCellDelegate {
+    func loginInputDidEndEditing(cellType: LoginInputCellType, text: String) {
+        switch cellType {
+        case .Password:
+            break
+        case .PhoneNumber:
+            break
+        }
     }
 }
