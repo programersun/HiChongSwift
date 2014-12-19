@@ -16,3 +16,6 @@
 // Square/getSquareCategory
 #import "LCYGetSquareCategoryListInfo.h"
 #import "LCYGetSquareCategoryResult.h"
+
+// User/Login
+#import "UserLoginBaseClass.h"

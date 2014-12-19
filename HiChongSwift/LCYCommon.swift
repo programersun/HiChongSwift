@@ -81,7 +81,8 @@ class LCYCommon {
     
     func login(userName: String) {
         let userDefault = NSUserDefaults.standardUserDefaults()
-        userDefault.setObject(userName, forKey: UserDefaultKeys.kUserLogin.rawValue)
+        userDefault.setObject(userName, forKey: UserDefaultKeys.kUserName.rawValue)
+        userDefault.setBool(true, forKey: UserDefaultKeys.kUserLogin.rawValue)
         userDefault.synchronize()
     }
 }

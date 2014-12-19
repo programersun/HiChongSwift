@@ -65,7 +65,7 @@ class LoginViewController: UITableViewController {
         }
     }
     
-    func login() {
+    private func login() {
         if userInfo.LoginName == nil {
             alert("请输入手机号")
             return
@@ -75,12 +75,38 @@ class LoginViewController: UITableViewController {
             return
         }
         if let unwrapped = userInfo.UserPassword {
-            if (unwrapped as NSString).length <= 8 || (unwrapped as NSString).length >= 16 {
-                alert("请输入6-18位的密码==>\((unwrapped as NSString).length)")
+            if (unwrapped as NSString).length < 6 || (unwrapped as NSString).length > 18 {
+                alert("请输入6-18位的密码")
                 return
             }
         }
+        showHUDWithTips("登录中")
+        // 输入合法，登陆
+        let parameter = ["user_name": userInfo.LoginName!,
+                            "password": userInfo.UserPassword!]
+        LCYNetworking.sharedInstance.POST(LCYApi.UserLogin, parameters: parameter, success: { [weak self] (object) -> Void in
+            let result = UserLoginBaseClass.modelObjectWithDictionary(object)
+            if result.result {
+                // 登录成功
+                self?.loginSuccess(result.userName)
+            } else {
+                // 登录失败
+                self?.alert(result.msg)
+            }
+            self?.hideHUD()
+        }) { [weak self] (error) -> Void in
+            self?.alert("网络错误，请检查您的网络状态。")
+            self?.hideHUD()
+        }
     }
+    
+    private func loginSuccess(userName: String) {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        appDelegate.window?.rootViewController = (storyboard.instantiateInitialViewController() as UIViewController)
+        LCYCommon.sharedInstance.login(userName)
+    }
+    
     
     // MARK: - Table view data source
     

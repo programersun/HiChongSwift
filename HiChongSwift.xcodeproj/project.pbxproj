@@ -17,6 +17,7 @@
 		286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D071A3A8357005C1D36 /* SquareListCell.swift */; };
 		286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */; };
 		286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */; };
+		286E4D501A440EB80057176B /* UserLoginBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 286E4D4F1A440EB80057176B /* UserLoginBaseClass.m */; };
 		287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287722C71A39A39700D5F957 /* SquareListViewController.swift */; };
 		287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */; };
 		287EDFE01A3FD461005B6A57 /* FindCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */; };
@@ -101,6 +102,8 @@
 		286D1D071A3A8357005C1D36 /* SquareListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareListCell.swift; sourceTree = "<group>"; };
 		286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailViewController.swift; sourceTree = "<group>"; };
 		286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailHeadCell.swift; sourceTree = "<group>"; };
+		286E4D4E1A440EB80057176B /* UserLoginBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginBaseClass.h; sourceTree = "<group>"; };
+		286E4D4F1A440EB80057176B /* UserLoginBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginBaseClass.m; sourceTree = "<group>"; };
 		287722C71A39A39700D5F957 /* SquareListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareListViewController.swift; sourceTree = "<group>"; };
 		287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +282,15 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		286E4D4D1A440EAC0057176B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				286E4D4E1A440EB80057176B /* UserLoginBaseClass.h */,
+				286E4D4F1A440EB80057176B /* UserLoginBaseClass.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		287EDFDC1A3FC795005B6A57 /* Find */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +322,7 @@
 		28876B2B1A42C21F0002F635 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				286E4D4D1A440EAC0057176B /* Model */,
 				28876B2C1A42C2370002F635 /* LoginViewController.swift */,
 				28876B2E1A42C8CA0002F635 /* LoginInputCell.swift */,
 				28876B301A42D71F0002F635 /* LoginCodeCell.swift */,
@@ -614,6 +627,7 @@
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
+				286E4D501A440EB80057176B /* UserLoginBaseClass.m in Sources */,
 				28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */,
 				28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */,
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
