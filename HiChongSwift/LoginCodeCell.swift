@@ -15,6 +15,8 @@ class LoginCodeCell: UITableViewCell {
     class func identifier() -> String {
         return "LoginCodeCellIdentifier"
     }
+    
+    weak var delegate: LoginCodeCellDelegate?
 
     @IBOutlet private weak var icyTextField: UITextField!
     
@@ -38,7 +40,19 @@ class LoginCodeCell: UITableViewCell {
     }
     
     @IBAction func icyButtonPressed(sender: AnyObject) {
-        disableIcyButton()
+        let phoneNumber = delegate?.loginCodeCellNeedPhoneNumber()
+        if let phone = phoneNumber {
+            // 电话号码存在，请求发送
+            disableIcyButton()
+            let parameter = ["user_name": phone]
+            LCYNetworking.sharedInstance.POST(LCYApi.UserAuthcode, parameters: parameter, success: { (object) -> Void in
+                return
+            }, failure: { (error) -> Void in
+                return
+            })
+        } else {
+            return
+        }
     }
     
     private var timer: NSTimer?
@@ -47,7 +61,7 @@ class LoginCodeCell: UITableViewCell {
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerFired:", userInfo: nil, repeats: true)
     }
 
-    private let totalCountDown = 10 // 倒数计时秒数
+    private let totalCountDown = 20 // 倒数计时秒数
     private var countDown: Int?
     func timerFired(sender: NSTimer) {
         if countDown != nil {
@@ -66,4 +80,8 @@ class LoginCodeCell: UITableViewCell {
             icyButton.setTitle("(\(countDown!))秒重发", forState: UIControlState.Disabled)
         }
     }
+}
+
+protocol LoginCodeCellDelegate: class {
+    func loginCodeCellNeedPhoneNumber() -> NSString?
 }

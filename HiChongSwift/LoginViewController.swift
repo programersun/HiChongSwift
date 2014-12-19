@@ -14,6 +14,7 @@ class LoginViewController: UITableViewController {
         var LoginName: String? = nil
         var UserPassword: String? = nil
         var AuthCode: String? = nil
+        var RetrievedAuthCode: String? = nil
     }
     
     private var userInfo = UserInfo()
@@ -138,6 +139,8 @@ class LoginViewController: UITableViewController {
             switch currentType {
             case .register:
                 cell = tableView.dequeueReusableCellWithIdentifier(LoginCodeCell.identifier()) as UITableViewCell
+                let cell = cell as LoginCodeCell
+                cell.delegate = self
             case .login:
                 cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as UITableViewCell
                 let cell = cell as LoginSingleButtonCell
@@ -187,5 +190,11 @@ extension LoginViewController: LoginSingleButtonCellDelegate {
         case .Register:
             println("register")
         }
+    }
+}
+
+extension LoginViewController: LoginCodeCellDelegate {
+    func loginCodeCellNeedPhoneNumber() -> NSString? {
+        return userInfo.LoginName
     }
 }

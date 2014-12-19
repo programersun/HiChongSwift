@@ -8,8 +8,9 @@
 
 
 enum LCYApi : String {
-    case SquareGetSquareCategory = "Square/getSquareCategory"
-    case UserLogin = "User/login"
+    case SquareGetSquareCategory    = "Square/getSquareCategory"
+    case UserLogin                  = "User/login"
+    case UserAuthcode               = "User/register_authcode"
 }
 
 class LCYNetworking {
