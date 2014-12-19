@@ -160,6 +160,9 @@
                                             <state key="normal" title="按钮">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="m6J-ja-PAN" eventType="touchUpInside" id="ycy-cq-f2w"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

@@ -8,12 +8,12 @@
 
 import UIKit
 
+enum LoginSingleButtonCellType {
+    case Login
+    case Register
+}
+
 class LoginSingleButtonCell: UITableViewCell {
-    
-    enum LoginSingleButtonCellType {
-        case Login
-        case Register
-    }
     
     var currentType: LoginSingleButtonCellType = .Login {
         didSet {
@@ -43,5 +43,14 @@ class LoginSingleButtonCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    weak var delegate: LoginSingleButtonCellDelegate?
+    @IBAction func buttonPressed(sender: AnyObject) {
+        delegate?.loginSingleButtonDidPressed(currentType)
+    }
+    
+}
 
+protocol LoginSingleButtonCellDelegate: class {
+    func loginSingleButtonDidPressed(buttonType: LoginSingleButtonCellType)
 }

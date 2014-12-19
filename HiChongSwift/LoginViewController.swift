@@ -10,6 +10,14 @@ import UIKit
 
 class LoginViewController: UITableViewController {
     
+    private struct UserInfo {
+        var LoginName: String? = nil
+        var UserPassword: String? = nil
+        var AuthCode: String? = nil
+    }
+    
+    private var userInfo = UserInfo()
+    
     private enum LoginViewControllerType {
         case register
         case login
@@ -57,6 +65,10 @@ class LoginViewController: UITableViewController {
         }
     }
     
+    func login() {
+        
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -91,6 +103,7 @@ class LoginViewController: UITableViewController {
                 cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as UITableViewCell
                 let cell = cell as LoginSingleButtonCell
                 cell.currentType = .Login
+                cell.delegate = self
             }
 
         case 3:
@@ -99,6 +112,7 @@ class LoginViewController: UITableViewController {
                 cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as UITableViewCell
                 let cell = cell as LoginSingleButtonCell
                 cell.currentType = .Register
+                cell.delegate = self
             case .login:
                 cell = tableView.dequeueReusableCellWithIdentifier(LoginForgetCell.identifier()) as UITableViewCell
             }
@@ -119,9 +133,20 @@ extension LoginViewController: LoginInputCellDelegate {
     func loginInputDidEndEditing(cellType: LoginInputCellType, text: String) {
         switch cellType {
         case .Password:
-            break
+            userInfo.UserPassword = text
         case .PhoneNumber:
-            break
+            userInfo.LoginName = text
+        }
+    }
+}
+
+extension LoginViewController: LoginSingleButtonCellDelegate {
+    func loginSingleButtonDidPressed(buttonType: LoginSingleButtonCellType) {
+        switch buttonType {
+        case .Login:
+            login()
+        case .Register:
+            println("register")
         }
     }
 }

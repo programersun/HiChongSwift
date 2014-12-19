@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController) // 这里能够确定UIViewController的存在
         }
         else if !LCYCommon.sharedInstance.userLogin {
-//            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-//            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController)
+            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController)
         }
         
         return true
