@@ -14,6 +14,9 @@
 		2802C9A01A2F5151001130ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2802C99E1A2F5151001130ED /* LaunchScreen.xib */; };
 		2802C9AC1A2F5151001130ED /* HiChongSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802C9AB1A2F5151001130ED /* HiChongSwiftTests.swift */; };
 		282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D6BE21A301B9A00942F60 /* LCYNetworking.swift */; };
+		2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */; };
+		2834C40F1A47E0A30007FE43 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C40E1A47E0A30007FE43 /* Region.swift */; };
+		2834C4491A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2834C4481A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite */; };
 		286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D071A3A8357005C1D36 /* SquareListCell.swift */; };
 		286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */; };
 		286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */; };
@@ -36,6 +39,7 @@
 		28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B301A42D71F0002F635 /* LoginCodeCell.swift */; };
 		28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B321A42E3630002F635 /* LoginSingleButtonCell.swift */; };
 		28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B341A42E6720002F635 /* LoginForgetCell.swift */; };
+		289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289029301A48083E00A8B3F5 /* RegionPickerViewController.swift */; };
 		2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */; };
 		289255901A3EEEB90056606F /* LCYCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558F1A3EEEB90056606F /* LCYCommon.swift */; };
 		28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */; };
@@ -99,6 +103,9 @@
 		2802C9AA1A2F5151001130ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2802C9AB1A2F5151001130ED /* HiChongSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiChongSwiftTests.swift; sourceTree = "<group>"; };
 		282D6BE21A301B9A00942F60 /* LCYNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYNetworking.swift; sourceTree = "<group>"; };
+		2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
+		2834C40E1A47E0A30007FE43 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		2834C4481A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HiChongSwiftGenerator.sqlite; sourceTree = "<group>"; };
 		286D1D071A3A8357005C1D36 /* SquareListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareListCell.swift; sourceTree = "<group>"; };
 		286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailViewController.swift; sourceTree = "<group>"; };
 		286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailHeadCell.swift; sourceTree = "<group>"; };
@@ -123,6 +130,7 @@
 		28876B301A42D71F0002F635 /* LoginCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCodeCell.swift; sourceTree = "<group>"; };
 		28876B321A42E3630002F635 /* LoginSingleButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSingleButtonCell.swift; sourceTree = "<group>"; };
 		28876B341A42E6720002F635 /* LoginForgetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginForgetCell.swift; sourceTree = "<group>"; };
+		289029301A48083E00A8B3F5 /* RegionPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionPickerViewController.swift; sourceTree = "<group>"; };
 		2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddCommentCell.swift; sourceTree = "<group>"; };
 		2892558F1A3EEEB90056606F /* LCYCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYCommon.swift; sourceTree = "<group>"; };
 		28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +247,7 @@
 				2802C99C1A2F5151001130ED /* Images.xcassets */,
 				2802C99E1A2F5151001130ED /* LaunchScreen.xib */,
 				2802C9941A2F5151001130ED /* HiChongSwift.xcdatamodeld */,
+				2834C40E1A47E0A30007FE43 /* Region.swift */,
 				2802C9901A2F5151001130ED /* Supporting Files */,
 			);
 			path = HiChongSwift;
@@ -247,6 +256,7 @@
 		2802C9901A2F5151001130ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2834C4481A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite */,
 				2802C9911A2F5151001130ED /* Info.plist */,
 				28C6DAD81A30000200068848 /* HiChongSwift-BridgingHeader.h */,
 			);
@@ -328,6 +338,8 @@
 				28876B301A42D71F0002F635 /* LoginCodeCell.swift */,
 				28876B321A42E3630002F635 /* LoginSingleButtonCell.swift */,
 				28876B341A42E6720002F635 /* LoginForgetCell.swift */,
+				2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */,
+				289029301A48083E00A8B3F5 /* RegionPickerViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -531,6 +543,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2834C4491A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite in Resources */,
 				2802C99B1A2F5151001130ED /* Main.storyboard in Resources */,
 				28C166361A36BFDF0090E061 /* Square.storyboard in Resources */,
 				28C6DACA1A2FFDF600068848 /* MJRefresh.bundle in Resources */,
@@ -601,6 +614,7 @@
 				28876B261A42A3AB0002F635 /* WelcomeViewController.swift in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
+				289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */,
 				28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
 				28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */,
@@ -611,8 +625,10 @@
 				28BE7C821A41554200F3BC2A /* FindSearchResultViewController.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
+				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
+				2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */,
 				28876B2F1A42C8CA0002F635 /* LoginInputCell.swift in Sources */,
 				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
 				287EDFE81A403FD9005B6A57 /* FindCircleAddTextCell.swift in Sources */,

@@ -43,6 +43,19 @@ class LoginViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showDetail":
+                let destination = segue.destinationViewController as RegisterDetailViewController
+                destination.detailUserInfo.LoginName = userInfo.LoginName
+                destination.detailUserInfo.UserPassword = userInfo.UserPassword
+            default:
+                break
+            }
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func segmentValueChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -84,7 +97,7 @@ class LoginViewController: UITableViewController {
         showHUDWithTips("登录中")
         // 输入合法，登陆
         let parameter = ["user_name": userInfo.LoginName!,
-                            "password": userInfo.UserPassword!]
+            "password": userInfo.UserPassword!]
         LCYNetworking.sharedInstance.POST(LCYApi.UserLogin, parameters: parameter, success: { [weak self] (object) -> Void in
             let result = UserLoginBaseClass.modelObjectWithDictionary(object)
             if result.result {
@@ -95,9 +108,9 @@ class LoginViewController: UITableViewController {
                 self?.alert(result.msg)
             }
             self?.hideHUD()
-        }) { [weak self] (error) -> Void in
-            self?.alert("网络错误，请检查您的网络状态。")
-            self?.hideHUD()
+            }) { [weak self] (error) -> Void in
+                self?.alert("网络错误，请检查您的网络状态。")
+                self?.hideHUD()
         }
     }
     
@@ -106,6 +119,32 @@ class LoginViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         appDelegate.window?.rootViewController = (storyboard.instantiateInitialViewController() as UIViewController)
         LCYCommon.sharedInstance.login(userName)
+    }
+    
+    private func register() {
+//        if userInfo.LoginName == nil {
+//            alert("请输入手机号")
+//            return
+//        }
+//        if userInfo.UserPassword == nil {
+//            alert("请输入6-18位的密码")
+//            return
+//        }
+//        if let unwrapped = userInfo.UserPassword {
+//            if (unwrapped as NSString).length < 6 || (unwrapped as NSString).length > 18 {
+//                alert("请输入6-18位的密码")
+//                return
+//            }
+//        }
+//        if userInfo.AuthCode == nil {
+//            alert("请输入验证码")
+//            return
+//        }
+//        if userInfo.AuthCode != userInfo.RetrievedAuthCode {
+//            alert("验证码错误")
+//        }
+        // 验证成功，跳到下一步填写详细信息
+        self.performSegueWithIdentifier("showDetail", sender: nil)
     }
     
     
@@ -147,7 +186,7 @@ class LoginViewController: UITableViewController {
                 cell.currentType = .Login
                 cell.delegate = self
             }
-
+            
         case 3:
             switch self.currentType {
             case .register:
@@ -188,7 +227,7 @@ extension LoginViewController: LoginSingleButtonCellDelegate {
         case .Login:
             login()
         case .Register:
-            println("register")
+            register()
         }
     }
 }
@@ -196,5 +235,14 @@ extension LoginViewController: LoginSingleButtonCellDelegate {
 extension LoginViewController: LoginCodeCellDelegate {
     func loginCodeCellNeedPhoneNumber() -> NSString? {
         return userInfo.LoginName
+    }
+    func loginCodeCellGetGode(code: String) {
+        userInfo.RetrievedAuthCode = code
+    }
+    func loginCodeCellInputCode(code: String) {
+        userInfo.AuthCode = code
+    }
+    func loginCodeCellFailCode(masage: String) {
+        alert(masage)
     }
 }

@@ -45,7 +45,12 @@ class LoginCodeCell: UITableViewCell {
             // 电话号码存在，请求发送
             disableIcyButton()
             let parameter = ["user_name": phone]
-            LCYNetworking.sharedInstance.POST(LCYApi.UserAuthcode, parameters: parameter, success: { (object) -> Void in
+            LCYNetworking.sharedInstance.POST(LCYApi.UserAuthcode, parameters: parameter, success: {[weak self] (object) -> Void in
+                if object["result"] as Bool {
+                    self?.delegate?.loginCodeCellGetGode((object["code"] as Int).description)
+                } else {
+                    self?.delegate?.loginCodeCellFailCode(object["msg"] as String)
+                }
                 return
             }, failure: { (error) -> Void in
                 return
@@ -84,4 +89,18 @@ class LoginCodeCell: UITableViewCell {
 
 protocol LoginCodeCellDelegate: class {
     func loginCodeCellNeedPhoneNumber() -> NSString?
+    func loginCodeCellGetGode(code: String)
+    func loginCodeCellInputCode(code: String)
+    func loginCodeCellFailCode(masage: String)
+}
+
+extension LoginCodeCell: UITextFieldDelegate {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let newText = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        delegate?.loginCodeCellInputCode(newText)
+        return true
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        delegate?.loginCodeCellInputCode(textField.text)
+    }
 }

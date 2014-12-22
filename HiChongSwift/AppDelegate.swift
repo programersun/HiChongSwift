@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.LCYThemeDarkText()]
         UINavigationBar.appearance().tintColor = UIColor.LCYThemeDarkText()
+        UIToolbar.appearance().tintColor = UIColor.LCYThemeDarkText()
         
         if !LCYCommon.sharedInstance.welcomeGuide {
             let storyBoard = UIStoryboard(name: "Welcome", bundle: nil)
@@ -76,6 +77,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create the coordinator and store
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("HiChongSwift.sqlite")
+
+        if !(NSFileManager.defaultManager().fileExistsAtPath(url.path!)) {
+            println("start insert!!!")
+            let preloadURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("HiChongSwiftGenerator", ofType: "sqlite")!)!
+            if !(NSFileManager.defaultManager().copyItemAtPath(preloadURL.path!, toPath: url.path!, error: nil)) {
+                println("Oops, could copy preloaded data")
+            } else {
+                println("insert done")
+            }
+        }
+        
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
