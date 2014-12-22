@@ -11,7 +11,7 @@ import CoreData
 
 class RegionPickerViewController: UIViewController {
     
-    var delegate: RegionPickerViewControllerDelegate?
+    weak var delegate: RegionPickerViewControllerDelegate?
     
     @IBOutlet private weak var icyPickerView: UIPickerView!
     

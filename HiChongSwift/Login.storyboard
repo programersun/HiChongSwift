@@ -324,6 +324,9 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="9Hv-XR-mMf" eventType="touchUpInside" id="iMX-jN-Wrd"/>
+                                </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIC-89-f2F">
                                 <rect key="frame" x="0.0" y="376" width="600" height="224"/>
@@ -334,13 +337,26 @@
                                     <segue destination="mWU-Vu-WWs" kind="embed" identifier="showPicker" id="N2s-Zg-zkn"/>
                                 </connections>
                             </containerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterDetailAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-PE-xwm">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterDetailAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-PE-xwm">
                                 <rect key="frame" x="275" y="89" width="50" height="50"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="1dm-GI-DBc"/>
                                     <constraint firstAttribute="height" constant="50" id="TjS-cr-hJw"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4uU-VZ-pgu" appends="YES" id="3l9-de-Xdf"/>
+                                </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4Z-WT-fgF">
+                                <rect key="frame" x="226" y="548" width="148" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dBW-FD-Obe"/>
+                                </constraints>
+                                <state key="normal" image="LicenceButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -355,15 +371,18 @@
                             <constraint firstItem="Yjn-Qe-h5I" firstAttribute="leading" secondItem="V8v-B1-Tl6" secondAttribute="leading" constant="8" id="RI4-CK-z5k"/>
                             <constraint firstAttribute="trailing" secondItem="dXU-VJ-Gyw" secondAttribute="trailing" constant="8" id="XEh-zg-hAk"/>
                             <constraint firstItem="Yjn-Qe-h5I" firstAttribute="top" secondItem="9Th-NJ-S0D" secondAttribute="bottom" constant="50" id="d8K-3Y-b5K"/>
+                            <constraint firstItem="Nhh-gv-qki" firstAttribute="top" secondItem="f4Z-WT-fgF" secondAttribute="bottom" constant="8" id="iFd-hG-kaa"/>
                             <constraint firstItem="dXU-VJ-Gyw" firstAttribute="top" secondItem="3I4-PE-xwm" secondAttribute="bottom" constant="16" id="tKN-r4-ngk"/>
                             <constraint firstItem="3I4-PE-xwm" firstAttribute="top" secondItem="Ask-v3-bHy" secondAttribute="bottom" constant="25" id="uHa-8Q-xtt"/>
                             <constraint firstAttribute="trailing" secondItem="9Th-NJ-S0D" secondAttribute="trailing" constant="8" id="wO3-93-cSC"/>
+                            <constraint firstAttribute="centerX" secondItem="f4Z-WT-fgF" secondAttribute="centerX" id="yWE-te-1g4"/>
                         </constraints>
                         <connections>
                             <action selector="backgroundTouched:" destination="9Hv-XR-mMf" eventType="touchDown" id="gdI-Y0-0Pw"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="avatarImageView" destination="3I4-PE-xwm" id="VCc-B2-Xpr"/>
                         <outlet property="genderImageView" destination="zZs-64-3wx" id="4NY-XI-bQG"/>
                         <outlet property="icyDoneButton" destination="Yjn-Qe-h5I" id="iMc-Il-fix"/>
                         <outlet property="nameTextField" destination="EOx-sn-XFh" id="12p-t4-Pba"/>
@@ -372,6 +391,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoM-mU-wcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4uU-VZ-pgu">
+                    <connections>
+                        <action selector="avatarTapped:" destination="9Hv-XR-mMf" id="mZ8-fa-5B2"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="540" y="408"/>
         </scene>
@@ -444,6 +468,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LicenceButton" width="148" height="20"/>
         <image name="LoginCode" width="25" height="25"/>
         <image name="LoginPhone" width="25" height="25"/>
         <image name="RegisterDetailAvatar" width="50" height="50"/>
