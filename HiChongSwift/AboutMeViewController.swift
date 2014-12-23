@@ -104,7 +104,7 @@ class AboutMeViewController: UITableViewController {
             switch identifier {
             case "showEdit":
                 let destination = segue.destinationViewController as AboutMeEditProfileViewController
-                destination.userInfo = userInfo?.userInfo
+                destination._userInfo = userInfo?.userInfo
             default:
                 break
             }
@@ -193,9 +193,9 @@ class AboutMeViewController: UITableViewController {
                     let province = userInfo!.userInfo.province
                     let city = userInfo!.userInfo.city
                     let town = userInfo!.userInfo.town
-                    var provinceText: String?
-                    var cityText: String?
-                    var townText: String?
+                    var provinceText: String? = ""
+                    var cityText: String? = ""
+                    var townText: String? = ""
                     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
                     let context = appDelegate.managedObjectContext!
                     let fetchRequset = NSFetchRequest()
@@ -221,7 +221,11 @@ class AboutMeViewController: UITableViewController {
                     } else {
                         println("error!===>\(error)")
                     }
-                    cell.textLabel?.text = "\(provinceText!) \(cityText!) \(townText!)"
+                    if let townText = townText {
+                        cell.textLabel?.text = "\(provinceText!) \(cityText!) \(townText)"
+                    } else {
+                        cell.textLabel?.text = "\(provinceText!) \(cityText!)"
+                    }
                 } else {
                     cell.textLabel?.textColor = UIColor.lightGrayColor()
                     cell.textLabel?.text = cannotSee

@@ -1,19 +1,21 @@
 //
-//  RegionPickerViewController.swift
+//  AboutMeModifyLocationViewController.swift
 //  HiChongSwift
 //
-//  Created by eagle on 14/12/22.
+//  Created by eagle on 14/12/23.
 //  Copyright (c) 2014年 多思科技. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class RegionPickerViewController: UIViewController {
+class AboutMeModifyLocationViewController: UIViewController {
     
-    weak var delegate: RegionPickerViewControllerDelegate?
+    weak var delegate: AboutMeModifyLocationDelegate?
     
-    @IBOutlet private weak var icyPickerView: UIPickerView!
+    var province: String!
+    var city: String!
+    var town: String!
     
     private var provinces:  [Region]?
     private var cities:       [Region]?
@@ -32,11 +34,57 @@ class RegionPickerViewController: UIViewController {
         case pekingCity = 52
     }
     
+    @IBOutlet private weak var icyPickerView: UIPickerView!
+    @IBOutlet private weak var icyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
+        navigationItem.title = "选择位置"
         
+        var provinceText: String?
+        var cityText: String?
+        var townText: String?
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context = appDelegate.managedObjectContext!
+        let fetchRequset = NSFetchRequest()
+        let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)
+        fetchRequset.entity = entity
+        let predicate = NSPredicate(format: "region_id == %@ OR region_id == %@ OR region_id == %@", argumentArray:[province, city, town])
+        fetchRequset.predicate = predicate
+        var error: NSError? = nil
+        let result = context.executeFetchRequest(fetchRequset, error: &error)
+        if let entities = result {
+            for regionEntity in entities as [Region] {
+                switch regionEntity.region_id {
+                case province.toInt()!:
+                    provinceText = regionEntity.region_name
+                case city.toInt()!:
+                    cityText = regionEntity.region_name
+                case town.toInt()!:
+                    townText = regionEntity.region_name
+                default:
+                    break
+                }
+            }
+        } else {
+            println("error!===>\(error)")
+        }
+        
+        if let townText = townText {
+            icyLabel.text = "\(provinceText!) \(cityText!) \(townText)"
+        } else {
+            icyLabel.text = "\(provinceText!) \(cityText!)"
+        }
+        
+        
+        addRightButton("确定", action: "rightButtonPressed:")
+        
+        loadInitData()
+    }
+    
+    private func loadInitData() {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         if let context = appDelegate.managedObjectContext {
             // 获取所有省份
@@ -96,40 +144,76 @@ class RegionPickerViewController: UIViewController {
             }
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func doneButtonPressed(sender: AnyObject) {
+    // MARK: - Actions
+    func rightButtonPressed(sender: AnyObject) {
+        let parameters = [
+            "user_name" : LCYCommon.sharedInstance.userName!,
+            "province"  : province,
+            "city"      : city,
+            "town"      : town
+        ]
+        showHUDWithTips("正在修改")
+        LCYNetworking.sharedInstance.POST(LCYApi.UserModifyLocation, parameters: parameters,
+            success: { [weak self](object) -> Void in
+                self?.hideHUD()
+                if let result = object["result"]?.boolValue {
+                    if result {
+                        self?.alertWithDelegate("修改成功", tag: 9001, delegate: self)
+                        if let strongSelf = self {
+                            strongSelf.delegate?.didModifyLocation(strongSelf.province, city: strongSelf.city, town: strongSelf.town)
+                        }
+                    } else {
+                        self?.alert("修改失败")
+                    }
+                } else {
+                    self?.alert("修改失败")
+                }
+                return
+            }) { [weak self](error) -> Void in
+                self?.hideHUD()
+                self?.alert("修改失败，请检查网络状态")
+                return
+        }
+    }
+    
+    @IBAction func chooseButtonPressed(sender: AnyObject) {
         if provinces == nil || cities == nil || towns == nil {
             return
         }
-        if towns?.count != 0 {
-            self.delegate?.regionDoneButtonPressed(provinces![icyPickerView.selectedRowInComponent(0)], city: cities![icyPickerView.selectedRowInComponent(1)], town: towns![icyPickerView.selectedRowInComponent(2)])
+        let provinceRegion = provinces![icyPickerView.selectedRowInComponent(0)]
+        let cityRegion = cities![icyPickerView.selectedRowInComponent(1)]
+        let townRegion: Region? = towns?.count == 0 ? nil : towns![icyPickerView.selectedRowInComponent(2)]
+        
+        province = provinceRegion.region_id.stringValue
+        city = cityRegion.region_id.stringValue
+        if let townRegion = townRegion {
+            icyLabel.text = "\(provinceRegion.region_name) \(cityRegion.region_name) \(townRegion.region_name)"
+            town = townRegion.region_id.stringValue
         } else {
-            self.delegate?.regionDoneButtonPressed(provinces![icyPickerView.selectedRowInComponent(0)], city: cities![icyPickerView.selectedRowInComponent(1)], town: nil)
+            icyLabel.text = "\(provinceRegion.region_name) \(cityRegion.region_name)"
+            town = "0"
         }
     }
-    
+
     /*
     // MARK: - Navigation
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
     */
-    
+
 }
 
-protocol RegionPickerViewControllerDelegate: class {
-    func regionDoneButtonPressed(province: Region, city: Region, town: Region?)
-}
-
-extension RegionPickerViewController: UIPickerViewDataSource, UIPickerViewDelegate{
+extension AboutMeModifyLocationViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 3
     }
@@ -170,7 +254,7 @@ extension RegionPickerViewController: UIPickerViewDataSource, UIPickerViewDelega
         }
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if provinces == nil || cities == nil || towns == nil{
+        if provinces == nil || cities == nil || towns == nil {
             return
         }
         switch component {
@@ -223,4 +307,16 @@ extension RegionPickerViewController: UIPickerViewDataSource, UIPickerViewDelega
             break
         }
     }
+}
+
+extension AboutMeModifyLocationViewController: UIAlertViewDelegate {
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if alertView.tag == 9001 {
+            navigationController?.popViewControllerAnimated(true)
+        }
+    }
+}
+
+protocol AboutMeModifyLocationDelegate: class {
+    func didModifyLocation(province: String, city: String, town: String)
 }

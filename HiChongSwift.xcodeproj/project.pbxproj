@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28026F371A4996E10082A2EE /* AboutMeSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28026F361A4996E10082A2EE /* AboutMeSwitchCell.swift */; };
 		2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802C9921A2F5151001130ED /* AppDelegate.swift */; };
 		2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2802C9941A2F5151001130ED /* HiChongSwift.xcdatamodeld */; };
 		2802C99B1A2F5151001130ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2802C9991A2F5151001130ED /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 		2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */; };
 		2834C40F1A47E0A30007FE43 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C40E1A47E0A30007FE43 /* Region.swift */; };
 		2834C4491A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2834C4481A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite */; };
+		285EC3711A49D76000E2FE70 /* AboutMeModifyGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EC3701A49D76000E2FE70 /* AboutMeModifyGenderController.swift */; };
 		286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D071A3A8357005C1D36 /* SquareListCell.swift */; };
 		286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */; };
 		286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */; };
@@ -52,6 +54,9 @@
 		289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FA3521A4955DD0097485C /* AboutMePetCell.swift */; };
 		289FA3551A4964D10097485C /* AboutMeFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289FA3541A4964D10097485C /* AboutMeFooter.xib */; };
 		289FA3571A4972000097485C /* AboutMeEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FA3561A4972000097485C /* AboutMeEditProfileViewController.swift */; };
+		28B9CEA51A49A97E004E6386 /* AboutMeModifyTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA41A49A97E004E6386 /* AboutMeModifyTextViewController.swift */; };
+		28B9CEA71A49A9BB004E6386 /* AboutMeModifyTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA61A49A9BB004E6386 /* AboutMeModifyTextCell.swift */; };
+		28B9CEA91A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */; };
 		28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */; };
 		28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */; };
 		28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */; };
@@ -101,6 +106,7 @@
 
 /* Begin PBXFileReference section */
 		1BD6A3716BDF1D3451436307 /* Pods-HiChongSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChongSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HiChongSwift/Pods-HiChongSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		28026F361A4996E10082A2EE /* AboutMeSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeSwitchCell.swift; sourceTree = "<group>"; };
 		2802C98D1A2F5151001130ED /* HiChongSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiChongSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2802C9911A2F5151001130ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2802C9921A2F5151001130ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 		2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
 		2834C40E1A47E0A30007FE43 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		2834C4481A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = HiChongSwiftGenerator.sqlite; sourceTree = "<group>"; };
+		285EC3701A49D76000E2FE70 /* AboutMeModifyGenderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyGenderController.swift; sourceTree = "<group>"; };
 		286D1D071A3A8357005C1D36 /* SquareListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareListCell.swift; sourceTree = "<group>"; };
 		286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailViewController.swift; sourceTree = "<group>"; };
 		286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailHeadCell.swift; sourceTree = "<group>"; };
@@ -152,6 +159,9 @@
 		289FA3521A4955DD0097485C /* AboutMePetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMePetCell.swift; sourceTree = "<group>"; };
 		289FA3541A4964D10097485C /* AboutMeFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMeFooter.xib; sourceTree = "<group>"; };
 		289FA3561A4972000097485C /* AboutMeEditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeEditProfileViewController.swift; sourceTree = "<group>"; };
+		28B9CEA41A49A97E004E6386 /* AboutMeModifyTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyTextViewController.swift; sourceTree = "<group>"; };
+		28B9CEA61A49A9BB004E6386 /* AboutMeModifyTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyTextCell.swift; sourceTree = "<group>"; };
+		28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyLocationViewController.swift; sourceTree = "<group>"; };
 		28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindAddImageCell.swift; sourceTree = "<group>"; };
 		28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCatalogViewController.swift; sourceTree = "<group>"; };
 		28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCatalogCell.swift; sourceTree = "<group>"; };
@@ -345,6 +355,11 @@
 				289FA3501A4952E40097485C /* AboutMePetHeaderView.xib */,
 				289FA3541A4964D10097485C /* AboutMeFooter.xib */,
 				289FA3561A4972000097485C /* AboutMeEditProfileViewController.swift */,
+				28026F361A4996E10082A2EE /* AboutMeSwitchCell.swift */,
+				28B9CEA41A49A97E004E6386 /* AboutMeModifyTextViewController.swift */,
+				28B9CEA61A49A9BB004E6386 /* AboutMeModifyTextCell.swift */,
+				28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */,
+				285EC3701A49D76000E2FE70 /* AboutMeModifyGenderController.swift */,
 			);
 			name = AboutMe;
 			sourceTree = "<group>";
@@ -654,6 +669,7 @@
 				282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */,
 				28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */,
 				287EDFE41A3FED0C005B6A57 /* FindCircleListCell.swift in Sources */,
+				28B9CEA91A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift in Sources */,
 				28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */,
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
 				28876B261A42A3AB0002F635 /* WelcomeViewController.swift in Sources */,
@@ -668,6 +684,7 @@
 				28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */,
 				28EE4D1F1A49361D008F9F87 /* GetUserInfoPetInfo.m in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
+				28026F371A4996E10082A2EE /* AboutMeSwitchCell.swift in Sources */,
 				28BE7C821A41554200F3BC2A /* FindSearchResultViewController.swift in Sources */,
 				289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
@@ -676,6 +693,7 @@
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
+				28B9CEA71A49A9BB004E6386 /* AboutMeModifyTextCell.swift in Sources */,
 				2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */,
 				28876B2F1A42C8CA0002F635 /* LoginInputCell.swift in Sources */,
 				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
@@ -701,12 +719,14 @@
 				28BE7C801A41353D00F3BC2A /* FindSearchViewController.swift in Sources */,
 				28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
+				28B9CEA51A49A97E004E6386 /* AboutMeModifyTextViewController.swift in Sources */,
 				289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */,
 				28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
 				289255901A3EEEB90056606F /* LCYCommon.swift in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
 				28EE4D221A493949008F9F87 /* AboutMeHeaderCell.swift in Sources */,
+				285EC3711A49D76000E2FE70 /* AboutMeModifyGenderController.swift in Sources */,
 				287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
 				287EDFE61A403928005B6A57 /* FindCircleAddNewViewController.swift in Sources */,

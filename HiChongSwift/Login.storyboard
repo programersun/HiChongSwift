@@ -43,10 +43,10 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9C-V6-eMS">
                                             <rect key="frame" x="8" y="16" width="584" height="44"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginPhone" translatesAutoresizingMaskIntoConstraints="NO" id="cEs-fs-EPP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LoginPhone" translatesAutoresizingMaskIntoConstraints="NO" id="cEs-fs-EPP">
                                                     <rect key="frame" x="8" y="9" width="25" height="25"/>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-Ql-HbH">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pdo-Ql-HbH">
                                                     <rect key="frame" x="41" y="7" width="535" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="DuS-E4-RuT"/>
@@ -240,6 +240,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
+                                            <action selector="textFieldEditingChanged:" destination="9Hv-XR-mMf" eventType="editingChanged" id="OgC-G8-Vm1"/>
                                             <outlet property="delegate" destination="9Hv-XR-mMf" id="UlE-A0-hgW"/>
                                         </connections>
                                     </textField>

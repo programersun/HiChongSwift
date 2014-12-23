@@ -150,7 +150,7 @@ class RegisterDetailViewController: UIViewController {
         let parameter = ["user_name": detailUserInfo.LoginName!,
             "password": detailUserInfo.UserPassword!,
             "nick_name": detailUserInfo.nickName!,
-            "town": detailUserInfo.Town!.region_id,
+            "town": detailUserInfo.Town != nil ? detailUserInfo.Town!.region_id: "0",
             "city": detailUserInfo.City!.region_id,
             "province": detailUserInfo.Province!.region_id,
             "sex": detailUserInfo.Gender == .male ? "0" : "1"
@@ -198,23 +198,23 @@ extension RegisterDetailViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if textField.tag == RegisterDetailTextFieldTag.name.rawValue {
-            let newText = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
-            detailUserInfo.nickName = newText
-        }
-        return true
+    @IBAction func textFieldEditingChanged(sender: UITextField) {
+        detailUserInfo.nickName = sender.text
     }
 }
 
 extension RegisterDetailViewController: RegionPickerViewControllerDelegate{
-    func regionDoneButtonPressed(province: Region, city: Region, town: Region) {
+    func regionDoneButtonPressed(province: Region, city: Region, town: Region?) {
         regionPickerShown = false
         detailUserInfo.Province = province
         detailUserInfo.City = city
         detailUserInfo.Town = town
         
-        regionTextField.text = "\(province.region_name) \(city.region_name) \(town.region_name)"
+        if let town = town {
+            regionTextField.text = "\(province.region_name) \(city.region_name) \(town.region_name)"
+        } else {
+            regionTextField.text = "\(province.region_name) \(city.region_name)"
+        }
     }
 }
 

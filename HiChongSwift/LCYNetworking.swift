@@ -13,6 +13,8 @@ enum LCYApi: String {
     case UserAuthcode               = "User/register_authcode"
     case UserRegister               = "User/register"
     case UserGetInfo                = "User/getUserInfoByID"
+    case UserModifySingle           = "User/modifySingleProperty"
+    case UserModifyLocation         = "User/modifyLocation"
 }
 
 enum LCYMimeType: String {
