@@ -7,11 +7,16 @@
 //
 
 
-enum LCYApi : String {
+enum LCYApi: String {
     case SquareGetSquareCategory    = "Square/getSquareCategory"
     case UserLogin                  = "User/login"
     case UserAuthcode               = "User/register_authcode"
     case UserRegister               = "User/register"
+    case UserGetInfo                = "User/getUserInfoByID"
+}
+
+enum LCYMimeType: String {
+    case PNG                        = "image/png"
 }
 
 class LCYNetworking {
@@ -29,6 +34,27 @@ class LCYNetworking {
         manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
         let absoluteURL = hostURL + Api.rawValue
         manager.POST(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
+            println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
+            if let unwrappedSuccess = success {
+                unwrappedSuccess(object: object as NSDictionary)
+            }
+        }) { (operation, error) -> Void in
+            println("error \(error)")
+            if let unwrappedFailure = failure {
+                unwrappedFailure(error: error)
+            }
+        }
+    }
+    
+    func POSTFile(Api: LCYApi, parameters: NSDictionary!, fileKey: String!, fileData: NSData!, fileName: String!, mimeType: LCYMimeType, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError) -> Void)?) {
+        let manager = AFHTTPRequestOperationManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        let absoluteURL = hostURL + Api.rawValue
+        manager.POST(absoluteURL, parameters: parameters, constructingBodyWithBlock: { (formData: AFMultipartFormData!) -> Void in
+            formData.appendPartWithFileData(fileData, name: fileKey, fileName: fileName, mimeType: mimeType.rawValue)
+            return
+        }, success: { (operation, object) -> Void in
             println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
             if let unwrappedSuccess = success {
                 unwrappedSuccess(object: object as NSDictionary)

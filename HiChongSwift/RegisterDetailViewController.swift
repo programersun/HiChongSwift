@@ -122,12 +122,14 @@ class RegisterDetailViewController: UIViewController {
     }
     
     @IBAction func avatarTapped(sender: AnyObject) {
+        clearScreen()
         let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "从照片库选取", "用相机拍照", "取消")
         actionSheet.destructiveButtonIndex = 2
         actionSheet.showInView(self.view)
     }
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
+        clearScreen()
         // 检查数据是否完善
         if let nickname = detailUserInfo.nickName {
         } else {
@@ -145,24 +147,35 @@ class RegisterDetailViewController: UIViewController {
             return
         }
         // 信息完善
-//        @{@"user_name"       : [LCYGlobal sharedInstance].registerUserPhone,
-//            @"password"        : [[LCYCommon sharedInstance] takePassword],
-//            @"nick_name"       : self.nameTextField.text,
-//            @"town"            : [NSNumber numberWithInteger:self.regionTown],
-//            @"city"            : [NSNumber numberWithInteger:self.regionCity],
-//            @"province"        : [NSNumber numberWithInteger:self.regionProvince],
-//            //                                     @"city"            : [NSNumber numberWithInteger:self.regionResult],
-//            @"sex"             : self.currentGender == RegisterDetailGenderMale ? @"0" : @"1",
-//            @"Filedata"        : self.avatarData};
-        let parameter = ["user_name": detailUserInfo.LoginName,
-            "password": detailUserInfo.UserPassword,
-            "nick_name": detailUserInfo.nickName,
-            "town": detailUserInfo.Town?.region_id,
-            "city": detailUserInfo.City?.region_id,
-            "province": detailUserInfo.Province?.region_id,
-            "sex": detailUserInfo.Gender == .male ? "0" : "1",
-            "Filedata": detailUserInfo.ImageData
+        let parameter = ["user_name": detailUserInfo.LoginName!,
+            "password": detailUserInfo.UserPassword!,
+            "nick_name": detailUserInfo.nickName!,
+            "town": detailUserInfo.Town!.region_id,
+            "city": detailUserInfo.City!.region_id,
+            "province": detailUserInfo.Province!.region_id,
+            "sex": detailUserInfo.Gender == .male ? "0" : "1"
         ]
+        showHUDWithTips("正在提交注册信息")
+        LCYNetworking.sharedInstance.POSTFile(LCYApi.UserRegister, parameters: parameter, fileKey: "Filedata", fileData: detailUserInfo.ImageData, fileName: "uploadImage.png", mimeType: LCYMimeType.PNG, success: { [weak self](object) -> Void in
+            self?.hideHUD()
+            let result = object["result"]?.boolValue
+            if let login = result {
+                if login {
+                     // 注册成功
+                    let name = object["user_name"]!.stringValue
+                    LCYCommon.sharedInstance.login(name)
+                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    appDelegate.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController)
+                } else {
+                    self?.alert("注册失败")
+                }
+            }
+            return
+        }) { [weak self] (error) -> Void in
+            self?.hideHUD()
+            self?.alert("注册失败")
+        }
     }
     
 }
@@ -213,12 +226,12 @@ extension RegisterDetailViewController: UIActionSheetDelegate {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+            presentViewController(imagePicker, animated: true, completion: nil)
         case 1:
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+            presentViewController(imagePicker, animated: true, completion: nil)
             // 从相机拍照
             break
         default:
@@ -230,13 +243,14 @@ extension RegisterDetailViewController: UIActionSheetDelegate {
 extension RegisterDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
-        self.showHUDWithTips("处理中")
+        view.setNeedsLayout()
+        showHUDWithTips("处理中")
         
         let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 300, height: 300))
         detailUserInfo.ImageData = UIImagePNGRepresentation(smallImage)
         avatarImageView.image = smallImage
         
         // 处理上传之后，隐藏HUD
-        self.hideHUD()
+        hideHUD()
     }
 }

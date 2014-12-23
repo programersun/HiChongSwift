@@ -125,27 +125,28 @@ class LoginViewController: UITableViewController {
     }
     
     private func register() {
-//        if userInfo.LoginName == nil {
-//            alert("请输入手机号")
-//            return
-//        }
-//        if userInfo.UserPassword == nil {
-//            alert("请输入6-18位的密码")
-//            return
-//        }
-//        if let unwrapped = userInfo.UserPassword {
-//            if (unwrapped as NSString).length < 6 || (unwrapped as NSString).length > 18 {
-//                alert("请输入6-18位的密码")
-//                return
-//            }
-//        }
-//        if userInfo.AuthCode == nil {
-//            alert("请输入验证码")
-//            return
-//        }
-//        if userInfo.AuthCode != userInfo.RetrievedAuthCode {
-//            alert("验证码错误")
-//        }
+        if userInfo.LoginName == nil {
+            alert("请输入手机号")
+            return
+        }
+        if userInfo.UserPassword == nil {
+            alert("请输入6-18位的密码")
+            return
+        }
+        if let unwrapped = userInfo.UserPassword {
+            if (unwrapped as NSString).length < 6 || (unwrapped as NSString).length > 18 {
+                alert("请输入6-18位的密码")
+                return
+            }
+        }
+        if userInfo.AuthCode == nil {
+            alert("请输入验证码")
+            return
+        }
+        if userInfo.AuthCode != userInfo.RetrievedAuthCode {
+            alert("验证码错误")
+            return
+        }
         // 验证成功，跳到下一步填写详细信息
         self.performSegueWithIdentifier("showDetail", sender: nil)
     }

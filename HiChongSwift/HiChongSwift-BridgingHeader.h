@@ -19,3 +19,6 @@
 
 // User/Login
 #import "UserLoginBaseClass.h"
+
+// User/getUserInfoByID
+#import "GetUserInfo.h"

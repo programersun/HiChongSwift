@@ -79,10 +79,24 @@ class LCYCommon {
         }
     }
     
+    /**
+    登录账号
+    
+    :param: userName 账户名（id，不是电话号码哦）
+    */
     func login(userName: String) {
         let userDefault = NSUserDefaults.standardUserDefaults()
         userDefault.setObject(userName, forKey: UserDefaultKeys.kUserName.rawValue)
         userDefault.setBool(true, forKey: UserDefaultKeys.kUserLogin.rawValue)
         userDefault.synchronize()
+    }
+    
+    /// 用户名（需要先验证用户是否已经登录）
+    var userName: String? {
+        get {
+            let userDefault = NSUserDefaults.standardUserDefaults()
+            let name = userDefault.objectForKey(UserDefaultKeys.kUserName.rawValue) as String?
+            return name
+        }
     }
 }

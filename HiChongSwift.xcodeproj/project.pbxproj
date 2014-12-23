@@ -47,6 +47,10 @@
 		28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */; };
 		28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */; };
 		28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */; };
+		289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FA34C1A493FDE0097485C /* AboutMeLikeCell.swift */; };
+		289FA3511A4952E40097485C /* AboutMePetHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289FA3501A4952E40097485C /* AboutMePetHeaderView.xib */; };
+		289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FA3521A4955DD0097485C /* AboutMePetCell.swift */; };
+		289FA3551A4964D10097485C /* AboutMeFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289FA3541A4964D10097485C /* AboutMeFooter.xib */; };
 		28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */; };
 		28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */; };
 		28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */; };
@@ -75,6 +79,10 @@
 		28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */; };
 		28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */; };
 		28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */; };
+		28EE4D1E1A49361D008F9F87 /* GetUserInfoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D191A49361D008F9F87 /* GetUserInfoBase.m */; };
+		28EE4D1F1A49361D008F9F87 /* GetUserInfoPetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D1B1A49361D008F9F87 /* GetUserInfoPetInfo.m */; };
+		28EE4D201A49361D008F9F87 /* GetUserInfoUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D1D1A49361D008F9F87 /* GetUserInfoUserInfo.m */; };
+		28EE4D221A493949008F9F87 /* AboutMeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D211A493949008F9F87 /* AboutMeHeaderCell.swift */; };
 		28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */; };
 		28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */; };
 		BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */; };
@@ -138,6 +146,10 @@
 		28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtensions.swift; sourceTree = "<group>"; };
 		28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentViewController.swift; sourceTree = "<group>"; };
 		28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddStarCell.swift; sourceTree = "<group>"; };
+		289FA34C1A493FDE0097485C /* AboutMeLikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeLikeCell.swift; sourceTree = "<group>"; };
+		289FA3501A4952E40097485C /* AboutMePetHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMePetHeaderView.xib; sourceTree = "<group>"; };
+		289FA3521A4955DD0097485C /* AboutMePetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMePetCell.swift; sourceTree = "<group>"; };
+		289FA3541A4964D10097485C /* AboutMeFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMeFooter.xib; sourceTree = "<group>"; };
 		28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindAddImageCell.swift; sourceTree = "<group>"; };
 		28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCatalogViewController.swift; sourceTree = "<group>"; };
 		28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCatalogCell.swift; sourceTree = "<group>"; };
@@ -178,6 +190,14 @@
 		28E5B4CD1A397667009951FF /* LCYGetSquareCategoryResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYGetSquareCategoryResult.h; sourceTree = "<group>"; };
 		28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYGetSquareCategoryResult.m; sourceTree = "<group>"; };
 		28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		28EE4D171A49361D008F9F87 /* GetUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfo.h; sourceTree = "<group>"; };
+		28EE4D181A49361D008F9F87 /* GetUserInfoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoBase.h; sourceTree = "<group>"; };
+		28EE4D191A49361D008F9F87 /* GetUserInfoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoBase.m; sourceTree = "<group>"; };
+		28EE4D1A1A49361D008F9F87 /* GetUserInfoPetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoPetInfo.h; sourceTree = "<group>"; };
+		28EE4D1B1A49361D008F9F87 /* GetUserInfoPetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoPetInfo.m; sourceTree = "<group>"; };
+		28EE4D1C1A49361D008F9F87 /* GetUserInfoUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoUserInfo.h; sourceTree = "<group>"; };
+		28EE4D1D1A49361D008F9F87 /* GetUserInfoUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoUserInfo.m; sourceTree = "<group>"; };
+		28EE4D211A493949008F9F87 /* AboutMeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeHeaderCell.swift; sourceTree = "<group>"; };
 		28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareMainButtonCell.swift; sourceTree = "<group>"; };
 		28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareSmallButtonCell.swift; sourceTree = "<group>"; };
 		3FDA3B0316BD51D4638A11E8 /* Pods-HiChongSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChongSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiChongSwift/Pods-HiChongSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -315,7 +335,13 @@
 		28876B1F1A429DC10002F635 /* AboutMe */ = {
 			isa = PBXGroup;
 			children = (
+				28EE4D161A493614008F9F87 /* Model */,
 				28876B201A429DDA0002F635 /* AboutMeViewController.swift */,
+				28EE4D211A493949008F9F87 /* AboutMeHeaderCell.swift */,
+				289FA34C1A493FDE0097485C /* AboutMeLikeCell.swift */,
+				289FA3521A4955DD0097485C /* AboutMePetCell.swift */,
+				289FA3501A4952E40097485C /* AboutMePetHeaderView.xib */,
+				289FA3541A4964D10097485C /* AboutMeFooter.xib */,
 			);
 			name = AboutMe;
 			sourceTree = "<group>";
@@ -443,6 +469,20 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		28EE4D161A493614008F9F87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28EE4D171A49361D008F9F87 /* GetUserInfo.h */,
+				28EE4D181A49361D008F9F87 /* GetUserInfoBase.h */,
+				28EE4D191A49361D008F9F87 /* GetUserInfoBase.m */,
+				28EE4D1A1A49361D008F9F87 /* GetUserInfoPetInfo.h */,
+				28EE4D1B1A49361D008F9F87 /* GetUserInfoPetInfo.m */,
+				28EE4D1C1A49361D008F9F87 /* GetUserInfoUserInfo.h */,
+				28EE4D1D1A49361D008F9F87 /* GetUserInfoUserInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		2A41A38E2915F355616F7D28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2834C4491A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite in Resources */,
+				289FA3551A4964D10097485C /* AboutMeFooter.xib in Resources */,
 				2802C99B1A2F5151001130ED /* Main.storyboard in Resources */,
 				28C166361A36BFDF0090E061 /* Square.storyboard in Resources */,
 				28C6DACA1A2FFDF600068848 /* MJRefresh.bundle in Resources */,
@@ -554,6 +595,7 @@
 				2802C99D1A2F5151001130ED /* Images.xcassets in Resources */,
 				28876B2A1A42BACB0002F635 /* Login.storyboard in Resources */,
 				28876B231A429E760002F635 /* Welcome.storyboard in Resources */,
+				289FA3511A4952E40097485C /* AboutMePetHeaderView.xib in Resources */,
 				28C166341A36BFD50090E061 /* Wiki.storyboard in Resources */,
 				28C166321A36BFC30090E061 /* Find.storyboard in Resources */,
 			);
@@ -621,10 +663,13 @@
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */,
+				28EE4D1F1A49361D008F9F87 /* GetUserInfoPetInfo.m in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
 				28BE7C821A41554200F3BC2A /* FindSearchResultViewController.swift in Sources */,
+				289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
+				28EE4D1E1A49361D008F9F87 /* GetUserInfoBase.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
@@ -640,6 +685,7 @@
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				28BE7C841A4157FC00F3BC2A /* FindSearchResultCell.swift in Sources */,
+				28EE4D201A49361D008F9F87 /* GetUserInfoUserInfo.m in Sources */,
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
@@ -651,10 +697,12 @@
 				28BE7C801A41353D00F3BC2A /* FindSearchViewController.swift in Sources */,
 				28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
+				289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */,
 				28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
 				289255901A3EEEB90056606F /* LCYCommon.swift in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
+				28EE4D221A493949008F9F87 /* AboutMeHeaderCell.swift in Sources */,
 				287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
 				287EDFE61A403928005B6A57 /* FindCircleAddNewViewController.swift in Sources */,

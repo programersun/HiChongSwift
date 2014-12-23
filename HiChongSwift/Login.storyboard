@@ -311,6 +311,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4Z-WT-fgF">
+                                <rect key="frame" x="226" y="548" width="148" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dBW-FD-Obe"/>
+                                </constraints>
+                                <state key="normal" image="LicenceButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjn-Qe-h5I">
                                 <rect key="frame" x="8" y="305" width="584" height="44"/>
                                 <constraints>
@@ -348,15 +357,6 @@
                                     <outletCollection property="gestureRecognizers" destination="4uU-VZ-pgu" appends="YES" id="3l9-de-Xdf"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4Z-WT-fgF">
-                                <rect key="frame" x="226" y="548" width="148" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="dBW-FD-Obe"/>
-                                </constraints>
-                                <state key="normal" image="LicenceButton">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -364,7 +364,7 @@
                             <constraint firstItem="9Th-NJ-S0D" firstAttribute="leading" secondItem="V8v-B1-Tl6" secondAttribute="leading" constant="8" id="BOy-xN-V1J"/>
                             <constraint firstAttribute="trailing" secondItem="SIC-89-f2F" secondAttribute="trailing" id="FSj-2Q-RCp"/>
                             <constraint firstAttribute="centerX" secondItem="3I4-PE-xwm" secondAttribute="centerX" id="GyK-Rc-fBM"/>
-                            <constraint firstItem="Nhh-gv-qki" firstAttribute="top" secondItem="SIC-89-f2F" secondAttribute="bottom" id="I3A-Sw-mA2"/>
+                            <constraint firstItem="Nhh-gv-qki" firstAttribute="bottom" secondItem="SIC-89-f2F" secondAttribute="bottom" id="I3A-Sw-mA2"/>
                             <constraint firstAttribute="trailing" secondItem="Yjn-Qe-h5I" secondAttribute="trailing" constant="8" id="OkR-Me-NPl"/>
                             <constraint firstItem="SIC-89-f2F" firstAttribute="leading" secondItem="V8v-B1-Tl6" secondAttribute="leading" id="PL1-Sm-d5T"/>
                             <constraint firstItem="9Th-NJ-S0D" firstAttribute="top" secondItem="dXU-VJ-Gyw" secondAttribute="bottom" constant="12" id="QnC-QY-xk0"/>
@@ -427,7 +427,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="224"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-cs-GDR">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Fhp-cs-GDR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="V4J-Lb-YH5"/>
