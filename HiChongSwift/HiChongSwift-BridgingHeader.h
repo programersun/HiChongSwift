@@ -22,3 +22,6 @@
 
 // User/getUserInfoByID
 #import "GetUserInfo.h"
+
+// Pet/GetPetDetailByID
+#import "LCYPetDetail.h"

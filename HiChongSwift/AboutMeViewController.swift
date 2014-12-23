@@ -105,6 +105,12 @@ class AboutMeViewController: UITableViewController {
             case "showEdit":
                 let destination = segue.destinationViewController as AboutMeEditProfileViewController
                 destination._userInfo = userInfo?.userInfo
+            case "showMoePet":
+                let destination = segue.destinationViewController as MoePetViewController
+                if let indexPath = tableView.indexPathForSelectedRow() {
+                    let petInfo = userInfo?.petInfo[indexPath.row] as? GetUserInfoPetInfo
+                    destination.petId = petInfo?.petId
+                }
             default:
                 break
             }
@@ -264,8 +270,8 @@ class AboutMeViewController: UITableViewController {
             let cell = cell as AboutMePetCell
             let info = userInfo?.petInfo[indexPath.row] as GetUserInfoPetInfo
             cell.avatarImagePath = info.headImage.toAbsolutePath()
-            cell.detailText = " \(info.age.toAge()) \(info.petName) "
-            cell.gender = info.petSex == "1" ? .Male : .Female
+            cell.detailText = " \(info.age.toAge()) \(info.name) "
+            cell.gender = info.petSex == "0" ? .Male : .Female
             cell.nameText = info.petName
             cell.statusLable(breeding: info.fHybridization == "1", adopt: info.fAdopt == "1", entrust: info.isEntrust == "1")
         default:
@@ -305,6 +311,12 @@ class AboutMeViewController: UITableViewController {
             return 30.0
         default:
             return 0.0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 3 {
+            self.performSegueWithIdentifier("showMoePet", sender: nil)
         }
     }
 }
