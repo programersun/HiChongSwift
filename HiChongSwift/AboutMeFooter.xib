@@ -16,13 +16,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsp-ei-xl2">
-                    <rect key="frame" x="8" y="285" width="584" height="30"/>
+                    <rect key="frame" x="8" y="280" width="584" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="orS-9p-UEd"/>
+                        <constraint firstAttribute="height" constant="40" id="orS-9p-UEd"/>
                     </constraints>
                     <state key="normal" image="AddPetButton">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addPetButtonPressed:" destination="-1" eventType="touchUpInside" id="2ku-6E-QLD"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

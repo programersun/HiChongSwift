@@ -33,6 +33,13 @@ class AboutMeViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        let rightButton = UIButton()
+        rightButton.setImage(UIImage(named: "ProfileEditButton"), forState: UIControlState.Normal)
+        rightButton.addTarget(self, action: "rightButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        rightButton.sizeToFit()
+        let rightItem = UIBarButtonItem(customView: rightButton)
+        navigationItem.rightBarButtonItem = rightItem
+        
         
         let nib = UINib(nibName: "AboutMePetHeaderView", bundle: nil)
         clawHeaderView = nib.instantiateWithOwner(self, options: nil).first as UIView?
@@ -44,7 +51,7 @@ class AboutMeViewController: UITableViewController {
         addPetView = addPetNib.instantiateWithOwner(self, options: nil).first as UIView?
         addPetButton.layer.cornerRadius = 4.0
         addPetButton.backgroundColor = UIColor.LCYThemeOrange()
-        addPetView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: 44.0)
+        addPetView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: 60.0)
         addPetView.backgroundColor = UIColor.LCYThemeColor()
         
         navigationItem.title = ""
@@ -90,6 +97,28 @@ class AboutMeViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showEdit":
+                let destination = segue.destinationViewController as AboutMeEditProfileViewController
+                destination.userInfo = userInfo?.userInfo
+            default:
+                break
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func addPetButtonPressed(sender: AnyObject) {
+        println("123")
+    }
+    
+    func rightButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("showEdit", sender: nil)
     }
     
     // MARK: - Table view data source

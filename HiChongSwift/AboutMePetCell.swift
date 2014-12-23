@@ -95,7 +95,7 @@ class AboutMePetCell: UITableViewCell {
         if breeding {
             for breedingImageView in statusImageViews {
                 if breedingImageView.tag == index {
-                    breedingImageView.image = UIImage(named: "findSearch_03")
+                    breedingImageView.image = UIImage(named: "petBredding")
                     break
                 }
             }
@@ -104,7 +104,7 @@ class AboutMePetCell: UITableViewCell {
         if adopt {
             for breedingImageView in statusImageViews {
                 if breedingImageView.tag == index {
-                    breedingImageView.image = UIImage(named: "findSearch_04")
+                    breedingImageView.image = UIImage(named: "petAdopt")
                     break
                 }
             }
@@ -113,7 +113,7 @@ class AboutMePetCell: UITableViewCell {
         if entrust {
             for breedingImageView in statusImageViews {
                 if breedingImageView.tag == index {
-                    breedingImageView.image = UIImage(named: "findSearch_05")
+                    breedingImageView.image = UIImage(named: "petEntrust")
                     break
                 }
             }
