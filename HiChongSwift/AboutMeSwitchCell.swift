@@ -16,6 +16,15 @@ class AboutMeSwitchCell: UITableViewCell {
         }
     }
     
+    var indexPath: NSIndexPath?
+    weak var delegate: AboutMeSwitchCellDelegate?
+    
+    @IBAction private func switchStatusChanged(sender: UISwitch) {
+        if let indexPath = indexPath {
+            delegate?.switchStatusChanged(indexPath, isOn: sender.on)
+        }
+    }
+    
     @IBOutlet weak var icyMajorLabel: UILabel!
     @IBOutlet private weak var icyMinorLabel: UILabel!
     @IBOutlet private weak var icySwitch: UISwitch!
@@ -54,4 +63,8 @@ class AboutMeSwitchCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+protocol AboutMeSwitchCellDelegate: class {
+    func switchStatusChanged(indexPath: NSIndexPath, isOn: Bool)
 }

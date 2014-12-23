@@ -42,29 +42,45 @@ class AboutMeEditProfileViewController: UITableViewController {
     // MARK: - Actions
     func rightButtonPressed(sender: AnyObject) {
         showHUDWithTips("正在提交")
-//        let parameters = [
-//            "user_name" : LCYCommon.sharedInstance.userName,
-//            "nick_name" : userInfo.userName,
-//            "sex"       : userInfo.sex,
-//            "town"      : userInfo.town,
-//            "city"      : userInfo.city,
-//            "province"  : userInfo.province,
-//            "email"     : userInfo.email != nil ? userInfo.email : "",
-//            "address"   : userInfo.address != nil ? userInfo.address : "",
-//            "tip"       : userInfo.tip != nil ? userInfo.tip : "",
-//            "qq"        : userInfo.qq != nil ? userInfo.qq : "",
-//            "telephone" : userInfo.telephone != nil ? userInfo.telephone : "",
-//            "wechat"    : userInfo.wechat != nil ? userInfo.wechat : "",
-//            "weibo"     : userInfo.weibo != nil ? userInfo.weibo : "",
-//            "f_qq"      : userInfo.fQq,
-//            "f_telephone": userInfo.fTelephone,
-//            "f_wechat"  : userInfo.fWechat,
-//            "f_weibo"   : userInfo.fWeibo,
-//            "f_cellphone": userInfo.fCellphone,
-//            "f_address" : userInfo.fAddress,
-//            "f_location": userInfo.fLocation,
-//            "f_tip"     : userInfo.fTip
-//        ]
+        let parameters: [String: String!] = [
+            "user_name" : LCYCommon.sharedInstance.userName,
+            "nick_name" : userInfo.nickName,
+            "sex"       : userInfo.sex,
+            "town"      : userInfo.town,
+            "city"      : userInfo.city,
+            "province"  : userInfo.province,
+            "email"     : userInfo.email != nil ? userInfo.email : "",
+            "address"   : userInfo.address != nil ? userInfo.address : "",
+            "tip"       : userInfo.tip != nil ? userInfo.tip : "",
+            "qq"        : userInfo.qq != nil ? userInfo.qq : "",
+            "telephone" : userInfo.telephone != nil ? userInfo.telephone : "",
+            "wechat"    : userInfo.wechat != nil ? userInfo.wechat : "",
+            "weibo"     : userInfo.weibo != nil ? userInfo.weibo : "",
+            "f_qq"      : userInfo.fQq,
+            "f_telephone": userInfo.fTelephone,
+            "f_wechat"  : userInfo.fWechat,
+            "f_weibo"   : userInfo.fWeibo,
+            "f_cellphone": userInfo.fCellphone,
+            "f_address" : userInfo.fAddress,
+            "f_location": userInfo.fLocation,
+            "f_tip"     : userInfo.fTip
+        ]
+        LCYNetworking.sharedInstance.POST(LCYApi.UserModifyInfo, parameters: parameters,
+            success: { [weak self] (object) -> Void in
+                if let result = object["result"]?.boolValue {
+                    if result {
+                        self?.alertWithDelegate("修改成功", tag: 9001, delegate: self)
+                    } else {
+                        self?.alert("修改失败")
+                    }
+                } else {
+                    self?.alert("修改失败")
+                }
+                
+                return
+            }) { [weak self] (error) -> Void in
+                return
+        }
     }
     
     // MARK: - Table view data source
@@ -179,6 +195,8 @@ class AboutMeEditProfileViewController: UITableViewController {
             cell.icyMajorLabel.text = "签名"
             cell.minorText = userInfo.tip
             cell.switchOn = userInfo.fTip == "1"
+            cell.delegate = self
+            cell.indexPath = indexPath
         case 3:
             cell = tableView.dequeueReusableCellWithIdentifier(AboutMeSwitchCell.identifier()) as UITableViewCell
             switch indexPath.row % 2 {
@@ -190,6 +208,8 @@ class AboutMeEditProfileViewController: UITableViewController {
                 break
             }
             let cell = cell as AboutMeSwitchCell
+            cell.delegate = self
+            cell.indexPath = indexPath
             switch indexPath.row {
             case 0:
                 cell.icyMajorLabel.text = "QQ"
@@ -354,3 +374,40 @@ extension AboutMeEditProfileViewController: ModifyGenderDelegate {
         tableView.reloadData()
     }
 }
+
+extension AboutMeEditProfileViewController: AboutMeSwitchCellDelegate {
+    func switchStatusChanged(indexPath: NSIndexPath, isOn: Bool) {
+        let value = isOn ? "1" : "0"
+        switch indexPath.section {
+        case 2:
+            userInfo.fTip = value
+        case 3:
+            switch indexPath.row {
+            case 0:
+                userInfo.fQq = value
+            case 1:
+                userInfo.fWechat = value
+            case 2:
+                userInfo.fWeibo = value
+            case 3:
+                userInfo.fTelephone = value
+            case 4:
+                userInfo.fAddress = value
+                
+            default:
+                break
+            }
+        default:
+            break
+        }
+    }
+}
+
+extension AboutMeEditProfileViewController: UIAlertViewDelegate {
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if alertView.tag == 9001 {
+            navigationController?.popViewControllerAnimated(true)
+        }
+    }
+}
+
