@@ -30,6 +30,7 @@
 		287941AD1A49F56C00DECA50 /* LCYPetDetailPetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 287941AA1A49F56C00DECA50 /* LCYPetDetailPetInfo.m */; };
 		287941AF1A49F74700DECA50 /* MoePetHeaderReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287941AE1A49F74700DECA50 /* MoePetHeaderReusable.swift */; };
 		287941B11A4A017100DECA50 /* MoePetImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287941B01A4A017100DECA50 /* MoePetImageCell.swift */; };
+		287941B31A4A048B00DECA50 /* AddEditPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287941B21A4A048B00DECA50 /* AddEditPetViewController.swift */; };
 		287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */; };
 		287EDFE01A3FD461005B6A57 /* FindCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */; };
 		287EDFE21A3FD7C9005B6A57 /* FindCircleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287EDFE11A3FD7C9005B6A57 /* FindCircleHeader.xib */; };
@@ -144,6 +145,7 @@
 		287941AA1A49F56C00DECA50 /* LCYPetDetailPetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYPetDetailPetInfo.m; sourceTree = "<group>"; };
 		287941AE1A49F74700DECA50 /* MoePetHeaderReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoePetHeaderReusable.swift; sourceTree = "<group>"; };
 		287941B01A4A017100DECA50 /* MoePetImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoePetImageCell.swift; sourceTree = "<group>"; };
+		287941B21A4A048B00DECA50 /* AddEditPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditPetViewController.swift; sourceTree = "<group>"; };
 		287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleViewController.swift; sourceTree = "<group>"; };
 		287EDFE11A3FD7C9005B6A57 /* FindCircleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindCircleHeader.xib; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				287941A11A49EC8B00DECA50 /* MoePetViewController.swift */,
 				287941AE1A49F74700DECA50 /* MoePetHeaderReusable.swift */,
 				287941B01A4A017100DECA50 /* MoePetImageCell.swift */,
+				287941B21A4A048B00DECA50 /* AddEditPetViewController.swift */,
 			);
 			name = MoePet;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
 				28B9CEA51A49A97E004E6386 /* AboutMeModifyTextViewController.swift in Sources */,
 				289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */,
+				287941B31A4A048B00DECA50 /* AddEditPetViewController.swift in Sources */,
 				287941AD1A49F56C00DECA50 /* LCYPetDetailPetInfo.m in Sources */,
 				28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,

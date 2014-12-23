@@ -111,6 +111,8 @@ class AboutMeViewController: UITableViewController {
                     let petInfo = userInfo?.petInfo[indexPath.row] as? GetUserInfoPetInfo
                     destination.petId = petInfo?.petId
                 }
+            case "showAdd":
+                let destination = segue.destinationViewController as AddEditPetViewController
             default:
                 break
             }
@@ -120,7 +122,7 @@ class AboutMeViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction func addPetButtonPressed(sender: AnyObject) {
-        println("123")
+        performSegueWithIdentifier("showAdd", sender: nil)
     }
     
     func rightButtonPressed(sender: AnyObject) {
