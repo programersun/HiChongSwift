@@ -20,6 +20,7 @@ enum LCYApi: String {
     case PetGetDetail               = "Pet/GetPetDetailByID"
     case PetAllType                 = "PetStyle/searchAllTypePets"
     case PetSubType                 = "PetStyle/searchDetailByID"
+    case PetAdd                     = "Pet/petAdd"
 }
 
 enum LCYMimeType: String {
@@ -28,6 +29,7 @@ enum LCYMimeType: String {
 
 class LCYNetworking {
     private let hostURL = "http://123.57.7.88/admin/index.php/Api/"
+    private let commonURL = "http://123.57.7.88/admin/index.php/Common/Upload/ios"
     class var sharedInstance: LCYNetworking {
         struct Singleton {
             static let instance = LCYNetworking()
@@ -71,6 +73,27 @@ class LCYNetworking {
             if let unwrappedFailure = failure {
                 unwrappedFailure(error: error)
             }
+        }
+    }
+    
+    func POSTCommonFile(fileKey: String!, fileData: NSData!, fileName: String!, mimeType: LCYMimeType, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError) -> Void)?) {
+        let manager = AFHTTPRequestOperationManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        let absoluteURL = commonURL
+        manager.POST(absoluteURL, parameters: nil, constructingBodyWithBlock: { (formData: AFMultipartFormData!) -> Void in
+            formData.appendPartWithFileData(fileData, name: fileKey, fileName: fileName, mimeType: mimeType.rawValue)
+            return
+            }, success: { (operation, object) -> Void in
+                println("success in upload ====> \(operation.responseString)")
+                if let unwrappedSuccess = success {
+                    unwrappedSuccess(object: object as NSDictionary)
+                }
+            }) { (operation, error) -> Void in
+                println("error \(error)")
+                if let unwrappedFailure = failure {
+                    unwrappedFailure(error: error)
+                }
         }
     }
 }

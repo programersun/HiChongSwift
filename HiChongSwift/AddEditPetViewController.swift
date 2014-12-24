@@ -15,9 +15,9 @@ class AddEditPetViewController: UIViewController {
         case Edit
     }
     
-    enum AddPetGender {
-        case Male
-        case Female
+    enum AddPetGender: String {
+        case Male       = "0"
+        case Female     = "1"
     }
     
     @IBOutlet private weak var contentView: UIView!
@@ -66,6 +66,14 @@ class AddEditPetViewController: UIViewController {
             }
         }
     }
+    private enum avatarUploadStatus {
+        case None
+        case Uploading
+        case Failed
+        case Success
+    }
+    private var avatarBeingUploading: avatarUploadStatus = .None
+    private var avatarSaveName: String?
     // 昵称
     @IBOutlet private weak var petNameTextField: UITextField!
     // 性别
@@ -99,7 +107,18 @@ class AddEditPetViewController: UIViewController {
         }
     }
     // 年龄
-    private var age: Int?
+    private var age: Int = 0 {
+        didSet {
+            switch age {
+            case 0:
+                ageLabel.text = "小于1岁"
+            case 11:
+                ageLabel.text = "大于10岁"
+            default:
+                ageLabel.text = "\(age)岁"
+            }
+        }
+    }
     @IBOutlet private weak var ageLabel: UILabel!
     // 签名
     @IBOutlet private weak var signTextField: UITextField!
@@ -127,8 +146,6 @@ class AddEditPetViewController: UIViewController {
     }
     // 是否绑定
     @IBOutlet weak var bindSwitch: UISwitch!
-    
-    
     
     
     override func viewDidLoad() {
@@ -169,6 +186,76 @@ class AddEditPetViewController: UIViewController {
     
     // MARK: - Actions
     func addConfirmButtonPressed(sender: AnyObject) {
+        // 头像
+        switch avatarBeingUploading {
+        case .None:
+            alert("请上传头像")
+            return
+        case .Uploading:
+            alert("请等待头像上传成功")
+            return
+        case .Failed:
+            alert("头像上传失败，请重新上传")
+            return
+        case .Success:
+            break
+        }
+        
+        // 昵称
+        let text = petNameTextField.text
+        if countElements(text) <= 0 {
+            alert("请输入宠物昵称")
+            return
+        }
+        // 类型
+        if let ucategory = category {
+        } else {
+            alert("请选择宠物品种")
+            return
+        }
+        
+        var myQR: String!
+        if bindSwitch.enabled && bindSwitch.on {
+            if let qr = QRCode {
+                myQR = qr
+            } else {
+                myQR = ""
+            }
+        } else {
+            myQR = ""
+        }
+        let parameters: [String: String] = [
+            "user_id"       : LCYCommon.sharedInstance.userName!,
+            "pet_name"      : petNameTextField.text,
+            "cat_id"        : category!.catId,
+            "sex"           : petSex.rawValue,
+            "age"           : "\(age)",
+            "tip"           : signTextField.text,
+            "f_hybridization": status.breeding ? "1" : "0",
+            "f_adopt"       : status.adopt ? "1" : "0",
+            "is_entrust"    : status.entrust ? "1" : "0",
+            "pet_code"      : myQR,
+            "image"         : avatarSaveName!
+        ]
+        showHUDWithTips("正在上传宠物信息")
+        LCYNetworking.sharedInstance.POST(LCYApi.PetAdd, parameters: parameters, success: { [weak self](object) -> Void in
+            self?.hideHUD()
+            if let result = object["result"]?.boolValue {
+                if result {
+                    self?.alertWithDelegate("上传成功", tag: 3003, delegate: self)
+                } else {
+                    self?.alert("上传失败")
+                }
+            } else {
+                self?.alert("上传失败")
+            }
+            
+            return
+        }) { [weak self](error) -> Void in
+            self?.hideHUD()
+            self?.alert("上传失败，请检查您的网络状态")
+            return
+        }
         
     }
     @IBAction func ageButtonPressed(sender: AnyObject) {
@@ -221,8 +308,8 @@ class AddEditPetViewController: UIViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         if let identifier = segue.identifier {
             switch identifier {
             case "container":
@@ -272,6 +359,23 @@ extension AddEditPetViewController: UIImagePickerControllerDelegate, UINavigatio
         
         // 处理上传之后，隐藏HUD
         hideHUD()
+        
+        // 上传照片
+        avatarBeingUploading = .Uploading
+        let data = UIImagePNGRepresentation(smallImage)
+        LCYNetworking.sharedInstance.POSTCommonFile("Filedata", fileData: data, fileName: "tiancailcy.png", mimeType: LCYMimeType.PNG, success: { [weak self] (object) -> Void in
+            let resultInfo = CommonUploadBase.modelObjectWithDictionary(object)
+            if resultInfo.result {
+                self?.avatarSaveName = (resultInfo.images[0] as CommonUploadImages).savename
+                self?.avatarBeingUploading = .Success
+            } else {
+                self?.avatarBeingUploading = .Failed
+            }
+            return
+            }) { [weak self](error) -> Void in
+                self?.avatarBeingUploading = .Failed
+                return
+        }
     }
 }
 
@@ -302,14 +406,7 @@ extension AddEditPetViewController: PetCateFilterDelegate {
 
 extension AddEditPetViewController: AgePickerDelegate {
     func agePickerDidPick(age: Int) {
-        switch age {
-        case 0:
-            ageLabel.text = "小于1岁"
-        case 11:
-            ageLabel.text = "大于10岁"
-        default:
-            ageLabel.text = "\(age)岁"
-        }
+        self.age = age
         ageShown = false
     }
 }
@@ -317,5 +414,13 @@ extension AddEditPetViewController: AgePickerDelegate {
 extension AddEditPetViewController: QRScanDelegate {
     func QRCodeDidScan(info: String) {
         QRCode = info
+    }
+}
+
+extension AddEditPetViewController: UIAlertViewDelegate {
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if alertView.tag == 3003 {
+            navigationController?.popToRootViewControllerAnimated(true)
+        }
     }
 }

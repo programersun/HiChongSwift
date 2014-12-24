@@ -100,6 +100,8 @@
 		28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC51A2FFDF600068848 /* UIScrollView+Extension.m */; };
 		28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC71A2FFDF600068848 /* UIScrollView+MJRefresh.m */; };
 		28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC91A2FFDF600068848 /* UIView+Extension.m */; };
+		28E182B41A4AB0AB00E3001A /* CommonUploadBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */; };
+		28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E182B31A4AB0AB00E3001A /* CommonUploadImages.m */; };
 		28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */; };
 		28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */; };
 		28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */; };
@@ -242,6 +244,11 @@
 		28C6DAC81A2FFDF600068848 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		28C6DAC91A2FFDF600068848 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		28C6DAD81A30000200068848 /* HiChongSwift-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiChongSwift-BridgingHeader.h"; sourceTree = "<group>"; };
+		28E182AF1A4AB0AB00E3001A /* CommonUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUpload.h; sourceTree = "<group>"; };
+		28E182B01A4AB0AB00E3001A /* CommonUploadBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUploadBase.h; sourceTree = "<group>"; };
+		28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUploadBase.m; sourceTree = "<group>"; };
+		28E182B21A4AB0AB00E3001A /* CommonUploadImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUploadImages.h; sourceTree = "<group>"; };
+		28E182B31A4AB0AB00E3001A /* CommonUploadImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUploadImages.m; sourceTree = "<group>"; };
 		28E1A87B1A31898B00B19FD1 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		28E5B4CB1A397667009951FF /* LCYGetSquareCategoryListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYGetSquareCategoryListInfo.h; sourceTree = "<group>"; };
 		28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYGetSquareCategoryListInfo.m; sourceTree = "<group>"; };
@@ -434,6 +441,11 @@
 				287941A81A49F56C00DECA50 /* LCYPetDetailPetImages.m */,
 				287941A91A49F56C00DECA50 /* LCYPetDetailPetInfo.h */,
 				287941AA1A49F56C00DECA50 /* LCYPetDetailPetInfo.m */,
+				28E182AF1A4AB0AB00E3001A /* CommonUpload.h */,
+				28E182B01A4AB0AB00E3001A /* CommonUploadBase.h */,
+				28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */,
+				28E182B21A4AB0AB00E3001A /* CommonUploadImages.h */,
+				28E182B31A4AB0AB00E3001A /* CommonUploadImages.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -808,7 +820,9 @@
 				2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				287941AB1A49F56C00DECA50 /* LCYPetDetailBase.m in Sources */,
+				28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
+				28E182B41A4AB0AB00E3001A /* CommonUploadBase.m in Sources */,
 				2806FEAC1A4A62CA00D18543 /* PetSubTypeViewController.swift in Sources */,
 				28B9CEA71A49A9BB004E6386 /* AboutMeModifyTextCell.swift in Sources */,
 				2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */,

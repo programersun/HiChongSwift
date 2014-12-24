@@ -116,6 +116,7 @@ extension QRScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
         
         session?.stopRunning()
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
