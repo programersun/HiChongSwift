@@ -24,6 +24,7 @@
 		2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB41A4A677300D18543 /* PetCateFilterCell.swift */; };
 		2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */; };
 		2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */; };
+		2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEBA1A4A983300D18543 /* QRScanViewController.swift */; };
 		282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D6BE21A301B9A00942F60 /* LCYNetworking.swift */; };
 		2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */; };
 		2834C40F1A47E0A30007FE43 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C40E1A47E0A30007FE43 /* Region.swift */; };
@@ -150,6 +151,7 @@
 		2806FEB41A4A677300D18543 /* PetCateFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetCateFilterCell.swift; sourceTree = "<group>"; };
 		2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetFinalFilterViewController.swift; sourceTree = "<group>"; };
 		2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePickerViewController.swift; sourceTree = "<group>"; };
+		2806FEBA1A4A983300D18543 /* QRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
 		282D6BE21A301B9A00942F60 /* LCYNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYNetworking.swift; sourceTree = "<group>"; };
 		2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
 		2834C40E1A47E0A30007FE43 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				287941B01A4A017100DECA50 /* MoePetImageCell.swift */,
 				287941B21A4A048B00DECA50 /* AddEditPetViewController.swift */,
 				2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */,
+				2806FEBA1A4A983300D18543 /* QRScanViewController.swift */,
 			);
 			name = MoePet;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
 				28876B281A42A4050002F635 /* WelcomeSinglePageViewController.swift in Sources */,
 				2806FEAA1A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m in Sources */,
+				2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */,
 				28BE7C801A41353D00F3BC2A /* FindSearchViewController.swift in Sources */,
 				28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,

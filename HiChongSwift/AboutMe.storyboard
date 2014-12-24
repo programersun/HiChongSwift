@@ -316,6 +316,70 @@
             </objects>
             <point key="canvasLocation" x="713" y="587"/>
         </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="NlG-KC-oor">
+            <objects>
+                <viewController id="EjZ-A7-Rao" customClass="QRScanViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d3V-Vu-fvO"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ir-bG-A8h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wB1-cw-6Dc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2v-xM-djo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkK-bj-P3N">
+                                        <rect key="frame" x="200" y="100" width="200" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="CDz-95-zF9"/>
+                                            <constraint firstAttribute="width" constant="200" id="HIL-61-Sic"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kla-fb-l5j">
+                                        <rect key="frame" x="277" y="308" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="avd-yE-Pkd"/>
+                                            <constraint firstAttribute="width" constant="46" id="bQa-hT-8Av"/>
+                                        </constraints>
+                                        <state key="normal" title="取消">
+                                            <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="EjZ-A7-Rao" eventType="touchUpInside" id="HDX-jZ-0Wk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="fkK-bj-P3N" secondAttribute="centerY" constant="100" id="5eD-Ig-OuK"/>
+                                    <constraint firstAttribute="centerX" secondItem="Kla-fb-l5j" secondAttribute="centerX" id="WOI-fo-en2"/>
+                                    <constraint firstItem="Kla-fb-l5j" firstAttribute="top" secondItem="fkK-bj-P3N" secondAttribute="bottom" constant="8" id="rpc-ss-o6v"/>
+                                    <constraint firstAttribute="centerX" secondItem="fkK-bj-P3N" secondAttribute="centerX" id="vlh-Px-Llx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T2v-xM-djo" firstAttribute="top" secondItem="wB1-cw-6Dc" secondAttribute="top" id="Hle-5q-jL1"/>
+                            <constraint firstAttribute="trailing" secondItem="T2v-xM-djo" secondAttribute="trailing" id="O7D-S2-7M6"/>
+                            <constraint firstItem="T2v-xM-djo" firstAttribute="leading" secondItem="wB1-cw-6Dc" secondAttribute="leading" id="b4d-NH-x5b"/>
+                            <constraint firstItem="3ir-bG-A8h" firstAttribute="top" secondItem="T2v-xM-djo" secondAttribute="bottom" id="jm8-Oy-Rai"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="layoutView" destination="T2v-xM-djo" id="4Xs-hW-xIC"/>
+                        <outlet property="lensView" destination="fkK-bj-P3N" id="XPx-db-j5q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjP-me-Mnp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="2496"/>
+        </scene>
         <!--Add Edit Pet View Controller-->
         <scene sceneID="0GY-8j-o1g">
             <objects>
@@ -538,25 +602,25 @@
                                                             <outletCollection property="gestureRecognizers" destination="xgZ-rU-z7c" appends="YES" id="Qr7-Q6-Gqi"/>
                                                         </connections>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH2-Gq-Qoh">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NH2-Gq-Qoh">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" id="XmT-Yg-rpL"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMk-Yf-hyk">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IMk-Yf-hyk">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" id="bYz-DE-Urb"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQJ-U4-1cA">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQJ-U4-1cA">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" id="aoB-WT-s80"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-2i-Iab">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRg-2i-Iab">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" id="81m-Ik-Lae"/>
@@ -609,6 +673,7 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sid-qq-Oxa">
                                                         <rect key="frame" x="143" y="6" width="51" height="31"/>
+                                                        <color key="onTintColor" red="0.9960784912109375" green="0.58039218187332153" blue="0.49803924560546875" alpha="1" colorSpace="deviceRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否绑定？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywx-MV-L8D">
                                                         <rect key="frame" x="8" y="12" width="85" height="21"/>
@@ -689,6 +754,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="Lxz-Ju-UL5" id="WYz-BR-ibb"/>
                         <outlet property="avatarImageView" destination="73l-Zp-oB2" id="KLw-3Q-1Dj"/>
+                        <outlet property="bindSwitch" destination="sid-qq-Oxa" id="ovr-b2-PLI"/>
                         <outlet property="containerHeightConstraint" destination="hby-c3-L73" id="TkS-Bg-ai6"/>
                         <outlet property="contentView" destination="AWd-uP-gwe" id="orI-Ii-OBQ"/>
                         <outlet property="genderImageView" destination="8sU-nY-YKB" id="rBP-Jt-QdS"/>
@@ -700,6 +766,7 @@
                         <outletCollection property="roundedViews" destination="d9d-HU-wEf" collectionClass="NSMutableArray" id="p7e-Xx-NLC"/>
                         <outletCollection property="roundedViews" destination="5mm-d6-74C" collectionClass="NSMutableArray" id="yZF-gm-LmE"/>
                         <outletCollection property="roundedViews" destination="bSt-bT-Yoq" collectionClass="NSMutableArray" id="jp9-0U-RrT"/>
+                        <segue destination="EjZ-A7-Rao" kind="presentation" identifier="presentScan" id="eHG-XS-Ldh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSZ-Fx-Ba1" userLabel="First Responder" sceneMemberID="firstResponder"/>

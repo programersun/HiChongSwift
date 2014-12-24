@@ -112,7 +112,22 @@ class AddEditPetViewController: UIViewController {
     private var status = addEditStatus()
     
     // 二维码
+    private var QRCode: String? {
+        didSet {
+            if let code = QRCode {
+                if countElements(code) != 0 {
+                    bindSwitch.enabled = true
+                } else {
+                    bindSwitch.enabled = false
+                }
+            } else {
+                bindSwitch.enabled = false
+            }
+        }
+    }
     // 是否绑定
+    @IBOutlet weak var bindSwitch: UISwitch!
+    
     
     
     
@@ -143,6 +158,8 @@ class AddEditPetViewController: UIViewController {
         avatarImage = nil
         
         containerHeightConstraint.constant = 0.0
+        
+        bindSwitch.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -192,6 +209,7 @@ class AddEditPetViewController: UIViewController {
     }
     
     @IBAction func qrImageTapped(sender: AnyObject) {
+        performSegueWithIdentifier("presentScan", sender: nil)
     }
     
     @IBAction func avatarImageTapped(sender: AnyObject) {
@@ -209,6 +227,9 @@ class AddEditPetViewController: UIViewController {
             switch identifier {
             case "container":
                 let destination = segue.destinationViewController as AgePickerViewController
+                destination.delegate = self
+            case "presentScan":
+                let destination = segue.destinationViewController as QRScanViewController
                 destination.delegate = self
             default:
                 break
@@ -290,5 +311,11 @@ extension AddEditPetViewController: AgePickerDelegate {
             ageLabel.text = "\(age)岁"
         }
         ageShown = false
+    }
+}
+
+extension AddEditPetViewController: QRScanDelegate {
+    func QRCodeDidScan(info: String) {
+        QRCode = info
     }
 }
