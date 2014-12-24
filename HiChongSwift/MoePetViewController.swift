@@ -52,22 +52,44 @@ class MoePetViewController: UICollectionViewController {
         }
         
         navigationItem.title = "萌宠信息"
+        
+        if editable {
+            addRightButton("编辑", action: "editButtonPressed:")
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    
     }
     
-    /*
+    // MARK: - Actions
+    func editButtonPressed(sender: AnyObject) {
+        if detailInfo != nil {
+            performSegueWithIdentifier("showEdit", sender: nil)
+        } else {
+            alert("未能获取到宠物信息")
+        }
+    }
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showEdit":
+                let destination = segue.destinationViewController as AddEditPetViewController
+                destination.viewControllerType = .Edit
+                destination.startInfo = detailInfo
+            default:
+                break
+            }
+        }
     }
-    */
     
     // MARK: UICollectionViewDataSource
     

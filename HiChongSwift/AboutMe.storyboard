@@ -398,7 +398,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWd-uP-gwe">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="576"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9d-HU-wEf">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9d-HU-wEf">
                                                 <rect key="frame" x="8" y="8" width="177" height="177"/>
                                                 <subviews>
                                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="73l-Zp-oB2">
@@ -752,11 +752,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="900"/>
                     <connections>
+                        <outlet property="adoptImageView" destination="QYl-wB-Y4M" id="XOb-8I-8Nm"/>
                         <outlet property="ageLabel" destination="Lxz-Ju-UL5" id="WYz-BR-ibb"/>
                         <outlet property="avatarImageView" destination="73l-Zp-oB2" id="KLw-3Q-1Dj"/>
                         <outlet property="bindSwitch" destination="sid-qq-Oxa" id="ovr-b2-PLI"/>
+                        <outlet property="breedingImageView" destination="g7H-19-aUn" id="c6l-h5-n33"/>
                         <outlet property="containerHeightConstraint" destination="hby-c3-L73" id="TkS-Bg-ai6"/>
                         <outlet property="contentView" destination="AWd-uP-gwe" id="orI-Ii-OBQ"/>
+                        <outlet property="fosterImageView" destination="oW4-W5-oYp" id="5um-Mv-41x"/>
                         <outlet property="genderImageView" destination="8sU-nY-YKB" id="rBP-Jt-QdS"/>
                         <outlet property="petCateTextField" destination="ilc-HN-nmT" id="X88-ac-l3g"/>
                         <outlet property="petNameTextField" destination="Mpt-99-sWU" id="Gfa-Db-AKb"/>
@@ -796,7 +799,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="606" y="1538"/>
+            <point key="canvasLocation" x="1278" y="1639"/>
         </scene>
         <!--About Me Edit Profile View Controller-->
         <scene sceneID="C9i-m8-VnY">
@@ -1126,10 +1129,13 @@
                             <outlet property="delegate" destination="PNb-ot-sGd" id="cUW-fL-tQl"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <segue destination="8cf-Fa-yLv" kind="show" identifier="showEdit" id="7Mw-dF-Oq3"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZD-Ed-47l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="1559"/>
+            <point key="canvasLocation" x="504" y="1460"/>
         </scene>
         <!--About Me Modify Gender Controller-->
         <scene sceneID="t1a-T4-xyf">
@@ -1296,4 +1302,7 @@
         <image name="qrPlaceHolder" width="130" height="130"/>
         <image name="sqMale" width="15" height="15"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7Mw-dF-Oq3"/>
+    </inferredMetricsTieBreakers>
 </document>

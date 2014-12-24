@@ -20,6 +20,11 @@ class AddEditPetViewController: UIViewController {
         case Female     = "1"
     }
     
+    @IBOutlet weak var breedingImageView: UIImageView!
+    @IBOutlet weak var adoptImageView: UIImageView!
+    @IBOutlet weak var fosterImageView: UIImageView!
+    
+    
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var tagTextBackView: UIView!
     @IBOutlet private weak var tagTextLabel: UILabel!
@@ -28,7 +33,9 @@ class AddEditPetViewController: UIViewController {
     @IBOutlet private var roundedViews: [UIView]!
     
     @IBOutlet private weak var genderImageView: UIImageView!
+    
     var viewControllerType: AddEditPetVCType = .Add
+    var startInfo: LCYPetDetailBase?
     
     @IBOutlet private weak var avatarImageView: UIImageView!
     
@@ -152,6 +159,7 @@ class AddEditPetViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        avatarImage = nil
         
         switch viewControllerType {
         case .Add:
@@ -159,6 +167,8 @@ class AddEditPetViewController: UIViewController {
             addRightButton("确定", action: "addConfirmButtonPressed:")
         case .Edit:
             navigationItem.title = "编辑宠物"
+            addRightButton("确定", action: "editConfirmButtonPressed:")
+            loadStartInfo()
         }
         
         contentView.backgroundColor = UIColor.LCYThemeColor()
@@ -172,7 +182,6 @@ class AddEditPetViewController: UIViewController {
         
         tagTextLabel.textColor = UIColor.LCYThemeOrange()
         
-        avatarImage = nil
         
         containerHeightConstraint.constant = 0.0
         
@@ -185,6 +194,51 @@ class AddEditPetViewController: UIViewController {
     }
     
     // MARK: - Actions
+    private func loadStartInfo() {
+        if let info = startInfo {
+            // 头像
+            avatarImageView.contentMode = .ScaleAspectFill
+            avatarImageView.setImageWithURL(NSURL(string: info.petInfo.headImage.toAbsolutePath()))
+            // 昵称
+            petNameTextField.text = info.petInfo.petName
+            // 性别
+            petSex = info.petInfo.petSex == "0" ? .Male : .Female
+            // 品种
+            petCateTextField.text = info.petInfo.cateName
+            // 年龄
+            if let petAge = info.petInfo.age.toInt() {
+                age = petAge
+            }
+            // 签名
+            signTextField.text = info.petInfo.sign
+            // 三大状态
+            status.breeding = (info.petInfo.fHybridization == "1")
+            status.adopt = (info.petInfo.fAdopt == "1")
+            status.entrust = (info.petInfo.isEntrust == "1")
+            if status.breeding {
+                breedingImageView.image = UIImage(named: "breedingDown")
+                
+            } else {
+                breedingImageView.image = UIImage(named: "breedingButton")
+            }
+            if status.adopt {
+                adoptImageView.image = UIImage(named: "adoptDown")
+                
+            } else {
+                adoptImageView.image = UIImage(named: "adoptButton")
+            }
+            if status.entrust {
+                fosterImageView.image = UIImage(named: "fosterDown")
+                
+            } else {
+                fosterImageView.image = UIImage(named: "fosterButton")
+            }
+        }
+    }
+    func editConfirmButtonPressed(sender: AnyObject) {
+        println("hehe")
+    }
+    
     func addConfirmButtonPressed(sender: AnyObject) {
         // 头像
         switch avatarBeingUploading {
@@ -251,10 +305,10 @@ class AddEditPetViewController: UIViewController {
             }
             
             return
-        }) { [weak self](error) -> Void in
-            self?.hideHUD()
-            self?.alert("上传失败，请检查您的网络状态")
-            return
+            }) { [weak self](error) -> Void in
+                self?.hideHUD()
+                self?.alert("上传失败，请检查您的网络状态")
+                return
         }
         
     }
@@ -300,9 +354,14 @@ class AddEditPetViewController: UIViewController {
     }
     
     @IBAction func avatarImageTapped(sender: AnyObject) {
-        let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "我要拍照", "从照片库选取", "取消")
-        actionSheet.destructiveButtonIndex = 2
-        actionSheet.showInView(self.view)
+        switch viewControllerType {
+        case .Add:
+            let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "我要拍照", "从照片库选取", "取消")
+            actionSheet.destructiveButtonIndex = 2
+            actionSheet.showInView(self.view)
+        case .Edit:
+            alert("修改头像功能即将开放，敬请期待")
+        }
     }
     // MARK: - Navigation
     
