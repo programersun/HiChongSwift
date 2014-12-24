@@ -14,6 +14,16 @@
 		2802C99D1A2F5151001130ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2802C99C1A2F5151001130ED /* Images.xcassets */; };
 		2802C9A01A2F5151001130ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2802C99E1A2F5151001130ED /* LaunchScreen.xib */; };
 		2802C9AC1A2F5151001130ED /* HiChongSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802C9AB1A2F5151001130ED /* HiChongSwiftTests.swift */; };
+		2806FE9F1A4A5A9C00D18543 /* PetCateFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2806FE9E1A4A5A9C00D18543 /* PetCateFilter.storyboard */; };
+		2806FEA21A4A5B9800D18543 /* PetCateFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEA11A4A5B9800D18543 /* PetCateFilterViewController.swift */; };
+		2806FEA91A4A5D2200D18543 /* LCYPetAllTypeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEA61A4A5D2200D18543 /* LCYPetAllTypeBase.m */; };
+		2806FEAA1A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEA81A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m */; };
+		2806FEAC1A4A62CA00D18543 /* PetSubTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEAB1A4A62CA00D18543 /* PetSubTypeViewController.swift */; };
+		2806FEB21A4A651B00D18543 /* LCYPetSubTypeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEAF1A4A651B00D18543 /* LCYPetSubTypeBase.m */; };
+		2806FEB31A4A651B00D18543 /* LCYPetSubTypeChildStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB11A4A651B00D18543 /* LCYPetSubTypeChildStyle.m */; };
+		2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB41A4A677300D18543 /* PetCateFilterCell.swift */; };
+		2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */; };
+		2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */; };
 		282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D6BE21A301B9A00942F60 /* LCYNetworking.swift */; };
 		2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */; };
 		2834C40F1A47E0A30007FE43 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C40E1A47E0A30007FE43 /* Region.swift */; };
@@ -124,6 +134,22 @@
 		2802C9A51A2F5151001130ED /* HiChongSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiChongSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2802C9AA1A2F5151001130ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2802C9AB1A2F5151001130ED /* HiChongSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiChongSwiftTests.swift; sourceTree = "<group>"; };
+		2806FE9E1A4A5A9C00D18543 /* PetCateFilter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PetCateFilter.storyboard; sourceTree = "<group>"; };
+		2806FEA11A4A5B9800D18543 /* PetCateFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetCateFilterViewController.swift; sourceTree = "<group>"; };
+		2806FEA41A4A5D2200D18543 /* LCYPetAllType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYPetAllType.h; sourceTree = "<group>"; };
+		2806FEA51A4A5D2200D18543 /* LCYPetAllTypeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYPetAllTypeBase.h; sourceTree = "<group>"; };
+		2806FEA61A4A5D2200D18543 /* LCYPetAllTypeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYPetAllTypeBase.m; sourceTree = "<group>"; };
+		2806FEA71A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYPetAllTypeFatherStyle.h; sourceTree = "<group>"; };
+		2806FEA81A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYPetAllTypeFatherStyle.m; sourceTree = "<group>"; };
+		2806FEAB1A4A62CA00D18543 /* PetSubTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSubTypeViewController.swift; sourceTree = "<group>"; };
+		2806FEAD1A4A651B00D18543 /* LCYPetSubType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYPetSubType.h; sourceTree = "<group>"; };
+		2806FEAE1A4A651B00D18543 /* LCYPetSubTypeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYPetSubTypeBase.h; sourceTree = "<group>"; };
+		2806FEAF1A4A651B00D18543 /* LCYPetSubTypeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYPetSubTypeBase.m; sourceTree = "<group>"; };
+		2806FEB01A4A651B00D18543 /* LCYPetSubTypeChildStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCYPetSubTypeChildStyle.h; sourceTree = "<group>"; };
+		2806FEB11A4A651B00D18543 /* LCYPetSubTypeChildStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYPetSubTypeChildStyle.m; sourceTree = "<group>"; };
+		2806FEB41A4A677300D18543 /* PetCateFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetCateFilterCell.swift; sourceTree = "<group>"; };
+		2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetFinalFilterViewController.swift; sourceTree = "<group>"; };
+		2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePickerViewController.swift; sourceTree = "<group>"; };
 		282D6BE21A301B9A00942F60 /* LCYNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYNetworking.swift; sourceTree = "<group>"; };
 		2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
 		2834C40E1A47E0A30007FE43 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -276,6 +302,7 @@
 		2802C98F1A2F5151001130ED /* HiChongSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2806FEA01A4A5B7C00D18543 /* PetTypeFilter */,
 				28876B2B1A42C21F0002F635 /* Login */,
 				28876B241A42A39C0002F635 /* Welcome */,
 				28876B1F1A429DC10002F635 /* AboutMe */,
@@ -293,6 +320,7 @@
 				28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */,
 				28876B221A429E760002F635 /* Welcome.storyboard */,
 				28876B291A42BACB0002F635 /* Login.storyboard */,
+				2806FE9E1A4A5A9C00D18543 /* PetCateFilter.storyboard */,
 				28E1A87B1A31898B00B19FD1 /* MyPlayground.playground */,
 				2802C99C1A2F5151001130ED /* Images.xcassets */,
 				2802C99E1A2F5151001130ED /* LaunchScreen.xib */,
@@ -330,6 +358,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2806FEA01A4A5B7C00D18543 /* PetTypeFilter */ = {
+			isa = PBXGroup;
+			children = (
+				2806FEA11A4A5B9800D18543 /* PetCateFilterViewController.swift */,
+				2806FEAB1A4A62CA00D18543 /* PetSubTypeViewController.swift */,
+				2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */,
+				2806FEB41A4A677300D18543 /* PetCateFilterCell.swift */,
+				2806FEA31A4A5D1B00D18543 /* Model */,
+			);
+			name = PetTypeFilter;
+			sourceTree = "<group>";
+		};
+		2806FEA31A4A5D1B00D18543 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2806FEA41A4A5D2200D18543 /* LCYPetAllType.h */,
+				2806FEA51A4A5D2200D18543 /* LCYPetAllTypeBase.h */,
+				2806FEA61A4A5D2200D18543 /* LCYPetAllTypeBase.m */,
+				2806FEA71A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.h */,
+				2806FEA81A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m */,
+				2806FEAD1A4A651B00D18543 /* LCYPetSubType.h */,
+				2806FEAE1A4A651B00D18543 /* LCYPetSubTypeBase.h */,
+				2806FEAF1A4A651B00D18543 /* LCYPetSubTypeBase.m */,
+				2806FEB01A4A651B00D18543 /* LCYPetSubTypeChildStyle.h */,
+				2806FEB11A4A651B00D18543 /* LCYPetSubTypeChildStyle.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		282D6BE11A301B0F00942F60 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +416,7 @@
 				287941AE1A49F74700DECA50 /* MoePetHeaderReusable.swift */,
 				287941B01A4A017100DECA50 /* MoePetImageCell.swift */,
 				287941B21A4A048B00DECA50 /* AddEditPetViewController.swift */,
+				2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */,
 			);
 			name = MoePet;
 			sourceTree = "<group>";
@@ -657,6 +715,7 @@
 				28C166381A36BFEA0090E061 /* Sale.storyboard in Resources */,
 				2802C99D1A2F5151001130ED /* Images.xcassets in Resources */,
 				28876B2A1A42BACB0002F635 /* Login.storyboard in Resources */,
+				2806FE9F1A4A5A9C00D18543 /* PetCateFilter.storyboard in Resources */,
 				28876B231A429E760002F635 /* Welcome.storyboard in Resources */,
 				289FA3511A4952E40097485C /* AboutMePetHeaderView.xib in Resources */,
 				28C166341A36BFD50090E061 /* Wiki.storyboard in Resources */,
@@ -712,6 +771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */,
+				2806FEA21A4A5B9800D18543 /* PetCateFilterViewController.swift in Sources */,
 				28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */,
 				287EDFE41A3FED0C005B6A57 /* FindCircleListCell.swift in Sources */,
 				28B9CEA91A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift in Sources */,
@@ -719,27 +779,34 @@
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
 				28876B261A42A3AB0002F635 /* WelcomeViewController.swift in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
+				2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
 				289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */,
 				28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
+				2806FEA91A4A5D2200D18543 /* LCYPetAllTypeBase.m in Sources */,
 				28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */,
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */,
+				2806FEB31A4A651B00D18543 /* LCYPetSubTypeChildStyle.m in Sources */,
 				28EE4D1F1A49361D008F9F87 /* GetUserInfoPetInfo.m in Sources */,
 				287941AC1A49F56C00DECA50 /* LCYPetDetailPetImages.m in Sources */,
+				2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
 				28026F371A4996E10082A2EE /* AboutMeSwitchCell.swift in Sources */,
+				2806FEB21A4A651B00D18543 /* LCYPetSubTypeBase.m in Sources */,
 				28BE7C821A41554200F3BC2A /* FindSearchResultViewController.swift in Sources */,
 				289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28EE4D1E1A49361D008F9F87 /* GetUserInfoBase.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
+				2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				287941AB1A49F56C00DECA50 /* LCYPetDetailBase.m in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
+				2806FEAC1A4A62CA00D18543 /* PetSubTypeViewController.swift in Sources */,
 				28B9CEA71A49A9BB004E6386 /* AboutMeModifyTextCell.swift in Sources */,
 				2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */,
 				28876B2F1A42C8CA0002F635 /* LoginInputCell.swift in Sources */,
@@ -765,6 +832,7 @@
 				289FA3571A4972000097485C /* AboutMeEditProfileViewController.swift in Sources */,
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
 				28876B281A42A4050002F635 /* WelcomeSinglePageViewController.swift in Sources */,
+				2806FEAA1A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m in Sources */,
 				28BE7C801A41353D00F3BC2A /* FindSearchViewController.swift in Sources */,
 				28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,

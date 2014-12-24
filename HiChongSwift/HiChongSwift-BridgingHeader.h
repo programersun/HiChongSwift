@@ -25,3 +25,9 @@
 
 // Pet/GetPetDetailByID
 #import "LCYPetDetail.h"
+
+// PetStyle/searchAllTypePets
+#import "LCYPetAllType.h"
+
+// PetStyle/searchDetailByID
+#import "LCYPetSubType.h"
