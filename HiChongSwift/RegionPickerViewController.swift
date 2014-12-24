@@ -199,7 +199,7 @@ extension RegionPickerViewController: UIPickerViewDataSource, UIPickerViewDelega
             fallthrough
         case 1:
             // 改变市级区划
-            let cityID = cities![0].region_id
+            let cityID = cities![pickerView.selectedRowInComponent(1)].region_id
             let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
             let context = appDelegate.managedObjectContext!
             let fetchRequset = NSFetchRequest()
