@@ -21,6 +21,7 @@ enum LCYApi: String {
     case PetAllType                 = "PetStyle/searchAllTypePets"
     case PetSubType                 = "PetStyle/searchDetailByID"
     case PetAdd                     = "Pet/petAdd"
+    case PetUpdatePetInfo           = "Pet/updatePetInfo"
 }
 
 enum LCYMimeType: String {

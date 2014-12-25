@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjP-me-Mnp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-140" y="2496"/>
+            <point key="canvasLocation" x="298" y="2554"/>
         </scene>
         <!--Add Edit Pet View Controller-->
         <scene sceneID="0GY-8j-o1g">
@@ -671,7 +671,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPl-hv-5l5">
                                                 <rect key="frame" x="200" y="524" width="200" height="44"/>
                                                 <subviews>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sid-qq-Oxa">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sid-qq-Oxa">
                                                         <rect key="frame" x="143" y="6" width="51" height="31"/>
                                                         <color key="onTintColor" red="0.9960784912109375" green="0.58039218187332153" blue="0.49803924560546875" alpha="1" colorSpace="deviceRGB"/>
                                                     </switch>
@@ -763,6 +763,7 @@
                         <outlet property="genderImageView" destination="8sU-nY-YKB" id="rBP-Jt-QdS"/>
                         <outlet property="petCateTextField" destination="ilc-HN-nmT" id="X88-ac-l3g"/>
                         <outlet property="petNameTextField" destination="Mpt-99-sWU" id="Gfa-Db-AKb"/>
+                        <outlet property="qrImageView" destination="z3U-xV-Vwm" id="naC-y2-WQX"/>
                         <outlet property="signTextField" destination="MNx-vZ-Q5m" id="POp-C0-AY8"/>
                         <outlet property="tagTextBackView" destination="D30-9j-aTd" id="Qre-k9-FLy"/>
                         <outlet property="tagTextLabel" destination="NXg-XF-2S1" id="HUN-Wy-CbY"/>
@@ -1285,7 +1286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81H-ZA-mj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="2308"/>
+            <point key="canvasLocation" x="1311" y="2409"/>
         </scene>
     </scenes>
     <resources>

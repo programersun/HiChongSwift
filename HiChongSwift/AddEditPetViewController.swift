@@ -29,6 +29,7 @@ class AddEditPetViewController: UIViewController {
     @IBOutlet private weak var tagTextBackView: UIView!
     @IBOutlet private weak var tagTextLabel: UILabel!
     
+    @IBOutlet weak var qrImageView: UIImageView!
     
     @IBOutlet private var roundedViews: [UIView]!
     
@@ -143,6 +144,7 @@ class AddEditPetViewController: UIViewController {
             if let code = QRCode {
                 if countElements(code) != 0 {
                     bindSwitch.enabled = true
+                    qrImageView.image = UIImage(named: "qrDuostec")
                 } else {
                     bindSwitch.enabled = false
                 }
@@ -184,8 +186,6 @@ class AddEditPetViewController: UIViewController {
         
         
         containerHeightConstraint.constant = 0.0
-        
-        bindSwitch.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -233,10 +233,75 @@ class AddEditPetViewController: UIViewController {
             } else {
                 fosterImageView.image = UIImage(named: "fosterButton")
             }
+            // 二维码
+            QRCode = info.petInfo.petCode
         }
     }
     func editConfirmButtonPressed(sender: AnyObject) {
-        println("hehe")
+        if let info = startInfo {
+            // 昵称
+            let text = petNameTextField.text
+            if countElements(text) <= 0 {
+                alert("请输入宠物昵称")
+                return
+            }
+            // 二维码
+            var myQR: String!
+            if bindSwitch.enabled && bindSwitch.on {
+                if let qr = QRCode {
+                    myQR = qr
+                } else {
+                    myQR = ""
+                }
+            } else {
+                myQR = ""
+            }
+            // 类型
+            var parameters: [String: String]!
+            if let ucategory = category {
+                parameters = [
+                    "pet_id"       :info.petInfo.petId,
+                    "pet_name"      : petNameTextField.text,
+                    "cat_id"        : ucategory.catId,
+                    "sex"           : petSex.rawValue,
+                    "age"           : "\(age)",
+                    "tip"           : signTextField.text,
+                    "f_hybridization": status.breeding ? "1" : "0",
+                    "f_adopt"       : status.adopt ? "1" : "0",
+                    "is_entrust"    : status.entrust ? "1" : "0",
+                    "pet_code"      : myQR,
+                ]
+            } else {
+                parameters = [
+                    "pet_id"       :info.petInfo.petId,
+                    "pet_name"      : petNameTextField.text,
+                    "sex"           : petSex.rawValue,
+                    "age"           : "\(age)",
+                    "tip"           : signTextField.text,
+                    "f_hybridization": status.breeding ? "1" : "0",
+                    "f_adopt"       : status.adopt ? "1" : "0",
+                    "is_entrust"    : status.entrust ? "1" : "0",
+                    "pet_code"      : myQR,
+                ]
+            }
+            showHUD()
+            LCYNetworking.sharedInstance.POST(LCYApi.PetUpdatePetInfo, parameters: parameters, success: { [weak self](object) -> Void in
+                self?.hideHUD()
+                if let result = object["result"]?.boolValue {
+                    if result {
+                        self?.alertWithDelegate("修改成功", tag: 4000, delegate: self)
+                    } else {
+                        self?.alert("修改失败")
+                    }
+                } else {
+                    self?.alert("修改失败")
+                }
+            }, failure: { [weak self](error) -> Void in
+                self?.hideHUD()
+                self?.alert("修改失败，请检查您的网络状态")
+                return
+            })
+        }
     }
     
     func addConfirmButtonPressed(sender: AnyObject) {
@@ -479,6 +544,10 @@ extension AddEditPetViewController: QRScanDelegate {
 extension AddEditPetViewController: UIAlertViewDelegate {
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if alertView.tag == 3003 {
+            // 添加成功
+            navigationController?.popToRootViewControllerAnimated(true)
+        } else if alertView.tag == 4000 {
+            // 修改成功
             navigationController?.popToRootViewControllerAnimated(true)
         }
     }
