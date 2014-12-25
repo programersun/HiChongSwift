@@ -9,6 +9,7 @@
 
 enum LCYApi: String {
     case SquareGetSquareCategory    = "Square/getSquareCategory"
+    
     case UserLogin                  = "User/login"
     case UserAuthcode               = "User/register_authcode"
     case UserRegister               = "User/register"
@@ -22,6 +23,11 @@ enum LCYApi: String {
     case PetSubType                 = "PetStyle/searchDetailByID"
     case PetAdd                     = "Pet/petAdd"
     case PetUpdatePetInfo           = "Pet/updatePetInfo"
+    
+    case WikiToday                  = "Ency/getTodayEncy"
+    case WikiIsCollect              = "Ency/is_collect"
+    case WikiCollect                = "Ency/setCollect"
+    case WikiCollectList            = "Ency/getCollectArticle"
 }
 
 enum LCYMimeType: String {
@@ -31,6 +37,13 @@ enum LCYMimeType: String {
 class LCYNetworking {
     private let hostURL = "http://123.57.7.88/admin/index.php/Api/"
     private let commonURL = "http://123.57.7.88/admin/index.php/Common/Upload/ios"
+    private let ArticleHTMLComponent = "Ency/ency_article/ency_id/"
+    
+    private enum RequestType {
+        case GET
+        case POST
+    }
+    
     class var sharedInstance: LCYNetworking {
         struct Singleton {
             static let instance = LCYNetworking()
@@ -39,19 +52,62 @@ class LCYNetworking {
     }
     
     func POST(Api: LCYApi, parameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
+        requestWith(.POST, Api: Api, parameters: parameters, success: success, failure: failure)
+    }
+    
+    func GET(Api: LCYApi, parameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
+        requestWith(.GET, Api: Api, parameters: parameters, success: success, failure: failure)
+    }
+    
+    func POSTNONEJSON(Api: LCYApi, parameters: NSDictionary!, success: ((responseString: String) -> Void)?, failure: ((error: NSError!)->Void)?) {
         let manager = AFHTTPRequestOperationManager()
-        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.responseSerializer = AFHTTPResponseSerializer()
         manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
         let absoluteURL = hostURL + Api.rawValue
         manager.POST(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
             println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
             if let unwrappedSuccess = success {
-                unwrappedSuccess(object: object as NSDictionary)
+                unwrappedSuccess(responseString: operation.responseString)
             }
-        }) { (operation, error) -> Void in
-            println("error \(error)")
-            if let unwrappedFailure = failure {
-                unwrappedFailure(error: error)
+            }) { (operation, error) -> Void in
+                println("error \(error)")
+                println("\(operation.responseString)")
+                if let unwrappedFailure = failure {
+                    unwrappedFailure(error: error)
+                }
+        }
+    }
+    
+    private func requestWith(type: RequestType, Api: LCYApi, parameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
+        let manager = AFHTTPRequestOperationManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        let absoluteURL = hostURL + Api.rawValue
+        switch type {
+        case .GET:
+            manager.GET(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
+                println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
+                if let unwrappedSuccess = success {
+                    unwrappedSuccess(object: object as NSDictionary)
+                }
+                }) { (operation, error) -> Void in
+                    println("error \(error)")
+                    if let unwrappedFailure = failure {
+                        unwrappedFailure(error: error)
+                    }
+            }
+        case .POST:
+            manager.POST(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
+                println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
+                if let unwrappedSuccess = success {
+                    unwrappedSuccess(object: object as NSDictionary)
+                }
+                }) { (operation, error) -> Void in
+                    println("error \(error)")
+                    println("\(operation.responseString)")
+                    if let unwrappedFailure = failure {
+                        unwrappedFailure(error: error)
+                    }
             }
         }
     }
@@ -64,16 +120,16 @@ class LCYNetworking {
         manager.POST(absoluteURL, parameters: parameters, constructingBodyWithBlock: { (formData: AFMultipartFormData!) -> Void in
             formData.appendPartWithFileData(fileData, name: fileKey, fileName: fileName, mimeType: mimeType.rawValue)
             return
-        }, success: { (operation, object) -> Void in
-            println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
-            if let unwrappedSuccess = success {
-                unwrappedSuccess(object: object as NSDictionary)
-            }
-        }) { (operation, error) -> Void in
-            println("error \(error)")
-            if let unwrappedFailure = failure {
-                unwrappedFailure(error: error)
-            }
+            }, success: { (operation, object) -> Void in
+                println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
+                if let unwrappedSuccess = success {
+                    unwrappedSuccess(object: object as NSDictionary)
+                }
+            }) { (operation, error) -> Void in
+                println("error \(error)")
+                if let unwrappedFailure = failure {
+                    unwrappedFailure(error: error)
+                }
         }
     }
     
@@ -96,5 +152,9 @@ class LCYNetworking {
                     unwrappedFailure(error: error)
                 }
         }
+    }
+    
+    func WikiHTMLAddress(cateID: String) -> String {
+        return "\(hostURL)\(ArticleHTMLComponent)\(cateID)"
     }
 }

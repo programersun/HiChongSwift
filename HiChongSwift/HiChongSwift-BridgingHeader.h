@@ -34,3 +34,6 @@
 
 // http://123.57.7.88/admin/index.php/Common/Upload/ios
 #import "CommonUpload.h"
+
+// Ency/getTodayEncy
+#import "WikiToday.h"
