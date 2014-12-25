@@ -18,11 +18,16 @@ class WikiCollectionListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let parameters = [
-            "p" : "2",
-            "user_name" : LCYCommon.sharedInstance.userName!
-        ]
-        LCYNetworking.sharedInstance.POST(LCYApi.WikiCollectList, parameters: parameters, success: { (object) -> Void in
+//        let parameters = [
+//            "p" : "3",
+//            "user_name" : LCYCommon.sharedInstance.userName!
+//        ]
+//        LCYNetworking.sharedInstance.POST(LCYApi.WikiCollectList, parameters: parameters, success: { (object) -> Void in
+//            return
+//        }) { (error) -> Void in
+//            return
+//        }
+        LCYNetworking.sharedInstance.POSTAndGET(LCYApi.WikiCollectList, GETParameters: ["p": "1"], POSTParameters: ["user_name": LCYCommon.sharedInstance.userName!], success: { (object) -> Void in
             return
         }) { (error) -> Void in
             return

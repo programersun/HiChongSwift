@@ -51,12 +51,26 @@ class LCYNetworking {
         return Singleton.instance
     }
     
+    func POSTAndGET(Api: LCYApi, GETParameters: [String: String]?, POSTParameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
+        var URLString = Api.rawValue
+        if let get = GETParameters {
+            URLString += "?"
+            URLString += reduce(get.keys, "", {
+                $0 + $1 + "=" + get[$1]! + "&"
+            })
+            requestWith(.POST, Api: URLString, parameters: POSTParameters, success: success, failure: failure)
+        } else {
+            if let unwrapped = failure {
+                unwrapped(error: NSError())
+            }
+        }
+    }
     func POST(Api: LCYApi, parameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
-        requestWith(.POST, Api: Api, parameters: parameters, success: success, failure: failure)
+        requestWith(.POST, Api: Api.rawValue, parameters: parameters, success: success, failure: failure)
     }
     
     func GET(Api: LCYApi, parameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
-        requestWith(.GET, Api: Api, parameters: parameters, success: success, failure: failure)
+        requestWith(.GET, Api: Api.rawValue, parameters: parameters, success: success, failure: failure)
     }
     
     func POSTNONEJSON(Api: LCYApi, parameters: NSDictionary!, success: ((responseString: String) -> Void)?, failure: ((error: NSError!)->Void)?) {
@@ -78,15 +92,16 @@ class LCYNetworking {
         }
     }
     
-    private func requestWith(type: RequestType, Api: LCYApi, parameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
+    private func requestWith(type: RequestType, Api: String, parameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFJSONResponseSerializer()
         manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
-        let absoluteURL = hostURL + Api.rawValue
+        let absoluteURL = hostURL + Api
+        println("Request: \(absoluteURL)\nwith Parameters: \(parameters)")
         switch type {
         case .GET:
             manager.GET(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
-                println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
+                println("success in \"\(Api)\" ====> \(operation.responseString)")
                 if let unwrappedSuccess = success {
                     unwrappedSuccess(object: object as NSDictionary)
                 }
@@ -98,7 +113,7 @@ class LCYNetworking {
             }
         case .POST:
             manager.POST(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
-                println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
+                println("success in \"\(Api)\" ====> \(operation.responseString)")
                 if let unwrappedSuccess = success {
                     unwrappedSuccess(object: object as NSDictionary)
                 }
