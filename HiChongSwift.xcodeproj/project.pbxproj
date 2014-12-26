@@ -108,6 +108,11 @@
 		28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC51A2FFDF600068848 /* UIScrollView+Extension.m */; };
 		28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC71A2FFDF600068848 /* UIScrollView+MJRefresh.m */; };
 		28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAC91A2FFDF600068848 /* UIView+Extension.m */; };
+		28C93AC71A4CF6DE00E1F600 /* WikiCollectListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93AC41A4CF6DE00E1F600 /* WikiCollectListBase.m */; };
+		28C93AC81A4CF6DE00E1F600 /* WikiCollectListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93AC61A4CF6DE00E1F600 /* WikiCollectListData.m */; };
+		28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C93AC91A4D0AB600E1F600 /* WikiListViewController.swift */; };
+		28C93AD01A4D47B600E1F600 /* WikiMoreBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */; };
+		28C93AD11A4D47B600E1F600 /* WikiMoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */; };
 		28E182B41A4AB0AB00E3001A /* CommonUploadBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */; };
 		28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E182B31A4AB0AB00E3001A /* CommonUploadImages.m */; };
 		28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */; };
@@ -264,6 +269,17 @@
 		28C6DAC81A2FFDF600068848 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		28C6DAC91A2FFDF600068848 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		28C6DAD81A30000200068848 /* HiChongSwift-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiChongSwift-BridgingHeader.h"; sourceTree = "<group>"; };
+		28C93AC21A4CF6DE00E1F600 /* WikiCollectList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiCollectList.h; sourceTree = "<group>"; };
+		28C93AC31A4CF6DE00E1F600 /* WikiCollectListBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiCollectListBase.h; sourceTree = "<group>"; };
+		28C93AC41A4CF6DE00E1F600 /* WikiCollectListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiCollectListBase.m; sourceTree = "<group>"; };
+		28C93AC51A4CF6DE00E1F600 /* WikiCollectListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiCollectListData.h; sourceTree = "<group>"; };
+		28C93AC61A4CF6DE00E1F600 /* WikiCollectListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiCollectListData.m; sourceTree = "<group>"; };
+		28C93AC91A4D0AB600E1F600 /* WikiListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiListViewController.swift; sourceTree = "<group>"; };
+		28C93ACB1A4D47B600E1F600 /* WikiMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiMore.h; sourceTree = "<group>"; };
+		28C93ACC1A4D47B600E1F600 /* WikiMoreBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiMoreBase.h; sourceTree = "<group>"; };
+		28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreBase.m; sourceTree = "<group>"; };
+		28C93ACE1A4D47B600E1F600 /* WikiMoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiMoreData.h; sourceTree = "<group>"; };
+		28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreData.m; sourceTree = "<group>"; };
 		28E182AF1A4AB0AB00E3001A /* CommonUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUpload.h; sourceTree = "<group>"; };
 		28E182B01A4AB0AB00E3001A /* CommonUploadBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUploadBase.h; sourceTree = "<group>"; };
 		28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUploadBase.m; sourceTree = "<group>"; };
@@ -438,6 +454,16 @@
 				283C0E421A4BB84D00C64B11 /* WikiTodayBase.m */,
 				283C0E431A4BB84D00C64B11 /* WikiTodayData.h */,
 				283C0E441A4BB84D00C64B11 /* WikiTodayData.m */,
+				28C93AC21A4CF6DE00E1F600 /* WikiCollectList.h */,
+				28C93AC31A4CF6DE00E1F600 /* WikiCollectListBase.h */,
+				28C93AC41A4CF6DE00E1F600 /* WikiCollectListBase.m */,
+				28C93AC51A4CF6DE00E1F600 /* WikiCollectListData.h */,
+				28C93AC61A4CF6DE00E1F600 /* WikiCollectListData.m */,
+				28C93ACB1A4D47B600E1F600 /* WikiMore.h */,
+				28C93ACC1A4D47B600E1F600 /* WikiMoreBase.h */,
+				28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */,
+				28C93ACE1A4D47B600E1F600 /* WikiMoreData.h */,
+				28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -650,6 +676,7 @@
 				285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */,
 				285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */,
 				285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */,
+				28C93AC91A4D0AB600E1F600 /* WikiListViewController.swift */,
 			);
 			name = Wiki;
 			sourceTree = "<group>";
@@ -852,6 +879,8 @@
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
 				283C0E4C1A4BBAE900C64B11 /* WikiInfoCell.swift in Sources */,
 				2806FEA91A4A5D2200D18543 /* LCYPetAllTypeBase.m in Sources */,
+				28C93AD01A4D47B600E1F600 /* WikiMoreBase.m in Sources */,
+				28C93AD11A4D47B600E1F600 /* WikiMoreData.m in Sources */,
 				28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */,
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
@@ -870,6 +899,7 @@
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28ED69261A4BAFE500CAE227 /* WikiViewController.swift in Sources */,
 				28EE4D1E1A49361D008F9F87 /* GetUserInfoBase.m in Sources */,
+				28C93AC81A4CF6DE00E1F600 /* WikiCollectListData.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
 				2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
@@ -894,12 +924,14 @@
 				283C0E4A1A4BBA9F00C64B11 /* WikiMidCell.swift in Sources */,
 				287941AF1A49F74700DECA50 /* MoePetHeaderReusable.swift in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
+				28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */,
 				28BE7C841A4157FC00F3BC2A /* FindSearchResultCell.swift in Sources */,
 				28EE4D201A49361D008F9F87 /* GetUserInfoUserInfo.m in Sources */,
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
 				286E4D501A440EB80057176B /* UserLoginBaseClass.m in Sources */,
+				28C93AC71A4CF6DE00E1F600 /* WikiCollectListBase.m in Sources */,
 				28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */,
 				28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */,
 				289FA3571A4972000097485C /* AboutMeEditProfileViewController.swift in Sources */,

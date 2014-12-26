@@ -39,7 +39,7 @@ class WikiArticleViewController: UIViewController {
             icyWebView.loadRequest(URLRequest)
             // 判断收藏情况
             if let collected = wikiCollected {
-                
+                wikiCollected = collected
             } else {
                 let parameters = [
                     "user_name" : LCYCommon.sharedInstance.userName!,

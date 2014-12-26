@@ -12,6 +12,13 @@ let WikiAdvertisementRatio: CGFloat = 320.0 / 120.0
 
 class WikiViewController: UITableViewController {
     
+    private enum WikiListType: String {
+        case More               = "More"
+        case LargeSizedDogs     = "LargeSizedDogs"
+        case MediumSizedDogs    = "MediumSizedDogs"
+        case SmallSizedDogs     = "SmallSizedDogs"
+        case Cats               = "Cats"
+    }
     
     private var currentPage = 1
     
@@ -20,7 +27,7 @@ class WikiViewController: UITableViewController {
     private let sectionHeaderHeight = CGFloat(40.0)
     private var sectionHeaderView: UIView!
     @IBAction func moreButtonPressed(sender: AnyObject) {
-        println("更多更多更多")
+        performSegueWithIdentifier("showWikiList", sender: WikiListType.More.rawValue)
     }
     
     override func viewDidLoad() {
@@ -165,6 +172,16 @@ class WikiViewController: UITableViewController {
                 let destination = segue.destinationViewController as WikiArticleViewController
                 if let index = tableView.indexPathForSelectedRow()?.row {
                     destination.wikiArticleID = listInfo[index].encyId
+                }
+            case "showWikiList":
+                let destination = segue.destinationViewController as WikiListViewController
+                if let key = sender as? String {
+                    switch key {
+                    case WikiListType.More.rawValue:
+                        destination
+                    default:
+                        break
+                    }
                 }
             default:
                 break

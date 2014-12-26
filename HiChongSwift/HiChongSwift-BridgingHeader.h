@@ -37,3 +37,9 @@
 
 // Ency/getTodayEncy
 #import "WikiToday.h"
+
+// Ency/getCollectArticle
+#import "WikiCollectList.h"
+
+// Ency/searchEncy
+#import "WikiMore.h"
