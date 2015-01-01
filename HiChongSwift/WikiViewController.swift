@@ -46,6 +46,8 @@ class WikiViewController: UITableViewController {
         let nib = UINib(nibName: "WikiSectionHeader", bundle: nil)
         sectionHeaderView = nib.instantiateWithOwner(self, options: nil).first as UIView
         sectionHeaderView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: sectionHeaderHeight)
+        
+        addRightButton("分类", action: "rightButtonPressed:")
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +56,10 @@ class WikiViewController: UITableViewController {
     }
     
     // MARK: - Actions
+    func rightButtonPressed(sender: AnyObject) {
+        
+    }
+    
     private func reload() {
         currentPage = 1
         let parameters = [
@@ -71,6 +77,20 @@ class WikiViewController: UITableViewController {
         }
     }
     
+    @IBAction func majorCateButtonPressed(sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            performSegueWithIdentifier("showWikiList", sender: WikiListType.LargeSizedDogs.rawValue)
+        case 2:
+            performSegueWithIdentifier("showWikiList", sender: WikiListType.MediumSizedDogs.rawValue)
+        case 3:
+            performSegueWithIdentifier("showWikiList", sender: WikiListType.SmallSizedDogs.rawValue)
+        case 4:
+            performSegueWithIdentifier("showWikiList", sender: WikiListType.Cats.rawValue)
+        default:
+            break
+        }
+    }
     
     // MARK: - Table view data source
     
@@ -178,7 +198,19 @@ class WikiViewController: UITableViewController {
                 if let key = sender as? String {
                     switch key {
                     case WikiListType.More.rawValue:
-                        destination
+                        destination.navigationItemTitle = "更多"
+                    case WikiListType.LargeSizedDogs.rawValue:
+                        destination.navigationItemTitle = "大型犬"
+                        destination.cate_id = "5"
+                    case WikiListType.MediumSizedDogs.rawValue:
+                        destination.navigationItemTitle = "中型犬"
+                        destination.cate_id = "8"
+                    case WikiListType.SmallSizedDogs.rawValue:
+                        destination.navigationItemTitle = "小型犬"
+                        destination.cate_id = "11"
+                    case WikiListType.Cats.rawValue:
+                        destination.navigationItemTitle = "猫咪"
+                        destination.cate_id = "14"
                     default:
                         break
                     }

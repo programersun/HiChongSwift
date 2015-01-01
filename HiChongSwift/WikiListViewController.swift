@@ -29,7 +29,7 @@ class WikiListViewController: UIViewController {
     @IBOutlet private weak var icySegmentControl: UISegmentedControl!
     @IBOutlet private weak var icyTableView: UITableView!
     
-    private var currentPage = 1
+    private var healthPage = 1, keepPage = 1, trainPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,19 @@ class WikiListViewController: UIViewController {
         navigationItem.title = navigationItemTitle
         
         reload()
+        
+        icyTableView.backgroundColor = UIColor.LCYTableLightBlue()
+        
+        // 添加下拉刷新
+        icyTableView.addHeaderWithCallback { [weak self]() -> Void in
+            self?.reload()
+            return
+        }
+        // 添加上拉加载更多
+        icyTableView.addFooterWithCallback { [weak self]() -> Void in
+            self?.loadMore()
+            return
+        }
     }
     
     private func reload() {
@@ -51,52 +64,98 @@ class WikiListViewController: UIViewController {
         let parameters = [
             "cate_id": cate_id!,
             "type_id": "\(type.rawValue)",
-            "p": "\(currentPage)"
+            "p": "1"
         ]
+        loadDataWithParameters(parameters, append: false)
+    }
+    
+    private func loadMore() {
+        if cate_id == nil {
+            cate_id = "0"
+        }
+
+        var page: Int = 1
+        switch type {
+        case .Health:
+            page = healthPage
+        case .Keep:
+            page = keepPage
+        case .Train:
+            page = trainPage
+        }
+        let parameters = [
+            "cate_id": cate_id!,
+            "type_id": "\(type.rawValue)",
+            "p": "\(page)"
+        ]
+        loadDataWithParameters(parameters, append: true)
+    }
+    
+    private func loadDataWithParameters(parameter: [String: String], append: Bool) {
         typealias mySuccessClosure = ((object: NSDictionary) -> Void)
         var successClosure: mySuccessClosure?
         switch type {
         case .Health:
+            healthPage = 1
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
                 let retrived = WikiMoreBase.modelObjectWithDictionary(object)
-                self?.healthData = [WikiMoreData]()
+                if !append {
+                    self?.healthData = [WikiMoreData]()
+                }
                 if let data = retrived.data {
                     self?.healthData?.extend(data as [WikiMoreData])
+                    self?.healthPage++
                     if self?.icySegmentControl.selectedSegmentIndex == 0 {
                         self?.icyTableView.reloadData()
                     }
                 }
+                self?.icyTableView.headerEndRefreshing()
+                self?.icyTableView.footerEndRefreshing()
             }
             break
         case .Keep:
+            keepPage = 1
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
                 let retrived = WikiMoreBase.modelObjectWithDictionary(object)
-                self?.keepData = [WikiMoreData]()
+                if !append {
+                    self?.keepData = [WikiMoreData]()
+                }
                 if let data = retrived.data {
                     self?.keepData?.extend(data as [WikiMoreData])
+                    self?.keepPage++
                     if self?.icySegmentControl.selectedSegmentIndex == 1 {
                         self?.icyTableView.reloadData()
                     }
                 }
+                self?.icyTableView.headerEndRefreshing()
+                self?.icyTableView.footerEndRefreshing()
             }
             break
         case .Train:
+            trainPage = 1
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
                 let retrived = WikiMoreBase.modelObjectWithDictionary(object)
-                self?.trainData = [WikiMoreData]()
+                if !append {
+                    self?.trainData = [WikiMoreData]()
+                }
                 if let data = retrived.data {
                     self?.trainData?.extend(data as [WikiMoreData])
+                    self?.trainPage++
                     if self?.icySegmentControl.selectedSegmentIndex == 2 {
                         self?.icyTableView.reloadData()
                     }
                 }
+                self?.icyTableView.headerEndRefreshing()
+                self?.icyTableView.footerEndRefreshing()
             }
             break
         }
-        LCYNetworking.sharedInstance.GET(LCYApi.WikiMore, parameters: parameters, success: successClosure) { (error) -> Void in
+        LCYNetworking.sharedInstance.GET(LCYApi.WikiMore, parameters: parameter, success: successClosure) { [weak self](error) -> Void in
+            self?.icyTableView.headerEndRefreshing()
+            self?.icyTableView.footerEndRefreshing()
             return
         }
     }
@@ -107,14 +166,20 @@ class WikiListViewController: UIViewController {
         case .Health:
             if healthData == nil {
                 reload()
+            } else {
+                icyTableView.reloadData()
             }
         case .Keep:
             if keepData == nil {
                 reload()
+            } else {
+                icyTableView.reloadData()
             }
         case .Train:
             if trainData == nil {
                 reload()
+            } else {
+                icyTableView.reloadData()
             }
         }
     }
@@ -125,14 +190,79 @@ class WikiListViewController: UIViewController {
     }
     
     
-    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showArticle":
+                let destination = segue.destinationViewController as WikiArticleViewController
+                if let indexPath = icyTableView.indexPathForSelectedRow() {
+                    var data: WikiMoreData?
+                    switch type {
+                    case .Health:
+                        data = healthData?[indexPath.row]
+                    case .Keep:
+                        data = keepData?[indexPath.row]
+                    case .Train:
+                        data = trainData?[indexPath.row]
+                    }
+                    destination.wikiArticleID = data?.encyId
+                }
+            default:
+                break
+            }
+        }
     }
-    */
     
+}
+
+extension WikiListViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch type {
+        case .Health:
+            return healthData != nil ? healthData!.count : 0
+        case .Keep:
+            return keepData != nil ? keepData!.count : 0
+        case .Train:
+            return trainData != nil ? trainData!.count : 0
+        }
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier()) as WikiInfoCell
+        var data: WikiMoreData?
+        switch type {
+        case .Health:
+            data = healthData?[indexPath.row]
+        case .Keep:
+            data = keepData?[indexPath.row]
+        case .Train:
+            data = trainData?[indexPath.row]
+        }
+        
+        switch indexPath.row % 2 {
+        case 0:
+            cell.backgroundColor = UIColor.LCYTableLightBlue()
+        case 1:
+            cell.backgroundColor = UIColor.LCYTableLightGray()
+        default:
+            break
+        }
+        
+        if let info = data {
+            cell.icyTitle = info.title
+            cell.keyWord = info.keyword
+            cell.readCount = info.encyRead
+            cell.collectCount = info.encyCollect
+            cell.imagePath = info.headImg.toAbsolutePath()
+        }
+        
+        return cell
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 65.0
+    }
 }
