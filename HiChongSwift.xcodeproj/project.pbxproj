@@ -25,6 +25,10 @@
 		2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */; };
 		2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */; };
 		2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEBA1A4A983300D18543 /* QRScanViewController.swift */; };
+		281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319461A58D08000913BC6 /* WikiesViewController.swift */; };
+		281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319481A58E34500913BC6 /* WikiesHeadCell.swift */; };
+		2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */; };
+		2813194D1A59162100913BC6 /* WikiWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813194C1A59162100913BC6 /* WikiWebViewController.swift */; };
 		282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D6BE21A301B9A00942F60 /* LCYNetworking.swift */; };
 		2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */; };
 		2834C40F1A47E0A30007FE43 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C40E1A47E0A30007FE43 /* Region.swift */; };
@@ -168,6 +172,10 @@
 		2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetFinalFilterViewController.swift; sourceTree = "<group>"; };
 		2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePickerViewController.swift; sourceTree = "<group>"; };
 		2806FEBA1A4A983300D18543 /* QRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
+		281319461A58D08000913BC6 /* WikiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesViewController.swift; sourceTree = "<group>"; };
+		281319481A58E34500913BC6 /* WikiesHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesHeadCell.swift; sourceTree = "<group>"; };
+		2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesMidCell.swift; sourceTree = "<group>"; };
+		2813194C1A59162100913BC6 /* WikiWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiWebViewController.swift; sourceTree = "<group>"; };
 		282D6BE21A301B9A00942F60 /* LCYNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYNetworking.swift; sourceTree = "<group>"; };
 		2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
 		2834C40E1A47E0A30007FE43 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -677,6 +685,10 @@
 				285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */,
 				285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */,
 				28C93AC91A4D0AB600E1F600 /* WikiListViewController.swift */,
+				281319461A58D08000913BC6 /* WikiesViewController.swift */,
+				281319481A58E34500913BC6 /* WikiesHeadCell.swift */,
+				2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */,
+				2813194C1A59162100913BC6 /* WikiWebViewController.swift */,
 			);
 			name = Wiki;
 			sourceTree = "<group>";
@@ -903,6 +915,7 @@
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
 				2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
+				281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */,
 				287941AB1A49F56C00DECA50 /* LCYPetDetailBase.m in Sources */,
 				28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
@@ -916,6 +929,8 @@
 				287941B11A4A017100DECA50 /* MoePetImageCell.swift in Sources */,
 				287EDFE81A403FD9005B6A57 /* FindCircleAddTextCell.swift in Sources */,
 				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
+				2813194D1A59162100913BC6 /* WikiWebViewController.swift in Sources */,
+				281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */,
 				28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
@@ -930,6 +945,7 @@
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
+				2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */,
 				286E4D501A440EB80057176B /* UserLoginBaseClass.m in Sources */,
 				28C93AC71A4CF6DE00E1F600 /* WikiCollectListBase.m in Sources */,
 				28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */,

@@ -8,7 +8,7 @@
         <!--Root View Controller-->
         <scene sceneID="obD-VU-2VZ">
             <objects>
-                <tableViewController id="ut9-y4-KhG" customClass="PetCateFilterViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="ut9-y4-KhG" customClass="PetCateFilterViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Pls-Ms-R2X">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

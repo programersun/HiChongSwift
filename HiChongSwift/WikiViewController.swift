@@ -55,9 +55,26 @@ class WikiViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private var childCategory: LCYPetSubTypeChildStyle?
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue())
+            { [weak self] in
+                if let info = self?.childCategory {
+                    self?.performSegueWithIdentifier("showWiki", sender: nil)
+                    self?.childCategory = nil
+                }
+        }
+        
+    }
+    
     // MARK: - Actions
     func rightButtonPressed(sender: AnyObject) {
-        
+        let storyBoard = UIStoryboard(name: "PetCateFilter", bundle: nil)
+        let destination = storyBoard.instantiateInitialViewController() as PetCateFilterViewController
+        destination.delegate = self
+        destination.root = self
+        navigationController?.pushViewController(destination, animated: true)
     }
     
     private func reload() {
@@ -172,7 +189,7 @@ class WikiViewController: UITableViewController {
             return 0.0
         }
     }
-
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 2 {
             performSegueWithIdentifier("showArticle", sender: nil)
@@ -184,8 +201,8 @@ class WikiViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
         if let identifier = segue.identifier {
             switch identifier {
             case "showArticle":
@@ -215,10 +232,22 @@ class WikiViewController: UITableViewController {
                         break
                     }
                 }
+            case "showWiki":
+                let destination = segue.destinationViewController as WikiesViewController
+                if let child = childCategory {
+                    destination.childCate = child
+                }
             default:
                 break
             }
         }
     }
     
+}
+
+extension WikiViewController: PetCateFilterDelegate, UINavigationControllerDelegate {
+    func didSelectCategory(childCategory: LCYPetSubTypeChildStyle) {
+        println("selected id = \(childCategory.catId)")
+        self.childCategory = childCategory
+    }
 }

@@ -38,6 +38,7 @@ class WikiListViewController: UIViewController {
         icySegmentControl.setBackgroundImage(UIImage(named: "sqSegmentNormal"), forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
         icySegmentControl.setBackgroundImage(UIImage(named: "sqSegmentSelected"), forState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)
         icySegmentControl.setDividerImage(UIImage(named: "sqSegmentNormal"), forLeftSegmentState: UIControlState.Normal, rightSegmentState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)
+        icySegmentControl.backgroundColor = UIColor(patternImage: UIImage(named: "segmentBackground")!)
         
         navigationItem.title = navigationItemTitle
         

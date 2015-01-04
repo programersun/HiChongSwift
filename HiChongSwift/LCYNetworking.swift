@@ -39,6 +39,7 @@ class LCYNetworking {
     private let hostURL = "http://123.57.7.88/admin/index.php/Api/"
     private let commonURL = "http://123.57.7.88/admin/index.php/Common/Upload/ios"
     private let ArticleHTMLComponent = "Ency/ency_article/ency_id/"
+    private let WikiHtmlComponent = "Ency/category_article/cate_id/"
     
     private enum RequestType {
         case GET
@@ -172,5 +173,9 @@ class LCYNetworking {
     
     func WikiHTMLAddress(cateID: String) -> String {
         return "\(hostURL)\(ArticleHTMLComponent)\(cateID)"
+    }
+    
+    func WikiDetailHTMLAddress(cateID: String) -> String {
+        return "\(hostURL)\(WikiHtmlComponent)\(cateID)"
     }
 }
