@@ -43,3 +43,6 @@
 
 // Ency/searchEncy
 #import "WikiMore.h"
+
+// Square/home
+#import "SquareHome.h"

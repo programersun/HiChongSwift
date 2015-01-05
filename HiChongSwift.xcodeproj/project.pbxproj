@@ -29,6 +29,10 @@
 		281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319481A58E34500913BC6 /* WikiesHeadCell.swift */; };
 		2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */; };
 		2813194D1A59162100913BC6 /* WikiWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813194C1A59162100913BC6 /* WikiWebViewController.swift */; };
+		281319571A592B0D00913BC6 /* SquareHomeAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 281319501A592B0D00913BC6 /* SquareHomeAd.m */; };
+		281319581A592B0D00913BC6 /* SquareHomebase.m in Sources */ = {isa = PBXBuildFile; fileRef = 281319521A592B0D00913BC6 /* SquareHomebase.m */; };
+		281319591A592B0D00913BC6 /* SquareHomeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 281319541A592B0D00913BC6 /* SquareHomeCategory.m */; };
+		2813195A1A592B0D00913BC6 /* SquareHomeMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 281319561A592B0D00913BC6 /* SquareHomeMsg.m */; };
 		282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D6BE21A301B9A00942F60 /* LCYNetworking.swift */; };
 		2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */; };
 		2834C40F1A47E0A30007FE43 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C40E1A47E0A30007FE43 /* Region.swift */; };
@@ -176,6 +180,15 @@
 		281319481A58E34500913BC6 /* WikiesHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesHeadCell.swift; sourceTree = "<group>"; };
 		2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesMidCell.swift; sourceTree = "<group>"; };
 		2813194C1A59162100913BC6 /* WikiWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiWebViewController.swift; sourceTree = "<group>"; };
+		2813194E1A592B0D00913BC6 /* SquareHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareHome.h; sourceTree = "<group>"; };
+		2813194F1A592B0D00913BC6 /* SquareHomeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareHomeAd.h; sourceTree = "<group>"; };
+		281319501A592B0D00913BC6 /* SquareHomeAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareHomeAd.m; sourceTree = "<group>"; };
+		281319511A592B0D00913BC6 /* SquareHomebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareHomebase.h; sourceTree = "<group>"; };
+		281319521A592B0D00913BC6 /* SquareHomebase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareHomebase.m; sourceTree = "<group>"; };
+		281319531A592B0D00913BC6 /* SquareHomeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareHomeCategory.h; sourceTree = "<group>"; };
+		281319541A592B0D00913BC6 /* SquareHomeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareHomeCategory.m; sourceTree = "<group>"; };
+		281319551A592B0D00913BC6 /* SquareHomeMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareHomeMsg.h; sourceTree = "<group>"; };
+		281319561A592B0D00913BC6 /* SquareHomeMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareHomeMsg.m; sourceTree = "<group>"; };
 		282D6BE21A301B9A00942F60 /* LCYNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYNetworking.swift; sourceTree = "<group>"; };
 		2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDetailViewController.swift; sourceTree = "<group>"; };
 		2834C40E1A47E0A30007FE43 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -669,6 +682,15 @@
 				28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */,
 				28E5B4CD1A397667009951FF /* LCYGetSquareCategoryResult.h */,
 				28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */,
+				2813194E1A592B0D00913BC6 /* SquareHome.h */,
+				2813194F1A592B0D00913BC6 /* SquareHomeAd.h */,
+				281319501A592B0D00913BC6 /* SquareHomeAd.m */,
+				281319511A592B0D00913BC6 /* SquareHomebase.h */,
+				281319521A592B0D00913BC6 /* SquareHomebase.m */,
+				281319531A592B0D00913BC6 /* SquareHomeCategory.h */,
+				281319541A592B0D00913BC6 /* SquareHomeCategory.m */,
+				281319551A592B0D00913BC6 /* SquareHomeMsg.h */,
+				281319561A592B0D00913BC6 /* SquareHomeMsg.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -910,6 +932,7 @@
 				285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28ED69261A4BAFE500CAE227 /* WikiViewController.swift in Sources */,
+				281319591A592B0D00913BC6 /* SquareHomeCategory.m in Sources */,
 				28EE4D1E1A49361D008F9F87 /* GetUserInfoBase.m in Sources */,
 				28C93AC81A4CF6DE00E1F600 /* WikiCollectListData.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
@@ -952,7 +975,9 @@
 				28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */,
 				289FA3571A4972000097485C /* AboutMeEditProfileViewController.swift in Sources */,
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
+				2813195A1A592B0D00913BC6 /* SquareHomeMsg.m in Sources */,
 				28876B281A42A4050002F635 /* WelcomeSinglePageViewController.swift in Sources */,
+				281319571A592B0D00913BC6 /* SquareHomeAd.m in Sources */,
 				2806FEAA1A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m in Sources */,
 				2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */,
 				28BE7C801A41353D00F3BC2A /* FindSearchViewController.swift in Sources */,
@@ -967,6 +992,7 @@
 				283C0E451A4BB84D00C64B11 /* WikiTodayBase.m in Sources */,
 				289255901A3EEEB90056606F /* LCYCommon.swift in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
+				281319581A592B0D00913BC6 /* SquareHomebase.m in Sources */,
 				287941A21A49EC8B00DECA50 /* MoePetViewController.swift in Sources */,
 				28EE4D221A493949008F9F87 /* AboutMeHeaderCell.swift in Sources */,
 				285EC3711A49D76000E2FE70 /* AboutMeModifyGenderController.swift in Sources */,
@@ -1107,7 +1133,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/icy/Documents/Programming/iOS/HiChongSwift/HiChongSwift/HiChongSwift-BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "HiChongSwift/HiChongSwift-BridgingHeader.h";
 			};
 			name = Debug;
 		};
@@ -1123,7 +1149,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "797ee597-b6f3-4a78-8e8c-516e127cdf5c";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/icy/Documents/Programming/iOS/HiChongSwift/HiChongSwift/HiChongSwift-BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "HiChongSwift/HiChongSwift-BridgingHeader.h";
 			};
 			name = Release;
 		};

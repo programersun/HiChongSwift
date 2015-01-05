@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import CoreLocation
 
-class LCYCommon {
+class LCYCommon: NSObject {
     private enum UserDefaultKeys: String {
         case kWelcomeGuideSkip = "kWelcomeGuideSkip"
         case kUserLogin = "kUserLogin"
@@ -97,6 +98,50 @@ class LCYCommon {
             let userDefault = NSUserDefaults.standardUserDefaults()
             let name = userDefault.objectForKey(UserDefaultKeys.kUserName.rawValue) as String?
             return name
+        }
+    }
+    
+    typealias locationSuccess = (location: CLLocationCoordinate2D) -> Void
+    typealias locationFail = () -> Void
+    private var locationSuccessBlock: locationSuccess?
+    private var locationFailBlock: locationFail?
+    private var location: CLLocationCoordinate2D?
+    private var locationManager: CLLocationManager?
+    func getLocation(success: locationSuccess? , fail: locationFail?) {
+        if let myLocation = location {
+            if let usuccess = success {
+                usuccess(location: myLocation)
+            }
+            return
+        }
+        locationSuccessBlock = success
+        locationFailBlock = fail
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager!.delegate = self
+            if locationManager!.respondsToSelector("requestWhenInUseAuthorization") {
+                locationManager!.requestWhenInUseAuthorization()
+            }
+            locationManager!.startUpdatingLocation()
+        } else {
+            if let ufail = fail {
+                ufail()
+            }
+        }
+    }
+}
+
+extension LCYCommon: CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        if let location = (locations.first as? CLLocation) {
+            manager.stopUpdatingLocation()
+            if let usuccess = locationSuccessBlock {
+                usuccess(location: location.coordinate)
+            }
+        } else {
+            if let ufail = locationFailBlock {
+                ufail()
+            }
         }
     }
 }

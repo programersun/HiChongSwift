@@ -12,6 +12,8 @@ class SquareViewController: UITableViewController {
     
     var categoryData: LCYGetSquareCategoryResult?
     
+    var homeData: SquareHomebase?
+    
     private let sectionHeaderHeight: CGFloat = 30.0
     
     override func viewDidLoad() {
@@ -24,12 +26,19 @@ class SquareViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.showHUD()
-        LCYNetworking.sharedInstance.POST(LCYApi.SquareGetSquareCategory, parameters: nil, success: { [unowned self] (object) -> Void in
-            self.hideHUD()
-            self.categoryData = LCYGetSquareCategoryResult.modelObjectWithDictionary(object)
-            self.tableView.reloadData()
-        }) { [unowned self] (error) -> Void in
-            self.hideHUD()
+        LCYNetworking.sharedInstance.POST(LCYApi.SquareHome, parameters: nil, success: { [weak self](object) -> Void in
+            let retrived = SquareHomebase.modelObjectWithDictionary(object)
+            if retrived.result {
+                // 获取成功
+                self?.homeData = retrived
+                self?.tableView.reloadData()
+            }
+            self?.hideHUD()
+            return
+        }) { [weak self](error) -> Void in
+            self?.hideHUD()
+            self?.alert("信息获取失败")
+            return
         }
         
     }
@@ -43,7 +52,35 @@ class SquareViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             let destination = segue.destinationViewController as SquareListViewController
-            destination.categoryInfo = self.categoryData!.listInfo[(self.tableView.indexPathForSelectedRow() as NSIndexPath!).row + 5] as LCYGetSquareCategoryListInfo
+            if let indexPath = tableView.indexPathForSelectedRow() {
+                destination.categoryInfo = homeData!.msg.category[indexPath.row + 5] as? SquareHomeCategory
+            }
+            if let info = sender as? SquareHomeCategory {
+                destination.categoryInfo = info
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    private let cateMap: [Int: String] = [
+        1: "配种",
+        2: "寄养",
+        3: "用品",
+        4: "美容",
+        5: "医院",
+    ]
+    @IBAction func midButtonPressed(sender: UIButton) {
+        if let cateString = cateMap[sender.tag] {
+            var cateInfo: SquareHomeCategory?
+            for cate in (homeData!.msg.category as [SquareHomeCategory]) {
+                if cate.cateName == cateString {
+                    cateInfo = cate
+                    break
+                }
+            }
+            if let myCate = cateInfo {
+                performSegueWithIdentifier("showDetail", sender: myCate)
+            }
         }
     }
     
@@ -51,7 +88,7 @@ class SquareViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
-        if let unwrappedData = self.categoryData {
+        if homeData != nil {
             return 2
         } else {
             return 0
@@ -65,10 +102,9 @@ class SquareViewController: UITableViewController {
         case 0:
             number = 2
         case 1:
-            number = self.categoryData!.listInfo.count >= 5 ? self.categoryData!.listInfo.count - 5 : 0
+            number = homeData!.msg.category.count >= 5 ? homeData!.msg.category.count - 5 : 0
         default:
             break
-            
         }
         return number
     }
@@ -79,6 +115,14 @@ class SquareViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 cell = tableView.dequeueReusableCellWithIdentifier(SquareAdCell.identifier()) as SquareAdCell
+                let cell = cell as SquareAdCell
+                let ads = homeData!.msg.ad as [SquareHomeAd]
+                cell.adImages = ads.map(
+                    {
+                        (ad: SquareHomeAd) -> String in
+                        return ad.adImage.toAbsolutePath()
+                    }
+                )
             case 1:
                 cell = tableView.dequeueReusableCellWithIdentifier(SquareMainButtonCell.identifier()) as SquareMainButtonCell
             default:
@@ -87,7 +131,7 @@ class SquareViewController: UITableViewController {
         } else if indexPath.section == 1 {
             cell = tableView.dequeueReusableCellWithIdentifier(SquareSmallButtonCell.identifier()) as SquareSmallButtonCell
             let cell = cell as SquareSmallButtonCell
-            let listInfo = self.categoryData!.listInfo[indexPath.row + 5] as LCYGetSquareCategoryListInfo
+            let listInfo = homeData!.msg.category[indexPath.row + 5] as SquareHomeCategory
             cell.icyLabel.text = listInfo.cateName
         }
         return cell

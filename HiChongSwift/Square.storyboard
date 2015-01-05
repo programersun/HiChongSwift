@@ -45,12 +45,15 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIT-tk-aj6">
                                             <rect key="frame" x="0.0" y="4" width="300" height="130"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="241-jp-ra6">
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="241-jp-ra6">
                                                     <rect key="frame" x="8" y="4" width="288" height="122"/>
                                                     <color key="backgroundColor" red="0.4823529411764706" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="midButtonPressed:" destination="kmS-lm-PUp" eventType="touchUpInside" id="7Uz-fW-MFX"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqPeizhong" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Kd-Ems">
                                                     <rect key="frame" x="50" y="40" width="50" height="50"/>
@@ -77,12 +80,15 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYR-5Z-KzG">
                                             <rect key="frame" x="300" y="4" width="300" height="195"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzh-s9-VJN">
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzh-s9-VJN">
                                                     <rect key="frame" x="4" y="4" width="288" height="187"/>
                                                     <color key="backgroundColor" red="0.27058823529411763" green="0.5490196078431373" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="midButtonPressed:" destination="kmS-lm-PUp" eventType="touchUpInside" id="6eD-Zv-BFR"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4P-TK-2WJ">
                                                     <rect key="frame" x="208" y="87" width="34" height="21"/>
@@ -112,12 +118,15 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmY-dp-FIs">
                                             <rect key="frame" x="300" y="199" width="300" height="195"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrQ-gg-ixj">
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrQ-gg-ixj">
                                                     <rect key="frame" x="4" y="4" width="288" height="187"/>
                                                     <color key="backgroundColor" red="0.94901960784313721" green="0.44313725490196076" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="midButtonPressed:" destination="kmS-lm-PUp" eventType="touchUpInside" id="NYT-SZ-6yb"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqYiyuan" translatesAutoresizingMaskIntoConstraints="NO" id="mCI-aO-Ltg">
                                                     <rect key="frame" x="63" y="60" width="75" height="75"/>
@@ -147,12 +156,15 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgs-HI-yhh">
                                             <rect key="frame" x="0.0" y="134" width="300" height="130"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-y4-tHu">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-y4-tHu">
                                                     <rect key="frame" x="8" y="4" width="288" height="122"/>
                                                     <color key="backgroundColor" red="0.33725490196078434" green="0.7803921568627451" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="midButtonPressed:" destination="kmS-lm-PUp" eventType="touchUpInside" id="3cV-dy-9LB"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqJiyang" translatesAutoresizingMaskIntoConstraints="NO" id="sIt-0r-nvC">
                                                     <rect key="frame" x="50" y="40" width="50" height="50"/>
@@ -179,12 +191,15 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eme-RV-C60">
                                             <rect key="frame" x="0.0" y="264" width="300" height="130"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDh-Tw-oiI">
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDh-Tw-oiI">
                                                     <rect key="frame" x="8" y="4" width="288" height="122"/>
                                                     <color key="backgroundColor" red="0.99215686274509807" green="0.5725490196078431" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="midButtonPressed:" destination="kmS-lm-PUp" eventType="touchUpInside" id="MiN-A7-RLK"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqYongpin" translatesAutoresizingMaskIntoConstraints="NO" id="3Pm-P3-G1x">
                                                     <rect key="frame" x="50" y="40" width="50" height="50"/>
