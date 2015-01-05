@@ -453,19 +453,19 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="oCE-gw-MdJ">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="oCE-gw-MdJ">
                                                     <rect key="frame" x="100" y="45" width="11" height="11"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="gOM-q2-EAP">
+                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="gOM-q2-EAP">
                                                     <rect key="frame" x="115" y="45" width="11" height="11"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="pRP-f6-ivt">
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="pRP-f6-ivt">
                                                     <rect key="frame" x="130" y="45" width="11" height="11"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="vNV-0t-3pb">
+                                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="vNV-0t-3pb">
                                                     <rect key="frame" x="145" y="45" width="11" height="11"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="El3-nD-qmT">
+                                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqHeartFull" translatesAutoresizingMaskIntoConstraints="NO" id="El3-nD-qmT">
                                                     <rect key="frame" x="160" y="45" width="11" height="11"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLm-Gv-enA">
@@ -507,6 +507,17 @@
                                                 <constraint firstItem="nph-Zj-tdM" firstAttribute="leading" secondItem="KvK-tV-QRY" secondAttribute="trailing" constant="8" id="xh9-nq-T0f"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="distanceLabel" destination="iPf-Ll-STa" id="Lap-vS-aSC"/>
+                                            <outlet property="icyImageView" destination="KvK-tV-QRY" id="flk-dw-TGo"/>
+                                            <outlet property="icyTitleLabel" destination="clw-kE-jal" id="2cj-En-utt"/>
+                                            <outlet property="starTextLabel" destination="gLm-Gv-enA" id="rgR-iU-9fG"/>
+                                            <outletCollection property="heartImageView" destination="oCE-gw-MdJ" collectionClass="NSMutableArray" id="J9y-61-rDM"/>
+                                            <outletCollection property="heartImageView" destination="gOM-q2-EAP" id="Nmp-0Y-Bq0"/>
+                                            <outletCollection property="heartImageView" destination="pRP-f6-ivt" id="RjV-kn-n1K"/>
+                                            <outletCollection property="heartImageView" destination="vNV-0t-3pb" id="SrP-Fn-ie4"/>
+                                            <outletCollection property="heartImageView" destination="El3-nD-qmT" id="Qdl-4U-9uV"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SquareDetailMiddleCellIdentifier" id="cLz-Bn-hfA" customClass="SquareDetailMiddleCell" customModule="HiChongSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -849,6 +860,6 @@
         <image name="sqYongpin" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JBD-0N-mEb"/>
+        <segue reference="LiE-ao-Chi"/>
     </inferredMetricsTieBreakers>
 </document>

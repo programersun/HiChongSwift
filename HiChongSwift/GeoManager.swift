@@ -58,4 +58,9 @@ class GeoManager {
             }
         })
     }
+    
+    func distanceTo(#latitude: Double, longitude: Double, myLocation: CLLocation) -> CLLocationDistance {
+        let destination = CLLocation(latitude: latitude, longitude: longitude)
+        return destination.distanceFromLocation(myLocation)
+    }
 }

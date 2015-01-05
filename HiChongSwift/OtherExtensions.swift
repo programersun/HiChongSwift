@@ -51,4 +51,9 @@ extension Double {
     func format(f: String) -> String {
         return NSString(format: "%\(f)f", self)
     }
+    
+    func toKM() -> String {
+        let dot2format = ".1"
+        return "\((self / 1000.0).format(dot2format))km"
+    }
 }

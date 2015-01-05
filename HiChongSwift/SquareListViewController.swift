@@ -171,15 +171,31 @@ class SquareListViewController: UIViewController {
         icyTableView.reloadData()
     }
     
-    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showDetail":
+                let destination = segue.destinationViewController as SquareDetailViewController
+                if let indexPath = icyTableView.indexPathForSelectedRow() {
+                    var data: SquareGetListMsg
+                    switch currentType {
+                    case .distance:
+                        data = distanceData![indexPath.row]
+                    case .star:
+                        data = starData![indexPath.row]
+                    }
+                    destination.merchantID = "\(data.businessId)"
+                }
+            default:
+                break
+            }
+        }
     }
-    */
     
 }
 
@@ -221,8 +237,8 @@ extension SquareListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.nameLabel.text = data.businessName
         cell.detailLabel.text = data.businessBrief
-        let dot2format = ".2"
-        cell.distanceLabel.text = "\((data.distance / 1000.0).format(dot2format))km"
+        let dot2format = ".1"
+        cell.distanceLabel.text = data.distance.toKM()
         cell.icyScore = CGFloat(data.businessScore)
         
         return cell

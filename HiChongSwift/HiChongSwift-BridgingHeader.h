@@ -49,3 +49,6 @@
 
 // Square/getSquareList
 #import "SquareGetList.h"
+
+// Square/merchant_info
+#import "SquareMerchantInfo.h"

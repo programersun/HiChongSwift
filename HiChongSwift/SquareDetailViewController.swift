@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SquareDetailViewController: UIViewController {
     
-    let testText = "子曰：\n“学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？”\n"
-                    + "子曰：\n“道千乘之国，敬事而信，节用而爱人，使民以时。”"
-
+    
     @IBOutlet weak var icyTableView: UITableView!
+    
+    /// 商家ID
+    var merchantID: String?
+    
+    /// 用户所在的地理位置
+    private var currentLocation: CLLocation?
+    
+    /// 商家信息
+    private var merchantData: SquareMerchantInfoBase?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         // tool bar 内容
@@ -39,12 +48,27 @@ class SquareDetailViewController: UIViewController {
         self.icyTableView.backgroundColor = UIColor.LCYThemeColor()
         
         self.title = "详情"
+        
+        if merchantID == nil {
+            alert("无法获取商家信息")
+        } else {
+            reload()
+        }
+        
+        LCYCommon.sharedInstance.getLocation({ [weak self](location) -> Void in
+            self?.currentLocation = location
+            self?.icyTableView.reloadData()
+            }, fail: { [weak self]() -> Void in
+                self?.alert("无法获取定位坐标")
+                return
+        })
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setToolbarHidden(false, animated: false)
@@ -54,26 +78,45 @@ class SquareDetailViewController: UIViewController {
         self.navigationController?.setToolbarHidden(true, animated: false)
     }
     
+    
     func wantCommentButtonPressed(sender: AnyObject) {
         self.performSegueWithIdentifier("showAdd", sender: nil)
     }
     
-
+    private func reload() {
+        LCYNetworking.sharedInstance.POST(LCYApi.SquareMerchantInfo, parameters: ["business_id": merchantID!], success: { [weak self](object) -> Void in
+            let retrieved = SquareMerchantInfoBase.modelObjectWithDictionary(object)
+            if retrieved.result {
+                self?.merchantData = retrieved
+                self?.icyTableView.reloadData()
+            }
+            return
+            }) { [weak self](error) -> Void in
+                self?.alert("网络连接异常，请重试")
+                return
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
 
 extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        if merchantData == nil {
+            return 0
+        } else {
+            return 3
+        }
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -89,9 +132,20 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
+        let data = merchantData!.msg
         switch indexPath.section {
         case 0:
             cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailHeadCell.identifier()) as UITableViewCell
+            let cell = cell as SquareDetailHeadCell
+            cell.imagePath = data.businessImage.toAbsolutePath()
+            cell.icyTitleLabel.text = data.businessName
+            cell.icyScore = CGFloat((data.businessScore as NSString).floatValue)
+            if let location = currentLocation {
+                let geoManager = GeoManager()
+                cell.distanceLabel.text = geoManager.distanceTo(latitude: (data.businessLatitude as NSString).doubleValue, longitude: (data.businessLongitude as NSString).doubleValue, myLocation: location).toKM()
+            } else {
+                cell.distanceLabel.text = "0.0km"
+            }
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailMiddleCell.identifier()) as UITableViewCell
             // 设置背景颜色
@@ -108,20 +162,20 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
             switch indexPath.row {
             case 0:
                 cell.cellType = .Location
-                cell.icyLabel.text = "北京市海淀区上地十街10号"
+                cell.icyLabel.text = data.businessLocation
             case 1:
                 cell.cellType = .Phone
-                cell.icyLabel.text = "13812345678"
+                cell.icyLabel.text = data.businessPhone
             case 2:
                 cell.cellType = .Comment
-                cell.icyLabel.text = "共计102条评论"
+                cell.icyLabel.text = "共计\(data.commentCount)条评论"
             default:
                 break
             }
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailDynamicCell.identifier()) as UITableViewCell
             let cell = cell as SquareDetailDynamicCell!
-            cell.icyLabel.text = testText
+            cell.icyLabel.text = data.businessDetail
         default:
             break
         }
@@ -136,7 +190,8 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
             return 44.0
         case 2:
             // 计算高度
-            let height = (testText as NSString).boundingRectWithSize(CGSize(width:UIScreen.mainScreen().bounds.width - 16.0, height:20000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(15.0)], context: nil).height
+            let data = merchantData!.msg
+            let height = (data.businessDetail as NSString).boundingRectWithSize(CGSize(width:UIScreen.mainScreen().bounds.width - 16.0, height:20000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(15.0)], context: nil).height
             return height + 16.0
         default:
             return 44.0

@@ -42,6 +42,8 @@
 		283C0E481A4BBA3A00C64B11 /* WikiAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C0E471A4BBA3A00C64B11 /* WikiAdCell.swift */; };
 		283C0E4A1A4BBA9F00C64B11 /* WikiMidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C0E491A4BBA9F00C64B11 /* WikiMidCell.swift */; };
 		283C0E4C1A4BBAE900C64B11 /* WikiInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C0E4B1A4BBAE900C64B11 /* WikiInfoCell.swift */; };
+		284896231A5A967F00D45285 /* SquareMerchantInfoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 284896201A5A967F00D45285 /* SquareMerchantInfoBase.m */; };
+		284896241A5A967F00D45285 /* SquareMerchantInfoMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 284896221A5A967F00D45285 /* SquareMerchantInfoMsg.m */; };
 		285E6A221A4BEA6A00DC44F4 /* WikiSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */; };
 		285E6A241A4BEF7400DC44F4 /* WikiArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */; };
 		285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */; };
@@ -204,6 +206,11 @@
 		283C0E471A4BBA3A00C64B11 /* WikiAdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiAdCell.swift; sourceTree = "<group>"; };
 		283C0E491A4BBA9F00C64B11 /* WikiMidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiMidCell.swift; sourceTree = "<group>"; };
 		283C0E4B1A4BBAE900C64B11 /* WikiInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiInfoCell.swift; sourceTree = "<group>"; };
+		2848961E1A5A967F00D45285 /* SquareMerchantInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareMerchantInfo.h; sourceTree = "<group>"; };
+		2848961F1A5A967F00D45285 /* SquareMerchantInfoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareMerchantInfoBase.h; sourceTree = "<group>"; };
+		284896201A5A967F00D45285 /* SquareMerchantInfoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareMerchantInfoBase.m; sourceTree = "<group>"; };
+		284896211A5A967F00D45285 /* SquareMerchantInfoMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareMerchantInfoMsg.h; sourceTree = "<group>"; };
+		284896221A5A967F00D45285 /* SquareMerchantInfoMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareMerchantInfoMsg.m; sourceTree = "<group>"; };
 		285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiSectionHeader.xib; sourceTree = "<group>"; };
 		285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiArticleViewController.swift; sourceTree = "<group>"; };
 		285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiCollectionListViewController.swift; sourceTree = "<group>"; };
@@ -706,6 +713,11 @@
 				28F2157A1A5A75D2002C0620 /* SquareGetListBase.m */,
 				28F2157B1A5A75D2002C0620 /* SquareGetListMsg.h */,
 				28F2157C1A5A75D2002C0620 /* SquareGetListMsg.m */,
+				2848961E1A5A967F00D45285 /* SquareMerchantInfo.h */,
+				2848961F1A5A967F00D45285 /* SquareMerchantInfoBase.h */,
+				284896201A5A967F00D45285 /* SquareMerchantInfoBase.m */,
+				284896211A5A967F00D45285 /* SquareMerchantInfoMsg.h */,
+				284896221A5A967F00D45285 /* SquareMerchantInfoMsg.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -988,6 +1000,7 @@
 				2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */,
 				286E4D501A440EB80057176B /* UserLoginBaseClass.m in Sources */,
 				28C93AC71A4CF6DE00E1F600 /* WikiCollectListBase.m in Sources */,
+				284896231A5A967F00D45285 /* SquareMerchantInfoBase.m in Sources */,
 				28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */,
 				28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */,
 				289FA3571A4972000097485C /* AboutMeEditProfileViewController.swift in Sources */,
@@ -1016,6 +1029,7 @@
 				285EC3711A49D76000E2FE70 /* AboutMeModifyGenderController.swift in Sources */,
 				287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
+				284896241A5A967F00D45285 /* SquareMerchantInfoMsg.m in Sources */,
 				287EDFE61A403928005B6A57 /* FindCircleAddNewViewController.swift in Sources */,
 				28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */,
 				28876B1E1A427C7D0002F635 /* UIImage+Resize.m in Sources */,
