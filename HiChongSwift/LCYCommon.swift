@@ -14,6 +14,9 @@ class LCYCommon: NSObject {
         case kWelcomeGuideSkip = "kWelcomeGuideSkip"
         case kUserLogin = "kUserLogin"
         case kUserName = "kUserName"
+        
+        /// 纪录所在城市id
+        case kRegionID = "kRegionID"
     }
     
     class var sharedInstance: LCYCommon {
@@ -101,13 +104,15 @@ class LCYCommon: NSObject {
         }
     }
     
-    typealias locationSuccess = (location: CLLocationCoordinate2D) -> Void
+    typealias locationSuccess = (location: CLLocation) -> Void
     typealias locationFail = () -> Void
     private var locationSuccessBlock: locationSuccess?
     private var locationFailBlock: locationFail?
-    private var location: CLLocationCoordinate2D?
+    private var location: CLLocation?
     private var locationManager: CLLocationManager?
+    private var successCalled: Bool = false
     func getLocation(success: locationSuccess? , fail: locationFail?) {
+        successCalled = false
         if let myLocation = location {
             if let usuccess = success {
                 usuccess(location: myLocation)
@@ -129,6 +134,18 @@ class LCYCommon: NSObject {
             }
         }
     }
+    
+    var regionID: String? {
+        get {
+            let userDefault = NSUserDefaults.standardUserDefaults()
+            let regionID = userDefault.objectForKey(UserDefaultKeys.kRegionID.rawValue) as String?
+            return regionID
+        }
+        set {
+            let userDefault = NSUserDefaults.standardUserDefaults()
+            userDefault.setObject(newValue, forKey: UserDefaultKeys.kRegionID.rawValue)
+        }
+    }
 }
 
 extension LCYCommon: CLLocationManagerDelegate {
@@ -136,8 +153,12 @@ extension LCYCommon: CLLocationManagerDelegate {
         if let location = (locations.first as? CLLocation) {
             manager.stopUpdatingLocation()
             if let usuccess = locationSuccessBlock {
-                usuccess(location: location.coordinate)
+                if !successCalled {
+                    successCalled = true
+                    usuccess(location: location)
+                }
             }
+//            self.location = location.coordinate
         } else {
             if let ufail = locationFailBlock {
                 ufail()

@@ -46,3 +46,6 @@
 
 // Square/home
 #import "SquareHome.h"
+
+// Square/getSquareList
+#import "SquareGetList.h"

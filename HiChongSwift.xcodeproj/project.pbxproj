@@ -131,6 +131,9 @@
 		28EE4D1F1A49361D008F9F87 /* GetUserInfoPetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D1B1A49361D008F9F87 /* GetUserInfoPetInfo.m */; };
 		28EE4D201A49361D008F9F87 /* GetUserInfoUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D1D1A49361D008F9F87 /* GetUserInfoUserInfo.m */; };
 		28EE4D221A493949008F9F87 /* AboutMeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D211A493949008F9F87 /* AboutMeHeaderCell.swift */; };
+		28F215771A5A6838002C0620 /* GeoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F215761A5A6838002C0620 /* GeoManager.swift */; };
+		28F2157D1A5A75D2002C0620 /* SquareGetListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F2157A1A5A75D2002C0620 /* SquareGetListBase.m */; };
+		28F2157E1A5A75D2002C0620 /* SquareGetListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F2157C1A5A75D2002C0620 /* SquareGetListMsg.m */; };
 		28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */; };
 		28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */; };
 		BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */; };
@@ -321,6 +324,12 @@
 		28EE4D1C1A49361D008F9F87 /* GetUserInfoUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoUserInfo.h; sourceTree = "<group>"; };
 		28EE4D1D1A49361D008F9F87 /* GetUserInfoUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoUserInfo.m; sourceTree = "<group>"; };
 		28EE4D211A493949008F9F87 /* AboutMeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeHeaderCell.swift; sourceTree = "<group>"; };
+		28F215761A5A6838002C0620 /* GeoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoManager.swift; sourceTree = "<group>"; };
+		28F215781A5A75D2002C0620 /* SquareGetList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareGetList.h; sourceTree = "<group>"; };
+		28F215791A5A75D2002C0620 /* SquareGetListBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareGetListBase.h; sourceTree = "<group>"; };
+		28F2157A1A5A75D2002C0620 /* SquareGetListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareGetListBase.m; sourceTree = "<group>"; };
+		28F2157B1A5A75D2002C0620 /* SquareGetListMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareGetListMsg.h; sourceTree = "<group>"; };
+		28F2157C1A5A75D2002C0620 /* SquareGetListMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareGetListMsg.m; sourceTree = "<group>"; };
 		28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareMainButtonCell.swift; sourceTree = "<group>"; };
 		28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareSmallButtonCell.swift; sourceTree = "<group>"; };
 		3FDA3B0316BD51D4638A11E8 /* Pods-HiChongSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChongSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiChongSwift/Pods-HiChongSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -463,6 +472,7 @@
 				28C166391A36E0A50090E061 /* ColorExtension.swift */,
 				28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */,
 				28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */,
+				28F215761A5A6838002C0620 /* GeoManager.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -691,6 +701,11 @@
 				281319541A592B0D00913BC6 /* SquareHomeCategory.m */,
 				281319551A592B0D00913BC6 /* SquareHomeMsg.h */,
 				281319561A592B0D00913BC6 /* SquareHomeMsg.m */,
+				28F215781A5A75D2002C0620 /* SquareGetList.h */,
+				28F215791A5A75D2002C0620 /* SquareGetListBase.h */,
+				28F2157A1A5A75D2002C0620 /* SquareGetListBase.m */,
+				28F2157B1A5A75D2002C0620 /* SquareGetListMsg.h */,
+				28F2157C1A5A75D2002C0620 /* SquareGetListMsg.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -910,6 +925,7 @@
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
 				289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */,
 				28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */,
+				28F2157D1A5A75D2002C0620 /* SquareGetListBase.m in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
 				283C0E4C1A4BBAE900C64B11 /* WikiInfoCell.swift in Sources */,
 				2806FEA91A4A5D2200D18543 /* LCYPetAllTypeBase.m in Sources */,
@@ -960,6 +976,7 @@
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
 				283C0E4A1A4BBA9F00C64B11 /* WikiMidCell.swift in Sources */,
+				28F215771A5A6838002C0620 /* GeoManager.swift in Sources */,
 				287941AF1A49F74700DECA50 /* MoePetHeaderReusable.swift in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */,
@@ -986,6 +1003,7 @@
 				28B9CEA51A49A97E004E6386 /* AboutMeModifyTextViewController.swift in Sources */,
 				289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */,
 				287941B31A4A048B00DECA50 /* AddEditPetViewController.swift in Sources */,
+				28F2157E1A5A75D2002C0620 /* SquareGetListMsg.m in Sources */,
 				287941AD1A49F56C00DECA50 /* LCYPetDetailPetInfo.m in Sources */,
 				28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
