@@ -712,6 +712,9 @@
                                         <constraint firstItem="i5y-DW-SQk" firstAttribute="leading" secondItem="A0O-2x-W4d" secondAttribute="leading" constant="8" id="Qxl-I1-cDA"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icyTextView" destination="i5y-DW-SQk" id="A7l-Ub-fNq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

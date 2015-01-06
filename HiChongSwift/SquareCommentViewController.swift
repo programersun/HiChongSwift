@@ -10,9 +10,14 @@ import UIKit
 
 class SquareCommentViewController: UITableViewController {
     
+    var businessID: String?
+    var businessName: String?
+    
     private var cellOnceToken: dispatch_once_t = 0
     
-    private var starCell: SquareAddStarCell!
+    private weak var starCell: SquareAddStarCell?
+    
+    private weak var icyTextView: UITextView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +34,12 @@ class SquareCommentViewController: UITableViewController {
         
         self.title = "评价"
         
-        // 添加一个确定按钮
-        self.addRightButton("确定", action: "rightButtonPressed:")
+        if businessID == nil {
+            alert("无法加载商家信息，请退回重试")
+        } else {
+            // 添加一个确定按钮
+            self.addRightButton("确定", action: "rightButtonPressed:")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +48,46 @@ class SquareCommentViewController: UITableViewController {
     }
     
     func rightButtonPressed(sender: AnyObject) {
-        println("right button pressed!")
+        if let textView = icyTextView {
+            if countElements(textView.text) == 0 {
+                alert("请填写评论内容")
+                return
+            } else {
+                if let starCell = starCell {
+                    if let scoreText = starCell.scoreLabel.text {
+                        let parameter: [String: String] = [
+                            "user_id":      LCYCommon.sharedInstance.userName!,
+                            "business_id":  businessID!,
+                            "content":      textView.text,
+                            "score":        scoreText
+                        ]
+                        LCYNetworking.sharedInstance.POST(LCYApi.SquareCommentAdd, parameters: parameter, success: { [weak self](object) -> Void in
+                            if let result = object["result"] as? NSNumber {
+                                if result.boolValue {
+                                    self?.alertWithDelegate("评论成功", tag: 2001, delegate: self)
+                                } else {
+                                    self?.alert("评论失败")
+                                }
+                            } else {
+                                self?.alert("评论解析失败")
+                            }
+                            return
+                        }, failure: { [weak self](error) -> Void in
+                            self?.alert("网络连接异常，请检查网络状态")
+                            return
+                        })
+                    } else {
+                        // 这条语句应该不会执行
+                        alert("请打分，丷丷")
+                    }
+                } else {
+                    alert("内部错误，无法加载评论分数，请尝试重新打开评论页面")
+                }
+            }
+        } else {
+            alert("内部错误，无法加载评论内容，请尝试重新打开评论页面")
+        }
+        
     }
     
     // MARK: - Table view data source
@@ -66,7 +114,12 @@ class SquareCommentViewController: UITableViewController {
                     cell.backgroundColor = UIColor.LCYThemeColor()
                     return
             }
-            cell.textLabel?.text = "小马宠物医院"
+            if let name = businessName {
+                cell.textLabel?.text = name
+            } else {
+                cell.textLabel?.textColor = UIColor.lightGrayColor()
+                cell.textLabel?.text = "未能获取商家名称"
+            }
             
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier(SquareAddStarCell.identifier()) as SquareAddStarCell
@@ -75,6 +128,7 @@ class SquareCommentViewController: UITableViewController {
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier(SquareAddCommentCell.identifier()) as UITableViewCell
             let cell = cell as SquareAddCommentCell
+            icyTextView = cell.icyTextView
         default:
             break
         }
@@ -106,9 +160,9 @@ extension SquareCommentViewController: UIGestureRecognizerDelegate {
         }
         
         if xInView > 144.0 {
-            self.starCell.imageWidth = 144.0
+            self.starCell?.imageWidth = 144.0
         } else {
-            self.starCell.imageWidth = xInView
+            self.starCell?.imageWidth = xInView
         }
     }
     
@@ -116,16 +170,24 @@ extension SquareCommentViewController: UIGestureRecognizerDelegate {
         let xInView = touch.locationInView(gestureRecognizer.view).x
         if (xInView < 14.0) || (xInView > 180.0) {
             if xInView < 14.0 {
-                self.starCell.imageWidth = 16.0
+                self.starCell?.imageWidth = 16.0
             }
             return true
         }
         if xInView > 144.0 {
-            self.starCell.imageWidth = 144.0
+            self.starCell?.imageWidth = 144.0
         } else {
-            self.starCell.imageWidth = xInView
+            self.starCell?.imageWidth = xInView
         }
         return true
     }
     
+}
+
+extension SquareCommentViewController: UIAlertViewDelegate {
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if alertView.tag == 2001 {
+            navigationController?.popViewControllerAnimated(true)
+        }
+    }
 }

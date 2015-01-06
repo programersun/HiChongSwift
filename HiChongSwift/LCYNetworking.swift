@@ -12,6 +12,7 @@ enum LCYApi: String {
     case SquareHome                 = "Square/home"
     case SquaregetSquareList        = "Square/getSquareList"
     case SquareMerchantInfo         = "Square/merchant_info"
+    case SquareCommentAdd           = "Square/comment_add"
     
     case UserLogin                  = "User/login"
     case UserAuthcode               = "User/register_authcode"

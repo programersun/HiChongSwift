@@ -13,6 +13,8 @@ class SquareAddCommentCell: UITableViewCell {
     class func identifier() -> String {
         return "SquareAddCommentCellIdentifier"
     }
+    
+    @IBOutlet var icyTextView: UITextView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
