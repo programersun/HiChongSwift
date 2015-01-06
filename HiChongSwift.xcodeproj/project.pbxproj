@@ -126,15 +126,15 @@
 		28DE582E1A5B8D4000B49046 /* SquareCommentListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE582B1A5B8D4000B49046 /* SquareCommentListBase.m */; };
 		28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE582D1A5B8D4000B49046 /* SquareCommentListMsg.m */; };
 		28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE58301A5BA21900B49046 /* SquareMapViewController.swift */; };
+		28DE58391A5BD93200B49046 /* GetUserInfoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE58341A5BD93200B49046 /* GetUserInfoBase.m */; };
+		28DE583A1A5BD93200B49046 /* GetUserInfoPetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE58361A5BD93200B49046 /* GetUserInfoPetInfo.m */; };
+		28DE583B1A5BD93200B49046 /* GetUserInfoUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE58381A5BD93200B49046 /* GetUserInfoUserInfo.m */; };
 		28E182B41A4AB0AB00E3001A /* CommonUploadBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */; };
 		28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E182B31A4AB0AB00E3001A /* CommonUploadImages.m */; };
 		28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */; };
 		28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */; };
 		28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */; };
 		28ED69261A4BAFE500CAE227 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED69251A4BAFE500CAE227 /* WikiViewController.swift */; };
-		28EE4D1E1A49361D008F9F87 /* GetUserInfoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D191A49361D008F9F87 /* GetUserInfoBase.m */; };
-		28EE4D1F1A49361D008F9F87 /* GetUserInfoPetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D1B1A49361D008F9F87 /* GetUserInfoPetInfo.m */; };
-		28EE4D201A49361D008F9F87 /* GetUserInfoUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D1D1A49361D008F9F87 /* GetUserInfoUserInfo.m */; };
 		28EE4D221A493949008F9F87 /* AboutMeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE4D211A493949008F9F87 /* AboutMeHeaderCell.swift */; };
 		28F215771A5A6838002C0620 /* GeoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F215761A5A6838002C0620 /* GeoManager.swift */; };
 		28F2157D1A5A75D2002C0620 /* SquareGetListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F2157A1A5A75D2002C0620 /* SquareGetListBase.m */; };
@@ -320,6 +320,13 @@
 		28DE582C1A5B8D4000B49046 /* SquareCommentListMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCommentListMsg.h; sourceTree = "<group>"; };
 		28DE582D1A5B8D4000B49046 /* SquareCommentListMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareCommentListMsg.m; sourceTree = "<group>"; };
 		28DE58301A5BA21900B49046 /* SquareMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareMapViewController.swift; sourceTree = "<group>"; };
+		28DE58321A5BD93200B49046 /* GetUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfo.h; sourceTree = "<group>"; };
+		28DE58331A5BD93200B49046 /* GetUserInfoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoBase.h; sourceTree = "<group>"; };
+		28DE58341A5BD93200B49046 /* GetUserInfoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoBase.m; sourceTree = "<group>"; };
+		28DE58351A5BD93200B49046 /* GetUserInfoPetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoPetInfo.h; sourceTree = "<group>"; };
+		28DE58361A5BD93200B49046 /* GetUserInfoPetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoPetInfo.m; sourceTree = "<group>"; };
+		28DE58371A5BD93200B49046 /* GetUserInfoUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoUserInfo.h; sourceTree = "<group>"; };
+		28DE58381A5BD93200B49046 /* GetUserInfoUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoUserInfo.m; sourceTree = "<group>"; };
 		28E182AF1A4AB0AB00E3001A /* CommonUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUpload.h; sourceTree = "<group>"; };
 		28E182B01A4AB0AB00E3001A /* CommonUploadBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUploadBase.h; sourceTree = "<group>"; };
 		28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUploadBase.m; sourceTree = "<group>"; };
@@ -332,13 +339,6 @@
 		28E5B4CE1A397667009951FF /* LCYGetSquareCategoryResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCYGetSquareCategoryResult.m; sourceTree = "<group>"; };
 		28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		28ED69251A4BAFE500CAE227 /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
-		28EE4D171A49361D008F9F87 /* GetUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfo.h; sourceTree = "<group>"; };
-		28EE4D181A49361D008F9F87 /* GetUserInfoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoBase.h; sourceTree = "<group>"; };
-		28EE4D191A49361D008F9F87 /* GetUserInfoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoBase.m; sourceTree = "<group>"; };
-		28EE4D1A1A49361D008F9F87 /* GetUserInfoPetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoPetInfo.h; sourceTree = "<group>"; };
-		28EE4D1B1A49361D008F9F87 /* GetUserInfoPetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoPetInfo.m; sourceTree = "<group>"; };
-		28EE4D1C1A49361D008F9F87 /* GetUserInfoUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserInfoUserInfo.h; sourceTree = "<group>"; };
-		28EE4D1D1A49361D008F9F87 /* GetUserInfoUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserInfoUserInfo.m; sourceTree = "<group>"; };
 		28EE4D211A493949008F9F87 /* AboutMeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeHeaderCell.swift; sourceTree = "<group>"; };
 		28F215761A5A6838002C0620 /* GeoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoManager.swift; sourceTree = "<group>"; };
 		28F215781A5A75D2002C0620 /* SquareGetList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareGetList.h; sourceTree = "<group>"; };
@@ -760,13 +760,13 @@
 		28EE4D161A493614008F9F87 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				28EE4D171A49361D008F9F87 /* GetUserInfo.h */,
-				28EE4D181A49361D008F9F87 /* GetUserInfoBase.h */,
-				28EE4D191A49361D008F9F87 /* GetUserInfoBase.m */,
-				28EE4D1A1A49361D008F9F87 /* GetUserInfoPetInfo.h */,
-				28EE4D1B1A49361D008F9F87 /* GetUserInfoPetInfo.m */,
-				28EE4D1C1A49361D008F9F87 /* GetUserInfoUserInfo.h */,
-				28EE4D1D1A49361D008F9F87 /* GetUserInfoUserInfo.m */,
+				28DE58321A5BD93200B49046 /* GetUserInfo.h */,
+				28DE58331A5BD93200B49046 /* GetUserInfoBase.h */,
+				28DE58341A5BD93200B49046 /* GetUserInfoBase.m */,
+				28DE58351A5BD93200B49046 /* GetUserInfoPetInfo.h */,
+				28DE58361A5BD93200B49046 /* GetUserInfoPetInfo.m */,
+				28DE58371A5BD93200B49046 /* GetUserInfoUserInfo.h */,
+				28DE58381A5BD93200B49046 /* GetUserInfoUserInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -960,10 +960,10 @@
 				28C93AD11A4D47B600E1F600 /* WikiMoreData.m in Sources */,
 				28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */,
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
+				28DE583B1A5BD93200B49046 /* GetUserInfoUserInfo.m in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */,
 				2806FEB31A4A651B00D18543 /* LCYPetSubTypeChildStyle.m in Sources */,
-				28EE4D1F1A49361D008F9F87 /* GetUserInfoPetInfo.m in Sources */,
 				287941AC1A49F56C00DECA50 /* LCYPetDetailPetImages.m in Sources */,
 				2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
@@ -977,7 +977,6 @@
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28ED69261A4BAFE500CAE227 /* WikiViewController.swift in Sources */,
 				281319591A592B0D00913BC6 /* SquareHomeCategory.m in Sources */,
-				28EE4D1E1A49361D008F9F87 /* GetUserInfoBase.m in Sources */,
 				28C93AC81A4CF6DE00E1F600 /* WikiCollectListData.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
 				28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */,
@@ -1003,6 +1002,7 @@
 				28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
+				28DE583A1A5BD93200B49046 /* GetUserInfoPetInfo.m in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
 				283C0E4A1A4BBA9F00C64B11 /* WikiMidCell.swift in Sources */,
@@ -1011,12 +1011,12 @@
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */,
 				28BE7C841A4157FC00F3BC2A /* FindSearchResultCell.swift in Sources */,
-				28EE4D201A49361D008F9F87 /* GetUserInfoUserInfo.m in Sources */,
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
 				2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */,
 				286E4D501A440EB80057176B /* UserLoginBaseClass.m in Sources */,
+				28DE58391A5BD93200B49046 /* GetUserInfoBase.m in Sources */,
 				28C93AC71A4CF6DE00E1F600 /* WikiCollectListBase.m in Sources */,
 				284896231A5A967F00D45285 /* SquareMerchantInfoBase.m in Sources */,
 				28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */,

@@ -1,17 +1,19 @@
 //
 //  GetUserInfoUserInfo.m
 //
-//  Created by 超逸 李 on 14/8/20
-//  Copyright (c) 2014 __MyCompanyName__. All rights reserved.
+//  Created by 超逸 李 on 15/1/6
+//  Copyright (c) 2015 Duostec. All rights reserved.
 //
 
 #import "GetUserInfoUserInfo.h"
 
 
 NSString *const kGetUserInfoUserInfoUserName = @"user_name";
+NSString *const kGetUserInfoUserInfoFansCount = @"fans_count";
 NSString *const kGetUserInfoUserInfoWechat = @"wechat";
 NSString *const kGetUserInfoUserInfoProvince = @"province";
 NSString *const kGetUserInfoUserInfoTelephone = @"telephone";
+NSString *const kGetUserInfoUserInfoFriendCount = @"friend_count";
 NSString *const kGetUserInfoUserInfoSex = @"sex";
 NSString *const kGetUserInfoUserInfoFQq = @"f_qq";
 NSString *const kGetUserInfoUserInfoCity = @"city";
@@ -28,6 +30,7 @@ NSString *const kGetUserInfoUserInfoNickName = @"nick_name";
 NSString *const kGetUserInfoUserInfoFAddress = @"f_address";
 NSString *const kGetUserInfoUserInfoQq = @"qq";
 NSString *const kGetUserInfoUserInfoFLocation = @"f_location";
+NSString *const kGetUserInfoUserInfoStarCount = @"star_count";
 NSString *const kGetUserInfoUserInfoAddress = @"address";
 NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
 
@@ -41,9 +44,11 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
 @implementation GetUserInfoUserInfo
 
 @synthesize userName = _userName;
+@synthesize fansCount = _fansCount;
 @synthesize wechat = _wechat;
 @synthesize province = _province;
 @synthesize telephone = _telephone;
+@synthesize friendCount = _friendCount;
 @synthesize sex = _sex;
 @synthesize fQq = _fQq;
 @synthesize city = _city;
@@ -60,6 +65,7 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
 @synthesize fAddress = _fAddress;
 @synthesize qq = _qq;
 @synthesize fLocation = _fLocation;
+@synthesize starCount = _starCount;
 @synthesize address = _address;
 @synthesize fWechat = _fWechat;
 
@@ -77,9 +83,11 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
             self.userName = [self objectOrNilForKey:kGetUserInfoUserInfoUserName fromDictionary:dict];
+            self.fansCount = [self objectOrNilForKey:kGetUserInfoUserInfoFansCount fromDictionary:dict];
             self.wechat = [self objectOrNilForKey:kGetUserInfoUserInfoWechat fromDictionary:dict];
             self.province = [self objectOrNilForKey:kGetUserInfoUserInfoProvince fromDictionary:dict];
             self.telephone = [self objectOrNilForKey:kGetUserInfoUserInfoTelephone fromDictionary:dict];
+            self.friendCount = [self objectOrNilForKey:kGetUserInfoUserInfoFriendCount fromDictionary:dict];
             self.sex = [self objectOrNilForKey:kGetUserInfoUserInfoSex fromDictionary:dict];
             self.fQq = [self objectOrNilForKey:kGetUserInfoUserInfoFQq fromDictionary:dict];
             self.city = [self objectOrNilForKey:kGetUserInfoUserInfoCity fromDictionary:dict];
@@ -96,6 +104,7 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
             self.fAddress = [self objectOrNilForKey:kGetUserInfoUserInfoFAddress fromDictionary:dict];
             self.qq = [self objectOrNilForKey:kGetUserInfoUserInfoQq fromDictionary:dict];
             self.fLocation = [self objectOrNilForKey:kGetUserInfoUserInfoFLocation fromDictionary:dict];
+            self.starCount = [[self objectOrNilForKey:kGetUserInfoUserInfoStarCount fromDictionary:dict] doubleValue];
             self.address = [self objectOrNilForKey:kGetUserInfoUserInfoAddress fromDictionary:dict];
             self.fWechat = [self objectOrNilForKey:kGetUserInfoUserInfoFWechat fromDictionary:dict];
 
@@ -109,9 +118,11 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.userName forKey:kGetUserInfoUserInfoUserName];
+    [mutableDict setValue:self.fansCount forKey:kGetUserInfoUserInfoFansCount];
     [mutableDict setValue:self.wechat forKey:kGetUserInfoUserInfoWechat];
     [mutableDict setValue:self.province forKey:kGetUserInfoUserInfoProvince];
     [mutableDict setValue:self.telephone forKey:kGetUserInfoUserInfoTelephone];
+    [mutableDict setValue:self.friendCount forKey:kGetUserInfoUserInfoFriendCount];
     [mutableDict setValue:self.sex forKey:kGetUserInfoUserInfoSex];
     [mutableDict setValue:self.fQq forKey:kGetUserInfoUserInfoFQq];
     [mutableDict setValue:self.city forKey:kGetUserInfoUserInfoCity];
@@ -128,6 +139,7 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
     [mutableDict setValue:self.fAddress forKey:kGetUserInfoUserInfoFAddress];
     [mutableDict setValue:self.qq forKey:kGetUserInfoUserInfoQq];
     [mutableDict setValue:self.fLocation forKey:kGetUserInfoUserInfoFLocation];
+    [mutableDict setValue:[NSNumber numberWithDouble:self.starCount] forKey:kGetUserInfoUserInfoStarCount];
     [mutableDict setValue:self.address forKey:kGetUserInfoUserInfoAddress];
     [mutableDict setValue:self.fWechat forKey:kGetUserInfoUserInfoFWechat];
 
@@ -154,9 +166,11 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
     self = [super init];
 
     self.userName = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoUserName];
+    self.fansCount = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoFansCount];
     self.wechat = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoWechat];
     self.province = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoProvince];
     self.telephone = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoTelephone];
+    self.friendCount = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoFriendCount];
     self.sex = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoSex];
     self.fQq = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoFQq];
     self.city = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoCity];
@@ -173,6 +187,7 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
     self.fAddress = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoFAddress];
     self.qq = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoQq];
     self.fLocation = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoFLocation];
+    self.starCount = [aDecoder decodeDoubleForKey:kGetUserInfoUserInfoStarCount];
     self.address = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoAddress];
     self.fWechat = [aDecoder decodeObjectForKey:kGetUserInfoUserInfoFWechat];
     return self;
@@ -182,9 +197,11 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
 {
 
     [aCoder encodeObject:_userName forKey:kGetUserInfoUserInfoUserName];
+    [aCoder encodeObject:_fansCount forKey:kGetUserInfoUserInfoFansCount];
     [aCoder encodeObject:_wechat forKey:kGetUserInfoUserInfoWechat];
     [aCoder encodeObject:_province forKey:kGetUserInfoUserInfoProvince];
     [aCoder encodeObject:_telephone forKey:kGetUserInfoUserInfoTelephone];
+    [aCoder encodeObject:_friendCount forKey:kGetUserInfoUserInfoFriendCount];
     [aCoder encodeObject:_sex forKey:kGetUserInfoUserInfoSex];
     [aCoder encodeObject:_fQq forKey:kGetUserInfoUserInfoFQq];
     [aCoder encodeObject:_city forKey:kGetUserInfoUserInfoCity];
@@ -201,6 +218,7 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
     [aCoder encodeObject:_fAddress forKey:kGetUserInfoUserInfoFAddress];
     [aCoder encodeObject:_qq forKey:kGetUserInfoUserInfoQq];
     [aCoder encodeObject:_fLocation forKey:kGetUserInfoUserInfoFLocation];
+    [aCoder encodeDouble:_starCount forKey:kGetUserInfoUserInfoStarCount];
     [aCoder encodeObject:_address forKey:kGetUserInfoUserInfoAddress];
     [aCoder encodeObject:_fWechat forKey:kGetUserInfoUserInfoFWechat];
 }
@@ -212,9 +230,11 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
     if (copy) {
 
         copy.userName = [self.userName copyWithZone:zone];
+        copy.fansCount = [self.fansCount copyWithZone:zone];
         copy.wechat = [self.wechat copyWithZone:zone];
         copy.province = [self.province copyWithZone:zone];
         copy.telephone = [self.telephone copyWithZone:zone];
+        copy.friendCount = [self.friendCount copyWithZone:zone];
         copy.sex = [self.sex copyWithZone:zone];
         copy.fQq = [self.fQq copyWithZone:zone];
         copy.city = [self.city copyWithZone:zone];
@@ -231,6 +251,7 @@ NSString *const kGetUserInfoUserInfoFWechat = @"f_wechat";
         copy.fAddress = [self.fAddress copyWithZone:zone];
         copy.qq = [self.qq copyWithZone:zone];
         copy.fLocation = [self.fLocation copyWithZone:zone];
+        copy.starCount = self.starCount;
         copy.address = [self.address copyWithZone:zone];
         copy.fWechat = [self.fWechat copyWithZone:zone];
     }

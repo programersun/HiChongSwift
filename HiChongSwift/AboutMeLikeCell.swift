@@ -15,6 +15,9 @@ class AboutMeLikeCell: UITableViewCell {
     @IBOutlet private weak var bottomRight: UIView!
     @IBOutlet private var bottomLineHeightConstraints: [NSLayoutConstraint]!
     
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var fansLabel: UILabel!
+    @IBOutlet weak var careLabel: UILabel!
     
     @IBOutlet private var textLabels: [UILabel]!
     

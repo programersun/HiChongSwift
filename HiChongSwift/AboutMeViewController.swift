@@ -169,6 +169,12 @@ class AboutMeViewController: UITableViewController {
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier(AboutMeLikeCell.identifier()) as UITableViewCell
             let cell = cell as AboutMeLikeCell
+            if let info = userInfo {
+                let decimal = "."
+                cell.likeLabel.text = "\(info.userInfo.starCount.format(decimal))"
+                cell.fansLabel.text = info.userInfo.fansCount
+                cell.careLabel.text = info.userInfo.friendCount
+            }
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier("AboutMeProfileCellIdentifier") as UITableViewCell
             cell.textLabel?.textColor = UIColor.LCYThemeDarkText()

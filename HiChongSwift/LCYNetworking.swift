@@ -46,6 +46,11 @@ class LCYNetworking {
     private let ArticleHTMLComponent = "Ency/ency_article/ency_id/"
     private let WikiHtmlComponent = "Ency/category_article/cate_id/"
     
+    /**
+    百度地图ak，由开发者 icylydia 提供
+    */
+    private let BaiduAK = "0G8SXbO2PwwGRLTzsIMj0dxi"
+    
     private enum RequestType {
         case GET
         case POST
