@@ -52,3 +52,6 @@
 
 // Square/merchant_info
 #import "SquareMerchantInfo.h"
+
+// Square/comment_list
+#import "SquareCommentList.h"

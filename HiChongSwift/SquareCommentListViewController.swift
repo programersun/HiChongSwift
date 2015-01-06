@@ -10,7 +10,10 @@ import UIKit
 
 class SquareCommentListViewController: UITableViewController {
     
-    private let lan = "韦氏智力量表的一个重要特点是采用了离差智商（deviation IQ）。所谓离差智商就是用标准分数来表示的智商，即让每一个被试和他同年龄的人相比，而不像以前比纳量表所用的智商是和上下年龄的人相比。1960年修订的斯坦福—比纳量表也采用了离差智商，使每一年龄都有平均分数，M=100，标准差σ=16；而韦氏成人和儿童智力量表，其均数也定为100，但标准差定为15。"
+    var businessID: String?
+    var businessName: String?
+    
+    private var commentData: [SquareCommentListMsg]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +29,64 @@ class SquareCommentListViewController: UITableViewController {
         
         let rightItem = UIBarButtonItem(image: UIImage(named: "sqDetailComment"), style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonPressed:")
         self.navigationItem.rightBarButtonItem = rightItem
+        
+        if businessID == nil {
+            alert("无法加载商家信息，请退回重试")
+        } else {
+            reload()
+        }
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Actions
+    private func reload() {
+        let parameter = [
+            "business_id":  businessID!,
+            "page":         "0"
+        ]
+        LCYNetworking.sharedInstance.POST(LCYApi.SquareCommentList, parameters: parameter, success: { [weak self](object) -> Void in
+            let retrieved = SquareCommentListBase.modelObjectWithDictionary(object)
+            if retrieved.result {
+                self?.commentData = [SquareCommentListMsg]()
+                if let msg = retrieved.msg as? [SquareCommentListMsg] {
+                    self?.commentData?.extend(msg)
+                }
+                self?.tableView.reloadData()
+            } else {
+                self?.alert("无法获取评论列表")
+            }
+            return
+        }) { [weak self](error) -> Void in
+            self?.alert("网络连接异常")
+            return
+        }
+    }
+    
     func rightButtonPressed(sender: AnyObject) {
         self.performSegueWithIdentifier("showAdd", sender: nil)
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showAdd":
+                let destination = segue.destinationViewController as SquareCommentViewController
+                destination.businessID = businessID
+                destination.businessName = businessName
+            default:
+                break
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -48,31 +100,35 @@ class SquareCommentListViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 4
+        if let data = commentData {
+            return data.count
+        } else {
+            return 0
+        }
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(SquareCommentListCell.identifier(), forIndexPath: indexPath) as SquareCommentListCell
 
-        cell.icyContentLabel.text = lan
+        let data = commentData![indexPath.row]
+        let commentText = data.content
+        cell.icyContentLabel.text = commentText
         
-        switch indexPath.row % 2 {
-        case 0:
-            cell.icyGender = .male
-        case 1:
-            cell.icyGender = .female
-        default:
-            break
-        }
+        cell.icyNameLabel.text = data.nickName
         
-        cell.icyStar = 0.5 * Float(indexPath.row)
+        cell.imagePath = data.headImage.toAbsolutePath()
+        
+        cell.icyGender = .unknown
+        
+        cell.icyStar = (data.commentScore as NSString).floatValue
 
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let height = (lan as NSString).boundingRectWithSize(CGSize(width:UIScreen.mainScreen().bounds.width - 88.0, height:20000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14.0)], context: nil).height
+        let data = commentData![indexPath.row]
+        let height = (data.content as NSString).boundingRectWithSize(CGSize(width:UIScreen.mainScreen().bounds.width - 88.0, height:20000), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14.0)], context: nil).height
         return (height + 39.0 >= 80.0) ? height + 39.0 : 80.0
     }
 

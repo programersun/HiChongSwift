@@ -110,12 +110,18 @@ class SquareDetailViewController: UIViewController {
                 let destination = segue.destinationViewController as SquareCommentViewController
                 destination.businessID = merchantID
                 destination.businessName = merchantData?.msg.businessName
+            case "showCommentList":
+                let destination = segue.destinationViewController as SquareCommentListViewController
+                destination.businessID = merchantID
+                destination.businessName = merchantData?.msg.businessName
+            case "showMap":
+                let destination = segue.destinationViewController as SquareMapViewController
+                destination.businessData = merchantData?.msg
             default:
                 break
             }
         }
     }
-    
 }
 
 extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -210,7 +216,7 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
         if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
-                break
+                performSegueWithIdentifier("showMap", sender: nil)
             case 1:
                 break
             case 2:

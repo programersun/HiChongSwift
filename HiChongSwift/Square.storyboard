@@ -589,11 +589,47 @@
                         <outlet property="icyTableView" destination="Zjp-Iu-oae" id="Cqv-0i-wNh"/>
                         <segue destination="wZs-R4-Gcf" kind="show" identifier="showCommentList" id="15q-xF-tpN"/>
                         <segue destination="Axt-jg-4SC" kind="show" identifier="showAdd" id="LiE-ao-Chi"/>
+                        <segue destination="SId-wj-W3j" kind="show" identifier="showMap" id="DL1-95-Cs6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLy-S0-JHB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1974" y="164"/>
+        </scene>
+        <!--Square Map View Controller-->
+        <scene sceneID="nmk-C7-30g">
+            <objects>
+                <viewController id="SId-wj-W3j" customClass="SquareMapViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="18M-sA-it9"/>
+                        <viewControllerLayoutGuide type="bottom" id="rXI-S5-ttI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="crB-p7-5LM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gg6-zt-a2g">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SId-wj-W3j" id="xZj-WK-yjz"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gg6-zt-a2g" firstAttribute="leading" secondItem="crB-p7-5LM" secondAttribute="leading" id="Hbf-we-BBc"/>
+                            <constraint firstAttribute="trailing" secondItem="Gg6-zt-a2g" secondAttribute="trailing" id="KRW-Dl-SwE"/>
+                            <constraint firstItem="Gg6-zt-a2g" firstAttribute="top" secondItem="crB-p7-5LM" secondAttribute="top" id="mmS-oc-X5r"/>
+                            <constraint firstItem="rXI-S5-ttI" firstAttribute="top" secondItem="Gg6-zt-a2g" secondAttribute="bottom" id="tMt-7g-gAg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="icyMapView" destination="Gg6-zt-a2g" id="VT1-p0-Gx5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMa-hZ-ETL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2819" y="-190"/>
         </scene>
         <!--Square Comment View Controller-->
         <scene sceneID="Kly-oQ-PHJ">

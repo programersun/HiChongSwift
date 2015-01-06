@@ -45,6 +45,10 @@ extension String {
             return "\(self)岁"
         }
     }
+    
+    func bridgeToObjectiveC() -> NSString {
+        return self as NSString
+    }
 }
 
 extension Double {

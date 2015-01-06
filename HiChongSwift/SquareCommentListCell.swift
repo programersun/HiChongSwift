@@ -10,7 +10,17 @@ import UIKit
 
 class SquareCommentListCell: UITableViewCell {
     
-    @IBOutlet weak var icyimageView: UIImageView!
+    @IBOutlet private weak var icyimageView: UIImageView!
+    
+    /// 图片路径
+    var imagePath: String? {
+        didSet {
+            if let path = imagePath {
+                icyimageView.setImageWithURL(NSURL(string: path))
+            }
+        }
+    }
+    
     @IBOutlet weak var icyNameLabel: UILabel!
     @IBOutlet weak var icyContentLabel: UILabel!
     
@@ -35,6 +45,7 @@ class SquareCommentListCell: UITableViewCell {
     enum squareCommentGender: Int {
         case male
         case female
+        case unknown
     }
     
     var icyGender: squareCommentGender? {
@@ -45,6 +56,8 @@ class SquareCommentListCell: UITableViewCell {
                     self.icyGenderImageView.image = UIImage(named: "sqMale")
                 case .female:
                     self.icyGenderImageView.image = UIImage(named: "sqFemale")
+                case .unknown:
+                    self.icyGenderImageView.image = nil
                 }
             }
         }

@@ -123,6 +123,9 @@
 		28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C93AC91A4D0AB600E1F600 /* WikiListViewController.swift */; };
 		28C93AD01A4D47B600E1F600 /* WikiMoreBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */; };
 		28C93AD11A4D47B600E1F600 /* WikiMoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */; };
+		28DE582E1A5B8D4000B49046 /* SquareCommentListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE582B1A5B8D4000B49046 /* SquareCommentListBase.m */; };
+		28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE582D1A5B8D4000B49046 /* SquareCommentListMsg.m */; };
+		28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE58301A5BA21900B49046 /* SquareMapViewController.swift */; };
 		28E182B41A4AB0AB00E3001A /* CommonUploadBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */; };
 		28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E182B31A4AB0AB00E3001A /* CommonUploadImages.m */; };
 		28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E5B4CC1A397667009951FF /* LCYGetSquareCategoryListInfo.m */; };
@@ -311,6 +314,12 @@
 		28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreBase.m; sourceTree = "<group>"; };
 		28C93ACE1A4D47B600E1F600 /* WikiMoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiMoreData.h; sourceTree = "<group>"; };
 		28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreData.m; sourceTree = "<group>"; };
+		28DE58291A5B8D4000B49046 /* SquareCommentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCommentList.h; sourceTree = "<group>"; };
+		28DE582A1A5B8D4000B49046 /* SquareCommentListBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCommentListBase.h; sourceTree = "<group>"; };
+		28DE582B1A5B8D4000B49046 /* SquareCommentListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareCommentListBase.m; sourceTree = "<group>"; };
+		28DE582C1A5B8D4000B49046 /* SquareCommentListMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCommentListMsg.h; sourceTree = "<group>"; };
+		28DE582D1A5B8D4000B49046 /* SquareCommentListMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareCommentListMsg.m; sourceTree = "<group>"; };
+		28DE58301A5BA21900B49046 /* SquareMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareMapViewController.swift; sourceTree = "<group>"; };
 		28E182AF1A4AB0AB00E3001A /* CommonUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUpload.h; sourceTree = "<group>"; };
 		28E182B01A4AB0AB00E3001A /* CommonUploadBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUploadBase.h; sourceTree = "<group>"; };
 		28E182B11A4AB0AB00E3001A /* CommonUploadBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUploadBase.m; sourceTree = "<group>"; };
@@ -655,6 +664,7 @@
 				28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */,
 				28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */,
 				2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */,
+				28DE58301A5BA21900B49046 /* SquareMapViewController.swift */,
 			);
 			name = Square;
 			sourceTree = "<group>";
@@ -718,6 +728,11 @@
 				284896201A5A967F00D45285 /* SquareMerchantInfoBase.m */,
 				284896211A5A967F00D45285 /* SquareMerchantInfoMsg.h */,
 				284896221A5A967F00D45285 /* SquareMerchantInfoMsg.m */,
+				28DE58291A5B8D4000B49046 /* SquareCommentList.h */,
+				28DE582A1A5B8D4000B49046 /* SquareCommentListBase.h */,
+				28DE582B1A5B8D4000B49046 /* SquareCommentListBase.m */,
+				28DE582C1A5B8D4000B49046 /* SquareCommentListMsg.h */,
+				28DE582D1A5B8D4000B49046 /* SquareCommentListMsg.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -958,12 +973,14 @@
 				289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */,
+				28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28ED69261A4BAFE500CAE227 /* WikiViewController.swift in Sources */,
 				281319591A592B0D00913BC6 /* SquareHomeCategory.m in Sources */,
 				28EE4D1E1A49361D008F9F87 /* GetUserInfoBase.m in Sources */,
 				28C93AC81A4CF6DE00E1F600 /* WikiCollectListData.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
+				28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */,
 				2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */,
@@ -982,6 +999,7 @@
 				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
 				2813194D1A59162100913BC6 /* WikiWebViewController.swift in Sources */,
 				281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */,
+				28DE582E1A5B8D4000B49046 /* SquareCommentListBase.m in Sources */,
 				28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
