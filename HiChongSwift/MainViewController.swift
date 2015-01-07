@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MainViewController: UITabBarController {
+    
+    private var location: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +59,34 @@ class MainViewController: UITabBarController {
         aboutMeVC.tabBarItem.image = UIImage(named: "me")
         self.addChildViewController(aboutMeVC)
         
+        // 更新地理坐标
+        LCYCommon.sharedInstance.getLocation({ [weak self](location) -> Void in
+            self?.location = location
+            self?.updateLocation()
+            return
+        }, fail: { [weak self]() -> Void in
+            return
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func updateLocation() {
+        if let loc = location {
+            let parameters = [
+                "user_id": LCYCommon.sharedInstance.userName!,
+                "latitude": "\(loc.coordinate.latitude)",
+                "longitude": "\(loc.coordinate.longitude)"
+            ]
+            LCYNetworking.sharedInstance.POST(LCYApi.UserChangeLocation, parameters: parameters, success: { (object) -> Void in
+                return
+            }, failure: { (error) -> Void in
+                return
+            })
+        }
     }
     
 

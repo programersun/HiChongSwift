@@ -11,7 +11,8 @@ import UIKit
 class FindCircleAddNewViewController: UITableViewController {
     
     // 上传数据 ⬇️
-    
+    private var locationString: String?
+    private var myPet: GetUserInfoPetInfo?
     // 上传数据 ⬆️
     
     enum FindCircleAddNewType: Int {
@@ -64,6 +65,9 @@ class FindCircleAddNewViewController: UITableViewController {
             switch identifier {
             case "showLocation":
                 let destination = segue.destinationViewController as FindLocationViewController
+                destination.delegate = self
+            case "showPet":
+                let destination = segue.destinationViewController as FindPetViewController
                 destination.delegate = self
             default:
                 break
@@ -119,12 +123,22 @@ class FindCircleAddNewViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 cell.imageView?.image = UIImage(named: "findCircle")
-                cell.textLabel?.text = "选择宠物"
+                cell.textLabel?.text = ""
                 cell.backgroundColor = UIColor.LCYTableLightGray()
+                if let petInfo = myPet {
+                    cell.detailTextLabel?.text = petInfo.petName
+                } else {
+                    cell.detailTextLabel?.text = "选择宠物"
+                }
             case 1:
-                cell.imageView?.image = UIImage(named: "findCircle")
-                cell.textLabel?.text = "选择位置"
+                cell.imageView?.image = UIImage(named: "findNearby")
+                cell.textLabel?.text = ""
                 cell.backgroundColor = UIColor.LCYTableLightBlue()
+                if let location = locationString {
+                    cell.detailTextLabel?.text = location
+                } else {
+                    cell.detailTextLabel?.text = "选择位置"
+                }
             default:
                 break
             }
@@ -158,6 +172,7 @@ class FindCircleAddNewViewController: UITableViewController {
         case 1:
             if indexPath.row == 0 {
                 // 选择宠物
+                performSegueWithIdentifier("showPet", sender: nil)
             } else {
                 // 选择位置
                 performSegueWithIdentifier("showLocation", sender: nil)
@@ -217,5 +232,14 @@ extension FindCircleAddNewViewController: UIImagePickerControllerDelegate, UINav
 
 extension FindCircleAddNewViewController: FindLocationDelegate {
     func findLocationSuccess(location: String?) {
+        locationString = location
+        tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+}
+
+extension FindCircleAddNewViewController: FindPetDelegate {
+    func findPetSuccess(pet: GetUserInfoPetInfo?) {
+        myPet = pet
+        tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
     }
 }

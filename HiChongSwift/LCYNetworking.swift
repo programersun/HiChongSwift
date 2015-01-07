@@ -22,6 +22,7 @@ enum LCYApi: String {
     case UserModifySingle           = "User/modifySingleProperty"
     case UserModifyLocation         = "User/modifyLocation"
     case UserModifyInfo             = "User/modifyInfo"
+    case UserChangeLocation         = "User/changeLocation"
     
     case PetGetDetail               = "Pet/GetPetDetailByID"
     case PetAllType                 = "PetStyle/searchAllTypePets"
