@@ -25,6 +25,10 @@
 		2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */; };
 		2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */; };
 		2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEBA1A4A983300D18543 /* QRScanViewController.swift */; };
+		280A08541A5CD4220016A504 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A08531A5CD4220016A504 /* FindLocationViewController.swift */; };
+		280A08AA1A5D2A5F0016A504 /* DianpingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A51A5D2A5F0016A504 /* DianpingBase.m */; };
+		280A08AB1A5D2A5F0016A504 /* DianpingBusinesses.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A71A5D2A5F0016A504 /* DianpingBusinesses.m */; };
+		280A08AC1A5D2A5F0016A504 /* DianpingDeals.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A91A5D2A5F0016A504 /* DianpingDeals.m */; };
 		281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319461A58D08000913BC6 /* WikiesViewController.swift */; };
 		281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319481A58E34500913BC6 /* WikiesHeadCell.swift */; };
 		2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */; };
@@ -184,6 +188,14 @@
 		2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetFinalFilterViewController.swift; sourceTree = "<group>"; };
 		2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePickerViewController.swift; sourceTree = "<group>"; };
 		2806FEBA1A4A983300D18543 /* QRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
+		280A08531A5CD4220016A504 /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
+		280A08A31A5D2A5F0016A504 /* Dianping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dianping.h; sourceTree = "<group>"; };
+		280A08A41A5D2A5F0016A504 /* DianpingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingBase.h; sourceTree = "<group>"; };
+		280A08A51A5D2A5F0016A504 /* DianpingBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingBase.m; sourceTree = "<group>"; };
+		280A08A61A5D2A5F0016A504 /* DianpingBusinesses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingBusinesses.h; sourceTree = "<group>"; };
+		280A08A71A5D2A5F0016A504 /* DianpingBusinesses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingBusinesses.m; sourceTree = "<group>"; };
+		280A08A81A5D2A5F0016A504 /* DianpingDeals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingDeals.h; sourceTree = "<group>"; };
+		280A08A91A5D2A5F0016A504 /* DianpingDeals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingDeals.m; sourceTree = "<group>"; };
 		281319461A58D08000913BC6 /* WikiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesViewController.swift; sourceTree = "<group>"; };
 		281319481A58E34500913BC6 /* WikiesHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesHeadCell.swift; sourceTree = "<group>"; };
 		2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesMidCell.swift; sourceTree = "<group>"; };
@@ -480,6 +492,20 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		280A08A21A5D2A590016A504 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				280A08A31A5D2A5F0016A504 /* Dianping.h */,
+				280A08A41A5D2A5F0016A504 /* DianpingBase.h */,
+				280A08A51A5D2A5F0016A504 /* DianpingBase.m */,
+				280A08A61A5D2A5F0016A504 /* DianpingBusinesses.h */,
+				280A08A71A5D2A5F0016A504 /* DianpingBusinesses.m */,
+				280A08A81A5D2A5F0016A504 /* DianpingDeals.h */,
+				280A08A91A5D2A5F0016A504 /* DianpingDeals.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		282D6BE11A301B0F00942F60 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,12 +651,14 @@
 		28BE7C781A412CDE00F3BC2A /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				280A08A21A5D2A590016A504 /* Model */,
 				287EDFDF1A3FD461005B6A57 /* FindCircleViewController.swift */,
 				287EDFE11A3FD7C9005B6A57 /* FindCircleHeader.xib */,
 				287EDFE31A3FED0C005B6A57 /* FindCircleListCell.swift */,
 				287EDFE51A403928005B6A57 /* FindCircleAddNewViewController.swift */,
 				287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */,
 				28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */,
+				280A08531A5CD4220016A504 /* FindLocationViewController.swift */,
 			);
 			name = Circle;
 			sourceTree = "<group>";
@@ -977,6 +1005,8 @@
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28ED69261A4BAFE500CAE227 /* WikiViewController.swift in Sources */,
 				281319591A592B0D00913BC6 /* SquareHomeCategory.m in Sources */,
+				280A08541A5CD4220016A504 /* FindLocationViewController.swift in Sources */,
+				280A08AA1A5D2A5F0016A504 /* DianpingBase.m in Sources */,
 				28C93AC81A4CF6DE00E1F600 /* WikiCollectListData.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
 				28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */,
@@ -1029,7 +1059,9 @@
 				2806FEAA1A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m in Sources */,
 				2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */,
 				28BE7C801A41353D00F3BC2A /* FindSearchViewController.swift in Sources */,
+				280A08AC1A5D2A5F0016A504 /* DianpingDeals.m in Sources */,
 				28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */,
+				280A08AB1A5D2A5F0016A504 /* DianpingBusinesses.m in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
 				28B9CEA51A49A97E004E6386 /* AboutMeModifyTextViewController.swift in Sources */,
 				289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */,

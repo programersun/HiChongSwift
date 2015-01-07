@@ -61,3 +61,24 @@ extension Double {
         return "\((self / 1000.0).format(dot2format))km"
     }
 }
+
+extension Dictionary{
+    mutating func extend(content: Dictionary) {
+        for (key, value) in content {
+            self.updateValue(value, forKey: key)
+        }
+    }
+}
+
+extension String {
+    func SHA_1() -> String {
+        let data = self.dataUsingEncoding(NSUTF8StringEncoding)!
+        var digest = [UInt8](count:Int(CC_SHA1_DIGEST_LENGTH), repeatedValue: 0)
+        CC_SHA1(data.bytes, CC_LONG(data.length), &digest)
+        let output = NSMutableString(capacity: Int(CC_SHA1_DIGEST_LENGTH))
+        for byte in digest {
+            output.appendFormat("%02X", byte)
+        }
+        return output
+    }
+}

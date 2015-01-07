@@ -10,6 +10,10 @@ import UIKit
 
 class FindCircleAddNewViewController: UITableViewController {
     
+    // 上传数据 ⬇️
+    
+    // 上传数据 ⬆️
+    
     enum FindCircleAddNewType: Int {
         case textOnly = 0
         case mixed = 1
@@ -47,6 +51,24 @@ class FindCircleAddNewViewController: UITableViewController {
     // MARK: - Actions
     func rightButtonPressed(sender: AnyObject) {
         println("right button pressed!")
+    }
+    
+
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showLocation":
+                let destination = segue.destinationViewController as FindLocationViewController
+                destination.delegate = self
+            default:
+                break
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -131,6 +153,20 @@ class FindCircleAddNewViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 1:
+            if indexPath.row == 0 {
+                // 选择宠物
+            } else {
+                // 选择位置
+                performSegueWithIdentifier("showLocation", sender: nil)
+            }
+        default:
+            break
+        }
+    }
+    
 }
 
 extension FindCircleAddNewViewController: FindAddImageSource {
@@ -176,5 +212,10 @@ extension FindCircleAddNewViewController: UIImagePickerControllerDelegate, UINav
         UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
         // 处理上传之后，隐藏HUD
         self.hideHUD()
+    }
+}
+
+extension FindCircleAddNewViewController: FindLocationDelegate {
+    func findLocationSuccess(location: String?) {
     }
 }

@@ -51,6 +51,13 @@ class LCYNetworking {
     */
     private let BaiduAK = "0G8SXbO2PwwGRLTzsIMj0dxi"
     
+    /**
+    大众点评，由开发者 icylydia 提供
+    */
+    private let DianpingHost = "http://api.dianping.com/v1/business/find_businesses"
+    private let DianpingAppKey = "0900420225"
+    private let DianpingAppSecret = "c3385423913745e992079187dc08d33d"
+    
     private enum RequestType {
         case GET
         case POST
@@ -61,6 +68,39 @@ class LCYNetworking {
             static let instance = LCYNetworking()
         }
         return Singleton.instance
+    }
+    
+    func Dianping(parameters: [String: String], success: ((object: NSDictionary) -> ())?, failure: ((error: NSError) -> ())?) {
+        let manager = AFHTTPRequestOperationManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        var mutpara = parameters
+        mutpara.extend(["platform": "2"])
+        
+        let keys = sorted(mutpara.keys)
+        
+        let signStringA = reduce(keys, DianpingAppKey) { (prefix, element) -> String in
+            prefix + element + mutpara[element]!
+        }
+        let signStringB = signStringA + DianpingAppSecret
+        
+        let sign = signStringB.SHA_1()
+        
+        mutpara.extend(["appkey": DianpingAppKey, "sign": sign])
+        
+        println("request 大众点评 with parameters: \(mutpara)")
+        
+        manager.GET(DianpingHost, parameters: mutpara, success: { (operation, object) -> Void in
+            println("success in dianping ====> \(operation.responseString)")
+            if let unwrappedSuccess = success {
+                unwrappedSuccess(object: object as NSDictionary)
+            }
+        }) { (operation, error) -> Void in
+            println("error \(error)")
+            println("\(operation.responseString)")
+            if let unwrappedFailure = failure {
+                unwrappedFailure(error: error)
+            }
+        }
     }
     
     func POSTAndGET(Api: LCYApi, GETParameters: [String: String]?, POSTParameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {

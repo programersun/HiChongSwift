@@ -55,3 +55,7 @@
 
 // Square/comment_list
 #import "SquareCommentList.h"
+
+// 大众点评获取附近商家
+#import <CommonCrypto/CommonCrypto.h>
+#import "Dianping.h"
