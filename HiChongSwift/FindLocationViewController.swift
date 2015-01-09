@@ -28,11 +28,16 @@ class FindLocationViewController: UITableViewController {
         
         navigationItem.title = "选择位置"
         
+        tableView.hideExtraSeprator()
+        
+        showHUD()
         LCYCommon.sharedInstance.getLocation({ [weak self](location) -> Void in
             self?.location = location
             self?.reload()
             return
         }, fail: { [weak self]() -> Void in
+            self?.hideHUD()
+            self?.alert("无法获取您的位置信息")
             return
         })
     }
@@ -61,10 +66,12 @@ class FindLocationViewController: UITableViewController {
                     // 获取失败
                     self?.alert("无法加载周边商家")
                 }
+                self?.hideHUD()
                 return
             }, failure: { [weak self](error) -> () in
                 // 获取失败
                 self?.alert("无法加载周边商家")
+                self?.hideHUD()
                 return
             })
         }

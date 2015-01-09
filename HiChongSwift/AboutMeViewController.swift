@@ -53,6 +53,7 @@ class AboutMeViewController: UITableViewController {
         addPetButton.backgroundColor = UIColor.LCYThemeOrange()
         addPetView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: 60.0)
         addPetView.backgroundColor = UIColor.LCYThemeColor()
+        addPetView.layoutIfNeeded()
         
         navigationItem.title = ""
         // 添加下拉刷新
@@ -89,6 +90,7 @@ class AboutMeViewController: UITableViewController {
     
     private func addFooter() {
         dispatch_once(&onceToken, { [weak self] () -> Void in
+            self?.addPetView.frame.origin = CGPoint(x: 0, y: 0)
             self?.tableView.tableFooterView = self?.addPetView
             return
         })
