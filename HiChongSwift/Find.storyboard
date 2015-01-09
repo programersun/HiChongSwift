@@ -522,6 +522,9 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstItem="S9p-eT-Jq5" firstAttribute="top" secondItem="Tjf-yh-P97" secondAttribute="top" constant="8" id="rPU-Cq-5Tf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icyTextView" destination="S9p-eT-Jq5" id="lEw-a8-zEa"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pickerCell" textLabel="tXm-4V-zXK" detailTextLabel="0Wa-GT-zGE" rowHeight="44" style="IBUITableViewCellStyleValue1" id="GCs-IZ-tuZ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>

@@ -53,7 +53,8 @@ class QRScanViewController: UIViewController {
         
         // Session
         session = AVCaptureSession()
-        session?.sessionPreset = AVCaptureSessionPresetHigh
+//        session?.sessionPreset = AVCaptureSessionPresetHigh
+        session?.sessionPreset = AVCaptureSessionPreset1920x1080
         if let usession = session {
             if usession.canAddInput(input) {
                 usession.addInput(input)
@@ -103,6 +104,9 @@ class QRScanViewController: UIViewController {
 extension QRScanViewController: AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if isBeingPresented() {
+            return
+        }
+        if isBeingDismissed() {
             return
         }
         var stringValue: String?

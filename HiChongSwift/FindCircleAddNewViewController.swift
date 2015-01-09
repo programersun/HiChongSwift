@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FindCircleAddNewViewController: UITableViewController {
     
     // 上传数据 ⬇️
     private var locationString: String?
     private var myPet: GetUserInfoPetInfo?
+    private var location: CLLocation?
+    private weak var icyTextView: UITextView?
     // 上传数据 ⬆️
     
     enum FindCircleAddNewType: Int {
@@ -42,6 +45,14 @@ class FindCircleAddNewViewController: UITableViewController {
         self.tableView.backgroundColor = UIColor.LCYThemeColor()
         
         self.addRightButton("发送", action: "rightButtonPressed:")
+        
+        LCYCommon.sharedInstance.getLocation({ [weak self](location) -> Void in
+            self?.location = location
+            return
+        }, fail: { [weak self]() -> Void in
+            self?.alert("无法获取位置信息")
+            return
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,6 +63,64 @@ class FindCircleAddNewViewController: UITableViewController {
     // MARK: - Actions
     func rightButtonPressed(sender: AnyObject) {
         println("right button pressed!")
+        if checkValid() {
+            var parameters = [String: String]()
+            switch currentType {
+            case .textOnly:
+                parameters.extend([
+                    "twitter_keeper"    : LCYCommon.sharedInstance.userName!,
+                    "twitter_pet"       : myPet!.petId,
+                    "twitter_type"      : "1",
+                    "twitter_content"   : icyTextView!.text,
+                    "twitter_location"  : locationString ?? "",
+                    "twitter_longitude" : "\(location!.coordinate.longitude)",
+                    "twitter_latitude"  : "\(location!.coordinate.latitude)"
+                    ])
+                showHUD()
+                LCYNetworking.sharedInstance.POST(LCYApi.TwitterAdd, parameters: parameters, success: { [weak self](object) -> Void in
+                    if let result = object["result"] as? NSNumber {
+                        if result.boolValue {
+                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
+                        } else {
+                            self?.alert("提交失败")
+                        }
+                    } else {
+                        self?.alert("提交失败")
+                    }
+                    self?.hideHUD()
+                    return
+                }, failure: { [weak self](error) -> Void in
+                    self?.alert("提交失败，请检查您的网络状态")
+                    self?.hideHUD()
+                    return
+                })
+            case .mixed:
+                // TODO: 图文混合
+                break
+            }
+            
+        }
+    }
+    
+    private func checkValid() -> Bool {
+        if location == nil {
+            alert("未能获取用户位置信息")
+            return false
+        }
+        if myPet == nil {
+            alert("请选择一个宠物")
+            return false
+        }
+        if let text = icyTextView?.text {
+            if countElements(text) == 0 {
+                alert("请输入要发送的消息")
+                return false
+            }
+        } else {
+            alert("程序员认为：此处不应该被执行到的;]")
+            return false
+        }
+        return true
     }
     
 
@@ -118,6 +187,8 @@ class FindCircleAddNewViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             cell = tableView.dequeueReusableCellWithIdentifier(FindCircleAddTextCell.identifier(), forIndexPath: indexPath) as UITableViewCell
+            let cell = cell as FindCircleAddTextCell
+            icyTextView = cell.icyTextView
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier("pickerCell") as UITableViewCell
             switch indexPath.row {
@@ -241,5 +312,13 @@ extension FindCircleAddNewViewController: FindPetDelegate {
     func findPetSuccess(pet: GetUserInfoPetInfo?) {
         myPet = pet
         tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+}
+
+extension FindCircleAddNewViewController: UIAlertViewDelegate {
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if alertView.tag == 3301 {
+            navigationController?.popViewControllerAnimated(true)
+        }
     }
 }

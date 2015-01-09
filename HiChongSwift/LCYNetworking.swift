@@ -8,6 +8,8 @@
 
 
 enum LCYApi: String {
+    case TwitterAdd                 = "Twitter/twitter_add"
+    
     case SquareGetSquareCategory    = "Square/getSquareCategory" /// Deprecated
     case SquareHome                 = "Square/home"
     case SquaregetSquareList        = "Square/getSquareList"

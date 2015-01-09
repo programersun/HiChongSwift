@@ -10,6 +10,8 @@ import UIKit
 
 class FindCircleAddTextCell: UITableViewCell {
     
+    @IBOutlet weak var icyTextView: UITextView!
+    
     class func identifier() -> String {
         return "FindCircleAddTextCellIdentifier"
     }
