@@ -9,6 +9,8 @@
 
 enum LCYApi: String {
     case TwitterAdd                 = "Twitter/twitter_add"
+    case TwitterList                = "Twitter/twitter_list"
+    case TwitterKeeperInfo          = "Twitter/keeper_info"
     
     case SquareGetSquareCategory    = "Square/getSquareCategory" /// Deprecated
     case SquareHome                 = "Square/home"
@@ -41,6 +43,7 @@ enum LCYApi: String {
 
 enum LCYMimeType: String {
     case PNG                        = "image/png"
+    case JPEG                       = "image/jpeg"
 }
 
 class LCYNetworking {
@@ -189,6 +192,30 @@ class LCYNetworking {
         let absoluteURL = hostURL + Api.rawValue
         manager.POST(absoluteURL, parameters: parameters, constructingBodyWithBlock: { (formData: AFMultipartFormData!) -> Void in
             formData.appendPartWithFileData(fileData, name: fileKey, fileName: fileName, mimeType: mimeType.rawValue)
+            return
+            }, success: { (operation, object) -> Void in
+                println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
+                if let unwrappedSuccess = success {
+                    unwrappedSuccess(object: object as NSDictionary)
+                }
+            }) { (operation, error) -> Void in
+                println("error \(error)")
+                if let unwrappedFailure = failure {
+                    unwrappedFailure(error: error)
+                }
+        }
+    }
+    
+    func POSTMultipleFile(Api: LCYApi, parameters: NSDictionary!, fileKey: String!, fileData: [NSData]!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError) -> Void)?) {
+        let manager = AFHTTPRequestOperationManager()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        let absoluteURL = hostURL + Api.rawValue
+        println("posting file, please wait!")
+        manager.POST(absoluteURL, parameters: parameters, constructingBodyWithBlock: { (formData: AFMultipartFormData!) -> Void in
+            for data in fileData {
+                formData.appendPartWithFileData(data, name: fileKey, fileName: "\(data.hash).jpg", mimeType: LCYMimeType.JPEG.rawValue)
+            }
             return
             }, success: { (operation, object) -> Void in
                 println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")

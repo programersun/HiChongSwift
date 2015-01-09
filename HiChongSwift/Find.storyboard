@@ -42,12 +42,12 @@
         <scene sceneID="Zx9-SE-Hth">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="JQh-hr-VQl" customClass="FindCircleViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="349" sectionHeaderHeight="22" sectionFooterHeight="22" id="oiM-aF-dIX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="506" sectionHeaderHeight="22" sectionFooterHeight="22" id="oiM-aF-dIX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindCircleListCellIdentifier" rowHeight="349" id="ehT-xs-MGo" customClass="FindCircleListCell" customModule="HiChongSwift" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindCircleListCellIdentifier" rowHeight="506" id="ehT-xs-MGo" customClass="FindCircleListCell" customModule="HiChongSwift" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ehT-xs-MGo" id="NzX-SA-d7k">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -81,55 +81,114 @@ So as I pray, Unlimited Blade Works.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Taj-ln-3Ib">
-                                            <rect key="frame" x="68" y="176" width="242" height="86"/>
+                                            <rect key="frame" x="68" y="176" width="242" height="242"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6F-GV-kLu">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oQF-zk-Sgd">
                                                     <rect key="frame" x="8" y="8" width="70" height="70"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="3Sh-jT-Qag"/>
-                                                        <constraint firstAttribute="height" constant="70" id="7Zp-Do-VQb"/>
+                                                        <constraint firstAttribute="height" constant="70" id="BrP-9F-LyH"/>
+                                                        <constraint firstAttribute="width" constant="70" id="Lem-Lq-WYL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Egr-Gf-g9G">
+                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLJ-Xg-Wue">
                                                     <rect key="frame" x="86" y="8" width="70" height="70"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="ORA-UP-xUF"/>
-                                                        <constraint firstAttribute="height" constant="70" id="Udq-lQ-R80"/>
+                                                        <constraint firstAttribute="width" constant="70" id="IcH-4S-OKw"/>
+                                                        <constraint firstAttribute="height" constant="70" id="ffi-xI-F62"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yI0-Iu-0hO">
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wvh-k1-iAK">
                                                     <rect key="frame" x="164" y="8" width="70" height="70"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="EJI-WN-KQi"/>
-                                                        <constraint firstAttribute="height" constant="70" id="ZaN-WV-74F"/>
+                                                        <constraint firstAttribute="width" constant="70" id="8Ib-Ku-Uae"/>
+                                                        <constraint firstAttribute="height" constant="70" id="NYT-7V-Hqx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XAJ-3X-H0J">
+                                                    <rect key="frame" x="8" y="86" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="OU0-5H-VWz"/>
+                                                        <constraint firstAttribute="width" constant="70" id="VzH-Qa-8Fo"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FIf-ai-sgU">
+                                                    <rect key="frame" x="86" y="86" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="612-QE-3bK"/>
+                                                        <constraint firstAttribute="height" constant="70" id="hn4-Zg-Tb4"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FDD-2K-mxc">
+                                                    <rect key="frame" x="8" y="164" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="nPv-en-UHB"/>
+                                                        <constraint firstAttribute="width" constant="70" id="pO5-U0-Ymm"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vXC-xc-0zX">
+                                                    <rect key="frame" x="86" y="164" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="1PR-tW-Us2"/>
+                                                        <constraint firstAttribute="height" constant="70" id="FOi-Q6-HlN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ka2-vO-ggm">
+                                                    <rect key="frame" x="164" y="164" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="7sv-9P-ACy"/>
+                                                        <constraint firstAttribute="height" constant="70" id="aIW-ik-Pb6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z3G-1T-ISe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="242" height="242"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dgm-2x-RFY">
+                                                    <rect key="frame" x="164" y="86" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="4gr-pe-gT7"/>
+                                                        <constraint firstAttribute="height" constant="70" id="GBe-L6-MXs"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="Egr-Gf-g9G" firstAttribute="leading" secondItem="W6F-GV-kLu" secondAttribute="trailing" constant="8" id="63z-b5-uDm"/>
-                                                <constraint firstItem="Egr-Gf-g9G" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" constant="8" id="Df2-lg-pxx"/>
-                                                <constraint firstItem="W6F-GV-kLu" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="Dw9-Jj-pGx"/>
-                                                <constraint firstItem="yI0-Iu-0hO" firstAttribute="leading" secondItem="Egr-Gf-g9G" secondAttribute="trailing" constant="8" id="EeI-8J-5Jq"/>
-                                                <constraint firstAttribute="centerX" secondItem="Egr-Gf-g9G" secondAttribute="centerX" id="Lmy-tn-4kQ"/>
-                                                <constraint firstAttribute="centerY" secondItem="W6F-GV-kLu" secondAttribute="centerY" id="Mt8-o5-meY"/>
-                                                <constraint firstAttribute="trailing" secondItem="yI0-Iu-0hO" secondAttribute="trailing" constant="8" id="V23-Fz-4pi"/>
-                                                <constraint firstAttribute="centerY" secondItem="Egr-Gf-g9G" secondAttribute="centerY" id="jCg-vR-eYV"/>
-                                                <constraint firstAttribute="centerY" secondItem="yI0-Iu-0hO" secondAttribute="centerY" id="oWo-gf-moK"/>
-                                                <constraint firstAttribute="bottom" secondItem="Egr-Gf-g9G" secondAttribute="bottom" constant="8" id="s3V-jI-raR"/>
+                                                <constraint firstItem="Z3G-1T-ISe" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" id="1KR-mR-Ysf"/>
+                                                <constraint firstItem="dgm-2x-RFY" firstAttribute="leading" secondItem="FIf-ai-sgU" secondAttribute="trailing" constant="8" id="4xx-bp-uDW"/>
+                                                <constraint firstItem="oQF-zk-Sgd" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" constant="8" id="7Mq-f2-4KG"/>
+                                                <constraint firstItem="Ka2-vO-ggm" firstAttribute="leading" secondItem="vXC-xc-0zX" secondAttribute="trailing" constant="8" id="9yO-gd-dio"/>
+                                                <constraint firstItem="XAJ-3X-H0J" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="AxA-bK-zR9"/>
+                                                <constraint firstAttribute="height" constant="242" id="BBu-N5-woE"/>
+                                                <constraint firstItem="vXC-xc-0zX" firstAttribute="top" secondItem="FIf-ai-sgU" secondAttribute="bottom" constant="8" id="FGR-o5-pkb"/>
+                                                <constraint firstAttribute="width" constant="242" id="FdF-7U-g8c"/>
+                                                <constraint firstItem="FDD-2K-mxc" firstAttribute="top" secondItem="XAJ-3X-H0J" secondAttribute="bottom" constant="8" id="Fmj-1b-VUf"/>
+                                                <constraint firstItem="XAJ-3X-H0J" firstAttribute="top" secondItem="oQF-zk-Sgd" secondAttribute="bottom" constant="8" id="G1d-4Y-iKE"/>
+                                                <constraint firstAttribute="trailing" secondItem="Z3G-1T-ISe" secondAttribute="trailing" id="Kf1-R7-mTt"/>
+                                                <constraint firstItem="dgm-2x-RFY" firstAttribute="top" secondItem="Wvh-k1-iAK" secondAttribute="bottom" constant="8" id="VjB-xs-C5x"/>
+                                                <constraint firstItem="Wvh-k1-iAK" firstAttribute="leading" secondItem="wLJ-Xg-Wue" secondAttribute="trailing" constant="8" id="XN5-Lj-rxf"/>
+                                                <constraint firstItem="wLJ-Xg-Wue" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" constant="8" id="cG6-lf-Lt6"/>
+                                                <constraint firstItem="FDD-2K-mxc" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="dZI-ro-Fco"/>
+                                                <constraint firstItem="vXC-xc-0zX" firstAttribute="leading" secondItem="FDD-2K-mxc" secondAttribute="trailing" constant="8" id="eM4-O1-IpV"/>
+                                                <constraint firstItem="Z3G-1T-ISe" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" id="h98-hK-U4l"/>
+                                                <constraint firstItem="Ka2-vO-ggm" firstAttribute="top" secondItem="dgm-2x-RFY" secondAttribute="bottom" constant="8" id="hb8-Dy-rkg"/>
+                                                <constraint firstItem="FIf-ai-sgU" firstAttribute="top" secondItem="wLJ-Xg-Wue" secondAttribute="bottom" constant="8" id="qRs-lR-cys"/>
+                                                <constraint firstItem="oQF-zk-Sgd" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="t0e-NS-4p9"/>
+                                                <constraint firstItem="FIf-ai-sgU" firstAttribute="leading" secondItem="XAJ-3X-H0J" secondAttribute="trailing" constant="8" id="wBI-Cv-PJ5"/>
+                                                <constraint firstItem="Wvh-k1-iAK" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" constant="8" id="wKi-dj-KGR"/>
+                                                <constraint firstItem="wLJ-Xg-Wue" firstAttribute="leading" secondItem="oQF-zk-Sgd" secondAttribute="trailing" constant="8" id="xUD-cP-1yc"/>
+                                                <constraint firstAttribute="bottom" secondItem="Z3G-1T-ISe" secondAttribute="bottom" id="ybG-9x-GXq"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-hf-na8">
-                                            <rect key="frame" x="68" y="262" width="182" height="38"/>
+                                            <rect key="frame" x="68" y="418" width="182" height="38"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO9-mb-aG0">
                                                     <rect key="frame" x="8" y="8" width="50" height="22"/>
                                                     <state key="normal" image="findCircleCellUp">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="starButtonPressed:" destination="ehT-xs-MGo" eventType="touchUpInside" id="HoN-ok-3ct"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54r-pl-adO">
                                                     <rect key="frame" x="124" y="8" width="50" height="22"/>
@@ -159,13 +218,13 @@ So as I pray, Unlimited Blade Works.</string>
                                             </constraints>
                                         </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-9K-XR6" userLabel="seprator">
-                                            <rect key="frame" x="8" y="348" width="584" height="1"/>
+                                            <rect key="frame" x="8" y="505" width="584" height="1"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="qb2-Of-M62"/>
                                             </constraints>
                                         </imageView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-Io-DKC">
-                                            <rect key="frame" x="68" y="308" width="524" height="32"/>
+                                            <rect key="frame" x="68" y="464" width="524" height="32"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="uoS-gv-Jlx"/>
@@ -177,15 +236,28 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="identifier" id="e5O-ZP-v7f">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FindAddImageCollectionCellIdentifier" id="e5O-ZP-v7f" customClass="FindAddImageCollectionCell" customModule="HiChongSwift" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-wl-8Rl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                            </imageView>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
-                                                    <color key="backgroundColor" red="1" green="0.5824369855" blue="0.52160284420000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="yYp-wl-8Rl" firstAttribute="leading" secondItem="e5O-ZP-v7f" secondAttribute="leading" id="It2-1J-OB4"/>
+                                                        <constraint firstItem="yYp-wl-8Rl" firstAttribute="top" secondItem="e5O-ZP-v7f" secondAttribute="top" id="m6q-cI-eD3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="yYp-wl-8Rl" secondAttribute="bottom" id="tzQ-1a-eaF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yYp-wl-8Rl" secondAttribute="trailing" id="u3P-YP-PfI"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="icyImageView" destination="yYp-wl-8Rl" id="p94-it-unw"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                             <connections>
@@ -203,7 +275,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-z0-2yJ">
-                                                    <rect key="frame" x="28" y="30" width="35" height="35"/>
+                                                    <rect key="frame" x="28" y="29" width="35" height="35"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="bS4-f8-U0C"/>
@@ -211,7 +283,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-3X-vEi">
-                                                    <rect key="frame" x="23" y="73" width="44" height="14"/>
+                                                    <rect key="frame" x="23" y="72" width="44" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -256,8 +328,25 @@ So as I pray, Unlimited Blade Works.</string>
                                 <color key="backgroundColor" red="0.270588249" green="0.54509806630000002" blue="0.71372550729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="icyCollectionView" destination="Vle-Io-DKC" id="gWf-p5-S9X"/>
+                                    <outlet property="icyContentLabel" destination="FBR-8l-Vcz" id="piZ-Z3-FQh"/>
+                                    <outlet property="imageBlockHeight" destination="BBu-N5-woE" id="Kfh-nU-y7o"/>
+                                    <outlet property="keeperAvatarImageView" destination="9Mr-oX-lGF" id="jT4-eQ-9ln"/>
+                                    <outlet property="keeperNicknameLabel" destination="cOY-VS-e3J" id="Ya7-zJ-0fw"/>
+                                    <outlet property="onlyOneImageView" destination="Z3G-1T-ISe" id="v3t-xM-UtC"/>
+                                    <outlet property="petAvatarImageView" destination="Ndd-z0-2yJ" id="FGu-I3-4dc"/>
+                                    <outlet property="petNicknameLabel" destination="Nln-3X-vEi" id="5zi-zO-JPd"/>
                                     <outlet property="sepratorHeightConstraint" destination="qb2-Of-M62" id="AgD-Pg-V5s"/>
                                     <outlet property="sepratorImageView" destination="Hig-9K-XR6" id="PI2-pv-LxT"/>
+                                    <outlet property="timeLabel" destination="ncG-NZ-dib" id="J43-5B-fde"/>
+                                    <outletCollection property="smallImages" destination="oQF-zk-Sgd" collectionClass="NSMutableArray" id="w6x-4H-sOz"/>
+                                    <outletCollection property="smallImages" destination="wLJ-Xg-Wue" collectionClass="NSMutableArray" id="2V9-2r-8Ps"/>
+                                    <outletCollection property="smallImages" destination="Wvh-k1-iAK" collectionClass="NSMutableArray" id="va3-YW-MCe"/>
+                                    <outletCollection property="smallImages" destination="XAJ-3X-H0J" collectionClass="NSMutableArray" id="xKB-yk-AXq"/>
+                                    <outletCollection property="smallImages" destination="FIf-ai-sgU" collectionClass="NSMutableArray" id="Czh-1a-CzF"/>
+                                    <outletCollection property="smallImages" destination="dgm-2x-RFY" collectionClass="NSMutableArray" id="Dd7-7k-56z"/>
+                                    <outletCollection property="smallImages" destination="FDD-2K-mxc" collectionClass="NSMutableArray" id="vtx-Bv-Mxd"/>
+                                    <outletCollection property="smallImages" destination="vXC-xc-0zX" collectionClass="NSMutableArray" id="w6l-Rd-AkE"/>
+                                    <outletCollection property="smallImages" destination="Ka2-vO-ggm" collectionClass="NSMutableArray" id="mV5-3t-NdQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -563,15 +652,29 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="identifier" id="GlR-gf-NO5">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FindAddImageCollectionCellIdentifier" id="GlR-gf-NO5" customClass="FindAddImageCollectionCell" customModule="HiChongSwift" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VgM-m4-edW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                            </imageView>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
-                                                    <color key="backgroundColor" red="1" green="0.5824369855" blue="0.52160284420000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="VgM-m4-edW" secondAttribute="trailing" id="AVD-lJ-Z6N"/>
+                                                        <constraint firstItem="VgM-m4-edW" firstAttribute="leading" secondItem="GlR-gf-NO5" secondAttribute="leading" id="KN6-EB-uGk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="VgM-m4-edW" secondAttribute="bottom" id="Von-bS-kDu"/>
+                                                        <constraint firstItem="VgM-m4-edW" firstAttribute="top" secondItem="GlR-gf-NO5" secondAttribute="top" id="g38-4e-AhY"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="icyImageView" destination="VgM-m4-edW" id="9wE-Cf-iwe"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                             <connections>
@@ -587,6 +690,9 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstAttribute="trailing" secondItem="5rt-Sr-kQH" secondAttribute="trailing" constant="8" id="xps-sU-6Qt"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icyCollectionView" destination="5rt-Sr-kQH" id="LTD-W2-Vg6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

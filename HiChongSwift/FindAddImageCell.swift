@@ -12,6 +12,8 @@ class FindAddImageCell: UITableViewCell {
     
     weak var collectionDataSource: FindAddImageSource?
     
+    @IBOutlet weak var icyCollectionView: UICollectionView!
+    
     class func identifier() -> String {
         return "FindAddImageCellIdentifier"
     }
@@ -39,7 +41,16 @@ extension FindAddImageCell: UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("identifier", forIndexPath: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(FindAddImageCollectionCell.identifier, forIndexPath: indexPath) as FindAddImageCollectionCell
+        if let dataSource = collectionDataSource {
+            if indexPath.row < dataSource.addImageCount() {
+                cell.icyImageView.contentMode = UIViewContentMode.ScaleToFill
+                cell.icyImageView.image = dataSource.addImageAt(indexPath.row)
+            } else {
+                cell.icyImageView.contentMode = UIViewContentMode.Center
+                cell.icyImageView.image = UIImage(named: "bigCamera")
+            }
+        }
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

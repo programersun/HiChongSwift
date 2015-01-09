@@ -59,3 +59,9 @@
 // 大众点评获取附近商家
 #import <CommonCrypto/CommonCrypto.h>
 #import "Dianping.h"
+
+// Twitter/twitter_list
+#import "TwitterList.h"
+
+// Twitter/keeper_info
+#import "TwitterKeeperInfo.h"

@@ -16,7 +16,10 @@ class FindCircleAddNewViewController: UITableViewController {
     private var myPet: GetUserInfoPetInfo?
     private var location: CLLocation?
     private weak var icyTextView: UITextView?
+    private var petImages = [UIImage]()
     // 上传数据 ⬆️
+    
+    private weak var imageCollectionView: UICollectionView?
     
     enum FindCircleAddNewType: Int {
         case textOnly = 0
@@ -49,9 +52,9 @@ class FindCircleAddNewViewController: UITableViewController {
         LCYCommon.sharedInstance.getLocation({ [weak self](location) -> Void in
             self?.location = location
             return
-        }, fail: { [weak self]() -> Void in
-            self?.alert("无法获取位置信息")
-            return
+            }, fail: { [weak self]() -> Void in
+                self?.alert("无法获取位置信息")
+                return
         })
     }
     
@@ -89,13 +92,41 @@ class FindCircleAddNewViewController: UITableViewController {
                     }
                     self?.hideHUD()
                     return
-                }, failure: { [weak self](error) -> Void in
-                    self?.alert("提交失败，请检查您的网络状态")
-                    self?.hideHUD()
-                    return
+                    }, failure: { [weak self](error) -> Void in
+                        self?.alert("提交失败，请检查您的网络状态")
+                        self?.hideHUD()
+                        return
                 })
             case .mixed:
                 // TODO: 图文混合
+                parameters.extend([
+                    "twitter_keeper"    : LCYCommon.sharedInstance.userName!,
+                    "twitter_pet"       : myPet!.petId,
+                    "twitter_type"      : "2",
+                    "twitter_content"   : icyTextView!.text,
+                    "twitter_location"  : locationString ?? "",
+                    "twitter_longitude" : "\(location!.coordinate.longitude)",
+                    "twitter_latitude"  : "\(location!.coordinate.latitude)"
+                    ])
+                showHUD()
+                let fileData = map(petImages, { (oneImage) -> NSData in
+                    UIImageJPEGRepresentation(oneImage, 0.95)
+                })
+                LCYNetworking.sharedInstance.POSTMultipleFile(LCYApi.TwitterAdd, parameters: parameters, fileKey: "Filedata[]", fileData: fileData, success: { [weak self](object) -> Void in
+                    if let result = object["result"] as? NSNumber {
+                        if result.boolValue {
+                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
+                        } else {
+                            self?.alert("提交失败")
+                        }
+                    } else {
+                        self?.alert("提交失败")
+                    }
+                    self?.hideHUD()
+                    return
+                    }, failure: { [weak self](error) -> Void in
+                        return
+                })
                 break
             }
             
@@ -120,16 +151,20 @@ class FindCircleAddNewViewController: UITableViewController {
             alert("程序员认为：此处不应该被执行到的;]")
             return false
         }
+        if currentType == .mixed && petImages.count == 0 {
+            alert("请至少上传一张照片")
+            return false
+        }
         return true
     }
     
-
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
         if let identifier = segue.identifier {
             switch identifier {
             case "showLocation":
@@ -217,6 +252,7 @@ class FindCircleAddNewViewController: UITableViewController {
             cell = tableView.dequeueReusableCellWithIdentifier(FindAddImageCell.identifier()) as UITableViewCell
             let cell = cell as FindAddImageCell
             cell.collectionDataSource = self
+            imageCollectionView = cell.icyCollectionView
         default:
             break
         }
@@ -257,15 +293,19 @@ class FindCircleAddNewViewController: UITableViewController {
 
 extension FindCircleAddNewViewController: FindAddImageSource {
     func addImageWillTakePicture() {
-        let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "我要拍照", "从照片库选取", "取消")
-        actionSheet.destructiveButtonIndex = 2
-        actionSheet.showInView(self.view)
+        if petImages.count < 9 {
+            let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "我要拍照", "从照片库选取", "取消")
+            actionSheet.destructiveButtonIndex = 2
+            actionSheet.showInView(self.view)
+        } else {
+            alert("您一次最多可以上传9张图片")
+        }
     }
     func addImageCount() -> Int {
-        return 0
+        return petImages.count
     }
     func addImageAt(index: Int) -> UIImage? {
-        return nil
+        return petImages[index]
     }
 }
 
@@ -275,7 +315,6 @@ extension FindCircleAddNewViewController: UIActionSheetDelegate {
         case 0:
             // 我要拍照
             let imagePicker = UIImagePickerController()
-            imagePicker.videoQuality = UIImagePickerControllerQualityType.Type640x480
             imagePicker.sourceType = .Camera
             imagePicker.delegate = self
             self.presentViewController(imagePicker, animated: true, completion: nil)
@@ -294,8 +333,11 @@ extension FindCircleAddNewViewController: UIImagePickerControllerDelegate, UINav
         picker.dismissViewControllerAnimated(true, completion: nil)
         self.showHUDWithTips("处理中")
         
-        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFitToSize: CGSize(width: 600, height: 600))
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFitToSize: CGSize(width: 400, height: 400))
         UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
+        
+        petImages.append(smallImage)
+        imageCollectionView?.reloadData()
         // 处理上传之后，隐藏HUD
         self.hideHUD()
     }
