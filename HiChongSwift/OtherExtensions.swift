@@ -55,6 +55,53 @@ extension String {
     func bridgeToObjectiveC() -> NSString {
         return self as NSString
     }
+    
+    func toTwitterDeltaTime() -> String {
+        let current = NSDate()
+        let strDate = NSDate(timeIntervalSince1970: self.bridgeToObjectiveC().doubleValue)
+        
+        let delta = current.timeIntervalSinceDate(strDate)
+        if delta <= 60 {
+            return "刚刚"
+        } else if delta < 3600 {
+            return "\(Int(delta/60.0))分钟前"
+        } else if delta < 86400 {
+            return "\(Int(delta/3600.0))小时前"
+        } else {
+            return "\(Int(delta/86400.0))天前"
+        }
+    }
+    
+    func toTwitterCalendar() -> NSAttributedString {
+        let strDate = NSDate(timeIntervalSince1970: self.bridgeToObjectiveC().doubleValue)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MMdd"
+        let dateString = dateFormatter.stringFromDate(strDate)
+        let month = dateString.substringToIndex(advance(dateString.startIndex, 2))
+        let day = dateString.substringFromIndex(advance(dateString.startIndex, 2))
+        
+        let map = [
+            "01": "一月",
+            "02": "二月",
+            "03": "三月",
+            "04": "四月",
+            "05": "五月",
+            "06": "六月",
+            "07": "七月",
+            "08": "八月",
+            "09": "九月",
+            "10": "十月",
+            "11": "十一月",
+            "12": "十二月",
+        ]
+        let monthString = map[month] ?? ""
+        
+        var aString = NSMutableAttributedString(string: "\(day)日\(monthString)")
+        aString.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(17.0), range: NSRange(location: 0, length: 2))
+        let range = (aString.string as NSString).rangeOfString(monthString)
+        aString.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(10.0), range: range)
+        return aString
+    }
 }
 
 extension Double {

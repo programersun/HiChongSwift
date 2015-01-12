@@ -196,6 +196,8 @@ class FindPersonalViewController: UITableViewController {
             cell.currentType = .Image
         }
         
+        cell.icyTimeLabel.attributedText = data.addTime.toTwitterCalendar()
+        
         return cell
     }
     

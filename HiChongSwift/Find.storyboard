@@ -161,6 +161,7 @@
                                 <color key="backgroundColor" red="0.55686277151107788" green="0.77254903316497803" blue="0.87450981140136719" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="icyContentLabel" destination="zkC-sl-8fe" id="Emw-xK-AN0"/>
+                                    <outlet property="icyTimeLabel" destination="1qI-5F-Bob" id="4bl-8S-Lxz"/>
                                     <outlet property="imageBlockWidth" destination="wRw-zv-T9b" id="IyV-fX-lcu"/>
                                     <outlet property="petNickLabel" destination="d6D-zL-qVO" id="3AC-dc-beF"/>
                                     <outletCollection property="icyImageViews" destination="Pj2-As-okO" collectionClass="NSMutableArray" id="oQO-TE-u9h"/>

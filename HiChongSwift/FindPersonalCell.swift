@@ -25,6 +25,7 @@ class FindPersonalCell: UITableViewCell {
             }
         }
     }
+    @IBOutlet weak var icyTimeLabel: UILabel!
     
     @IBOutlet weak var petNickLabel: UILabel!
     
