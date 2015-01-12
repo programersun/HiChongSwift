@@ -28,6 +28,8 @@ class FindCircleViewController: UITableViewController {
         }
     }
     
+
+
     private var twitters: [TwitterListMsg]?
     
     private enum magicNumber: Int {
@@ -139,6 +141,10 @@ class FindCircleViewController: UITableViewController {
             default:
                 break
             }
+        } else if segue.identifier == "showPersonal" {
+            let destination = segue.destinationViewController as FindPersonalViewController
+            let data = sender as TwitterListMsg
+            destination.personID = data.twitterKeeper
         }
     }
     
@@ -175,6 +181,8 @@ class FindCircleViewController: UITableViewController {
         cell.twitterImages = data.images as? [TwitterListImages]
         cell.starPeople = data.starList as? [TwitterListStarList]
         
+        cell.delegate = self
+        
         return cell
     }
     
@@ -188,7 +196,7 @@ class FindCircleViewController: UITableViewController {
             imageHeight = 0.0
         case 1:
             let imageData = data.images[0] as TwitterListImages
-            imageHeight = CGFloat((imageData.imageHeight as NSString).floatValue) / CGFloat((imageData.imageWidth as NSString).floatValue) * CGFloat(242.0)
+            imageHeight = CGFloat((imageData.imageHeight as NSString).floatValue) / CGFloat((imageData.imageWidth as NSString).floatValue) * CGFloat(242.0 * 0.667)
         case 2, 3:
             imageHeight = 86.0
         case 4, 5, 6:
@@ -231,5 +239,22 @@ extension FindCircleViewController: UIActionSheetDelegate {
                 }
             }
         }
+    }
+}
+
+extension FindCircleViewController: FindCircleListCellDelegate {
+    func findCircleListCellStar(indexPath: NSIndexPath) {
+        println("stared \(indexPath)")
+    }
+    func findCircleListCellTitleClicked(indexPath: NSIndexPath) {
+        println("selected \(indexPath)")
+        let data = twitters![indexPath.row]
+        
+        performSegueWithIdentifier("showPersonal", sender: data)
+        
+//        let storyBoard = UIStoryboard(name: "AboutMe", bundle: nil)
+//        let controller = storyBoard.instantiateViewControllerWithIdentifier("userInfo") as AboutMeViewController
+//        
+//        navigationController?.pushViewController(controller, animated: true)
     }
 }

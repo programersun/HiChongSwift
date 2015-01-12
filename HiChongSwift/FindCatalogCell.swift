@@ -8,11 +8,53 @@
 
 import UIKit
 
+enum icyGender {
+    case Male
+    case Female
+    case Unknown
+}
+
 class FindCatalogCell: UITableViewCell {
     
     @IBOutlet weak var sepratorHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var sepratorImageView: UIImageView!
+    
+    @IBOutlet weak var nickNameLabel: UILabel!
+    
+    @IBOutlet weak var signLabel: UILabel!
+    
+    @IBOutlet private weak var genderImageView: UIImageView!
+    var gender: icyGender = .Male {
+        didSet {
+            switch gender {
+            case .Male:
+                genderImageView.image = UIImage(named: "sqMale")
+            case .Female:
+                genderImageView.image = UIImage(named: "sqFemale")
+            case .Unknown:
+                genderImageView.image = nil
+            }
+        }
+    }
+    
+    @IBOutlet private weak var petCountLabel: UILabel!
+    var petCount: String? {
+        didSet {
+            if let text = petCount {
+                petCountLabel.text = "宠物：\(text)"
+            }
+        }
+    }
+    
+    @IBOutlet private weak var icyImageView: UIImageView!
+    var icyImagePath: String? {
+        didSet {
+            if let path = icyImagePath {
+                icyImageView.setImageWithURL(NSURL(string: path), placeholderImage: UIImage(named: "placeholderLogo"))
+            }
+        }
+    }
     
     class func identifier() -> String {
         return "FindCatalogCellIdentifier"

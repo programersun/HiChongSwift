@@ -25,6 +25,8 @@
 		2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */; };
 		2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */; };
 		2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEBA1A4A983300D18543 /* QRScanViewController.swift */; };
+		2807DA8D1A637BE100D3534A /* UserFansFriendsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807DA8A1A637BE100D3534A /* UserFansFriendsBase.m */; };
+		2807DA8E1A637BE100D3534A /* UserFansFriendsMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807DA8C1A637BE100D3534A /* UserFansFriendsMsg.m */; };
 		280A08541A5CD4220016A504 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A08531A5CD4220016A504 /* FindLocationViewController.swift */; };
 		280A08AA1A5D2A5F0016A504 /* DianpingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A51A5D2A5F0016A504 /* DianpingBase.m */; };
 		280A08AB1A5D2A5F0016A504 /* DianpingBusinesses.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A71A5D2A5F0016A504 /* DianpingBusinesses.m */; };
@@ -97,6 +99,12 @@
 		28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */; };
 		28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */; };
 		28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */; };
+		289775CA1A63627100B3F0B6 /* FindPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289775C91A63627100B3F0B6 /* FindPersonalViewController.swift */; };
+		289775DC1A6365DF00B3F0B6 /* TwitterPersonalBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 289775D71A6365DF00B3F0B6 /* TwitterPersonalBase.m */; };
+		289775DD1A6365DF00B3F0B6 /* TwitterPersonalImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 289775D91A6365DF00B3F0B6 /* TwitterPersonalImages.m */; };
+		289775DE1A6365DF00B3F0B6 /* TwitterPersonalMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 289775DB1A6365DF00B3F0B6 /* TwitterPersonalMsg.m */; };
+		289775E01A6367F900B3F0B6 /* FindPersonalHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289775DF1A6367F900B3F0B6 /* FindPersonalHeader.xib */; };
+		289775E21A636AD200B3F0B6 /* FindPersonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289775E11A636AD200B3F0B6 /* FindPersonalCell.swift */; };
 		289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FA34C1A493FDE0097485C /* AboutMeLikeCell.swift */; };
 		289FA3511A4952E40097485C /* AboutMePetHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289FA3501A4952E40097485C /* AboutMePetHeaderView.xib */; };
 		289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FA3521A4955DD0097485C /* AboutMePetCell.swift */; };
@@ -196,6 +204,11 @@
 		2806FEB61A4A6A4700D18543 /* PetFinalFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetFinalFilterViewController.swift; sourceTree = "<group>"; };
 		2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgePickerViewController.swift; sourceTree = "<group>"; };
 		2806FEBA1A4A983300D18543 /* QRScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
+		2807DA881A637BE100D3534A /* UserFansFriends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFansFriends.h; sourceTree = "<group>"; };
+		2807DA891A637BE100D3534A /* UserFansFriendsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFansFriendsBase.h; sourceTree = "<group>"; };
+		2807DA8A1A637BE100D3534A /* UserFansFriendsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFansFriendsBase.m; sourceTree = "<group>"; };
+		2807DA8B1A637BE100D3534A /* UserFansFriendsMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFansFriendsMsg.h; sourceTree = "<group>"; };
+		2807DA8C1A637BE100D3534A /* UserFansFriendsMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFansFriendsMsg.m; sourceTree = "<group>"; };
 		280A08531A5CD4220016A504 /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
 		280A08A31A5D2A5F0016A504 /* Dianping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dianping.h; sourceTree = "<group>"; };
 		280A08A41A5D2A5F0016A504 /* DianpingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingBase.h; sourceTree = "<group>"; };
@@ -297,6 +310,16 @@
 		28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtensions.swift; sourceTree = "<group>"; };
 		28955A401A3EADAC00A1E4BC /* SquareCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentViewController.swift; sourceTree = "<group>"; };
 		28955A421A3EB6A900A1E4BC /* SquareAddStarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddStarCell.swift; sourceTree = "<group>"; };
+		289775C91A63627100B3F0B6 /* FindPersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPersonalViewController.swift; sourceTree = "<group>"; };
+		289775D51A6365DF00B3F0B6 /* TwitterPersonal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPersonal.h; sourceTree = "<group>"; };
+		289775D61A6365DF00B3F0B6 /* TwitterPersonalBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPersonalBase.h; sourceTree = "<group>"; };
+		289775D71A6365DF00B3F0B6 /* TwitterPersonalBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPersonalBase.m; sourceTree = "<group>"; };
+		289775D81A6365DF00B3F0B6 /* TwitterPersonalImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPersonalImages.h; sourceTree = "<group>"; };
+		289775D91A6365DF00B3F0B6 /* TwitterPersonalImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPersonalImages.m; sourceTree = "<group>"; };
+		289775DA1A6365DF00B3F0B6 /* TwitterPersonalMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterPersonalMsg.h; sourceTree = "<group>"; };
+		289775DB1A6365DF00B3F0B6 /* TwitterPersonalMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterPersonalMsg.m; sourceTree = "<group>"; };
+		289775DF1A6367F900B3F0B6 /* FindPersonalHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPersonalHeader.xib; sourceTree = "<group>"; };
+		289775E11A636AD200B3F0B6 /* FindPersonalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPersonalCell.swift; sourceTree = "<group>"; };
 		289FA34C1A493FDE0097485C /* AboutMeLikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeLikeCell.swift; sourceTree = "<group>"; };
 		289FA3501A4952E40097485C /* AboutMePetHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMePetHeaderView.xib; sourceTree = "<group>"; };
 		289FA3521A4955DD0097485C /* AboutMePetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMePetCell.swift; sourceTree = "<group>"; };
@@ -516,6 +539,18 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		2807DA871A637BD900D3534A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2807DA881A637BE100D3534A /* UserFansFriends.h */,
+				2807DA891A637BE100D3534A /* UserFansFriendsBase.h */,
+				2807DA8A1A637BE100D3534A /* UserFansFriendsBase.m */,
+				2807DA8B1A637BE100D3534A /* UserFansFriendsMsg.h */,
+				2807DA8C1A637BE100D3534A /* UserFansFriendsMsg.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		280A08A21A5D2A590016A504 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +575,13 @@
 				2866B7DF1A5FA0F500374D42 /* TwitterKeeperInfoBase.m */,
 				2866B7E01A5FA0F500374D42 /* TwitterKeeperInfoMsg.h */,
 				2866B7E11A5FA0F500374D42 /* TwitterKeeperInfoMsg.m */,
+				289775D51A6365DF00B3F0B6 /* TwitterPersonal.h */,
+				289775D61A6365DF00B3F0B6 /* TwitterPersonalBase.h */,
+				289775D71A6365DF00B3F0B6 /* TwitterPersonalBase.m */,
+				289775D81A6365DF00B3F0B6 /* TwitterPersonalImages.h */,
+				289775D91A6365DF00B3F0B6 /* TwitterPersonalImages.m */,
+				289775DA1A6365DF00B3F0B6 /* TwitterPersonalMsg.h */,
+				289775DB1A6365DF00B3F0B6 /* TwitterPersonalMsg.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -680,6 +722,7 @@
 		28BE7C771A412CD700F3BC2A /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				2807DA871A637BD900D3534A /* Model */,
 				28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */,
 				28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */,
 			);
@@ -699,6 +742,9 @@
 				2830974C1A5F7DEF00CD53E7 /* FindAddImageCollectionCell.swift */,
 				280A08531A5CD4220016A504 /* FindLocationViewController.swift */,
 				280A08AD1A5D3A240016A504 /* FindPetViewController.swift */,
+				289775C91A63627100B3F0B6 /* FindPersonalViewController.swift */,
+				289775DF1A6367F900B3F0B6 /* FindPersonalHeader.xib */,
+				289775E11A636AD200B3F0B6 /* FindPersonalCell.swift */,
 			);
 			name = Circle;
 			sourceTree = "<group>";
@@ -948,6 +994,7 @@
 				2802C9A01A2F5151001130ED /* LaunchScreen.xib in Resources */,
 				28C6DAAE1A2FF25900068848 /* AboutMe.storyboard in Resources */,
 				28C166381A36BFEA0090E061 /* Sale.storyboard in Resources */,
+				289775E01A6367F900B3F0B6 /* FindPersonalHeader.xib in Resources */,
 				2802C99D1A2F5151001130ED /* Images.xcassets in Resources */,
 				28876B2A1A42BACB0002F635 /* Login.storyboard in Resources */,
 				2806FE9F1A4A5A9C00D18543 /* PetCateFilter.storyboard in Resources */,
@@ -1015,11 +1062,13 @@
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
 				283C0E481A4BBA3A00C64B11 /* WikiAdCell.swift in Sources */,
 				28876B261A42A3AB0002F635 /* WelcomeViewController.swift in Sources */,
+				289775DD1A6365DF00B3F0B6 /* TwitterPersonalImages.m in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
 				2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
 				289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */,
 				28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */,
+				2807DA8D1A637BE100D3534A /* UserFansFriendsBase.m in Sources */,
 				28F2157D1A5A75D2002C0620 /* SquareGetListBase.m in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
 				283C0E4C1A4BBAE900C64B11 /* WikiInfoCell.swift in Sources */,
@@ -1042,6 +1091,7 @@
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */,
 				28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */,
+				289775DC1A6365DF00B3F0B6 /* TwitterPersonalBase.m in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28ED69261A4BAFE500CAE227 /* WikiViewController.swift in Sources */,
 				281319591A592B0D00913BC6 /* SquareHomeCategory.m in Sources */,
@@ -1071,6 +1121,7 @@
 				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
 				2866B7E31A5FA0F500374D42 /* TwitterKeeperInfoMsg.m in Sources */,
 				2813194D1A59162100913BC6 /* WikiWebViewController.swift in Sources */,
+				289775CA1A63627100B3F0B6 /* FindPersonalViewController.swift in Sources */,
 				281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */,
 				28DE582E1A5B8D4000B49046 /* SquareCommentListBase.m in Sources */,
 				28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */,
@@ -1085,6 +1136,7 @@
 				287941AF1A49F74700DECA50 /* MoePetHeaderReusable.swift in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */,
+				289775E21A636AD200B3F0B6 /* FindPersonalCell.swift in Sources */,
 				28BE7C841A4157FC00F3BC2A /* FindSearchResultCell.swift in Sources */,
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
@@ -1096,6 +1148,7 @@
 				284896231A5A967F00D45285 /* SquareMerchantInfoBase.m in Sources */,
 				28876B311A42D71F0002F635 /* LoginCodeCell.swift in Sources */,
 				28C15E571A3AD96F0058F215 /* SquareDetailDynamicCell.swift in Sources */,
+				289775DE1A6365DF00B3F0B6 /* TwitterPersonalMsg.m in Sources */,
 				289FA3571A4972000097485C /* AboutMeEditProfileViewController.swift in Sources */,
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
 				2813195A1A592B0D00913BC6 /* SquareHomeMsg.m in Sources */,
@@ -1122,6 +1175,7 @@
 				2866B7E21A5FA0F500374D42 /* TwitterKeeperInfoBase.m in Sources */,
 				287941A21A49EC8B00DECA50 /* MoePetViewController.swift in Sources */,
 				28EE4D221A493949008F9F87 /* AboutMeHeaderCell.swift in Sources */,
+				2807DA8E1A637BE100D3534A /* UserFansFriendsMsg.m in Sources */,
 				285EC3711A49D76000E2FE70 /* AboutMeModifyGenderController.swift in Sources */,
 				2866B7FD1A5FA70D00374D42 /* TwitterListStarList.m in Sources */,
 				287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */,

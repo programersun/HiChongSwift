@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindPersonalViewController" customModule="HiChongSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarImageView" destination="64h-R5-fKf" id="ZXn-Cg-T10"/>
+                <outlet property="personNameLabel" destination="Xum-Ws-Kcr" id="GJS-cA-B0k"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xum-Ws-Kcr">
+                    <rect key="frame" x="286" y="340" width="28" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="64h-R5-fKf">
+                    <rect key="frame" x="268" y="267" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="14G-yf-D5X"/>
+                        <constraint firstAttribute="height" constant="65" id="ZAU-SW-SEO"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="64h-R5-fKf" secondAttribute="centerX" id="5xR-g6-PjU"/>
+                <constraint firstItem="Xum-Ws-Kcr" firstAttribute="top" secondItem="64h-R5-fKf" secondAttribute="bottom" constant="8" id="E1E-0Z-fxa"/>
+                <constraint firstAttribute="centerX" secondItem="Xum-Ws-Kcr" secondAttribute="centerX" id="VRC-0X-bPI"/>
+                <constraint firstAttribute="centerY" secondItem="64h-R5-fKf" secondAttribute="centerY" id="mgE-dz-Q3j"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

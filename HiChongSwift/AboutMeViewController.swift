@@ -11,6 +11,20 @@ import CoreData
 
 class AboutMeViewController: UITableViewController {
     
+    private enum AboutMeType {
+        case Me
+        case Other
+    }
+    private var currentType: AboutMeType = .Me
+    
+    var otherUserID: String? {
+        didSet {
+            if let userID = otherUserID {
+                currentType = .Other
+            }
+        }
+    }
+    
     private let cannotSee = "该用户隐藏了这一项。"
     private let didnotFill = "用户未填写"
     
@@ -33,12 +47,14 @@ class AboutMeViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let rightButton = UIButton()
-        rightButton.setImage(UIImage(named: "ProfileEditButton"), forState: UIControlState.Normal)
-        rightButton.addTarget(self, action: "rightButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
-        rightButton.sizeToFit()
-        let rightItem = UIBarButtonItem(customView: rightButton)
-        navigationItem.rightBarButtonItem = rightItem
+        if currentType == .Me {
+            let rightButton = UIButton()
+            rightButton.setImage(UIImage(named: "ProfileEditButton"), forState: UIControlState.Normal)
+            rightButton.addTarget(self, action: "rightButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+            rightButton.sizeToFit()
+            let rightItem = UIBarButtonItem(customView: rightButton)
+            navigationItem.rightBarButtonItem = rightItem
+        }
         
         
         let nib = UINib(nibName: "AboutMePetHeaderView", bundle: nil)
@@ -68,14 +84,21 @@ class AboutMeViewController: UITableViewController {
     }
     
     private func reloadInitData() {
-        let parameter = ["user_name": LCYCommon.sharedInstance.userName!]
+        var parameter: [String: String]
+        if currentType == .Me {
+            parameter = ["user_name": LCYCommon.sharedInstance.userName!]
+        } else {
+            parameter = ["user_name": otherUserID!]
+        }
         LCYNetworking.sharedInstance.POST(LCYApi.UserGetInfo, parameters: parameter, success: { [weak self] (object) -> Void in
             self?.userInfo = GetUserInfoBase.modelObjectWithDictionary(object)
             if let result = self?.userInfo?.result {
                 if result {
                     self?.navigationItem.title = self?.userInfo?.userInfo.nickName
                     self?.tableView.reloadData()
-                    self?.addFooter()
+                    if self?.currentType == AboutMeType.Me {
+                        self?.addFooter()
+                    }
                 } else {
                     self?.alert("加载失败")
                 }
@@ -112,6 +135,9 @@ class AboutMeViewController: UITableViewController {
                 if let indexPath = tableView.indexPathForSelectedRow() {
                     let petInfo = userInfo?.petInfo[indexPath.row] as? GetUserInfoPetInfo
                     destination.petId = petInfo?.petId
+                }
+                if currentType == .Other {
+                    destination.editable = false
                 }
             case "showAdd":
                 let destination = segue.destinationViewController as AddEditPetViewController

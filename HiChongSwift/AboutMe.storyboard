@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jtQ-Ya-60s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jtQ-Ya-60s">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -10,7 +10,7 @@
         <!--Root View Controller-->
         <scene sceneID="vIo-Ug-txH">
             <objects>
-                <tableViewController id="w1F-VO-Mt1" customClass="AboutMeViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="userInfo" id="w1F-VO-Mt1" customClass="AboutMeViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="126" sectionHeaderHeight="22" sectionFooterHeight="22" id="GTI-S3-cir">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1307,6 +1307,6 @@
         <image name="sqMale" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Mw-dF-Oq3"/>
+        <segue reference="FEF-1z-blp"/>
     </inferredMetricsTieBreakers>
 </document>

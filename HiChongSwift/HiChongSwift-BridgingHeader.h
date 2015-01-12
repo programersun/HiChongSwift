@@ -65,3 +65,10 @@
 
 // Twitter/keeper_info
 #import "TwitterKeeperInfo.h"
+
+// Twitter/twitter_personal
+#import "TwitterPersonal.h"
+
+// User/fans_list
+// User/friend_list
+#import "UserFansFriends.h"

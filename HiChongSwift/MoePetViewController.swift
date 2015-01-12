@@ -106,20 +106,30 @@ class MoePetViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //#warning Incomplete method implementation -- Return the number of items in the section
         if let detail = detailInfo {
-            return detail.petImages.count + 1
+            if editable {
+                return detail.petImages.count + 1
+            } else {
+                return detail.petImages.count
+            }
         } else {
             return 0
         }
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
+        if editable && indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("camera", forIndexPath: indexPath) as UICollectionViewCell
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MoePetImageCell", forIndexPath: indexPath) as MoePetImageCell
-            if let info = detailInfo?.petImages[indexPath.row - 1] as? LCYPetDetailPetImages {
-                cell.imageView.setImageWithURL(NSURL(string: info.cutImg.toAbsolutePath()))
+            if editable {
+                if let info = detailInfo?.petImages[indexPath.row - 1] as? LCYPetDetailPetImages {
+                    cell.imageView.setImageWithURL(NSURL(string: info.cutImg.toAbsolutePath()))
+                }
+            } else {
+                if let info = detailInfo?.petImages[indexPath.row] as? LCYPetDetailPetImages {
+                    cell.imageView.setImageWithURL(NSURL(string: info.cutImg.toAbsolutePath()))
+                }
             }
             return cell
         }

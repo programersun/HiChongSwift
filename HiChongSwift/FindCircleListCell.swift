@@ -10,6 +10,7 @@ import UIKit
 
 protocol FindCircleListCellDelegate: class {
     func findCircleListCellStar(indexPath: NSIndexPath)
+    func findCircleListCellTitleClicked(indexPath: NSIndexPath)
 }
 
 class FindCircleListCell: UITableViewCell {
@@ -21,6 +22,12 @@ class FindCircleListCell: UITableViewCell {
     @IBAction func starButtonPressed(sender: UIButton) {
         if let delegate = delegate {
             delegate.findCircleListCellStar(indexPath)
+        }
+    }
+    
+    @IBAction func titleLabelTapped(sender: AnyObject) {
+        if let delegate = delegate {
+            delegate.findCircleListCellTitleClicked(indexPath)
         }
     }
     
@@ -41,7 +48,7 @@ class FindCircleListCell: UITableViewCell {
                     }
                 } else if images.count == 1 {
                     // 1张
-                    imageBlockHeight.constant = CGFloat((images[0].imageHeight as NSString).floatValue) / CGFloat((images[0].imageWidth as NSString).floatValue) * CGFloat(242.0)
+                    imageBlockHeight.constant = CGFloat((images[0].imageHeight as NSString).floatValue) / CGFloat((images[0].imageWidth as NSString).floatValue) * CGFloat(242.0 * 0.667)
                     for small in smallImages {
                         small.image = nil
                     }
