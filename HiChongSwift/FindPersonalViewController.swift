@@ -111,6 +111,11 @@ class FindPersonalViewController: UITableViewController {
         cell.petNickLabel.text = data.petName
         cell.icyContentLabel.text = data.twitterContent
         cell.icyImages = data.images as? [TwitterPersonalImages]
+        if data.images.count == 0 {
+            cell.currentType = .Text
+        } else {
+            cell.currentType = .Image
+        }
         
         return cell
     }
@@ -119,15 +124,32 @@ class FindPersonalViewController: UITableViewController {
         return 100.0
     }
     
-    /*
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let data = infoData![indexPath.row]
+        if data.images.count > 0 {
+            performSegueWithIdentifier("showPageView", sender: data)
+        }
+    }
+    
+
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showPageView":
+                let destination = segue.destinationViewController as FindTwitterPageViewController
+                destination.data = sender as? TwitterPersonalMsg
+
+            default:
+                break
+            }
+        }
     }
-    */
+
     
 }
 

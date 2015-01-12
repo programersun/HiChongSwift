@@ -10,6 +10,22 @@ import UIKit
 
 class FindPersonalCell: UITableViewCell {
     
+    @IBOutlet private weak var imageBlockWidth: NSLayoutConstraint!
+    enum findPersonalCellType {
+        case Image
+        case Text
+    }
+    var currentType: findPersonalCellType = .Image {
+        didSet {
+            switch currentType {
+            case .Image:
+                imageBlockWidth.constant = 84.0
+            case .Text:
+                imageBlockWidth.constant = 0.0
+            }
+        }
+    }
+    
     @IBOutlet weak var petNickLabel: UILabel!
     
     @IBOutlet weak var icyContentLabel: UILabel!
@@ -72,6 +88,7 @@ class FindPersonalCell: UITableViewCell {
             }
         }
     }
+    
     
     class var identifier: String {
         get {

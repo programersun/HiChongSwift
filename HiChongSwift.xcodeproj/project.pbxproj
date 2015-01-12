@@ -82,6 +82,8 @@
 		287EDFE81A403FD9005B6A57 /* FindCircleAddTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */; };
 		28801DD71A63A25B00743AA9 /* FindChooseAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DD61A63A25B00743AA9 /* FindChooseAgeViewController.swift */; };
 		28801DD91A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DD81A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift */; };
+		28801DDB1A63B17200743AA9 /* FindTwitterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DDA1A63B17100743AA9 /* FindTwitterPageViewController.swift */; };
+		28801DDD1A63B1CB00743AA9 /* FindTwitterImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DDC1A63B1CB00743AA9 /* FindTwitterImageViewController.swift */; };
 		28876B1E1A427C7D0002F635 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 28876B1D1A427C7D0002F635 /* UIImage+Resize.m */; };
 		28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B201A429DDA0002F635 /* AboutMeViewController.swift */; };
 		28876B231A429E760002F635 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28876B221A429E760002F635 /* Welcome.storyboard */; };
@@ -294,6 +296,8 @@
 		287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleAddTextCell.swift; sourceTree = "<group>"; };
 		28801DD61A63A25B00743AA9 /* FindChooseAgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindChooseAgeViewController.swift; sourceTree = "<group>"; };
 		28801DD81A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindChooseSingleSelectionViewController.swift; sourceTree = "<group>"; };
+		28801DDA1A63B17100743AA9 /* FindTwitterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterPageViewController.swift; sourceTree = "<group>"; };
+		28801DDC1A63B1CB00743AA9 /* FindTwitterImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterImageViewController.swift; sourceTree = "<group>"; };
 		28876B1C1A427C7D0002F635 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		28876B1D1A427C7D0002F635 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		28876B201A429DDA0002F635 /* AboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
@@ -749,6 +753,8 @@
 				289775C91A63627100B3F0B6 /* FindPersonalViewController.swift */,
 				289775DF1A6367F900B3F0B6 /* FindPersonalHeader.xib */,
 				289775E11A636AD200B3F0B6 /* FindPersonalCell.swift */,
+				28801DDA1A63B17100743AA9 /* FindTwitterPageViewController.swift */,
+				28801DDC1A63B1CB00743AA9 /* FindTwitterImageViewController.swift */,
 			);
 			name = Circle;
 			sourceTree = "<group>";
@@ -1061,6 +1067,7 @@
 			files = (
 				282D6BE31A301B9A00942F60 /* LCYNetworking.swift in Sources */,
 				2806FEA21A4A5B9800D18543 /* PetCateFilterViewController.swift in Sources */,
+				28801DDB1A63B17200743AA9 /* FindTwitterPageViewController.swift in Sources */,
 				28E5B4D01A397667009951FF /* LCYGetSquareCategoryResult.m in Sources */,
 				287EDFE41A3FED0C005B6A57 /* FindCircleListCell.swift in Sources */,
 				28B9CEA91A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift in Sources */,
@@ -1096,6 +1103,7 @@
 				289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */,
+				28801DDD1A63B1CB00743AA9 /* FindTwitterImageViewController.swift in Sources */,
 				28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */,
 				289775DC1A6365DF00B3F0B6 /* TwitterPersonalBase.m in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
