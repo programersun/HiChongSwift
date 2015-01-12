@@ -14,6 +14,7 @@ class LCYCommon: NSObject {
         case kWelcomeGuideSkip = "kWelcomeGuideSkip"
         case kUserLogin = "kUserLogin"
         case kUserName = "kUserName"
+        case kUserPhone = "kUserPhone"
         
         /// 纪录所在城市id
         case kRegionID = "kRegionID"
@@ -88,9 +89,10 @@ class LCYCommon: NSObject {
     
     :param: userName 账户名（id，不是电话号码哦）
     */
-    func login(userName: String) {
+    func login(userName: String, phoneNumber: String?) {
         let userDefault = NSUserDefaults.standardUserDefaults()
         userDefault.setObject(userName, forKey: UserDefaultKeys.kUserName.rawValue)
+        userDefault.setObject(phoneNumber, forKey: UserDefaultKeys.kUserPhone.rawValue)
         userDefault.setBool(true, forKey: UserDefaultKeys.kUserLogin.rawValue)
         userDefault.synchronize()
     }
@@ -102,6 +104,27 @@ class LCYCommon: NSObject {
             let name = userDefault.objectForKey(UserDefaultKeys.kUserName.rawValue) as String?
             return name
         }
+    }
+    
+    var userPhone: String? {
+        get {
+            let userDefault = NSUserDefaults.standardUserDefaults()
+            let phone = userDefault.objectForKey(UserDefaultKeys.kUserPhone.rawValue) as String?
+            return phone
+        }
+    }
+    
+    /**
+    登出账号并且切换界面
+    */
+    func logout() {
+        let userDefault = NSUserDefaults.standardUserDefaults()
+        userDefault.setBool(false, forKey: UserDefaultKeys.kUserLogin.rawValue)
+        userDefault.synchronize()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as UIViewController
+        appDelegate.window?.rootViewController = loginVC
     }
     
     typealias locationSuccess = (location: CLLocation) -> Void

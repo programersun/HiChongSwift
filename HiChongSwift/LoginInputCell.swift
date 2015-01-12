@@ -17,7 +17,7 @@ class LoginInputCell: UITableViewCell {
     
     @IBOutlet private weak var icyImageView: UIImageView!
     
-    @IBOutlet private weak var icyTextField: UITextField!
+    @IBOutlet weak var icyTextField: UITextField!
     
     weak var delegate: LoginInputCellDelegate?
     

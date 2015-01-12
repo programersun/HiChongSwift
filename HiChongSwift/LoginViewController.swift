@@ -121,7 +121,7 @@ class LoginViewController: UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         appDelegate.window?.rootViewController = (storyboard.instantiateInitialViewController() as UIViewController)
-        LCYCommon.sharedInstance.login(userName)
+        LCYCommon.sharedInstance.login(userName, phoneNumber: userInfo.LoginName)
     }
     
     private func register() {
@@ -151,6 +151,9 @@ class LoginViewController: UITableViewController {
         self.performSegueWithIdentifier("showDetail", sender: nil)
     }
     
+    @IBAction func forgetPasswordButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("showForget", sender: nil)
+    }
     
     // MARK: - Table view data source
     
@@ -232,6 +235,8 @@ extension LoginViewController: LoginSingleButtonCellDelegate {
             login()
         case .Register:
             register()
+        default:
+            break
         }
     }
 }

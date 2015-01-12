@@ -12,13 +12,15 @@ class LoginCodeCell: UITableViewCell {
     
     @IBOutlet private weak var icyButton: UIButton!
     
+    var isReset: Bool = false
+    
     class func identifier() -> String {
         return "LoginCodeCellIdentifier"
     }
     
     weak var delegate: LoginCodeCellDelegate?
-
-    @IBOutlet private weak var icyTextField: UITextField!
+    
+    @IBOutlet weak var icyTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +34,10 @@ class LoginCodeCell: UITableViewCell {
         icyTextField.placeholder = "四位验证码"
         icyTextField.keyboardType = UIKeyboardType.NumberPad
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -45,16 +47,28 @@ class LoginCodeCell: UITableViewCell {
             // 电话号码存在，请求发送
             disableIcyButton()
             let parameter = ["user_name": phone]
-            LCYNetworking.sharedInstance.POST(LCYApi.UserAuthcode, parameters: parameter, success: {[weak self] (object) -> Void in
-                if object["result"] as Bool {
-                    self?.delegate?.loginCodeCellGetGode((object["code"] as Int).description)
-                } else {
-                    self?.delegate?.loginCodeCellFailCode(object["msg"] as String)
-                }
-                return
-            }, failure: { (error) -> Void in
-                return
-            })
+            if !isReset {
+                LCYNetworking.sharedInstance.POST(LCYApi.UserAuthcode, parameters: parameter, success: {[weak self] (object) -> Void in
+                    if object["result"] as Bool {
+                        self?.delegate?.loginCodeCellGetGode((object["code"] as Int).description)
+                    } else {
+                        self?.delegate?.loginCodeCellFailCode(object["msg"] as String)
+                    }
+                    return
+                    }, failure: { (error) -> Void in
+                        return
+                })
+            } else {
+                LCYNetworking.sharedInstance.POST(LCYApi.UserResetPasswordAuthcode, parameters: parameter, success: { [weak self](object) -> Void in
+                    if object["result"] as Bool {
+                        self?.delegate?.loginCodeCellGetGode((object["code"] as Int).description)
+                    } else {
+                        self?.delegate?.loginCodeCellFailCode(object["msg"] as String)
+                    }
+                }, failure: { (error) -> Void in
+                    return
+                })
+            }
         } else {
             return
         }
@@ -65,7 +79,7 @@ class LoginCodeCell: UITableViewCell {
         icyButton.enabled = false
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerFired:", userInfo: nil, repeats: true)
     }
-
+    
     private let totalCountDown = 20 // 倒数计时秒数
     private var countDown: Int?
     func timerFired(sender: NSTimer) {

@@ -11,6 +11,7 @@ import UIKit
 enum LoginSingleButtonCellType {
     case Login
     case Register
+    case Forget
 }
 
 class LoginSingleButtonCell: UITableViewCell {
@@ -22,6 +23,8 @@ class LoginSingleButtonCell: UITableViewCell {
                 icyButton.setTitle("登录", forState: UIControlState.Normal)
             case .Register:
                 icyButton.setTitle("注册", forState: UIControlState.Normal)
+            case .Forget:
+                icyButton.setTitle("保存", forState: UIControlState.Normal)
             }
         }
     }

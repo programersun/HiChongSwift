@@ -163,7 +163,7 @@ class RegisterDetailViewController: UIViewController {
                 if login {
                      // 注册成功
                     let name = object["user_name"]!.stringValue
-                    LCYCommon.sharedInstance.login(name)
+                    LCYCommon.sharedInstance.login(name, phoneNumber: self?.detailUserInfo.LoginName)
                     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
                     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                     appDelegate.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController)

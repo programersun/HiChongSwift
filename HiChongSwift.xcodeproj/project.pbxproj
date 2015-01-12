@@ -84,6 +84,8 @@
 		28801DD91A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DD81A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift */; };
 		28801DDB1A63B17200743AA9 /* FindTwitterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DDA1A63B17100743AA9 /* FindTwitterPageViewController.swift */; };
 		28801DDD1A63B1CB00743AA9 /* FindTwitterImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DDC1A63B1CB00743AA9 /* FindTwitterImageViewController.swift */; };
+		28801DDF1A63C20E00743AA9 /* AboutMeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DDE1A63C20E00743AA9 /* AboutMeSettingViewController.swift */; };
+		28801DE11A63C75F00743AA9 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DE01A63C75F00743AA9 /* ForgetPasswordViewController.swift */; };
 		28876B1E1A427C7D0002F635 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 28876B1D1A427C7D0002F635 /* UIImage+Resize.m */; };
 		28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B201A429DDA0002F635 /* AboutMeViewController.swift */; };
 		28876B231A429E760002F635 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28876B221A429E760002F635 /* Welcome.storyboard */; };
@@ -298,6 +300,8 @@
 		28801DD81A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindChooseSingleSelectionViewController.swift; sourceTree = "<group>"; };
 		28801DDA1A63B17100743AA9 /* FindTwitterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterPageViewController.swift; sourceTree = "<group>"; };
 		28801DDC1A63B1CB00743AA9 /* FindTwitterImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterImageViewController.swift; sourceTree = "<group>"; };
+		28801DDE1A63C20E00743AA9 /* AboutMeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeSettingViewController.swift; sourceTree = "<group>"; };
+		28801DE01A63C75F00743AA9 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		28876B1C1A427C7D0002F635 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		28876B1D1A427C7D0002F635 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		28876B201A429DDA0002F635 /* AboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
@@ -698,6 +702,7 @@
 				28B9CEA61A49A9BB004E6386 /* AboutMeModifyTextCell.swift */,
 				28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */,
 				285EC3701A49D76000E2FE70 /* AboutMeModifyGenderController.swift */,
+				28801DDE1A63C20E00743AA9 /* AboutMeSettingViewController.swift */,
 				287941A01A49EC3A00DECA50 /* MoePet */,
 			);
 			name = AboutMe;
@@ -723,6 +728,7 @@
 				28876B341A42E6720002F635 /* LoginForgetCell.swift */,
 				2834C4061A47CAE80007FE43 /* RegisterDetailViewController.swift */,
 				289029301A48083E00A8B3F5 /* RegionPickerViewController.swift */,
+				28801DE01A63C75F00743AA9 /* ForgetPasswordViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1153,6 +1159,7 @@
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */,
 				289775E21A636AD200B3F0B6 /* FindPersonalCell.swift in Sources */,
+				28801DE11A63C75F00743AA9 /* ForgetPasswordViewController.swift in Sources */,
 				28BE7C841A4157FC00F3BC2A /* FindSearchResultCell.swift in Sources */,
 				287722C81A39A39700D5F957 /* SquareListViewController.swift in Sources */,
 				28BE7C7A1A412CF800F3BC2A /* FindCatalogViewController.swift in Sources */,
@@ -1200,6 +1207,7 @@
 				2866B7FB1A5FA70D00374D42 /* TwitterListImages.m in Sources */,
 				287EDFE61A403928005B6A57 /* FindCircleAddNewViewController.swift in Sources */,
 				28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */,
+				28801DDF1A63C20E00743AA9 /* AboutMeSettingViewController.swift in Sources */,
 				28876B1E1A427C7D0002F635 /* UIImage+Resize.m in Sources */,
 				28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */,
 				287EDFE01A3FD461005B6A57 /* FindCircleViewController.swift in Sources */,

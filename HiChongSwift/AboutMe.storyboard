@@ -313,11 +313,38 @@
                         <segue destination="ohN-Io-FYR" kind="show" identifier="showEdit" id="UL2-ed-6ut"/>
                         <segue destination="PNb-ot-sGd" kind="show" identifier="showMoePet" id="eYc-oF-g65"/>
                         <segue destination="8cf-Fa-yLv" kind="show" identifier="showAdd" id="FEF-1z-blp"/>
+                        <segue destination="Fjg-FA-ycW" kind="show" identifier="showSetting" id="hQh-Nh-7G2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBC-it-d8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713" y="587"/>
+        </scene>
+        <!--About Me Setting View Controller-->
+        <scene sceneID="YCf-sR-ORg">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Fjg-FA-ycW" customClass="AboutMeSettingViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="C2t-zE-hXW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="t1J-sJ-ffO">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t1J-sJ-ffO" id="xcf-g7-pwP">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Fjg-FA-ycW" id="Yfr-WT-Fed"/>
+                            <outlet property="delegate" destination="Fjg-FA-ycW" id="sIs-kD-e9E"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQx-bc-Dlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1448" y="12"/>
         </scene>
         <!--Scan View Controller-->
         <scene sceneID="NlG-KC-oor">

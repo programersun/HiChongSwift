@@ -54,6 +54,13 @@ class AboutMeViewController: UITableViewController {
             rightButton.sizeToFit()
             let rightItem = UIBarButtonItem(customView: rightButton)
             navigationItem.rightBarButtonItem = rightItem
+            
+            let leftButton = UIButton()
+            leftButton.setImage(UIImage(named: "settingButton"), forState: UIControlState.Normal)
+            leftButton.addTarget(self, action: "leftButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+            leftButton.sizeToFit()
+            let leftItem = UIBarButtonItem(customView: leftButton)
+            navigationItem.leftBarButtonItem = leftItem
         }
         
         
@@ -81,6 +88,7 @@ class AboutMeViewController: UITableViewController {
         tableView.backgroundColor = UIColor.LCYThemeColor()
         
         reloadInitData()
+        
     }
     
     private func reloadInitData() {
@@ -141,6 +149,8 @@ class AboutMeViewController: UITableViewController {
                 }
             case "showAdd":
                 let destination = segue.destinationViewController as AddEditPetViewController
+            case "showSetting":
+                let destination = segue.destinationViewController as AboutMeSettingViewController
             default:
                 break
             }
@@ -155,6 +165,10 @@ class AboutMeViewController: UITableViewController {
     
     func rightButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("showEdit", sender: nil)
+    }
+    
+    func leftButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("showSetting", sender: nil)
     }
     
     // MARK: - Table view data source
