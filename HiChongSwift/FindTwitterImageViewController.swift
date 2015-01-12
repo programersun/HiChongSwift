@@ -15,6 +15,8 @@ class FindTwitterImageViewController: UIViewController {
     var data: TwitterPersonalMsg?
     
     var listData: TwitterListMsg?
+    
+    var MoePetData: LCYPetDetailPetImages?
 
     @IBOutlet private weak var icyImageView: UIImageView!
     
@@ -34,6 +36,11 @@ class FindTwitterImageViewController: UIViewController {
             icyTextLabel.text = listData.twitterContent
             let imageData = listData.images[index] as TwitterListImages
             icyImageView.setImageWithURL(NSURL(string: imageData.imagePath.toAbsolutePath()))
+        }
+        
+        if let moePetData = MoePetData {
+            icyTextLabel.text = ""
+            icyImageView.setImageWithURL(NSURL(string: moePetData.petImg.toAbsolutePath()))
         }
     }
 

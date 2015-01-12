@@ -85,6 +85,13 @@ class MoePetViewController: UICollectionViewController {
                 let destination = segue.destinationViewController as AddEditPetViewController
                 destination.viewControllerType = .Edit
                 destination.startInfo = detailInfo
+                
+            case "toPage":
+                let destination = segue.destinationViewController as MoePetPageViewController
+                destination.data = detailInfo?.petImages as? [LCYPetDetailPetImages]
+                if let indexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
+                    destination.startIndex = indexPath.row
+                }
             default:
                 break
             }
@@ -149,6 +156,11 @@ class MoePetViewController: UICollectionViewController {
     }
     
     // MARK: UICollectionViewDelegate
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if !editable || indexPath.row != 0 {
+            performSegueWithIdentifier("toPage", sender: indexPath)
+        }
+    }
     
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

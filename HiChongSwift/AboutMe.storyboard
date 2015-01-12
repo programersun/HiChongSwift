@@ -346,6 +346,14 @@
             </objects>
             <point key="canvasLocation" x="1448" y="12"/>
         </scene>
+        <!--Moe Pet Page View Controller-->
+        <scene sceneID="IAq-4o-kGT">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="vn4-Yc-spM" customClass="MoePetPageViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJi-tu-nTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-112" y="2167"/>
+        </scene>
         <!--Scan View Controller-->
         <scene sceneID="NlG-KC-oor">
             <objects>
@@ -1162,6 +1170,7 @@
                     </collectionView>
                     <connections>
                         <segue destination="8cf-Fa-yLv" kind="show" identifier="showEdit" id="7Mw-dF-Oq3"/>
+                        <segue destination="vn4-Yc-spM" kind="show" identifier="toPage" id="eCr-aN-LAy"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ZD-Ed-47l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1334,6 +1343,6 @@
         <image name="sqMale" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FEF-1z-blp"/>
+        <segue reference="7Mw-dF-Oq3"/>
     </inferredMetricsTieBreakers>
 </document>

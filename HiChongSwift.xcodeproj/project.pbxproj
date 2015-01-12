@@ -59,6 +59,7 @@
 		285925C61A6444BC00DB2F12 /* WikiGetADData.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925C41A6444BC00DB2F12 /* WikiGetADData.m */; };
 		285925D41A644D9500DB2F12 /* UserSearchFriendBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925D11A644D9500DB2F12 /* UserSearchFriendBase.m */; };
 		285925D51A644D9500DB2F12 /* UserSearchFriendMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925D31A644D9500DB2F12 /* UserSearchFriendMsg.m */; };
+		285925D71A644EEC00DB2F12 /* MoePetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285925D61A644EEC00DB2F12 /* MoePetPageViewController.swift */; };
 		285E6A221A4BEA6A00DC44F4 /* WikiSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */; };
 		285E6A241A4BEF7400DC44F4 /* WikiArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */; };
 		285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */; };
@@ -276,6 +277,7 @@
 		285925D11A644D9500DB2F12 /* UserSearchFriendBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchFriendBase.m; sourceTree = "<group>"; };
 		285925D21A644D9500DB2F12 /* UserSearchFriendMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchFriendMsg.h; sourceTree = "<group>"; };
 		285925D31A644D9500DB2F12 /* UserSearchFriendMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchFriendMsg.m; sourceTree = "<group>"; };
+		285925D61A644EEC00DB2F12 /* MoePetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoePetPageViewController.swift; sourceTree = "<group>"; };
 		285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiSectionHeader.xib; sourceTree = "<group>"; };
 		285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiArticleViewController.swift; sourceTree = "<group>"; };
 		285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiCollectionListViewController.swift; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 				287941B21A4A048B00DECA50 /* AddEditPetViewController.swift */,
 				2806FEB81A4A8A6A00D18543 /* AgePickerViewController.swift */,
 				2806FEBA1A4A983300D18543 /* QRScanViewController.swift */,
+				285925D61A644EEC00DB2F12 /* MoePetPageViewController.swift */,
 			);
 			name = MoePet;
 			sourceTree = "<group>";
@@ -1241,6 +1244,7 @@
 				2807DA8E1A637BE100D3534A /* UserFansFriendsMsg.m in Sources */,
 				285EC3711A49D76000E2FE70 /* AboutMeModifyGenderController.swift in Sources */,
 				2866B7FD1A5FA70D00374D42 /* TwitterListStarList.m in Sources */,
+				285925D71A644EEC00DB2F12 /* MoePetPageViewController.swift in Sources */,
 				287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
 				284896241A5A967F00D45285 /* SquareMerchantInfoMsg.m in Sources */,
