@@ -24,12 +24,20 @@ class FindCircleViewController: UITableViewController {
             if let myInfo = keeperInfo {
                 avatarImageView.setImageWithURL(NSURL(string:myInfo.headImage.toAbsolutePath()))
                 nickNameLabel.text = myInfo.nickName
+                if myInfo.bgImage != nil && countElements(myInfo.bgImage) != 0 {
+                    println("set bg url = \(myInfo.bgImage.toAbsolutePath())")
+                    headerBackground.setImageWithURL(NSURL(string: myInfo.bgImage.toAbsolutePath()))
+                    headerTipLabel.hidden = true
+                } else {
+                    headerBackground.image = nil
+                    headerTipLabel.hidden = false
+                }
             }
         }
     }
     
-
-
+    private var imagePicker: UIImagePickerController?
+    
     private var twitters: [TwitterListMsg]?
     
     private enum magicNumber: Int {
@@ -37,8 +45,10 @@ class FindCircleViewController: UITableViewController {
         case addTwitter = 3392
     }
     
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var nickNameLabel: UILabel!
+    @IBOutlet private weak var headerTipLabel: UILabel!
+    @IBOutlet private weak var headerBackground: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +64,7 @@ class FindCircleViewController: UITableViewController {
         
         let headerNib = UINib(nibName: "FindCircleHeader", bundle: nil)
         let headerView = headerNib.instantiateWithOwner(self, options: nil).first as UIView
-        headerView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: 200.0)
+        headerView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width / 320.0 * 200.0)
         self.tableView.tableHeaderView = headerView
         
         self.avatarImageView.roundCorner()
@@ -95,9 +105,9 @@ class FindCircleViewController: UITableViewController {
                 // 个人信息加载失败
             }
             return
-        }) { (error) -> Void in
-            // 个人信息加载失败
-            return
+            }) { (error) -> Void in
+                // 个人信息加载失败
+                return
         }
     }
     private func reload() {
@@ -114,10 +124,10 @@ class FindCircleViewController: UITableViewController {
             }
             self?.hideHUD()
             return
-        }) { [weak self](error) -> Void in
-            self?.hideHUD()
-            self?.alert("您的网络状态不佳")
-            return
+            }) { [weak self](error) -> Void in
+                self?.hideHUD()
+                self?.alert("您的网络状态不佳")
+                return
         }
     }
     
@@ -132,6 +142,7 @@ class FindCircleViewController: UITableViewController {
         if segue.identifier == "showAdd" {
             let destination = segue.destinationViewController as FindCircleAddNewViewController
             let caseNumber = sender as Int
+            destination.delegate = self
             
             switch caseNumber {
             case 0:
@@ -145,6 +156,7 @@ class FindCircleViewController: UITableViewController {
             let destination = segue.destinationViewController as FindPersonalViewController
             let data = sender as TwitterListMsg
             destination.personID = data.twitterKeeper
+            destination.personNickname = data.nickName
         }
     }
     
@@ -168,7 +180,7 @@ class FindCircleViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(FindCircleListCell.identifier(), forIndexPath: indexPath) as FindCircleListCell
         
         // Configure the cell...
-//        cell.upNumber = indexPath.row
+        //        cell.upNumber = indexPath.row
         cell.indexPath = indexPath
         
         let data = twitters![indexPath.row]
@@ -209,6 +221,10 @@ class FindCircleViewController: UITableViewController {
         return max(96.0, 34.0 + textHeight) + 94.0 + imageHeight
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let data = twitters![indexPath.row]
+    }
+    
 }
 
 extension FindCircleViewController: UIActionSheetDelegate {
@@ -225,7 +241,11 @@ extension FindCircleViewController: UIActionSheetDelegate {
                 break
             }
         case magicNumber.changeCover.rawValue:
-            println("change cover at \(buttonIndex)")
+            //            println("change cover at \(buttonIndex)")
+            imagePicker = UIImagePickerController()
+            imagePicker?.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker?.delegate = self
+            presentViewController(imagePicker!, animated: true, completion: nil)
         default:
             break
         }
@@ -252,9 +272,48 @@ extension FindCircleViewController: FindCircleListCellDelegate {
         
         performSegueWithIdentifier("showPersonal", sender: data)
         
-//        let storyBoard = UIStoryboard(name: "AboutMe", bundle: nil)
-//        let controller = storyBoard.instantiateViewControllerWithIdentifier("userInfo") as AboutMeViewController
-//        
-//        navigationController?.pushViewController(controller, animated: true)
+        //        let storyBoard = UIStoryboard(name: "AboutMe", bundle: nil)
+        //        let controller = storyBoard.instantiateViewControllerWithIdentifier("userInfo") as AboutMeViewController
+        //
+        //        navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension FindCircleViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        self.showHUDWithTips("处理中")
+        
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 320, height: 200))
+        //        UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
+        
+        let imageData = UIImageJPEGRepresentation(smallImage, 0.95)
+        let parameters = [
+            "user_id" : LCYCommon.sharedInstance.userName!
+        ]
+        LCYNetworking.sharedInstance.POSTFile(LCYApi.UserModifyBackgroundImage, parameters: parameters, fileKey: "filedata", fileData: imageData, fileName: "\(imageData.hash).jpg", mimeType: LCYMimeType.JPEG, success: { [weak self](object) -> Void in
+            self?.hideHUD()
+            if let result = object["result"] as? Bool {
+                if result {
+                    self?.alert("修改成功")
+                    self?.loadKeeperInfo()
+                } else {
+                    self?.alert("修改失败")
+                }
+            } else {
+                self?.alert("修改失败")
+            }
+            return
+            }) { [weak self](error) -> Void in
+                self?.hideHUD()
+                self?.alert("您的网络状况不佳，上传失败")
+                return
+        }
+    }
+}
+
+extension FindCircleViewController: AddCircleDelegate {
+    func addCircleDone() {
+        reload()
     }
 }

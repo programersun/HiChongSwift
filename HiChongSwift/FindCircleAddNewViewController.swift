@@ -19,6 +19,8 @@ class FindCircleAddNewViewController: UITableViewController {
     private var petImages = [UIImage]()
     // 上传数据 ⬆️
     
+    weak var delegate: AddCircleDelegate?
+    
     private weak var imageCollectionView: UICollectionView?
     
     enum FindCircleAddNewType: Int {
@@ -321,6 +323,10 @@ extension FindCircleAddNewViewController: UIActionSheetDelegate {
             break
         case 1:
             // 从照片库中选择
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .PhotoLibrary
+            imagePicker.delegate = self
+            self.presentViewController(imagePicker, animated: true, completion: nil)
             break
         default:
             break
@@ -360,7 +366,14 @@ extension FindCircleAddNewViewController: FindPetDelegate {
 extension FindCircleAddNewViewController: UIAlertViewDelegate {
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if alertView.tag == 3301 {
+            if let delegate = delegate {
+                delegate.addCircleDone()
+            }
             navigationController?.popViewControllerAnimated(true)
         }
     }
+}
+
+protocol AddCircleDelegate: class {
+    func addCircleDone()
 }

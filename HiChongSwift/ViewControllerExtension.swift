@@ -26,6 +26,7 @@ extension UIViewController{
     }
     
     func addRightButton(buttonTitle: String, action: Selector) {
+        self.navigationItem.rightBarButtonItem = nil
         let doneButton = UIButton(frame: CGRect(origin: CGPointZero, size: LCYCommon.sharedInstance.rightButtonSize))
         doneButton.addTarget(self, action: action, forControlEvents: UIControlEvents.TouchUpInside)
         doneButton.backgroundColor = UIColor.LCYThemeDarkText()

@@ -34,6 +34,7 @@ enum LCYApi: String {
     case UserSearchFriend           = "User/search_friend"
     case UserResetPasswordAuthcode  = "User/reset_password_authcode"
     case UserSetPassword            = "User/setPassword"
+    case UserModifyBackgroundImage  = "User/modifyBackgroundImage"
     
     case PetGetDetail               = "Pet/GetPetDetailByID"
     case PetAllType                 = "PetStyle/searchAllTypePets"

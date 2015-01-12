@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindPersonalViewController" customModule="HiChongSwift" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImageView" destination="64h-R5-fKf" id="ZXn-Cg-T10"/>
+                <outlet property="headerBackground" destination="gXJ-Yl-qlI" id="aPV-2J-dxe"/>
                 <outlet property="personNameLabel" destination="Xum-Ws-Kcr" id="GJS-cA-B0k"/>
             </connections>
         </placeholder>
@@ -16,6 +17,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXJ-Yl-qlI">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xum-Ws-Kcr">
                     <rect key="frame" x="286" y="340" width="28" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -34,8 +38,12 @@
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="64h-R5-fKf" secondAttribute="centerX" id="5xR-g6-PjU"/>
                 <constraint firstItem="Xum-Ws-Kcr" firstAttribute="top" secondItem="64h-R5-fKf" secondAttribute="bottom" constant="8" id="E1E-0Z-fxa"/>
+                <constraint firstAttribute="bottom" secondItem="gXJ-Yl-qlI" secondAttribute="bottom" id="Eni-uN-WAa"/>
+                <constraint firstItem="gXJ-Yl-qlI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ki2-ZL-ht2"/>
+                <constraint firstItem="gXJ-Yl-qlI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="V8Q-xG-zVO"/>
                 <constraint firstAttribute="centerX" secondItem="Xum-Ws-Kcr" secondAttribute="centerX" id="VRC-0X-bPI"/>
                 <constraint firstAttribute="centerY" secondItem="64h-R5-fKf" secondAttribute="centerY" id="mgE-dz-Q3j"/>
+                <constraint firstAttribute="trailing" secondItem="gXJ-Yl-qlI" secondAttribute="trailing" id="vYd-sj-qFj"/>
             </constraints>
         </view>
     </objects>

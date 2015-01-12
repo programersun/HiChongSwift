@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -8,6 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindCircleViewController" customModule="HiChongSwift" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImageView" destination="hze-jU-Tdu" id="CP8-bo-OkT"/>
+                <outlet property="headerBackground" destination="62U-0x-RxQ" id="vOP-9B-eGc"/>
+                <outlet property="headerTipLabel" destination="qMC-SP-1JW" id="73l-1T-cja"/>
                 <outlet property="nickNameLabel" destination="Yu4-8Q-i4T" id="vRb-jZ-Fb7"/>
             </connections>
         </placeholder>
@@ -16,6 +18,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62U-0x-RxQ">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hze-jU-Tdu">
                     <rect key="frame" x="268" y="268" width="65" height="65"/>
                     <constraints>
@@ -30,7 +35,7 @@
                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轻触设置相册封面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMC-SP-1JW">
-                    <rect key="frame" x="252" y="233" width="96" height="16"/>
+                    <rect key="frame" x="252" y="232" width="96" height="15.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -39,17 +44,21 @@
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="62U-0x-RxQ" secondAttribute="trailing" id="Av0-zA-sEf"/>
+                <constraint firstItem="62U-0x-RxQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WvF-UO-9Qv"/>
                 <constraint firstItem="Yu4-8Q-i4T" firstAttribute="top" secondItem="hze-jU-Tdu" secondAttribute="bottom" constant="8" id="XuX-bl-mOc"/>
+                <constraint firstItem="62U-0x-RxQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aJk-Xh-41Q"/>
                 <constraint firstItem="hze-jU-Tdu" firstAttribute="top" secondItem="qMC-SP-1JW" secondAttribute="bottom" constant="20" id="bfP-gR-s6n"/>
                 <constraint firstAttribute="centerY" secondItem="hze-jU-Tdu" secondAttribute="centerY" id="bxi-8Y-Sww"/>
                 <constraint firstAttribute="centerX" secondItem="qMC-SP-1JW" secondAttribute="centerX" id="ef9-10-85e"/>
                 <constraint firstAttribute="centerX" secondItem="hze-jU-Tdu" secondAttribute="centerX" id="g3a-fq-daK"/>
+                <constraint firstAttribute="bottom" secondItem="62U-0x-RxQ" secondAttribute="bottom" id="gjH-pQ-80V"/>
                 <constraint firstAttribute="centerX" secondItem="Yu4-8Q-i4T" secondAttribute="centerX" id="rQc-93-lh6"/>
             </constraints>
             <connections>
                 <action selector="headerBackgroundTouched:" destination="-1" eventType="touchUpInside" id="dT8-Ua-GBi"/>
             </connections>
-            <point key="canvasLocation" x="503" y="455.5"/>
+            <point key="canvasLocation" x="503" y="455"/>
         </view>
     </objects>
 </document>

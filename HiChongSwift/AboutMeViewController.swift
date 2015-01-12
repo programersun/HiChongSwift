@@ -149,6 +149,7 @@ class AboutMeViewController: UITableViewController {
                 }
             case "showAdd":
                 let destination = segue.destinationViewController as AddEditPetViewController
+                destination.delegate = self
             case "showSetting":
                 let destination = segue.destinationViewController as AboutMeSettingViewController
             default:
@@ -368,5 +369,11 @@ class AboutMeViewController: UITableViewController {
         if indexPath.section == 3 {
             self.performSegueWithIdentifier("showMoePet", sender: nil)
         }
+    }
+}
+
+extension AboutMeViewController: AddPetDelegate {
+    func addPetDone() {
+        reloadInitData()
     }
 }

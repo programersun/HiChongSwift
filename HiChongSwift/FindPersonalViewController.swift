@@ -11,13 +11,32 @@ import UIKit
 class FindPersonalViewController: UITableViewController {
     
     var personID: String?
+    var personNickname: String?
     
     //    private var infoData = [TwitterPersonalMsg]?
     
     private var infoData: [TwitterPersonalMsg]?
     
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var personNameLabel: UILabel!
+    private var keeperInfo : TwitterKeeperInfoMsg? {
+        didSet {
+            if let info = keeperInfo {
+                avatarImageView.setImageWithURL(NSURL(string:info.headImage.toAbsolutePath()))
+                personNameLabel.text = info.tip
+                if info.bgImage != nil {
+                    headerBackground.setImageWithURL(NSURL(string: info.bgImage.toAbsolutePath()))
+                }
+                if info.isAttention == 1.0 {
+                    addRightButton("取消关注", action: "removeCare:")
+                } else {
+                    addRightButton("关注", action: "addCare:")
+                }
+            }
+        }
+    }
+    
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var personNameLabel: UILabel!
+    @IBOutlet private weak var headerBackground: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,18 +48,21 @@ class FindPersonalViewController: UITableViewController {
         
         let headerNib = UINib(nibName: "FindPersonalHeader", bundle: nil)
         let headerView = headerNib.instantiateWithOwner(self, options: nil).first as UIView
-        headerView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: 200.0)
+        headerView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height:UIScreen.mainScreen().bounds.width / 320.0 * 200.0)
         tableView.tableHeaderView = headerView
         
         avatarImageView.roundCorner()
         avatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
         avatarImageView.layer.borderWidth = 1.0
         
+        initKeeperInfo()
         reload()
+        
+        navigationItem.title = personNickname
         
         tableView.backgroundColor = UIColor.LCYThemeColor()
         
-        addRightButton("关注", action: "addCare:")
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,6 +71,26 @@ class FindPersonalViewController: UITableViewController {
     }
     
     // MARK: - Actions
+    private func initKeeperInfo() {
+        personNameLabel.text = ""
+        avatarImageView.image = nil
+        if let personID = personID {
+            let parameter = [
+                "twitter_keeper": personID,
+                "my_user_id": LCYCommon.sharedInstance.userName!
+            ]
+            LCYNetworking.sharedInstance.POST(LCYApi.TwitterKeeperInfo, parameters: parameter, success: { [weak self](object) -> Void in
+                let retrieved = TwitterKeeperInfoBase.modelObjectWithDictionary(object)
+                if retrieved.result {
+                    self?.keeperInfo = retrieved.msg
+                }
+                return
+            }, failure: { [weak self](error) -> Void in
+                return
+            })
+        }
+    }
+    
     private func reload() {
         if let personID = personID {
             let parameter = [
@@ -78,10 +120,47 @@ class FindPersonalViewController: UITableViewController {
                 "to_user_id"    : personID,
                 "control"       : "1"
             ]
-            LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameters, success: { (object) -> Void in
+            LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameters, success: { [weak self](object) -> Void in
+                if let result = object["result"] as? Bool {
+                    if result {
+                        self?.alert("成功关注")
+                        self?.addRightButton("取消关注", action: "removeCare:")
+                    } else {
+                        self?.alert("关注失败")
+                    }
+                } else {
+                    self?.alert("关注失败")
+                }
                 return
-            }, failure: { (error) -> Void in
+            }, failure: { [weak self](error) -> Void in
+                self?.alert("您的网络状态不佳哦s")
                 return
+            })
+        }
+    }
+    
+    func removeCare(sender: AnyObject) {
+        if let personID = personID {
+            let parameters = [
+                "user_id"       : LCYCommon.sharedInstance.userName!,
+                "to_user_id"    : personID,
+                "control"       : "2"
+            ]
+            LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameters, success: { [weak self](object) -> Void in
+                if let result = object["result"] as? Bool {
+                    if result {
+                        self?.alert("成功取消关注")
+                        self?.addRightButton("关注", action: "addCare:")
+                    } else {
+                        self?.alert("取消关注失败")
+                    }
+                } else {
+                    self?.alert("取消关注失败")
+                }
+                return
+                }, failure: { [weak self](error) -> Void in
+                    self?.alert("您的网络状态不佳哦s")
+                    return
             })
         }
     }

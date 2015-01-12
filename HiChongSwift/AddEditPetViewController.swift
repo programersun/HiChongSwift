@@ -24,6 +24,8 @@ class AddEditPetViewController: UIViewController {
     @IBOutlet weak var adoptImageView: UIImageView!
     @IBOutlet weak var fosterImageView: UIImageView!
     
+    weak var delegate: AddPetDelegate?
+    
     
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var tagTextBackView: UIView!
@@ -545,10 +547,17 @@ extension AddEditPetViewController: UIAlertViewDelegate {
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if alertView.tag == 3003 {
             // 添加成功
+            if let delegate = delegate {
+                delegate.addPetDone()
+            }
             navigationController?.popToRootViewControllerAnimated(true)
         } else if alertView.tag == 4000 {
             // 修改成功
             navigationController?.popToRootViewControllerAnimated(true)
         }
     }
+}
+
+protocol AddPetDelegate: class {
+    func addPetDone()
 }

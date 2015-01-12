@@ -16,6 +16,7 @@ class FindTwitterImageViewController: UIViewController {
 
     @IBOutlet private weak var icyImageView: UIImageView!
     
+    @IBOutlet private weak var icyScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,5 +44,9 @@ class FindTwitterImageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+extension FindTwitterImageViewController: UIScrollViewDelegate {
 
 }

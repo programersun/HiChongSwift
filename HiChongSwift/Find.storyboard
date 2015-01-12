@@ -1006,6 +1006,7 @@ So as I pray, Unlimited Blade Works.</string>
                     </view>
                     <connections>
                         <outlet property="icyImageView" destination="7w5-3d-P88" id="Orw-sS-VDR"/>
+                        <outlet property="icyScrollView" destination="cLm-CQ-UW6" id="zkB-nq-E2A"/>
                         <outlet property="icyTextLabel" destination="Jja-jr-BIf" id="zqK-2z-g8p"/>
                     </connections>
                 </viewController>
