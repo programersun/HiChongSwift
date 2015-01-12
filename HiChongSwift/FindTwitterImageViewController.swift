@@ -13,6 +13,8 @@ class FindTwitterImageViewController: UIViewController {
     var index: Int = 0
     
     var data: TwitterPersonalMsg?
+    
+    var listData: TwitterListMsg?
 
     @IBOutlet private weak var icyImageView: UIImageView!
     
@@ -25,6 +27,12 @@ class FindTwitterImageViewController: UIViewController {
         if let data = data {
             icyTextLabel.text = data.twitterContent
             let imageData = data.images[index] as TwitterPersonalImages
+            icyImageView.setImageWithURL(NSURL(string: imageData.imagePath.toAbsolutePath()))
+        }
+        
+        if let listData = listData {
+            icyTextLabel.text = listData.twitterContent
+            let imageData = listData.images[index] as TwitterListImages
             icyImageView.setImageWithURL(NSURL(string: imageData.imagePath.toAbsolutePath()))
         }
     }

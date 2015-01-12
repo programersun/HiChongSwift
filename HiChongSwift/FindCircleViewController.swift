@@ -157,6 +157,10 @@ class FindCircleViewController: UITableViewController {
             let data = sender as TwitterListMsg
             destination.personID = data.twitterKeeper
             destination.personNickname = data.nickName
+        } else if segue.identifier == "showPageView" {
+            let destination = segue.destinationViewController as FindTwitterListPageViewController
+            let data = sender as? TwitterListMsg
+            destination.listData = data
         }
     }
     
@@ -223,6 +227,9 @@ class FindCircleViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let data = twitters![indexPath.row]
+        if data.images != nil && data.images.count > 0 {
+            performSegueWithIdentifier("showPageView", sender: data)
+        }
     }
     
 }

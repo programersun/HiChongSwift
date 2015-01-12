@@ -186,6 +186,14 @@
             </objects>
             <point key="canvasLocation" x="1887" y="-242"/>
         </scene>
+        <!--Find Twitter List Page View Controller-->
+        <scene sceneID="gYs-P4-bNl">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="OZ5-Oe-4BV" customClass="FindTwitterListPageViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUP-kl-uEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101" y="-171"/>
+        </scene>
         <!--Find Circle View Controller-->
         <scene sceneID="Zx9-SE-Hth">
             <objects>
@@ -522,6 +530,7 @@ So as I pray, Unlimited Blade Works.</string>
                     <connections>
                         <segue destination="yrX-Ed-aMq" kind="show" identifier="showAdd" id="8dj-82-A85"/>
                         <segue destination="9Ec-3e-qtq" kind="show" identifier="showPersonal" id="XCC-x6-KlN"/>
+                        <segue destination="OZ5-Oe-4BV" kind="show" identifier="showPageView" id="RgG-pm-Itz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65q-7N-UZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
