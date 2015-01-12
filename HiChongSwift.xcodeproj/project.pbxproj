@@ -55,6 +55,10 @@
 		285925BC1A64258C00DB2F12 /* TwitterKeeperInfoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925B91A64258C00DB2F12 /* TwitterKeeperInfoBase.m */; };
 		285925BD1A64258C00DB2F12 /* TwitterKeeperInfoMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925BB1A64258C00DB2F12 /* TwitterKeeperInfoMsg.m */; };
 		285925BF1A64354600DB2F12 /* FindTwitterListPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285925BE1A64354600DB2F12 /* FindTwitterListPageViewController.swift */; };
+		285925C51A6444BC00DB2F12 /* WikiGetADBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925C21A6444BC00DB2F12 /* WikiGetADBase.m */; };
+		285925C61A6444BC00DB2F12 /* WikiGetADData.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925C41A6444BC00DB2F12 /* WikiGetADData.m */; };
+		285925D41A644D9500DB2F12 /* UserSearchFriendBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925D11A644D9500DB2F12 /* UserSearchFriendBase.m */; };
+		285925D51A644D9500DB2F12 /* UserSearchFriendMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925D31A644D9500DB2F12 /* UserSearchFriendMsg.m */; };
 		285E6A221A4BEA6A00DC44F4 /* WikiSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */; };
 		285E6A241A4BEF7400DC44F4 /* WikiArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */; };
 		285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */; };
@@ -262,6 +266,16 @@
 		285925BA1A64258C00DB2F12 /* TwitterKeeperInfoMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterKeeperInfoMsg.h; sourceTree = "<group>"; };
 		285925BB1A64258C00DB2F12 /* TwitterKeeperInfoMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterKeeperInfoMsg.m; sourceTree = "<group>"; };
 		285925BE1A64354600DB2F12 /* FindTwitterListPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterListPageViewController.swift; sourceTree = "<group>"; };
+		285925C01A6444BC00DB2F12 /* WikiGetAD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiGetAD.h; sourceTree = "<group>"; };
+		285925C11A6444BC00DB2F12 /* WikiGetADBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiGetADBase.h; sourceTree = "<group>"; };
+		285925C21A6444BC00DB2F12 /* WikiGetADBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiGetADBase.m; sourceTree = "<group>"; };
+		285925C31A6444BC00DB2F12 /* WikiGetADData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiGetADData.h; sourceTree = "<group>"; };
+		285925C41A6444BC00DB2F12 /* WikiGetADData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiGetADData.m; sourceTree = "<group>"; };
+		285925CF1A644D9500DB2F12 /* UserSearchFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchFriend.h; sourceTree = "<group>"; };
+		285925D01A644D9500DB2F12 /* UserSearchFriendBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchFriendBase.h; sourceTree = "<group>"; };
+		285925D11A644D9500DB2F12 /* UserSearchFriendBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchFriendBase.m; sourceTree = "<group>"; };
+		285925D21A644D9500DB2F12 /* UserSearchFriendMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchFriendMsg.h; sourceTree = "<group>"; };
+		285925D31A644D9500DB2F12 /* UserSearchFriendMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchFriendMsg.m; sourceTree = "<group>"; };
 		285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiSectionHeader.xib; sourceTree = "<group>"; };
 		285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiArticleViewController.swift; sourceTree = "<group>"; };
 		285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiCollectionListViewController.swift; sourceTree = "<group>"; };
@@ -616,6 +630,11 @@
 		283C0E3F1A4BB84300C64B11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				285925C01A6444BC00DB2F12 /* WikiGetAD.h */,
+				285925C11A6444BC00DB2F12 /* WikiGetADBase.h */,
+				285925C21A6444BC00DB2F12 /* WikiGetADBase.m */,
+				285925C31A6444BC00DB2F12 /* WikiGetADData.h */,
+				285925C41A6444BC00DB2F12 /* WikiGetADData.m */,
 				283C0E401A4BB84D00C64B11 /* WikiToday.h */,
 				283C0E411A4BB84D00C64B11 /* WikiTodayBase.h */,
 				283C0E421A4BB84D00C64B11 /* WikiTodayBase.m */,
@@ -631,6 +650,18 @@
 				28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */,
 				28C93ACE1A4D47B600E1F600 /* WikiMoreData.h */,
 				28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		285925C71A64480B00DB2F12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				285925CF1A644D9500DB2F12 /* UserSearchFriend.h */,
+				285925D01A644D9500DB2F12 /* UserSearchFriendBase.h */,
+				285925D11A644D9500DB2F12 /* UserSearchFriendBase.m */,
+				285925D21A644D9500DB2F12 /* UserSearchFriendMsg.h */,
+				285925D31A644D9500DB2F12 /* UserSearchFriendMsg.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -771,6 +802,7 @@
 		28BE7C7E1A41352500F3BC2A /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				285925C71A64480B00DB2F12 /* Model */,
 				28BE7C7F1A41353D00F3BC2A /* FindSearchViewController.swift */,
 				28BE7C811A41554200F3BC2A /* FindSearchResultViewController.swift */,
 				28BE7C831A4157FC00F3BC2A /* FindSearchResultCell.swift */,
@@ -1087,6 +1119,7 @@
 				289775DD1A6365DF00B3F0B6 /* TwitterPersonalImages.m in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
 				285925BF1A64354600DB2F12 /* FindTwitterListPageViewController.swift in Sources */,
+				285925C61A6444BC00DB2F12 /* WikiGetADData.m in Sources */,
 				2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
 				289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */,
@@ -1112,6 +1145,7 @@
 				28BE7C821A41554200F3BC2A /* FindSearchResultViewController.swift in Sources */,
 				289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
+				285925D41A644D9500DB2F12 /* UserSearchFriendBase.m in Sources */,
 				285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */,
 				28801DDD1A63B1CB00743AA9 /* FindTwitterImageViewController.swift in Sources */,
 				28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */,
@@ -1128,6 +1162,7 @@
 				28801DD91A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift in Sources */,
 				28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */,
 				2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */,
+				285925D51A644D9500DB2F12 /* UserSearchFriendMsg.m in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
 				281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */,
 				287941AB1A49F56C00DECA50 /* LCYPetDetailBase.m in Sources */,
@@ -1154,6 +1189,7 @@
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				280A08AE1A5D3A240016A504 /* FindPetViewController.swift in Sources */,
 				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
+				285925C51A6444BC00DB2F12 /* WikiGetADBase.m in Sources */,
 				28DE583A1A5BD93200B49046 /* GetUserInfoPetInfo.m in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,

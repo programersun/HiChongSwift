@@ -592,7 +592,7 @@ So as I pray, Unlimited Blade Works.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindSearchResultCellIdentifier" rowHeight="116" id="HIi-3g-yis" customClass="FindSearchResultCell" customModule="HiChongSwift" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindSearchResultCellIdentifier" rowHeight="116" id="HIi-3g-yis" customClass="FindSearchResultCell" customModule="HiChongSwift" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HIi-3g-yis" id="x3L-Sv-JRv">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -651,6 +651,11 @@ So as I pray, Unlimited Blade Works.</string>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="icyAvatarView" destination="cII-qe-bRm" id="3yc-Rj-VEt"/>
+                                    <outlet property="icyGenderImageView" destination="bdl-az-pax" id="UQq-YZ-xWY"/>
+                                    <outlet property="icyNickLabel" destination="8ve-mF-PBL" id="g34-X7-16q"/>
+                                    <outlet property="icyPetCountLabel" destination="z3o-n2-4E4" id="7PQ-GT-o9D"/>
+                                    <outlet property="icyTipLabel" destination="dv5-Wq-s50" id="gbP-fb-B9s"/>
                                     <outlet property="sepratorHeightConstraint" destination="XRQ-yQ-jjz" id="TjP-mV-n1T"/>
                                     <outlet property="sepratorImageView" destination="OlS-YW-SNa" id="gMB-Vl-wYV"/>
                                 </connections>
@@ -661,6 +666,9 @@ So as I pray, Unlimited Blade Works.</string>
                             <outlet property="delegate" destination="Vcn-ah-duv" id="D1h-Tz-dc7"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="9Ec-3e-qtq" kind="show" identifier="showPersonal" id="wuh-03-OLp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcw-jR-ori" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1144,5 +1152,6 @@ So as I pray, Unlimited Blade Works.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ngD-9V-Cvd"/>
+        <segue reference="wuh-03-OLp"/>
     </inferredMetricsTieBreakers>
 </document>

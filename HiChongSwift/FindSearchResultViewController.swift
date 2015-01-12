@@ -14,6 +14,12 @@ class FindSearchResultViewController: UITableViewController {
     var parameter: [String: String]?
     
     private var location: CLLocation?
+    
+    private var infoData: [UserSearchFriendMsg]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +55,16 @@ class FindSearchResultViewController: UITableViewController {
                 "longitude": "\(location!.coordinate.longitude)",
                 "latitude": "\(location!.coordinate.latitude)"
                 ])
-            LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { (object) -> Void in
+            LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { [weak self](object) -> Void in
+                let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object)
+                if retrieved.result {
+                    self?.infoData = retrieved.msg as? [UserSearchFriendMsg]
+                } else {
+                    self?.alert("未能获取到所找寻的宠物")
+                }
                 return
-            }, failure: { (error) -> Void in
+            }, failure: { [weak self](error) -> Void in
+                self?.alert("网络状态不佳")
                 return
             })
         } else {
@@ -59,9 +72,16 @@ class FindSearchResultViewController: UITableViewController {
                 "longitude": "\(location!.coordinate.longitude)",
                 "latitude": "\(location!.coordinate.latitude)"
             ]
-            LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { (object) -> Void in
+            LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { [weak self](object) -> Void in
+                let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object)
+                if retrieved.result {
+                    self?.infoData = retrieved.msg as? [UserSearchFriendMsg]
+                } else {
+                    self?.alert("未能获取到所找寻的宠物")
+                }
                 return
-                }, failure: { (error) -> Void in
+                }, failure: { [weak self](error) -> Void in
+                    self?.alert("网络状态不佳")
                     return
             })
         }
@@ -76,20 +96,49 @@ class FindSearchResultViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 12
+        if let data = infoData {
+            return data.count
+        } else {
+            return 0
+        }
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(FindSearchResultCell.identifier(), forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(FindSearchResultCell.identifier(), forIndexPath: indexPath) as FindSearchResultCell
 
         // Configure the cell...
-
+        let data = infoData![indexPath.row]
+        cell.icyImagePath = data.headImage.toAbsolutePath()
+        cell.currentGender = data.sex == "0" ? .Male : .Female
+        cell.icyNickLabel.text = data.nickName
+        cell.icyPetCountLabel.text = "宠物：\(data.petCount)"
+        cell.icyTipLabel.text = data.tip
+        
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 76.0
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("showPersonal", sender: nil)
+    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showPersonal":
+                let destination = segue.destinationViewController as FindPersonalViewController
+                if let indexPath = tableView.indexPathForSelectedRow() {
+                    let data = infoData![indexPath.row]
+                    destination.personID = data.userId
+                    destination.personNickname = data.nickName
+                }
+            default:
+                break
+            }
+        }
+    }
 }

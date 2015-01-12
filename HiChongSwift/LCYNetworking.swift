@@ -47,6 +47,7 @@ enum LCYApi: String {
     case WikiCollect                = "Ency/setCollect"
     case WikiCollectList            = "Ency/getCollectArticle"
     case WikiMore                   = "Ency/searchEncy"
+    case WikiGetAD                  = "/Ency/getAd"
 }
 
 enum LCYMimeType: String {

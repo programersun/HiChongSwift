@@ -14,6 +14,34 @@ class FindSearchResultCell: UITableViewCell {
     
     @IBOutlet private weak var sepratorImageView: UIImageView!
     
+    @IBOutlet private weak var icyAvatarView: UIImageView!
+    var icyImagePath: String? {
+        didSet {
+            if let path = icyImagePath {
+                icyAvatarView.setImageWithURL(NSURL(string: path), placeholderImage: UIImage(named: "placeholderLogo"))
+            }
+        }
+    }
+    
+    @IBOutlet private weak var icyGenderImageView: UIImageView!
+    var currentGender: icyGender = .Male{
+        didSet {
+            switch currentGender {
+            case .Male:
+                icyGenderImageView.image = UIImage(named: "sqMale")
+            case .Female:
+                icyGenderImageView.image = UIImage(named: "sqFemale")
+            case .Unknown:
+                icyGenderImageView.image = nil
+            }
+        }
+    }
+    
+    @IBOutlet weak var icyNickLabel: UILabel!
+    
+    @IBOutlet weak var icyPetCountLabel: UILabel!
+    
+    @IBOutlet weak var icyTipLabel: UILabel!
     class func identifier() -> String {
         return "FindSearchResultCellIdentifier"
     }

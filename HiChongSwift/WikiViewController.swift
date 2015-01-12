@@ -24,6 +24,8 @@ class WikiViewController: UITableViewController {
     
     private var listInfo: [WikiTodayData] = [WikiTodayData]()
     
+    private var adInfo: [WikiGetADData]?
+    
     private let sectionHeaderHeight = CGFloat(40.0)
     private var sectionHeaderView: UIView!
     @IBAction func moreButtonPressed(sender: AnyObject) {
@@ -40,7 +42,8 @@ class WikiViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // 加载数据
-        reload()
+        initAdData()
+        
         tableView.hideExtraSeprator()
         
         let nib = UINib(nibName: "WikiSectionHeader", bundle: nil)
@@ -77,7 +80,16 @@ class WikiViewController: UITableViewController {
         destination.root = self
         navigationController?.pushViewController(destination, animated: true)
     }
-    
+    private func initAdData() {
+        LCYNetworking.sharedInstance.GET(LCYApi.WikiGetAD, parameters: nil, success: { [weak self](object) -> Void in
+            let retrieved = WikiGetADBase.modelObjectWithDictionary(object)
+            self?.adInfo = retrieved.data as? [WikiGetADData]
+            self?.tableView.reloadData()
+            return
+            }) { (error) -> Void in
+                return
+        }
+    }
     private func reload() {
         currentPage = 1
         let parameters = [
@@ -135,6 +147,12 @@ class WikiViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             cell = tableView.dequeueReusableCellWithIdentifier(WikiAdCell.identifier()) as UITableViewCell
+            let cell = cell as WikiAdCell
+            if let adInfo = adInfo {
+                cell.adImages = map(adInfo, { (element) -> String in
+                    element.image.toAbsolutePath()
+                })
+            }
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier(WikiMidCell.identifier()) as UITableViewCell
         case 2:

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cLI-Pt-i50">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cLI-Pt-i50">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -18,8 +18,21 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GGi-3c-AkE" id="yrY-fn-Gig">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qot-kn-o62">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        </scrollView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Qot-kn-o62" secondAttribute="bottom" id="3eS-a0-CK5"/>
+                                        <constraint firstItem="Qot-kn-o62" firstAttribute="leading" secondItem="yrY-fn-Gig" secondAttribute="leading" id="IbA-mG-ZDB"/>
+                                        <constraint firstItem="Qot-kn-o62" firstAttribute="top" secondItem="yrY-fn-Gig" secondAttribute="top" id="Mf9-ui-7NR"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qot-kn-o62" secondAttribute="trailing" id="nM6-Rg-GAP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="icyScrollView" destination="Qot-kn-o62" id="ceW-yo-qOZ"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WikiMidCellIdentifier" rowHeight="100" id="esc-fW-8eI" customClass="WikiMidCell" customModule="HiChongSwift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -27,7 +40,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="esc-fW-8eI" id="3ec-n3-mSx">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ear-rH-3z5">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ear-rH-3z5">
                                             <rect key="frame" x="204" y="17" width="60" height="65"/>
                                             <state key="normal" image="WikiMid2">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,7 +49,7 @@
                                                 <action selector="majorCateButtonPressed:" destination="AUl-OI-QTd" eventType="touchUpInside" id="buu-Zc-hJI"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81f-82-Ee4">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81f-82-Ee4">
                                             <rect key="frame" x="336" y="17" width="60" height="65"/>
                                             <state key="normal" image="WikiMid3">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +58,7 @@
                                                 <action selector="majorCateButtonPressed:" destination="AUl-OI-QTd" eventType="touchUpInside" id="IGS-mc-wYz"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-Ow-8nG">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-Ow-8nG">
                                             <rect key="frame" x="467" y="17" width="60" height="65"/>
                                             <state key="normal" image="WikiMid4">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,7 +97,7 @@
                                                 <constraint firstAttribute="height" id="l91-Kt-wHI"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STR-Fi-vkf">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STR-Fi-vkf">
                                             <rect key="frame" x="72" y="17" width="60" height="65"/>
                                             <state key="normal" image="WikiMid1">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -755,6 +768,6 @@
         <image name="WikiMid4" width="60" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Upd-iR-jbF"/>
+        <segue reference="8we-zy-hdo"/>
     </inferredMetricsTieBreakers>
 </document>

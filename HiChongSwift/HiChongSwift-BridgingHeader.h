@@ -44,6 +44,9 @@
 // Ency/searchEncy
 #import "WikiMore.h"
 
+// Ency/getAd
+#import "WikiGetAD.h"
+
 // Square/home
 #import "SquareHome.h"
 
@@ -72,3 +75,6 @@
 // User/fans_list
 // User/friend_list
 #import "UserFansFriends.h"
+
+// User/search_friend
+#import "UserSearchFriend.h"
