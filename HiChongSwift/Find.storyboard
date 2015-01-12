@@ -561,6 +561,8 @@ So as I pray, Unlimited Blade Works.</string>
                     </tableView>
                     <connections>
                         <segue destination="Vcn-ah-duv" kind="show" identifier="showSearchResult" id="ngD-9V-Cvd"/>
+                        <segue destination="CXa-wt-gmg" kind="show" identifier="chooseAge" id="U4Q-Ob-cxG"/>
+                        <segue destination="H16-Yp-Y8x" kind="show" identifier="showSingle" id="9t9-CT-cL3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5H-vy-wYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -751,6 +753,67 @@ So as I pray, Unlimited Blade Works.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9A-P6-ha7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="225" y="1366"/>
+        </scene>
+        <!--Find Choose Age View Controller-->
+        <scene sceneID="k4n-hT-NYa">
+            <objects>
+                <viewController id="CXa-wt-gmg" customClass="FindChooseAgeViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ijk-Oy-9qW"/>
+                        <viewControllerLayoutGuide type="bottom" id="qqF-yO-0Vl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dKX-Yj-f2H">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxG-ca-BTg">
+                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CXa-wt-gmg" id="JMq-yQ-uOk"/>
+                                    <outlet property="delegate" destination="CXa-wt-gmg" id="jgt-aP-6Nu"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qqF-yO-0Vl" firstAttribute="top" secondItem="LxG-ca-BTg" secondAttribute="bottom" id="G1Q-Ke-jEF"/>
+                            <constraint firstItem="LxG-ca-BTg" firstAttribute="leading" secondItem="dKX-Yj-f2H" secondAttribute="leading" id="Xf2-Jd-kKz"/>
+                            <constraint firstAttribute="trailing" secondItem="LxG-ca-BTg" secondAttribute="trailing" id="vBb-wb-uyS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="icyPickerView" destination="LxG-ca-BTg" id="9s4-5j-CPG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kqz-xf-sCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="2180"/>
+        </scene>
+        <!--Find Choose Single Selection View Controller-->
+        <scene sceneID="L1D-N1-E60">
+            <objects>
+                <tableViewController id="H16-Yp-Y8x" customClass="FindChooseSingleSelectionViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ewm-FV-a46">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="CwF-pr-R6f">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CwF-pr-R6f" id="Hvz-BG-6Pd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="H16-Yp-Y8x" id="TzV-QJ-Ccr"/>
+                            <outlet property="delegate" destination="H16-Yp-Y8x" id="nHp-vn-UWE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbO-DZ-Kdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="2160"/>
         </scene>
         <!--Find Circle Add New View Controller-->
         <scene sceneID="mRl-X5-ITb">
@@ -989,6 +1052,6 @@ So as I pray, Unlimited Blade Works.</string>
         <image name="sqFemale" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ufa-8l-Vyh"/>
+        <segue reference="ngD-9V-Cvd"/>
     </inferredMetricsTieBreakers>
 </document>

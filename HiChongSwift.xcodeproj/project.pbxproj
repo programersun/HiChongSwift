@@ -80,6 +80,8 @@
 		287EDFE41A3FED0C005B6A57 /* FindCircleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFE31A3FED0C005B6A57 /* FindCircleListCell.swift */; };
 		287EDFE61A403928005B6A57 /* FindCircleAddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFE51A403928005B6A57 /* FindCircleAddNewViewController.swift */; };
 		287EDFE81A403FD9005B6A57 /* FindCircleAddTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */; };
+		28801DD71A63A25B00743AA9 /* FindChooseAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DD61A63A25B00743AA9 /* FindChooseAgeViewController.swift */; };
+		28801DD91A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28801DD81A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift */; };
 		28876B1E1A427C7D0002F635 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 28876B1D1A427C7D0002F635 /* UIImage+Resize.m */; };
 		28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28876B201A429DDA0002F635 /* AboutMeViewController.swift */; };
 		28876B231A429E760002F635 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28876B221A429E760002F635 /* Welcome.storyboard */; };
@@ -290,6 +292,8 @@
 		287EDFE31A3FED0C005B6A57 /* FindCircleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleListCell.swift; sourceTree = "<group>"; };
 		287EDFE51A403928005B6A57 /* FindCircleAddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleAddNewViewController.swift; sourceTree = "<group>"; };
 		287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCircleAddTextCell.swift; sourceTree = "<group>"; };
+		28801DD61A63A25B00743AA9 /* FindChooseAgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindChooseAgeViewController.swift; sourceTree = "<group>"; };
+		28801DD81A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindChooseSingleSelectionViewController.swift; sourceTree = "<group>"; };
 		28876B1C1A427C7D0002F635 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		28876B1D1A427C7D0002F635 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		28876B201A429DDA0002F635 /* AboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
@@ -755,6 +759,8 @@
 				28BE7C7F1A41353D00F3BC2A /* FindSearchViewController.swift */,
 				28BE7C811A41554200F3BC2A /* FindSearchResultViewController.swift */,
 				28BE7C831A4157FC00F3BC2A /* FindSearchResultCell.swift */,
+				28801DD61A63A25B00743AA9 /* FindChooseAgeViewController.swift */,
+				28801DD81A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -1099,6 +1105,8 @@
 				280A08AA1A5D2A5F0016A504 /* DianpingBase.m in Sources */,
 				28C93AC81A4CF6DE00E1F600 /* WikiCollectListData.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
+				28801DD71A63A25B00743AA9 /* FindChooseAgeViewController.swift in Sources */,
+				28801DD91A63A78000743AA9 /* FindChooseSingleSelectionViewController.swift in Sources */,
 				28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */,
 				2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,

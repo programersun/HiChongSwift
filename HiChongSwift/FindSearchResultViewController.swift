@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FindSearchResultViewController: UITableViewController {
+    
+    var parameter: [String: String]?
+    
+    private var location: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +25,46 @@ class FindSearchResultViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.backgroundColor = UIColor.LCYThemeColor()
+        
+        LCYCommon.sharedInstance.getLocation({ [weak self](location) -> Void in
+            self?.location = location
+            self?.reload()
+            return
+        }, fail: { [weak self]() -> Void in
+            self?.alert("无法获取您的地理位置信息。")
+            return
+        })
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Action
+    private func reload() {
+        if var parameter = parameter {
+            parameter.extend([
+                "longitude": "\(location!.coordinate.longitude)",
+                "latitude": "\(location!.coordinate.latitude)"
+                ])
+            LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { (object) -> Void in
+                return
+            }, failure: { (error) -> Void in
+                return
+            })
+        } else {
+            let parameter = [
+                "longitude": "\(location!.coordinate.longitude)",
+                "latitude": "\(location!.coordinate.latitude)"
+            ]
+            LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { (object) -> Void in
+                return
+                }, failure: { (error) -> Void in
+                    return
+            })
+        }
     }
 
     // MARK: - Table view data source

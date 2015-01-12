@@ -25,6 +25,12 @@ extension UITableView {
     }
 }
 
+extension Int {
+    func toAge() -> String {
+        return "\(self)".toAge()
+    }
+}
+
 extension String {
     /**
     图片相对路径转换为绝对路径

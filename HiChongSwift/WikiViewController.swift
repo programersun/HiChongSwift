@@ -65,8 +65,9 @@ class WikiViewController: UITableViewController {
                     self?.childCategory = nil
                 }
         }
-        
+        reload()
     }
+    
     
     // MARK: - Actions
     func rightButtonPressed(sender: AnyObject) {

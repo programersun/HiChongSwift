@@ -218,7 +218,10 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
             case 0:
                 performSegueWithIdentifier("showMap", sender: nil)
             case 1:
-                break
+                let phone = merchantData!.msg.businessPhone
+                if let telURL = NSURL(string:"telprompt:\(phone)") {
+                    UIApplication.sharedApplication().openURL(telURL)
+                }
             case 2:
                 self.performSegueWithIdentifier("showCommentList", sender: nil)
             default:
