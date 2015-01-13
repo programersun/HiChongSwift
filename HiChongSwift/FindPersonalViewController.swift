@@ -120,10 +120,11 @@ class FindPersonalViewController: UITableViewController {
                 "to_user_id"    : personID,
                 "control"       : "1"
             ]
+            navigationItem.rightBarButtonItem?.enabled = false
             LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameters, success: { [weak self](object) -> Void in
                 if let result = object["result"] as? Bool {
                     if result {
-                        self?.alert("成功关注")
+//                        self?.alert("成功关注")
                         self?.addRightButton("取消关注", action: "removeCare:")
                     } else {
                         self?.alert("关注失败")
@@ -131,9 +132,11 @@ class FindPersonalViewController: UITableViewController {
                 } else {
                     self?.alert("关注失败")
                 }
+                self?.navigationItem.rightBarButtonItem?.enabled = true
                 return
             }, failure: { [weak self](error) -> Void in
                 self?.alert("您的网络状态不佳哦s")
+                self?.navigationItem.rightBarButtonItem?.enabled = true
                 return
             })
         }
@@ -146,10 +149,11 @@ class FindPersonalViewController: UITableViewController {
                 "to_user_id"    : personID,
                 "control"       : "2"
             ]
+            navigationItem.rightBarButtonItem?.enabled = false
             LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameters, success: { [weak self](object) -> Void in
                 if let result = object["result"] as? Bool {
                     if result {
-                        self?.alert("成功取消关注")
+//                        self?.alert("成功取消关注")
                         self?.addRightButton("关注", action: "addCare:")
                     } else {
                         self?.alert("取消关注失败")
@@ -157,9 +161,11 @@ class FindPersonalViewController: UITableViewController {
                 } else {
                     self?.alert("取消关注失败")
                 }
+                self?.navigationItem.rightBarButtonItem?.enabled = true
                 return
                 }, failure: { [weak self](error) -> Void in
                     self?.alert("您的网络状态不佳哦s")
+                    self?.navigationItem.rightBarButtonItem?.enabled = true
                     return
             })
         }

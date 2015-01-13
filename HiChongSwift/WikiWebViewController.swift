@@ -22,6 +22,7 @@ class WikiWebViewController: UIViewController {
         if let myWikiID = wikiID {
             // 显示详情
             let URLString = LCYNetworking.sharedInstance.WikiDetailHTMLAddress(myWikiID)
+            println("URL = \(URLString)")
             let URLRequest = NSURLRequest(URL: NSURL(string: URLString)!)
             icyWebView.loadRequest(URLRequest)
         } else {

@@ -85,7 +85,9 @@ class FindCircleAddNewViewController: UITableViewController {
                 LCYNetworking.sharedInstance.POST(LCYApi.TwitterAdd, parameters: parameters, success: { [weak self](object) -> Void in
                     if let result = object["result"] as? NSNumber {
                         if result.boolValue {
-                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
+//                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
+                            self?.delegate?.addCircleDone()
+                            self?.navigationController?.popViewControllerAnimated(true)
                         } else {
                             self?.alert("提交失败")
                         }
@@ -114,10 +116,13 @@ class FindCircleAddNewViewController: UITableViewController {
                 let fileData = map(petImages, { (oneImage) -> NSData in
                     UIImageJPEGRepresentation(oneImage, 0.95)
                 })
-                LCYNetworking.sharedInstance.POSTMultipleFile(LCYApi.TwitterAdd, parameters: parameters, fileKey: "Filedata[]", fileData: fileData, success: { [weak self](object) -> Void in
+                LCYNetworking.sharedInstance.POSTMultipleFile(LCYApi.TwitterAdd, parameters: parameters, fileKey: "Filedata[]", fileData: fileData, success: {
+                    [weak self](object) -> Void in
                     if let result = object["result"] as? NSNumber {
                         if result.boolValue {
-                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
+//                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
+                            self?.delegate?.addCircleDone()
+                            self?.navigationController?.popViewControllerAnimated(true)
                         } else {
                             self?.alert("提交失败")
                         }

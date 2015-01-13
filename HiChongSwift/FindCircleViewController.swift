@@ -283,6 +283,51 @@ extension FindCircleViewController: UIActionSheetDelegate {
 extension FindCircleViewController: FindCircleListCellDelegate {
     func findCircleListCellStar(indexPath: NSIndexPath) {
         println("stared \(indexPath)")
+        let data = twitters![indexPath.row]
+        if let starList = data.starList as? [TwitterListStarList] {
+            for starPerson in starList {
+                if starPerson.userId == LCYCommon.sharedInstance.userName {
+                    alert("您已经点过赞啦")
+                    return
+                }
+            }
+        }
+        // 没有点过赞，点赞成功后加入到点赞列表中
+        let parameter = [
+            "twitter_id": data.twitterId,
+            "user_id": LCYCommon.sharedInstance.userName!
+        ]
+        LCYNetworking.sharedInstance.POST(LCYApi.TwitterStar, parameters: parameter, success: {
+            [weak self](object) -> Void in
+            if let result = object["result"] as? Bool {
+                if result {
+                    if var dynamicList = data.starList as? [TwitterListStarList] {
+                        let dic = [
+                            "user_id": LCYCommon.sharedInstance.userName!,
+                            "head_image": self?.keeperInfo?.headImage ?? ""
+                        ]
+                        let me = TwitterListStarList.modelObjectWithDictionary(dic)
+                        dynamicList.insert(me, atIndex: 0)
+                        data.starList = dynamicList
+                        data.starCount = "\(data.starCount.toInt()! + 1)"
+                        
+                        self?.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    } else {
+                        self?.alert("点赞失败")
+                    }
+                } else {
+                    self?.alert("点赞失败")
+                }
+            } else {
+                
+            }
+            return
+        }) { [weak self](error) -> Void in
+            self?.alert("点赞失败，请检查您的网络状态")
+            return
+        }
+        
+        
     }
     func findCircleListCellTitleClicked(indexPath: NSIndexPath) {
         println("selected \(indexPath)")

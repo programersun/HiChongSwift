@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class WikiArticleViewController: UIViewController {
     
@@ -36,6 +37,7 @@ class WikiArticleViewController: UIViewController {
             // 显示详情
             let URLString = LCYNetworking.sharedInstance.WikiHTMLAddress(wikiID)
             let URLRequest = NSURLRequest(URL: NSURL(string: URLString)!)
+            println("URL =||| \(URLString)")
             icyWebView.loadRequest(URLRequest)
             // 判断收藏情况
             if let collected = wikiCollected {
@@ -59,6 +61,12 @@ class WikiArticleViewController: UIViewController {
         } else {
             alert("无法加载信息")
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        icyWebView.reload()
     }
     
     @IBAction func collectionButtonPressed(sender: AnyObject) {
@@ -111,4 +119,9 @@ class WikiArticleViewController: UIViewController {
     }
     */
     
+}
+
+extension WikiArticleViewController: UIWebViewDelegate {
+    func webViewDidFinishLoad(webView: UIWebView) {
+    }
 }
