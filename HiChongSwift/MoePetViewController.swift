@@ -28,6 +28,24 @@ class MoePetViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         collectionView?.backgroundColor = UIColor.LCYThemeColor()
         
+        reload()
+        
+        navigationItem.title = "萌宠信息"
+        
+        if editable {
+            addRightButton("编辑", action: "editButtonPressed:")
+        }
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+        
+    }
+    
+    // MARK: - Actions
+    private func reload() {
         if let upetID = petId {
             let parameters = [
                 "pet_id" : upetID
@@ -50,21 +68,8 @@ class MoePetViewController: UICollectionViewController {
         } else {
             alert("未能获取宠物信息")
         }
-        
-        navigationItem.title = "萌宠信息"
-        
-        if editable {
-            addRightButton("编辑", action: "editButtonPressed:")
-        }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    
-    }
-    
-    // MARK: - Actions
     func editButtonPressed(sender: AnyObject) {
         if detailInfo != nil {
             performSegueWithIdentifier("showEdit", sender: nil)
@@ -77,8 +82,8 @@ class MoePetViewController: UICollectionViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
         if let identifier = segue.identifier {
             switch identifier {
             case "showEdit":
@@ -160,6 +165,13 @@ class MoePetViewController: UICollectionViewController {
         if !editable || indexPath.row != 0 {
             performSegueWithIdentifier("toPage", sender: indexPath)
         }
+        if editable && indexPath.row == 0 {
+            if petId != nil {
+                let actionSheet = UIActionSheet(title: "上传宠物图片", delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "我要拍照", "从照片库选取", "取消")
+                actionSheet.destructiveButtonIndex = 2
+                actionSheet.showInView(self.view)
+            }
+        }
     }
     
     /*
@@ -200,3 +212,51 @@ extension MoePetViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: sideWidth, height: sideWidth)
     }
 }
+
+extension MoePetViewController: UIActionSheetDelegate {
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        switch buttonIndex {
+        case 1:
+            // 从照片库选择
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            presentViewController(imagePicker, animated: true, completion: nil)
+        case 0:
+            // 从相机拍照
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            presentViewController(imagePicker, animated: true, completion: nil)
+            break
+        default:
+            return
+        }
+    }
+}
+
+extension MoePetViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        showHUDWithTips("处理中")
+        
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 500, height: 500))
+        
+        // 处理上传之后，隐藏HUD
+        // 上传照片
+        let data = UIImageJPEGRepresentation(smallImage, 0.97)
+        let parameter = [
+            "pet_id": petId!
+        ]
+        LCYNetworking.sharedInstance.POSTFile(LCYApi.PetUploadPetImage, parameters: parameter, fileKey: "Filedata", fileData: data, fileName: "tiancailcy.jpg", mimeType: LCYMimeType.JPEG, success: { [weak self](object) -> Void in
+            self?.hideHUD()
+            self?.reload()
+            return
+        }) { [weak self](error) -> Void in
+            self?.hideHUD()
+            self?.alert("上传失败，请检查您的网络状况")
+            return
+        }
+    }
+}
+

@@ -43,6 +43,7 @@ enum LCYApi: String {
     case PetSubType                 = "PetStyle/searchDetailByID"
     case PetAdd                     = "Pet/petAdd"
     case PetUpdatePetInfo           = "Pet/updatePetInfo"
+    case PetUploadPetImage          = "Pet/UploadPetImage"
     
     case WikiToday                  = "Ency/getTodayEncy"
     case WikiIsCollect              = "Ency/is_collect"
