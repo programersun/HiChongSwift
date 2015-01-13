@@ -140,6 +140,7 @@
 		28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C166391A36E0A50090E061 /* ColorExtension.swift */; };
 		28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C1663C1A36E69E0090E061 /* SquareViewController.swift */; };
 		28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C1663E1A36EBCF0090E061 /* SquareAdCell.swift */; };
+		28C231BA1A6521B4004AF7D8 /* AboutMeFeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C231B91A6521B4004AF7D8 /* AboutMeFeedBackViewController.swift */; };
 		28C6DAAE1A2FF25900068848 /* AboutMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */; };
 		28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C6DAAF1A2FF28900068848 /* MainViewController.swift */; };
 		28C6DACA1A2FFDF600068848 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 28C6DABA1A2FFDF600068848 /* MJRefresh.bundle */; };
@@ -373,6 +374,7 @@
 		28C166391A36E0A50090E061 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		28C1663C1A36E69E0090E061 /* SquareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareViewController.swift; sourceTree = "<group>"; };
 		28C1663E1A36EBCF0090E061 /* SquareAdCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAdCell.swift; sourceTree = "<group>"; };
+		28C231B91A6521B4004AF7D8 /* AboutMeFeedBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeFeedBackViewController.swift; sourceTree = "<group>"; };
 		28C6DAAD1A2FF25900068848 /* AboutMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutMe.storyboard; sourceTree = "<group>"; };
 		28C6DAAF1A2FF28900068848 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		28C6DABA1A2FFDF600068848 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -739,6 +741,7 @@
 				28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */,
 				285EC3701A49D76000E2FE70 /* AboutMeModifyGenderController.swift */,
 				28801DDE1A63C20E00743AA9 /* AboutMeSettingViewController.swift */,
+				28C231B91A6521B4004AF7D8 /* AboutMeFeedBackViewController.swift */,
 				287941A01A49EC3A00DECA50 /* MoePet */,
 			);
 			name = AboutMe;
@@ -1140,6 +1143,7 @@
 				28DE583B1A5BD93200B49046 /* GetUserInfoUserInfo.m in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */,
+				28C231BA1A6521B4004AF7D8 /* AboutMeFeedBackViewController.swift in Sources */,
 				2806FEB31A4A651B00D18543 /* LCYPetSubTypeChildStyle.m in Sources */,
 				287941AC1A49F56C00DECA50 /* LCYPetDetailPetImages.m in Sources */,
 				2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */,
