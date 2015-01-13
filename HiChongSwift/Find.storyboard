@@ -225,7 +225,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="900" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBR-8l-Vcz">
-                                            <rect key="frame" x="76" y="34" width="434" height="134"/>
+                                            <rect key="frame" x="76" y="34" width="516" height="134"/>
                                             <string key="text">I am the bone of my sword.
 Steel is my body,and fire is my blood.
 I have created over a thousand blades.
@@ -298,7 +298,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z3G-1T-ISe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="242"/>
+                                                    <rect key="frame" x="8" y="0.0" width="162" height="242"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dgm-2x-RFY">
                                                     <rect key="frame" x="164" y="86" width="70" height="70"/>
@@ -326,7 +326,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <constraint firstItem="wLJ-Xg-Wue" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" constant="8" id="cG6-lf-Lt6"/>
                                                 <constraint firstItem="FDD-2K-mxc" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="dZI-ro-Fco"/>
                                                 <constraint firstItem="vXC-xc-0zX" firstAttribute="leading" secondItem="FDD-2K-mxc" secondAttribute="trailing" constant="8" id="eM4-O1-IpV"/>
-                                                <constraint firstItem="Z3G-1T-ISe" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" id="h98-hK-U4l"/>
+                                                <constraint firstItem="Z3G-1T-ISe" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="h98-hK-U4l"/>
                                                 <constraint firstItem="Ka2-vO-ggm" firstAttribute="top" secondItem="dgm-2x-RFY" secondAttribute="bottom" constant="8" id="hb8-Dy-rkg"/>
                                                 <constraint firstItem="FIf-ai-sgU" firstAttribute="top" secondItem="wLJ-Xg-Wue" secondAttribute="bottom" constant="8" id="qRs-lR-cys"/>
                                                 <constraint firstItem="oQF-zk-Sgd" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="t0e-NS-4p9"/>
@@ -427,21 +427,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             <rect key="frame" x="510" y="0.0" width="90" height="96"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncG-NZ-dib">
-                                                    <rect key="frame" x="23" y="8" width="44" height="14"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-z0-2yJ">
-                                                    <rect key="frame" x="28" y="30" width="35" height="35"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="35" id="bS4-f8-U0C"/>
-                                                        <constraint firstAttribute="height" constant="35" id="dLZ-s2-OXz"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-3X-vEi">
-                                                    <rect key="frame" x="23" y="73" width="44" height="14"/>
+                                                    <rect key="frame" x="23" y="8" width="44" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -449,14 +435,10 @@ So as I pray, Unlimited Blade Works.</string>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="Ndd-z0-2yJ" secondAttribute="centerX" id="2HS-QH-LOa"/>
-                                                <constraint firstAttribute="centerX" secondItem="Nln-3X-vEi" secondAttribute="centerX" id="B8w-iQ-lwE"/>
                                                 <constraint firstItem="ncG-NZ-dib" firstAttribute="top" secondItem="dpT-IW-6ga" secondAttribute="top" constant="8" id="Ce7-kv-4QP"/>
                                                 <constraint firstAttribute="centerX" secondItem="ncG-NZ-dib" secondAttribute="centerX" id="KET-Ym-djN"/>
-                                                <constraint firstItem="Nln-3X-vEi" firstAttribute="top" secondItem="Ndd-z0-2yJ" secondAttribute="bottom" constant="8" id="Pyh-M0-DXN"/>
                                                 <constraint firstAttribute="height" constant="96" id="TW8-Rj-WmG"/>
                                                 <constraint firstAttribute="width" constant="90" id="oh6-MG-FRa"/>
-                                                <constraint firstItem="Ndd-z0-2yJ" firstAttribute="top" secondItem="ncG-NZ-dib" secondAttribute="bottom" constant="8" id="xeg-gV-NwR"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdW-BB-VQh">
@@ -472,29 +454,46 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <action selector="titleLabelTapped:" destination="ehT-xs-MGo" eventType="touchUpInside" id="CO3-MY-HRv"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-z0-2yJ">
+                                            <rect key="frame" x="43" y="43" width="25" height="25"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="bS4-f8-U0C"/>
+                                                <constraint firstAttribute="height" constant="25" id="dLZ-s2-OXz"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-3X-vEi">
+                                            <rect key="frame" x="16" y="76" width="44" height="13.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Ndd-z0-2yJ" firstAttribute="trailing" secondItem="9Mr-oX-lGF" secondAttribute="trailing" id="0sX-sC-dMW"/>
                                         <constraint firstAttribute="bottom" secondItem="Hig-9K-XR6" secondAttribute="bottom" id="4Zj-Ts-Wih"/>
                                         <constraint firstItem="sdW-BB-VQh" firstAttribute="leading" secondItem="NzX-SA-d7k" secondAttribute="leading" constant="8" id="4qE-em-LHR"/>
                                         <constraint firstItem="cOY-VS-e3J" firstAttribute="top" secondItem="NzX-SA-d7k" secondAttribute="top" constant="8" id="6zO-gS-AoV"/>
-                                        <constraint firstItem="Taj-ln-3Ib" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FBR-8l-Vcz" secondAttribute="bottom" constant="8" id="EPa-Ap-qe9"/>
+                                        <constraint firstItem="Taj-ln-3Ib" firstAttribute="top" secondItem="FBR-8l-Vcz" secondAttribute="bottom" constant="8" id="EPa-Ap-qe9"/>
+                                        <constraint firstAttribute="trailing" secondItem="FBR-8l-Vcz" secondAttribute="trailing" constant="8" id="F58-Cg-9Se"/>
                                         <constraint firstItem="FBR-8l-Vcz" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" constant="8" id="HiK-nC-A67"/>
                                         <constraint firstItem="dpT-IW-6ga" firstAttribute="top" secondItem="NzX-SA-d7k" secondAttribute="top" id="LMe-x9-t5G"/>
                                         <constraint firstItem="QGH-hf-na8" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="bottom" id="W86-Zl-zoe"/>
                                         <constraint firstItem="sdW-BB-VQh" firstAttribute="top" secondItem="NzX-SA-d7k" secondAttribute="top" constant="8" id="XJ4-Hx-bHI"/>
                                         <constraint firstItem="FBR-8l-Vcz" firstAttribute="top" secondItem="cOY-VS-e3J" secondAttribute="bottom" constant="8" id="aGw-b5-2BS"/>
                                         <constraint firstAttribute="trailing" secondItem="Hig-9K-XR6" secondAttribute="trailing" constant="8" id="aSD-sD-dVr"/>
+                                        <constraint firstItem="Nln-3X-vEi" firstAttribute="centerX" secondItem="9Mr-oX-lGF" secondAttribute="centerX" id="cww-WI-YRb"/>
                                         <constraint firstAttribute="trailing" secondItem="dpT-IW-6ga" secondAttribute="trailing" id="gQp-sN-BD9"/>
                                         <constraint firstItem="cOY-VS-e3J" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" constant="8" id="hpp-bn-Xhy"/>
+                                        <constraint firstItem="Nln-3X-vEi" firstAttribute="top" secondItem="Ndd-z0-2yJ" secondAttribute="bottom" constant="8" id="iER-eI-5XN"/>
                                         <constraint firstItem="Vle-Io-DKC" firstAttribute="top" secondItem="QGH-hf-na8" secondAttribute="bottom" constant="8" id="kl6-ya-why"/>
-                                        <constraint firstItem="dpT-IW-6ga" firstAttribute="leading" secondItem="FBR-8l-Vcz" secondAttribute="trailing" id="pOF-DP-ECR"/>
+                                        <constraint firstItem="Ndd-z0-2yJ" firstAttribute="bottom" secondItem="9Mr-oX-lGF" secondAttribute="bottom" id="lZZ-w8-MoL"/>
                                         <constraint firstItem="Taj-ln-3Ib" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" id="sb0-dJ-cbi"/>
                                         <constraint firstItem="Vle-Io-DKC" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" id="ucF-C2-ewe"/>
                                         <constraint firstItem="9Mr-oX-lGF" firstAttribute="top" secondItem="NzX-SA-d7k" secondAttribute="top" constant="8" id="uoG-zj-3YI"/>
                                         <constraint firstItem="9Mr-oX-lGF" firstAttribute="leading" secondItem="NzX-SA-d7k" secondAttribute="leading" constant="8" id="vff-bO-VWs"/>
                                         <constraint firstItem="QGH-hf-na8" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" id="vqn-hf-cVT"/>
                                         <constraint firstItem="Hig-9K-XR6" firstAttribute="leading" secondItem="NzX-SA-d7k" secondAttribute="leading" constant="8" id="w0s-5a-P4s"/>
-                                        <constraint firstItem="Taj-ln-3Ib" firstAttribute="top" secondItem="dpT-IW-6ga" secondAttribute="bottom" priority="750" constant="8" id="wTO-nn-Jfp"/>
                                         <constraint firstAttribute="trailing" secondItem="Vle-Io-DKC" secondAttribute="trailing" constant="8" id="yZa-jJ-ng9"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -1151,7 +1150,7 @@ So as I pray, Unlimited Blade Works.</string>
         <image name="sqFemale" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="XCC-x6-KlN"/>
         <segue reference="ngD-9V-Cvd"/>
-        <segue reference="wuh-03-OLp"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -135,6 +135,12 @@ class FindCircleListCell: UITableViewCell {
         
         self.sepratorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
         self.sepratorImageView.image = LCYCommon.sharedInstance.artSepratorImage
+        
+        petAvatarImageView.roundCorner()
+        keeperAvatarImageView.roundCorner()
+        
+        petAvatarImageView.layer.borderWidth = 1.0 / UIScreen.mainScreen().scale
+        petAvatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
