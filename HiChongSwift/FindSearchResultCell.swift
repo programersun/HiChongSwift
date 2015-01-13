@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FindSearchResultCell: UITableViewCell {
     
@@ -40,6 +41,28 @@ class FindSearchResultCell: UITableViewCell {
     @IBOutlet weak var icyNickLabel: UILabel!
     
     @IBOutlet weak var icyPetCountLabel: UILabel!
+    
+    @IBOutlet private weak var icyDistanceLabel: UILabel!
+    var location: (latitude: String, longitude: String, myLocation: CLLocation?) = ("0", "0", nil) {
+        didSet {
+            let dLat: CLLocationDegrees = location.latitude.bridgeToObjectiveC().doubleValue
+            let dLon: CLLocationDegrees = location.longitude.bridgeToObjectiveC().doubleValue
+            
+            if abs(dLat) > 0.001 && abs(dLon) > 0.001 {
+                // 真实数据，计算坐标
+                if let myLocation = location.myLocation {
+                    let geoManager = GeoManager()
+                    icyDistanceLabel.text = geoManager.distanceTo(latitude: dLat, longitude: dLon, myLocation: myLocation).toKM()
+                } else {
+                    icyDistanceLabel.text = ""
+                }
+            } else {
+                // 默认数据，清空显示
+                icyDistanceLabel.text = ""
+            }
+        }
+    }
+    
     
     @IBOutlet weak var icyTipLabel: UILabel!
     class func identifier() -> String {

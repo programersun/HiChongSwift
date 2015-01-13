@@ -597,7 +597,7 @@ So as I pray, Unlimited Blade Works.</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物：2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3o-n2-4E4">
-                                            <rect key="frame" x="546" y="92" width="47" height="16"/>
+                                            <rect key="frame" x="545" y="92" width="47" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -631,17 +631,25 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <constraint firstAttribute="height" constant="10" id="XRQ-yQ-jjz"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRe-ey-Jjp">
+                                            <rect key="frame" x="552" y="8" width="40" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="dv5-Wq-s50" firstAttribute="leading" secondItem="cII-qe-bRm" secondAttribute="trailing" constant="8" id="18D-bZ-G06"/>
                                         <constraint firstAttribute="trailing" secondItem="z3o-n2-4E4" secondAttribute="trailing" constant="8" id="1ZX-kD-68p"/>
                                         <constraint firstAttribute="centerY" secondItem="cII-qe-bRm" secondAttribute="centerY" id="Bdf-Y2-6An"/>
                                         <constraint firstItem="bdl-az-pax" firstAttribute="leading" secondItem="cII-qe-bRm" secondAttribute="trailing" constant="8" id="BsZ-lD-6Pb"/>
+                                        <constraint firstAttribute="trailing" secondItem="jRe-ey-Jjp" secondAttribute="trailing" constant="8" id="GNm-8G-TL8"/>
                                         <constraint firstAttribute="bottom" secondItem="dv5-Wq-s50" secondAttribute="bottom" constant="8" id="Nm7-WJ-dIB"/>
                                         <constraint firstItem="8ve-mF-PBL" firstAttribute="top" secondItem="x3L-Sv-JRv" secondAttribute="top" constant="8" id="WwB-bs-zz9"/>
                                         <constraint firstItem="cII-qe-bRm" firstAttribute="leading" secondItem="x3L-Sv-JRv" secondAttribute="leading" constant="8" id="YnM-As-CMY"/>
                                         <constraint firstItem="bdl-az-pax" firstAttribute="top" secondItem="x3L-Sv-JRv" secondAttribute="top" constant="8" id="aef-ZQ-EPz"/>
                                         <constraint firstAttribute="trailing" secondItem="OlS-YW-SNa" secondAttribute="trailing" constant="8" id="gW8-82-T4K"/>
+                                        <constraint firstItem="jRe-ey-Jjp" firstAttribute="top" secondItem="x3L-Sv-JRv" secondAttribute="top" constant="8" id="hWv-pa-1fy"/>
                                         <constraint firstItem="8ve-mF-PBL" firstAttribute="leading" secondItem="bdl-az-pax" secondAttribute="trailing" constant="8" id="mV7-Oj-Ju5"/>
                                         <constraint firstAttribute="bottom" secondItem="z3o-n2-4E4" secondAttribute="bottom" constant="8" id="uzq-c5-k2d"/>
                                         <constraint firstAttribute="bottom" secondItem="OlS-YW-SNa" secondAttribute="bottom" id="v0J-HL-ksD"/>
@@ -651,6 +659,7 @@ So as I pray, Unlimited Blade Works.</string>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="icyAvatarView" destination="cII-qe-bRm" id="3yc-Rj-VEt"/>
+                                    <outlet property="icyDistanceLabel" destination="jRe-ey-Jjp" id="oKL-GL-k28"/>
                                     <outlet property="icyGenderImageView" destination="bdl-az-pax" id="UQq-YZ-xWY"/>
                                     <outlet property="icyNickLabel" destination="8ve-mF-PBL" id="g34-X7-16q"/>
                                     <outlet property="icyPetCountLabel" destination="z3o-n2-4E4" id="7PQ-GT-o9D"/>
@@ -977,7 +986,7 @@ So as I pray, Unlimited Blade Works.</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLm-CQ-UW6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7w5-3d-P88">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7w5-3d-P88">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                 </subviews>
@@ -1150,7 +1159,7 @@ So as I pray, Unlimited Blade Works.</string>
         <image name="sqFemale" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XCC-x6-KlN"/>
         <segue reference="ngD-9V-Cvd"/>
+        <segue reference="wuh-03-OLp"/>
     </inferredMetricsTieBreakers>
 </document>

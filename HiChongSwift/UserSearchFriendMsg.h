@@ -13,8 +13,10 @@
 
 @property (nonatomic, strong) NSString *nickName;
 @property (nonatomic, strong) NSString *headImage;
+@property (nonatomic, strong) NSString *longitude;
 @property (nonatomic, strong) NSString *tip;
 @property (nonatomic, strong) NSString *distance;
+@property (nonatomic, strong) NSString *latitude;
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *sex;
 @property (nonatomic, strong) NSString *petCount;

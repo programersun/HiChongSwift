@@ -10,8 +10,10 @@
 
 NSString *const kUserSearchFriendMsgNickName = @"nick_name";
 NSString *const kUserSearchFriendMsgHeadImage = @"head_image";
+NSString *const kUserSearchFriendMsgLongitude = @"longitude";
 NSString *const kUserSearchFriendMsgTip = @"tip";
 NSString *const kUserSearchFriendMsgDistance = @"distance";
+NSString *const kUserSearchFriendMsgLatitude = @"latitude";
 NSString *const kUserSearchFriendMsgUserId = @"user_id";
 NSString *const kUserSearchFriendMsgSex = @"sex";
 NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
@@ -27,8 +29,10 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
 
 @synthesize nickName = _nickName;
 @synthesize headImage = _headImage;
+@synthesize longitude = _longitude;
 @synthesize tip = _tip;
 @synthesize distance = _distance;
+@synthesize latitude = _latitude;
 @synthesize userId = _userId;
 @synthesize sex = _sex;
 @synthesize petCount = _petCount;
@@ -48,8 +52,10 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
             self.nickName = [self objectOrNilForKey:kUserSearchFriendMsgNickName fromDictionary:dict];
             self.headImage = [self objectOrNilForKey:kUserSearchFriendMsgHeadImage fromDictionary:dict];
+            self.longitude = [self objectOrNilForKey:kUserSearchFriendMsgLongitude fromDictionary:dict];
             self.tip = [self objectOrNilForKey:kUserSearchFriendMsgTip fromDictionary:dict];
             self.distance = [self objectOrNilForKey:kUserSearchFriendMsgDistance fromDictionary:dict];
+            self.latitude = [self objectOrNilForKey:kUserSearchFriendMsgLatitude fromDictionary:dict];
             self.userId = [self objectOrNilForKey:kUserSearchFriendMsgUserId fromDictionary:dict];
             self.sex = [self objectOrNilForKey:kUserSearchFriendMsgSex fromDictionary:dict];
             self.petCount = [self objectOrNilForKey:kUserSearchFriendMsgPetCount fromDictionary:dict];
@@ -65,8 +71,10 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.nickName forKey:kUserSearchFriendMsgNickName];
     [mutableDict setValue:self.headImage forKey:kUserSearchFriendMsgHeadImage];
+    [mutableDict setValue:self.longitude forKey:kUserSearchFriendMsgLongitude];
     [mutableDict setValue:self.tip forKey:kUserSearchFriendMsgTip];
     [mutableDict setValue:self.distance forKey:kUserSearchFriendMsgDistance];
+    [mutableDict setValue:self.latitude forKey:kUserSearchFriendMsgLatitude];
     [mutableDict setValue:self.userId forKey:kUserSearchFriendMsgUserId];
     [mutableDict setValue:self.sex forKey:kUserSearchFriendMsgSex];
     [mutableDict setValue:self.petCount forKey:kUserSearchFriendMsgPetCount];
@@ -95,8 +103,10 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
 
     self.nickName = [aDecoder decodeObjectForKey:kUserSearchFriendMsgNickName];
     self.headImage = [aDecoder decodeObjectForKey:kUserSearchFriendMsgHeadImage];
+    self.longitude = [aDecoder decodeObjectForKey:kUserSearchFriendMsgLongitude];
     self.tip = [aDecoder decodeObjectForKey:kUserSearchFriendMsgTip];
     self.distance = [aDecoder decodeObjectForKey:kUserSearchFriendMsgDistance];
+    self.latitude = [aDecoder decodeObjectForKey:kUserSearchFriendMsgLatitude];
     self.userId = [aDecoder decodeObjectForKey:kUserSearchFriendMsgUserId];
     self.sex = [aDecoder decodeObjectForKey:kUserSearchFriendMsgSex];
     self.petCount = [aDecoder decodeObjectForKey:kUserSearchFriendMsgPetCount];
@@ -108,8 +118,10 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
 
     [aCoder encodeObject:_nickName forKey:kUserSearchFriendMsgNickName];
     [aCoder encodeObject:_headImage forKey:kUserSearchFriendMsgHeadImage];
+    [aCoder encodeObject:_longitude forKey:kUserSearchFriendMsgLongitude];
     [aCoder encodeObject:_tip forKey:kUserSearchFriendMsgTip];
     [aCoder encodeObject:_distance forKey:kUserSearchFriendMsgDistance];
+    [aCoder encodeObject:_latitude forKey:kUserSearchFriendMsgLatitude];
     [aCoder encodeObject:_userId forKey:kUserSearchFriendMsgUserId];
     [aCoder encodeObject:_sex forKey:kUserSearchFriendMsgSex];
     [aCoder encodeObject:_petCount forKey:kUserSearchFriendMsgPetCount];
@@ -123,8 +135,10 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
 
         copy.nickName = [self.nickName copyWithZone:zone];
         copy.headImage = [self.headImage copyWithZone:zone];
+        copy.longitude = [self.longitude copyWithZone:zone];
         copy.tip = [self.tip copyWithZone:zone];
         copy.distance = [self.distance copyWithZone:zone];
+        copy.latitude = [self.latitude copyWithZone:zone];
         copy.userId = [self.userId copyWithZone:zone];
         copy.sex = [self.sex copyWithZone:zone];
         copy.petCount = [self.petCount copyWithZone:zone];

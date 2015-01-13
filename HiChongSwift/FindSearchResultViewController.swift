@@ -115,6 +115,8 @@ class FindSearchResultViewController: UITableViewController {
         cell.icyPetCountLabel.text = "宠物：\(data.petCount)"
         cell.icyTipLabel.text = data.tip
         
+        cell.location = (data.latitude, data.longitude, location)
+        
         return cell
     }
     
