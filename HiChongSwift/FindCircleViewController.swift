@@ -77,7 +77,14 @@ class FindCircleViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = rightItem
         
         loadKeeperInfo()
+        showHUD()
         reload()
+        
+        tableView.addHeaderWithCallback { [weak self]() -> Void in
+            self?.reload()
+            return
+        }
+        tableView.baseTextColor = UIColor.whiteColor()
     }
     
     @IBAction func headerBackgroundTouched(sender: AnyObject) {
@@ -111,7 +118,6 @@ class FindCircleViewController: UITableViewController {
         }
     }
     private func reload() {
-        showHUD()
         let parameters = [
             "user_id"   : LCYCommon.sharedInstance.userName!
         ]
@@ -123,10 +129,12 @@ class FindCircleViewController: UITableViewController {
                 self?.tableView.reloadData()
             }
             self?.hideHUD()
+            self?.tableView.headerEndRefreshing()
             return
             }) { [weak self](error) -> Void in
                 self?.hideHUD()
                 self?.alert("您的网络状态不佳")
+                self?.tableView.headerEndRefreshing()
                 return
         }
     }
@@ -250,10 +258,12 @@ extension FindCircleViewController: UIActionSheetDelegate {
             }
         case magicNumber.changeCover.rawValue:
             //            println("change cover at \(buttonIndex)")
-            imagePicker = UIImagePickerController()
-            imagePicker?.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            imagePicker?.delegate = self
-            presentViewController(imagePicker!, animated: true, completion: nil)
+            if buttonIndex == 0 {
+                imagePicker = UIImagePickerController()
+                imagePicker?.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                imagePicker?.delegate = self
+                presentViewController(imagePicker!, animated: true, completion: nil)
+            }
         default:
             break
         }

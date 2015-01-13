@@ -254,6 +254,10 @@ class AboutMeEditProfileViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
+        case 0:
+            let actionSheet = UIActionSheet(title: "修改头像", delegate: self, cancelButtonTitle: nil, destructiveButtonTitle: nil, otherButtonTitles: "我要拍照", "从照片库选取", "取消")
+            actionSheet.destructiveButtonIndex = 2
+            actionSheet.showInView(self.view)
         case 1:
             switch indexPath.row {
             case 0:
@@ -411,3 +415,58 @@ extension AboutMeEditProfileViewController: UIAlertViewDelegate {
     }
 }
 
+extension AboutMeEditProfileViewController: UIActionSheetDelegate {
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        switch buttonIndex {
+        case 1:
+            // 从照片库选择
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            presentViewController(imagePicker, animated: true, completion: nil)
+        case 0:
+            // 从相机拍照
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            presentViewController(imagePicker, animated: true, completion: nil)
+            break
+        default:
+            return
+        }
+    }
+}
+
+extension AboutMeEditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+        showHUDWithTips("处理中")
+        
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 300, height: 300))
+        
+        // 处理上传之后，隐藏HUD
+        
+        // 上传照片
+        let data = UIImageJPEGRepresentation(smallImage, 0.97)
+        let parameter = [
+            "user_name": LCYCommon.sharedInstance.userName!
+        ]
+        LCYNetworking.sharedInstance.POSTFile(LCYApi.UserModifyImage, parameters: parameter, fileKey: "filedata", fileData: data, fileName: "tiancailcy.jpg", mimeType: LCYMimeType.JPEG, success: { [weak self](object) -> Void in
+            if let result = object["result"] as? Bool {
+                if result {
+                    self?.alert("头像修改成功")
+                    self?.userInfo.headImage = object["head_image"] as? String
+                    self?.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
+                } else {
+                    self?.alert("修改头像失败")
+                }
+            } else {
+                self?.alert("修改头像失败")
+            }
+            return
+        }) { [weak self](error) -> Void in
+            self?.alert("修改头像失败")
+            return
+        }
+    }
+}
