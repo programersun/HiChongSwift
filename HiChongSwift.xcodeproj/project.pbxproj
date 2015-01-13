@@ -60,6 +60,14 @@
 		285925C51A6444BC00DB2F12 /* WikiGetADBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925C21A6444BC00DB2F12 /* WikiGetADBase.m */; };
 		285925C61A6444BC00DB2F12 /* WikiGetADData.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925C41A6444BC00DB2F12 /* WikiGetADData.m */; };
 		285925D71A644EEC00DB2F12 /* MoePetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285925D61A644EEC00DB2F12 /* MoePetPageViewController.swift */; };
+		2859CF311A6568B100C032BD /* FindTwitterCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2859CF301A6568B100C032BD /* FindTwitterCommentViewController.swift */; };
+		2859CF401A6575D600C032BD /* FindTwitterCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2859CF3F1A6575D600C032BD /* FindTwitterCommentCell.swift */; };
+		2859CF4C1A657B5500C032BD /* TwitterCommentListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2859CF431A657B5500C032BD /* TwitterCommentListBase.m */; };
+		2859CF4D1A657B5500C032BD /* TwitterCommentListComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2859CF451A657B5500C032BD /* TwitterCommentListComment.m */; };
+		2859CF4E1A657B5500C032BD /* TwitterCommentListImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2859CF471A657B5500C032BD /* TwitterCommentListImage.m */; };
+		2859CF4F1A657B5500C032BD /* TwitterCommentListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 2859CF491A657B5500C032BD /* TwitterCommentListMsg.m */; };
+		2859CF501A657B5500C032BD /* TwitterCommentListStarList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2859CF4B1A657B5500C032BD /* TwitterCommentListStarList.m */; };
+		2859CF521A657D8D00C032BD /* FindTwitterCommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2859CF511A657D8D00C032BD /* FindTwitterCommentListCell.swift */; };
 		285E6A221A4BEA6A00DC44F4 /* WikiSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */; };
 		285E6A241A4BEF7400DC44F4 /* WikiArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */; };
 		285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */; };
@@ -279,6 +287,20 @@
 		285925C31A6444BC00DB2F12 /* WikiGetADData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiGetADData.h; sourceTree = "<group>"; };
 		285925C41A6444BC00DB2F12 /* WikiGetADData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiGetADData.m; sourceTree = "<group>"; };
 		285925D61A644EEC00DB2F12 /* MoePetPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoePetPageViewController.swift; sourceTree = "<group>"; };
+		2859CF301A6568B100C032BD /* FindTwitterCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterCommentViewController.swift; sourceTree = "<group>"; };
+		2859CF3F1A6575D600C032BD /* FindTwitterCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterCommentCell.swift; sourceTree = "<group>"; };
+		2859CF411A657B5500C032BD /* TwitterCommentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCommentList.h; sourceTree = "<group>"; };
+		2859CF421A657B5500C032BD /* TwitterCommentListBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCommentListBase.h; sourceTree = "<group>"; };
+		2859CF431A657B5500C032BD /* TwitterCommentListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCommentListBase.m; sourceTree = "<group>"; };
+		2859CF441A657B5500C032BD /* TwitterCommentListComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCommentListComment.h; sourceTree = "<group>"; };
+		2859CF451A657B5500C032BD /* TwitterCommentListComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCommentListComment.m; sourceTree = "<group>"; };
+		2859CF461A657B5500C032BD /* TwitterCommentListImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCommentListImage.h; sourceTree = "<group>"; };
+		2859CF471A657B5500C032BD /* TwitterCommentListImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCommentListImage.m; sourceTree = "<group>"; };
+		2859CF481A657B5500C032BD /* TwitterCommentListMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCommentListMsg.h; sourceTree = "<group>"; };
+		2859CF491A657B5500C032BD /* TwitterCommentListMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCommentListMsg.m; sourceTree = "<group>"; };
+		2859CF4A1A657B5500C032BD /* TwitterCommentListStarList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCommentListStarList.h; sourceTree = "<group>"; };
+		2859CF4B1A657B5500C032BD /* TwitterCommentListStarList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCommentListStarList.m; sourceTree = "<group>"; };
+		2859CF511A657D8D00C032BD /* FindTwitterCommentListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterCommentListCell.swift; sourceTree = "<group>"; };
 		285E6A211A4BEA6A00DC44F4 /* WikiSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiSectionHeader.xib; sourceTree = "<group>"; };
 		285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiArticleViewController.swift; sourceTree = "<group>"; };
 		285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiCollectionListViewController.swift; sourceTree = "<group>"; };
@@ -614,6 +636,17 @@
 				289775D91A6365DF00B3F0B6 /* TwitterPersonalImages.m */,
 				289775DA1A6365DF00B3F0B6 /* TwitterPersonalMsg.h */,
 				289775DB1A6365DF00B3F0B6 /* TwitterPersonalMsg.m */,
+				2859CF411A657B5500C032BD /* TwitterCommentList.h */,
+				2859CF421A657B5500C032BD /* TwitterCommentListBase.h */,
+				2859CF431A657B5500C032BD /* TwitterCommentListBase.m */,
+				2859CF441A657B5500C032BD /* TwitterCommentListComment.h */,
+				2859CF451A657B5500C032BD /* TwitterCommentListComment.m */,
+				2859CF461A657B5500C032BD /* TwitterCommentListImage.h */,
+				2859CF471A657B5500C032BD /* TwitterCommentListImage.m */,
+				2859CF481A657B5500C032BD /* TwitterCommentListMsg.h */,
+				2859CF491A657B5500C032BD /* TwitterCommentListMsg.m */,
+				2859CF4A1A657B5500C032BD /* TwitterCommentListStarList.h */,
+				2859CF4B1A657B5500C032BD /* TwitterCommentListStarList.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -801,6 +834,9 @@
 				289775E11A636AD200B3F0B6 /* FindPersonalCell.swift */,
 				28801DDA1A63B17100743AA9 /* FindTwitterPageViewController.swift */,
 				28801DDC1A63B1CB00743AA9 /* FindTwitterImageViewController.swift */,
+				2859CF301A6568B100C032BD /* FindTwitterCommentViewController.swift */,
+				2859CF3F1A6575D600C032BD /* FindTwitterCommentCell.swift */,
+				2859CF511A657D8D00C032BD /* FindTwitterCommentListCell.swift */,
 			);
 			name = Circle;
 			sourceTree = "<group>";
@@ -1125,6 +1161,7 @@
 				289775DD1A6365DF00B3F0B6 /* TwitterPersonalImages.m in Sources */,
 				285251D21A64E2AC00A8403E /* UserSearchFriendBase.m in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
+				2859CF4F1A657B5500C032BD /* TwitterCommentListMsg.m in Sources */,
 				285925BF1A64354600DB2F12 /* FindTwitterListPageViewController.swift in Sources */,
 				285925C61A6444BC00DB2F12 /* WikiGetADData.m in Sources */,
 				2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */,
@@ -1171,9 +1208,11 @@
 				28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */,
 				2806FEB51A4A677300D18543 /* PetCateFilterCell.swift in Sources */,
 				28C15E551A3AD5EE0058F215 /* SquareDetailMiddleCell.swift in Sources */,
+				2859CF401A6575D600C032BD /* FindTwitterCommentCell.swift in Sources */,
 				281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */,
 				287941AB1A49F56C00DECA50 /* LCYPetDetailBase.m in Sources */,
 				28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */,
+				2859CF521A657D8D00C032BD /* FindTwitterCommentListCell.swift in Sources */,
 				2866B7FA1A5FA70D00374D42 /* TwitterListBase.m in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
 				28E182B41A4AB0AB00E3001A /* CommonUploadBase.m in Sources */,
@@ -1192,7 +1231,9 @@
 				289775CA1A63627100B3F0B6 /* FindPersonalViewController.swift in Sources */,
 				281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */,
 				28DE582E1A5B8D4000B49046 /* SquareCommentListBase.m in Sources */,
+				2859CF4C1A657B5500C032BD /* TwitterCommentListBase.m in Sources */,
 				28955A431A3EB6A900A1E4BC /* SquareAddStarCell.swift in Sources */,
+				2859CF4D1A657B5500C032BD /* TwitterCommentListComment.m in Sources */,
 				28C6DACF1A2FFDF600068848 /* UIScrollView+Extension.m in Sources */,
 				280A08AE1A5D3A240016A504 /* FindPetViewController.swift in Sources */,
 				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
@@ -1201,6 +1242,7 @@
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
 				283C0E4A1A4BBA9F00C64B11 /* WikiMidCell.swift in Sources */,
+				2859CF311A6568B100C032BD /* FindTwitterCommentViewController.swift in Sources */,
 				28F215771A5A6838002C0620 /* GeoManager.swift in Sources */,
 				287941AF1A49F74700DECA50 /* MoePetHeaderReusable.swift in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
@@ -1230,6 +1272,7 @@
 				280A08AC1A5D2A5F0016A504 /* DianpingDeals.m in Sources */,
 				28BE7C7C1A412F4900F3BC2A /* FindCatalogCell.swift in Sources */,
 				280A08AB1A5D2A5F0016A504 /* DianpingBusinesses.m in Sources */,
+				2859CF501A657B5500C032BD /* TwitterCommentListStarList.m in Sources */,
 				28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */,
 				285925BC1A64258C00DB2F12 /* TwitterKeeperInfoBase.m in Sources */,
 				28B9CEA51A49A97E004E6386 /* AboutMeModifyTextViewController.swift in Sources */,
@@ -1240,6 +1283,7 @@
 				28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */,
 				2802C9961A2F5151001130ED /* HiChongSwift.xcdatamodeld in Sources */,
 				283C0E451A4BB84D00C64B11 /* WikiTodayBase.m in Sources */,
+				2859CF4E1A657B5500C032BD /* TwitterCommentListImage.m in Sources */,
 				289255901A3EEEB90056606F /* LCYCommon.swift in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
 				281319581A592B0D00913BC6 /* SquareHomebase.m in Sources */,

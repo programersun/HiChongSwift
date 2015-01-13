@@ -169,6 +169,10 @@ class FindCircleViewController: UITableViewController {
             let destination = segue.destinationViewController as FindTwitterListPageViewController
             let data = sender as? TwitterListMsg
             destination.listData = data
+        } else if segue.identifier == "showComment" {
+            let destination = segue.destinationViewController as FindTwitterCommentViewController
+            let data = sender as? TwitterListMsg
+            destination.twitterData = data
         }
     }
     
@@ -330,7 +334,7 @@ extension FindCircleViewController: FindCircleListCellDelegate {
         
     }
     func findCircleListCellTitleClicked(indexPath: NSIndexPath) {
-        println("selected \(indexPath)")
+//        println("selected \(indexPath)")
         let data = twitters![indexPath.row]
         
         performSegueWithIdentifier("showPersonal", sender: data)
@@ -339,6 +343,11 @@ extension FindCircleViewController: FindCircleListCellDelegate {
         //        let controller = storyBoard.instantiateViewControllerWithIdentifier("userInfo") as AboutMeViewController
         //
         //        navigationController?.pushViewController(controller, animated: true)
+    }
+    func findCircleListCellComment(indexPath: NSIndexPath) {
+        let data = twitters![indexPath.row]
+        
+        performSegueWithIdentifier("showComment", sender: data)
     }
 }
 

@@ -11,6 +11,7 @@ import UIKit
 protocol FindCircleListCellDelegate: class {
     func findCircleListCellStar(indexPath: NSIndexPath)
     func findCircleListCellTitleClicked(indexPath: NSIndexPath)
+    func findCircleListCellComment(indexPath: NSIndexPath)
 }
 
 class FindCircleListCell: UITableViewCell {
@@ -22,6 +23,13 @@ class FindCircleListCell: UITableViewCell {
     @IBAction func starButtonPressed(sender: UIButton) {
         if let delegate = delegate {
             delegate.findCircleListCellStar(indexPath)
+        }
+    }
+    
+    // 评论
+    @IBAction func commentButtonPressed(sender: UIButton) {
+        if let delegate = delegate {
+            delegate.findCircleListCellComment(indexPath)
         }
     }
     

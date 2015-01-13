@@ -95,7 +95,11 @@ class MoePetViewController: UICollectionViewController {
                 let destination = segue.destinationViewController as MoePetPageViewController
                 destination.data = detailInfo?.petImages as? [LCYPetDetailPetImages]
                 if let indexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
-                    destination.startIndex = indexPath.row
+                    if editable {
+                        destination.startIndex = indexPath.row - 1
+                    } else {
+                        destination.startIndex = indexPath.row
+                    }
                 }
             default:
                 break
