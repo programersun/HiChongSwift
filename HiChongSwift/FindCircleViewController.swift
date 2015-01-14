@@ -159,9 +159,9 @@ class FindCircleViewController: UITableViewController {
                 }
                 self?.tableView.footerEndRefreshing()
                 return
-            }, failure: { [weak self](error) -> Void in
-                self?.tableView.footerEndRefreshing()
-                return
+                }, failure: { [weak self](error) -> Void in
+                    self?.tableView.footerEndRefreshing()
+                    return
             })
         }
     }
@@ -318,7 +318,30 @@ extension FindCircleViewController: FindCircleListCellDelegate {
         if let starList = data.starList as? [TwitterListStarList] {
             for starPerson in starList {
                 if starPerson.userId == LCYCommon.sharedInstance.userName {
-                    alert("您已经点过赞啦")
+                    // 点过赞啦，改为取消点赞
+                    let parameter = [
+                        "twitter_id": data.twitterId,
+                        "user_id"   : LCYCommon.sharedInstance.userName!
+                    ]
+                    LCYNetworking.sharedInstance.POST(LCYApi.TwitterStarDel, parameters: parameter,
+                        success: { [weak self](object) -> Void in
+                            if let result = object["result"] as? Bool {
+                                if result {
+                                    if var dynamicList = data.starList as? [TwitterListStarList] {
+                                        let filtered = dynamicList.filter({
+                                            $0.userId != LCYCommon.sharedInstance.userName!
+                                        })
+                                        data.starList = filtered
+                                        data.starCount = "\(data.starCount.toInt()! - 1)"
+                                        self?.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                                    }
+                                }
+                            }
+                            return
+                        }, failure: { [weak self](error) -> Void in
+                            self?.alert("取消点赞失败，请检查您的网络状态")
+                            return
+                    })
                     return
                 }
             }
@@ -353,15 +376,15 @@ extension FindCircleViewController: FindCircleListCellDelegate {
                 
             }
             return
-        }) { [weak self](error) -> Void in
-            self?.alert("点赞失败，请检查您的网络状态")
-            return
+            }) { [weak self](error) -> Void in
+                self?.alert("点赞失败，请检查您的网络状态")
+                return
         }
         
         
     }
     func findCircleListCellTitleClicked(indexPath: NSIndexPath) {
-//        println("selected \(indexPath)")
+        //        println("selected \(indexPath)")
         let data = twitters![indexPath.row]
         
         performSegueWithIdentifier("showPersonal", sender: data)
