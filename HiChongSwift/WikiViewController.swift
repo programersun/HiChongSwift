@@ -51,6 +51,16 @@ class WikiViewController: UITableViewController {
         sectionHeaderView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: sectionHeaderHeight)
         
         addRightButton("分类", action: "rightButtonPressed:")
+        
+        tableView.addFooterWithCallback { [weak self]() -> Void in
+            self?.loadMore()
+            return
+        }
+        
+        tableView.addHeaderWithCallback { [weak self]() -> Void in
+            self?.reload()
+            return
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -95,15 +105,35 @@ class WikiViewController: UITableViewController {
         let parameters = [
             "p" : "\(currentPage)"
         ]
-        LCYNetworking.sharedInstance.GET(LCYApi.WikiToday, parameters: nil, success: { [weak self](object) -> Void in
+        LCYNetworking.sharedInstance.GET(LCYApi.WikiToday, parameters: parameters, success: { [weak self](object) -> Void in
             let dataBase = WikiTodayBase.modelObjectWithDictionary(object)
             self?.listInfo = (dataBase.data as [WikiTodayData])
             self?.tableView.reloadData()
+            self?.currentPage++
             self?.hideHUD()
+            self?.tableView.headerEndRefreshing()
             return
             }) { [weak self](error) -> Void in
+                self?.tableView.headerEndRefreshing()
                 self?.hideHUD()
                 return
+        }
+    }
+    
+    private func loadMore() {
+        let parameters = [
+            "p": "\(currentPage)"
+        ]
+        LCYNetworking.sharedInstance.GET(LCYApi.WikiToday, parameters: parameters, success: { [weak self](object) -> Void in
+            let dataBase = WikiTodayBase.modelObjectWithDictionary(object)
+            self?.listInfo.extend(dataBase.data as [WikiTodayData])
+            self?.tableView.reloadData()
+            self?.currentPage++
+            self?.hideHUD()
+            self?.tableView.footerEndRefreshing()
+            }) { [weak self](error) -> Void in
+                self?.hideHUD()
+                self?.tableView.footerEndRefreshing()
         }
     }
     

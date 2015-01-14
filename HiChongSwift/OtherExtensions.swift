@@ -111,7 +111,11 @@ extension Double {
     
     func toKM() -> String {
         let dot2format = ".1"
-        return "\((self / 1000.0).format(dot2format))km"
+        if self < 100.0 {
+            return "不到100m"
+        } else {
+            return "\((self / 1000.0).format(dot2format))km"
+        }
     }
 }
 
