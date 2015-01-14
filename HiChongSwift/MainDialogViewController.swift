@@ -12,10 +12,16 @@ class MainDialogViewController: UIViewController {
     
     weak var delegate: mainDialogDelegate?
     
+    @IBOutlet var icyButtons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
