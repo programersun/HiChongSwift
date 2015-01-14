@@ -36,7 +36,6 @@ class WikiCollectionListViewController: UITableViewController {
     }
     
     private func loadMore() {
-        currentPage++
         let parameters = [
             "p": "\(currentPage)",
             "user_name": LCYCommon.sharedInstance.userName!
@@ -51,6 +50,7 @@ class WikiCollectionListViewController: UITableViewController {
                         list.extend(data as [WikiCollectListData])
                         self?.infoData = list
                         self?.tableView.reloadData()
+                        self?.currentPage++
                     }
                 } else {
                     self?.alert("加载失败")
@@ -76,6 +76,7 @@ class WikiCollectionListViewController: UITableViewController {
             if let data = retrived.data {
                 self?.infoData?.extend(data as [WikiCollectListData])
                 self?.tableView.reloadData()
+                self?.currentPage++
             } else {
                 self?.alert("加载失败")
             }

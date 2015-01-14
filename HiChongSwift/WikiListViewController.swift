@@ -67,6 +67,14 @@ class WikiListViewController: UIViewController {
             "type_id": "\(type.rawValue)",
             "p": "1"
         ]
+        switch type {
+        case .Health:
+            healthPage = 1
+        case .Keep:
+            keepPage = 1
+        case .Train:
+            trainPage = 1
+        }
         loadDataWithParameters(parameters, append: false)
     }
     
@@ -97,7 +105,6 @@ class WikiListViewController: UIViewController {
         var successClosure: mySuccessClosure?
         switch type {
         case .Health:
-            healthPage = 1
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
                 let retrived = WikiMoreBase.modelObjectWithDictionary(object)
@@ -116,7 +123,6 @@ class WikiListViewController: UIViewController {
             }
             break
         case .Keep:
-            keepPage = 1
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
                 let retrived = WikiMoreBase.modelObjectWithDictionary(object)
@@ -135,7 +141,6 @@ class WikiListViewController: UIViewController {
             }
             break
         case .Train:
-            trainPage = 1
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
                 let retrived = WikiMoreBase.modelObjectWithDictionary(object)
