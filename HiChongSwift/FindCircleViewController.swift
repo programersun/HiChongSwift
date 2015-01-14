@@ -84,6 +84,10 @@ class FindCircleViewController: UITableViewController {
             self?.reload()
             return
         }
+        tableView.addFooterWithCallback { [weak self]() -> Void in
+            self?.loadMore()
+            return
+        }
         tableView.baseTextColor = UIColor.whiteColor()
     }
     
@@ -136,6 +140,29 @@ class FindCircleViewController: UITableViewController {
                 self?.alert("您的网络状态不佳")
                 self?.tableView.headerEndRefreshing()
                 return
+        }
+    }
+    
+    private func loadMore() {
+        if let info = twitters?.last {
+            let parameters = [
+                "user_id"   : LCYCommon.sharedInstance.userName!,
+                "twitter_id": info.twitterId
+            ]
+            LCYNetworking.sharedInstance.POST(LCYApi.TwitterList, parameters: parameters, success: { [weak self](object) -> Void in
+                let retrieved = TwitterListBase.modelObjectWithDictionary(object)
+                if retrieved.result {
+                    if let msg = retrieved.msg as? [TwitterListMsg] {
+                        self?.twitters?.extend(msg)
+                        self?.tableView.reloadData()
+                    }
+                }
+                self?.tableView.footerEndRefreshing()
+                return
+            }, failure: { [weak self](error) -> Void in
+                self?.tableView.footerEndRefreshing()
+                return
+            })
         }
     }
     

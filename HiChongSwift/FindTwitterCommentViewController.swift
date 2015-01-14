@@ -16,6 +16,8 @@ class FindTwitterCommentViewController: UITableViewController {
     
     private weak var icyTextField: UITextField?
     
+    private var replyData: TwitterCommentListComment?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +63,14 @@ class FindTwitterCommentViewController: UITableViewController {
         }
     }
     
+    private func resetInputView() {
+        if let textFileld = icyTextField {
+            textFileld.text = ""
+            textFileld.placeholder = "随手写点评论吧"
+        }
+        replyData = nil
+    }
+    
     @IBAction func sendButtonPressed(sender: UIButton) {
         
         if let data = twitterData {
@@ -70,12 +80,13 @@ class FindTwitterCommentViewController: UITableViewController {
                     return
                 } else {
                     // 检查完毕，发送啦～
-                    let parameter = [
+                    var parameter = [
                         "twitter_id": data.twitterId,
                         "keeper_id": LCYCommon.sharedInstance.userName,
-                        "content": content
+                        "content": content,
+                        "receive_keeper": replyData?.keeperId ?? "0"
                     ]
-                    icyTextField?.text = ""
+                    resetInputView()
                     sender.enabled = false
                     LCYNetworking.sharedInstance.POST(LCYApi.TwitterCommentAdd, parameters: parameter,
                         success: { [weak self, weak sender](object) -> Void in
@@ -151,18 +162,43 @@ class FindTwitterCommentViewController: UITableViewController {
             
             let comment = infoData!.comment[indexPath.row] as TwitterCommentListComment
             
-            var attributed = NSMutableAttributedString(string: "\(comment.keeperName):\(comment.content)")
-            let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
-            let contentRange = NSRange(location: countElements(comment.keeperName) + 1, length: countElements(comment.content))
-            attributed.addAttributes([
-                NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
-                NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
-                ], range: nameRange)
-            attributed.addAttributes([
-                NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
-                NSForegroundColorAttributeName  : UIColor.blackColor()
-                ], range: contentRange)
-            cell.icyLabel.attributedText = attributed
+            if comment.receiverName == nil {
+                var attributed = NSMutableAttributedString(string: "\(comment.keeperName):\(comment.content)")
+                let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
+                let contentRange = NSRange(location: countElements(comment.keeperName) + 1, length: countElements(comment.content))
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
+                    ], range: nameRange)
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.blackColor()
+                    ], range: contentRange)
+                cell.icyLabel.attributedText = attributed
+            } else {
+                var attributed = NSMutableAttributedString(string: "\(comment.keeperName)回复\(comment.receiverName):\(comment.content)")
+                let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
+                let replyRange = NSRange(location: countElements(comment.keeperName), length: 2)
+                let recieverRange = NSRange(location: countElements(comment.keeperName) + 2, length: countElements(comment.receiverName))
+                let contentRange = NSRange(location: countElements(comment.keeperName) + 2 + countElements(comment.receiverName) + 1, length: countElements(comment.content))
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
+                    ], range: nameRange)
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.blackColor()
+                    ], range: replyRange)
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
+                    ], range: recieverRange)
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.blackColor()
+                    ], range: contentRange)
+                cell.icyLabel.attributedText = attributed
+            }
             
             switch indexPath.row % 2 {
             case 0:
@@ -189,7 +225,9 @@ class FindTwitterCommentViewController: UITableViewController {
             let data = infoData!
             // 公式: max(96, 文字高度+34) + 94 + 图片模块高度
             // 新公式: 34 + 文字高度 + 54 + 图片高度 (+40? 取决于有没有点赞)
-            let textHeight = data.twitterContent.boundingRectWithSize(CGSize(width:self.screenWidth() - 84.0, height:20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14.0)], context: nil).height
+            let textHeight = data.twitterContent.boundingRectWithSize(CGSize(width:self.screenWidth() - 84.0, height:20000.0),
+                options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+                attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14.0)], context: nil).height
             var imageHeight: CGFloat = 86.0
             switch data.image.count {
             case 0:
@@ -208,24 +246,61 @@ class FindTwitterCommentViewController: UITableViewController {
             }
             return 34.0 + textHeight + 54.0 + imageHeight + ( data.starCount == "0" ? 0.0 : 40.0 )
         case 1:
+            var height: CGFloat = 0.0
             let comment = infoData!.comment[indexPath.row] as TwitterCommentListComment
-            var attributed = NSMutableAttributedString(string: "\(comment.keeperName):\(comment.content)")
-            let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
-            let contentRange = NSRange(location: countElements(comment.keeperName) + 1, length: countElements(comment.content))
-            attributed.addAttributes([
-                NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
-                NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
-                ], range: nameRange)
-            attributed.addAttributes([
-                NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
-                NSForegroundColorAttributeName  : UIColor.blackColor()
-                ], range: contentRange)
-            let height = attributed.boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width - 16.0, height: 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).height
+            if comment.receiverName == nil {
+                var attributed = NSMutableAttributedString(string: "\(comment.keeperName):\(comment.content)")
+                let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
+                let contentRange = NSRange(location: countElements(comment.keeperName) + 1, length: countElements(comment.content))
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
+                    ], range: nameRange)
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.blackColor()
+                    ], range: contentRange)
+                height = attributed.boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width - 16.0, height: 20000.0),
+                    options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).height
+            } else {
+                var attributed = NSMutableAttributedString(string: "\(comment.keeperName)回复\(comment.receiverName):\(comment.content)")
+                let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
+                let replyRange = NSRange(location: countElements(comment.keeperName), length: 2)
+                let recieverRange = NSRange(location: countElements(comment.keeperName) + 2, length: countElements(comment.receiverName))
+                let contentRange = NSRange(location: countElements(comment.keeperName) + 2 + countElements(comment.receiverName) + 1, length: countElements(comment.content))
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
+                    ], range: nameRange)
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.blackColor()
+                    ], range: replyRange)
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
+                    ], range: recieverRange)
+                attributed.addAttributes([
+                    NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
+                    NSForegroundColorAttributeName  : UIColor.blackColor()
+                    ], range: contentRange)
+                height = attributed.boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width - 16.0, height: 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).height
+            }
             return height + 12.0
         case 2:
             return 44.0
         default:
             return 0.0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            resetInputView()
+            replyData = infoData?.comment[indexPath.row] as? TwitterCommentListComment
+            let replyTo = replyData?.keeperName ?? "神秘人物"
+            icyTextField?.placeholder = "回复:\(replyTo)"
+            icyTextField?.becomeFirstResponder()
         }
     }
     
