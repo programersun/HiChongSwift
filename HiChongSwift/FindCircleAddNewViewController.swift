@@ -85,7 +85,7 @@ class FindCircleAddNewViewController: UITableViewController {
                 LCYNetworking.sharedInstance.POST(LCYApi.TwitterAdd, parameters: parameters, success: { [weak self](object) -> Void in
                     if let result = object["result"] as? NSNumber {
                         if result.boolValue {
-//                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
+                            //                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
                             self?.delegate?.addCircleDone()
                             self?.navigationController?.popViewControllerAnimated(true)
                         } else {
@@ -120,7 +120,7 @@ class FindCircleAddNewViewController: UITableViewController {
                     [weak self](object) -> Void in
                     if let result = object["result"] as? NSNumber {
                         if result.boolValue {
-//                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
+                            //                            self?.alertWithDelegate("提交成功", tag: 3301, delegate: self)
                             self?.delegate?.addCircleDone()
                             self?.navigationController?.popViewControllerAnimated(true)
                         } else {
@@ -345,7 +345,9 @@ extension FindCircleAddNewViewController: UIImagePickerControllerDelegate, UINav
         self.showHUDWithTips("处理中")
         
         let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFitToSize: CGSize(width: 400, height: 400))
-        UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
+        if picker.sourceType == .Camera {
+            UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
+        }
         
         petImages.append(smallImage)
         imageCollectionView?.reloadData()
@@ -371,9 +373,7 @@ extension FindCircleAddNewViewController: FindPetDelegate {
 extension FindCircleAddNewViewController: UIAlertViewDelegate {
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if alertView.tag == 3301 {
-            if let delegate = delegate {
-                delegate.addCircleDone()
-            }
+            delegate?.addCircleDone()
             navigationController?.popViewControllerAnimated(true)
         }
     }

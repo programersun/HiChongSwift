@@ -77,9 +77,7 @@ class FindPetViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let delegate = delegate {
-            delegate.findPetSuccess(userInfo![indexPath.row])
-        }
+        delegate?.findPetSuccess(userInfo![indexPath.row])
         navigationController?.popViewControllerAnimated(true)
     }
 

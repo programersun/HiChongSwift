@@ -11,6 +11,8 @@ import CoreLocation
 
 class MainViewController: UITabBarController {
     
+    private var dialogVC: MainDialogViewController?
+    
     private var location: CLLocation?
 
     override func viewDidLoad() {
@@ -38,6 +40,14 @@ class MainViewController: UITabBarController {
         squareVC.tabBarItem.image = UIImage(named: "square")
         self.addChildViewController(squareVC)
         
+        // 发朋友圈（原特卖）
+        let saleStoryBoard = UIStoryboard(name: "Sale", bundle: nil)
+        let saleVC = saleStoryBoard.instantiateInitialViewController() as UINavigationController
+        saleVC.tabBarItem.title = nil
+        saleVC.tabBarItem.image = UIImage(named: "mainCross")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        saleVC.tabBarItem.imageInsets = UIEdgeInsetsMake(4.0, 0.0, -4.0, 0.0)
+        self.addChildViewController(saleVC)
+        
         // 百科
         let wikiStoryBoard = UIStoryboard(name: "Wiki", bundle: nil)
         let wikiVC = wikiStoryBoard.instantiateInitialViewController() as UINavigationController
@@ -45,12 +55,7 @@ class MainViewController: UITabBarController {
         wikiVC.tabBarItem.image = UIImage(named: "wiki")
         self.addChildViewController(wikiVC)
         
-        // 特卖
-        let saleStoryBoard = UIStoryboard(name: "Sale", bundle: nil)
-        let saleVC = saleStoryBoard.instantiateInitialViewController() as UINavigationController
-        saleVC.tabBarItem.title = "特卖"
-        saleVC.tabBarItem.image = UIImage(named: "sale")
-        self.addChildViewController(saleVC)
+
         
         // 我
         let aboutMeStoryBoard = UIStoryboard(name: "AboutMe", bundle: nil)
@@ -67,6 +72,8 @@ class MainViewController: UITabBarController {
         }, fail: { [weak self]() -> Void in
             return
         })
+        
+        delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,3 +108,47 @@ class MainViewController: UITabBarController {
     */
 
 }
+
+extension MainViewController: UITabBarControllerDelegate {
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        if let index = find(tabBarController.viewControllers as [UIViewController], viewController) {
+            if index == 2 {
+                // 弹出拍照，模糊背景
+                if dialogVC == nil {
+                    dialogVC = storyboard?.instantiateViewControllerWithIdentifier("dialogVC") as? MainDialogViewController
+                    dialogVC?.delegate = self
+                }
+                if let dialogVC = dialogVC {
+                    UIApplication.sharedApplication().delegate?.window??.addSubview(dialogVC.view)
+                }
+                return false
+            }
+        }
+        return true
+    }
+}
+
+extension MainViewController: mainDialogDelegate {
+    func mainDialogDidCancel(viewController: MainDialogViewController) {
+        dialogVC = nil
+    }
+    func mainDialogTextButtonPressed(viewController: MainDialogViewController) {
+        dialogVC = nil
+        let storyBoard = UIStoryboard(name: "Find", bundle: nil)
+        let addVC = storyBoard.instantiateViewControllerWithIdentifier("addNew") as? FindCircleAddNewViewController
+        if let addVC = addVC {
+            let navigation = (viewControllers as? [UINavigationController])?[selectedIndex]
+            navigation?.pushViewController(addVC, animated: true)
+        }
+    }
+    func mainDialogMixButtonPressed(viewController: MainDialogViewController) {
+        let storyBoard = UIStoryboard(name: "Find", bundle: nil)
+        let addVC = storyBoard.instantiateViewControllerWithIdentifier("addNew") as? FindCircleAddNewViewController
+        addVC?.currentType = .mixed
+        if let addVC = addVC {
+            let navigation = (viewControllers as? [UINavigationController])?[selectedIndex]
+            navigation?.pushViewController(addVC, animated: true)
+        }
+    }
+}
+

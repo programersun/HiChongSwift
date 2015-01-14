@@ -547,9 +547,7 @@ extension AddEditPetViewController: UIAlertViewDelegate {
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if alertView.tag == 3003 {
             // 添加成功
-            if let delegate = delegate {
-                delegate.addPetDone()
-            }
+            delegate?.addPetDone()
             navigationController?.popToRootViewControllerAnimated(true)
         } else if alertView.tag == 4000 {
             // 修改成功

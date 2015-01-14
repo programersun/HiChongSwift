@@ -52,6 +52,7 @@
 		283C0E4C1A4BBAE900C64B11 /* WikiInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C0E4B1A4BBAE900C64B11 /* WikiInfoCell.swift */; };
 		284896231A5A967F00D45285 /* SquareMerchantInfoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 284896201A5A967F00D45285 /* SquareMerchantInfoBase.m */; };
 		284896241A5A967F00D45285 /* SquareMerchantInfoMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 284896221A5A967F00D45285 /* SquareMerchantInfoMsg.m */; };
+		2848C8DA1A663DFB00774CD9 /* MainDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2848C8D91A663DFB00774CD9 /* MainDialogViewController.swift */; };
 		285251D21A64E2AC00A8403E /* UserSearchFriendBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 285251CF1A64E2AC00A8403E /* UserSearchFriendBase.m */; };
 		285251D31A64E2AC00A8403E /* UserSearchFriendMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 285251D11A64E2AC00A8403E /* UserSearchFriendMsg.m */; };
 		285925BC1A64258C00DB2F12 /* TwitterKeeperInfoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 285925B91A64258C00DB2F12 /* TwitterKeeperInfoBase.m */; };
@@ -270,6 +271,7 @@
 		284896201A5A967F00D45285 /* SquareMerchantInfoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareMerchantInfoBase.m; sourceTree = "<group>"; };
 		284896211A5A967F00D45285 /* SquareMerchantInfoMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareMerchantInfoMsg.h; sourceTree = "<group>"; };
 		284896221A5A967F00D45285 /* SquareMerchantInfoMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareMerchantInfoMsg.m; sourceTree = "<group>"; };
+		2848C8D91A663DFB00774CD9 /* MainDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDialogViewController.swift; sourceTree = "<group>"; };
 		285251CD1A64E2AC00A8403E /* UserSearchFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchFriend.h; sourceTree = "<group>"; };
 		285251CE1A64E2AC00A8403E /* UserSearchFriendBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchFriendBase.h; sourceTree = "<group>"; };
 		285251CF1A64E2AC00A8403E /* UserSearchFriendBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchFriendBase.m; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 				28C6DAB81A2FFDB300068848 /* Libs */,
 				2802C9921A2F5151001130ED /* AppDelegate.swift */,
 				28C6DAAF1A2FF28900068848 /* MainViewController.swift */,
+				2848C8D91A663DFB00774CD9 /* MainDialogViewController.swift */,
 				2802C9991A2F5151001130ED /* Main.storyboard */,
 				28C166311A36BFC30090E061 /* Find.storyboard */,
 				28C166351A36BFDF0090E061 /* Square.storyboard */,
@@ -1212,6 +1215,7 @@
 				281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */,
 				287941AB1A49F56C00DECA50 /* LCYPetDetailBase.m in Sources */,
 				28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */,
+				2848C8DA1A663DFB00774CD9 /* MainDialogViewController.swift in Sources */,
 				2859CF521A657D8D00C032BD /* FindTwitterCommentListCell.swift in Sources */,
 				2866B7FA1A5FA70D00374D42 /* TwitterListBase.m in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,

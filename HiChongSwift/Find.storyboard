@@ -1264,7 +1264,7 @@ So as I pray, Unlimited Blade Works.</string>
         <!--Find Circle Add New View Controller-->
         <scene sceneID="mRl-X5-ITb">
             <objects>
-                <tableViewController id="yrX-Ed-aMq" customClass="FindCircleAddNewViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="addNew" hidesBottomBarWhenPushed="YES" id="yrX-Ed-aMq" customClass="FindCircleAddNewViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" id="mom-t0-Uac">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

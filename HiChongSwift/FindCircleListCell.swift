@@ -21,22 +21,16 @@ class FindCircleListCell: UITableViewCell {
     
     // 点赞
     @IBAction func starButtonPressed(sender: UIButton) {
-        if let delegate = delegate {
-            delegate.findCircleListCellStar(indexPath)
-        }
+        delegate?.findCircleListCellStar(indexPath)
     }
     
     // 评论
     @IBAction func commentButtonPressed(sender: UIButton) {
-        if let delegate = delegate {
-            delegate.findCircleListCellComment(indexPath)
-        }
+        delegate?.findCircleListCellComment(indexPath)
     }
     
     @IBAction func titleLabelTapped(sender: AnyObject) {
-        if let delegate = delegate {
-            delegate.findCircleListCellTitleClicked(indexPath)
-        }
+        delegate?.findCircleListCellTitleClicked(indexPath)
     }
     
     // 多图配置 ⬇️
