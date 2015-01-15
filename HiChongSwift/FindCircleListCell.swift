@@ -133,10 +133,10 @@ class FindCircleListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        backgroundColor = UIColor.LCYThemeColor()
+//        backgroundColor = UIColor.LCYThemeColor()
         
         self.sepratorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
-        self.sepratorImageView.image = LCYCommon.sharedInstance.artSepratorImage
+        self.sepratorImageView.image = LCYCommon.sharedInstance.circleSepratorImage
         
         petAvatarImageView.roundCorner()
         keeperAvatarImageView.roundCorner()

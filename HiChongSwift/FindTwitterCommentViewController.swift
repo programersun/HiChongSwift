@@ -200,14 +200,15 @@ class FindTwitterCommentViewController: UITableViewController {
                 cell.icyLabel.attributedText = attributed
             }
             
-            switch indexPath.row % 2 {
-            case 0:
-                cell.backgroundColor = UIColor.LCYTableLightBlue()
-            case 1:
-                cell.backgroundColor = UIColor.LCYTableLightGray()
-            default:
-                break
-            }
+//            switch indexPath.row % 2 {
+//            case 0:
+//                cell.backgroundColor = UIColor.LCYTableLightBlue()
+//            case 1:
+//                cell.backgroundColor = UIColor.LCYTableLightGray()
+//            default:
+//                break
+//            }
+            cell.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterCommentCell.identifier) as FindTwitterCommentCell
             let cell = cell as FindTwitterCommentCell

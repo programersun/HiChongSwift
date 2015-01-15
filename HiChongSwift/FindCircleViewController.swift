@@ -71,7 +71,7 @@ class FindCircleViewController: UITableViewController {
         self.avatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
         self.avatarImageView.layer.borderWidth = 1.0
         
-        self.tableView.backgroundColor = UIColor.LCYThemeColor()
+//        self.tableView.backgroundColor = UIColor.LCYThemeColor()
         
         let rightItem = UIBarButtonItem(image: UIImage(named: "circleDots"), style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonPressed:")
         self.navigationItem.rightBarButtonItem = rightItem
@@ -88,7 +88,7 @@ class FindCircleViewController: UITableViewController {
             self?.loadMore()
             return
         }
-        tableView.baseTextColor = UIColor.whiteColor()
+//        tableView.baseTextColor = UIColor.whiteColor()
     }
     
     @IBAction func headerBackgroundTouched(sender: AnyObject) {

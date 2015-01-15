@@ -221,7 +221,7 @@
                                             <rect key="frame" x="76" y="8" width="60" height="18"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="900" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBR-8l-Vcz">
@@ -235,7 +235,6 @@ Have withstood pain to create many weapons.
 Yet, those hands will never hold anything.
 So as I pray, Unlimited Blade Works.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Taj-ln-3Ib">
@@ -336,10 +335,10 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <constraint firstAttribute="bottom" secondItem="Z3G-1T-ISe" secondAttribute="bottom" id="ybG-9x-GXq"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-hf-na8">
-                                            <rect key="frame" x="68" y="418" width="182" height="38"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-hf-na8">
+                                            <rect key="frame" x="68" y="418" width="210" height="38"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO9-mb-aG0">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO9-mb-aG0">
                                                     <rect key="frame" x="8" y="8" width="50" height="22"/>
                                                     <state key="normal" image="findCircleCellUp">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -348,14 +347,14 @@ So as I pray, Unlimited Blade Works.</string>
                                                         <action selector="starButtonPressed:" destination="ehT-xs-MGo" eventType="touchUpInside" id="HoN-ok-3ct"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54r-pl-adO">
-                                                    <rect key="frame" x="124" y="8" width="50" height="22"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54r-pl-adO">
+                                                    <rect key="frame" x="152" y="8" width="50" height="22"/>
                                                     <state key="normal" image="findCircleCellShare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVi-Ur-WoU">
-                                                    <rect key="frame" x="66" y="8" width="50" height="22"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVi-Ur-WoU">
+                                                    <rect key="frame" x="80" y="8" width="50" height="22"/>
                                                     <state key="normal" image="findCircleCellComment">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -366,12 +365,12 @@ So as I pray, Unlimited Blade Works.</string>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="VVi-Ur-WoU" firstAttribute="leading" secondItem="kO9-mb-aG0" secondAttribute="trailing" constant="8" id="5aE-iO-h8Q"/>
+                                                <constraint firstItem="VVi-Ur-WoU" firstAttribute="leading" secondItem="kO9-mb-aG0" secondAttribute="trailing" constant="22" id="5aE-iO-h8Q"/>
                                                 <constraint firstAttribute="centerY" secondItem="VVi-Ur-WoU" secondAttribute="centerY" id="Cru-Fm-Cos"/>
                                                 <constraint firstItem="VVi-Ur-WoU" firstAttribute="top" secondItem="QGH-hf-na8" secondAttribute="top" constant="8" id="GRn-9g-lje"/>
                                                 <constraint firstItem="kO9-mb-aG0" firstAttribute="leading" secondItem="QGH-hf-na8" secondAttribute="leading" constant="8" id="K1I-ha-94R"/>
                                                 <constraint firstAttribute="trailing" secondItem="54r-pl-adO" secondAttribute="trailing" constant="8" id="Mna-Sk-ZRk"/>
-                                                <constraint firstItem="54r-pl-adO" firstAttribute="leading" secondItem="VVi-Ur-WoU" secondAttribute="trailing" constant="8" id="X5C-9o-Wuf"/>
+                                                <constraint firstItem="54r-pl-adO" firstAttribute="leading" secondItem="VVi-Ur-WoU" secondAttribute="trailing" constant="22" id="X5C-9o-Wuf"/>
                                                 <constraint firstAttribute="centerX" secondItem="VVi-Ur-WoU" secondAttribute="centerX" id="tTb-Od-8b9"/>
                                                 <constraint firstAttribute="centerY" secondItem="54r-pl-adO" secondAttribute="centerY" id="uCU-Ab-dQq"/>
                                                 <constraint firstAttribute="centerY" secondItem="kO9-mb-aG0" secondAttribute="centerY" id="urD-w6-aGk"/>
@@ -432,7 +431,6 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncG-NZ-dib">
                                                     <rect key="frame" x="23" y="8" width="44" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -468,7 +466,7 @@ So as I pray, Unlimited Blade Works.</string>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-3X-vEi">
                                             <rect key="frame" x="16" y="76" width="44" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -500,7 +498,6 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstAttribute="trailing" secondItem="Vle-Io-DKC" secondAttribute="trailing" constant="8" id="yZa-jJ-ng9"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.270588249" green="0.54509806630000002" blue="0.71372550729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="icyCollectionView" destination="Vle-Io-DKC" id="gWf-p5-S9X"/>
                                     <outlet property="icyContentLabel" destination="FBR-8l-Vcz" id="piZ-Z3-FQh"/>
@@ -612,7 +609,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             <rect key="frame" x="76" y="8" width="60" height="18"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="900" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJa-bq-84h">
@@ -626,7 +623,6 @@ Have withstood pain to create many weapons.
 Yet, those hands will never hold anything.
 So as I pray, Unlimited Blade Works.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kh1-4G-m52">
@@ -727,10 +723,10 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <constraint firstItem="9da-Nx-mue" firstAttribute="leading" secondItem="kh1-4G-m52" secondAttribute="leading" constant="8" id="xUX-y1-1dU"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHk-nm-jit">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHk-nm-jit">
                                             <rect key="frame" x="68" y="418" width="182" height="38"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIZ-HC-FgA">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIZ-HC-FgA">
                                                     <rect key="frame" x="8" y="8" width="50" height="22"/>
                                                     <state key="normal" image="findCircleCellUp">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -739,13 +735,13 @@ So as I pray, Unlimited Blade Works.</string>
                                                         <action selector="starButtonPressed:" destination="F5S-si-DI4" eventType="touchUpInside" id="pKV-mf-YHC"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tc-cQ-s93">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tc-cQ-s93">
                                                     <rect key="frame" x="124" y="8" width="50" height="22"/>
                                                     <state key="normal" image="findCircleCellShare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlv-Vw-95R">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlv-Vw-95R">
                                                     <rect key="frame" x="66" y="8" width="50" height="22"/>
                                                     <state key="normal" image="findCircleCellComment">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -823,7 +819,6 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-r6-gIU">
                                                     <rect key="frame" x="23" y="8" width="44" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -859,7 +854,6 @@ So as I pray, Unlimited Blade Works.</string>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgP-TL-44n">
                                             <rect key="frame" x="16" y="76" width="44" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -891,7 +885,6 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstAttribute="trailing" secondItem="LJa-bq-84h" secondAttribute="trailing" constant="8" id="rZC-L4-MtJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.270588249" green="0.54509806630000002" blue="0.71372550729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="icyCollectionView" destination="ecy-aQ-rpt" id="XA7-3U-ffz"/>
                                     <outlet property="icyContentLabel" destination="LJa-bq-84h" id="8Xz-CS-oS4"/>
