@@ -18,6 +18,8 @@ class FindTwitterCommentViewController: UITableViewController {
     
     private var replyData: TwitterCommentListComment?
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -156,6 +158,7 @@ class FindTwitterCommentViewController: UITableViewController {
                 
                 //                cell.delegate = self
             }
+            cell.sepratorImageView.image = LCYCommon.sharedInstance.graySepratorImage
             
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterCommentListCell.identifier) as FindTwitterCommentListCell

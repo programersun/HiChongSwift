@@ -933,18 +933,29 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <action selector="sendButtonPressed:" destination="isx-rW-H4M" eventType="touchUpInside" id="Tg7-OP-dBp"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0D2-od-UYV" userLabel="seprator">
+                                            <rect key="frame" x="8" y="43" width="584" height="1"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="ica-VI-h7l"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="0D2-od-UYV" firstAttribute="leading" secondItem="8QM-v4-mkd" secondAttribute="leading" constant="8" id="HpI-zW-zRr"/>
                                         <constraint firstItem="aXL-bB-bFL" firstAttribute="leading" secondItem="TUt-Fw-btI" secondAttribute="trailing" constant="8" id="M07-8i-kMj"/>
                                         <constraint firstAttribute="centerY" secondItem="TUt-Fw-btI" secondAttribute="centerY" id="RId-Cs-fZ0"/>
                                         <constraint firstAttribute="trailing" secondItem="aXL-bB-bFL" secondAttribute="trailing" constant="8" id="bvf-GV-05d"/>
                                         <constraint firstItem="TUt-Fw-btI" firstAttribute="leading" secondItem="8QM-v4-mkd" secondAttribute="leading" constant="8" id="djy-R4-vPP"/>
+                                        <constraint firstAttribute="trailing" secondItem="0D2-od-UYV" secondAttribute="trailing" constant="8" id="qkO-Eu-maE"/>
+                                        <constraint firstAttribute="bottom" secondItem="0D2-od-UYV" secondAttribute="bottom" id="tsX-SO-pTW"/>
                                         <constraint firstAttribute="centerY" secondItem="aXL-bB-bFL" secondAttribute="centerY" id="waN-4I-eh3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.94678321678321664" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="icyTextField" destination="TUt-Fw-btI" id="Nwr-vn-eDF"/>
+                                    <outlet property="sepratorHeightConstraint" destination="ica-VI-h7l" id="pIC-QZ-eyt"/>
+                                    <outlet property="sepratorImageView" destination="0D2-od-UYV" id="8e6-Fz-3US"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindTwitterCommentListCellIdentifier" id="Lmp-zF-Bnf" customClass="FindTwitterCommentListCell" customModule="HiChongSwift" customModuleProvider="target">

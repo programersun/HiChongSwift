@@ -111,7 +111,7 @@ class FindCircleListCell: UITableViewCell {
         }
     }
     
-    @IBOutlet private weak var sepratorImageView: UIImageView!
+    @IBOutlet weak var sepratorImageView: UIImageView!
     @IBOutlet private weak var sepratorHeightConstraint: NSLayoutConstraint!
     
     class func identifier() -> String {

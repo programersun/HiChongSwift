@@ -10,6 +10,9 @@ import UIKit
 
 class FindTwitterCommentCell: UITableViewCell {
     
+    @IBOutlet weak var sepratorImageView: UIImageView!
+    @IBOutlet private weak var sepratorHeightConstraint: NSLayoutConstraint!
+    
     class var identifier: String {
         get {
             return "FindTwitterCommentCellIdentifier"
@@ -21,6 +24,9 @@ class FindTwitterCommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.sepratorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
+        self.sepratorImageView.image = LCYCommon.sharedInstance.graySepratorImage
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

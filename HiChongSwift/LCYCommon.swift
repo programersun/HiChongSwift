@@ -39,6 +39,10 @@ class LCYCommon: NSObject {
         return UIImage(named: "circleSeprator")?.resizableImageWithCapInsets(UIEdgeInsets(top: 0.0, left: 60.0, bottom: 0.0, right: 60.0))
     }
     
+    var graySepratorImage: UIImage? {
+        return UIImage(named: "graySeprator")?.resizableImageWithCapInsets(UIEdgeInsets(top: 0.0, left: 60.0, bottom: 0.0, right: 60.0))
+    }
+    
 
     /* 通过查看welcomeGuide的值判断是否需要展示引导图
     // 返回true表示不需要展示
