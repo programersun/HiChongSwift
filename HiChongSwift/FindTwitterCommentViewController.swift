@@ -33,7 +33,8 @@ class FindTwitterCommentViewController: UITableViewController {
             alert("无法获取宠物圈信息，请退回重试")
         }
         
-        tableView.backgroundColor = UIColor.LCYThemeColor()
+//        tableView.backgroundColor = UIColor.LCYThemeColor()
+        tableView.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
     }
     
     override func didReceiveMemoryWarning() {
