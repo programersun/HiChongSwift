@@ -100,6 +100,8 @@ class FindCircleListCell: UITableViewCell {
         didSet {
             if let path = keeperAvatarPath {
                 keeperAvatarImageView.setImageWithURL(NSURL(string: path), placeholderImage: UIImage(named: "placeholderLogo"))
+            } else {
+                keeperAvatarImageView.image = nil
             }
         }
     }
@@ -109,6 +111,8 @@ class FindCircleListCell: UITableViewCell {
         didSet {
             if let path = petAvatarPath {
                 petAvatarImageView.setImageWithURL(NSURL(string: path), placeholderImage: UIImage(named: "placeholderLogo"))
+            } else {
+                petAvatarImageView.image = nil
             }
         }
     }

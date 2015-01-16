@@ -59,7 +59,7 @@
                                                         <action selector="midButtonPressed:" destination="kmS-lm-PUp" eventType="touchUpInside" id="7Uz-fW-MFX"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqPeizhong" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Kd-Ems">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sqPeizhong" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Kd-Ems">
                                                     <rect key="frame" x="50" y="40" width="50" height="50"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配种" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1V0-lc-gnA">

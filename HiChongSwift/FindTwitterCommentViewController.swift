@@ -147,8 +147,8 @@ class FindTwitterCommentViewController: UITableViewController {
             let cell = cell as FindCircleListCell
             
             if let data = twitterData {
-                cell.keeperAvatarPath = data.keeperImage.toAbsolutePath()
-                cell.petAvatarPath = data.petImage.toAbsolutePath()
+                cell.keeperAvatarPath = data.keeperImage != nil ? data.keeperImage.toAbsolutePath() : nil
+                cell.petAvatarPath = data.petImage != nil ? data.petImage.toAbsolutePath() : nil
                 cell.icyContentLabel.text = data.twitterContent
                 cell.petNicknameLabel.text = data.petName
                 cell.timeLabel.text = data.addTime.toTwitterDeltaTime()

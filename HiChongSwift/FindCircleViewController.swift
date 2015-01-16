@@ -227,8 +227,8 @@ class FindCircleViewController: UITableViewController {
         cell.indexPath = indexPath
         
         let data = twitters![indexPath.row]
-        cell.keeperAvatarPath = data.keeperImage.toAbsolutePath()
-        cell.petAvatarPath = data.petImage.toAbsolutePath()
+        cell.keeperAvatarPath = data.keeperImage != nil ? data.keeperImage.toAbsolutePath() : nil
+        cell.petAvatarPath = data.petImage != nil ? data.petImage.toAbsolutePath() : nil
         cell.icyContentLabel.text = data.twitterContent
         cell.petNicknameLabel.text = data.petName
         cell.timeLabel.text = data.addTime.toTwitterDeltaTime()
