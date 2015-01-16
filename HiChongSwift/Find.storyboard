@@ -384,7 +384,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             </constraints>
                                         </imageView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-Io-DKC">
-                                            <rect key="frame" x="68" y="464" width="524" height="32"/>
+                                            <rect key="frame" x="76" y="456" width="516" height="32"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="uoS-gv-Jlx"/>
@@ -429,7 +429,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             <rect key="frame" x="510" y="0.0" width="90" height="96"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncG-NZ-dib">
-                                                    <rect key="frame" x="23" y="8" width="44" height="14"/>
+                                                    <rect key="frame" x="23" y="8" width="44" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -464,7 +464,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-3X-vEi">
-                                            <rect key="frame" x="16" y="76" width="44" height="14"/>
+                                            <rect key="frame" x="16" y="76" width="44" height="13.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -487,10 +487,10 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstAttribute="trailing" secondItem="dpT-IW-6ga" secondAttribute="trailing" id="gQp-sN-BD9"/>
                                         <constraint firstItem="cOY-VS-e3J" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" constant="8" id="hpp-bn-Xhy"/>
                                         <constraint firstItem="Nln-3X-vEi" firstAttribute="top" secondItem="Ndd-z0-2yJ" secondAttribute="bottom" constant="8" id="iER-eI-5XN"/>
-                                        <constraint firstItem="Vle-Io-DKC" firstAttribute="top" secondItem="QGH-hf-na8" secondAttribute="bottom" constant="8" id="kl6-ya-why"/>
+                                        <constraint firstItem="Vle-Io-DKC" firstAttribute="top" secondItem="QGH-hf-na8" secondAttribute="bottom" id="kl6-ya-why"/>
                                         <constraint firstItem="Ndd-z0-2yJ" firstAttribute="bottom" secondItem="9Mr-oX-lGF" secondAttribute="bottom" id="lZZ-w8-MoL"/>
                                         <constraint firstItem="Taj-ln-3Ib" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" id="sb0-dJ-cbi"/>
-                                        <constraint firstItem="Vle-Io-DKC" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" id="ucF-C2-ewe"/>
+                                        <constraint firstItem="Vle-Io-DKC" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" constant="8" id="ucF-C2-ewe"/>
                                         <constraint firstItem="9Mr-oX-lGF" firstAttribute="top" secondItem="NzX-SA-d7k" secondAttribute="top" constant="8" id="uoG-zj-3YI"/>
                                         <constraint firstItem="9Mr-oX-lGF" firstAttribute="leading" secondItem="NzX-SA-d7k" secondAttribute="leading" constant="8" id="vff-bO-VWs"/>
                                         <constraint firstItem="QGH-hf-na8" firstAttribute="leading" secondItem="9Mr-oX-lGF" secondAttribute="trailing" id="vqn-hf-cVT"/>
@@ -773,7 +773,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             </constraints>
                                         </imageView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ecy-aQ-rpt">
-                                            <rect key="frame" x="68" y="464" width="524" height="32"/>
+                                            <rect key="frame" x="76" y="456" width="516" height="32"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="mho-Bz-7OS"/>
@@ -818,7 +818,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             <rect key="frame" x="510" y="0.0" width="90" height="96"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-r6-gIU">
-                                                    <rect key="frame" x="23" y="8" width="44" height="14"/>
+                                                    <rect key="frame" x="23" y="8" width="44" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -853,7 +853,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgP-TL-44n">
-                                            <rect key="frame" x="16" y="76" width="44" height="14"/>
+                                            <rect key="frame" x="16" y="76" width="44" height="13.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -863,7 +863,7 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstItem="yFd-Yi-sBP" firstAttribute="top" secondItem="eT7-wm-hCw" secondAttribute="top" constant="8" id="6IT-EX-4lG"/>
                                         <constraint firstItem="LJa-bq-84h" firstAttribute="leading" secondItem="yFd-Yi-sBP" secondAttribute="trailing" constant="8" id="6gm-21-L38"/>
                                         <constraint firstItem="lJX-Pz-uyh" firstAttribute="top" secondItem="eT7-wm-hCw" secondAttribute="top" constant="8" id="BLj-b0-7hD"/>
-                                        <constraint firstItem="ecy-aQ-rpt" firstAttribute="top" secondItem="zHk-nm-jit" secondAttribute="bottom" constant="8" id="Dbb-5B-Btp"/>
+                                        <constraint firstItem="ecy-aQ-rpt" firstAttribute="top" secondItem="zHk-nm-jit" secondAttribute="bottom" id="Dbb-5B-Btp"/>
                                         <constraint firstItem="4tw-kb-uFz" firstAttribute="top" secondItem="eT7-wm-hCw" secondAttribute="top" constant="8" id="HTQ-8r-BqH"/>
                                         <constraint firstAttribute="trailing" secondItem="ecy-aQ-rpt" secondAttribute="trailing" constant="8" id="KF7-J9-CIm"/>
                                         <constraint firstItem="yFd-Yi-sBP" firstAttribute="leading" secondItem="eT7-wm-hCw" secondAttribute="leading" constant="8" id="RU5-EH-E9R"/>
@@ -882,7 +882,7 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstItem="xgP-TL-44n" firstAttribute="centerX" secondItem="yFd-Yi-sBP" secondAttribute="centerX" id="jZv-Qe-uPM"/>
                                         <constraint firstItem="lJX-Pz-uyh" firstAttribute="leading" secondItem="yFd-Yi-sBP" secondAttribute="trailing" constant="8" id="kHS-OB-AeB"/>
                                         <constraint firstItem="zHk-nm-jit" firstAttribute="leading" secondItem="yFd-Yi-sBP" secondAttribute="trailing" id="l89-yo-ggg"/>
-                                        <constraint firstItem="ecy-aQ-rpt" firstAttribute="leading" secondItem="yFd-Yi-sBP" secondAttribute="trailing" id="rEF-Ip-k07"/>
+                                        <constraint firstItem="ecy-aQ-rpt" firstAttribute="leading" secondItem="yFd-Yi-sBP" secondAttribute="trailing" constant="8" id="rEF-Ip-k07"/>
                                         <constraint firstAttribute="trailing" secondItem="LJa-bq-84h" secondAttribute="trailing" constant="8" id="rZC-L4-MtJ"/>
                                     </constraints>
                                 </tableViewCellContentView>

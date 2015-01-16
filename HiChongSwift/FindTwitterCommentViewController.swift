@@ -229,7 +229,7 @@ class FindTwitterCommentViewController: UITableViewController {
         case 0:
             let data = infoData!
             // 公式: max(96, 文字高度+34) + 94 + 图片模块高度
-            // 新公式: 34 + 文字高度 + 54 + 图片高度 (+40? 取决于有没有点赞)
+            // 新公式: 34 + 文字高度 + 54 + 图片高度 (+40? 取决于有没有点赞) - 8
             let textHeight = data.twitterContent.boundingRectWithSize(CGSize(width:self.screenWidth() - 84.0, height:20000.0),
                 options: NSStringDrawingOptions.UsesLineFragmentOrigin,
                 attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14.0)], context: nil).height
@@ -249,7 +249,7 @@ class FindTwitterCommentViewController: UITableViewController {
             default:
                 break
             }
-            return 34.0 + textHeight + 54.0 + imageHeight + ( data.starCount == "0" ? 0.0 : 40.0 )
+            return 34.0 + textHeight + 54.0 + imageHeight + ( data.starCount == "0" ? 0.0 : 40.0 ) - 8.0
         case 1:
             var height: CGFloat = 0.0
             let comment = infoData!.comment[indexPath.row] as TwitterCommentListComment
