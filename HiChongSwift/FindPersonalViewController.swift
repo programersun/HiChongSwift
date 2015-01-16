@@ -26,7 +26,7 @@ class FindPersonalViewController: UITableViewController {
                     headerBackground.setImageWithURL(NSURL(string: info.bgImage.toAbsolutePath()))
                 }
                 if info.isAttention == 1.0 {
-                    addRightButton("取消关注", action: "removeCare:")
+                    addRightButton("已关注", action: "removeCare:")
                 } else {
                     addRightButton("关注", action: "addCare:")
                 }
@@ -125,7 +125,7 @@ class FindPersonalViewController: UITableViewController {
                 if let result = object["result"] as? Bool {
                     if result {
 //                        self?.alert("成功关注")
-                        self?.addRightButton("取消关注", action: "removeCare:")
+                        self?.addRightButton("已关注", action: "removeCare:")
                     } else {
                         self?.alert("关注失败")
                     }

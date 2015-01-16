@@ -23,6 +23,7 @@ class FindCircleListCell: UITableViewCell {
     @IBAction func starButtonPressed(sender: UIButton) {
         delegate?.findCircleListCellStar(indexPath)
     }
+    @IBOutlet private weak var starButton: UIButton!
     
     // 评论
     @IBAction func commentButtonPressed(sender: UIButton) {
@@ -102,6 +103,7 @@ class FindCircleListCell: UITableViewCell {
             }
         }
     }
+    
     @IBOutlet private weak var petAvatarImageView: UIImageView!
     var petAvatarPath: String? {
         didSet {
@@ -127,6 +129,15 @@ class FindCircleListCell: UITableViewCell {
     var starPeople: [TwitterListStarList]?{
         didSet {
             icyCollectionView.reloadData()
+        }
+    }
+    var stared: Bool = false {
+        didSet {
+            if stared {
+                starButton.setImage(UIImage(named: "findCircleCellUpOver"), forState: UIControlState.Normal)
+            } else {
+                starButton.setImage(UIImage(named: "findCircleCellUp"), forState: UIControlState.Normal)
+            }
         }
     }
     

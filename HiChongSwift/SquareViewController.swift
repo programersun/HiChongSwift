@@ -58,6 +58,11 @@ class SquareViewController: UITableViewController {
             if let info = sender as? SquareHomeCategory {
                 destination.categoryInfo = info
             }
+        } else if segue.identifier == "showMerchant" {
+            let destination = segue.destinationViewController as SquareDetailViewController
+            if let businessID = sender as? String {
+                destination.merchantID = businessID
+            }
         }
     }
     
@@ -116,6 +121,7 @@ class SquareViewController: UITableViewController {
             case 0:
                 cell = tableView.dequeueReusableCellWithIdentifier(SquareAdCell.identifier()) as SquareAdCell
                 let cell = cell as SquareAdCell
+                cell.delegate = self
                 let ads = homeData!.msg.ad as [SquareHomeAd]
                 cell.adImages = ads.map(
                     {
@@ -192,5 +198,12 @@ class SquareViewController: UITableViewController {
         if indexPath.section == 1 {
             self.performSegueWithIdentifier("showDetail", sender: nil)
         }
+    }
+}
+
+extension SquareViewController: SquareAdCellDelegate {
+    func squareAdCellClickAd(index: Int) {
+        let squareAd = (homeData?.msg.ad as? [SquareHomeAd])?[index]
+        performSegueWithIdentifier("showMerchant", sender: squareAd?.businessId)
     }
 }

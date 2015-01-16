@@ -23,6 +23,10 @@
                                     <subviews>
                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8f-fJ-Sl1">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                                            <gestureRecognizers/>
+                                            <connections>
+                                                <outlet property="delegate" destination="reV-YR-gB5" id="Jaj-vo-8Uu"/>
+                                            </connections>
                                         </scrollView>
                                     </subviews>
                                     <constraints>
@@ -274,6 +278,7 @@
                     <navigationItem key="navigationItem" title="广场" id="VJB-tE-fYe"/>
                     <connections>
                         <segue destination="Pj3-oI-4CJ" kind="show" identifier="showDetail" id="f0x-BW-cTi"/>
+                        <segue destination="H54-dO-e6H" kind="show" identifier="showMerchant" id="M0g-Hd-thh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfz-J6-0hI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -415,12 +420,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9w-Eu-SC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229" y="164"/>
+            <point key="canvasLocation" x="1232" y="-295"/>
         </scene>
         <!--Square Detail View Controller-->
         <scene sceneID="X4Z-0G-0Gr">
             <objects>
-                <viewController id="H54-dO-e6H" customClass="SquareDetailViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="H54-dO-e6H" customClass="SquareDetailViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p1f-Ih-rgt"/>
                         <viewControllerLayoutGuide type="bottom" id="68R-xO-KT9"/>
@@ -513,10 +518,10 @@
                                             <outlet property="icyTitleLabel" destination="clw-kE-jal" id="2cj-En-utt"/>
                                             <outlet property="starTextLabel" destination="gLm-Gv-enA" id="rgR-iU-9fG"/>
                                             <outletCollection property="heartImageView" destination="oCE-gw-MdJ" collectionClass="NSMutableArray" id="J9y-61-rDM"/>
-                                            <outletCollection property="heartImageView" destination="gOM-q2-EAP" id="Nmp-0Y-Bq0"/>
-                                            <outletCollection property="heartImageView" destination="pRP-f6-ivt" id="RjV-kn-n1K"/>
-                                            <outletCollection property="heartImageView" destination="vNV-0t-3pb" id="SrP-Fn-ie4"/>
-                                            <outletCollection property="heartImageView" destination="El3-nD-qmT" id="Qdl-4U-9uV"/>
+                                            <outletCollection property="heartImageView" destination="gOM-q2-EAP" collectionClass="NSMutableArray" id="Nmp-0Y-Bq0"/>
+                                            <outletCollection property="heartImageView" destination="pRP-f6-ivt" collectionClass="NSMutableArray" id="RjV-kn-n1K"/>
+                                            <outletCollection property="heartImageView" destination="vNV-0t-3pb" collectionClass="NSMutableArray" id="SrP-Fn-ie4"/>
+                                            <outletCollection property="heartImageView" destination="El3-nD-qmT" collectionClass="NSMutableArray" id="Qdl-4U-9uV"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SquareDetailMiddleCellIdentifier" id="cLz-Bn-hfA" customClass="SquareDetailMiddleCell" customModule="HiChongSwift" customModuleProvider="target">
@@ -899,6 +904,7 @@
         <image name="sqYongpin" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="M0g-Hd-thh"/>
         <segue reference="LiE-ao-Chi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -238,6 +238,8 @@ class FindCircleViewController: UITableViewController {
         
         cell.delegate = self
         
+        cell.stared = data.isStar != 0
+        
         return cell
     }
     
@@ -333,6 +335,7 @@ extension FindCircleViewController: FindCircleListCellDelegate {
                                         })
                                         data.starList = filtered
                                         data.starCount = "\(data.starCount.toInt()! - 1)"
+                                        data.isStar = 0.0
                                         self?.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
                                     }
                                 }
@@ -364,7 +367,7 @@ extension FindCircleViewController: FindCircleListCellDelegate {
                         dynamicList.insert(me, atIndex: 0)
                         data.starList = dynamicList
                         data.starCount = "\(data.starCount.toInt()! + 1)"
-                        
+                        data.isStar = 1.0
                         self?.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
                     } else {
                         self?.alert("点赞失败")

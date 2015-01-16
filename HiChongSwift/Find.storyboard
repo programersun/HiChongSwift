@@ -509,6 +509,7 @@ So as I pray, Unlimited Blade Works.</string>
                                     <outlet property="petNicknameLabel" destination="Nln-3X-vEi" id="5zi-zO-JPd"/>
                                     <outlet property="sepratorHeightConstraint" destination="qb2-Of-M62" id="AgD-Pg-V5s"/>
                                     <outlet property="sepratorImageView" destination="Hig-9K-XR6" id="PI2-pv-LxT"/>
+                                    <outlet property="starButton" destination="kO9-mb-aG0" id="SDN-Jb-Vod"/>
                                     <outlet property="timeLabel" destination="ncG-NZ-dib" id="J43-5B-fde"/>
                                     <outletCollection property="smallImages" destination="oQF-zk-Sgd" collectionClass="NSMutableArray" id="w6x-4H-sOz"/>
                                     <outletCollection property="smallImages" destination="wLJ-Xg-Wue" collectionClass="NSMutableArray" id="2V9-2r-8Ps"/>

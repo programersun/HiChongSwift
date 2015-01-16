@@ -10,6 +10,12 @@ import UIKit
 
 class SquareAdCell: UITableViewCell {
     
+    weak var delegate: SquareAdCellDelegate?
+    
+    private var currentPage = 0
+    
+    private var timer: NSTimer?
+    
     @IBOutlet weak var icyScrollView: UIScrollView!
     
     class func identifier() -> String {
@@ -43,6 +49,30 @@ class SquareAdCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        timer = NSTimer.scheduledTimerWithTimeInterval(4.5, target: self, selector: "timerFired:", userInfo: nil, repeats: true)
+        timer?.fire()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "scrollTapped:")
+        icyScrollView.addGestureRecognizer(tapGesture)
+    }
+    
+    func timerFired(sender: AnyObject) {
+        if let myImage = adImages {
+            currentPage++
+            if currentPage >= myImage.count {
+                currentPage = 0
+            }
+            let offsetX = CGFloat(currentPage) * UIScreen.mainScreen().bounds.width + 1.0
+            icyScrollView.setContentOffset(CGPointMake(offsetX, 0.0), animated: true)
+        }
+    }
+    
+    func scrollTapped(sender: AnyObject) {
+        if let images = adImages {
+            if images.count > 0 {
+                delegate?.squareAdCellClickAd(currentPage)
+            }
+        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -52,4 +82,15 @@ class SquareAdCell: UITableViewCell {
     }
     
     
+}
+
+extension SquareAdCell: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let page = Int((scrollView.contentOffset.x + 1.0) / UIScreen.mainScreen().bounds.width)
+        currentPage = page
+    }
+}
+
+protocol SquareAdCellDelegate: class {
+    func squareAdCellClickAd(index: Int)
 }
