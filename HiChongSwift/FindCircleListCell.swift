@@ -51,7 +51,7 @@ class FindCircleListCell: UITableViewCell {
                     }
                 } else if images.count == 1 {
                     // 1张
-                    imageBlockHeight.constant = CGFloat((images[0].imageHeight as NSString).floatValue) / CGFloat((images[0].imageWidth as NSString).floatValue) * CGFloat(242.0 * 0.667)
+                    imageBlockHeight.constant = CGFloat((images[0].cutHeight as NSString).floatValue) / CGFloat((images[0].cutWidth as NSString).floatValue) * CGFloat(242.0 * 0.667)
                     for small in smallImages {
                         small.image = nil
                     }
@@ -60,13 +60,13 @@ class FindCircleListCell: UITableViewCell {
                     onlyOneImageView.image = nil
                     if images.count <= 3 {
                         // 2-3张
-                        imageBlockHeight.constant = 86.0
+                        imageBlockHeight.constant = 70.0
                     } else if images.count <= 6 {
                         // 4-6张
-                        imageBlockHeight.constant = 164.0
+                        imageBlockHeight.constant = 148.0
                     } else {
                         // 9张
-                        imageBlockHeight.constant = 242.0
+                        imageBlockHeight.constant = 226.0
                     }
                     for small in smallImages {
                         if small.tag > images.count {
@@ -138,9 +138,9 @@ class FindCircleListCell: UITableViewCell {
     var stared: Bool = false {
         didSet {
             if stared {
-                starButton.setImage(UIImage(named: "findCircleCellUpOver"), forState: UIControlState.Normal)
+                starButton.setImage(UIImage(named: "circleZanFill"), forState: UIControlState.Normal)
             } else {
-                starButton.setImage(UIImage(named: "findCircleCellUp"), forState: UIControlState.Normal)
+                starButton.setImage(UIImage(named: "circleZan"), forState: UIControlState.Normal)
             }
         }
     }

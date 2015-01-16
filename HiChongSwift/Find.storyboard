@@ -238,69 +238,69 @@ So as I pray, Unlimited Blade Works.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Taj-ln-3Ib">
-                                            <rect key="frame" x="68" y="176" width="242" height="242"/>
+                                            <rect key="frame" x="68" y="176" width="242" height="226"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oQF-zk-Sgd">
-                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                                    <rect key="frame" x="8" y="0.0" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="BrP-9F-LyH"/>
                                                         <constraint firstAttribute="width" constant="70" id="Lem-Lq-WYL"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLJ-Xg-Wue">
-                                                    <rect key="frame" x="86" y="8" width="70" height="70"/>
+                                                    <rect key="frame" x="86" y="0.0" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="IcH-4S-OKw"/>
                                                         <constraint firstAttribute="height" constant="70" id="ffi-xI-F62"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wvh-k1-iAK">
-                                                    <rect key="frame" x="164" y="8" width="70" height="70"/>
+                                                    <rect key="frame" x="164" y="0.0" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="8Ib-Ku-Uae"/>
                                                         <constraint firstAttribute="height" constant="70" id="NYT-7V-Hqx"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XAJ-3X-H0J">
-                                                    <rect key="frame" x="8" y="86" width="70" height="70"/>
+                                                    <rect key="frame" x="8" y="78" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="OU0-5H-VWz"/>
                                                         <constraint firstAttribute="width" constant="70" id="VzH-Qa-8Fo"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FIf-ai-sgU">
-                                                    <rect key="frame" x="86" y="86" width="70" height="70"/>
+                                                    <rect key="frame" x="86" y="78" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="612-QE-3bK"/>
                                                         <constraint firstAttribute="height" constant="70" id="hn4-Zg-Tb4"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FDD-2K-mxc">
-                                                    <rect key="frame" x="8" y="164" width="70" height="70"/>
+                                                    <rect key="frame" x="8" y="156" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="nPv-en-UHB"/>
                                                         <constraint firstAttribute="width" constant="70" id="pO5-U0-Ymm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vXC-xc-0zX">
-                                                    <rect key="frame" x="86" y="164" width="70" height="70"/>
+                                                    <rect key="frame" x="86" y="156" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="1PR-tW-Us2"/>
                                                         <constraint firstAttribute="height" constant="70" id="FOi-Q6-HlN"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ka2-vO-ggm">
-                                                    <rect key="frame" x="164" y="164" width="70" height="70"/>
+                                                    <rect key="frame" x="164" y="156" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="7sv-9P-ACy"/>
                                                         <constraint firstAttribute="height" constant="70" id="aIW-ik-Pb6"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z3G-1T-ISe">
-                                                    <rect key="frame" x="8" y="0.0" width="162" height="242"/>
+                                                    <rect key="frame" x="8" y="0.0" width="162" height="226"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dgm-2x-RFY">
-                                                    <rect key="frame" x="164" y="86" width="70" height="70"/>
+                                                    <rect key="frame" x="164" y="78" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="4gr-pe-gT7"/>
                                                         <constraint firstAttribute="height" constant="70" id="GBe-L6-MXs"/>
@@ -312,17 +312,17 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <constraint firstItem="Z3G-1T-ISe" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" id="1KR-mR-Ysf"/>
                                                 <constraint firstItem="Z3G-1T-ISe" firstAttribute="width" secondItem="Taj-ln-3Ib" secondAttribute="width" multiplier="0.667" id="2W2-vA-zd8"/>
                                                 <constraint firstItem="dgm-2x-RFY" firstAttribute="leading" secondItem="FIf-ai-sgU" secondAttribute="trailing" constant="8" id="4xx-bp-uDW"/>
-                                                <constraint firstItem="oQF-zk-Sgd" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" constant="8" id="7Mq-f2-4KG"/>
+                                                <constraint firstItem="oQF-zk-Sgd" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" id="7Mq-f2-4KG"/>
                                                 <constraint firstItem="Ka2-vO-ggm" firstAttribute="leading" secondItem="vXC-xc-0zX" secondAttribute="trailing" constant="8" id="9yO-gd-dio"/>
                                                 <constraint firstItem="XAJ-3X-H0J" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="AxA-bK-zR9"/>
-                                                <constraint firstAttribute="height" constant="242" id="BBu-N5-woE"/>
+                                                <constraint firstAttribute="height" constant="226" id="BBu-N5-woE"/>
                                                 <constraint firstItem="vXC-xc-0zX" firstAttribute="top" secondItem="FIf-ai-sgU" secondAttribute="bottom" constant="8" id="FGR-o5-pkb"/>
                                                 <constraint firstAttribute="width" constant="242" id="FdF-7U-g8c"/>
                                                 <constraint firstItem="FDD-2K-mxc" firstAttribute="top" secondItem="XAJ-3X-H0J" secondAttribute="bottom" constant="8" id="Fmj-1b-VUf"/>
                                                 <constraint firstItem="XAJ-3X-H0J" firstAttribute="top" secondItem="oQF-zk-Sgd" secondAttribute="bottom" constant="8" id="G1d-4Y-iKE"/>
                                                 <constraint firstItem="dgm-2x-RFY" firstAttribute="top" secondItem="Wvh-k1-iAK" secondAttribute="bottom" constant="8" id="VjB-xs-C5x"/>
                                                 <constraint firstItem="Wvh-k1-iAK" firstAttribute="leading" secondItem="wLJ-Xg-Wue" secondAttribute="trailing" constant="8" id="XN5-Lj-rxf"/>
-                                                <constraint firstItem="wLJ-Xg-Wue" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" constant="8" id="cG6-lf-Lt6"/>
+                                                <constraint firstItem="wLJ-Xg-Wue" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" id="cG6-lf-Lt6"/>
                                                 <constraint firstItem="FDD-2K-mxc" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="dZI-ro-Fco"/>
                                                 <constraint firstItem="vXC-xc-0zX" firstAttribute="leading" secondItem="FDD-2K-mxc" secondAttribute="trailing" constant="8" id="eM4-O1-IpV"/>
                                                 <constraint firstItem="Z3G-1T-ISe" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="h98-hK-U4l"/>
@@ -330,32 +330,32 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <constraint firstItem="FIf-ai-sgU" firstAttribute="top" secondItem="wLJ-Xg-Wue" secondAttribute="bottom" constant="8" id="qRs-lR-cys"/>
                                                 <constraint firstItem="oQF-zk-Sgd" firstAttribute="leading" secondItem="Taj-ln-3Ib" secondAttribute="leading" constant="8" id="t0e-NS-4p9"/>
                                                 <constraint firstItem="FIf-ai-sgU" firstAttribute="leading" secondItem="XAJ-3X-H0J" secondAttribute="trailing" constant="8" id="wBI-Cv-PJ5"/>
-                                                <constraint firstItem="Wvh-k1-iAK" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" constant="8" id="wKi-dj-KGR"/>
+                                                <constraint firstItem="Wvh-k1-iAK" firstAttribute="top" secondItem="Taj-ln-3Ib" secondAttribute="top" id="wKi-dj-KGR"/>
                                                 <constraint firstItem="wLJ-Xg-Wue" firstAttribute="leading" secondItem="oQF-zk-Sgd" secondAttribute="trailing" constant="8" id="xUD-cP-1yc"/>
                                                 <constraint firstAttribute="bottom" secondItem="Z3G-1T-ISe" secondAttribute="bottom" id="ybG-9x-GXq"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-hf-na8">
-                                            <rect key="frame" x="68" y="418" width="210" height="38"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGH-hf-na8">
+                                            <rect key="frame" x="68" y="402" width="210" height="38"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO9-mb-aG0">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO9-mb-aG0">
                                                     <rect key="frame" x="8" y="8" width="50" height="22"/>
-                                                    <state key="normal" image="findCircleCellUp">
+                                                    <state key="normal" image="circleZan">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="starButtonPressed:" destination="ehT-xs-MGo" eventType="touchUpInside" id="HoN-ok-3ct"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54r-pl-adO">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54r-pl-adO">
                                                     <rect key="frame" x="152" y="8" width="50" height="22"/>
-                                                    <state key="normal" image="findCircleCellShare">
+                                                    <state key="normal" image="circleFen">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVi-Ur-WoU">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVi-Ur-WoU">
                                                     <rect key="frame" x="80" y="8" width="50" height="22"/>
-                                                    <state key="normal" image="findCircleCellComment">
+                                                    <state key="normal" image="circlePing">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -384,7 +384,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             </constraints>
                                         </imageView>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vle-Io-DKC">
-                                            <rect key="frame" x="76" y="456" width="516" height="32"/>
+                                            <rect key="frame" x="76" y="440" width="516" height="32"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="uoS-gv-Jlx"/>
@@ -429,7 +429,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             <rect key="frame" x="510" y="0.0" width="90" height="96"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncG-NZ-dib">
-                                                    <rect key="frame" x="23" y="8" width="44" height="13.5"/>
+                                                    <rect key="frame" x="23" y="8" width="44" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -464,7 +464,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nln-3X-vEi">
-                                            <rect key="frame" x="16" y="76" width="44" height="13.5"/>
+                                            <rect key="frame" x="16" y="76" width="44" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -724,27 +724,27 @@ So as I pray, Unlimited Blade Works.</string>
                                                 <constraint firstItem="9da-Nx-mue" firstAttribute="leading" secondItem="kh1-4G-m52" secondAttribute="leading" constant="8" id="xUX-y1-1dU"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHk-nm-jit">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zHk-nm-jit">
                                             <rect key="frame" x="68" y="418" width="182" height="38"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIZ-HC-FgA">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIZ-HC-FgA">
                                                     <rect key="frame" x="8" y="8" width="50" height="22"/>
-                                                    <state key="normal" image="findCircleCellUp">
+                                                    <state key="normal" image="circleZan">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="starButtonPressed:" destination="F5S-si-DI4" eventType="touchUpInside" id="pKV-mf-YHC"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tc-cQ-s93">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tc-cQ-s93">
                                                     <rect key="frame" x="124" y="8" width="50" height="22"/>
-                                                    <state key="normal" image="findCircleCellShare">
+                                                    <state key="normal" image="circleFen">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlv-Vw-95R">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlv-Vw-95R">
                                                     <rect key="frame" x="66" y="8" width="50" height="22"/>
-                                                    <state key="normal" image="findCircleCellComment">
+                                                    <state key="normal" image="circlePing">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -818,7 +818,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             <rect key="frame" x="510" y="0.0" width="90" height="96"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-r6-gIU">
-                                                    <rect key="frame" x="23" y="8" width="44" height="13.5"/>
+                                                    <rect key="frame" x="23" y="8" width="44" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -853,7 +853,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宠物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgP-TL-44n">
-                                            <rect key="frame" x="16" y="76" width="44" height="13.5"/>
+                                            <rect key="frame" x="16" y="76" width="44" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1574,9 +1574,9 @@ So as I pray, Unlimited Blade Works.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="findCircleCellComment" width="50" height="20"/>
-        <image name="findCircleCellShare" width="50" height="20"/>
-        <image name="findCircleCellUp" width="50" height="20"/>
+        <image name="circleFen" width="40" height="20"/>
+        <image name="circlePing" width="40" height="20"/>
+        <image name="circleZan" width="40" height="20"/>
         <image name="sqFemale" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
