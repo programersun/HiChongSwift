@@ -32,6 +32,7 @@
 		280A08AB1A5D2A5F0016A504 /* DianpingBusinesses.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A71A5D2A5F0016A504 /* DianpingBusinesses.m */; };
 		280A08AC1A5D2A5F0016A504 /* DianpingDeals.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A91A5D2A5F0016A504 /* DianpingDeals.m */; };
 		280A08AE1A5D3A240016A504 /* FindPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A08AD1A5D3A240016A504 /* FindPetViewController.swift */; };
+		280BBA271A6C9FBA00C5986F /* FindTwitterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280BBA261A6C9FBA00C5986F /* FindTwitterListCell.swift */; };
 		281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319461A58D08000913BC6 /* WikiesViewController.swift */; };
 		281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319481A58E34500913BC6 /* WikiesHeadCell.swift */; };
 		2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */; };
@@ -73,10 +74,6 @@
 		285E6A241A4BEF7400DC44F4 /* WikiArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */; };
 		285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */; };
 		285EC3711A49D76000E2FE70 /* AboutMeModifyGenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285EC3701A49D76000E2FE70 /* AboutMeModifyGenderController.swift */; };
-		2866B7FA1A5FA70D00374D42 /* TwitterListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2866B7F31A5FA70D00374D42 /* TwitterListBase.m */; };
-		2866B7FB1A5FA70D00374D42 /* TwitterListImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 2866B7F51A5FA70D00374D42 /* TwitterListImages.m */; };
-		2866B7FC1A5FA70D00374D42 /* TwitterListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 2866B7F71A5FA70D00374D42 /* TwitterListMsg.m */; };
-		2866B7FD1A5FA70D00374D42 /* TwitterListStarList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2866B7F91A5FA70D00374D42 /* TwitterListStarList.m */; };
 		286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D071A3A8357005C1D36 /* SquareListCell.swift */; };
 		286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */; };
 		286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */; };
@@ -165,6 +162,10 @@
 		28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C93AC91A4D0AB600E1F600 /* WikiListViewController.swift */; };
 		28C93AD01A4D47B600E1F600 /* WikiMoreBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */; };
 		28C93AD11A4D47B600E1F600 /* WikiMoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */; };
+		28D52E9B1A6CE27B00C17CF0 /* TwitterListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E941A6CE27B00C17CF0 /* TwitterListBase.m */; };
+		28D52E9C1A6CE27B00C17CF0 /* TwitterListImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E961A6CE27B00C17CF0 /* TwitterListImages.m */; };
+		28D52E9D1A6CE27B00C17CF0 /* TwitterListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E981A6CE27B00C17CF0 /* TwitterListMsg.m */; };
+		28D52E9E1A6CE27B00C17CF0 /* TwitterListStarList.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D52E9A1A6CE27B00C17CF0 /* TwitterListStarList.m */; };
 		28DE582E1A5B8D4000B49046 /* SquareCommentListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE582B1A5B8D4000B49046 /* SquareCommentListBase.m */; };
 		28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE582D1A5B8D4000B49046 /* SquareCommentListMsg.m */; };
 		28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE58301A5BA21900B49046 /* SquareMapViewController.swift */; };
@@ -240,6 +241,7 @@
 		280A08A81A5D2A5F0016A504 /* DianpingDeals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingDeals.h; sourceTree = "<group>"; };
 		280A08A91A5D2A5F0016A504 /* DianpingDeals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingDeals.m; sourceTree = "<group>"; };
 		280A08AD1A5D3A240016A504 /* FindPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPetViewController.swift; sourceTree = "<group>"; };
+		280BBA261A6C9FBA00C5986F /* FindTwitterListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterListCell.swift; sourceTree = "<group>"; };
 		281319461A58D08000913BC6 /* WikiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesViewController.swift; sourceTree = "<group>"; };
 		281319481A58E34500913BC6 /* WikiesHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesHeadCell.swift; sourceTree = "<group>"; };
 		2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesMidCell.swift; sourceTree = "<group>"; };
@@ -307,15 +309,6 @@
 		285E6A231A4BEF7400DC44F4 /* WikiArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiArticleViewController.swift; sourceTree = "<group>"; };
 		285E6A251A4C06FD00DC44F4 /* WikiCollectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiCollectionListViewController.swift; sourceTree = "<group>"; };
 		285EC3701A49D76000E2FE70 /* AboutMeModifyGenderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyGenderController.swift; sourceTree = "<group>"; };
-		2866B7F11A5FA70D00374D42 /* TwitterList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterList.h; sourceTree = "<group>"; };
-		2866B7F21A5FA70D00374D42 /* TwitterListBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterListBase.h; sourceTree = "<group>"; };
-		2866B7F31A5FA70D00374D42 /* TwitterListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterListBase.m; sourceTree = "<group>"; };
-		2866B7F41A5FA70D00374D42 /* TwitterListImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterListImages.h; sourceTree = "<group>"; };
-		2866B7F51A5FA70D00374D42 /* TwitterListImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterListImages.m; sourceTree = "<group>"; };
-		2866B7F61A5FA70D00374D42 /* TwitterListMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterListMsg.h; sourceTree = "<group>"; };
-		2866B7F71A5FA70D00374D42 /* TwitterListMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterListMsg.m; sourceTree = "<group>"; };
-		2866B7F81A5FA70D00374D42 /* TwitterListStarList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterListStarList.h; sourceTree = "<group>"; };
-		2866B7F91A5FA70D00374D42 /* TwitterListStarList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterListStarList.m; sourceTree = "<group>"; };
 		286D1D071A3A8357005C1D36 /* SquareListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareListCell.swift; sourceTree = "<group>"; };
 		286D1D091A3AAE9A005C1D36 /* SquareDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailViewController.swift; sourceTree = "<group>"; };
 		286D1D0B1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareDetailHeadCell.swift; sourceTree = "<group>"; };
@@ -429,6 +422,15 @@
 		28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreBase.m; sourceTree = "<group>"; };
 		28C93ACE1A4D47B600E1F600 /* WikiMoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiMoreData.h; sourceTree = "<group>"; };
 		28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreData.m; sourceTree = "<group>"; };
+		28D52E921A6CE27B00C17CF0 /* TwitterList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterList.h; sourceTree = "<group>"; };
+		28D52E931A6CE27B00C17CF0 /* TwitterListBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterListBase.h; sourceTree = "<group>"; };
+		28D52E941A6CE27B00C17CF0 /* TwitterListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterListBase.m; sourceTree = "<group>"; };
+		28D52E951A6CE27B00C17CF0 /* TwitterListImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterListImages.h; sourceTree = "<group>"; };
+		28D52E961A6CE27B00C17CF0 /* TwitterListImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterListImages.m; sourceTree = "<group>"; };
+		28D52E971A6CE27B00C17CF0 /* TwitterListMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterListMsg.h; sourceTree = "<group>"; };
+		28D52E981A6CE27B00C17CF0 /* TwitterListMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterListMsg.m; sourceTree = "<group>"; };
+		28D52E991A6CE27B00C17CF0 /* TwitterListStarList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterListStarList.h; sourceTree = "<group>"; };
+		28D52E9A1A6CE27B00C17CF0 /* TwitterListStarList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterListStarList.m; sourceTree = "<group>"; };
 		28DE58291A5B8D4000B49046 /* SquareCommentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCommentList.h; sourceTree = "<group>"; };
 		28DE582A1A5B8D4000B49046 /* SquareCommentListBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCommentListBase.h; sourceTree = "<group>"; };
 		28DE582B1A5B8D4000B49046 /* SquareCommentListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareCommentListBase.m; sourceTree = "<group>"; };
@@ -618,15 +620,15 @@
 				280A08A71A5D2A5F0016A504 /* DianpingBusinesses.m */,
 				280A08A81A5D2A5F0016A504 /* DianpingDeals.h */,
 				280A08A91A5D2A5F0016A504 /* DianpingDeals.m */,
-				2866B7F11A5FA70D00374D42 /* TwitterList.h */,
-				2866B7F21A5FA70D00374D42 /* TwitterListBase.h */,
-				2866B7F31A5FA70D00374D42 /* TwitterListBase.m */,
-				2866B7F41A5FA70D00374D42 /* TwitterListImages.h */,
-				2866B7F51A5FA70D00374D42 /* TwitterListImages.m */,
-				2866B7F61A5FA70D00374D42 /* TwitterListMsg.h */,
-				2866B7F71A5FA70D00374D42 /* TwitterListMsg.m */,
-				2866B7F81A5FA70D00374D42 /* TwitterListStarList.h */,
-				2866B7F91A5FA70D00374D42 /* TwitterListStarList.m */,
+				28D52E921A6CE27B00C17CF0 /* TwitterList.h */,
+				28D52E931A6CE27B00C17CF0 /* TwitterListBase.h */,
+				28D52E941A6CE27B00C17CF0 /* TwitterListBase.m */,
+				28D52E951A6CE27B00C17CF0 /* TwitterListImages.h */,
+				28D52E961A6CE27B00C17CF0 /* TwitterListImages.m */,
+				28D52E971A6CE27B00C17CF0 /* TwitterListMsg.h */,
+				28D52E981A6CE27B00C17CF0 /* TwitterListMsg.m */,
+				28D52E991A6CE27B00C17CF0 /* TwitterListStarList.h */,
+				28D52E9A1A6CE27B00C17CF0 /* TwitterListStarList.m */,
 				285925B71A64258C00DB2F12 /* TwitterKeeperInfo.h */,
 				285925B81A64258C00DB2F12 /* TwitterKeeperInfoBase.h */,
 				285925B91A64258C00DB2F12 /* TwitterKeeperInfoBase.m */,
@@ -826,6 +828,7 @@
 				285925BE1A64354600DB2F12 /* FindTwitterListPageViewController.swift */,
 				287EDFE11A3FD7C9005B6A57 /* FindCircleHeader.xib */,
 				287EDFE31A3FED0C005B6A57 /* FindCircleListCell.swift */,
+				280BBA261A6C9FBA00C5986F /* FindTwitterListCell.swift */,
 				287EDFE51A403928005B6A57 /* FindCircleAddNewViewController.swift */,
 				287EDFE71A403FD9005B6A57 /* FindCircleAddTextCell.swift */,
 				28BE7C751A411ADE00F3BC2A /* FindAddImageCell.swift */,
@@ -1172,6 +1175,7 @@
 				289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */,
 				28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */,
 				2807DA8D1A637BE100D3534A /* UserFansFriendsBase.m in Sources */,
+				28D52E9E1A6CE27B00C17CF0 /* TwitterListStarList.m in Sources */,
 				28F2157D1A5A75D2002C0620 /* SquareGetListBase.m in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
 				283C0E4C1A4BBAE900C64B11 /* WikiInfoCell.swift in Sources */,
@@ -1184,8 +1188,10 @@
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */,
 				28C231BA1A6521B4004AF7D8 /* AboutMeFeedBackViewController.swift in Sources */,
+				28D52E9D1A6CE27B00C17CF0 /* TwitterListMsg.m in Sources */,
 				2806FEB31A4A651B00D18543 /* LCYPetSubTypeChildStyle.m in Sources */,
 				287941AC1A49F56C00DECA50 /* LCYPetDetailPetImages.m in Sources */,
+				28D52E9C1A6CE27B00C17CF0 /* TwitterListImages.m in Sources */,
 				2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
 				28026F371A4996E10082A2EE /* AboutMeSwitchCell.swift in Sources */,
@@ -1200,6 +1206,7 @@
 				285925BD1A64258C00DB2F12 /* TwitterKeeperInfoMsg.m in Sources */,
 				28C6DAB01A2FF28900068848 /* MainViewController.swift in Sources */,
 				28ED69261A4BAFE500CAE227 /* WikiViewController.swift in Sources */,
+				28D52E9B1A6CE27B00C17CF0 /* TwitterListBase.m in Sources */,
 				281319591A592B0D00913BC6 /* SquareHomeCategory.m in Sources */,
 				285251D31A64E2AC00A8403E /* UserSearchFriendMsg.m in Sources */,
 				280A08541A5CD4220016A504 /* FindLocationViewController.swift in Sources */,
@@ -1215,16 +1222,15 @@
 				281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */,
 				287941AB1A49F56C00DECA50 /* LCYPetDetailBase.m in Sources */,
 				28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */,
+				280BBA271A6C9FBA00C5986F /* FindTwitterListCell.swift in Sources */,
 				2848C8DA1A663DFB00774CD9 /* MainDialogViewController.swift in Sources */,
 				2859CF521A657D8D00C032BD /* FindTwitterCommentListCell.swift in Sources */,
-				2866B7FA1A5FA70D00374D42 /* TwitterListBase.m in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
 				28E182B41A4AB0AB00E3001A /* CommonUploadBase.m in Sources */,
 				2806FEAC1A4A62CA00D18543 /* PetSubTypeViewController.swift in Sources */,
 				28B9CEA71A49A9BB004E6386 /* AboutMeModifyTextCell.swift in Sources */,
 				283C0E461A4BB84D00C64B11 /* WikiTodayData.m in Sources */,
 				2834C4071A47CAE80007FE43 /* RegisterDetailViewController.swift in Sources */,
-				2866B7FC1A5FA70D00374D42 /* TwitterListMsg.m in Sources */,
 				28876B2F1A42C8CA0002F635 /* LoginInputCell.swift in Sources */,
 				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
 				287941B11A4A017100DECA50 /* MoePetImageCell.swift in Sources */,
@@ -1295,12 +1301,10 @@
 				28EE4D221A493949008F9F87 /* AboutMeHeaderCell.swift in Sources */,
 				2807DA8E1A637BE100D3534A /* UserFansFriendsMsg.m in Sources */,
 				285EC3711A49D76000E2FE70 /* AboutMeModifyGenderController.swift in Sources */,
-				2866B7FD1A5FA70D00374D42 /* TwitterListStarList.m in Sources */,
 				285925D71A644EEC00DB2F12 /* MoePetPageViewController.swift in Sources */,
 				287EDFDE1A3FC7A9005B6A57 /* FindViewController.swift in Sources */,
 				2802C9931A2F5151001130ED /* AppDelegate.swift in Sources */,
 				284896241A5A967F00D45285 /* SquareMerchantInfoMsg.m in Sources */,
-				2866B7FB1A5FA70D00374D42 /* TwitterListImages.m in Sources */,
 				287EDFE61A403928005B6A57 /* FindCircleAddNewViewController.swift in Sources */,
 				28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */,
 				28801DDF1A63C20E00743AA9 /* AboutMeSettingViewController.swift in Sources */,

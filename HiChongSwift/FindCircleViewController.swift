@@ -73,7 +73,7 @@ class FindCircleViewController: UITableViewController {
         
 //        self.tableView.backgroundColor = UIColor.LCYThemeColor()
         
-        let rightItem = UIBarButtonItem(image: UIImage(named: "circleDots"), style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonPressed:")
+        let rightItem = UIBarButtonItem(image: UIImage(named: "twiPlus"), style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonPressed:")
         self.navigationItem.rightBarButtonItem = rightItem
         
         loadKeeperInfo()
@@ -220,51 +220,93 @@ class FindCircleViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(FindCircleListCell.identifier(), forIndexPath: indexPath) as FindCircleListCell
+//        let cell = tableView.dequeueReusableCellWithIdentifier(FindCircleListCell.identifier(), forIndexPath: indexPath) as FindCircleListCell
+//        
+//        // Configure the cell...
+//        //        cell.upNumber = indexPath.row
+//        cell.indexPath = indexPath
+//        
+//        let data = twitters![indexPath.row]
+//        cell.keeperAvatarPath = data.keeperImage != nil ? data.keeperImage.toAbsolutePath() : nil
+//        cell.petAvatarPath = data.petImage != nil ? data.petImage.toAbsolutePath() : nil
+//        cell.icyContentLabel.text = data.twitterContent
+//        cell.petNicknameLabel.text = data.petName
+//        cell.timeLabel.text = data.addTime.toTwitterDeltaTime()
+//        cell.keeperNicknameLabel.text = data.nickName
+//        cell.twitterImages = data.images as? [TwitterListImages]
+//        cell.starPeople = data.starList as? [TwitterListStarList]
+//        
+//        cell.delegate = self
+//        
+//        cell.stared = data.isStar != 0
         
-        // Configure the cell...
-        //        cell.upNumber = indexPath.row
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterListCell.identifier) as FindTwitterListCell
         cell.indexPath = indexPath
-        
         let data = twitters![indexPath.row]
         cell.keeperAvatarPath = data.keeperImage != nil ? data.keeperImage.toAbsolutePath() : nil
         cell.petAvatarPath = data.petImage != nil ? data.petImage.toAbsolutePath() : nil
-        cell.icyContentLabel.text = data.twitterContent
+        cell.keeperNameLabel.text = data.nickName
         cell.petNicknameLabel.text = data.petName
-        cell.timeLabel.text = data.addTime.toTwitterDeltaTime()
-        cell.keeperNicknameLabel.text = data.nickName
+        cell.petCateNameLabel.text = data.cateName
+        cell.icyContent = data.twitterContent
         cell.twitterImages = data.images as? [TwitterListImages]
         cell.starPeople = data.starList as? [TwitterListStarList]
+        cell.upNumberLabel.text = data.starCount
+        cell.commentNumberLabel.text = data.commentCount
+        cell.stared = data.isStar != 0
+        cell.timeLabel.text = data.addTime.toTwitterDeltaTime()
         
         cell.delegate = self
-        
-        cell.stared = data.isStar != 0
         
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
         let data = twitters![indexPath.row]
         // 公式: max(96, 文字高度+34) + 94 + 图片模块高度
         // 新公式: 34 + 文字高度 + 54 + 图片高度 (+40? 取决于有没有点赞) - 8
-        let textHeight = data.twitterContent.boundingRectWithSize(CGSize(width:self.screenWidth() - 84.0, height:20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14.0)], context: nil).height
-        var imageHeight: CGFloat = 86.0
+//        let textHeight = data.twitterContent.boundingRectWithSize(CGSize(width:self.screenWidth() - 84.0, height:20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14.0)], context: nil).height
+//        var imageHeight: CGFloat = 86.0
+//        switch data.images.count {
+//        case 0:
+//            imageHeight = 0.0
+//        case 1:
+//            let imageData = data.images[0] as TwitterListImages
+//            imageHeight = CGFloat((imageData.cutHeight as NSString).floatValue) / CGFloat((imageData.cutWidth as NSString).floatValue) * CGFloat(242.0 * 0.667)
+//        case 2, 3:
+//            imageHeight = 70.0
+//        case 4, 5, 6:
+//            imageHeight = 148.0
+//        case 7, 8, 9:
+//            imageHeight = 226.0
+//        default:
+//            break
+//        }
+        
+        // 最新公式：
+        // 高度 = 11 + 题头高度 + 8 + 图片模块高度 + 8 + (赞列表模块高度(35) + 8) + 点赞按钮模块高度(24) + 底部空间(8)
+        // 题头高度 = 图片高度(61) + 4 + 文字高度 + 4
+        // 图片模块高度略
+        let textHeight = data.twitterContent.boundingRectWithSize(CGSizeMake(screenWidth() - 16.0, 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(10.0)], context: nil).height
+        let textBlockHeight = 61.0 + 4.0 + textHeight + 4.0
+        var imageBlockHeight: CGFloat = 0.0
         switch data.images.count {
         case 0:
-            imageHeight = 0.0
+            imageBlockHeight = -8.0
         case 1:
-            let imageData = data.images[0] as TwitterListImages
-            imageHeight = CGFloat((imageData.cutHeight as NSString).floatValue) / CGFloat((imageData.cutWidth as NSString).floatValue) * CGFloat(242.0 * 0.667)
+            imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
         case 2, 3:
-            imageHeight = 70.0
+            imageBlockHeight = screenWidth() / 3.0
         case 4, 5, 6:
-            imageHeight = 148.0
+            imageBlockHeight = screenWidth() / 3.0 * 2.0
         case 7, 8, 9:
-            imageHeight = 226.0
+            imageBlockHeight = screenWidth()
         default:
             break
         }
-        return 34.0 + textHeight + 54.0 + imageHeight + ( data.starCount == "0" ? 0.0 : 40.0 ) - 8.0
+        return 11.0 + textBlockHeight + 8.0 + imageBlockHeight + 8.0 + (data.starCount == "0" ? 0.0 : 35.0 + 8.0) + 24.0 + 8.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

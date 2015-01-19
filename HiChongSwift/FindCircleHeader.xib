@@ -21,30 +21,31 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62U-0x-RxQ">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hze-jU-Tdu">
-                    <rect key="frame" x="495" y="557" width="65" height="65"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="65" id="b5C-8a-5bd"/>
-                        <constraint firstAttribute="width" constant="65" id="xdA-GA-sCx"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-8Q-i4T">
-                    <rect key="frame" x="459" y="604" width="28" height="18"/>
+                    <rect key="frame" x="487" y="604" width="28" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轻触设置相册封面" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMC-SP-1JW">
-                    <rect key="frame" x="252" y="292" width="96" height="16"/>
+                    <rect key="frame" x="252" y="293" width="96" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hze-jU-Tdu">
+                    <rect key="frame" x="523" y="557" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="b5C-8a-5bd"/>
+                        <constraint firstAttribute="width" constant="65" id="xdA-GA-sCx"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="hze-jU-Tdu" secondAttribute="trailing" constant="40" id="7Sk-Sv-v6w"/>
+                <constraint firstAttribute="trailing" secondItem="hze-jU-Tdu" secondAttribute="trailing" constant="12" id="7Sk-Sv-v6w"/>
                 <constraint firstAttribute="trailing" secondItem="62U-0x-RxQ" secondAttribute="trailing" id="Av0-zA-sEf"/>
                 <constraint firstItem="hze-jU-Tdu" firstAttribute="leading" secondItem="Yu4-8Q-i4T" secondAttribute="trailing" constant="8" id="SEk-ec-Lh9"/>
                 <constraint firstAttribute="centerY" secondItem="qMC-SP-1JW" secondAttribute="centerY" id="UJx-J3-abO"/>
