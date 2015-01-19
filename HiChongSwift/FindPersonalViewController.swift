@@ -60,7 +60,7 @@ class FindPersonalViewController: UITableViewController {
         
         navigationItem.title = personNickname
         
-        tableView.backgroundColor = UIColor.LCYThemeColor()
+//        tableView.backgroundColor = UIColor.LCYThemeColor()
         
         
     }
