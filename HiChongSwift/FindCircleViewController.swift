@@ -200,6 +200,7 @@ class FindCircleViewController: UITableViewController {
             let destination = segue.destinationViewController as FindTwitterCommentViewController
             let data = sender as? TwitterListMsg
             destination.twitterData = data
+            destination.keeperInfo = keeperInfo
         }
     }
     
