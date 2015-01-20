@@ -130,6 +130,23 @@ class PetFinalFilterViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let groupedData = groupedTypeInfo[keyList![indexPath.section]] {
             let childInfo = groupedData[indexPath.row]
+            
+            if let myRoot = root {
+                if myRoot.isKindOfClass(WikiViewController.classForCoder()) {
+                    // 如果是百科，则直接跳转
+                    let wikiStoryBoard = UIStoryboard(name: "Wiki", bundle: nil)
+                    let wikiVC = wikiStoryBoard.instantiateViewControllerWithIdentifier("catedWiki") as WikiesViewController
+                    wikiVC.childCate = childInfo
+                    navigationController?.pushViewController(wikiVC, animated: true)
+                    return
+                } else {
+                    // 一般情况，返回处理
+                    delegate?.didSelectCategory(childInfo)
+                    navigationController?.popToViewController(myRoot, animated: true)
+                    return
+                }
+            }
+            
             delegate?.didSelectCategory(childInfo)
             if let uroot = root {
                 navigationController?.popToViewController(uroot, animated: true)
