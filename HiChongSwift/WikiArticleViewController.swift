@@ -66,7 +66,7 @@ class WikiArticleViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        icyWebView.reload()
+//        icyWebView.reload()
     }
     
     @IBAction func collectionButtonPressed(sender: AnyObject) {
