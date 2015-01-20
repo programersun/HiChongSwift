@@ -344,7 +344,7 @@ extension FindCircleAddNewViewController: UIImagePickerControllerDelegate, UINav
         picker.dismissViewControllerAnimated(true, completion: nil)
         self.showHUDWithTips("处理中")
         
-        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFitToSize: CGSize(width: 400, height: 400))
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFitToSize: CGSize(width: 600, height: 600))
         if picker.sourceType == .Camera {
             UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
         }
