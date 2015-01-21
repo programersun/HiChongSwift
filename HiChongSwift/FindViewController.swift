@@ -120,7 +120,7 @@ class FindViewController: UITableViewController {
             case 1:
                 self.performSegueWithIdentifier("showSearchResult", sender: nil)
             case 2:
-                self.performSegueWithIdentifier("showSearchResult", sender: nil)
+                self.performSegueWithIdentifier("showSearchResult", sender: true)
             case 3:
                 self.performSegueWithIdentifier("showSearch", sender: nil)
             default:
@@ -130,6 +130,20 @@ class FindViewController: UITableViewController {
             self.performSegueWithIdentifier("showCatalog", sender: nil)
         default:
             break
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showSearchResult":
+                let destination = segue.destinationViewController as FindSearchResultViewController
+                if let sender = sender as? Bool {
+                    destination.forFriend = sender
+                }
+            default:
+                break
+            }
         }
     }
 

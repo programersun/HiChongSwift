@@ -11,6 +11,8 @@ import CoreLocation
 
 class FindSearchResultViewController: UITableViewController {
     
+    var forFriend = false
+    
     var parameter: [String: String]?
     
     private var location: CLLocation?
@@ -20,13 +22,13 @@ class FindSearchResultViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
@@ -36,13 +38,13 @@ class FindSearchResultViewController: UITableViewController {
             self?.location = location
             self?.reload()
             return
-        }, fail: { [weak self]() -> Void in
-            self?.alert("无法获取您的地理位置信息。")
-            return
+            }, fail: { [weak self]() -> Void in
+                self?.alert("无法获取您的地理位置信息。")
+                return
         })
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,37 +65,57 @@ class FindSearchResultViewController: UITableViewController {
                     self?.alert("未能获取到所找寻的宠物")
                 }
                 return
-            }, failure: { [weak self](error) -> Void in
-                self?.alert("网络状态不佳")
-                return
-            })
-        } else {
-            let parameter = [
-                "longitude": "\(location!.coordinate.longitude)",
-                "latitude": "\(location!.coordinate.latitude)"
-            ]
-            LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { [weak self](object) -> Void in
-                let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object)
-                if retrieved.result {
-                    self?.infoData = retrieved.msg as? [UserSearchFriendMsg]
-                } else {
-                    self?.alert("未能获取到所找寻的宠物")
-                }
-                return
                 }, failure: { [weak self](error) -> Void in
                     self?.alert("网络状态不佳")
                     return
             })
+        } else {
+            if !forFriend {
+                let parameter = [
+                    "longitude": "\(location!.coordinate.longitude)",
+                    "latitude": "\(location!.coordinate.latitude)"
+                ]
+                LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { [weak self](object) -> Void in
+                    let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object)
+                    if retrieved.result {
+                        self?.infoData = retrieved.msg as? [UserSearchFriendMsg]
+                    } else {
+                        self?.alert("未能获取到所找寻的宠物")
+                    }
+                    return
+                    }, failure: { [weak self](error) -> Void in
+                        self?.alert("网络状态不佳")
+                        return
+                })
+            } else {
+                let parameter = [
+                    "longitude": "\(location!.coordinate.longitude)",
+                    "latitude": "\(location!.coordinate.latitude)",
+                    "user_id": LCYCommon.sharedInstance.userName!
+                ]
+                LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend2, parameters: parameter, success: { [weak self](object) -> Void in
+                    let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object)
+                    if retrieved.result {
+                        self?.infoData = retrieved.msg as? [UserSearchFriendMsg]
+                    } else {
+                        self?.alert("未能获取到所找寻的宠物")
+                    }
+                    return
+                    }, failure: { [weak self](error) -> Void in
+                        self?.alert("网络状态不佳")
+                        return
+                })
+            }
         }
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         if let data = infoData {
@@ -102,11 +124,11 @@ class FindSearchResultViewController: UITableViewController {
             return 0
         }
     }
-
-
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(FindSearchResultCell.identifier(), forIndexPath: indexPath) as FindSearchResultCell
-
+        
         // Configure the cell...
         let data = infoData![indexPath.row]
         cell.icyImagePath = data.headImage.toAbsolutePath()
@@ -127,7 +149,7 @@ class FindSearchResultViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("showPersonal", sender: nil)
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             switch identifier {
