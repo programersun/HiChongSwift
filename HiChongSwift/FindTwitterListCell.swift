@@ -8,6 +8,8 @@
 
 import UIKit
 
+let twitterFontSize = CGFloat(12.0)
+
 class FindTwitterListCell: UITableViewCell {
     
     // MARK: - Outlets
@@ -32,7 +34,7 @@ class FindTwitterListCell: UITableViewCell {
         didSet {
             if let content = icyContent {
                 icyContentLabel.text = content
-                let textHeight = content.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width - 16.0, 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(10.0)], context: nil).height
+                let textHeight = content.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width - 16.0, 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(twitterFontSize)], context: nil).height
                 icyContentBlockHeight.constant = textHeight + 68.0
             } else {
                 icyContentLabel.text = nil
