@@ -64,7 +64,7 @@ class FindViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "宠物圈"
-                cell.backgroundColor = UIColor.LCYTableLightGray()
+                cell.backgroundColor = UIColor.whiteColor()
                 cell.imageView?.image = UIImage(named: "findCircle")
             case 1:
                 cell.textLabel?.text = "附近"
@@ -72,7 +72,7 @@ class FindViewController: UITableViewController {
                 cell.imageView?.image = UIImage(named: "findNearby")
             case 2:
                 cell.textLabel?.text = "宠友"
-                cell.backgroundColor = UIColor.LCYTableLightGray()
+                cell.backgroundColor = UIColor.whiteColor()
                 cell.imageView?.image = UIImage(named: "findFriends")
             case 3:
                 cell.textLabel?.text = "搜索"
