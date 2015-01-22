@@ -59,7 +59,7 @@
                                                         <action selector="midButtonPressed:" destination="kmS-lm-PUp" eventType="touchUpInside" id="7Uz-fW-MFX"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sqPeizhong" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Kd-Ems">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqPeizhong" translatesAutoresizingMaskIntoConstraints="NO" id="BLm-Kd-Ems">
                                                     <rect key="frame" x="50" y="40" width="50" height="50"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配种" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1V0-lc-gnA">
@@ -406,7 +406,7 @@
                             <constraint firstItem="2i6-h9-XFp" firstAttribute="top" secondItem="WnJ-cv-V3p" secondAttribute="bottom" id="5qM-dg-snV"/>
                             <constraint firstItem="WnJ-cv-V3p" firstAttribute="leading" secondItem="yFV-In-dqg" secondAttribute="leading" id="78v-Rg-AKr"/>
                             <constraint firstAttribute="trailing" secondItem="WnJ-cv-V3p" secondAttribute="trailing" id="H9I-1E-uyF"/>
-                            <constraint firstItem="9hr-Y4-d8W" firstAttribute="top" secondItem="2i6-h9-XFp" secondAttribute="bottom" id="QGs-or-4wh"/>
+                            <constraint firstItem="9hr-Y4-d8W" firstAttribute="bottom" secondItem="2i6-h9-XFp" secondAttribute="bottom" id="QGs-or-4wh"/>
                             <constraint firstItem="WnJ-cv-V3p" firstAttribute="top" secondItem="inf-Ey-ftN" secondAttribute="bottom" id="SqF-o9-Mtx"/>
                             <constraint firstAttribute="trailing" secondItem="2i6-h9-XFp" secondAttribute="trailing" id="sCK-1N-Ijb"/>
                             <constraint firstItem="2i6-h9-XFp" firstAttribute="leading" secondItem="yFV-In-dqg" secondAttribute="leading" id="tOc-9S-MPj"/>
@@ -904,7 +904,7 @@
         <image name="sqYongpin" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M0g-Hd-thh"/>
+        <segue reference="RSl-ln-WDi"/>
         <segue reference="LiE-ao-Chi"/>
     </inferredMetricsTieBreakers>
 </document>
