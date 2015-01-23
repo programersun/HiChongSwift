@@ -61,7 +61,19 @@ class FindTwitterListCell: UITableViewCell {
                     for one in middleSizedImages {
                         one.image = nil
                     }
-                    onlyOneImageView.setImageWithURL(NSURL(string: images[0].cutPath.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
+                    if let url = NSURL(string: images[0].cutPath.toAbsolutePath()) {
+                        onlyOneImageView.contentMode = .Center
+                        onlyOneImageView.setImageWithURLRequest(NSURLRequest(URL: url), placeholderImage: UIImage(named: "CirclePlaceHolderGray"), success: { [weak self](_, _, finalImage) -> Void in
+                            self?.onlyOneImageView.image = finalImage
+                            self?.onlyOneImageView.contentMode = .ScaleAspectFill
+                            return
+                            }, failure: { (_, _, _) -> Void in
+                                return
+                        })
+                    } else {
+                        onlyOneImageView.image = nil
+                    }
+//                    onlyOneImageView.setImageWithURL(NSURL(string: images[0].cutPath.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
                 } else {
                     onlyOneImageView.image = nil
                     if images.count <= 3 {
@@ -78,7 +90,19 @@ class FindTwitterListCell: UITableViewCell {
                         if middle.tag > images.count {
                             middle.image = nil
                         } else {
-                            middle.setImageWithURL(NSURL(string: images[middle.tag - 1].cutPath.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
+                            middle.contentMode = .Center
+                            if let url = NSURL(string: images[middle.tag - 1].cutPath.toAbsolutePath()) {
+                                middle.setImageWithURLRequest(NSURLRequest(URL: url), placeholderImage: UIImage(named: "CirclePlaceHolderGray"), success: { (_, _, finalImage) -> Void in
+                                    middle.image = finalImage
+                                    middle.contentMode = .ScaleAspectFill
+                                    return
+                                    }, failure: { (_, _, _) -> Void in
+                                        return
+                                })
+                            } else {
+                                middle.image = nil
+                            }
+                            //                            middle.setImageWithURL(NSURL(string: images[middle.tag - 1].cutPath.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
                         }
                     }
                 }
@@ -160,7 +184,7 @@ class FindTwitterListCell: UITableViewCell {
     class var identifier: String {
         return "FindTwitterListCellIdentifier"
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -172,13 +196,13 @@ class FindTwitterListCell: UITableViewCell {
         sepractorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
         sepratorImageView.image = LCYCommon.sharedInstance.circleSepratorImage
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
 
 extension FindTwitterListCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -188,7 +212,19 @@ extension FindTwitterListCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(FindAddImageCollectionCell.identifier, forIndexPath: indexPath) as FindAddImageCollectionCell
         if let data = starPeople?[indexPath.row] {
-            cell.icyImageView.setImageWithURL(NSURL(string: data.headImage.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
+            //            cell.icyImageView.setImageWithURL(NSURL(string: data.headImage.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
+            cell.icyImageView.contentMode = .Center
+            if let url = NSURL(string: data.headImage.toAbsolutePath()) {
+                cell.icyImageView.setImageWithURLRequest(NSURLRequest(URL: url), placeholderImage: UIImage(named: "CirclePlaceHolderGray"), success: { (_, _, finalImage) -> Void in
+                    cell.icyImageView.image = finalImage
+                    cell.icyImageView.contentMode = .ScaleAspectFill
+                    return
+                    }, failure: { (_, _, _) -> Void in
+                        return
+                })
+            } else {
+                cell.icyImageView.image = nil
+            }
         } else {
             cell.icyImageView.image = nil
         }
