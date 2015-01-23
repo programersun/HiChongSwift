@@ -10,6 +10,12 @@ import UIKit
 
 class ICYImageBrowser: UIPageViewController {
     
+    /// 如果没有设置，默认为切换导航栏显示
+    func setSingleTapHandler(handler:(() -> Void)?) {
+        singleTapHandler = handler
+    }
+    private var singleTapHandler: (Void -> Void)?
+    
     var imageDataSource: ICYImageBrowserDataSource?
     
     var startIndex: Int = 0
@@ -56,8 +62,7 @@ class ICYImageBrowser: UIPageViewController {
     }
     
     func cancelButtonPressed(sender: AnyObject) {
-        navigationController?.dismissViewControllerAnimated(false, completion: nil)
-        icyNavigation = nil
+        hide()
     }
     
     func doubleTapHandler(sender: AnyObject) {
@@ -67,6 +72,10 @@ class ICYImageBrowser: UIPageViewController {
     }
     
     func singleTapHandler(sender: AnyObject) {
+        if let handler = singleTapHandler {
+            handler()
+            return
+        }
         if let navigationHidden = navigationController?.navigationBarHidden {
             navigationController?.setNavigationBarHidden(!navigationHidden, animated: true)
         }
@@ -79,6 +88,11 @@ class ICYImageBrowser: UIPageViewController {
             }
         }
         return ""
+    }
+    
+    func hide() {
+        navigationController?.dismissViewControllerAnimated(false, completion: nil)
+        icyNavigation = nil
     }
     
     func show() {

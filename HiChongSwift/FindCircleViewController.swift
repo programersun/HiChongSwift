@@ -331,6 +331,10 @@ class FindCircleViewController: UITableViewController {
 //            performSegueWithIdentifier("showPageView", sender: data)
             let imageBrowser = ICYImageBrowser()
             imageBrowser.imageDataSource = self
+            imageBrowser.setSingleTapHandler({ [weak imageBrowser]() -> Void in
+                imageBrowser?.hide()
+                return
+            })
             imageBrowser.show()
         }
     }

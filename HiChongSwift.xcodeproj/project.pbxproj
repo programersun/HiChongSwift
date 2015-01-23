@@ -128,9 +128,9 @@
 		289FA3531A4955DD0097485C /* AboutMePetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FA3521A4955DD0097485C /* AboutMePetCell.swift */; };
 		289FA3551A4964D10097485C /* AboutMeFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289FA3541A4964D10097485C /* AboutMeFooter.xib */; };
 		289FA3571A4972000097485C /* AboutMeEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FA3561A4972000097485C /* AboutMeEditProfileViewController.swift */; };
-		28AA8F561A71E65E0070BF47 /* ICYImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F531A71E65E0070BF47 /* ICYImageBrowser.swift */; };
-		28AA8F571A71E65E0070BF47 /* ICYImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F541A71E65E0070BF47 /* ICYImageController.swift */; };
-		28AA8F581A71E65E0070BF47 /* ICYImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F551A71E65E0070BF47 /* ICYImageScrollView.swift */; };
+		28AA8F631A722D610070BF47 /* ICYImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F601A722D610070BF47 /* ICYImageBrowser.swift */; };
+		28AA8F641A722D610070BF47 /* ICYImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F611A722D610070BF47 /* ICYImageController.swift */; };
+		28AA8F651A722D610070BF47 /* ICYImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F621A722D610070BF47 /* ICYImageScrollView.swift */; };
 		28B9CEA51A49A97E004E6386 /* AboutMeModifyTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA41A49A97E004E6386 /* AboutMeModifyTextViewController.swift */; };
 		28B9CEA71A49A9BB004E6386 /* AboutMeModifyTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA61A49A9BB004E6386 /* AboutMeModifyTextCell.swift */; };
 		28B9CEA91A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */; };
@@ -376,9 +376,9 @@
 		289FA3521A4955DD0097485C /* AboutMePetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMePetCell.swift; sourceTree = "<group>"; };
 		289FA3541A4964D10097485C /* AboutMeFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMeFooter.xib; sourceTree = "<group>"; };
 		289FA3561A4972000097485C /* AboutMeEditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeEditProfileViewController.swift; sourceTree = "<group>"; };
-		28AA8F531A71E65E0070BF47 /* ICYImageBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageBrowser.swift; sourceTree = "<group>"; };
-		28AA8F541A71E65E0070BF47 /* ICYImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageController.swift; sourceTree = "<group>"; };
-		28AA8F551A71E65E0070BF47 /* ICYImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageScrollView.swift; sourceTree = "<group>"; };
+		28AA8F601A722D610070BF47 /* ICYImageBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageBrowser.swift; sourceTree = "<group>"; };
+		28AA8F611A722D610070BF47 /* ICYImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageController.swift; sourceTree = "<group>"; };
+		28AA8F621A722D610070BF47 /* ICYImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageScrollView.swift; sourceTree = "<group>"; };
 		28B9CEA41A49A97E004E6386 /* AboutMeModifyTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyTextViewController.swift; sourceTree = "<group>"; };
 		28B9CEA61A49A9BB004E6386 /* AboutMeModifyTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyTextCell.swift; sourceTree = "<group>"; };
 		28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyLocationViewController.swift; sourceTree = "<group>"; };
@@ -819,9 +819,9 @@
 		28AA8F521A71E6260070BF47 /* ICYImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				28AA8F531A71E65E0070BF47 /* ICYImageBrowser.swift */,
-				28AA8F541A71E65E0070BF47 /* ICYImageController.swift */,
-				28AA8F551A71E65E0070BF47 /* ICYImageScrollView.swift */,
+				28AA8F601A722D610070BF47 /* ICYImageBrowser.swift */,
+				28AA8F611A722D610070BF47 /* ICYImageController.swift */,
+				28AA8F621A722D610070BF47 /* ICYImageScrollView.swift */,
 			);
 			name = ICYImageBrowser;
 			sourceTree = "<group>";
@@ -1202,7 +1202,7 @@
 				28BE7C761A411ADE00F3BC2A /* FindAddImageCell.swift in Sources */,
 				28C1663A1A36E0A50090E061 /* ColorExtension.swift in Sources */,
 				28DE583B1A5BD93200B49046 /* GetUserInfoUserInfo.m in Sources */,
-				28AA8F571A71E65E0070BF47 /* ICYImageController.swift in Sources */,
+				28AA8F641A722D610070BF47 /* ICYImageController.swift in Sources */,
 				28C6DACB1A2FFDF600068848 /* MJRefreshBaseView.m in Sources */,
 				28876B2D1A42C2370002F635 /* LoginViewController.swift in Sources */,
 				28C231BA1A6521B4004AF7D8 /* AboutMeFeedBackViewController.swift in Sources */,
@@ -1266,7 +1266,7 @@
 				280A08AE1A5D3A240016A504 /* FindPetViewController.swift in Sources */,
 				28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */,
 				285925C51A6444BC00DB2F12 /* WikiGetADBase.m in Sources */,
-				28AA8F581A71E65E0070BF47 /* ICYImageScrollView.swift in Sources */,
+				28AA8F651A722D610070BF47 /* ICYImageScrollView.swift in Sources */,
 				28DE583A1A5BD93200B49046 /* GetUserInfoPetInfo.m in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
@@ -1294,7 +1294,7 @@
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
 				2813195A1A592B0D00913BC6 /* SquareHomeMsg.m in Sources */,
 				28876B281A42A4050002F635 /* WelcomeSinglePageViewController.swift in Sources */,
-				28AA8F561A71E65E0070BF47 /* ICYImageBrowser.swift in Sources */,
+				28AA8F631A722D610070BF47 /* ICYImageBrowser.swift in Sources */,
 				281319571A592B0D00913BC6 /* SquareHomeAd.m in Sources */,
 				2806FEAA1A4A5D2200D18543 /* LCYPetAllTypeFatherStyle.m in Sources */,
 				2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */,
