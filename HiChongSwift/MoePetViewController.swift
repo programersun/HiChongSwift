@@ -167,7 +167,10 @@ class MoePetViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if !editable || indexPath.row != 0 {
-            performSegueWithIdentifier("toPage", sender: indexPath)
+//            performSegueWithIdentifier("toPage", sender: indexPath)
+            let imageBrowser = ICYImageBrowser()
+            imageBrowser.imageDataSource = self
+            imageBrowser.show()
         }
         if editable && indexPath.row == 0 {
             if petId != nil {
@@ -260,6 +263,26 @@ extension MoePetViewController: UIImagePickerControllerDelegate, UINavigationCon
             self?.hideHUD()
             self?.alert("上传失败，请检查您的网络状况")
             return
+        }
+    }
+}
+
+extension MoePetViewController: ICYImageBrowserDataSource {
+    func numberOfImagesInICYImageBrowser(icyImageBrowser: ICYImageBrowser) -> Int {
+        if let data = detailInfo?.petImages as? [LCYPetDetailPetImages] {
+            return data.count
+        } else {
+            return 0
+        }
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, titleForIndex index: Int) -> String? {
+        return nil
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, pathForIndex index: Int) -> String? {
+        if let data = detailInfo?.petImages as? [LCYPetDetailPetImages] {
+            return data[index].petImg.toAbsolutePath()
+        } else {
+            return nil
         }
     }
 }
