@@ -313,10 +313,39 @@ class FindCircleViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let data = twitters![indexPath.row]
         if data.images != nil && data.images.count > 0 {
-            performSegueWithIdentifier("showPageView", sender: data)
+//            performSegueWithIdentifier("showPageView", sender: data)
+            let imageBrowser = ICYImageBrowser()
+            imageBrowser.imageDataSource = self
+            imageBrowser.show()
         }
     }
     
+}
+
+extension FindCircleViewController: ICYImageBrowserDataSource {
+    func numberOfImagesInICYImageBrowser(icyImageBrowser: ICYImageBrowser) -> Int {
+        if let selectedIndexPath = tableView.indexPathForSelectedRow() {
+            let data = twitters![selectedIndexPath.row]
+            return data.images.count
+        } else {
+            return 0
+        }
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, titleForIndex index: Int) -> String? {
+        return nil
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, pathForIndex index: Int) -> String? {
+        if let selectedIndexPath = tableView.indexPathForSelectedRow() {
+            let data = twitters![selectedIndexPath.row]
+            if let imageData = data.images[index] as? TwitterListImages {
+                return imageData.imagePath.toAbsolutePath()
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
 }
 
 extension FindCircleViewController: UIActionSheetDelegate {
