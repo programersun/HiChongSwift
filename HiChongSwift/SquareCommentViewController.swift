@@ -13,6 +13,8 @@ class SquareCommentViewController: UITableViewController {
     var businessID: String?
     var businessName: String?
     
+    weak var delegate: SquareCommentDelegate?
+    
     private var cellOnceToken: dispatch_once_t = 0
     
     private weak var starCell: SquareAddStarCell?
@@ -187,7 +189,12 @@ extension SquareCommentViewController: UIGestureRecognizerDelegate {
 extension SquareCommentViewController: UIAlertViewDelegate {
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if alertView.tag == 2001 {
+            delegate?.squareDidAddComment()
             navigationController?.popViewControllerAnimated(true)
         }
     }
+}
+
+protocol SquareCommentDelegate: class {
+    func squareDidAddComment()
 }

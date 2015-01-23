@@ -14,6 +14,8 @@ class SquareCommentListViewController: UITableViewController {
     var businessName: String?
     
     private var commentData: [SquareCommentListMsg]?
+    
+    private var currentPage = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,11 @@ class SquareCommentListViewController: UITableViewController {
         } else {
             reload()
         }
+        
+        tableView.addFooterWithCallback { [weak self]() -> Void in
+            self?.loadMore()
+            return
+        }
     }
     
 
@@ -49,6 +56,7 @@ class SquareCommentListViewController: UITableViewController {
             "business_id":  businessID!,
             "page":         "0"
         ]
+        currentPage = 0
         LCYNetworking.sharedInstance.POST(LCYApi.SquareCommentList, parameters: parameter, success: { [weak self](object) -> Void in
             let retrieved = SquareCommentListBase.modelObjectWithDictionary(object)
             if retrieved.result {
@@ -63,6 +71,31 @@ class SquareCommentListViewController: UITableViewController {
             return
         }) { [weak self](error) -> Void in
             self?.alert("网络连接异常")
+            return
+        }
+    }
+    
+    private func loadMore() {
+        currentPage++
+        let parameter = [
+            "business_id":  businessID!,
+            "page":         "\(currentPage)"
+        ]
+        LCYNetworking.sharedInstance.POST(LCYApi.SquareCommentList, parameters: parameter, success: { [weak self](object) -> Void in
+            let retrieved = SquareCommentListBase.modelObjectWithDictionary(object)
+            if retrieved.result {
+                if let msg = retrieved.msg as? [SquareCommentListMsg] {
+                    self?.commentData?.extend(msg)
+                }
+                self?.tableView.reloadData()
+            } else {
+                // 获取错误
+                self?.currentPage--
+            }
+            self?.tableView.footerEndRefreshing()
+        }) { [weak self](error) -> Void in
+            self?.currentPage--
+            self?.tableView.footerEndRefreshing()
             return
         }
     }
@@ -83,6 +116,7 @@ class SquareCommentListViewController: UITableViewController {
                 let destination = segue.destinationViewController as SquareCommentViewController
                 destination.businessID = businessID
                 destination.businessName = businessName
+                destination.delegate = self
             default:
                 break
             }
@@ -132,4 +166,10 @@ class SquareCommentListViewController: UITableViewController {
         return (height + 39.0 >= 80.0) ? height + 39.0 : 80.0
     }
 
+}
+
+extension SquareCommentListViewController: SquareCommentDelegate {
+    func squareDidAddComment() {
+        reload()
+    }
 }
