@@ -297,7 +297,22 @@ class FindCircleViewController: UITableViewController {
         case 0:
             imageBlockHeight = -8.0
         case 1:
-            imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+//            imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+            if let imageData = data.images[0] as? TwitterListImages {
+                if imageData.cutWidth.bridgeToObjectiveC().floatValue > imageData.cutHeight.bridgeToObjectiveC().floatValue {
+                    imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+                } else {
+                    imageBlockHeight = UIScreen.mainScreen().bounds.width * 2.0 / 3.0
+                }
+            }
+            
+//            if images[0].imageHeight.bridgeToObjectiveC().floatValue > images[0].imageWidth.bridgeToObjectiveC().floatValue {
+//                singleImageWidthConstraint.constant = UIScreen.mainScreen().bounds.width / 3.0 * 2.0
+//                icyImageBlockHeightConstraint.constant = CGFloat((images[0].cutHeight as NSString).floatValue) / CGFloat((images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+//            } else {
+//                icyImageBlockHeightConstraint.constant = UIScreen.mainScreen().bounds.width / 3.0 * 2.0
+//                singleImageWidthConstraint.constant = (UIScreen.mainScreen().bounds.width / 3.0 * 2.0) / CGFloat(images[0].cutHeight.bridgeToObjectiveC().floatValue) * CGFloat(images[0].cutWidth.bridgeToObjectiveC().floatValue)
+//            }
         case 2, 3:
             imageBlockHeight = screenWidth() / 3.0
         case 4, 5, 6:

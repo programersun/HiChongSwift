@@ -282,7 +282,14 @@ class FindTwitterCommentViewController: UITableViewController {
             case 0:
                 imageBlockHeight = -8.0
             case 1:
-                imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+//                imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+                if let imageData = data.images[0] as? TwitterListImages {
+                    if imageData.cutWidth.bridgeToObjectiveC().floatValue > imageData.cutHeight.bridgeToObjectiveC().floatValue {
+                        imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+                    } else {
+                        imageBlockHeight = UIScreen.mainScreen().bounds.width * 2.0 / 3.0
+                    }
+                }
             case 2, 3:
                 imageBlockHeight = screenWidth() / 3.0
             case 4, 5, 6:

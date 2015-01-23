@@ -47,8 +47,16 @@ class FindTwitterListCell: UITableViewCell {
     @IBOutlet weak var icyImageBlockHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var middleSizedImages: [UIImageView]!
     @IBOutlet private weak var onlyOneImageView: UIImageView!
+    @IBOutlet weak var singleImageWidthConstraint: NSLayoutConstraint!
+    let placeHolderColor = UIColor(white: 0.9, alpha: 1.0)
     var twitterImages: [TwitterListImages]? {
         didSet {
+            // 清除背景颜色
+            onlyOneImageView.backgroundColor = UIColor.clearColor()
+            for mid in middleSizedImages {
+                mid.backgroundColor = UIColor.clearColor()
+            }
+            // 设置图片
             if let images = twitterImages {
                 onlyOneImageView.image = nil
                 if images.count == 0 {
@@ -57,12 +65,19 @@ class FindTwitterListCell: UITableViewCell {
                         one.image = nil
                     }
                 } else if images.count == 1 {
-                    icyImageBlockHeightConstraint.constant = CGFloat((images[0].cutHeight as NSString).floatValue) / CGFloat((images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+                    if images[0].cutWidth.bridgeToObjectiveC().floatValue > images[0].cutHeight.bridgeToObjectiveC().floatValue {
+                        singleImageWidthConstraint.constant = UIScreen.mainScreen().bounds.width / 3.0 * 2.0
+                        icyImageBlockHeightConstraint.constant = CGFloat((images[0].cutHeight as NSString).floatValue) / CGFloat((images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+                    } else {
+                        icyImageBlockHeightConstraint.constant = UIScreen.mainScreen().bounds.width / 3.0 * 2.0
+                        singleImageWidthConstraint.constant = (UIScreen.mainScreen().bounds.width / 3.0 * 2.0) / CGFloat(images[0].cutHeight.bridgeToObjectiveC().floatValue) * CGFloat(images[0].cutWidth.bridgeToObjectiveC().floatValue)
+                    }
                     for one in middleSizedImages {
                         one.image = nil
                     }
                     if let url = NSURL(string: images[0].cutPath.toAbsolutePath()) {
                         onlyOneImageView.contentMode = .Center
+                        onlyOneImageView.backgroundColor = placeHolderColor
                         onlyOneImageView.setImageWithURLRequest(NSURLRequest(URL: url), placeholderImage: UIImage(named: "CirclePlaceHolderGray"), success: { [weak self](_, _, finalImage) -> Void in
                             self?.onlyOneImageView.image = finalImage
                             self?.onlyOneImageView.contentMode = .ScaleAspectFill
@@ -91,6 +106,7 @@ class FindTwitterListCell: UITableViewCell {
                             middle.image = nil
                         } else {
                             middle.contentMode = .Center
+                            middle.backgroundColor = placeHolderColor
                             if let url = NSURL(string: images[middle.tag - 1].cutPath.toAbsolutePath()) {
                                 middle.setImageWithURLRequest(NSURLRequest(URL: url), placeholderImage: UIImage(named: "CirclePlaceHolderGray"), success: { (_, _, finalImage) -> Void in
                                     middle.image = finalImage
@@ -195,6 +211,12 @@ class FindTwitterListCell: UITableViewCell {
         
         sepractorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
         sepratorImageView.image = LCYCommon.sharedInstance.circleSepratorImage
+        
+//        let placeHolderColor = UIColor(white: 0.95, alpha: 1.0)
+//        onlyOneImageView.backgroundColor = placeHolderColor
+//        for mid in middleSizedImages {
+//            mid.backgroundColor = placeHolderColor
+//        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
