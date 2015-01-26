@@ -11,6 +11,7 @@
 
 
 NSString *const kTwitterListMsgTwitterLatitude = @"twitter_latitude";
+NSString *const kTwitterListMsgIsRel = @"is_rel";
 NSString *const kTwitterListMsgTwitterType = @"twitter_type";
 NSString *const kTwitterListMsgSex = @"sex";
 NSString *const kTwitterListMsgTwitterId = @"twitter_id";
@@ -43,6 +44,7 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
 @implementation TwitterListMsg
 
 @synthesize twitterLatitude = _twitterLatitude;
+@synthesize isRel = _isRel;
 @synthesize twitterType = _twitterType;
 @synthesize sex = _sex;
 @synthesize twitterId = _twitterId;
@@ -79,6 +81,7 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
             self.twitterLatitude = [self objectOrNilForKey:kTwitterListMsgTwitterLatitude fromDictionary:dict];
+            self.isRel = [[self objectOrNilForKey:kTwitterListMsgIsRel fromDictionary:dict] doubleValue];
             self.twitterType = [self objectOrNilForKey:kTwitterListMsgTwitterType fromDictionary:dict];
             self.sex = [self objectOrNilForKey:kTwitterListMsgSex fromDictionary:dict];
             self.twitterId = [self objectOrNilForKey:kTwitterListMsgTwitterId fromDictionary:dict];
@@ -135,6 +138,7 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.twitterLatitude forKey:kTwitterListMsgTwitterLatitude];
+    [mutableDict setValue:[NSNumber numberWithDouble:self.isRel] forKey:kTwitterListMsgIsRel];
     [mutableDict setValue:self.twitterType forKey:kTwitterListMsgTwitterType];
     [mutableDict setValue:self.sex forKey:kTwitterListMsgSex];
     [mutableDict setValue:self.twitterId forKey:kTwitterListMsgTwitterId];
@@ -200,6 +204,7 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
     self = [super init];
 
     self.twitterLatitude = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterLatitude];
+    self.isRel = [aDecoder decodeDoubleForKey:kTwitterListMsgIsRel];
     self.twitterType = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterType];
     self.sex = [aDecoder decodeObjectForKey:kTwitterListMsgSex];
     self.twitterId = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterId];
@@ -228,6 +233,7 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
 {
 
     [aCoder encodeObject:_twitterLatitude forKey:kTwitterListMsgTwitterLatitude];
+    [aCoder encodeDouble:_isRel forKey:kTwitterListMsgIsRel];
     [aCoder encodeObject:_twitterType forKey:kTwitterListMsgTwitterType];
     [aCoder encodeObject:_sex forKey:kTwitterListMsgSex];
     [aCoder encodeObject:_twitterId forKey:kTwitterListMsgTwitterId];
@@ -258,6 +264,7 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
     if (copy) {
 
         copy.twitterLatitude = [self.twitterLatitude copyWithZone:zone];
+        copy.isRel = self.isRel;
         copy.twitterType = [self.twitterType copyWithZone:zone];
         copy.sex = [self.sex copyWithZone:zone];
         copy.twitterId = [self.twitterId copyWithZone:zone];

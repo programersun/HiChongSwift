@@ -359,10 +359,10 @@ extension FindCircleAddNewViewController: UIActionSheetDelegate {
             break
         case 1:
             // 从照片库中选择
-//            let imagePicker = UIImagePickerController()
-//            imagePicker.sourceType = .PhotoLibrary
-//            imagePicker.delegate = self
-//            self.presentViewController(imagePicker, animated: true, completion: nil)
+            //            let imagePicker = UIImagePickerController()
+            //            imagePicker.sourceType = .PhotoLibrary
+            //            imagePicker.delegate = self
+            //            self.presentViewController(imagePicker, animated: true, completion: nil)
             let multiPicker = ICYMultiImagePicker()
             multiPicker.maxSelectNumber = 9 - petImages.count
             multiPicker.delegate = self
@@ -416,6 +416,9 @@ extension FindCircleAddNewViewController: UIAlertViewDelegate {
 
 extension FindCircleAddNewViewController: ICYMultiImagePickerDelegate {
     func ICYMultiImagePickerDidSelectImages(images: [UIImage]) {
+        let smallImages = images.map({
+            UIImage(image: $0, scaledToFitToSize: CGSize(width: 600, height: 600))
+        })
         petImages.extend(images)
         imageCollectionView?.reloadData()
     }

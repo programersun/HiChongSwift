@@ -24,6 +24,17 @@ class AboutMeViewController: UITableViewController {
             }
         }
     }
+    private var keeperInfo : TwitterKeeperInfoMsg? {
+        didSet {
+            if let info = keeperInfo {
+                if info.isAttention == 1.0 {
+                    addRightButton("已关注", action: "removeCare:")
+                } else {
+                    addRightButton("关注", action: "addCare:")
+                }
+            }
+        }
+    }
     
     private let cannotSee = "该用户隐藏了这一项。"
     private let didnotFill = "用户未填写"
@@ -61,6 +72,25 @@ class AboutMeViewController: UITableViewController {
             leftButton.sizeToFit()
             let leftItem = UIBarButtonItem(customView: leftButton)
             navigationItem.leftBarButtonItem = leftItem
+        } else {
+            func initKeeperInfo() {
+                if let personID = otherUserID {
+                    let parameter = [
+                        "twitter_keeper": personID,
+                        "my_user_id": LCYCommon.sharedInstance.userName!
+                    ]
+                    LCYNetworking.sharedInstance.POST(LCYApi.TwitterKeeperInfo, parameters: parameter, success: { [weak self](object) -> Void in
+                        let retrieved = TwitterKeeperInfoBase.modelObjectWithDictionary(object)
+                        if retrieved.result {
+                            self?.keeperInfo = retrieved.msg
+                        }
+                        return
+                        }, failure: { [weak self](error) -> Void in
+                            return
+                    })
+                }
+            }
+            initKeeperInfo()
         }
         
         
@@ -125,6 +155,64 @@ class AboutMeViewController: UITableViewController {
             self?.tableView.tableFooterView = self?.addPetView
             return
         })
+    }
+    
+    func addCare(sender: AnyObject) {
+        if let personID = otherUserID {
+            let parameters = [
+                "user_id"       : LCYCommon.sharedInstance.userName!,
+                "to_user_id"    : personID,
+                "control"       : "1"
+            ]
+            navigationItem.rightBarButtonItem?.enabled = false
+            LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameters, success: { [weak self](object) -> Void in
+                if let result = object["result"] as? Bool {
+                    if result {
+                        //                        self?.alert("成功关注")
+                        self?.addRightButton("已关注", action: "removeCare:")
+                    } else {
+                        self?.alert("关注失败")
+                    }
+                } else {
+                    self?.alert("关注失败")
+                }
+                self?.navigationItem.rightBarButtonItem?.enabled = true
+                return
+                }, failure: { [weak self](error) -> Void in
+                    self?.alert("您的网络状态不佳哦")
+                    self?.navigationItem.rightBarButtonItem?.enabled = true
+                    return
+            })
+        }
+    }
+    
+    func removeCare(sender: AnyObject) {
+        if let personID = otherUserID {
+            let parameters = [
+                "user_id"       : LCYCommon.sharedInstance.userName!,
+                "to_user_id"    : personID,
+                "control"       : "2"
+            ]
+            navigationItem.rightBarButtonItem?.enabled = false
+            LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameters, success: { [weak self](object) -> Void in
+                if let result = object["result"] as? Bool {
+                    if result {
+                        //                        self?.alert("成功取消关注")
+                        self?.addRightButton("关注", action: "addCare:")
+                    } else {
+                        self?.alert("取消关注失败")
+                    }
+                } else {
+                    self?.alert("取消关注失败")
+                }
+                self?.navigationItem.rightBarButtonItem?.enabled = true
+                return
+                }, failure: { [weak self](error) -> Void in
+                    self?.alert("您的网络状态不佳哦")
+                    self?.navigationItem.rightBarButtonItem?.enabled = true
+                    return
+            })
+        }
     }
     
     override func didReceiveMemoryWarning() {

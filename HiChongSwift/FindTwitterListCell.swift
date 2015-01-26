@@ -230,6 +230,8 @@ class FindTwitterListCell: UITableViewCell {
     @IBAction func headBlockTouched(sender: AnyObject) {
         delegate?.findCircleListCellTitleClicked(indexPath)
     }
+    @IBAction func careButtonPressed(sender: AnyObject) {
+    }
     
     /// 发布时间
     @IBOutlet weak var timeLabel: UILabel!

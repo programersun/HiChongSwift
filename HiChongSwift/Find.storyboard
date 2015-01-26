@@ -575,7 +575,7 @@
                                             </connections>
                                         </collectionView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeI-uV-rE2">
-                                            <rect key="frame" x="8" y="868" width="200" height="24"/>
+                                            <rect key="frame" x="8" y="868" width="300" height="24"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3z-4W-CoC">
                                                     <rect key="frame" x="0.0" y="1" width="54" height="22"/>
@@ -619,16 +619,27 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTs-wv-d8h">
+                                                    <rect key="frame" x="228" y="1" width="70" height="22"/>
+                                                    <state key="normal" image="twiAddCare">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="careButtonPressed:" destination="RC1-q3-AwT" eventType="touchUpInside" id="aol-w4-zDp"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="qms-vI-nWS" firstAttribute="leading" secondItem="s3z-4W-CoC" secondAttribute="trailing" id="42d-79-8qY"/>
+                                                <constraint firstAttribute="centerY" secondItem="NTs-wv-d8h" secondAttribute="centerY" id="5hb-bv-j0z"/>
                                                 <constraint firstItem="dRp-ju-uhg" firstAttribute="leading" secondItem="qms-vI-nWS" secondAttribute="trailing" constant="8" id="6Qz-Eo-8AO"/>
                                                 <constraint firstItem="s3z-4W-CoC" firstAttribute="leading" secondItem="aeI-uV-rE2" secondAttribute="leading" id="6ah-eU-hHL"/>
+                                                <constraint firstItem="NTs-wv-d8h" firstAttribute="leading" secondItem="Y0y-Xa-QSp" secondAttribute="trailing" constant="8" id="7ch-LC-B0x"/>
                                                 <constraint firstAttribute="centerY" secondItem="Y0y-Xa-QSp" secondAttribute="centerY" id="D68-Qt-ccy"/>
                                                 <constraint firstItem="Y0y-Xa-QSp" firstAttribute="leading" secondItem="Tea-PD-o0A" secondAttribute="trailing" constant="8" id="LDU-jV-yiV"/>
                                                 <constraint firstAttribute="centerY" secondItem="Tea-PD-o0A" secondAttribute="centerY" id="QiT-4N-3xt"/>
-                                                <constraint firstAttribute="width" constant="200" id="Teo-wk-a8f"/>
+                                                <constraint firstAttribute="width" constant="300" id="Teo-wk-a8f"/>
                                                 <constraint firstAttribute="centerY" secondItem="qms-vI-nWS" secondAttribute="centerY" id="WkL-cC-IHc"/>
                                                 <constraint firstItem="Tea-PD-o0A" firstAttribute="leading" secondItem="dRp-ju-uhg" secondAttribute="trailing" constant="2" id="c3e-hD-NZF"/>
                                                 <constraint firstAttribute="height" constant="24" id="dum-h7-yps"/>
@@ -2551,6 +2562,7 @@ So as I pray, Unlimited Blade Works.</string>
         <image name="circleZan" width="40" height="20"/>
         <image name="sqFemale" width="15" height="15"/>
         <image name="sqMale" width="15" height="15"/>
+        <image name="twiAddCare" width="70" height="20"/>
         <image name="twiComment" width="54" height="20"/>
         <image name="twiShare" width="54" height="20"/>
         <image name="twiZan" width="54" height="20"/>

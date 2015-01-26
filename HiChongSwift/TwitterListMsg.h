@@ -12,6 +12,7 @@
 @interface TwitterListMsg : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *twitterLatitude;
+@property (nonatomic, assign) double isRel;
 @property (nonatomic, strong) NSString *twitterType;
 @property (nonatomic, strong) NSString *sex;
 @property (nonatomic, strong) NSString *twitterId;
