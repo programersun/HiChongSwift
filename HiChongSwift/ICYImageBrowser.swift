@@ -16,6 +16,16 @@ class ICYImageBrowser: UIPageViewController {
     }
     private var singleTapHandler: (Void -> Void)?
     
+    /// 导航栏右侧按钮样式，默认为没有
+    func setRightButton(#image: UIImage?, title: String?, handler:((index: Int) -> Void)?) {
+        rightButtonHandler = handler
+        rightButtonImage = image
+        rightButtonTitle = title
+    }
+    private var rightButtonHandler: ((Int) -> Void)?
+    private var rightButtonImage: UIImage?
+    private var rightButtonTitle: String?
+    
     var imageDataSource: ICYImageBrowserDataSource?
     
     var startIndex: Int = 0
@@ -44,6 +54,7 @@ class ICYImageBrowser: UIPageViewController {
             let firstPage = ICYImageController()
             firstPage.index = startIndex
             firstPage.imagePath = imageDataSource.icyImageBrowser(self, pathForIndex: startIndex)
+            firstPage.image = imageDataSource.icyImageBrowser(self, imageForIndex: startIndex)
             setViewControllers([firstPage], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
             navigationItem.title = navigationTitle()
         }
@@ -99,6 +110,48 @@ class ICYImageBrowser: UIPageViewController {
         icyNavigation = UINavigationController(rootViewController: self)
         UIApplication.sharedApplication().delegate?.window??.rootViewController?.presentViewController(icyNavigation, animated: false
             , completion: nil)
+        if let handler = rightButtonHandler {
+            var rightButton: UIBarButtonItem!
+            if let image = rightButtonImage {
+                rightButton = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonHandler:")
+            } else if let title = rightButtonTitle {
+                rightButton = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: self, action: "rightButtonHandler:")
+            } else {
+                rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "rightButtonHandler:")
+            }
+            navigationItem.rightBarButtonItem = rightButton
+        }
+    }
+    
+    func rightButtonHandler(sender: AnyObject) {
+        if let handler = rightButtonHandler {
+            if let currentController = viewControllers.first as? ICYImageController {
+                handler(currentController.index)
+            }
+        }
+    }
+    
+    func reloadData() {
+        var currentIndex = 0
+        if let currentController = viewControllers.first as? ICYImageController {
+            currentIndex = currentController.index
+        }
+        if let icyDataSource = imageDataSource {
+            let totalCount = icyDataSource.numberOfImagesInICYImageBrowser(self)
+            if totalCount <= 0 {
+                hide()
+                return
+            }
+            if currentIndex > totalCount - 1 {
+                currentIndex = totalCount - 1
+            }
+            let newPage = ICYImageController()
+            newPage.index = currentIndex
+            newPage.imagePath = icyDataSource.icyImageBrowser(self, pathForIndex: newPage.index)
+            newPage.image = icyDataSource.icyImageBrowser(self, imageForIndex: newPage.index)
+            setViewControllers([newPage], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        }
+        navigationItem.title = navigationTitle()
     }
     
     deinit{
@@ -116,6 +169,7 @@ extension ICYImageBrowser: UIPageViewControllerDataSource, UIPageViewControllerD
                     let previous = ICYImageController()
                     previous.index = currentController.index - 1
                     previous.imagePath = icyDataSource.icyImageBrowser(self, pathForIndex: previous.index)
+                    previous.image = icyDataSource.icyImageBrowser(self, imageForIndex: previous.index)
                     return previous
                 } else {
                     return nil
@@ -133,6 +187,7 @@ extension ICYImageBrowser: UIPageViewControllerDataSource, UIPageViewControllerD
                     let next = ICYImageController()
                     next.index = currentController.index + 1
                     next.imagePath = icyDataSource.icyImageBrowser(self, pathForIndex: next.index)
+                    next.image = icyDataSource.icyImageBrowser(self, imageForIndex: next.index)
                     return next
                 }
             } else {
@@ -152,6 +207,7 @@ extension ICYImageBrowser: UIPageViewControllerDataSource, UIPageViewControllerD
 
 protocol ICYImageBrowserDataSource {
     func numberOfImagesInICYImageBrowser(icyImageBrowser: ICYImageBrowser) -> Int
-    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, pathForIndex index: Int) -> String?
-    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, titleForIndex index: Int) -> String?
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, pathForIndex pathIndex: Int) -> String?
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, imageForIndex imageIndex: Int) -> UIImage?
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, titleForIndex titleIndex: Int) -> String?
 }

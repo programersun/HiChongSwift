@@ -57,6 +57,8 @@ extension FindAddImageCell: UICollectionViewDelegate, UICollectionViewDataSource
         if let unwrapped = self.collectionDataSource {
             if indexPath.row == unwrapped.addImageCount() {
                 unwrapped.addImageWillTakePicture()
+            } else {
+                unwrapped.addImageDidSelect(indexPath.row)
             }
         }
     }
@@ -73,5 +75,6 @@ protocol FindAddImageSource: class {
     func addImageCount() -> Int
     func addImageAt(index: Int) -> UIImage?
     func addImageWillTakePicture()
+    func addImageDidSelect(index: Int)
 }
 

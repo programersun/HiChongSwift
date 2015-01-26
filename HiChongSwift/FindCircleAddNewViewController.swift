@@ -314,6 +314,33 @@ extension FindCircleAddNewViewController: FindAddImageSource {
     func addImageAt(index: Int) -> UIImage? {
         return petImages[index]
     }
+    func addImageDidSelect(index: Int) {
+        println("index is \(index)")
+        let imageBrowser = ICYImageBrowser()
+        imageBrowser.imageDataSource = self
+        imageBrowser.startIndex = index
+        imageBrowser.setRightButton(image: nil, title: "移除") { [weak self](index) -> Void in
+            self?.petImages.removeAtIndex(index)
+            self?.imageCollectionView?.reloadData()
+            imageBrowser.reloadData()
+        }
+        imageBrowser.show()
+    }
+}
+
+extension FindCircleAddNewViewController: ICYImageBrowserDataSource {
+    func numberOfImagesInICYImageBrowser(icyImageBrowser: ICYImageBrowser) -> Int {
+        return petImages.count
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, pathForIndex index: Int) -> String? {
+        return nil
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, titleForIndex index: Int) -> String? {
+        return nil
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, imageForIndex imageIndex: Int) -> UIImage? {
+        return petImages[imageIndex]
+    }
 }
 
 extension FindCircleAddNewViewController: UIActionSheetDelegate {

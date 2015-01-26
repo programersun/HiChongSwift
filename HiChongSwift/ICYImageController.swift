@@ -12,6 +12,7 @@ class ICYImageController: UIViewController {
     
     var index: Int = 0
     var imagePath: String?
+    var image: UIImage?
     var placeHolderImage: UIImage?
     var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
     
@@ -21,7 +22,7 @@ class ICYImageController: UIViewController {
     // 图片大小限制
     weak var imageHeight: NSLayoutConstraint?
     weak var imageWidth: NSLayoutConstraint?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +40,10 @@ class ICYImageController: UIViewController {
         
         indicator.startAnimating()
         // 配置ImageView
-        if let url = NSURL(string: imagePath ?? "") {
+        if image != nil {
+            mainImageView.image = image
+            indicator.stopAnimating()
+        } else if let url = NSURL(string: imagePath ?? "") {
             let urlRequest = NSURLRequest(URL: url)
             if let placeHolder = placeHolderImage {
             } else {
@@ -48,9 +52,9 @@ class ICYImageController: UIViewController {
                     self?.indicator.stopAnimating()
                     self?.updateImageConstraint()
                     return
-                }, failure: { [weak self](_, _, _) -> Void in
-                    self?.indicator.stopAnimating()
-                    return
+                    }, failure: { [weak self](_, _, _) -> Void in
+                        self?.indicator.stopAnimating()
+                        return
                 })
             }
         }

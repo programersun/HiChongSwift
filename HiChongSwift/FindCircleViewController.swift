@@ -365,6 +365,9 @@ extension FindCircleViewController: ICYImageBrowserDataSource {
             return nil
         }
     }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, imageForIndex imageIndex: Int) -> UIImage? {
+        return nil
+    }
 }
 
 extension FindCircleViewController: UIActionSheetDelegate {
