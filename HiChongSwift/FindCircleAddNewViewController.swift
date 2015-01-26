@@ -275,7 +275,7 @@ class FindCircleAddNewViewController: UITableViewController {
         case 1:
             return 44.0
         case 2:
-            return 86.0
+            return 286.0
         default:
             return 44.0
         }
@@ -318,6 +318,10 @@ extension FindCircleAddNewViewController: FindAddImageSource {
 
 extension FindCircleAddNewViewController: UIActionSheetDelegate {
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if petImages.count >= 9 {
+            alert("您最多可以上传9张照片")
+            return
+        }
         switch buttonIndex {
         case 0:
             // 我要拍照
@@ -328,10 +332,14 @@ extension FindCircleAddNewViewController: UIActionSheetDelegate {
             break
         case 1:
             // 从照片库中选择
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = .PhotoLibrary
-            imagePicker.delegate = self
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+//            let imagePicker = UIImagePickerController()
+//            imagePicker.sourceType = .PhotoLibrary
+//            imagePicker.delegate = self
+//            self.presentViewController(imagePicker, animated: true, completion: nil)
+            let multiPicker = ICYMultiImagePicker()
+            multiPicker.maxSelectNumber = 9 - petImages.count
+            multiPicker.delegate = self
+            multiPicker.show()
             break
         default:
             break
@@ -376,6 +384,13 @@ extension FindCircleAddNewViewController: UIAlertViewDelegate {
             delegate?.addCircleDone()
             navigationController?.popViewControllerAnimated(true)
         }
+    }
+}
+
+extension FindCircleAddNewViewController: ICYMultiImagePickerDelegate {
+    func ICYMultiImagePickerDidSelectImages(images: [UIImage]) {
+        petImages.extend(images)
+        imageCollectionView?.reloadData()
     }
 }
 

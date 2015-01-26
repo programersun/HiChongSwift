@@ -235,7 +235,12 @@ class AboutMeViewController: UITableViewController {
                 cell.imageView?.image = UIImage(named: "AboutMeMid1")
                 if userInfo?.userInfo.fTip == "1" {
                     if let text = userInfo?.userInfo.tip {
-                        cell.textLabel?.text = text
+                        if countElements(text) == 0 {
+                            cell.textLabel?.textColor = UIColor.lightGrayColor()
+                            cell.textLabel?.text = didnotFill
+                        } else {
+                            cell.textLabel?.text = text
+                        }
                     } else {
                         cell.textLabel?.textColor = UIColor.lightGrayColor()
                         cell.textLabel?.text = didnotFill
@@ -291,7 +296,12 @@ class AboutMeViewController: UITableViewController {
                 cell.imageView?.image = UIImage(named: "AboutMeMid3")
                 if userInfo?.userInfo.fTelephone == "1" {
                     if let text = userInfo?.userInfo.telephone {
-                        cell.textLabel?.text = text
+                        if countElements(text) == 0 {
+                            cell.textLabel?.textColor = UIColor.lightGrayColor()
+                            cell.textLabel?.text = didnotFill
+                        } else {
+                            cell.textLabel?.text = text
+                        }
                     } else {
                         cell.textLabel?.textColor = UIColor.lightGrayColor()
                         cell.textLabel?.text = didnotFill
@@ -304,7 +314,12 @@ class AboutMeViewController: UITableViewController {
                 cell.imageView?.image = UIImage(named: "AboutMeMid4")
                 if userInfo?.userInfo.fCellphone == "1" {
                     if let text = userInfo?.userInfo.userName {
-                        cell.textLabel?.text = text
+                        if countElements(text) == 0 {
+                            cell.textLabel?.textColor = UIColor.lightGrayColor()
+                            cell.textLabel?.text = didnotFill
+                        } else {
+                            cell.textLabel?.text = text
+                        }
                     } else {
                         cell.textLabel?.textColor = UIColor.lightGrayColor()
                         cell.textLabel?.text = didnotFill

@@ -44,7 +44,7 @@ extension FindAddImageCell: UICollectionViewDelegate, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(FindAddImageCollectionCell.identifier, forIndexPath: indexPath) as FindAddImageCollectionCell
         if let dataSource = collectionDataSource {
             if indexPath.row < dataSource.addImageCount() {
-                cell.icyImageView.contentMode = UIViewContentMode.ScaleToFill
+                cell.icyImageView.contentMode = UIViewContentMode.ScaleAspectFill
                 cell.icyImageView.image = dataSource.addImageAt(indexPath.row)
             } else {
                 cell.icyImageView.contentMode = UIViewContentMode.Center

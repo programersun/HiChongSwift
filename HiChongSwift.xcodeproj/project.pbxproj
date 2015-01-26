@@ -112,6 +112,10 @@
 		289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289029301A48083E00A8B3F5 /* RegionPickerViewController.swift */; };
 		2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */; };
 		289255901A3EEEB90056606F /* LCYCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2892558F1A3EEEB90056606F /* LCYCommon.swift */; };
+		2894AD971A75F18D002ED6E6 /* ICYMultiImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894AD931A75F18D002ED6E6 /* ICYMultiImageCollectionCell.swift */; };
+		2894AD981A75F18D002ED6E6 /* ICYMultiImageGreenCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894AD941A75F18D002ED6E6 /* ICYMultiImageGreenCircle.swift */; };
+		2894AD991A75F18D002ED6E6 /* ICYMultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894AD951A75F18D002ED6E6 /* ICYMultiImagePicker.swift */; };
+		2894AD9A1A75F18D002ED6E6 /* ICYMultiImagePickerConstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2894AD961A75F18D002ED6E6 /* ICYMultiImagePickerConstance.swift */; };
 		28955A3B1A3E840C00A1E4BC /* SquareCommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */; };
 		28955A3D1A3E843600A1E4BC /* SquareCommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */; };
 		28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */; };
@@ -356,6 +360,10 @@
 		289029301A48083E00A8B3F5 /* RegionPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionPickerViewController.swift; sourceTree = "<group>"; };
 		2892558D1A3EEBDE0056606F /* SquareAddCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareAddCommentCell.swift; sourceTree = "<group>"; };
 		2892558F1A3EEEB90056606F /* LCYCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCYCommon.swift; sourceTree = "<group>"; };
+		2894AD931A75F18D002ED6E6 /* ICYMultiImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYMultiImageCollectionCell.swift; sourceTree = "<group>"; };
+		2894AD941A75F18D002ED6E6 /* ICYMultiImageGreenCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYMultiImageGreenCircle.swift; sourceTree = "<group>"; };
+		2894AD951A75F18D002ED6E6 /* ICYMultiImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYMultiImagePicker.swift; sourceTree = "<group>"; };
+		2894AD961A75F18D002ED6E6 /* ICYMultiImagePickerConstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYMultiImagePickerConstance.swift; sourceTree = "<group>"; };
 		28955A3A1A3E840C00A1E4BC /* SquareCommentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListViewController.swift; sourceTree = "<group>"; };
 		28955A3C1A3E843600A1E4BC /* SquareCommentListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCommentListCell.swift; sourceTree = "<group>"; };
 		28955A3E1A3E84EC00A1E4BC /* OtherExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherExtensions.swift; sourceTree = "<group>"; };
@@ -816,6 +824,17 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		2894AD921A75F173002ED6E6 /* ICYMultiImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				2894AD951A75F18D002ED6E6 /* ICYMultiImagePicker.swift */,
+				2894AD931A75F18D002ED6E6 /* ICYMultiImageCollectionCell.swift */,
+				2894AD941A75F18D002ED6E6 /* ICYMultiImageGreenCircle.swift */,
+				2894AD961A75F18D002ED6E6 /* ICYMultiImagePickerConstance.swift */,
+			);
+			name = ICYMultiImagePicker;
+			sourceTree = "<group>";
+		};
 		28AA8F521A71E6260070BF47 /* ICYImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -903,6 +922,7 @@
 		28C6DAB81A2FFDB300068848 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				2894AD921A75F173002ED6E6 /* ICYMultiImagePicker */,
 				28AA8F521A71E6260070BF47 /* ICYImageBrowser */,
 				28876B1C1A427C7D0002F635 /* UIImage+Resize.h */,
 				28876B1D1A427C7D0002F635 /* UIImage+Resize.m */,
@@ -1210,6 +1230,7 @@
 				2806FEB31A4A651B00D18543 /* LCYPetSubTypeChildStyle.m in Sources */,
 				287941AC1A49F56C00DECA50 /* LCYPetDetailPetImages.m in Sources */,
 				28D52E9C1A6CE27B00C17CF0 /* TwitterListImages.m in Sources */,
+				2894AD981A75F18D002ED6E6 /* ICYMultiImageGreenCircle.swift in Sources */,
 				2806FEB91A4A8A6A00D18543 /* AgePickerViewController.swift in Sources */,
 				286D1D0A1A3AAE9A005C1D36 /* SquareDetailViewController.swift in Sources */,
 				28026F371A4996E10082A2EE /* AboutMeSwitchCell.swift in Sources */,
@@ -1217,6 +1238,7 @@
 				28BE7C821A41554200F3BC2A /* FindSearchResultViewController.swift in Sources */,
 				289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
+				2894AD9A1A75F18D002ED6E6 /* ICYMultiImagePickerConstance.swift in Sources */,
 				285E6A261A4C06FD00DC44F4 /* WikiCollectionListViewController.swift in Sources */,
 				28801DDD1A63B1CB00743AA9 /* FindTwitterImageViewController.swift in Sources */,
 				28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */,
@@ -1243,6 +1265,7 @@
 				280BBA271A6C9FBA00C5986F /* FindTwitterListCell.swift in Sources */,
 				2848C8DA1A663DFB00774CD9 /* MainDialogViewController.swift in Sources */,
 				2859CF521A657D8D00C032BD /* FindTwitterCommentListCell.swift in Sources */,
+				2894AD991A75F18D002ED6E6 /* ICYMultiImagePicker.swift in Sources */,
 				28876B211A429DDA0002F635 /* AboutMeViewController.swift in Sources */,
 				28E182B41A4AB0AB00E3001A /* CommonUploadBase.m in Sources */,
 				2806FEAC1A4A62CA00D18543 /* PetSubTypeViewController.swift in Sources */,
@@ -1268,6 +1291,7 @@
 				285925C51A6444BC00DB2F12 /* WikiGetADBase.m in Sources */,
 				28AA8F651A722D610070BF47 /* ICYImageScrollView.swift in Sources */,
 				28DE583A1A5BD93200B49046 /* GetUserInfoPetInfo.m in Sources */,
+				2894AD971A75F18D002ED6E6 /* ICYMultiImageCollectionCell.swift in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
 				283C0E4A1A4BBA9F00C64B11 /* WikiMidCell.swift in Sources */,
