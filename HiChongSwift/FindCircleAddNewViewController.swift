@@ -275,7 +275,7 @@ class FindCircleAddNewViewController: UITableViewController {
         case 1:
             return 44.0
         case 2:
-            return 286.0
+            return UIScreen.mainScreen().bounds.width / 4.0 * 3.0 + 20.0
         default:
             return 44.0
         }

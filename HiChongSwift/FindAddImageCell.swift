@@ -32,7 +32,7 @@ class FindAddImageCell: UITableViewCell {
 
 }
 
-extension FindAddImageCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension FindAddImageCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let dataSource = self.collectionDataSource {
             return 1 + dataSource.addImageCount()
@@ -59,6 +59,13 @@ extension FindAddImageCell: UICollectionViewDelegate, UICollectionViewDataSource
                 unwrapped.addImageWillTakePicture()
             }
         }
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width = UIScreen.mainScreen().bounds.width / 4.0 - 11.0
+        return CGSize(width: width, height: width)
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 4.0, left: 4.0, bottom: 4.0, right: 4.0)
     }
 }
 
