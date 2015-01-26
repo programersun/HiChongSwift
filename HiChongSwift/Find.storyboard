@@ -221,7 +221,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="王自健" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk4-Ch-GhS">
-                                                    <rect key="frame" x="77" y="8" width="42" height="17"/>
+                                                    <rect key="frame" x="98" y="8" width="42" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -232,8 +232,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xxk-Xi-zCn">
-                                                    <rect key="frame" x="77" y="31" width="69" height="22"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxk-Xi-zCn">
+                                                    <rect key="frame" x="77" y="33" width="74" height="22"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eru-n7-q2G">
                                                             <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
@@ -270,8 +270,8 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Wd-0h-tgW">
-                                                    <rect key="frame" x="154" y="31" width="47" height="22"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wd-0h-tgW">
+                                                    <rect key="frame" x="158" y="33" width="52" height="22"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW8-5m-5d5">
                                                             <rect key="frame" x="8" y="3" width="36" height="17"/>
@@ -296,9 +296,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJb-2a-teR">
                                                     <rect key="frame" x="523" y="8" width="65" height="22"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H70-tR-nQa">
-                                                            <rect key="frame" x="21" y="6" width="23" height="11"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H70-tR-nQa">
+                                                            <rect key="frame" x="18" y="5" width="31" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -311,6 +311,9 @@
                                                         <constraint firstAttribute="centerY" secondItem="H70-tR-nQa" secondAttribute="centerY" id="w5q-wv-lo6"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqMale" translatesAutoresizingMaskIntoConstraints="NO" id="H2H-sU-ksx">
+                                                    <rect key="frame" x="77" y="9" width="15" height="15"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -318,16 +321,18 @@
                                                 <constraint firstItem="Xxk-Xi-zCn" firstAttribute="top" secondItem="3Wd-0h-tgW" secondAttribute="top" id="2Cb-VG-zqA"/>
                                                 <constraint firstAttribute="trailing" secondItem="nJb-2a-teR" secondAttribute="trailing" constant="12" id="3hg-9R-KwP"/>
                                                 <constraint firstItem="vDa-Tv-o67" firstAttribute="top" secondItem="0Ns-GY-Xm7" secondAttribute="top" id="Dh6-TZ-zLQ"/>
+                                                <constraint firstItem="Sk4-Ch-GhS" firstAttribute="leading" secondItem="H2H-sU-ksx" secondAttribute="trailing" constant="6" id="E26-0t-Wfk"/>
                                                 <constraint firstAttribute="height" constant="80" id="FJp-6j-xfh"/>
                                                 <constraint firstItem="3Wd-0h-tgW" firstAttribute="leading" secondItem="Xxk-Xi-zCn" secondAttribute="trailing" constant="8" id="Fhm-0o-gfy"/>
                                                 <constraint firstItem="nJb-2a-teR" firstAttribute="top" secondItem="0Ns-GY-Xm7" secondAttribute="top" constant="8" id="JPh-aA-0fZ"/>
-                                                <constraint firstItem="Sk4-Ch-GhS" firstAttribute="leading" secondItem="vDa-Tv-o67" secondAttribute="trailing" constant="8" id="LLO-hh-5Y3"/>
                                                 <constraint firstItem="t2x-f0-SxH" firstAttribute="top" secondItem="vDa-Tv-o67" secondAttribute="bottom" constant="4" id="PPu-t2-npe"/>
                                                 <constraint firstItem="vDa-Tv-o67" firstAttribute="leading" secondItem="0Ns-GY-Xm7" secondAttribute="leading" constant="8" id="Xdi-40-x3b"/>
                                                 <constraint firstItem="t2x-f0-SxH" firstAttribute="leading" secondItem="0Ns-GY-Xm7" secondAttribute="leading" constant="8" id="Yfe-tr-19R"/>
                                                 <constraint firstItem="Xxk-Xi-zCn" firstAttribute="leading" secondItem="vDa-Tv-o67" secondAttribute="trailing" constant="8" id="cNa-5N-2dj"/>
+                                                <constraint firstItem="H2H-sU-ksx" firstAttribute="leading" secondItem="vDa-Tv-o67" secondAttribute="trailing" constant="8" id="dVm-XT-Otw"/>
                                                 <constraint firstItem="Xxk-Xi-zCn" firstAttribute="top" secondItem="Sk4-Ch-GhS" secondAttribute="bottom" constant="8" id="gYB-Hi-eXg"/>
                                                 <constraint firstAttribute="trailing" secondItem="t2x-f0-SxH" secondAttribute="trailing" constant="8" id="t56-7D-lE4"/>
+                                                <constraint firstItem="H2H-sU-ksx" firstAttribute="centerY" secondItem="Sk4-Ch-GhS" secondAttribute="centerY" id="uRY-fG-3uk"/>
                                             </constraints>
                                             <connections>
                                                 <action selector="headBlockTouched:" destination="RC1-q3-AwT" eventType="touchUpInside" id="L6D-Xm-LMX"/>
@@ -573,7 +578,7 @@
                                             <rect key="frame" x="8" y="868" width="200" height="24"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3z-4W-CoC">
-                                                    <rect key="frame" x="0.0" y="1" width="38" height="22"/>
+                                                    <rect key="frame" x="0.0" y="1" width="54" height="22"/>
                                                     <state key="normal" image="twiZan">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -582,7 +587,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRp-ju-uhg">
-                                                    <rect key="frame" x="66" y="1" width="38" height="22"/>
+                                                    <rect key="frame" x="82" y="1" width="54" height="22"/>
                                                     <state key="normal" image="twiComment">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -591,7 +596,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qms-vI-nWS">
-                                                    <rect key="frame" x="38" y="7" width="20" height="10"/>
+                                                    <rect key="frame" x="54" y="7" width="20" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="nRb-Iq-MGa"/>
                                                     </constraints>
@@ -600,7 +605,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tea-PD-o0A">
-                                                    <rect key="frame" x="106" y="7" width="20" height="10"/>
+                                                    <rect key="frame" x="138" y="7" width="20" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="gyV-rJ-r08"/>
                                                     </constraints>
@@ -609,7 +614,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-Xa-QSp">
-                                                    <rect key="frame" x="134" y="1" width="38" height="22"/>
+                                                    <rect key="frame" x="166" y="1" width="54" height="22"/>
                                                     <state key="normal" image="twiShare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -657,6 +662,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentNumberLabel" destination="Tea-PD-o0A" id="OuU-GZ-2bE"/>
+                                    <outlet property="genderImageView" destination="H2H-sU-ksx" id="yy3-k8-X6x"/>
                                     <outlet property="headerBlockView" destination="NzD-Hz-tYs" id="sDm-pH-jVn"/>
                                     <outlet property="icyCollectionView" destination="elI-6K-3md" id="9cI-c8-Hq8"/>
                                     <outlet property="icyContentBlockHeight" destination="FJp-6j-xfh" id="oFX-Xt-dk5"/>
@@ -666,6 +672,7 @@
                                     <outlet property="keeperNameLabel" destination="Sk4-Ch-GhS" id="QvU-Ms-w3y"/>
                                     <outlet property="onlyOneImageView" destination="NMf-sm-bO7" id="i7n-vT-5po"/>
                                     <outlet property="petAvatarImageView" destination="eru-n7-q2G" id="nGL-u9-iai"/>
+                                    <outlet property="petCateBackView" destination="3Wd-0h-tgW" id="csN-tH-Qvl"/>
                                     <outlet property="petCateNameLabel" destination="xW8-5m-5d5" id="WUh-ZJ-Dab"/>
                                     <outlet property="petNicknameLabel" destination="JmC-2Q-KZ0" id="xSd-wE-0vE"/>
                                     <outlet property="sepractorHeightConstraint" destination="bCw-Ba-WeG" id="c3R-0G-COJ"/>
@@ -1839,7 +1846,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             <rect key="frame" x="8" y="868" width="200" height="24"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5E-Ub-twU">
-                                                    <rect key="frame" x="0.0" y="1" width="38" height="22"/>
+                                                    <rect key="frame" x="0.0" y="1" width="54" height="22"/>
                                                     <state key="normal" image="twiZan">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1848,7 +1855,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-zi-PQP">
-                                                    <rect key="frame" x="66" y="1" width="38" height="22"/>
+                                                    <rect key="frame" x="82" y="1" width="54" height="22"/>
                                                     <state key="normal" image="twiComment">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1857,7 +1864,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyG-rt-AjP">
-                                                    <rect key="frame" x="38" y="7" width="20" height="10"/>
+                                                    <rect key="frame" x="54" y="7" width="20" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="yf1-3B-gGy"/>
                                                     </constraints>
@@ -1866,7 +1873,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJn-5Z-WWV">
-                                                    <rect key="frame" x="106" y="7" width="20" height="10"/>
+                                                    <rect key="frame" x="138" y="7" width="20" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="RXE-MF-990"/>
                                                     </constraints>
@@ -1875,7 +1882,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF4-x4-kvE">
-                                                    <rect key="frame" x="134" y="1" width="38" height="22"/>
+                                                    <rect key="frame" x="166" y="1" width="54" height="22"/>
                                                     <state key="normal" image="twiShare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -2543,9 +2550,10 @@ So as I pray, Unlimited Blade Works.</string>
         <image name="circlePing" width="40" height="20"/>
         <image name="circleZan" width="40" height="20"/>
         <image name="sqFemale" width="15" height="15"/>
-        <image name="twiComment" width="38" height="14"/>
-        <image name="twiShare" width="38" height="14"/>
-        <image name="twiZan" width="38" height="14"/>
+        <image name="sqMale" width="15" height="15"/>
+        <image name="twiComment" width="54" height="20"/>
+        <image name="twiShare" width="54" height="20"/>
+        <image name="twiZan" width="54" height="20"/>
         <image name="upHeart" width="10" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>

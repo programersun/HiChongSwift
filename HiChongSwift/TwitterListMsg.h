@@ -1,7 +1,7 @@
 //
 //  TwitterListMsg.h
 //
-//  Created by 超逸 李 on 15/1/19
+//  Created by 超逸 李 on 15/1/26
 //  Copyright (c) 2015 Duostec. All rights reserved.
 //
 
@@ -13,15 +13,17 @@
 
 @property (nonatomic, strong) NSString *twitterLatitude;
 @property (nonatomic, strong) NSString *twitterType;
+@property (nonatomic, strong) NSString *sex;
 @property (nonatomic, strong) NSString *twitterId;
 @property (nonatomic, strong) NSString *catId;
 @property (nonatomic, strong) NSString *twitterPet;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSString *twitterLongitude;
 @property (nonatomic, strong) NSString *keeperImage;
-@property (nonatomic, strong) NSString *cateName;
+@property (nonatomic, strong) NSString *petSex;
 @property (nonatomic, assign) double isStar;
 @property (nonatomic, strong) NSString *petName;
+@property (nonatomic, strong) NSString *cateName;
 @property (nonatomic, strong) NSString *twitterContent;
 @property (nonatomic, strong) NSString *addTime;
 @property (nonatomic, strong) NSString *twitterLocation;

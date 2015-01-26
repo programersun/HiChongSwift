@@ -1,7 +1,7 @@
 //
 //  TwitterListMsg.m
 //
-//  Created by 超逸 李 on 15/1/19
+//  Created by 超逸 李 on 15/1/26
 //  Copyright (c) 2015 Duostec. All rights reserved.
 //
 
@@ -12,15 +12,17 @@
 
 NSString *const kTwitterListMsgTwitterLatitude = @"twitter_latitude";
 NSString *const kTwitterListMsgTwitterType = @"twitter_type";
+NSString *const kTwitterListMsgSex = @"sex";
 NSString *const kTwitterListMsgTwitterId = @"twitter_id";
 NSString *const kTwitterListMsgCatId = @"cat_id";
 NSString *const kTwitterListMsgTwitterPet = @"twitter_pet";
 NSString *const kTwitterListMsgImages = @"images";
 NSString *const kTwitterListMsgTwitterLongitude = @"twitter_longitude";
 NSString *const kTwitterListMsgKeeperImage = @"keeper_image";
-NSString *const kTwitterListMsgCateName = @"cate_name";
+NSString *const kTwitterListMsgPetSex = @"pet_sex";
 NSString *const kTwitterListMsgIsStar = @"is_star";
 NSString *const kTwitterListMsgPetName = @"pet_name";
+NSString *const kTwitterListMsgCateName = @"cate_name";
 NSString *const kTwitterListMsgTwitterContent = @"twitter_content";
 NSString *const kTwitterListMsgAddTime = @"add_time";
 NSString *const kTwitterListMsgTwitterLocation = @"twitter_location";
@@ -42,15 +44,17 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
 
 @synthesize twitterLatitude = _twitterLatitude;
 @synthesize twitterType = _twitterType;
+@synthesize sex = _sex;
 @synthesize twitterId = _twitterId;
 @synthesize catId = _catId;
 @synthesize twitterPet = _twitterPet;
 @synthesize images = _images;
 @synthesize twitterLongitude = _twitterLongitude;
 @synthesize keeperImage = _keeperImage;
-@synthesize cateName = _cateName;
+@synthesize petSex = _petSex;
 @synthesize isStar = _isStar;
 @synthesize petName = _petName;
+@synthesize cateName = _cateName;
 @synthesize twitterContent = _twitterContent;
 @synthesize addTime = _addTime;
 @synthesize twitterLocation = _twitterLocation;
@@ -76,6 +80,7 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
             self.twitterLatitude = [self objectOrNilForKey:kTwitterListMsgTwitterLatitude fromDictionary:dict];
             self.twitterType = [self objectOrNilForKey:kTwitterListMsgTwitterType fromDictionary:dict];
+            self.sex = [self objectOrNilForKey:kTwitterListMsgSex fromDictionary:dict];
             self.twitterId = [self objectOrNilForKey:kTwitterListMsgTwitterId fromDictionary:dict];
             self.catId = [self objectOrNilForKey:kTwitterListMsgCatId fromDictionary:dict];
             self.twitterPet = [self objectOrNilForKey:kTwitterListMsgTwitterPet fromDictionary:dict];
@@ -94,9 +99,10 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
     self.images = [NSArray arrayWithArray:parsedTwitterListImages];
             self.twitterLongitude = [self objectOrNilForKey:kTwitterListMsgTwitterLongitude fromDictionary:dict];
             self.keeperImage = [self objectOrNilForKey:kTwitterListMsgKeeperImage fromDictionary:dict];
-            self.cateName = [self objectOrNilForKey:kTwitterListMsgCateName fromDictionary:dict];
+            self.petSex = [self objectOrNilForKey:kTwitterListMsgPetSex fromDictionary:dict];
             self.isStar = [[self objectOrNilForKey:kTwitterListMsgIsStar fromDictionary:dict] doubleValue];
             self.petName = [self objectOrNilForKey:kTwitterListMsgPetName fromDictionary:dict];
+            self.cateName = [self objectOrNilForKey:kTwitterListMsgCateName fromDictionary:dict];
             self.twitterContent = [self objectOrNilForKey:kTwitterListMsgTwitterContent fromDictionary:dict];
             self.addTime = [self objectOrNilForKey:kTwitterListMsgAddTime fromDictionary:dict];
             self.twitterLocation = [self objectOrNilForKey:kTwitterListMsgTwitterLocation fromDictionary:dict];
@@ -130,6 +136,7 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.twitterLatitude forKey:kTwitterListMsgTwitterLatitude];
     [mutableDict setValue:self.twitterType forKey:kTwitterListMsgTwitterType];
+    [mutableDict setValue:self.sex forKey:kTwitterListMsgSex];
     [mutableDict setValue:self.twitterId forKey:kTwitterListMsgTwitterId];
     [mutableDict setValue:self.catId forKey:kTwitterListMsgCatId];
     [mutableDict setValue:self.twitterPet forKey:kTwitterListMsgTwitterPet];
@@ -146,9 +153,10 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
     [mutableDict setValue:[NSArray arrayWithArray:tempArrayForImages] forKey:kTwitterListMsgImages];
     [mutableDict setValue:self.twitterLongitude forKey:kTwitterListMsgTwitterLongitude];
     [mutableDict setValue:self.keeperImage forKey:kTwitterListMsgKeeperImage];
-    [mutableDict setValue:self.cateName forKey:kTwitterListMsgCateName];
+    [mutableDict setValue:self.petSex forKey:kTwitterListMsgPetSex];
     [mutableDict setValue:[NSNumber numberWithDouble:self.isStar] forKey:kTwitterListMsgIsStar];
     [mutableDict setValue:self.petName forKey:kTwitterListMsgPetName];
+    [mutableDict setValue:self.cateName forKey:kTwitterListMsgCateName];
     [mutableDict setValue:self.twitterContent forKey:kTwitterListMsgTwitterContent];
     [mutableDict setValue:self.addTime forKey:kTwitterListMsgAddTime];
     [mutableDict setValue:self.twitterLocation forKey:kTwitterListMsgTwitterLocation];
@@ -193,15 +201,17 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
 
     self.twitterLatitude = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterLatitude];
     self.twitterType = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterType];
+    self.sex = [aDecoder decodeObjectForKey:kTwitterListMsgSex];
     self.twitterId = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterId];
     self.catId = [aDecoder decodeObjectForKey:kTwitterListMsgCatId];
     self.twitterPet = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterPet];
     self.images = [aDecoder decodeObjectForKey:kTwitterListMsgImages];
     self.twitterLongitude = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterLongitude];
     self.keeperImage = [aDecoder decodeObjectForKey:kTwitterListMsgKeeperImage];
-    self.cateName = [aDecoder decodeObjectForKey:kTwitterListMsgCateName];
+    self.petSex = [aDecoder decodeObjectForKey:kTwitterListMsgPetSex];
     self.isStar = [aDecoder decodeDoubleForKey:kTwitterListMsgIsStar];
     self.petName = [aDecoder decodeObjectForKey:kTwitterListMsgPetName];
+    self.cateName = [aDecoder decodeObjectForKey:kTwitterListMsgCateName];
     self.twitterContent = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterContent];
     self.addTime = [aDecoder decodeObjectForKey:kTwitterListMsgAddTime];
     self.twitterLocation = [aDecoder decodeObjectForKey:kTwitterListMsgTwitterLocation];
@@ -219,15 +229,17 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
 
     [aCoder encodeObject:_twitterLatitude forKey:kTwitterListMsgTwitterLatitude];
     [aCoder encodeObject:_twitterType forKey:kTwitterListMsgTwitterType];
+    [aCoder encodeObject:_sex forKey:kTwitterListMsgSex];
     [aCoder encodeObject:_twitterId forKey:kTwitterListMsgTwitterId];
     [aCoder encodeObject:_catId forKey:kTwitterListMsgCatId];
     [aCoder encodeObject:_twitterPet forKey:kTwitterListMsgTwitterPet];
     [aCoder encodeObject:_images forKey:kTwitterListMsgImages];
     [aCoder encodeObject:_twitterLongitude forKey:kTwitterListMsgTwitterLongitude];
     [aCoder encodeObject:_keeperImage forKey:kTwitterListMsgKeeperImage];
-    [aCoder encodeObject:_cateName forKey:kTwitterListMsgCateName];
+    [aCoder encodeObject:_petSex forKey:kTwitterListMsgPetSex];
     [aCoder encodeDouble:_isStar forKey:kTwitterListMsgIsStar];
     [aCoder encodeObject:_petName forKey:kTwitterListMsgPetName];
+    [aCoder encodeObject:_cateName forKey:kTwitterListMsgCateName];
     [aCoder encodeObject:_twitterContent forKey:kTwitterListMsgTwitterContent];
     [aCoder encodeObject:_addTime forKey:kTwitterListMsgAddTime];
     [aCoder encodeObject:_twitterLocation forKey:kTwitterListMsgTwitterLocation];
@@ -247,15 +259,17 @@ NSString *const kTwitterListMsgTwitterKeeper = @"twitter_keeper";
 
         copy.twitterLatitude = [self.twitterLatitude copyWithZone:zone];
         copy.twitterType = [self.twitterType copyWithZone:zone];
+        copy.sex = [self.sex copyWithZone:zone];
         copy.twitterId = [self.twitterId copyWithZone:zone];
         copy.catId = [self.catId copyWithZone:zone];
         copy.twitterPet = [self.twitterPet copyWithZone:zone];
         copy.images = [self.images copyWithZone:zone];
         copy.twitterLongitude = [self.twitterLongitude copyWithZone:zone];
         copy.keeperImage = [self.keeperImage copyWithZone:zone];
-        copy.cateName = [self.cateName copyWithZone:zone];
+        copy.petSex = [self.petSex copyWithZone:zone];
         copy.isStar = self.isStar;
         copy.petName = [self.petName copyWithZone:zone];
+        copy.cateName = [self.cateName copyWithZone:zone];
         copy.twitterContent = [self.twitterContent copyWithZone:zone];
         copy.addTime = [self.addTime copyWithZone:zone];
         copy.twitterLocation = [self.twitterLocation copyWithZone:zone];

@@ -88,7 +88,7 @@ class FindTwitterListCell: UITableViewCell {
                     } else {
                         onlyOneImageView.image = nil
                     }
-//                    onlyOneImageView.setImageWithURL(NSURL(string: images[0].cutPath.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
+                    //                    onlyOneImageView.setImageWithURL(NSURL(string: images[0].cutPath.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
                 } else {
                     onlyOneImageView.image = nil
                     if images.count <= 3 {
@@ -161,6 +161,27 @@ class FindTwitterListCell: UITableViewCell {
     /// 评论数量
     @IBOutlet weak var commentNumberLabel: UILabel!
     
+    // 宠物性别
+    @IBOutlet private weak var petCateBackView: UIView!
+    enum PetSex: String {
+        case Male = "0"
+        case Female = "1"
+    }
+    var petSex: PetSex? {
+        didSet {
+            if let petSex = petSex {
+                switch petSex {
+                case .Male:
+                    petCateBackView.backgroundColor = UIColor.LCYThemeDarkText()
+                case .Female:
+                    petCateBackView.backgroundColor = UIColor.LCYThemeOrange()
+                }
+            } else {
+                petCateBackView.backgroundColor = UIColor.lightGrayColor()
+            }
+        }
+    }
+    
     /// 用户是否点过赞
     @IBOutlet private weak var starButton: UIButton!
     var stared: Bool = false {
@@ -172,6 +193,25 @@ class FindTwitterListCell: UITableViewCell {
             }
         }
     }
+    
+    // 用户性别
+    @IBOutlet private weak var genderImageView: UIImageView!
+    var keeperSex: PetSex? {
+        didSet {
+            if let petSex = petSex {
+                switch petSex {
+                case .Male:
+                    genderImageView.image = UIImage(named: "sqFemale")
+                case .Female:
+                    genderImageView.image = UIImage(named: "sqMale")
+                }
+            } else {
+                genderImageView.image = nil
+            }
+        }
+    }
+    
+    
     
     
     @IBOutlet private weak var sepratorImageView: UIImageView!
@@ -212,11 +252,11 @@ class FindTwitterListCell: UITableViewCell {
         sepractorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
         sepratorImageView.image = LCYCommon.sharedInstance.circleSepratorImage
         
-//        let placeHolderColor = UIColor(white: 0.95, alpha: 1.0)
-//        onlyOneImageView.backgroundColor = placeHolderColor
-//        for mid in middleSizedImages {
-//            mid.backgroundColor = placeHolderColor
-//        }
+        //        let placeHolderColor = UIColor(white: 0.95, alpha: 1.0)
+        //        onlyOneImageView.backgroundColor = placeHolderColor
+        //        for mid in middleSizedImages {
+        //            mid.backgroundColor = placeHolderColor
+        //        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

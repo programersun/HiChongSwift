@@ -258,6 +258,9 @@ class FindCircleViewController: UITableViewController {
         cell.stared = data.isStar != 0
         cell.timeLabel.text = data.addTime.toTwitterDeltaTime()
         
+        cell.petSex = FindTwitterListCell.PetSex(rawValue: (data.petSex ?? "-1"))
+        cell.keeperSex = FindTwitterListCell.PetSex(rawValue: (data.sex ?? "-1"))
+        
         cell.delegate = self
         
         return cell
