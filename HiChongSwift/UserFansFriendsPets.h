@@ -1,5 +1,5 @@
 //
-//  UserFansFriendsBase.h
+//  UserFansFriendsPets.h
 //
 //  Created by 超逸 李 on 15/1/27
 //  Copyright (c) 2015 Duostec. All rights reserved.
@@ -9,10 +9,10 @@
 
 
 
-@interface UserFansFriendsBase : NSObject <NSCoding, NSCopying>
+@interface UserFansFriendsPets : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic, assign) BOOL result;
-@property (nonatomic, strong) NSArray *msg;
+@property (nonatomic, strong) NSString *petId;
+@property (nonatomic, strong) NSString *headImage;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

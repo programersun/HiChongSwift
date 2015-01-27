@@ -1,7 +1,7 @@
 //
 //  UserFansFriendsBase.m
 //
-//  Created by 超逸 李 on 15/1/12
+//  Created by 超逸 李 on 15/1/27
 //  Copyright (c) 2015 Duostec. All rights reserved.
 //
 

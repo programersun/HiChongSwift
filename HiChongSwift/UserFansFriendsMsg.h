@@ -1,7 +1,7 @@
 //
 //  UserFansFriendsMsg.h
 //
-//  Created by 超逸 李 on 15/1/12
+//  Created by 超逸 李 on 15/1/27
 //  Copyright (c) 2015 Duostec. All rights reserved.
 //
 
@@ -12,10 +12,13 @@
 @interface UserFansFriendsMsg : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *nickName;
-@property (nonatomic, strong) NSString *sex;
-@property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *headImage;
+@property (nonatomic, strong) NSString *longitude;
 @property (nonatomic, strong) NSString *tip;
+@property (nonatomic, strong) NSArray *pets;
+@property (nonatomic, strong) NSString *latitude;
+@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, strong) NSString *sex;
 @property (nonatomic, strong) NSString *petCount;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;

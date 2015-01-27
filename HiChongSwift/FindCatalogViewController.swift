@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FindCatalogViewController: UITableViewController {
     
-    private var fansData: [UserFansFriendsMsg]?
-    private var friendsData: [UserFansFriendsMsg]?
+    private var location: CLLocation?
     
+    class catalogData {
+        var fansData: UserFansFriendsMsg
+        var distance: String = ""
+        init(fansData: UserFansFriendsMsg, distance: String = "") {
+            self.fansData = fansData
+            self.distance = distance
+        }
+    }
+    
+    private var fansDataV2: [catalogData]?
+    private var friendsDataV2: [catalogData]?
+    
+//    private var fansData: [UserFansFriendsMsg]?
+//    private var friendsData: [UserFansFriendsMsg]?
+//    
+    @IBOutlet private weak var icySegmentControl: UISegmentedControl!
     private enum FindCatalogType {
         case fans
         case care
@@ -23,11 +39,11 @@ class FindCatalogViewController: UITableViewController {
             tableView.reloadData()
             switch currentType {
             case .fans:
-                if fansData == nil {
+                if fansDataV2 == nil {
                     reload()
                 }
             case .care:
-                if friendsData == nil {
+                if friendsDataV2 == nil {
                     reload()
                 }
             }
@@ -45,10 +61,19 @@ class FindCatalogViewController: UITableViewController {
         
         self.title = "宠友录"
         
-        self.tableView.backgroundColor = UIColor.LCYThemeColor()
+//        self.tableView.backgroundColor = UIColor.LCYThemeColor()
         self.tableView.hideExtraSeprator()
         
-        reload()
+        LCYCommon.sharedInstance.getLocation({ [weak self](location) -> Void in
+            self?.location = location
+            self?.reload()
+            return
+            }, fail: { [weak self]() -> Void in
+                self?.alert("无法获取您的地理位置信息。")
+                return
+        })
+        
+//        reload()
     }
     
     
@@ -67,31 +92,62 @@ class FindCatalogViewController: UITableViewController {
             LCYNetworking.sharedInstance.POST(LCYApi.UserFansList, parameters: parameter, success: { [weak self](object) -> Void in
                 let retrieved = UserFansFriendsBase.modelObjectWithDictionary(object)
                 if retrieved.result {
-                    self?.fansData = [UserFansFriendsMsg]()
-                    self?.fansData?.extend(retrieved.msg as [UserFansFriendsMsg])
+//                    self?.fansData = [UserFansFriendsMsg]()
+//                    self?.fansData?.extend(retrieved.msg as [UserFansFriendsMsg])
+
+                    
+                    self?.fansDataV2 = [catalogData]()
+                    self?.fansDataV2?.extend((retrieved.msg as [UserFansFriendsMsg]).map({
+                        let data = catalogData(fansData: $0)
+                        if let location = self?.location {
+                            let geoManager = GeoManager()
+                            if abs($0.latitude.bridgeToObjectiveC().doubleValue) > 0.001 && abs($0.longitude.bridgeToObjectiveC().doubleValue) > 0.001 {
+                                data.distance = geoManager.distanceTo(latitude: $0.latitude.bridgeToObjectiveC().doubleValue, longitude: $0.longitude.bridgeToObjectiveC().doubleValue, myLocation: location).toKM()
+                            }
+                        }
+                        return data
+                    }))
+                    
                     if self?.currentType == FindCatalogType.fans {
                         self?.tableView.reloadData()
                     }
+                    self?.icySegmentControl.setTitle("粉丝 \(retrieved.msg.count)", forSegmentAtIndex: 0)
                 }
                 return
                 }, failure: { [weak self](error) -> Void in
                     return
             })
+            fallthrough
         case .care:
             LCYNetworking.sharedInstance.POST(LCYApi.UserFriendList, parameters: parameter, success: { [weak self](object) -> Void in
                 let retrieved = UserFansFriendsBase.modelObjectWithDictionary(object)
                 if retrieved.result {
-                    self?.friendsData = [UserFansFriendsMsg]()
-                    self?.friendsData?.extend(retrieved.msg as [UserFansFriendsMsg])
+//                    self?.friendsData = [UserFansFriendsMsg]()
+//                    self?.friendsData?.extend(retrieved.msg as [UserFansFriendsMsg])
+                    
+                    
+                    self?.friendsDataV2 = [catalogData]()
+                    self?.friendsDataV2?.extend((retrieved.msg as [UserFansFriendsMsg]).map({
+                        let data = catalogData(fansData: $0)
+                        if let location = self?.location {
+                            let geoManager = GeoManager()
+                            if abs($0.latitude.bridgeToObjectiveC().doubleValue) > 0.001 && abs($0.longitude.bridgeToObjectiveC().doubleValue) > 0.001 {
+                                data.distance = geoManager.distanceTo(latitude: $0.latitude.bridgeToObjectiveC().doubleValue, longitude: $0.longitude.bridgeToObjectiveC().doubleValue, myLocation: location).toKM()
+                            }
+                        }
+                        return data
+                    }))
+                    
+                    
                     if self?.currentType == FindCatalogType.care {
                         self?.tableView.reloadData()
                     }
+                    self?.icySegmentControl.setTitle("关注 \(retrieved.msg.count)", forSegmentAtIndex: 1)
                 }
                 return
                 }, failure: { [weak self](error) -> Void in
                     return
             })
-            break
         }
     }
     
@@ -109,13 +165,13 @@ class FindCatalogViewController: UITableViewController {
         // Return the number of rows in the section.
         switch currentType {
         case .fans:
-            if let data = fansData {
+            if let data = fansDataV2 {
                 return data.count
             } else {
                 return 0
             }
         case .care:
-            if let data = friendsData {
+            if let data = friendsDataV2 {
                 return data.count
             } else {
                 return 0
@@ -124,21 +180,30 @@ class FindCatalogViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(FindCatalogCell.identifier(), forIndexPath: indexPath) as FindCatalogCell
-        
+//        let cell = tableView.dequeueReusableCellWithIdentifier(FindCatalogCell.identifier(), forIndexPath: indexPath) as FindCatalogCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(FindCatelogWhiteCell.identifier) as FindCatelogWhiteCell
         // Configure the cell...
-        var data: UserFansFriendsMsg
+//        var data: UserFansFriendsMsg
+        var data: catalogData
         switch currentType {
         case .fans:
-            data = fansData![indexPath.row]
+            data = fansDataV2![indexPath.row]
         case .care:
-            data = friendsData![indexPath.row]
+            data = friendsDataV2![indexPath.row]
         }
-        cell.icyImagePath = data.headImage.toAbsolutePath()
-        cell.gender = data.sex == "0" ? .Male : .Female
-        cell.nickNameLabel.text = data.nickName
-        cell.signLabel.text = data.tip
-        cell.petCount = data.petCount
+//        cell.icyImagePath = data.headImage.toAbsolutePath()
+//        cell.gender = data.sex == "0" ? .Male : .Female
+//        cell.nickNameLabel.text = data.nickName
+//        cell.signLabel.text = data.tip
+//        cell.petCount = data.petCount
+        cell.keeperAvatarPath = data.fansData.headImage.toAbsolutePath()
+        cell.keeperGender = FindCatelogWhiteCell.cateGender(pValue: data.fansData.sex)
+        cell.userNameLabel.text = data.fansData.nickName
+        cell.petImagePaths = (data.fansData.pets as? [UserFansFriendsPets])?
+            .map({
+                $0.headImage.toAbsolutePath()
+        })
+        cell.distanceLabel.text = data.distance
         
         return cell
     }
@@ -151,9 +216,9 @@ class FindCatalogViewController: UITableViewController {
         var data: UserFansFriendsMsg
         switch currentType {
         case .fans:
-            data = fansData![indexPath.row]
+            data = fansDataV2![indexPath.row].fansData
         case .care:
-            data = friendsData![indexPath.row]
+            data = friendsDataV2![indexPath.row].fansData
         }
         
         let storyBoard = UIStoryboard(name: "AboutMe", bundle: nil)

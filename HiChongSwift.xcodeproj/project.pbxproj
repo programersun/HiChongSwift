@@ -33,6 +33,8 @@
 		280A08AC1A5D2A5F0016A504 /* DianpingDeals.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A91A5D2A5F0016A504 /* DianpingDeals.m */; };
 		280A08AE1A5D3A240016A504 /* FindPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A08AD1A5D3A240016A504 /* FindPetViewController.swift */; };
 		280BBA271A6C9FBA00C5986F /* FindTwitterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280BBA261A6C9FBA00C5986F /* FindTwitterListCell.swift */; };
+		2810C97A1A776D2500F3400D /* FindCatelogWhiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810C9791A776D2500F3400D /* FindCatelogWhiteCell.swift */; };
+		2810C97D1A7776EC00F3400D /* UserFansFriendsPets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810C97C1A7776EC00F3400D /* UserFansFriendsPets.m */; };
 		281319471A58D08000913BC6 /* WikiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319461A58D08000913BC6 /* WikiesViewController.swift */; };
 		281319491A58E34500913BC6 /* WikiesHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281319481A58E34500913BC6 /* WikiesHeadCell.swift */; };
 		2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */; };
@@ -249,6 +251,9 @@
 		280A08A91A5D2A5F0016A504 /* DianpingDeals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DianpingDeals.m; sourceTree = "<group>"; };
 		280A08AD1A5D3A240016A504 /* FindPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPetViewController.swift; sourceTree = "<group>"; };
 		280BBA261A6C9FBA00C5986F /* FindTwitterListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTwitterListCell.swift; sourceTree = "<group>"; };
+		2810C9791A776D2500F3400D /* FindCatelogWhiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCatelogWhiteCell.swift; sourceTree = "<group>"; };
+		2810C97B1A7776EC00F3400D /* UserFansFriendsPets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFansFriendsPets.h; sourceTree = "<group>"; };
+		2810C97C1A7776EC00F3400D /* UserFansFriendsPets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFansFriendsPets.m; sourceTree = "<group>"; };
 		281319461A58D08000913BC6 /* WikiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesViewController.swift; sourceTree = "<group>"; };
 		281319481A58E34500913BC6 /* WikiesHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesHeadCell.swift; sourceTree = "<group>"; };
 		2813194A1A58EE2000913BC6 /* WikiesMidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiesMidCell.swift; sourceTree = "<group>"; };
@@ -616,6 +621,8 @@
 			isa = PBXGroup;
 			children = (
 				2807DA881A637BE100D3534A /* UserFansFriends.h */,
+				2810C97B1A7776EC00F3400D /* UserFansFriendsPets.h */,
+				2810C97C1A7776EC00F3400D /* UserFansFriendsPets.m */,
 				2807DA891A637BE100D3534A /* UserFansFriendsBase.h */,
 				2807DA8A1A637BE100D3534A /* UserFansFriendsBase.m */,
 				2807DA8B1A637BE100D3534A /* UserFansFriendsMsg.h */,
@@ -851,6 +858,7 @@
 				2807DA871A637BD900D3534A /* Model */,
 				28BE7C791A412CF800F3BC2A /* FindCatalogViewController.swift */,
 				28BE7C7B1A412F4900F3BC2A /* FindCatalogCell.swift */,
+				2810C9791A776D2500F3400D /* FindCatelogWhiteCell.swift */,
 			);
 			name = Catalog;
 			sourceTree = "<group>";
@@ -1204,6 +1212,7 @@
 				286D18A21A76333D0061658A /* TwitterListBase.m in Sources */,
 				289775DD1A6365DF00B3F0B6 /* TwitterPersonalImages.m in Sources */,
 				285251D21A64E2AC00A8403E /* UserSearchFriendBase.m in Sources */,
+				2810C97D1A7776EC00F3400D /* UserFansFriendsPets.m in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
 				2859CF4F1A657B5500C032BD /* TwitterCommentListMsg.m in Sources */,
 				285925BF1A64354600DB2F12 /* FindTwitterListPageViewController.swift in Sources */,
@@ -1293,6 +1302,7 @@
 				28DE583A1A5BD93200B49046 /* GetUserInfoPetInfo.m in Sources */,
 				2894AD971A75F18D002ED6E6 /* ICYMultiImageCollectionCell.swift in Sources */,
 				28C6DAD11A2FFDF600068848 /* UIView+Extension.m in Sources */,
+				2810C97A1A776D2500F3400D /* FindCatelogWhiteCell.swift in Sources */,
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
 				283C0E4A1A4BBA9F00C64B11 /* WikiMidCell.swift in Sources */,
 				2859CF311A6568B100C032BD /* FindTwitterCommentViewController.swift in Sources */,
