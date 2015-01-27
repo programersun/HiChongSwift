@@ -2100,45 +2100,63 @@ So as I pray, Unlimited Blade Works.</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbo-AI-HWG">
-                                            <rect key="frame" x="8" y="50" width="60" height="60"/>
+                                            <rect key="frame" x="8" y="55" width="50" height="50"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="60" id="U9G-nD-rCA"/>
-                                                <constraint firstAttribute="width" constant="60" id="shi-os-DLf"/>
+                                                <constraint firstAttribute="height" constant="50" id="U9G-nD-rCA"/>
+                                                <constraint firstAttribute="width" constant="50" id="shi-os-DLf"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqFemale" translatesAutoresizingMaskIntoConstraints="NO" id="FK3-Jq-MgI">
-                                            <rect key="frame" x="80" y="50" width="15" height="15"/>
+                                            <rect key="frame" x="70" y="61" width="15" height="15"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4z-p9-Xpf">
-                                            <rect key="frame" x="103" y="49" width="60" height="18"/>
+                                            <rect key="frame" x="93" y="60" width="60" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnC-ae-Wua">
-                                            <rect key="frame" x="80" y="93" width="28" height="17"/>
+                                            <rect key="frame" x="70" y="82" width="28" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HvN-VI-LmY">
-                                            <rect key="frame" x="562" y="65" width="30" height="30"/>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HvN-VI-LmY">
+                                            <rect key="frame" x="567" y="68" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="HvN-VI-LmY" secondAttribute="height" multiplier="1:1" id="Fpa-Aj-Fkw"/>
-                                                <constraint firstAttribute="height" constant="30" id="lFd-qk-4w3"/>
+                                                <constraint firstAttribute="height" constant="25" id="lFd-qk-4w3"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L4a-Oz-u1a">
-                                            <rect key="frame" x="524" y="65" width="30" height="30"/>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L4a-Oz-u1a">
+                                            <rect key="frame" x="534" y="68" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="L4a-Oz-u1a" secondAttribute="height" multiplier="1:1" id="Faz-gJ-ChI"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vg4-t3-5eF">
-                                            <rect key="frame" x="486" y="65" width="30" height="30"/>
+                                        <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vg4-t3-5eF">
+                                            <rect key="frame" x="501" y="68" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="vg4-t3-5eF" secondAttribute="height" multiplier="1:1" id="fV7-Y0-iKK"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wxl-Ld-cNl">
                                             <rect key="frame" x="8" y="149" width="584" height="10"/>
@@ -2158,11 +2176,11 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstItem="nbo-AI-HWG" firstAttribute="leading" secondItem="B0l-fp-VTu" secondAttribute="leading" constant="8" id="PYi-ZZ-0gP"/>
                                         <constraint firstAttribute="centerY" secondItem="HvN-VI-LmY" secondAttribute="centerY" id="QQT-9e-HuB"/>
                                         <constraint firstAttribute="bottom" secondItem="wxl-Ld-cNl" secondAttribute="bottom" id="TD9-1Z-qNX"/>
-                                        <constraint firstItem="FK3-Jq-MgI" firstAttribute="top" secondItem="nbo-AI-HWG" secondAttribute="top" id="Uyp-dU-VM9"/>
+                                        <constraint firstItem="FK3-Jq-MgI" firstAttribute="top" secondItem="nbo-AI-HWG" secondAttribute="top" constant="6" id="Uyp-dU-VM9"/>
                                         <constraint firstAttribute="trailing" secondItem="wxl-Ld-cNl" secondAttribute="trailing" constant="8" id="WD2-8i-ygj"/>
                                         <constraint firstAttribute="centerY" secondItem="L4a-Oz-u1a" secondAttribute="centerY" id="acZ-4q-c0c"/>
-                                        <constraint firstItem="GnC-ae-Wua" firstAttribute="bottom" secondItem="nbo-AI-HWG" secondAttribute="bottom" id="eeA-DV-YoP"/>
-                                        <constraint firstItem="k4z-p9-Xpf" firstAttribute="centerY" secondItem="FK3-Jq-MgI" secondAttribute="centerY" constant="0.5" id="jeC-pc-Eqw"/>
+                                        <constraint firstItem="GnC-ae-Wua" firstAttribute="bottom" secondItem="nbo-AI-HWG" secondAttribute="bottom" constant="-6" id="eeA-DV-YoP"/>
+                                        <constraint firstItem="k4z-p9-Xpf" firstAttribute="centerY" secondItem="FK3-Jq-MgI" secondAttribute="centerY" id="jeC-pc-Eqw"/>
                                         <constraint firstAttribute="centerY" secondItem="vg4-t3-5eF" secondAttribute="centerY" id="lx5-TF-qal"/>
                                         <constraint firstItem="k4z-p9-Xpf" firstAttribute="leading" secondItem="FK3-Jq-MgI" secondAttribute="trailing" constant="8" id="mdI-MD-lvM"/>
                                         <constraint firstAttribute="trailing" secondItem="HvN-VI-LmY" secondAttribute="trailing" constant="8" id="pZI-s4-AAq"/>
