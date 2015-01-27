@@ -211,7 +211,16 @@ class FindTwitterListCell: UITableViewCell {
         }
     }
     
-    
+    @IBOutlet private weak var careButton: UIButton!
+    var cared: Bool = false {
+        didSet {
+            if cared {
+                careButton.setImage(UIImage(named: "twiAddCareNone"), forState: UIControlState.Normal)
+            } else {
+                careButton.setImage(UIImage(named: "twiAddCare"), forState: UIControlState.Normal)
+            }
+        }
+    }
     
     
     @IBOutlet private weak var sepratorImageView: UIImageView!
@@ -231,6 +240,7 @@ class FindTwitterListCell: UITableViewCell {
         delegate?.findCircleListCellTitleClicked(indexPath)
     }
     @IBAction func careButtonPressed(sender: AnyObject) {
+        delegate?.findCircleListCellCare(indexPath)
     }
     
     /// 发布时间

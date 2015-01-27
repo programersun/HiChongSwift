@@ -452,4 +452,7 @@ extension FindTwitterCommentViewController: FindCircleListCellDelegate {
 
         }
     }
+    func findCircleListCellCare(indexPath: NSIndexPath) {
+        
+    }
 }

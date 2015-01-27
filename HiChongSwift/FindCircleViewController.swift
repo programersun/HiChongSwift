@@ -261,6 +261,8 @@ class FindCircleViewController: UITableViewController {
         cell.petSex = FindTwitterListCell.PetSex(rawValue: (data.petSex ?? "-1"))
         cell.keeperSex = FindTwitterListCell.PetSex(rawValue: (data.sex ?? "-1"))
         
+        cell.cared = data.isRel != 0
+        
         cell.delegate = self
         
         return cell
@@ -498,6 +500,74 @@ extension FindCircleViewController: FindCircleListCellDelegate {
         let data = twitters![indexPath.row]
         
         performSegueWithIdentifier("showComment", sender: data)
+    }
+    func findCircleListCellCare(indexPath: NSIndexPath) {
+        let data = twitters![indexPath.row]
+        var parameter = [
+            "user_id"      : LCYCommon.sharedInstance.userName!,
+            "to_user_id"    : data.twitterKeeper
+        ]
+        showHUD()
+        var successBlock: ((NSDictionary) -> Void)
+        if data.isRel == 0 {
+            // 没有关注，开始加关注
+            parameter.extend(
+                ["control"       : "1"]
+            )
+            successBlock = {
+                [weak self] object -> Void in
+                if let result = object["result"] as? Bool {
+                    if result {
+                        // 添加关注成功
+                        data.isRel = 1
+                        self?.twitters?.map({
+                            (list) -> TwitterListMsg in
+                            if list.twitterKeeper == data.twitterKeeper {
+                                list.isRel = 1
+                            }
+                            return list
+                        })
+                        self?.tableView.reloadData()
+                    } else {
+                       // 操作失败
+                    }
+                } else {
+                    // 操作失败
+                }
+                self?.hideHUD()
+            }
+        } else {
+            // 已经关注啦，取消关注
+            parameter.extend(
+                ["control"       : "2"]
+            )
+            successBlock = {
+                [weak self] object -> Void in
+                if let result = object["result"] as? Bool {
+                    if result {
+                        // 取消关注成功
+                        data.isRel = 0
+                        self?.twitters?.map({
+                            (list) -> TwitterListMsg in
+                            if list.twitterKeeper == data.twitterKeeper {
+                                list.isRel = 0
+                            }
+                            return list
+                        })
+                        self?.tableView.reloadData()
+                    } else {
+                        // 操作失败
+                    }
+                } else {
+                    // 操作失败
+                }
+                self?.hideHUD()
+            }
+        }
+        LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameter, success: successBlock) { [weak self](error) -> Void in
+            self?.hideHUD()
+            self?.alert("您的网络状态欠佳")
+        }
     }
 }
 

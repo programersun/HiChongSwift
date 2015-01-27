@@ -135,7 +135,7 @@ class FindPersonalViewController: UITableViewController {
                 self?.navigationItem.rightBarButtonItem?.enabled = true
                 return
             }, failure: { [weak self](error) -> Void in
-                self?.alert("您的网络状态不佳哦s")
+                self?.alert("您的网络状态不佳哦")
                 self?.navigationItem.rightBarButtonItem?.enabled = true
                 return
             })
@@ -164,7 +164,7 @@ class FindPersonalViewController: UITableViewController {
                 self?.navigationItem.rightBarButtonItem?.enabled = true
                 return
                 }, failure: { [weak self](error) -> Void in
-                    self?.alert("您的网络状态不佳哦s")
+                    self?.alert("您的网络状态不佳哦")
                     self?.navigationItem.rightBarButtonItem?.enabled = true
                     return
             })
