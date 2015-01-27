@@ -82,9 +82,9 @@ class WikiArticleViewController: UIViewController {
                 self?.hideHUD()
                 if let result = object["result"]?.boolValue {
                     if result {
-                        if let msgs = object["msg"] as? String {
-                            self?.alert(msgs)
-                        }
+//                        if let msgs = object["msg"] as? String {
+//                            self?.alert(msgs)
+//                        }
                         if let collect = self?.wikiCollected {
                             self?.wikiCollected = !collect
                         }

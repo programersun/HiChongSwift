@@ -21,6 +21,7 @@ class PetCateFilterCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        icyImageView.roundCorner()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

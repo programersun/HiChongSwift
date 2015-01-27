@@ -214,7 +214,10 @@ class FindPersonalViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let data = infoData![indexPath.row]
         if data.images.count > 0 {
-            performSegueWithIdentifier("showPageView", sender: data)
+//            performSegueWithIdentifier("showPageView", sender: data)
+            let pageView = ICYImageBrowser()
+            pageView.imageDataSource = self
+            pageView.show()
         }
     }
     
@@ -238,5 +241,23 @@ class FindPersonalViewController: UITableViewController {
     }
 
     
+}
+
+extension FindPersonalViewController: ICYImageBrowserDataSource {
+    func numberOfImagesInICYImageBrowser(icyImageBrowser: ICYImageBrowser) -> Int {
+        let index = tableView.indexPathForSelectedRow()!.row
+        return infoData![index].images.count
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, imageForIndex imageIndex: Int) -> UIImage? {
+        return nil
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, pathForIndex pathIndex: Int) -> String? {
+        let index = tableView.indexPathForSelectedRow()!.row
+        let imageData = infoData![index].images as [TwitterPersonalImages]
+        return imageData[pathIndex].imagePath.toAbsolutePath()
+    }
+    func icyImageBrowser(icyImageBrowser: ICYImageBrowser, titleForIndex titleIndex: Int) -> String? {
+        return nil
+    }
 }
 
