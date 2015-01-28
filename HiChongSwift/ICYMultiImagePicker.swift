@@ -142,7 +142,9 @@ class ICYMultiImagePicker: UIViewController {
             let myImages = selectedAsset.map({
                 (asset) -> UIImage in
                 let representtation = asset.defaultRepresentation()
-                let myImage = UIImage(CGImage: representtation.fullResolutionImage().takeUnretainedValue())!
+                let myImage = UIImage(CGImage: representtation.fullResolutionImage().takeUnretainedValue(),scale: CGFloat(representtation.scale()), orientation: UIImageOrientation(rawValue: representtation.orientation().rawValue)!)!
+                //UIImage(CGImage: representtation.fullResolutionImage().takeUnretainedValue())!
+
                 return myImage
             })
             delegate?.ICYMultiImagePickerDidSelectImages(myImages)
