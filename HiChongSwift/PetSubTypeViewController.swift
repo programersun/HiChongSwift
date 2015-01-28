@@ -29,7 +29,24 @@ class PetSubTypeViewController: UITableViewController {
         if let uid = parentID{
             let parameter = ["f_id": uid]
             LCYNetworking.sharedInstance.POST(LCYApi.PetSubType, parameters: parameter, success: { [weak self] (object) -> Void in
-                self?.subTypeInfo = LCYPetSubTypeBase.modelObjectWithDictionary(object)
+                var info = LCYPetSubTypeBase.modelObjectWithDictionary(object)
+                if info.childStyle.count == 3 {
+                    info.childStyle = (info.childStyle as [LCYPetSubTypeChildStyle]).sorted({
+                        func toSortInt(name: String) -> Int {
+                            if name == "大型犬" {
+                                return 3
+                            } else if name == "中型犬" {
+                                return 2
+                            } else {
+                                return 1
+                            }
+                        }
+                        let first = toSortInt($0.name)
+                        let second = toSortInt($1.name)
+                        return first > second
+                    })
+                }
+                self?.subTypeInfo = info
                 self?.tableView.reloadData()
                 return
             }, failure: { [weak self](error) -> Void in
