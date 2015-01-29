@@ -139,3 +139,60 @@ extension String {
         return output
     }
 }
+
+extension UIImage {
+    func imageOrientationUp() -> UIImage {
+        if imageOrientation == UIImageOrientation.Up {
+            return self
+        }
+        
+        var transform = CGAffineTransformIdentity
+        
+        // 计算如何能把图片调整为向上的状态，一共需要2步
+        // 1. 如果是Left/Right/Down 需要旋转方向
+        // 2. 如果是Mirrored 需要轴对称翻转
+        switch imageOrientation {
+        case .Down, .DownMirrored:
+            transform = CGAffineTransformTranslate(transform, size.width, size.height)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI))
+        case .Left, .LeftMirrored:
+            transform = CGAffineTransformTranslate(transform, size.width, 0)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI_2))
+        case .Right, .RightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, size.height)
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI_2))
+        default:
+            break
+        }
+        
+        switch imageOrientation {
+        case .UpMirrored, .DownMirrored:
+            transform = CGAffineTransformTranslate(transform, size.width, 0)
+            transform = CGAffineTransformScale(transform, -1.0, 1.0)
+        case .LeftMirrored, .RightMirrored:
+            transform = CGAffineTransformTranslate(transform, size.height, 0)
+            transform = CGAffineTransformScale(transform, -1.0, 1.0)
+        default:
+            break
+        }
+        
+        let context = CGBitmapContextCreate(nil, UInt(size.width), UInt(size.height),
+            CGImageGetBitsPerComponent(self.CGImage), 0,
+            CGImageGetColorSpace(self.CGImage),
+            CGImageGetBitmapInfo(self.CGImage))
+        
+        CGContextConcatCTM(context, transform)
+        
+        switch imageOrientation {
+        case .Left, .LeftMirrored, .Right, .RightMirrored:
+            CGContextDrawImage(context, CGRect(origin: CGPointZero, size: CGSize(width: size.height, height: size.width)), CGImage)
+        default:
+            CGContextDrawImage(context, CGRect(origin: CGPointZero, size: CGSize(width: size.width, height: size.height)), CGImage)
+        }
+        
+        let fixedCGImage = CGBitmapContextCreateImage(context)
+        let image = UIImage(CGImage: fixedCGImage)!
+        
+        return image
+    }
+}

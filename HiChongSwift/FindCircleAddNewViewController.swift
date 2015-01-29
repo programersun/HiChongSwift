@@ -417,9 +417,9 @@ extension FindCircleAddNewViewController: UIAlertViewDelegate {
 extension FindCircleAddNewViewController: ICYMultiImagePickerDelegate {
     func ICYMultiImagePickerDidSelectImages(images: [UIImage]) {
         let smallImages = images.map({
-            UIImage(image: $0, scaledToFitToSize: CGSize(width: 600, height: 600))
+            UIImage(image: $0, scaledToFitToSize: CGSize(width: 600, height: 600)).imageOrientationUp()
         })
-        petImages.extend(images)
+        petImages.extend(smallImages)
         imageCollectionView?.reloadData()
     }
 }
