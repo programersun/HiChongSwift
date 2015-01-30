@@ -16,11 +16,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="sbi-Ej-GyQ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindViewCellIdentifier" id="sbi-Ej-GyQ" customClass="FindViewCell" customModule="HiChongSwift" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbi-Ej-GyQ" id="VFD-vR-hze">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKe-ID-05F">
+                                            <rect key="frame" x="562" y="7" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="RSM-4w-20Z"/>
+                                                <constraint firstAttribute="height" constant="30" id="t9y-Wd-eU7"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjX-b7-or7">
+                                            <rect key="frame" x="50" y="13" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK8-mP-Fdb">
+                                            <rect key="frame" x="100" y="14" width="16" height="16"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHu-cf-5sD">
+                                                    <rect key="frame" x="5" y="2" width="6" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.97647064920000004" green="0.180392161" blue="0.11372549830000001" alpha="1" colorSpace="deviceRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="ZHu-cf-5sD" firstAttribute="leading" secondItem="FK8-mP-Fdb" secondAttribute="leading" constant="5" id="I1h-K1-oFg"/>
+                                                <constraint firstAttribute="centerY" secondItem="ZHu-cf-5sD" secondAttribute="centerY" id="MVX-mB-v76"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZHu-cf-5sD" secondAttribute="trailing" constant="5" id="cP8-rQ-xbF"/>
+                                                <constraint firstAttribute="height" constant="16" id="rJg-BF-bWZ"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="rjX-b7-or7" secondAttribute="centerY" id="8mg-GS-dur"/>
+                                        <constraint firstItem="rjX-b7-or7" firstAttribute="leading" secondItem="VFD-vR-hze" secondAttribute="leading" constant="50" id="GJK-Qv-swe"/>
+                                        <constraint firstAttribute="centerY" secondItem="FK8-mP-Fdb" secondAttribute="centerY" id="MwG-G0-7QC"/>
+                                        <constraint firstAttribute="centerY" secondItem="gKe-ID-05F" secondAttribute="centerY" id="YAy-a5-9gX"/>
+                                        <constraint firstItem="FK8-mP-Fdb" firstAttribute="leading" secondItem="rjX-b7-or7" secondAttribute="trailing" constant="8" id="fi0-qU-YD7"/>
+                                        <constraint firstAttribute="trailing" secondItem="gKe-ID-05F" secondAttribute="trailing" constant="8" id="vU4-XW-32o"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="badgeNumberLabel" destination="ZHu-cf-5sD" id="Zhh-2v-BNR"/>
+                                    <outlet property="badgeView" destination="FK8-mP-Fdb" id="ywm-Mi-ZxT"/>
+                                    <outlet property="icyImageView" destination="gKe-ID-05F" id="IGN-cp-KQG"/>
+                                    <outlet property="icyLabel" destination="rjX-b7-or7" id="FX3-9X-B3H"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2680,6 +2732,6 @@ So as I pray, Unlimited Blade Works.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XCC-x6-KlN"/>
-        <segue reference="ngD-9V-Cvd"/>
+        <segue reference="Ufa-8l-Vyh"/>
     </inferredMetricsTieBreakers>
 </document>

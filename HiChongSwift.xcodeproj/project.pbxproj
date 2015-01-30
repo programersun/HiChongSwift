@@ -141,6 +141,11 @@
 		28AA8F631A722D610070BF47 /* ICYImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F601A722D610070BF47 /* ICYImageBrowser.swift */; };
 		28AA8F641A722D610070BF47 /* ICYImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F611A722D610070BF47 /* ICYImageController.swift */; };
 		28AA8F651A722D610070BF47 /* ICYImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA8F621A722D610070BF47 /* ICYImageScrollView.swift */; };
+		28B0B00B1A7B887300B0EFA8 /* TwitterRemindInfoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B0B0041A7B887300B0EFA8 /* TwitterRemindInfoBase.m */; };
+		28B0B00C1A7B887300B0EFA8 /* TwitterRemindInfoComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B0B0061A7B887300B0EFA8 /* TwitterRemindInfoComment.m */; };
+		28B0B00D1A7B887300B0EFA8 /* TwitterRemindInfoMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B0B0081A7B887300B0EFA8 /* TwitterRemindInfoMsg.m */; };
+		28B0B00E1A7B887300B0EFA8 /* TwitterRemindInfoStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B0B00A1A7B887300B0EFA8 /* TwitterRemindInfoStar.m */; };
+		28B0B0101A7B8ACD00B0EFA8 /* FindViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B0B00F1A7B8ACD00B0EFA8 /* FindViewCell.swift */; };
 		28B9CEA51A49A97E004E6386 /* AboutMeModifyTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA41A49A97E004E6386 /* AboutMeModifyTextViewController.swift */; };
 		28B9CEA71A49A9BB004E6386 /* AboutMeModifyTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA61A49A9BB004E6386 /* AboutMeModifyTextCell.swift */; };
 		28B9CEA91A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */; };
@@ -401,6 +406,16 @@
 		28AA8F601A722D610070BF47 /* ICYImageBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageBrowser.swift; sourceTree = "<group>"; };
 		28AA8F611A722D610070BF47 /* ICYImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageController.swift; sourceTree = "<group>"; };
 		28AA8F621A722D610070BF47 /* ICYImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYImageScrollView.swift; sourceTree = "<group>"; };
+		28B0B0021A7B887300B0EFA8 /* TwitterRemindInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterRemindInfo.h; sourceTree = "<group>"; };
+		28B0B0031A7B887300B0EFA8 /* TwitterRemindInfoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterRemindInfoBase.h; sourceTree = "<group>"; };
+		28B0B0041A7B887300B0EFA8 /* TwitterRemindInfoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterRemindInfoBase.m; sourceTree = "<group>"; };
+		28B0B0051A7B887300B0EFA8 /* TwitterRemindInfoComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterRemindInfoComment.h; sourceTree = "<group>"; };
+		28B0B0061A7B887300B0EFA8 /* TwitterRemindInfoComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterRemindInfoComment.m; sourceTree = "<group>"; };
+		28B0B0071A7B887300B0EFA8 /* TwitterRemindInfoMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterRemindInfoMsg.h; sourceTree = "<group>"; };
+		28B0B0081A7B887300B0EFA8 /* TwitterRemindInfoMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterRemindInfoMsg.m; sourceTree = "<group>"; };
+		28B0B0091A7B887300B0EFA8 /* TwitterRemindInfoStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterRemindInfoStar.h; sourceTree = "<group>"; };
+		28B0B00A1A7B887300B0EFA8 /* TwitterRemindInfoStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterRemindInfoStar.m; sourceTree = "<group>"; };
+		28B0B00F1A7B8ACD00B0EFA8 /* FindViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewCell.swift; sourceTree = "<group>"; };
 		28B9CEA41A49A97E004E6386 /* AboutMeModifyTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyTextViewController.swift; sourceTree = "<group>"; };
 		28B9CEA61A49A9BB004E6386 /* AboutMeModifyTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyTextCell.swift; sourceTree = "<group>"; };
 		28B9CEA81A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeModifyLocationViewController.swift; sourceTree = "<group>"; };
@@ -775,7 +790,9 @@
 		287EDFDC1A3FC795005B6A57 /* Find */ = {
 			isa = PBXGroup;
 			children = (
+				28B0B0011A7B886900B0EFA8 /* Model */,
 				287EDFDD1A3FC7A9005B6A57 /* FindViewController.swift */,
+				28B0B00F1A7B8ACD00B0EFA8 /* FindViewCell.swift */,
 				28BE7C781A412CDE00F3BC2A /* Circle */,
 				28BE7C7E1A41352500F3BC2A /* Search */,
 				28BE7C771A412CD700F3BC2A /* Catalog */,
@@ -850,6 +867,22 @@
 				28AA8F621A722D610070BF47 /* ICYImageScrollView.swift */,
 			);
 			name = ICYImageBrowser;
+			sourceTree = "<group>";
+		};
+		28B0B0011A7B886900B0EFA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28B0B0021A7B887300B0EFA8 /* TwitterRemindInfo.h */,
+				28B0B0031A7B887300B0EFA8 /* TwitterRemindInfoBase.h */,
+				28B0B0041A7B887300B0EFA8 /* TwitterRemindInfoBase.m */,
+				28B0B0051A7B887300B0EFA8 /* TwitterRemindInfoComment.h */,
+				28B0B0061A7B887300B0EFA8 /* TwitterRemindInfoComment.m */,
+				28B0B0071A7B887300B0EFA8 /* TwitterRemindInfoMsg.h */,
+				28B0B0081A7B887300B0EFA8 /* TwitterRemindInfoMsg.m */,
+				28B0B0091A7B887300B0EFA8 /* TwitterRemindInfoStar.h */,
+				28B0B00A1A7B887300B0EFA8 /* TwitterRemindInfoStar.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		28BE7C771A412CD700F3BC2A /* Catalog */ = {
@@ -1211,6 +1244,7 @@
 				28876B261A42A3AB0002F635 /* WelcomeViewController.swift in Sources */,
 				286D18A21A76333D0061658A /* TwitterListBase.m in Sources */,
 				289775DD1A6365DF00B3F0B6 /* TwitterPersonalImages.m in Sources */,
+				28B0B00C1A7B887300B0EFA8 /* TwitterRemindInfoComment.m in Sources */,
 				285251D21A64E2AC00A8403E /* UserSearchFriendBase.m in Sources */,
 				2810C97D1A7776EC00F3400D /* UserFansFriendsPets.m in Sources */,
 				286D1D081A3A8357005C1D36 /* SquareListCell.swift in Sources */,
@@ -1218,11 +1252,13 @@
 				285925BF1A64354600DB2F12 /* FindTwitterListPageViewController.swift in Sources */,
 				285925C61A6444BC00DB2F12 /* WikiGetADData.m in Sources */,
 				2806FEB71A4A6A4700D18543 /* PetFinalFilterViewController.swift in Sources */,
+				28B0B00B1A7B887300B0EFA8 /* TwitterRemindInfoBase.m in Sources */,
 				28C6DAD01A2FFDF600068848 /* UIScrollView+MJRefresh.m in Sources */,
 				289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */,
 				28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */,
 				2807DA8D1A637BE100D3534A /* UserFansFriendsBase.m in Sources */,
 				28F2157D1A5A75D2002C0620 /* SquareGetListBase.m in Sources */,
+				28B0B00D1A7B887300B0EFA8 /* TwitterRemindInfoMsg.m in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
 				283C0E4C1A4BBAE900C64B11 /* WikiInfoCell.swift in Sources */,
 				2806FEA91A4A5D2200D18543 /* LCYPetAllTypeBase.m in Sources */,
@@ -1245,6 +1281,7 @@
 				2806FEB21A4A651B00D18543 /* LCYPetSubTypeBase.m in Sources */,
 				286D18A51A76333D0061658A /* TwitterListStarList.m in Sources */,
 				28BE7C821A41554200F3BC2A /* FindSearchResultViewController.swift in Sources */,
+				28B0B00E1A7B887300B0EFA8 /* TwitterRemindInfoStar.m in Sources */,
 				289FA34D1A493FDE0097485C /* AboutMeLikeCell.swift in Sources */,
 				2892558E1A3EEBDE0056606F /* SquareAddCommentCell.swift in Sources */,
 				2894AD9A1A75F18D002ED6E6 /* ICYMultiImagePickerConstance.swift in Sources */,
@@ -1272,6 +1309,7 @@
 				287941AB1A49F56C00DECA50 /* LCYPetDetailBase.m in Sources */,
 				28E182B51A4AB0AB00E3001A /* CommonUploadImages.m in Sources */,
 				280BBA271A6C9FBA00C5986F /* FindTwitterListCell.swift in Sources */,
+				28B0B0101A7B8ACD00B0EFA8 /* FindViewCell.swift in Sources */,
 				2848C8DA1A663DFB00774CD9 /* MainDialogViewController.swift in Sources */,
 				2859CF521A657D8D00C032BD /* FindTwitterCommentListCell.swift in Sources */,
 				2894AD991A75F18D002ED6E6 /* ICYMultiImagePicker.swift in Sources */,

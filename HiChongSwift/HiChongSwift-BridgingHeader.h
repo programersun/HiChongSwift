@@ -81,3 +81,6 @@
 
 // Twitter/twitter_comment_list
 #import "TwitterCommentList.h"
+
+// Twitter/twitter_remidn_info
+#import "TwitterRemindInfo.h"

@@ -89,6 +89,7 @@ class FindCircleViewController: UITableViewController {
             return
         }
 //        tableView.baseTextColor = UIColor.whiteColor()
+        LCYCommon.sharedInstance.lastTime = "\(Int(NSDate().timeIntervalSince1970))"
     }
     
     @IBAction func headerBackgroundTouched(sender: AnyObject) {

@@ -18,6 +18,9 @@ class LCYCommon: NSObject {
         
         /// 纪录所在城市id
         case kRegionID = "kRegionID"
+        
+        // 记录上次访问宠友圈的时间
+        case kTwitterLastTime = "kTwitterLastTime"
     }
     
     class var sharedInstance: LCYCommon {
@@ -175,6 +178,23 @@ class LCYCommon: NSObject {
         set {
             let userDefault = NSUserDefaults.standardUserDefaults()
             userDefault.setObject(newValue, forKey: UserDefaultKeys.kRegionID.rawValue)
+            userDefault.synchronize()
+        }
+    }
+    
+    // 是否需要更新宠物圈
+    var needToUpdateTwitter = true
+    
+    var lastTime: String {
+        get {
+            let userDefault = NSUserDefaults.standardUserDefaults()
+            let twitterLastTime = userDefault.objectForKey(UserDefaultKeys.kTwitterLastTime.rawValue) as? String
+            return twitterLastTime ?? "1"
+        }
+        set {
+            let userDefault = NSUserDefaults.standardUserDefaults()
+            userDefault.setObject(newValue, forKey: UserDefaultKeys.kTwitterLastTime.rawValue)
+            userDefault.synchronize()
         }
     }
 }
