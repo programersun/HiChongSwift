@@ -17,7 +17,7 @@ class FindViewController: UITableViewController {
             tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
             if let info = remindInfo {
                 if info.headImage != nil {
-                    navigationController?.tabBarItem.badgeValue = " "
+                    navigationController?.tabBarItem.badgeValue = ""
                 } else {
                     navigationController?.tabBarItem.badgeValue = nil
                 }
