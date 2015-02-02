@@ -64,6 +64,8 @@ class FindCatalogViewController: UITableViewController {
 //        self.tableView.backgroundColor = UIColor.LCYThemeColor()
         self.tableView.hideExtraSeprator()
         
+        showHUD()
+        
         LCYCommon.sharedInstance.getLocation({ [weak self](location) -> Void in
             self?.location = location
             self?.reload()
@@ -113,8 +115,10 @@ class FindCatalogViewController: UITableViewController {
                     }
                     self?.icySegmentControl.setTitle("粉丝 \(retrieved.msg.count)", forSegmentAtIndex: 0)
                 }
+                self?.hideHUD()
                 return
                 }, failure: { [weak self](error) -> Void in
+                    self?.hideHUD()
                     return
             })
             fallthrough
@@ -144,8 +148,10 @@ class FindCatalogViewController: UITableViewController {
                     }
                     self?.icySegmentControl.setTitle("关注 \(retrieved.msg.count)", forSegmentAtIndex: 1)
                 }
+                self?.hideHUD()
                 return
                 }, failure: { [weak self](error) -> Void in
+                    self?.hideHUD()
                     return
             })
         }

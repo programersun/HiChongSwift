@@ -180,6 +180,11 @@
 		28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C93AC91A4D0AB600E1F600 /* WikiListViewController.swift */; };
 		28C93AD01A4D47B600E1F600 /* WikiMoreBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */; };
 		28C93AD11A4D47B600E1F600 /* WikiMoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */; };
+		28CF34E01A7F4974001984D8 /* libPushSDK-1.8.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CF34DF1A7F4974001984D8 /* libPushSDK-1.8.2.a */; };
+		28CF34E21A7F49E0001984D8 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28CF34E11A7F49E0001984D8 /* PushConfig.plist */; };
+		28CF34E41A7F4A7A001984D8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CF34E31A7F4A7A001984D8 /* CoreTelephony.framework */; };
+		28CF34E61A7F4A91001984D8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CF34E51A7F4A91001984D8 /* libz.dylib */; };
+		28CF34E91A7F622E001984D8 /* UserSearchFriendPets.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CF34E81A7F622E001984D8 /* UserSearchFriendPets.m */; };
 		28DE582E1A5B8D4000B49046 /* SquareCommentListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE582B1A5B8D4000B49046 /* SquareCommentListBase.m */; };
 		28DE582F1A5B8D4000B49046 /* SquareCommentListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DE582D1A5B8D4000B49046 /* SquareCommentListMsg.m */; };
 		28DE58311A5BA21900B49046 /* SquareMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE58301A5BA21900B49046 /* SquareMapViewController.swift */; };
@@ -465,6 +470,13 @@
 		28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreBase.m; sourceTree = "<group>"; };
 		28C93ACE1A4D47B600E1F600 /* WikiMoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiMoreData.h; sourceTree = "<group>"; };
 		28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreData.m; sourceTree = "<group>"; };
+		28CF34DE1A7F4974001984D8 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
+		28CF34DF1A7F4974001984D8 /* libPushSDK-1.8.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.2.a"; sourceTree = "<group>"; };
+		28CF34E11A7F49E0001984D8 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
+		28CF34E31A7F4A7A001984D8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		28CF34E51A7F4A91001984D8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		28CF34E71A7F622D001984D8 /* UserSearchFriendPets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchFriendPets.h; sourceTree = "<group>"; };
+		28CF34E81A7F622E001984D8 /* UserSearchFriendPets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchFriendPets.m; sourceTree = "<group>"; };
 		28DE58291A5B8D4000B49046 /* SquareCommentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCommentList.h; sourceTree = "<group>"; };
 		28DE582A1A5B8D4000B49046 /* SquareCommentListBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCommentListBase.h; sourceTree = "<group>"; };
 		28DE582B1A5B8D4000B49046 /* SquareCommentListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareCommentListBase.m; sourceTree = "<group>"; };
@@ -508,6 +520,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CF34E61A7F4A91001984D8 /* libz.dylib in Frameworks */,
+				28CF34E41A7F4A7A001984D8 /* CoreTelephony.framework in Frameworks */,
+				28CF34E01A7F4974001984D8 /* libPushSDK-1.8.2.a in Frameworks */,
 				BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,6 +596,7 @@
 			children = (
 				2834C4481A47F0AB0007FE43 /* HiChongSwiftGenerator.sqlite */,
 				2802C9911A2F5151001130ED /* Info.plist */,
+				28CF34E11A7F49E0001984D8 /* PushConfig.plist */,
 				28C6DAD81A30000200068848 /* HiChongSwift-BridgingHeader.h */,
 			);
 			name = "Supporting Files";
@@ -740,6 +756,8 @@
 				285251CF1A64E2AC00A8403E /* UserSearchFriendBase.m */,
 				285251D01A64E2AC00A8403E /* UserSearchFriendMsg.h */,
 				285251D11A64E2AC00A8403E /* UserSearchFriendMsg.m */,
+				28CF34E71A7F622D001984D8 /* UserSearchFriendPets.h */,
+				28CF34E81A7F622E001984D8 /* UserSearchFriendPets.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -963,6 +981,7 @@
 		28C6DAB81A2FFDB300068848 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				28CF34DD1A7F4974001984D8 /* lib */,
 				2894AD921A75F173002ED6E6 /* ICYMultiImagePicker */,
 				28AA8F521A71E6260070BF47 /* ICYImageBrowser */,
 				28876B1C1A427C7D0002F635 /* UIImage+Resize.h */,
@@ -993,6 +1012,15 @@
 				28C6DAC91A2FFDF600068848 /* UIView+Extension.m */,
 			);
 			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		28CF34DD1A7F4974001984D8 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				28CF34DE1A7F4974001984D8 /* APService.h */,
+				28CF34DF1A7F4974001984D8 /* libPushSDK-1.8.2.a */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		28E5B4CA1A39765D009951FF /* Model */ = {
@@ -1067,6 +1095,8 @@
 		2A41A38E2915F355616F7D28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28CF34E51A7F4A91001984D8 /* libz.dylib */,
+				28CF34E31A7F4A7A001984D8 /* CoreTelephony.framework */,
 				6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */,
 			);
 			name = Frameworks;
@@ -1133,6 +1163,11 @@
 					2802C98C1A2F5150001130ED = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 9G45KM8T54;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2802C9A41A2F5151001130ED = {
 						CreatedOnToolsVersion = 6.1;
@@ -1175,6 +1210,7 @@
 				28C166381A36BFEA0090E061 /* Sale.storyboard in Resources */,
 				289775E01A6367F900B3F0B6 /* FindPersonalHeader.xib in Resources */,
 				2802C99D1A2F5151001130ED /* Images.xcassets in Resources */,
+				28CF34E21A7F49E0001984D8 /* PushConfig.plist in Resources */,
 				28876B2A1A42BACB0002F635 /* Login.storyboard in Resources */,
 				2806FE9F1A4A5A9C00D18543 /* PetCateFilter.storyboard in Resources */,
 				28876B231A429E760002F635 /* Welcome.storyboard in Resources */,
@@ -1257,6 +1293,7 @@
 				289029311A48083E00A8B3F5 /* RegionPickerViewController.swift in Sources */,
 				28876B331A42E3630002F635 /* LoginSingleButtonCell.swift in Sources */,
 				2807DA8D1A637BE100D3534A /* UserFansFriendsBase.m in Sources */,
+				28CF34E91A7F622E001984D8 /* UserSearchFriendPets.m in Sources */,
 				28F2157D1A5A75D2002C0620 /* SquareGetListBase.m in Sources */,
 				28B0B00D1A7B887300B0EFA8 /* TwitterRemindInfoMsg.m in Sources */,
 				28C1663D1A36E69E0090E061 /* SquareViewController.swift in Sources */,
@@ -1533,8 +1570,12 @@
 				INFOPLIST_FILE = HiChongSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HiChongSwift/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "836ca8e3-3481-4b82-87bf-485081919dca";
 				SWIFT_OBJC_BRIDGING_HEADER = "HiChongSwift/HiChongSwift-BridgingHeader.h";
 			};
 			name = Debug;
@@ -1550,8 +1591,12 @@
 				INFOPLIST_FILE = HiChongSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HiChongSwift/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "797ee597-b6f3-4a78-8e8c-516e127cdf5c";
 				SWIFT_OBJC_BRIDGING_HEADER = "HiChongSwift/HiChongSwift-BridgingHeader.h";
 			};
 			name = Release;

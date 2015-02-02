@@ -106,6 +106,7 @@ class LCYCommon: NSObject {
         userDefault.setObject(phoneNumber, forKey: UserDefaultKeys.kUserPhone.rawValue)
         userDefault.setBool(true, forKey: UserDefaultKeys.kUserLogin.rawValue)
         userDefault.synchronize()
+        APService.setAlias(userName, callbackSelector: nil, object: nil)
     }
     
     /// 用户名（需要先验证用户是否已经登录）

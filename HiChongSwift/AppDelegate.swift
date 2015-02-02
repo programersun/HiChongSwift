@@ -32,6 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController)
         }
         
+        // 极光推送
+        APService.registerForRemoteNotificationTypes(
+            UIUserNotificationType.Badge.rawValue |
+            UIUserNotificationType.Sound.rawValue |
+            UIUserNotificationType.Alert.rawValue
+            , categories: nil)
+        APService.setupWithOption(launchOptions)
+        
         return true
     }
 
@@ -48,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        application.applicationIconBadgeNumber = 0
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -58,6 +67,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    // MARK: - 推送消息
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        APService.registerDeviceToken(deviceToken)
+    }
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        println("didReceiveRemoteNotification \(userInfo)")
+        APService.handleRemoteNotification(userInfo)
+    }
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        println("didReceiveRemoteNotification fetchCompletionHandler \(userInfo)")
+        APService.handleRemoteNotification(userInfo)
+        completionHandler(UIBackgroundFetchResult.NewData)
     }
 
     // MARK: - Core Data stack

@@ -1,14 +1,16 @@
 //
 //  UserSearchFriendMsg.m
 //
-//  Created by 超逸 李 on 15/1/13
+//  Created by 超逸 李 on 15/2/2
 //  Copyright (c) 2015 Duostec. All rights reserved.
 //
 
 #import "UserSearchFriendMsg.h"
+#import "UserSearchFriendPets.h"
 
 
 NSString *const kUserSearchFriendMsgNickName = @"nick_name";
+NSString *const kUserSearchFriendMsgPets = @"pets";
 NSString *const kUserSearchFriendMsgHeadImage = @"head_image";
 NSString *const kUserSearchFriendMsgLongitude = @"longitude";
 NSString *const kUserSearchFriendMsgTip = @"tip";
@@ -28,6 +30,7 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
 @implementation UserSearchFriendMsg
 
 @synthesize nickName = _nickName;
+@synthesize pets = _pets;
 @synthesize headImage = _headImage;
 @synthesize longitude = _longitude;
 @synthesize tip = _tip;
@@ -51,6 +54,19 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
             self.nickName = [self objectOrNilForKey:kUserSearchFriendMsgNickName fromDictionary:dict];
+    NSObject *receivedUserSearchFriendPets = [dict objectForKey:kUserSearchFriendMsgPets];
+    NSMutableArray *parsedUserSearchFriendPets = [NSMutableArray array];
+    if ([receivedUserSearchFriendPets isKindOfClass:[NSArray class]]) {
+        for (NSDictionary *item in (NSArray *)receivedUserSearchFriendPets) {
+            if ([item isKindOfClass:[NSDictionary class]]) {
+                [parsedUserSearchFriendPets addObject:[UserSearchFriendPets modelObjectWithDictionary:item]];
+            }
+       }
+    } else if ([receivedUserSearchFriendPets isKindOfClass:[NSDictionary class]]) {
+       [parsedUserSearchFriendPets addObject:[UserSearchFriendPets modelObjectWithDictionary:(NSDictionary *)receivedUserSearchFriendPets]];
+    }
+
+    self.pets = [NSArray arrayWithArray:parsedUserSearchFriendPets];
             self.headImage = [self objectOrNilForKey:kUserSearchFriendMsgHeadImage fromDictionary:dict];
             self.longitude = [self objectOrNilForKey:kUserSearchFriendMsgLongitude fromDictionary:dict];
             self.tip = [self objectOrNilForKey:kUserSearchFriendMsgTip fromDictionary:dict];
@@ -70,6 +86,17 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
 {
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.nickName forKey:kUserSearchFriendMsgNickName];
+    NSMutableArray *tempArrayForPets = [NSMutableArray array];
+    for (NSObject *subArrayObject in self.pets) {
+        if([subArrayObject respondsToSelector:@selector(dictionaryRepresentation)]) {
+            // This class is a model object
+            [tempArrayForPets addObject:[subArrayObject performSelector:@selector(dictionaryRepresentation)]];
+        } else {
+            // Generic object
+            [tempArrayForPets addObject:subArrayObject];
+        }
+    }
+    [mutableDict setValue:[NSArray arrayWithArray:tempArrayForPets] forKey:kUserSearchFriendMsgPets];
     [mutableDict setValue:self.headImage forKey:kUserSearchFriendMsgHeadImage];
     [mutableDict setValue:self.longitude forKey:kUserSearchFriendMsgLongitude];
     [mutableDict setValue:self.tip forKey:kUserSearchFriendMsgTip];
@@ -102,6 +129,7 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
     self = [super init];
 
     self.nickName = [aDecoder decodeObjectForKey:kUserSearchFriendMsgNickName];
+    self.pets = [aDecoder decodeObjectForKey:kUserSearchFriendMsgPets];
     self.headImage = [aDecoder decodeObjectForKey:kUserSearchFriendMsgHeadImage];
     self.longitude = [aDecoder decodeObjectForKey:kUserSearchFriendMsgLongitude];
     self.tip = [aDecoder decodeObjectForKey:kUserSearchFriendMsgTip];
@@ -117,6 +145,7 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
 {
 
     [aCoder encodeObject:_nickName forKey:kUserSearchFriendMsgNickName];
+    [aCoder encodeObject:_pets forKey:kUserSearchFriendMsgPets];
     [aCoder encodeObject:_headImage forKey:kUserSearchFriendMsgHeadImage];
     [aCoder encodeObject:_longitude forKey:kUserSearchFriendMsgLongitude];
     [aCoder encodeObject:_tip forKey:kUserSearchFriendMsgTip];
@@ -134,6 +163,7 @@ NSString *const kUserSearchFriendMsgPetCount = @"pet_count";
     if (copy) {
 
         copy.nickName = [self.nickName copyWithZone:zone];
+        copy.pets = [self.pets copyWithZone:zone];
         copy.headImage = [self.headImage copyWithZone:zone];
         copy.longitude = [self.longitude copyWithZone:zone];
         copy.tip = [self.tip copyWithZone:zone];

@@ -52,6 +52,12 @@ class FindViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func clearBadge() {
+        remindInfo = nil
+        tableView.reloadData()
+        navigationController?.tabBarItem.badgeValue = nil
+    }
+    
     func checkUpdate() {
         if LCYCommon.sharedInstance.needToUpdateTwitter {
             // 需要更新信息
@@ -185,6 +191,8 @@ class FindViewController: UITableViewController {
                 if let sender = sender as? Bool {
                     destination.forFriend = sender
                 }
+            case "showCircle":
+                clearBadge()
             default:
                 break
             }

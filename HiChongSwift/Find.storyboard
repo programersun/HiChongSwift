@@ -2045,6 +2045,112 @@ So as I pray, Unlimited Blade Works.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindCatelogWhiteCellIdentifier" rowHeight="159" id="dHb-Db-thQ" customClass="FindCatelogWhiteCell" customModule="HiChongSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dHb-Db-thQ" id="ofh-Z4-UqZ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dub-ER-POj">
+                                            <rect key="frame" x="8" y="55" width="50" height="50"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="9SS-Ew-2VH"/>
+                                                <constraint firstAttribute="width" constant="50" id="S1x-Z7-huu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sqFemale" translatesAutoresizingMaskIntoConstraints="NO" id="S9a-Tv-jf4">
+                                            <rect key="frame" x="70" y="61" width="15" height="15"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHC-nH-r3B">
+                                            <rect key="frame" x="93" y="60" width="60" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.34509804840000002" green="0.61960786580000005" blue="0.74509805439999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgC-nz-chA">
+                                            <rect key="frame" x="70" y="82" width="28" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNg-EE-qDr">
+                                            <rect key="frame" x="567" y="68" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="bNg-EE-qDr" secondAttribute="height" multiplier="1:1" id="Stw-85-36J"/>
+                                                <constraint firstAttribute="height" constant="25" id="edl-h8-8EB"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfV-W8-cHH">
+                                            <rect key="frame" x="534" y="68" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="dfV-W8-cHH" secondAttribute="height" multiplier="1:1" id="u3H-7e-Mot"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIr-eT-ifZ">
+                                            <rect key="frame" x="501" y="68" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="FIr-eT-ifZ" secondAttribute="height" multiplier="1:1" id="KgR-SZ-R7Z"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aOr-1y-fYI">
+                                            <rect key="frame" x="8" y="149" width="584" height="10"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="w9D-qX-rIx"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bNg-EE-qDr" firstAttribute="leading" secondItem="dfV-W8-cHH" secondAttribute="trailing" constant="8" id="2I5-Ts-Sgu"/>
+                                        <constraint firstItem="UgC-nz-chA" firstAttribute="bottom" secondItem="Dub-ER-POj" secondAttribute="bottom" constant="-6" id="2rM-1X-cVl"/>
+                                        <constraint firstItem="aOr-1y-fYI" firstAttribute="leading" secondItem="ofh-Z4-UqZ" secondAttribute="leading" constant="8" id="56w-Wg-x6n"/>
+                                        <constraint firstItem="S9a-Tv-jf4" firstAttribute="top" secondItem="Dub-ER-POj" secondAttribute="top" constant="6" id="5FJ-xc-Sxs"/>
+                                        <constraint firstAttribute="trailing" secondItem="bNg-EE-qDr" secondAttribute="trailing" constant="8" id="5XW-Fk-ni6"/>
+                                        <constraint firstItem="Dub-ER-POj" firstAttribute="leading" secondItem="ofh-Z4-UqZ" secondAttribute="leading" constant="8" id="CNT-cu-Ees"/>
+                                        <constraint firstAttribute="bottom" secondItem="aOr-1y-fYI" secondAttribute="bottom" id="CVZ-RC-nFc"/>
+                                        <constraint firstItem="S9a-Tv-jf4" firstAttribute="leading" secondItem="Dub-ER-POj" secondAttribute="trailing" constant="12" id="KGm-zk-Ycb"/>
+                                        <constraint firstItem="dfV-W8-cHH" firstAttribute="leading" secondItem="FIr-eT-ifZ" secondAttribute="trailing" constant="8" id="Me9-gv-6iq"/>
+                                        <constraint firstItem="zHC-nH-r3B" firstAttribute="leading" secondItem="S9a-Tv-jf4" secondAttribute="trailing" constant="8" id="aiE-Um-4Jl"/>
+                                        <constraint firstAttribute="trailing" secondItem="aOr-1y-fYI" secondAttribute="trailing" constant="8" id="fE1-Yz-JnM"/>
+                                        <constraint firstAttribute="centerY" secondItem="bNg-EE-qDr" secondAttribute="centerY" id="ivR-dp-Qod"/>
+                                        <constraint firstAttribute="centerY" secondItem="Dub-ER-POj" secondAttribute="centerY" id="kHI-LF-Bb3"/>
+                                        <constraint firstAttribute="centerY" secondItem="dfV-W8-cHH" secondAttribute="centerY" id="lip-z3-GOR"/>
+                                        <constraint firstItem="zHC-nH-r3B" firstAttribute="centerY" secondItem="S9a-Tv-jf4" secondAttribute="centerY" id="qE0-nK-qPQ"/>
+                                        <constraint firstItem="dfV-W8-cHH" firstAttribute="height" secondItem="bNg-EE-qDr" secondAttribute="height" id="rrM-b6-svg"/>
+                                        <constraint firstItem="FIr-eT-ifZ" firstAttribute="height" secondItem="bNg-EE-qDr" secondAttribute="height" id="vZP-Zw-KRw"/>
+                                        <constraint firstItem="UgC-nz-chA" firstAttribute="leading" secondItem="Dub-ER-POj" secondAttribute="trailing" constant="12" id="wrz-Mc-hK2"/>
+                                        <constraint firstAttribute="centerY" secondItem="FIr-eT-ifZ" secondAttribute="centerY" id="yC2-jq-R0s"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="distanceLabel" destination="UgC-nz-chA" id="Bi8-MV-od2"/>
+                                    <outlet property="genderImageView" destination="S9a-Tv-jf4" id="EMf-bM-Ad1"/>
+                                    <outlet property="keeperAvatarImageView" destination="Dub-ER-POj" id="Rhn-YJ-x0o"/>
+                                    <outlet property="sepratorHeight" destination="w9D-qX-rIx" id="oJR-fS-2c3"/>
+                                    <outlet property="sepratorImageView" destination="aOr-1y-fYI" id="buG-0u-j7N"/>
+                                    <outlet property="userNameLabel" destination="zHC-nH-r3B" id="fra-UV-mwO"/>
+                                    <outletCollection property="petImageViews" destination="bNg-EE-qDr" collectionClass="NSMutableArray" id="uzZ-QL-5NL"/>
+                                    <outletCollection property="petImageViews" destination="dfV-W8-cHH" collectionClass="NSMutableArray" id="fAi-nq-aAt"/>
+                                    <outletCollection property="petImageViews" destination="FIr-eT-ifZ" collectionClass="NSMutableArray" id="iTX-5z-rYk"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindSearchResultCellIdentifier" rowHeight="116" id="HIi-3g-yis" customClass="FindSearchResultCell" customModule="HiChongSwift" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HIi-3g-yis" id="x3L-Sv-JRv">
@@ -2731,7 +2837,7 @@ So as I pray, Unlimited Blade Works.</string>
         <image name="upHeart" width="10" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XCC-x6-KlN"/>
         <segue reference="Ufa-8l-Vyh"/>
+        <segue reference="wuh-03-OLp"/>
     </inferredMetricsTieBreakers>
 </document>
