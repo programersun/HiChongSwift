@@ -10,6 +10,9 @@ import UIKit
 
 class FindPersonalCell: UITableViewCell {
     
+    var indexPath = NSIndexPath(forRow: 0, inSection: 0)
+    var delegate: FindPersonalCellDelegate?
+    
     @IBOutlet private weak var imageBlockWidth: NSLayoutConstraint!
     enum findPersonalCellType {
         case Image
@@ -90,6 +93,10 @@ class FindPersonalCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBAction func deleteButtonPressed(sender: AnyObject) {
+        delegate?.personalCellDeleteButtonClicked(indexPath)
+    }
     
     class var identifier: String {
         get {
@@ -108,4 +115,8 @@ class FindPersonalCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+protocol FindPersonalCellDelegate {
+    func personalCellDeleteButtonClicked(index: NSIndexPath)
 }

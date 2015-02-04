@@ -10,8 +10,17 @@ import UIKit
 
 class FindPersonalViewController: UITableViewController {
     
-    var personID: String?
+    var personID: String? {
+        didSet {
+            if let personID = personID {
+                if personID == LCYCommon.sharedInstance.userName! {
+                    ownView = true
+                }
+            }
+        }
+    }
     var personNickname: String?
+    var ownView = false
     
     //    private var infoData = [TwitterPersonalMsg]?
     
@@ -204,6 +213,13 @@ class FindPersonalViewController: UITableViewController {
         
         cell.icyTimeLabel.attributedText = data.addTime.toTwitterCalendar()
         
+        cell.indexPath = indexPath
+        cell.delegate = self
+        
+        if ownView {
+            cell.deleteButton.hidden = false
+        }
+        
         return cell
     }
     
@@ -258,6 +274,26 @@ extension FindPersonalViewController: ICYImageBrowserDataSource {
     }
     func icyImageBrowser(icyImageBrowser: ICYImageBrowser, titleForIndex titleIndex: Int) -> String? {
         return nil
+    }
+}
+
+extension FindPersonalViewController: FindPersonalCellDelegate, UIAlertViewDelegate {
+    func personalCellDeleteButtonClicked(index: NSIndexPath) {
+//        alertWithDelegate("真的要删除这条消息吗", tag: 1000, delegate: self)
+        let alertView = UIAlertView(title: "", message: "真的要删除这条消息吗", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
+        alertView.show()
+    }
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            // 删除
+            showHUD()
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue())
+                {
+                    [weak self] in
+                    self?.hideHUD()
+                    return
+            }
+        }
     }
 }
 

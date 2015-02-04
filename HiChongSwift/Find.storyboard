@@ -197,11 +197,23 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNN-XF-YmF">
+                                            <rect key="frame" x="562" y="0.0" width="30" height="30"/>
+                                            <state key="normal" title="删除">
+                                                <color key="titleColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="deleteButtonPressed:" destination="4dA-rN-MK5" eventType="touchUpInside" id="yDQ-7h-GA1"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="tNN-XF-YmF" secondAttribute="trailing" constant="8" id="BPO-jT-yTM"/>
                                         <constraint firstItem="zkC-sl-8fe" firstAttribute="leading" secondItem="7b5-Z6-eGl" secondAttribute="trailing" constant="8" id="IIj-vz-d9s"/>
                                         <constraint firstItem="zkC-sl-8fe" firstAttribute="top" secondItem="d6D-zL-qVO" secondAttribute="bottom" constant="8" id="Pwq-MT-QJi"/>
                                         <constraint firstItem="d6D-zL-qVO" firstAttribute="leading" secondItem="7b5-Z6-eGl" secondAttribute="trailing" constant="8" id="QBv-ws-x9n"/>
+                                        <constraint firstItem="tNN-XF-YmF" firstAttribute="top" secondItem="NKL-mR-Mzr" secondAttribute="top" id="Zh7-fN-sHO"/>
                                         <constraint firstItem="1qI-5F-Bob" firstAttribute="top" secondItem="NKL-mR-Mzr" secondAttribute="top" constant="8" id="bA2-80-8NT"/>
                                         <constraint firstAttribute="bottom" secondItem="zkC-sl-8fe" secondAttribute="bottom" constant="7" id="cOb-Ho-HLN"/>
                                         <constraint firstAttribute="trailing" secondItem="zkC-sl-8fe" secondAttribute="trailing" constant="8" id="cTZ-DB-RUg"/>
@@ -212,6 +224,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="deleteButton" destination="tNN-XF-YmF" id="ZNf-gf-iND"/>
                                     <outlet property="icyContentLabel" destination="zkC-sl-8fe" id="Emw-xK-AN0"/>
                                     <outlet property="icyTimeLabel" destination="1qI-5F-Bob" id="4bl-8S-Lxz"/>
                                     <outlet property="imageBlockWidth" destination="wRw-zv-T9b" id="IyV-fX-lcu"/>
