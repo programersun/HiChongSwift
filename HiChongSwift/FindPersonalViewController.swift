@@ -22,6 +22,7 @@ class FindPersonalViewController: UITableViewController {
     var personNickname: String?
     var ownView = false
     
+    var delegate: FindPersonalViewControllerDelegate?
     //    private var infoData = [TwitterPersonalMsg]?
     
     private var infoData: [TwitterPersonalMsg]?
@@ -42,6 +43,8 @@ class FindPersonalViewController: UITableViewController {
             }
         }
     }
+    
+    private var infoForDelete: TwitterPersonalMsg?
     
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var personNameLabel: UILabel!
@@ -280,6 +283,7 @@ extension FindPersonalViewController: ICYImageBrowserDataSource {
 extension FindPersonalViewController: FindPersonalCellDelegate, UIAlertViewDelegate {
     func personalCellDeleteButtonClicked(index: NSIndexPath) {
 //        alertWithDelegate("真的要删除这条消息吗", tag: 1000, delegate: self)
+        infoForDelete = infoData![index.row]
         let alertView = UIAlertView(title: "", message: "真的要删除这条消息吗", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定")
         alertView.show()
     }
@@ -287,13 +291,35 @@ extension FindPersonalViewController: FindPersonalCellDelegate, UIAlertViewDeleg
         if buttonIndex == 1 {
             // 删除
             showHUD()
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue())
-                {
-                    [weak self] in
+            let deletingtwitterID = infoForDelete!.twitterId.copy() as String
+            let parameter = ["twitter_id": infoForDelete!.twitterId]
+            LCYNetworking.sharedInstance.POST(
+                LCYApi.TwitterDelete,
+                parameters: parameter,
+                success: { [weak self](object) -> Void in
+                    let result = object["result"] as? Bool
+                    if result == true {
+                        // 删除成功
+                        if let data = self?.infoData {
+                            self?.infoData = data.filter({ $0.twitterId != deletingtwitterID })
+                            self?.delegate?.findPersonalVCDidRemoveTwitter(deletingtwitterID)
+                            self?.tableView.reloadData()
+                        }
+                    } else {
+                        self?.alert("删除失败")
+                    }
                     self?.hideHUD()
                     return
-            }
+            }, failure: { [weak self](error) -> Void in
+                self?.hideHUD()
+                self?.alert("网络状态不佳")
+                return
+            })
         }
     }
+}
+
+protocol FindPersonalViewControllerDelegate {
+    func findPersonalVCDidRemoveTwitter(twitterID: String)
 }
 

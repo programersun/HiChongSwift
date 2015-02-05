@@ -17,6 +17,7 @@ enum LCYApi: String {
     case TwitterCommentAdd          = "Twitter/twitter_comment_add"
     case TwitterStarDel             = "Twitter/twitter_star_del"
     case TwitterRemindInfo          = "Twitter/twitter_remind_info"
+    case TwitterDelete              = "Twitter/twitter_del"
     
     case SquareGetSquareCategory    = "Square/getSquareCategory" /// Deprecated
     case SquareHome                 = "Square/home"

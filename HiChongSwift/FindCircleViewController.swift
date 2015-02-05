@@ -193,6 +193,7 @@ class FindCircleViewController: UITableViewController {
             let data = sender as TwitterListMsg
             destination.personID = data.twitterKeeper
             destination.personNickname = data.nickName
+            destination.delegate = self
         } else if segue.identifier == "showPageView" {
             let destination = segue.destinationViewController as FindTwitterListPageViewController
             let data = sender as? TwitterListMsg
@@ -610,3 +611,13 @@ extension FindCircleViewController: AddCircleDelegate {
         reload()
     }
 }
+
+extension FindCircleViewController: FindPersonalViewControllerDelegate {
+    func findPersonalVCDidRemoveTwitter(twitterID: String) {
+        if let data = twitters {
+            twitters = data.filter({ $0.twitterId != twitterID })
+            tableView.reloadData()
+        }
+    }
+}
+
