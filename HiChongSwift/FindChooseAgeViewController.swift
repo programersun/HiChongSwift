@@ -34,7 +34,7 @@ class FindChooseAgeViewController: UIViewController {
     func doneButtonPressed(sender: AnyObject) {
         if let delegate = delegate {
             let from = icyPickerView.selectedRowInComponent(0)
-            let to = icyPickerView.selectedRowInComponent(2)
+            let to = icyPickerView.selectedRowInComponent(2) >= from ? icyPickerView.selectedRowInComponent(2) : from
             delegate.chooseAgeDone(from: from, to: to)
         }
         navigationController?.popViewControllerAnimated(true)
@@ -88,6 +88,19 @@ extension FindChooseAgeViewController: UIPickerViewDataSource, UIPickerViewDeleg
             return screenWidth / 5.0
         } else {
             return screenWidth / 5.0 * 2.0
+        }
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 2 {
+            let row1 = pickerView.selectedRowInComponent(0)
+            if row < row1 {
+                pickerView.selectRow(row1, inComponent: 2, animated: true)
+            }
+        } else if component == 0 {
+            let row2 = pickerView.selectedRowInComponent(2)
+            if row2 < row {
+                pickerView.selectRow(row, inComponent: 2, animated: true)
+            }
         }
     }
 }
