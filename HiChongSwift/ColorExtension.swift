@@ -60,6 +60,7 @@ extension UIColor {
     :returns: 颜色值UIColor
     */
     class func LCYTableLightGray() -> UIColor {
-        return UIColor(white: 236.0/255.0, alpha: 1.0)
+//        return UIColor(white: 236.0/255.0, alpha: 1.0)
+        return UIColor.whiteColor()
     }
 }
