@@ -241,6 +241,8 @@ extension SquareListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.distanceLabel.text = data.distance.toKM()
         cell.icyScore = CGFloat(data.businessScore)
         
+        cell.imagePath = data.businessImage.toAbsolutePath()
+        
         return cell
     }
     

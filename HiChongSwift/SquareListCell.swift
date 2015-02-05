@@ -10,6 +10,7 @@ import UIKit
 
 class SquareListCell: UITableViewCell {
     
+    @IBOutlet weak var icyImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -28,6 +29,16 @@ class SquareListCell: UITableViewCell {
                         chanImage.image = UIImage(named: "sqHeartNone")
                     }
                 }
+            }
+        }
+    }
+    
+    var imagePath: String? {
+        didSet {
+            if let imagePath = imagePath {
+                icyImageView.setImageWithURL(NSURL(string: imagePath), placeholderImage: nil)
+            } else {
+                icyImageView.image = nil
             }
         }
     }

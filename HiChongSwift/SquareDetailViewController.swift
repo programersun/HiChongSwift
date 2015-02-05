@@ -32,7 +32,7 @@ class SquareDetailViewController: UIViewController {
         let flex1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         let comment = UIBarButtonItem(image: UIImage(named: "sqIWantComment"), style: UIBarButtonItemStyle.Plain, target: self, action: "wantCommentButtonPressed:")
         let flex2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        let share = UIBarButtonItem(image: UIImage(named: "sqIWantShare"), style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        let share = UIBarButtonItem(image: UIImage(named: "sqIWantShare"), style: UIBarButtonItemStyle.Plain, target: self, action: "wantShareButtonPressed:")
         let flex3 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         self.setToolbarItems([flex1, comment, flex2, share, flex3], animated: false)
         
@@ -81,6 +81,18 @@ class SquareDetailViewController: UIViewController {
     
     func wantCommentButtonPressed(sender: AnyObject) {
         self.performSegueWithIdentifier("showAdd", sender: nil)
+    }
+
+    var shareVC: ICYShareViewController?
+    func wantShareButtonPressed(sender: AnyObject) {
+        if let data = merchantData {
+            // 暂时屏蔽分享功能
+//            shareVC = UIStoryboard(name: "ICYShare", bundle: nil).instantiateInitialViewController() as? ICYShareViewController
+//            if let shareVC = shareVC {
+//                shareVC.messageDescription = "向您推荐商家：\n\(data.msg.businessName)"
+//                UIApplication.sharedApplication().delegate?.window??.addSubview(shareVC.view)
+//            }
+        }
     }
     
     private func reload() {

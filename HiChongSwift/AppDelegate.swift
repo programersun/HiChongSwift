@@ -40,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             , categories: nil)
         APService.setupWithOption(launchOptions)
         
+        // 注册微信
+        WXApi.registerApp("wxf66f281df0560ff2")
         return true
     }
 
@@ -81,6 +83,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("didReceiveRemoteNotification fetchCompletionHandler \(userInfo)")
         APService.handleRemoteNotification(userInfo)
         completionHandler(UIBackgroundFetchResult.NewData)
+    }
+    // MARK: - 微信
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        println("weChat is handling url: \(url.absoluteString)")
+        return WXApi.handleOpenURL(url, delegate: self)
+    }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        println("weChat is handling url: \(url.absoluteString) sourceApplication :\(sourceApplication)")
+        return WXApi.handleOpenURL(url, delegate: self)
     }
 
     // MARK: - Core Data stack
@@ -157,5 +168,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: WXApiDelegate {
+    func onReq(req: BaseReq!) {
+        println("onReq called")
+    }
+    func onResp(resp: BaseResp!) {
+        println("onResp called")
+    }
 }
 

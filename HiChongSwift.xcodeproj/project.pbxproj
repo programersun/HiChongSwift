@@ -27,6 +27,9 @@
 		2806FEBB1A4A983300D18543 /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806FEBA1A4A983300D18543 /* QRScanViewController.swift */; };
 		2807DA8D1A637BE100D3534A /* UserFansFriendsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807DA8A1A637BE100D3534A /* UserFansFriendsBase.m */; };
 		2807DA8E1A637BE100D3534A /* UserFansFriendsMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 2807DA8C1A637BE100D3534A /* UserFansFriendsMsg.m */; };
+		2809E7BB1A82170A000D34CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2809E7BA1A82170A000D34CB /* SystemConfiguration.framework */; };
+		2809E7BD1A8217A8000D34CB /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2809E7BC1A8217A8000D34CB /* libsqlite3.0.dylib */; };
+		2809E7BF1A8217FA000D34CB /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2809E7BE1A8217FA000D34CB /* libc++.dylib */; };
 		280A08541A5CD4220016A504 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A08531A5CD4220016A504 /* FindLocationViewController.swift */; };
 		280A08AA1A5D2A5F0016A504 /* DianpingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A51A5D2A5F0016A504 /* DianpingBase.m */; };
 		280A08AB1A5D2A5F0016A504 /* DianpingBusinesses.m in Sources */ = {isa = PBXBuildFile; fileRef = 280A08A71A5D2A5F0016A504 /* DianpingBusinesses.m */; };
@@ -201,6 +204,9 @@
 		28F215771A5A6838002C0620 /* GeoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F215761A5A6838002C0620 /* GeoManager.swift */; };
 		28F2157D1A5A75D2002C0620 /* SquareGetListBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F2157A1A5A75D2002C0620 /* SquareGetListBase.m */; };
 		28F2157E1A5A75D2002C0620 /* SquareGetListMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F2157C1A5A75D2002C0620 /* SquareGetListMsg.m */; };
+		28F53B4D1A821261001D11FE /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F53B4A1A821261001D11FE /* libWeChatSDK.a */; };
+		28F53B531A82145F001D11FE /* ICYShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F53B521A82145F001D11FE /* ICYShareViewController.swift */; };
+		28F53B551A821504001D11FE /* ICYShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F53B541A821504001D11FE /* ICYShare.storyboard */; };
 		28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */; };
 		28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */; };
 		BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */; };
@@ -251,6 +257,10 @@
 		2807DA8A1A637BE100D3534A /* UserFansFriendsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFansFriendsBase.m; sourceTree = "<group>"; };
 		2807DA8B1A637BE100D3534A /* UserFansFriendsMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFansFriendsMsg.h; sourceTree = "<group>"; };
 		2807DA8C1A637BE100D3534A /* UserFansFriendsMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFansFriendsMsg.m; sourceTree = "<group>"; };
+		2809E7B81A8216D2000D34CB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2809E7BA1A82170A000D34CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2809E7BC1A8217A8000D34CB /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		2809E7BE1A8217FA000D34CB /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		280A08531A5CD4220016A504 /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
 		280A08A31A5D2A5F0016A504 /* Dianping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dianping.h; sourceTree = "<group>"; };
 		280A08A41A5D2A5F0016A504 /* DianpingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DianpingBase.h; sourceTree = "<group>"; };
@@ -509,6 +519,11 @@
 		28F2157A1A5A75D2002C0620 /* SquareGetListBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareGetListBase.m; sourceTree = "<group>"; };
 		28F2157B1A5A75D2002C0620 /* SquareGetListMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareGetListMsg.h; sourceTree = "<group>"; };
 		28F2157C1A5A75D2002C0620 /* SquareGetListMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareGetListMsg.m; sourceTree = "<group>"; };
+		28F53B4A1A821261001D11FE /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		28F53B4B1A821261001D11FE /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		28F53B4C1A821261001D11FE /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		28F53B521A82145F001D11FE /* ICYShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICYShareViewController.swift; sourceTree = "<group>"; };
+		28F53B541A821504001D11FE /* ICYShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ICYShare.storyboard; sourceTree = "<group>"; };
 		28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareMainButtonCell.swift; sourceTree = "<group>"; };
 		28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareSmallButtonCell.swift; sourceTree = "<group>"; };
 		3FDA3B0316BD51D4638A11E8 /* Pods-HiChongSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChongSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiChongSwift/Pods-HiChongSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -520,10 +535,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2809E7BF1A8217FA000D34CB /* libc++.dylib in Frameworks */,
+				2809E7BD1A8217A8000D34CB /* libsqlite3.0.dylib in Frameworks */,
+				2809E7BB1A82170A000D34CB /* SystemConfiguration.framework in Frameworks */,
 				28CF34E61A7F4A91001984D8 /* libz.dylib in Frameworks */,
 				28CF34E41A7F4A7A001984D8 /* CoreTelephony.framework in Frameworks */,
 				28CF34E01A7F4974001984D8 /* libPushSDK-1.8.2.a in Frameworks */,
 				BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */,
+				28F53B4D1A821261001D11FE /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,6 +1000,7 @@
 		28C6DAB81A2FFDB300068848 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				28F53B511A821452001D11FE /* ICYShare */,
 				28CF34DD1A7F4974001984D8 /* lib */,
 				2894AD921A75F173002ED6E6 /* ICYMultiImagePicker */,
 				28AA8F521A71E6260070BF47 /* ICYImageBrowser */,
@@ -1019,6 +1039,9 @@
 			children = (
 				28CF34DE1A7F4974001984D8 /* APService.h */,
 				28CF34DF1A7F4974001984D8 /* libPushSDK-1.8.2.a */,
+				28F53B4A1A821261001D11FE /* libWeChatSDK.a */,
+				28F53B4B1A821261001D11FE /* WXApi.h */,
+				28F53B4C1A821261001D11FE /* WXApiObject.h */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -1092,9 +1115,22 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		28F53B511A821452001D11FE /* ICYShare */ = {
+			isa = PBXGroup;
+			children = (
+				28F53B521A82145F001D11FE /* ICYShareViewController.swift */,
+				28F53B541A821504001D11FE /* ICYShare.storyboard */,
+			);
+			name = ICYShare;
+			sourceTree = "<group>";
+		};
 		2A41A38E2915F355616F7D28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2809E7BE1A8217FA000D34CB /* libc++.dylib */,
+				2809E7BC1A8217A8000D34CB /* libsqlite3.0.dylib */,
+				2809E7BA1A82170A000D34CB /* SystemConfiguration.framework */,
+				2809E7B81A8216D2000D34CB /* libsqlite3.dylib */,
 				28CF34E51A7F4A91001984D8 /* libz.dylib */,
 				28CF34E31A7F4A7A001984D8 /* CoreTelephony.framework */,
 				6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */,
@@ -1209,6 +1245,7 @@
 				28C6DAAE1A2FF25900068848 /* AboutMe.storyboard in Resources */,
 				28C166381A36BFEA0090E061 /* Sale.storyboard in Resources */,
 				289775E01A6367F900B3F0B6 /* FindPersonalHeader.xib in Resources */,
+				28F53B551A821504001D11FE /* ICYShare.storyboard in Resources */,
 				2802C99D1A2F5151001130ED /* Images.xcassets in Resources */,
 				28CF34E21A7F49E0001984D8 /* PushConfig.plist in Resources */,
 				28876B2A1A42BACB0002F635 /* Login.storyboard in Resources */,
@@ -1334,6 +1371,7 @@
 				285251D31A64E2AC00A8403E /* UserSearchFriendMsg.m in Sources */,
 				280A08541A5CD4220016A504 /* FindLocationViewController.swift in Sources */,
 				280A08AA1A5D2A5F0016A504 /* DianpingBase.m in Sources */,
+				28F53B531A82145F001D11FE /* ICYShareViewController.swift in Sources */,
 				28C93AC81A4CF6DE00E1F600 /* WikiCollectListData.m in Sources */,
 				2834C40F1A47E0A30007FE43 /* Region.swift in Sources */,
 				28801DD71A63A25B00743AA9 /* FindChooseAgeViewController.swift in Sources */,

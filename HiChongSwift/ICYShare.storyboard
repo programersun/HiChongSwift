@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rjR-d8-bU9">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Share View Controller-->
+        <scene sceneID="voG-nT-WGv">
+            <objects>
+                <viewController id="rjR-d8-bU9" customClass="ICYShareViewController" customModule="HiChongSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gWT-jP-vip"/>
+                        <viewControllerLayoutGuide type="bottom" id="kpn-n9-gvA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ayl-XJ-PDw" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3B-9y-lbY">
+                                <rect key="frame" x="16" y="285" width="60" height="30"/>
+                                <state key="normal" title="微信聊天">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="weChatButtonPressed:" destination="rjR-d8-bU9" eventType="touchUpInside" id="QVJ-pj-lHj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJ1-eA-3ka">
+                                <rect key="frame" x="84" y="285" width="45" height="30"/>
+                                <state key="normal" title="朋友圈">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zJ1-eA-3ka" firstAttribute="leading" secondItem="W3B-9y-lbY" secondAttribute="trailing" constant="8" id="Q4p-tg-TJ7"/>
+                            <constraint firstItem="W3B-9y-lbY" firstAttribute="leading" secondItem="ayl-XJ-PDw" secondAttribute="leading" constant="16" id="Rre-Ow-QrW"/>
+                            <constraint firstAttribute="centerY" secondItem="W3B-9y-lbY" secondAttribute="centerY" id="USv-JR-6ed"/>
+                            <constraint firstAttribute="centerY" secondItem="zJ1-eA-3ka" secondAttribute="centerY" id="taT-Ay-2Gt"/>
+                        </constraints>
+                        <connections>
+                            <action selector="backgroundTouched:" destination="rjR-d8-bU9" eventType="touchUpInside" id="sTW-7G-CXG"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfX-lJ-xMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439" y="341"/>
+        </scene>
+    </scenes>
+</document>

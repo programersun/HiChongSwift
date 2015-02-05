@@ -86,3 +86,6 @@
 #import "TwitterRemindInfo.h"
 
 #import "lib/APService.h"
+
+#import "lib/WXApi.h"
+//#import "WechatMessager.h"
