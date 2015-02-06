@@ -183,6 +183,7 @@
 		28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C93AC91A4D0AB600E1F600 /* WikiListViewController.swift */; };
 		28C93AD01A4D47B600E1F600 /* WikiMoreBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */; };
 		28C93AD11A4D47B600E1F600 /* WikiMoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */; };
+		28C959B61A849571005811D8 /* MessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C959B51A849571005811D8 /* MessageSender.m */; };
 		28CF34E01A7F4974001984D8 /* libPushSDK-1.8.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CF34DF1A7F4974001984D8 /* libPushSDK-1.8.2.a */; };
 		28CF34E21A7F49E0001984D8 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28CF34E11A7F49E0001984D8 /* PushConfig.plist */; };
 		28CF34E41A7F4A7A001984D8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CF34E31A7F4A7A001984D8 /* CoreTelephony.framework */; };
@@ -483,6 +484,8 @@
 		28C93ACD1A4D47B600E1F600 /* WikiMoreBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreBase.m; sourceTree = "<group>"; };
 		28C93ACE1A4D47B600E1F600 /* WikiMoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiMoreData.h; sourceTree = "<group>"; };
 		28C93ACF1A4D47B600E1F600 /* WikiMoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiMoreData.m; sourceTree = "<group>"; };
+		28C959B41A849571005811D8 /* MessageSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSender.h; sourceTree = "<group>"; };
+		28C959B51A849571005811D8 /* MessageSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSender.m; sourceTree = "<group>"; };
 		28CF34DE1A7F4974001984D8 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
 		28CF34DF1A7F4974001984D8 /* libPushSDK-1.8.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.2.a"; sourceTree = "<group>"; };
 		28CF34E11A7F49E0001984D8 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
@@ -1147,6 +1150,8 @@
 			isa = PBXGroup;
 			children = (
 				28F53B521A82145F001D11FE /* ICYShareViewController.swift */,
+				28C959B41A849571005811D8 /* MessageSender.h */,
+				28C959B51A849571005811D8 /* MessageSender.m */,
 				28F53B541A821504001D11FE /* ICYShare.storyboard */,
 			);
 			name = ICYShare;
@@ -1343,6 +1348,7 @@
 				28B9CEA91A49BD4C004E6386 /* AboutMeModifyLocationViewController.swift in Sources */,
 				28955A411A3EADAC00A1E4BC /* SquareCommentViewController.swift in Sources */,
 				28C6DACD1A2FFDF600068848 /* MJRefreshFooterView.m in Sources */,
+				28C959B61A849571005811D8 /* MessageSender.m in Sources */,
 				283C0E481A4BBA3A00C64B11 /* WikiAdCell.swift in Sources */,
 				28876B261A42A3AB0002F635 /* WelcomeViewController.swift in Sources */,
 				286D18A21A76333D0061658A /* TwitterListBase.m in Sources */,

@@ -87,11 +87,11 @@ class SquareDetailViewController: UIViewController {
     func wantShareButtonPressed(sender: AnyObject) {
         if let data = merchantData {
             // 暂时屏蔽分享功能
-//            shareVC = UIStoryboard(name: "ICYShare", bundle: nil).instantiateInitialViewController() as? ICYShareViewController
-//            if let shareVC = shareVC {
-//                shareVC.messageDescription = "向您推荐商家：\n\(data.msg.businessName)"
-//                UIApplication.sharedApplication().delegate?.window??.addSubview(shareVC.view)
-//            }
+            shareVC = UIStoryboard(name: "ICYShare", bundle: nil).instantiateInitialViewController() as? ICYShareViewController
+            if let shareVC = shareVC {
+                shareVC.messageDescription = "向您推荐商家：\n\(data.msg.businessName)"
+                UIApplication.sharedApplication().delegate?.window??.addSubview(shareVC.view)
+            }
         }
     }
     

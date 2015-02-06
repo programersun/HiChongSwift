@@ -41,7 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         APService.setupWithOption(launchOptions)
         
         // 注册微信
-        WXApi.registerApp("wxf66f281df0560ff2")
+        WXApi.registerApp("wxf66f281df0560ff2", withDescription: "嗨宠宠物")
+        
+        // 注册微博
+        WeiboSDK.enableDebugMode(true)
+        WeiboSDK.registerApp("3704764004")
         return true
     }
 
@@ -87,11 +91,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - 微信
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
         println("weChat is handling url: \(url.absoluteString)")
-        return WXApi.handleOpenURL(url, delegate: self)
+        return WXApi.handleOpenURL(url, delegate: self) || WeiboSDK.handleOpenURL(url, delegate: self)
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
         println("weChat is handling url: \(url.absoluteString) sourceApplication :\(sourceApplication)")
-        return WXApi.handleOpenURL(url, delegate: self)
+        return WXApi.handleOpenURL(url, delegate: self) || WeiboSDK.handleOpenURL(url, delegate: self)
     }
 
     // MARK: - Core Data stack
@@ -170,12 +174,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate: WXApiDelegate {
+extension AppDelegate: WXApiDelegate, WeiboSDKDelegate {
     func onReq(req: BaseReq!) {
         println("onReq called")
     }
     func onResp(resp: BaseResp!) {
         println("onResp called")
+    }
+    func didReceiveWeiboRequest(request: WBBaseRequest!) {
+        println("did receive weibo request")
+    }
+    func didReceiveWeiboResponse(response: WBBaseResponse!) {
+        println("did receive weibo respinse")
     }
 }
 

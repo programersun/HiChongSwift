@@ -89,3 +89,6 @@
 
 #import "lib/WXApi.h"
 //#import "WechatMessager.h"
+#import "MessageSender.h"
+
+#import "lib/WeiboSDK.h"

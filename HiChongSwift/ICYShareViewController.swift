@@ -26,25 +26,37 @@ class ICYShareViewController: UIViewController {
     @IBAction func weChatButtonPressed(sender: UIButton) {
         println("message button pressed")
         
+
         let message = WXMediaMessage()
         message.title = "嗨宠宠物"
         message.description = messageDescription ?? "嗨宠宠物，为您服务。"
         message.setThumbImage(UIImage(named: "placeholderLogo"))
 //        message.messageExt = "messageExt"
 //        message.messageAction = "<action>hichong</action>"
-        
+       
         let ext = WXAppExtendObject()
-//        ext.extInfo = "<xml>extend info</xml>"
+        ext.extInfo = "ext info"
         ext.url = "https://itunes.apple.com/us/app/hai-chong-chong-wu/id918809824?l=zh&ls=1&mt=8"
+
+        let data = "暂时不需要任何内容".dataUsingEncoding(NSUTF8StringEncoding)
+        ext.fileData = data
         
         message.mediaObject = ext
         
         let req = SendMessageToWXReq()
         req.bText = false
         req.message = message
-        req.scene = 0
+        req.scene = Int32(sender.tag)
         
         WXApi.sendReq(req)
+        
+
+        
+//        let messageSender = MessageSender()
+//        messageSender.sendAppContent()
+        
+    }
+    @IBAction func weiboButtonPressed(sender: AnyObject) {
         
     }
 

@@ -17,28 +17,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3B-9y-lbY">
-                                <rect key="frame" x="16" y="285" width="60" height="30"/>
-                                <state key="normal" title="微信聊天">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="weChatButtonPressed:" destination="rjR-d8-bU9" eventType="touchUpInside" id="QVJ-pj-lHj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJ1-eA-3ka">
-                                <rect key="frame" x="84" y="285" width="45" height="30"/>
-                                <state key="normal" title="朋友圈">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="160-5c-xRz">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3B-9y-lbY">
+                                        <rect key="frame" x="8" y="14" width="100" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="9vs-6n-w2G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="微信好友" image="weChat0">
+                                            <color key="titleColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="weChatButtonPressed:" destination="rjR-d8-bU9" eventType="touchUpInside" id="QVJ-pj-lHj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJ1-eA-3ka">
+                                        <rect key="frame" x="116" y="14" width="100" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="5xu-70-L7B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="微信朋友圈" image="weChat1">
+                                            <color key="titleColor" red="0.34509804840000002" green="0.61960786580000005" blue="0.74509805439999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="weChatButtonPressed:" destination="rjR-d8-bU9" eventType="touchUpInside" id="iRn-N7-EWJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roe-GT-P33">
+                                        <rect key="frame" x="224" y="14" width="100" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="rD3-H5-yiN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="新浪微博" image="weibo">
+                                            <color key="titleColor" red="0.34509804840000002" green="0.61960786580000005" blue="0.74509805439999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="weiboButtonPressed:" destination="rjR-d8-bU9" eventType="touchUpInside" id="Reb-vI-dvJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zJ1-eA-3ka" firstAttribute="leading" secondItem="W3B-9y-lbY" secondAttribute="trailing" constant="8" id="70u-vc-1VW"/>
+                                    <constraint firstAttribute="centerY" secondItem="W3B-9y-lbY" secondAttribute="centerY" id="EJY-Bo-fIW"/>
+                                    <constraint firstAttribute="centerY" secondItem="roe-GT-P33" secondAttribute="centerY" id="FKg-GQ-oGH"/>
+                                    <constraint firstAttribute="height" constant="60" id="FPI-Bv-Unr"/>
+                                    <constraint firstAttribute="centerY" secondItem="zJ1-eA-3ka" secondAttribute="centerY" id="a4B-qQ-dBd"/>
+                                    <constraint firstItem="roe-GT-P33" firstAttribute="leading" secondItem="zJ1-eA-3ka" secondAttribute="trailing" constant="8" id="k6t-mA-ijD"/>
+                                    <constraint firstItem="W3B-9y-lbY" firstAttribute="leading" secondItem="160-5c-xRz" secondAttribute="leading" constant="8" id="qOd-s9-ODE"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zJ1-eA-3ka" firstAttribute="leading" secondItem="W3B-9y-lbY" secondAttribute="trailing" constant="8" id="Q4p-tg-TJ7"/>
-                            <constraint firstItem="W3B-9y-lbY" firstAttribute="leading" secondItem="ayl-XJ-PDw" secondAttribute="leading" constant="16" id="Rre-Ow-QrW"/>
-                            <constraint firstAttribute="centerY" secondItem="W3B-9y-lbY" secondAttribute="centerY" id="USv-JR-6ed"/>
-                            <constraint firstAttribute="centerY" secondItem="zJ1-eA-3ka" secondAttribute="centerY" id="taT-Ay-2Gt"/>
+                            <constraint firstItem="160-5c-xRz" firstAttribute="leading" secondItem="ayl-XJ-PDw" secondAttribute="leading" id="AM5-4Q-FDe"/>
+                            <constraint firstAttribute="trailing" secondItem="160-5c-xRz" secondAttribute="trailing" id="RKM-qu-AaG"/>
+                            <constraint firstItem="kpn-n9-gvA" firstAttribute="top" secondItem="160-5c-xRz" secondAttribute="bottom" id="iGM-4h-2h8"/>
                         </constraints>
                         <connections>
                             <action selector="backgroundTouched:" destination="rjR-d8-bU9" eventType="touchUpInside" id="sTW-7G-CXG"/>
@@ -47,7 +88,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfX-lJ-xMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="341"/>
+            <point key="canvasLocation" x="295" y="336"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="weChat0" width="32" height="32"/>
+        <image name="weChat1" width="32" height="32"/>
+        <image name="weibo" width="32" height="32"/>
+    </resources>
 </document>

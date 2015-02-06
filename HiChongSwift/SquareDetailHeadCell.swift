@@ -51,7 +51,7 @@ class SquareDetailHeadCell: UITableViewCell {
         didSet {
             if icyScore != oldValue {
                 if let score = icyScore {
-                    starTextLabel.text = "\(score)"
+                    starTextLabel.text = score.format(1)//"\(score)"
                 }
                 for chanImage in self.heartImageView {
                     if CGFloat(chanImage.tag) <= icyScore {

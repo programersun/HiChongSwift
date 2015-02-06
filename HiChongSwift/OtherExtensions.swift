@@ -119,6 +119,12 @@ extension Double {
     }
 }
 
+extension CGFloat {
+    func format(maxFloatCount: Int) -> String {
+        return NSString(format: "%\(maxFloatCount)f", self)
+    }
+}
+
 extension Dictionary{
     mutating func extend(content: Dictionary) {
         for (key, value) in content {
