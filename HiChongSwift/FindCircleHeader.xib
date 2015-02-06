@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -19,10 +19,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62U-0x-RxQ">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="578"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yu4-8Q-i4T">
-                    <rect key="frame" x="487" y="604" width="28" height="18"/>
+                    <rect key="frame" x="487" y="582" width="28" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -35,15 +35,18 @@
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hze-jU-Tdu">
-                    <rect key="frame" x="523" y="557" width="65" height="65"/>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hze-jU-Tdu">
+                    <rect key="frame" x="523" y="535" width="65" height="65"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="65" id="b5C-8a-5bd"/>
                         <constraint firstAttribute="width" constant="65" id="xdA-GA-sCx"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="TDn-mT-8TU" appends="YES" id="UIf-BD-qdq"/>
+                    </connections>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hze-jU-Tdu" secondAttribute="trailing" constant="12" id="7Sk-Sv-v6w"/>
                 <constraint firstAttribute="trailing" secondItem="62U-0x-RxQ" secondAttribute="trailing" id="Av0-zA-sEf"/>
@@ -52,8 +55,8 @@
                 <constraint firstItem="Yu4-8Q-i4T" firstAttribute="bottom" secondItem="hze-jU-Tdu" secondAttribute="bottom" id="WPS-rT-vDj"/>
                 <constraint firstItem="62U-0x-RxQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WvF-UO-9Qv"/>
                 <constraint firstItem="62U-0x-RxQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aJk-Xh-41Q"/>
-                <constraint firstAttribute="bottom" secondItem="hze-jU-Tdu" secondAttribute="bottom" constant="-22" id="gWh-6p-DJg"/>
-                <constraint firstAttribute="bottom" secondItem="62U-0x-RxQ" secondAttribute="bottom" id="gjH-pQ-80V"/>
+                <constraint firstAttribute="bottom" secondItem="hze-jU-Tdu" secondAttribute="bottom" id="gWh-6p-DJg"/>
+                <constraint firstAttribute="bottom" secondItem="62U-0x-RxQ" secondAttribute="bottom" constant="22" id="gjH-pQ-80V"/>
                 <constraint firstAttribute="centerX" secondItem="qMC-SP-1JW" secondAttribute="centerX" id="umC-T6-32P"/>
             </constraints>
             <connections>
@@ -61,5 +64,10 @@
             </connections>
             <point key="canvasLocation" x="503" y="455"/>
         </view>
+        <tapGestureRecognizer id="TDn-mT-8TU">
+            <connections>
+                <action selector="headerImageTapped:" destination="-1" id="QF2-UK-buK"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

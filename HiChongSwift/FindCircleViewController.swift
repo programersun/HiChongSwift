@@ -67,7 +67,7 @@ class FindCircleViewController: UITableViewController {
         
         let headerNib = UINib(nibName: "FindCircleHeader", bundle: nil)
         let headerView = headerNib.instantiateWithOwner(self, options: nil).first as UIView
-        headerView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width / 320.0 * 200.0)
+        headerView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width / 320.0 * 200.0 + 22.0)
         self.tableView.tableHeaderView = headerView
         
         self.avatarImageView.roundCorner()
@@ -100,6 +100,12 @@ class FindCircleViewController: UITableViewController {
         actionSheet.destructiveButtonIndex = 1
         actionSheet.tag = magicNumber.changeCover.rawValue
         actionSheet.showInView(self.view)
+    }
+    
+    @IBAction func headerImageTapped(sender: AnyObject) {
+        if keeperInfo != nil {
+            performSegueWithIdentifier("showPersonal", sender: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -194,9 +200,15 @@ class FindCircleViewController: UITableViewController {
             }
         } else if segue.identifier == "showPersonal" {
             let destination = segue.destinationViewController as FindPersonalViewController
-            let data = sender as TwitterListMsg
-            destination.personID = data.twitterKeeper
-            destination.personNickname = data.nickName
+            if let data = sender as? TwitterListMsg {
+                destination.personID = data.twitterKeeper
+                destination.personNickname = data.nickName
+            } else if let keeperInfo = keeperInfo {
+                destination.personID = keeperInfo.userId
+                destination.personNickname = keeperInfo.nickName
+            } else {
+                destination.personID = LCYCommon.sharedInstance.userName!
+            }
             destination.delegate = self
         } else if segue.identifier == "showPageView" {
             let destination = segue.destinationViewController as FindTwitterListPageViewController
