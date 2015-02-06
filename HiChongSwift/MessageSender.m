@@ -9,6 +9,7 @@
 #import "MessageSender.h"
 #import "lib/WXApi.h"
 
+
 @interface MessageSender ()
 {
     enum WXScene _scene;
@@ -53,6 +54,17 @@
     req.scene = _scene;
     
     [WXApi sendReq:req];
+}
+
+- (void)sendWeiboContent:(WBMessageObject *)message {
+    WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
+    authRequest.redirectURI = @"";
+    authRequest.scope = @"all";
+    
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message authInfo:authRequest access_token:@"3704764004"];
+    request.userInfo = @{@"zombieKey": @"zombieValue"};
+    //    request.shouldOpenWeiboAppInstallPageIfNotInstalled = NO;
+    [WeiboSDK sendRequest:request];
 }
 
 @end

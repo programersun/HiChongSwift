@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "lib/WeiboSDK.h"
 
 @interface MessageSender : NSObject
 
 - (void)sendAppContent;
+
+- (void)sendWeiboContent:(WBMessageObject *)message;
 
 @end
