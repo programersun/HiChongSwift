@@ -14,6 +14,7 @@ protocol FindCircleListCellDelegate: class {
     func findCircleListCellComment(indexPath: NSIndexPath)
     func findCircleListCellCare(indexPath: NSIndexPath)
     func findCilcleListCellExpand(indexPath: NSIndexPath)
+    func findCircleListCellShare(indexPath: NSIndexPath)
 }
 
 class FindCircleListCell: UITableViewCell {

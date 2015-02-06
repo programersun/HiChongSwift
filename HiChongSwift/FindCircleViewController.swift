@@ -10,6 +10,8 @@ import UIKit
 
 class FindCircleViewController: UITableViewController {
     
+    private var shareVC: ICYShareViewController?
+    
     private let testContent = "I am the bone of my sword.\n" +
         "Steel is my body,and fire is my blood.\n" +
         "I have created over a thousand blades.\n" +
@@ -592,6 +594,24 @@ extension FindCircleViewController: FindCircleListCellDelegate {
         if !contains(expandedTwitters, data) {
             expandedTwitters.append(data)
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    func findCircleListCellShare(indexPath: NSIndexPath) {
+        let data = twitters![indexPath.row]
+        shareVC = UIStoryboard(name: "ICYShare", bundle: nil).instantiateInitialViewController() as? ICYShareViewController
+        if let shareVC = shareVC {
+            shareVC.messageDescription = "向您推荐了 嗨宠宠物"
+            shareVC.weiboMessage = "嗨宠宠物：\(data.twitterContent)"
+            if data.images != nil && data.images.count > 1 {
+                if let url = NSURL(string: (data.images[0] as TwitterListImages).cutPath.toAbsolutePath()) {
+                    let request = NSURLRequest(URL: url)
+                    let cachedImage = UIImageView.sharedImageCache().cachedImageForRequest(request)
+                    if cachedImage != nil {
+                        shareVC.weiboImage = cachedImage
+                    }
+                }
+            }
+            UIApplication.sharedApplication().delegate?.window??.addSubview(shareVC.view)
         }
     }
 }

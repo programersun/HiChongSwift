@@ -698,6 +698,9 @@
                                                     <state key="normal" image="twiShare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="shareButtonPressed:" destination="RC1-q3-AwT" eventType="touchUpInside" id="XT3-qr-Bxw"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTs-wv-d8h">
                                                     <rect key="frame" x="228" y="1" width="70" height="22"/>

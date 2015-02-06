@@ -259,6 +259,9 @@ class FindTwitterListCell: UITableViewCell {
     @IBAction func careButtonPressed(sender: AnyObject) {
         delegate?.findCircleListCellCare(indexPath)
     }
+    @IBAction func shareButtonPressed(sender: AnyObject) {
+        delegate?.findCircleListCellShare(indexPath)
+    }
     
     /// 发布时间
     @IBOutlet weak var timeLabel: UILabel!

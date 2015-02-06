@@ -12,6 +12,7 @@ class ICYShareViewController: UIViewController {
     
     var messageDescription: String?
     var weiboImage: UIImage?
+    var weiboMessage: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,7 @@ class ICYShareViewController: UIViewController {
         let messageSender = MessageSender()
         let wbMessage = WBMessageObject()
         
-        wbMessage.text = messageDescription ?? "嗨宠宠物，为您服务。"
+        wbMessage.text = weiboMessage ?? messageDescription ?? "嗨宠宠物，为您服务。"
         
         if let weiboImage = weiboImage {
             let imageObject = WBImageObject()
