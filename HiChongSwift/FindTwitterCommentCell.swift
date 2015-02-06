@@ -36,3 +36,13 @@ class FindTwitterCommentCell: UITableViewCell {
     }
 
 }
+
+extension FindTwitterCommentCell: UITextFieldDelegate {
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if contains(string, "\n") {
+            textField.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+}

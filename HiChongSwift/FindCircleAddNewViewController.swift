@@ -102,11 +102,10 @@ class FindCircleAddNewViewController: UITableViewController {
                         return
                 })
             case .mixed:
-                // TODO: 图文混合
                 parameters.extend([
                     "twitter_keeper"    : LCYCommon.sharedInstance.userName!,
                     "twitter_pet"       : myPet!.petId,
-                    "twitter_type"      : "2",
+                    "twitter_type"      : "3",
                     "twitter_content"   : icyTextView!.text,
                     "twitter_location"  : locationString ?? "",
                     "twitter_longitude" : "\(location!.coordinate.longitude)",

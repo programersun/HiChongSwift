@@ -1483,7 +1483,10 @@ So as I pray, Unlimited Blade Works.</string>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="随手写点评论吧" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TUt-Fw-btI">
                                             <rect key="frame" x="8" y="7" width="530" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="O7Q-fO-rhX" id="eNV-ZQ-BJr"/>
+                                            </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXL-bB-bFL">
                                             <rect key="frame" x="546" y="7" width="46" height="30"/>
