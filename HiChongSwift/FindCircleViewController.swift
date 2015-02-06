@@ -39,6 +39,7 @@ class FindCircleViewController: UITableViewController {
     private var imagePicker: UIImagePickerController?
     
     private var twitters: [TwitterListMsg]?
+    private var expandedTwitters = [TwitterListMsg]()
     
     private enum magicNumber: Int {
         case changeCover = 3391
@@ -130,6 +131,7 @@ class FindCircleViewController: UITableViewController {
             let retrieved = TwitterListBase.modelObjectWithDictionary(object)
             if retrieved.result {
                 self?.twitters = [TwitterListMsg]()
+                self?.expandedTwitters = [TwitterListMsg]()
                 self?.twitters?.extend(retrieved.msg as [TwitterListMsg])
                 self?.tableView.reloadData()
             }
@@ -297,7 +299,10 @@ class FindCircleViewController: UITableViewController {
         // 高度 = 11 + 题头高度 + 8 + 图片模块高度 + 8 + (赞列表模块高度(35) + 8) + 点赞按钮模块高度(24) + 底部空间(8)
         // 题头高度 = 图片高度(61) + 4 + 文字高度 + 4
         // 图片模块高度略
-        let textHeight = data.twitterContent.boundingRectWithSize(CGSizeMake(screenWidth() - 16.0, 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(twitterFontSize)], context: nil).height
+        var textHeight = data.twitterContent.boundingRectWithSize(CGSizeMake(screenWidth() - 16.0, 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(twitterFontSize)], context: nil).height
+        if textHeight > 86.0 {
+            
+        }
         let textBlockHeight = 61.0 + 4.0 + textHeight + 4.0
         var imageBlockHeight: CGFloat = 0.0
         switch data.images.count {
@@ -343,6 +348,12 @@ class FindCircleViewController: UITableViewController {
                 return
             })
             imageBrowser.show()
+        }
+        
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? FindTwitterListCell {
+            println("\(cell.icyContentLabel.bounds.height)")
+        } else {
+            println("nope!")
         }
     }
     

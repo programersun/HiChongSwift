@@ -62,8 +62,10 @@ class FindViewController: UITableViewController {
         if LCYCommon.sharedInstance.needToUpdateTwitter {
             // 需要更新信息
             LCYCommon.sharedInstance.needToUpdateTwitter = false
-            let parameter = ["lasttime": LCYCommon.sharedInstance.lastTime,
-                "user_id": LCYCommon.sharedInstance.userName!]
+            let parameter = [
+                "lasttime": LCYCommon.sharedInstance.lastTime,
+                "user_id": LCYCommon.sharedInstance.userName!
+            ]
             LCYNetworking.sharedInstance.POST(LCYApi.TwitterRemindInfo, parameters: parameter, success: { [weak self](object) -> Void in
                 let base = TwitterRemindInfoBase.modelObjectWithDictionary(object)
                 if base.result {

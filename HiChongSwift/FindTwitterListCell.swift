@@ -28,7 +28,7 @@ class FindTwitterListCell: UITableViewCell {
         }
     }
     /// 发送的内容
-    @IBOutlet private weak var icyContentLabel: UILabel!
+    @IBOutlet weak var icyContentLabel: UILabel!
     @IBOutlet private weak var icyContentBlockHeight: NSLayoutConstraint!
     var icyContent: String? {
         didSet {
