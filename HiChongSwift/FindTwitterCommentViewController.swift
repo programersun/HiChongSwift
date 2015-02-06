@@ -178,6 +178,7 @@ class FindTwitterCommentViewController: UITableViewController {
                 cell.stared = data.isStar != 0
                 cell.timeLabel.text = data.addTime.toTwitterDeltaTime()
                 cell.delegate = self
+                cell.expand = true
             }
             
         case 1:
@@ -453,6 +454,9 @@ extension FindTwitterCommentViewController: FindCircleListCellDelegate {
         }
     }
     func findCircleListCellCare(indexPath: NSIndexPath) {
+        
+    }
+    func findCilcleListCellExpand(indexPath: NSIndexPath) {
         
     }
 }

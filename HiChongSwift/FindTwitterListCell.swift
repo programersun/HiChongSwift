@@ -12,6 +12,8 @@ let twitterFontSize = CGFloat(12.0)
 
 class FindTwitterListCell: UITableViewCell {
     
+//    var delegate: FindTwitterListCellDelegate?
+    
     // MARK: - Outlets
     
     /// 主人昵称
@@ -34,7 +36,16 @@ class FindTwitterListCell: UITableViewCell {
         didSet {
             if let content = icyContent {
                 icyContentLabel.text = content
-                let textHeight = content.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width - 16.0, 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(twitterFontSize)], context: nil).height
+                var textHeight = content.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width - 16.0, 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(twitterFontSize)], context: nil).height
+                if textHeight > 86.0 && !expand {
+                    textHeight = 86.0
+                    textHeight += 16.0
+                    icyContentLabel.numberOfLines = 6
+                    fullButton.hidden = false
+                } else {
+                    fullButton.hidden = true
+                    icyContentLabel.numberOfLines = 0
+                }
                 icyContentBlockHeight.constant = textHeight + 68.0
             } else {
                 icyContentLabel.text = nil
@@ -42,6 +53,12 @@ class FindTwitterListCell: UITableViewCell {
             }
         }
     }
+    @IBOutlet private weak var fullButton: UIButton!
+    @IBAction func fullButtonPressed(sender: AnyObject) {
+        delegate?.findCilcleListCellExpand(indexPath)
+    }
+    var expand: Bool = false
+    
     /// 中间的图片
     @IBOutlet private weak var headerBlockView: UIView!
     @IBOutlet weak var icyImageBlockHeightConstraint: NSLayoutConstraint!

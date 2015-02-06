@@ -245,10 +245,11 @@ class FindCircleViewController: UITableViewController {
 //        
 //        cell.stared = data.isStar != 0
         
-        
+
         let cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterListCell.identifier) as FindTwitterListCell
         cell.indexPath = indexPath
         let data = twitters![indexPath.row]
+        cell.expand = contains(expandedTwitters, data)
         cell.keeperAvatarPath = data.keeperImage != nil ? data.keeperImage.toAbsolutePath() : nil
         cell.petAvatarPath = data.petImage != nil ? data.petImage.toAbsolutePath() : nil
         cell.keeperNameLabel.text = data.nickName
@@ -268,6 +269,8 @@ class FindCircleViewController: UITableViewController {
         cell.cared = data.isRel != 0
         
         cell.delegate = self
+        
+        
         
         return cell
     }
@@ -300,10 +303,11 @@ class FindCircleViewController: UITableViewController {
         // 题头高度 = 图片高度(61) + 4 + 文字高度 + 4
         // 图片模块高度略
         var textHeight = data.twitterContent.boundingRectWithSize(CGSizeMake(screenWidth() - 16.0, 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(twitterFontSize)], context: nil).height
-        if textHeight > 86.0 {
-            
+        if textHeight > 86.0 && !contains(expandedTwitters, data){
+            textHeight = 86.0 + 16.0
         }
         let textBlockHeight = 61.0 + 4.0 + textHeight + 4.0
+        
         var imageBlockHeight: CGFloat = 0.0
         switch data.images.count {
         case 0:
@@ -350,11 +354,11 @@ class FindCircleViewController: UITableViewController {
             imageBrowser.show()
         }
         
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? FindTwitterListCell {
-            println("\(cell.icyContentLabel.bounds.height)")
-        } else {
-            println("nope!")
-        }
+//        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? FindTwitterListCell {
+//            println("\(cell.icyContentLabel.bounds.height)")
+//        } else {
+//            println("nope!")
+//        }
     }
     
 }
@@ -580,6 +584,14 @@ extension FindCircleViewController: FindCircleListCellDelegate {
         LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameter, success: successBlock) { [weak self](error) -> Void in
             self?.hideHUD()
             self?.alert("您的网络状态欠佳")
+        }
+    }
+    
+    func findCilcleListCellExpand(indexPath: NSIndexPath) {
+        let data = twitters![indexPath.row]
+        if !contains(expandedTwitters, data) {
+            expandedTwitters.append(data)
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }
 }
