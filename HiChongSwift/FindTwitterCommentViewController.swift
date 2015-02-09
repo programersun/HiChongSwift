@@ -187,6 +187,10 @@ class FindTwitterCommentViewController: UITableViewController {
             
             let comment = infoData!.comment[indexPath.row] as TwitterCommentListComment
             
+            cell.icyNameLabel.text = comment.keeperName
+            cell.icyTimeLabel.text = comment.addTime.toTwitterDeltaTime()
+            cell.avatarPath = comment.headImage.toAbsolutePath()
+            
             if comment.receiverName == nil {
                 var attributed = NSMutableAttributedString(string: "\(comment.keeperName):\(comment.content)")
                 let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
@@ -283,7 +287,7 @@ class FindTwitterCommentViewController: UITableViewController {
             case 0:
                 imageBlockHeight = -8.0
             case 1:
-//                imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
+                //                imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
                 if let imageData = data.images[0] as? TwitterListImages {
                     if imageData.cutWidth.bridgeToObjectiveC().floatValue > imageData.cutHeight.bridgeToObjectiveC().floatValue {
                         imageBlockHeight = CGFloat((data.images[0].cutHeight as NSString).floatValue) / CGFloat((data.images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
@@ -317,7 +321,7 @@ class FindTwitterCommentViewController: UITableViewController {
                     NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
                     NSForegroundColorAttributeName  : UIColor.blackColor()
                     ], range: contentRange)
-                height = attributed.boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width - 16.0, height: 20000.0),
+                height = attributed.boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width - 72.0, height: 20000.0),
                     options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).height
             } else {
                 var attributed = NSMutableAttributedString(string: "\(comment.keeperName)回复\(comment.receiverName):\(comment.content)")
@@ -341,9 +345,9 @@ class FindTwitterCommentViewController: UITableViewController {
                     NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
                     NSForegroundColorAttributeName  : UIColor.blackColor()
                     ], range: contentRange)
-                height = attributed.boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width - 16.0, height: 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).height
+                height = attributed.boundingRectWithSize(CGSize(width: UIScreen.mainScreen().bounds.width - 72.0, height: 20000.0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).height
             }
-            return height + 12.0
+            return max(height + 42.0 , 66.0)
         case 2:
             return 44.0
         default:
@@ -354,10 +358,16 @@ class FindTwitterCommentViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
             resetInputView()
-            replyData = infoData?.comment[indexPath.row] as? TwitterCommentListComment
-            let replyTo = replyData?.keeperName ?? "神秘人物"
-            icyTextField?.placeholder = "回复:\(replyTo)"
-            icyTextField?.becomeFirstResponder()
+            tableView.scrollToRowAtIndexPath(NSIndexPath(forItem: 0, inSection: 2), atScrollPosition: UITableViewScrollPosition.Bottom, animated: false)
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.05 * Double(NSEC_PER_SEC))), dispatch_get_main_queue())
+                {
+                    [weak self] in
+                    self?.replyData = self?.infoData?.comment[indexPath.row] as? TwitterCommentListComment
+                    let replyTo = self?.replyData?.keeperName ?? "神秘人物"
+                    self?.icyTextField?.placeholder = "回复:\(replyTo)"
+                    self?.icyTextField?.becomeFirstResponder()
+            }
+            
         }
     }
     
@@ -450,7 +460,7 @@ extension FindTwitterCommentViewController: FindCircleListCellDelegate {
                     self?.alert("点赞失败，请检查您的网络状态")
                     return
             }
-
+            
         }
     }
     func findCircleListCellCare(indexPath: NSIndexPath) {

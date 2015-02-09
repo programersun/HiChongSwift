@@ -11,6 +11,20 @@ import UIKit
 class FindTwitterCommentListCell: UITableViewCell {
     
     @IBOutlet weak var icyLabel: UILabel!
+    @IBOutlet weak var icyNameLabel: UILabel!
+    @IBOutlet weak var icyTimeLabel: UILabel!
+    @IBOutlet private weak var icyImageView: UIImageView!
+    
+    var avatarPath: String? {
+        didSet {
+            if let path = avatarPath {
+                icyImageView.setImageWithURL(NSURL(string: path), placeholderImage: UIImage(named: "placeholderLogo"))
+            } else {
+                icyImageView.image = UIImage(named: "placeholderLogo")
+            }
+        }
+    }
+    
     class var identifier: String {
         get {
             return "FindTwitterCommentListCellIdentifier"
