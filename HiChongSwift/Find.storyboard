@@ -1790,9 +1790,17 @@ So as I pray, Unlimited Blade Works.</string>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IML-w9-Dyi" userLabel="seprator">
+                                            <rect key="frame" x="8" y="66" width="584" height="1"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="1QS-Ez-Gnz"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="IML-w9-Dyi" secondAttribute="bottom" id="0dl-P4-oaH"/>
                                         <constraint firstAttribute="trailing" secondItem="uhm-ZE-3bx" secondAttribute="trailing" constant="8" id="1nF-og-ANM"/>
+                                        <constraint firstItem="IML-w9-Dyi" firstAttribute="leading" secondItem="oih-px-Nka" secondAttribute="leading" constant="8" id="5X3-Dw-F1b"/>
                                         <constraint firstItem="u8g-7v-e07" firstAttribute="top" secondItem="oih-px-Nka" secondAttribute="top" constant="8" id="85n-pu-RdC"/>
                                         <constraint firstItem="uhm-ZE-3bx" firstAttribute="leading" secondItem="oih-px-Nka" secondAttribute="leading" constant="64" id="FMc-N9-LTT"/>
                                         <constraint firstAttribute="trailing" secondItem="Oqd-sc-TlN" secondAttribute="trailing" constant="8" id="G9t-9k-kjH"/>
@@ -1801,6 +1809,7 @@ So as I pray, Unlimited Blade Works.</string>
                                         <constraint firstAttribute="bottom" secondItem="uhm-ZE-3bx" secondAttribute="bottom" constant="8" id="awu-j2-5Zw"/>
                                         <constraint firstItem="Gtl-Li-P3y" firstAttribute="top" secondItem="oih-px-Nka" secondAttribute="top" constant="8" id="dBb-AM-Dto"/>
                                         <constraint firstItem="Oqd-sc-TlN" firstAttribute="top" secondItem="oih-px-Nka" secondAttribute="top" constant="8" id="hM1-1F-ZEa"/>
+                                        <constraint firstAttribute="trailing" secondItem="IML-w9-Dyi" secondAttribute="trailing" constant="8" id="l3F-1v-SbH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1808,6 +1817,8 @@ So as I pray, Unlimited Blade Works.</string>
                                     <outlet property="icyLabel" destination="uhm-ZE-3bx" id="fDQ-22-tds"/>
                                     <outlet property="icyNameLabel" destination="Gtl-Li-P3y" id="RJQ-gn-Riu"/>
                                     <outlet property="icyTimeLabel" destination="Oqd-sc-TlN" id="3gI-aY-x3p"/>
+                                    <outlet property="sepratorHeightConstraint" destination="1QS-Ez-Gnz" id="dPA-Oc-0lx"/>
+                                    <outlet property="sepratorView" destination="IML-w9-Dyi" id="3Ly-8M-VxW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

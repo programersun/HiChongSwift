@@ -14,7 +14,8 @@ class FindTwitterCommentListCell: UITableViewCell {
     @IBOutlet weak var icyNameLabel: UILabel!
     @IBOutlet weak var icyTimeLabel: UILabel!
     @IBOutlet private weak var icyImageView: UIImageView!
-    
+    @IBOutlet private weak var sepratorHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var sepratorView: UIImageView!
     var avatarPath: String? {
         didSet {
             if let path = avatarPath {
@@ -34,6 +35,8 @@ class FindTwitterCommentListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        sepratorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
+        sepratorView.image = LCYCommon.sharedInstance.graySepratorImage
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
