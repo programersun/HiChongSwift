@@ -82,32 +82,43 @@ class FindTwitterListCell: UITableViewCell {
                         one.image = nil
                     }
                 } else if images.count == 1 {
+                    onlyOneImageView.hidden = false
                     if images[0].cutWidth.bridgeToObjectiveC().floatValue > images[0].cutHeight.bridgeToObjectiveC().floatValue {
                         singleImageWidthConstraint.constant = UIScreen.mainScreen().bounds.width / 3.0 * 2.0
                         icyImageBlockHeightConstraint.constant = CGFloat((images[0].cutHeight as NSString).floatValue) / CGFloat((images[0].cutWidth as NSString).floatValue) * CGFloat(UIScreen.mainScreen().bounds.width * 2.0 / 3.0)
                     } else {
                         icyImageBlockHeightConstraint.constant = UIScreen.mainScreen().bounds.width / 3.0 * 2.0
                         singleImageWidthConstraint.constant = (UIScreen.mainScreen().bounds.width / 3.0 * 2.0) / CGFloat(images[0].cutHeight.bridgeToObjectiveC().floatValue) * CGFloat(images[0].cutWidth.bridgeToObjectiveC().floatValue)
+                        
                     }
                     for one in middleSizedImages {
-                        one.image = nil
+                        one.hidden = true
                     }
                     if let url = NSURL(string: images[0].cutPath.toAbsolutePath()) {
+                        var tapMiddle = UITapGestureRecognizer(target: self, action: Selector("userTapImg:"))
+                        self.onlyOneImageView.addGestureRecognizer(tapMiddle)
+                        
+
                         onlyOneImageView.contentMode = .Center
                         onlyOneImageView.backgroundColor = placeHolderColor
                         onlyOneImageView.setImageWithURLRequest(NSURLRequest(URL: url), placeholderImage: UIImage(named: "CirclePlaceHolderGray"), success: { [weak self](_, _, finalImage) -> Void in
                             self?.onlyOneImageView.image = finalImage
                             self?.onlyOneImageView.contentMode = .ScaleAspectFill
-                            return
+                                                        return
                             }, failure: { (_, _, _) -> Void in
                                 return
                         })
                     } else {
                         onlyOneImageView.image = nil
+                        onlyOneImageView.hidden = true
                     }
                     //                    onlyOneImageView.setImageWithURL(NSURL(string: images[0].cutPath.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
                 } else {
                     onlyOneImageView.image = nil
+                    onlyOneImageView.hidden = true
+                    for one in middleSizedImages {
+                        one.hidden = false
+                    }
                     if images.count <= 3 {
                         // 2-3张
                         icyImageBlockHeightConstraint.constant = UIScreen.mainScreen().bounds.width / 3.0
@@ -125,9 +136,11 @@ class FindTwitterListCell: UITableViewCell {
                             middle.contentMode = .Center
                             middle.backgroundColor = placeHolderColor
                             if let url = NSURL(string: images[middle.tag - 1].cutPath.toAbsolutePath()) {
+                                
                                 middle.setImageWithURLRequest(NSURLRequest(URL: url), placeholderImage: UIImage(named: "CirclePlaceHolderGray"), success: { (_, _, finalImage) -> Void in
                                     middle.image = finalImage
                                     middle.contentMode = .ScaleAspectFill
+                                    
                                     return
                                     }, failure: { (_, _, _) -> Void in
                                         return
@@ -149,6 +162,28 @@ class FindTwitterListCell: UITableViewCell {
             }
         }
     }
+    
+    func startAddTap()
+    {
+        for middle in middleSizedImages {
+           if let images = twitterImages
+                {
+            if middle.tag > images.count {
+                middle.image = nil
+            } else {
+                var tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("userTapImg:"))
+                middle.addGestureRecognizer(tap)
+            }
+            }
+        }
+    }
+    
+    func userTapImg(tapNow : UITapGestureRecognizer)
+    {
+        var tapViewTag = tapNow.view?.tag
+        println("tap is \(tapViewTag)")
+    }
+    
     // 点赞的人
     @IBOutlet private weak var icyCollectionView: UICollectionView!
     var starPeople: [TwitterListStarList]?{
@@ -283,7 +318,6 @@ class FindTwitterListCell: UITableViewCell {
         
         sepractorHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
         sepratorImageView.image = LCYCommon.sharedInstance.circleSepratorImage
-        
         //        let placeHolderColor = UIColor(white: 0.95, alpha: 1.0)
         //        onlyOneImageView.backgroundColor = placeHolderColor
         //        for mid in middleSizedImages {

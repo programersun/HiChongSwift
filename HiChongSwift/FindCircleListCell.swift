@@ -15,6 +15,7 @@ protocol FindCircleListCellDelegate: class {
     func findCircleListCellCare(indexPath: NSIndexPath)
     func findCilcleListCellExpand(indexPath: NSIndexPath)
     func findCircleListCellShare(indexPath: NSIndexPath)
+    func findCircleListCellClickImg(indexPath : NSIndexPath , currentClick : Int)
 }
 
 class FindCircleListCell: UITableViewCell {
@@ -76,6 +77,8 @@ class FindCircleListCell: UITableViewCell {
                             small.image = nil
                         } else {
                             small.setImageWithURL(NSURL(string: images[small.tag - 1].cutPath.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
+                            small.userInteractionEnabled = true
+                            
                         }
                     }
                 }
@@ -88,7 +91,15 @@ class FindCircleListCell: UITableViewCell {
             }
         }
     }
+    
+    func userTapImg(tapNow : UITapGestureRecognizer)
+    {
+        var tapViewTag = tapNow.view?.tag
+        println("tap is \(tapViewTag)")
+    }
     // 多图配置 ⬆️
+    
+    
     
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -161,6 +172,11 @@ class FindCircleListCell: UITableViewCell {
         
         petAvatarImageView.layer.borderWidth = 1.0 / UIScreen.mainScreen().scale
         petAvatarImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        smallImages.map { (small) -> Void in
+            var tap = UITapGestureRecognizer(target: self, action: Selector("userTapImg:"))
+            small.addGestureRecognizer(tap)
+        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

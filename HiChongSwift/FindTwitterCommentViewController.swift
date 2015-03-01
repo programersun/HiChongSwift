@@ -472,4 +472,8 @@ extension FindTwitterCommentViewController: FindCircleListCellDelegate {
     func findCircleListCellShare(indexPath: NSIndexPath) {
         
     }
+    
+    func findCircleListCellClickImg(indexPath: NSIndexPath, currentClick: Int) {
+        
+    }
 }

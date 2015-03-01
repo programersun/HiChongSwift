@@ -276,7 +276,7 @@ class FindCircleViewController: UITableViewController {
         cell.commentNumberLabel.text = data.commentCount
         cell.stared = data.isStar != 0
         cell.timeLabel.text = data.addTime.toTwitterDeltaTime()
-        
+        cell.startAddTap()
         cell.petSex = FindTwitterListCell.PetSex(rawValue: (data.petSex ?? "-1"))
         cell.keeperSex = FindTwitterListCell.PetSex(rawValue: (data.sex ?? "-1"))
         
@@ -356,17 +356,17 @@ class FindCircleViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let data = twitters![indexPath.row]
-        if data.images != nil && data.images.count > 0 {
-//            performSegueWithIdentifier("showPageView", sender: data)
-            let imageBrowser = ICYImageBrowser()
-            imageBrowser.imageDataSource = self
-            imageBrowser.setSingleTapHandler({ [weak imageBrowser]() -> Void in
-                imageBrowser?.hide()
-                return
-            })
-            imageBrowser.show()
-        }
+//        let data = twitters![indexPath.row]
+//        if data.images != nil && data.images.count > 0 {
+////            performSegueWithIdentifier("showPageView", sender: data)
+//            let imageBrowser = ICYImageBrowser()
+//            imageBrowser.imageDataSource = self
+//            imageBrowser.setSingleTapHandler({ [weak imageBrowser]() -> Void in
+//                imageBrowser?.hide()
+//                return
+//            })
+//            imageBrowser.show()
+//        }
         
 //        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? FindTwitterListCell {
 //            println("\(cell.icyContentLabel.bounds.height)")
@@ -625,6 +625,10 @@ extension FindCircleViewController: FindCircleListCellDelegate {
             }
             UIApplication.sharedApplication().delegate?.window??.addSubview(shareVC.view)
         }
+    }
+    
+    func findCircleListCellClickImg(indexPath: NSIndexPath, currentClick: Int) {
+        
     }
 }
 
