@@ -56,7 +56,7 @@ class ZXY_ImageBrowserVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
-        self.startInitScrollView()
+        //self.startInitScrollView()
         // Do any additional setup after loading the view.
     }
     
@@ -68,6 +68,7 @@ class ZXY_ImageBrowserVC: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.startInitScrollView()
     }
     
     override func loadView() {
@@ -97,6 +98,10 @@ class ZXY_ImageBrowserVC: UIViewController {
         if(self.isViewLoaded())
         {
             var frame: CGRect = self.view.bounds
+            if(_currentScroll == nil)
+            {
+                self.startInitScrollView()
+            }
              _currentScroll.contentOffset = CGPointMake(frame.size.width * CGFloat(_selectIndex!), 0.0)
             self.showPhotos()
         }
@@ -192,20 +197,21 @@ class ZXY_ImageBrowserVC: UIViewController {
            
         }
         
-//        if(_currentScroll != nil)
-//        {
-//            _currentScroll = nil
-////            var frame: CGRect = self.view.bounds
-////            //self.view.setTranslatesAutoresizingMaskIntoConstraints(false)
-////            frame.origin.x -= CGFloat(edgeWidth)
-////            frame.size.width += CGFloat(2 * edgeWidth)
-////            var contentWidth : CGFloat = frame.size.width * CGFloat(photoItems.count)
-////            _currentScroll.contentSize = CGSizeMake(contentWidth, frame.height)
-////            _currentScroll.contentOffset = CGPointMake(frame.size.width * CGFloat(_currentIndex), 0.0)
-////            _titleLbl.text = "\(_currentIndex + 1) / \(photoItems.count) "
-////            _currentScroll.setTranslatesAutoresizingMaskIntoConstraints(false)
-//            self.startInitScrollView()
-//        }
+        if(_currentScroll != nil)
+        {
+            _currentScroll.removeFromSuperview()
+            _currentScroll = nil
+//            var frame: CGRect = self.view.bounds
+//            //self.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+//            frame.origin.x -= CGFloat(edgeWidth)
+//            frame.size.width += CGFloat(2 * edgeWidth)
+//            var contentWidth : CGFloat = frame.size.width * CGFloat(photoItems.count)
+//            _currentScroll.contentSize = CGSizeMake(contentWidth, frame.height)
+//            _currentScroll.contentOffset = CGPointMake(frame.size.width * CGFloat(_currentIndex), 0.0)
+//            _titleLbl.text = "\(_currentIndex + 1) / \(photoItems.count) "
+//            _currentScroll.setTranslatesAutoresizingMaskIntoConstraints(false)
+            
+        }
 
     }
     

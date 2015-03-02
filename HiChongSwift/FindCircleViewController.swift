@@ -11,7 +11,7 @@ import UIKit
 class FindCircleViewController: UITableViewController {
     
     private var shareVC: ICYShareViewController?
-    
+    var browser = ZXY_ImageBrowserVC()
     private let testContent = "I am the bone of my sword.\n" +
         "Steel is my body,and fire is my blood.\n" +
         "I have created over a thousand blades.\n" +
@@ -633,7 +633,7 @@ extension FindCircleViewController: FindCircleListCellDelegate , FindTwitterList
     
     func UserClickImage(indexPath: NSIndexPath, currentIndex: Int) {
         let data = twitters![indexPath.row]
-        var browser = ZXY_ImageBrowserVC()
+        
         println("indexPath is \(indexPath.row) and index is \(currentIndex)")
         var photos : [ZXY_ImageItem]! = []
         for var i = 0 ;i < data.images?.count ;i++
