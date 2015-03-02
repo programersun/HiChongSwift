@@ -283,7 +283,7 @@ class FindCircleViewController: UITableViewController {
         cell.cared = data.isRel != 0
         
         cell.delegate = self
-        
+        cell.delegateFind = self
         
         
         return cell
@@ -443,7 +443,7 @@ extension FindCircleViewController: UIActionSheetDelegate {
     }
 }
 
-extension FindCircleViewController: FindCircleListCellDelegate {
+extension FindCircleViewController: FindCircleListCellDelegate , FindTwitterListCellDelegate{
     func findCircleListCellStar(indexPath: NSIndexPath) {
         println("stared \(indexPath)")
         let data = twitters![indexPath.row]
@@ -630,6 +630,28 @@ extension FindCircleViewController: FindCircleListCellDelegate {
     func findCircleListCellClickImg(indexPath: NSIndexPath, currentClick: Int) {
         
     }
+    
+    func UserClickImage(indexPath: NSIndexPath, currentIndex: Int) {
+        let data = twitters![indexPath.row]
+        var browser = ZXY_ImageBrowserVC()
+        println("indexPath is \(indexPath.row) and index is \(currentIndex)")
+        var photos : [ZXY_ImageItem]! = []
+        for var i = 0 ;i < data.images?.count ;i++
+        {
+            var currentImg = data.images![i] as TwitterListImages
+            print(currentImg.imagePath.toAbsolutePath())
+            var currentURL : NSURL = NSURL(string: currentImg.imagePath.toAbsolutePath())!
+            //println(currentURL.scheme)
+            var photo = ZXY_ImageItem(itemURL: currentURL)
+            photos.append(photo)
+        }
+        browser.setPhotos(photos)
+        browser.setSelectIndex(currentIndex)
+        browser.presentShow()
+        
+
+    }
+    
 }
 
 extension FindCircleViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

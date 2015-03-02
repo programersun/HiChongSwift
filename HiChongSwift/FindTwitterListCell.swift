@@ -10,6 +10,11 @@ import UIKit
 
 let twitterFontSize = CGFloat(12.0)
 
+protocol FindTwitterListCellDelegate : class
+{
+    func UserClickImage(indexPath : NSIndexPath , currentIndex : Int)
+}
+
 class FindTwitterListCell: UITableViewCell {
     
 //    var delegate: FindTwitterListCellDelegate?
@@ -19,7 +24,11 @@ class FindTwitterListCell: UITableViewCell {
     /// 主人昵称
     @IBOutlet weak var keeperNameLabel: UILabel!
     /// 主人头像
+    
     @IBOutlet private weak var keeperAvatarImageView: UIImageView!
+    
+    weak var delegateFind : FindTwitterListCellDelegate?
+    
     var keeperAvatarPath: String? {
         didSet {
             if let path = keeperAvatarPath {
@@ -181,7 +190,20 @@ class FindTwitterListCell: UITableViewCell {
     func userTapImg(tapNow : UITapGestureRecognizer)
     {
         var tapViewTag = tapNow.view?.tag
-        println("tap is \(tapViewTag)")
+        //println("tap is \(tapViewTag)")
+        
+        if(self.delegateFind != nil)
+        {
+            if(tapViewTag! == 0)
+            {
+                self.delegateFind!.UserClickImage(indexPath, currentIndex: tapViewTag!)
+            }
+            else
+            {
+                var currentTap = tapViewTag! - 1
+                self.delegateFind!.UserClickImage(indexPath, currentIndex: currentTap)
+            }
+        }
     }
     
     // 点赞的人

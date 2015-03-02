@@ -10,7 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <MBProgressHUD/MBProgressHUD.h>
-
+//#import<SDWebImage/UIImageView+WebCache.h>
 #import "UIImage+Resize.h"
 
 // Square/getSquareCategory

@@ -213,6 +213,12 @@
 		28FAD8BB1A8377940049253B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FAD8BA1A8377940049253B /* ImageIO.framework */; };
 		28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */; };
 		28FCEE3C1A39682000027CB2 /* SquareSmallButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */; };
+		8B612D111AA49CB5003158FF /* ZXY_BrowserImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B612D0B1AA49CB5003158FF /* ZXY_BrowserImage.bundle */; };
+		8B612D121AA49CB5003158FF /* ZXY_ImageBrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612D0C1AA49CB5003158FF /* ZXY_ImageBrowserVC.swift */; };
+		8B612D131AA49CB5003158FF /* ZXY_ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612D0D1AA49CB5003158FF /* ZXY_ImageItem.swift */; };
+		8B612D141AA49CB5003158FF /* ZXY_ImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612D0E1AA49CB5003158FF /* ZXY_ImageItemView.swift */; };
+		8B612D151AA49CB5003158FF /* ZXY_SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612D0F1AA49CB5003158FF /* ZXY_SheetView.swift */; };
+		8B612D161AA49CB5003158FF /* ZXY_SheetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612D101AA49CB5003158FF /* ZXY_SheetViewCell.swift */; };
 		BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */; };
 /* End PBXBuildFile section */
 
@@ -546,6 +552,12 @@
 		28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareSmallButtonCell.swift; sourceTree = "<group>"; };
 		3FDA3B0316BD51D4638A11E8 /* Pods-HiChongSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiChongSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiChongSwift/Pods-HiChongSwift.release.xcconfig"; sourceTree = "<group>"; };
 		6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HiChongSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B612D0B1AA49CB5003158FF /* ZXY_BrowserImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZXY_BrowserImage.bundle; sourceTree = "<group>"; };
+		8B612D0C1AA49CB5003158FF /* ZXY_ImageBrowserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_ImageBrowserVC.swift; sourceTree = "<group>"; };
+		8B612D0D1AA49CB5003158FF /* ZXY_ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_ImageItem.swift; sourceTree = "<group>"; };
+		8B612D0E1AA49CB5003158FF /* ZXY_ImageItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_ImageItemView.swift; sourceTree = "<group>"; };
+		8B612D0F1AA49CB5003158FF /* ZXY_SheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_SheetView.swift; sourceTree = "<group>"; };
+		8B612D101AA49CB5003158FF /* ZXY_SheetViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_SheetViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -599,6 +611,7 @@
 		2802C98F1A2F5151001130ED /* HiChongSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8B612D0A1AA49CB5003158FF /* ZXYImageBrowser */,
 				28ED69241A4BADF500CAE227 /* Wiki */,
 				2806FEA01A4A5B7C00D18543 /* PetTypeFilter */,
 				28876B2B1A42C21F0002F635 /* Login */,
@@ -1172,6 +1185,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B612D0A1AA49CB5003158FF /* ZXYImageBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				8B612D0B1AA49CB5003158FF /* ZXY_BrowserImage.bundle */,
+				8B612D0C1AA49CB5003158FF /* ZXY_ImageBrowserVC.swift */,
+				8B612D0D1AA49CB5003158FF /* ZXY_ImageItem.swift */,
+				8B612D0E1AA49CB5003158FF /* ZXY_ImageItemView.swift */,
+				8B612D0F1AA49CB5003158FF /* ZXY_SheetView.swift */,
+				8B612D101AA49CB5003158FF /* ZXY_SheetViewCell.swift */,
+			);
+			path = ZXYImageBrowser;
+			sourceTree = "<group>";
+		};
 		B8038A13F716C71F94D8D174 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1284,6 +1310,7 @@
 				28FAD8B91A8367B90049253B /* WeiboSDK.bundle in Resources */,
 				2802C99D1A2F5151001130ED /* Images.xcassets in Resources */,
 				28CF34E21A7F49E0001984D8 /* PushConfig.plist in Resources */,
+				8B612D111AA49CB5003158FF /* ZXY_BrowserImage.bundle in Resources */,
 				28876B2A1A42BACB0002F635 /* Login.storyboard in Resources */,
 				2806FE9F1A4A5A9C00D18543 /* PetCateFilter.storyboard in Resources */,
 				28876B231A429E760002F635 /* Welcome.storyboard in Resources */,
@@ -1434,6 +1461,7 @@
 				28876B2F1A42C8CA0002F635 /* LoginInputCell.swift in Sources */,
 				28FCEE3A1A39301C00027CB2 /* SquareMainButtonCell.swift in Sources */,
 				287941B11A4A017100DECA50 /* MoePetImageCell.swift in Sources */,
+				8B612D121AA49CB5003158FF /* ZXY_ImageBrowserVC.swift in Sources */,
 				2830974D1A5F7DEF00CD53E7 /* FindAddImageCollectionCell.swift in Sources */,
 				287EDFE81A403FD9005B6A57 /* FindCircleAddTextCell.swift in Sources */,
 				28C1663F1A36EBCF0090E061 /* SquareAdCell.swift in Sources */,
@@ -1456,8 +1484,10 @@
 				28876B351A42E6720002F635 /* LoginForgetCell.swift in Sources */,
 				283C0E4A1A4BBA9F00C64B11 /* WikiMidCell.swift in Sources */,
 				2859CF311A6568B100C032BD /* FindTwitterCommentViewController.swift in Sources */,
+				8B612D151AA49CB5003158FF /* ZXY_SheetView.swift in Sources */,
 				28F215771A5A6838002C0620 /* GeoManager.swift in Sources */,
 				287941AF1A49F74700DECA50 /* MoePetHeaderReusable.swift in Sources */,
+				8B612D131AA49CB5003158FF /* ZXY_ImageItem.swift in Sources */,
 				28C6DACC1A2FFDF600068848 /* MJRefreshConst.m in Sources */,
 				28C93ACA1A4D0AB600E1F600 /* WikiListViewController.swift in Sources */,
 				289775E21A636AD200B3F0B6 /* FindPersonalCell.swift in Sources */,
@@ -1476,6 +1506,7 @@
 				289775DE1A6365DF00B3F0B6 /* TwitterPersonalMsg.m in Sources */,
 				289FA3571A4972000097485C /* AboutMeEditProfileViewController.swift in Sources */,
 				286D1D0C1A3ABCAA005C1D36 /* SquareDetailHeadCell.swift in Sources */,
+				8B612D141AA49CB5003158FF /* ZXY_ImageItemView.swift in Sources */,
 				2813195A1A592B0D00913BC6 /* SquareHomeMsg.m in Sources */,
 				28876B281A42A4050002F635 /* WelcomeSinglePageViewController.swift in Sources */,
 				28AA8F631A722D610070BF47 /* ICYImageBrowser.swift in Sources */,
@@ -1513,6 +1544,7 @@
 				28955A3F1A3E84EC00A1E4BC /* OtherExtensions.swift in Sources */,
 				28801DDF1A63C20E00743AA9 /* AboutMeSettingViewController.swift in Sources */,
 				28876B1E1A427C7D0002F635 /* UIImage+Resize.m in Sources */,
+				8B612D161AA49CB5003158FF /* ZXY_SheetViewCell.swift in Sources */,
 				28E5B4CF1A397667009951FF /* LCYGetSquareCategoryListInfo.m in Sources */,
 				287EDFE01A3FD461005B6A57 /* FindCircleViewController.swift in Sources */,
 				285E6A241A4BEF7400DC44F4 /* WikiArticleViewController.swift in Sources */,
@@ -1574,7 +1606,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Baoyu Liu (WXFQWX5DR4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1618,7 +1650,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Baoyu Liu (WXFQWX5DR4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
