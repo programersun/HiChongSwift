@@ -44,10 +44,10 @@ NSString *const kSquareGetListMsgBusinessScore = @"business_score";
     // This check serves to make sure that a non-NSDictionary object
     // passed into the model class doesn't break the parsing.
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
-            self.businessBrief = [self objectOrNilForKey:kSquareGetListMsgBusinessBrief fromDictionary:dict];
+            self.businessBrief = [NSString stringWithFormat:@"%@",[self objectOrNilForKey:kSquareGetListMsgBusinessBrief fromDictionary:dict]];
             self.businessImage = [self objectOrNilForKey:kSquareGetListMsgBusinessImage fromDictionary:dict];
             self.businessId = [[self objectOrNilForKey:kSquareGetListMsgBusinessId fromDictionary:dict] doubleValue];
-            self.businessName = [self objectOrNilForKey:kSquareGetListMsgBusinessName fromDictionary:dict];
+            self.businessName = [NSString stringWithFormat:@"%@",[self objectOrNilForKey:kSquareGetListMsgBusinessName fromDictionary:dict]];
             self.distance = [[self objectOrNilForKey:kSquareGetListMsgDistance fromDictionary:dict] doubleValue];
             self.businessScore = [[self objectOrNilForKey:kSquareGetListMsgBusinessScore fromDictionary:dict] doubleValue];
 
