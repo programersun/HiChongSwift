@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.LCYThemeDarkText()]
+        
         UINavigationBar.appearance().tintColor = UIColor.LCYThemeDarkText()
         UIToolbar.appearance().tintColor = UIColor.LCYThemeDarkText()
         
