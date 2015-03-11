@@ -219,6 +219,8 @@
 		8B612D141AA49CB5003158FF /* ZXY_ImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612D0E1AA49CB5003158FF /* ZXY_ImageItemView.swift */; };
 		8B612D151AA49CB5003158FF /* ZXY_SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612D0F1AA49CB5003158FF /* ZXY_SheetView.swift */; };
 		8B612D161AA49CB5003158FF /* ZXY_SheetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612D101AA49CB5003158FF /* ZXY_SheetViewCell.swift */; };
+		8B74CC061AA6B394009E362F /* ZXY_SqureFilterLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B74CC051AA6B394009E362F /* ZXY_SqureFilterLocationVC.swift */; };
+		8B810D181AA94D7100F7B0A2 /* ZXY_UserConstantFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B810D171AA94D7100F7B0A2 /* ZXY_UserConstantFile.swift */; };
 		BCF5C207518F3F835E97CC74 /* libPods-HiChongSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCAD0D7195D9C282D28A81F /* libPods-HiChongSwift.a */; };
 /* End PBXBuildFile section */
 
@@ -558,6 +560,8 @@
 		8B612D0E1AA49CB5003158FF /* ZXY_ImageItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_ImageItemView.swift; sourceTree = "<group>"; };
 		8B612D0F1AA49CB5003158FF /* ZXY_SheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_SheetView.swift; sourceTree = "<group>"; };
 		8B612D101AA49CB5003158FF /* ZXY_SheetViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_SheetViewCell.swift; sourceTree = "<group>"; };
+		8B74CC051AA6B394009E362F /* ZXY_SqureFilterLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_SqureFilterLocationVC.swift; sourceTree = "<group>"; };
+		8B810D171AA94D7100F7B0A2 /* ZXY_UserConstantFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXY_UserConstantFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -764,6 +768,7 @@
 			isa = PBXGroup;
 			children = (
 				282D6BE21A301B9A00942F60 /* LCYNetworking.swift */,
+				8B810D171AA94D7100F7B0A2 /* ZXY_UserConstantFile.swift */,
 				2892558F1A3EEEB90056606F /* LCYCommon.swift */,
 				28C166391A36E0A50090E061 /* ColorExtension.swift */,
 				28E5B4D11A39786D009951FF /* ViewControllerExtension.swift */,
@@ -1011,6 +1016,7 @@
 			children = (
 				28E5B4CA1A39765D009951FF /* Model */,
 				28C1663C1A36E69E0090E061 /* SquareViewController.swift */,
+				8B74CC051AA6B394009E362F /* ZXY_SqureFilterLocationVC.swift */,
 				28C1663E1A36EBCF0090E061 /* SquareAdCell.swift */,
 				28FCEE391A39301C00027CB2 /* SquareMainButtonCell.swift */,
 				28FCEE3B1A39682000027CB2 /* SquareSmallButtonCell.swift */,
@@ -1498,6 +1504,7 @@
 				28E5B4D21A39786D009951FF /* ViewControllerExtension.swift in Sources */,
 				2813194B1A58EE2000913BC6 /* WikiesMidCell.swift in Sources */,
 				286E4D501A440EB80057176B /* UserLoginBaseClass.m in Sources */,
+				8B810D181AA94D7100F7B0A2 /* ZXY_UserConstantFile.swift in Sources */,
 				28DE58391A5BD93200B49046 /* GetUserInfoBase.m in Sources */,
 				28C93AC71A4CF6DE00E1F600 /* WikiCollectListBase.m in Sources */,
 				284896231A5A967F00D45285 /* SquareMerchantInfoBase.m in Sources */,
@@ -1530,6 +1537,7 @@
 				283C0E451A4BB84D00C64B11 /* WikiTodayBase.m in Sources */,
 				2859CF4E1A657B5500C032BD /* TwitterCommentListImage.m in Sources */,
 				289255901A3EEEB90056606F /* LCYCommon.swift in Sources */,
+				8B74CC061AA6B394009E362F /* ZXY_SqureFilterLocationVC.swift in Sources */,
 				28C6DACE1A2FFDF600068848 /* MJRefreshHeaderView.m in Sources */,
 				281319581A592B0D00913BC6 /* SquareHomebase.m in Sources */,
 				287941A21A49EC8B00DECA50 /* MoePetViewController.swift in Sources */,

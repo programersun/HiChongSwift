@@ -7,24 +7,24 @@
 //
 
 import UIKit
-
+//modifyLocation
 class SquareViewController: UITableViewController {
     
     var categoryData: LCYGetSquareCategoryResult?
-    
+    var _userInfo: GetUserInfoUserInfo?
+    private var userInfo: GetUserInfoBase!
     var homeData: SquareHomebase?
     
     private let sectionHeaderHeight: CGFloat = 30.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //_userInfo = GetUserInfoUserInfo.
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+         
+        self.reloadInitData()
         self.showHUD()
         LCYNetworking.sharedInstance.POST(LCYApi.SquareHome, parameters: nil, success: { [weak self](object) -> Void in
             let retrived = SquareHomebase.modelObjectWithDictionary(object)
@@ -43,6 +43,53 @@ class SquareViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.reloadInitData()
+    }
+    
+    private func reloadInitData() {
+        var parameter: [String: String]
+        
+        parameter = ["user_name": LCYCommon.sharedInstance.userName!]
+        LCYNetworking.sharedInstance.POST(LCYApi.UserGetInfo, parameters: parameter, success: { [weak self] (object) -> Void in
+            self?.userInfo = GetUserInfoBase.modelObjectWithDictionary(object)
+            if let result = self?.userInfo?.result {
+                if result {
+                    if(self != nil)
+                    {
+                        var leftTitle = ZXY_UserConstantFile.cityNameForSqure
+                        
+                        self!.navigationItem.leftBarButtonItem = UIBarButtonItem(title: leftTitle ?? "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("toLocationFilterVC"))
+                    }
+   
+                    
+                } else {
+                    self?.alert("加载失败")
+                }
+            }
+            
+            return
+            }) { [weak self](error) -> Void in
+                
+                return
+        }
+    }
+
+    
+    func toLocationFilterVC()
+    {
+        var province  = self.userInfo.userInfo.province
+        var city      = self.userInfo.userInfo.city
+        var town      = self.userInfo.userInfo.town
+        var story = UIStoryboard(name: "AboutMe", bundle: nil)
+        var locationVC = story.instantiateViewControllerWithIdentifier("modifyLocationID") as AboutMeModifyLocationViewController
+        locationVC.isSquare = true
+        locationVC.province = province
+        locationVC.city     = city
+        locationVC.town     = town
+        self.navigationController?.pushViewController(locationVC, animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

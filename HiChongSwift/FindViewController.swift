@@ -70,6 +70,10 @@ class FindViewController: UITableViewController {
                 let base = TwitterRemindInfoBase.modelObjectWithDictionary(object)
                 if base.result {
                     self?.remindInfo = base.msg
+//                    if(self?.remindInfo != nil)
+//                    {
+//                        self?.navigationController?.tabBarItem.badgeValue = "\(self?.remindInfo!.comment.count + self?.remindInfo!.star.count!)"
+//                    }
                 }
                 return
                 }, failure: { (error) -> Void in
@@ -117,6 +121,7 @@ class FindViewController: UITableViewController {
                         cell.icyImagePath = remindInfo.headImage.toAbsolutePath()
                     }
                     cell.badgeNumber = remindInfo.comment.count + remindInfo.star.count
+                    
                 }
             case 1:
                 cell.icyLabel.text = "附近"

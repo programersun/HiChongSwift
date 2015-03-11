@@ -17,6 +17,9 @@ class AboutMeModifyLocationViewController: UIViewController {
     var city: String!
     var town: String!
     
+    var isSquare : Bool = false
+    var cityNameForSquare : String?
+    
     private var provinces:  [Region]?
     private var cities:       [Region]?
     private var towns:       [Region]?
@@ -39,7 +42,7 @@ class AboutMeModifyLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         navigationItem.title = "选择位置"
         
@@ -62,6 +65,7 @@ class AboutMeModifyLocationViewController: UIViewController {
                     provinceText = regionEntity.region_name
                 case city.toInt()!:
                     cityText = regionEntity.region_name
+                    cityNameForSquare = cityText
                 case town.toInt()!:
                     townText = regionEntity.region_name
                 default:
@@ -73,7 +77,14 @@ class AboutMeModifyLocationViewController: UIViewController {
         }
         
         if let townText = townText {
-            icyLabel.text = "\(provinceText!) \(cityText!) \(townText)"
+            if(isSquare)
+            {
+                icyLabel.text = "\(provinceText!) \(cityText!) "
+            }
+            else
+            {
+                icyLabel.text = "\(provinceText!) \(cityText!) \(townText)"
+            }
         } else {
             icyLabel.text = "\(provinceText!) \(cityText!)"
         }
@@ -152,6 +163,13 @@ class AboutMeModifyLocationViewController: UIViewController {
     
     // MARK: - Actions
     func rightButtonPressed(sender: AnyObject) {
+        if(isSquare)
+        {
+            ZXY_UserConstantFile.cityIDForSqure = city
+            ZXY_UserConstantFile.cityNameForSqure = cityNameForSquare
+            self.navigationController?.popViewControllerAnimated(true)
+            return
+        }
         let parameters = [
             "user_name" : LCYCommon.sharedInstance.userName!,
             "province"  : province,
@@ -188,16 +206,29 @@ class AboutMeModifyLocationViewController: UIViewController {
         }
         let provinceRegion = provinces![icyPickerView.selectedRowInComponent(0)]
         let cityRegion = cities![icyPickerView.selectedRowInComponent(1)]
-        let townRegion: Region? = towns?.count == 0 ? nil : towns![icyPickerView.selectedRowInComponent(2)]
-        
-        province = provinceRegion.region_id.stringValue
-        city = cityRegion.region_id.stringValue
-        if let townRegion = townRegion {
-            icyLabel.text = "\(provinceRegion.region_name) \(cityRegion.region_name) \(townRegion.region_name)"
-            town = townRegion.region_id.stringValue
-        } else {
-            icyLabel.text = "\(provinceRegion.region_name) \(cityRegion.region_name)"
-            town = "0"
+        if(!isSquare)
+        {
+            let townRegion: Region? = towns?.count == 0 ? nil : towns![icyPickerView.selectedRowInComponent(2)]
+            province = provinceRegion.region_id.stringValue
+            city = cityRegion.region_id.stringValue
+            if let townRegion = townRegion {
+                icyLabel.text = "\(provinceRegion.region_name) \(cityRegion.region_name) \(townRegion.region_name)"
+                town = townRegion.region_id.stringValue
+            } else {
+                icyLabel.text = "\(provinceRegion.region_name) \(cityRegion.region_name)"
+                town = "0"
+            }
+
+        }
+        else
+        {
+            province = provinceRegion.region_id.stringValue
+            city = cityRegion.region_id.stringValue
+            icyLabel.text = "\(provinceRegion.region_name) \(cityRegion.region_name) "
+        }
+        if(isSquare)
+        {
+            cityNameForSquare = cityRegion.region_name
         }
     }
 
@@ -215,6 +246,10 @@ class AboutMeModifyLocationViewController: UIViewController {
 
 extension AboutMeModifyLocationViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        if(isSquare)
+        {
+            return 2
+        }
         return 3
     }
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -298,11 +333,17 @@ extension AboutMeModifyLocationViewController: UIPickerViewDataSource, UIPickerV
                 for regionEntity in entities as [Region] {
                     towns?.append(regionEntity)
                 }
-                icyPickerView.reloadComponent(2)
+                if(!isSquare)
+                {
+                    icyPickerView.reloadComponent(2)
+                }
             } else {
                 println("error!===>\(error)")
             }
-            pickerView.selectRow(0, inComponent: 2, animated: false)
+            if(!isSquare)
+            {
+                pickerView.selectRow(0, inComponent: 2, animated: false)
+            }
         default:
             break
         }

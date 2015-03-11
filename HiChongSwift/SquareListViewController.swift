@@ -88,11 +88,16 @@ class SquareListViewController: UIViewController {
     private var starData: [SquareGetListMsg]?
     
     private func reload() {
+        var cityID = ZXY_UserConstantFile.cityIDForSqure
+        if(cityID == nil)
+        {
+            cityID = LCYCommon.sharedInstance.regionID
+        }
         let parameters: [String: String] = [
             "type":         "\(currentType.rawValue)",
             "latitude":     "\(location!.coordinate.latitude)",
             "longitude":    "\(location!.coordinate.longitude)",
-            "city":         LCYCommon.sharedInstance.regionID!,
+            "city":         cityID!,
             "page":         "0",
             "category":     categoryInfo!.cateId
         ]
