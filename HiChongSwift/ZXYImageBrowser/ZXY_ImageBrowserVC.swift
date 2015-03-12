@@ -389,6 +389,14 @@ class ZXY_ImageBrowserVC: UIViewController {
         //tempImageView?.setZoomScale(1, animated: true)
         tempImageView?.setCurrentItem(photoItems[index])
         tempImageView?.tag = self.getTagFromIndex(index)
+        if(photoItems.count == 1)
+        {
+            for temp in _currentScroll.subviews
+            {
+                var currentView: UIView? = temp as? UIView
+                currentView?.removeFromSuperview()
+            }
+        }
         _currentScroll.addSubview(tempImageView!)
         _itemCellINUse?.addObject(tempImageView!)
         
@@ -429,6 +437,10 @@ class ZXY_ImageBrowserVC: UIViewController {
 extension ZXY_ImageBrowserVC : UIScrollViewDelegate
 {
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        if(photoItems.count == 1)
+        {
+            return
+        }
         if(_isOriChange)
         {
             return
