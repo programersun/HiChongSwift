@@ -31,7 +31,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjX-b7-or7">
                                             <rect key="frame" x="50" y="13" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.54901960780000003" green="0.82745098039999998" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK8-mP-Fdb">
@@ -658,7 +658,7 @@
                                             <rect key="frame" x="8" y="868" width="300" height="24"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3z-4W-CoC">
-                                                    <rect key="frame" x="0.0" y="1" width="54" height="22"/>
+                                                    <rect key="frame" x="0.0" y="1" width="48" height="22"/>
                                                     <state key="normal" image="twiZan">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -667,7 +667,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRp-ju-uhg">
-                                                    <rect key="frame" x="82" y="1" width="54" height="22"/>
+                                                    <rect key="frame" x="76" y="1" width="50" height="22"/>
                                                     <state key="normal" image="twiComment">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -676,7 +676,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qms-vI-nWS">
-                                                    <rect key="frame" x="54" y="7" width="20" height="10"/>
+                                                    <rect key="frame" x="48" y="7" width="20" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="nRb-Iq-MGa"/>
                                                     </constraints>
@@ -685,7 +685,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tea-PD-o0A">
-                                                    <rect key="frame" x="138" y="7" width="20" height="10"/>
+                                                    <rect key="frame" x="128" y="7" width="20" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="gyV-rJ-r08"/>
                                                     </constraints>
@@ -694,7 +694,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-Xa-QSp">
-                                                    <rect key="frame" x="166" y="1" width="54" height="22"/>
+                                                    <rect key="frame" x="156" y="1" width="45" height="22"/>
                                                     <state key="normal" image="twiShare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -703,7 +703,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTs-wv-d8h">
-                                                    <rect key="frame" x="228" y="1" width="70" height="22"/>
+                                                    <rect key="frame" x="209" y="1" width="55" height="22"/>
                                                     <state key="normal" image="twiAddCare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1566,7 +1566,7 @@ So as I pray, Unlimited Blade Works.</string>
                                             <rect key="frame" x="8" y="868" width="300" height="24"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvq-eT-MAq">
-                                                    <rect key="frame" x="0.0" y="1" width="54" height="22"/>
+                                                    <rect key="frame" x="0.0" y="1" width="48" height="22"/>
                                                     <state key="normal" image="twiZan">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1575,7 +1575,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ez-oJ-TUB">
-                                                    <rect key="frame" x="82" y="1" width="54" height="22"/>
+                                                    <rect key="frame" x="76" y="1" width="50" height="22"/>
                                                     <state key="normal" image="twiComment">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1584,7 +1584,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7If-JJ-UHX">
-                                                    <rect key="frame" x="54" y="7" width="20" height="10"/>
+                                                    <rect key="frame" x="48" y="7" width="20" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="Dd3-sT-yk6"/>
                                                     </constraints>
@@ -1593,7 +1593,7 @@ So as I pray, Unlimited Blade Works.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UE1-7f-PJm">
-                                                    <rect key="frame" x="138" y="7" width="20" height="10"/>
+                                                    <rect key="frame" x="128" y="7" width="20" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="e0T-HX-0zD"/>
                                                     </constraints>
@@ -1602,13 +1602,13 @@ So as I pray, Unlimited Blade Works.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x44-Vq-gZa">
-                                                    <rect key="frame" x="166" y="1" width="54" height="22"/>
+                                                    <rect key="frame" x="156" y="1" width="45" height="22"/>
                                                     <state key="normal" image="twiShare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dev-WL-nZA">
-                                                    <rect key="frame" x="228" y="1" width="70" height="22"/>
+                                                    <rect key="frame" x="209" y="1" width="55" height="22"/>
                                                     <state key="normal" image="twiAddCare">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1864,7 +1864,7 @@ So as I pray, Unlimited Blade Works.</string>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHC-nH-r3B">
                                             <rect key="frame" x="93" y="60" width="60" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.34509804840000002" green="0.61960786580000005" blue="0.74509805439999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.54901960780000003" green="0.82745098039999998" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgC-nz-chA">
@@ -2070,7 +2070,7 @@ So as I pray, Unlimited Blade Works.</string>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人物昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4z-p9-Xpf">
                                             <rect key="frame" x="93" y="60" width="60" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.34509804844856262" green="0.61960786581039429" blue="0.7450980544090271" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.54901960780000003" green="0.82745098039999998" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnC-ae-Wua">
@@ -2624,19 +2624,19 @@ So as I pray, Unlimited Blade Works.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="circleFen" width="40" height="20"/>
-        <image name="circlePing" width="40" height="20"/>
-        <image name="circleZan" width="40" height="20"/>
+        <image name="circleFen" width="33" height="20"/>
+        <image name="circlePing" width="35" height="20"/>
+        <image name="circleZan" width="37" height="19"/>
         <image name="sqFemale" width="15" height="15"/>
         <image name="sqMale" width="15" height="15"/>
-        <image name="twiAddCare" width="70" height="20"/>
-        <image name="twiComment" width="54" height="20"/>
-        <image name="twiShare" width="54" height="20"/>
-        <image name="twiZan" width="54" height="20"/>
+        <image name="twiAddCare" width="55" height="14"/>
+        <image name="twiComment" width="50" height="20"/>
+        <image name="twiShare" width="45" height="20"/>
+        <image name="twiZan" width="48" height="20"/>
         <image name="upHeart" width="10" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ufa-8l-Vyh"/>
-        <segue reference="XCC-x6-KlN"/>
+        <segue reference="ngD-9V-Cvd"/>
+        <segue reference="wuh-03-OLp"/>
     </inferredMetricsTieBreakers>
 </document>

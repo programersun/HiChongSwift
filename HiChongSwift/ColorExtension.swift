@@ -24,7 +24,7 @@ extension UIColor {
     :returns: 颜色值UIColor
     */
     class func LCYThemeColor() -> UIColor {
-        return UIColor(red: 142.0/255.0, green: 197.0/255.0, blue: 223.0/255.0, alpha: 1.0)
+        return UIColor(red: 140/255.0, green: 211/255.0, blue: 195/255.0, alpha: 1.0)
     }
     
     /**
@@ -33,7 +33,8 @@ extension UIColor {
     :returns: 颜色值UIColor
     */
     class func LCYThemeDarkText() -> UIColor {
-        return UIColor(red: 88.0/255.0, green: 158.0/255.0, blue: 190.0/255.0, alpha: 1.0)
+        
+        return UIColor(red: 140/255.0, green: 211/255.0, blue: 195/255.0, alpha: 1.0)
     }
     
     /**
@@ -51,7 +52,8 @@ extension UIColor {
     :returns: 颜色值UIColor
     */
     class func LCYTableLightBlue() -> UIColor {
-        return UIColor(red: 228.0/255.0, green: 247.0/255.0, blue: 254.0/255.0, alpha: 1.0)
+        //return UIColor(red: 140/255.0, green: 211/255.0, blue: 195/255.0, alpha: 1.0)
+        return UIColor(red: 237/255.0, green: 249/255.0, blue: 247/255.0, alpha: 1.0)
     }
     
     /**

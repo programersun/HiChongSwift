@@ -43,7 +43,7 @@ class AboutMeSettingViewController: UITableViewController {
         case 0:
             return 1
         case 1:
-            return 6
+            return 5
         default:
             return 0
         }
@@ -60,15 +60,15 @@ class AboutMeSettingViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "用户帮助"
+//            case 1:
+//                cell.textLabel?.text = "用户协议"
             case 1:
-                cell.textLabel?.text = "用户协议"
-            case 2:
                 cell.textLabel?.text = "意见反馈"
-            case 3:
+            case 2:
                 cell.textLabel?.text = "打分支持"
-            case 4:
+            case 3:
                 cell.textLabel?.text = "版本升级"
-            case 5:
+            case 4:
                 cell.textLabel?.text = "退出账号"
             default:
                 break
@@ -102,17 +102,17 @@ class AboutMeSettingViewController: UITableViewController {
             case 0:
                 // 用户帮助
                 performSegueWithIdentifier("showHelp", sender: nil)
+//            case 1:
+//                // 使用协议
+//                performSegueWithIdentifier("showAgreement", sender: nil)
             case 1:
-                // 使用协议
-                performSegueWithIdentifier("showAgreement", sender: nil)
-            case 2:
                 // 意见反馈
                 performSegueWithIdentifier("showFeedback", sender: nil)
-            case 3:
+            case 2:
                 // 打分支持
                 let URLString = "https://itunes.apple.com/cn/app/hai-chong-chong-wu/id918809824?l=zh&ls=1&mt=8"
                 UIApplication.sharedApplication().openURL(NSURL(string: URLString)!)
-            case 4:
+            case 3:
                 // 版本升级
                 let URLString = "http://itunes.apple.com/cn/lookup?id=918809824"
                 if let URL = NSURL(string: URLString) {
@@ -139,7 +139,7 @@ class AboutMeSettingViewController: UITableViewController {
                     }
                 }
                 alert("没有更新的版本哦～")
-            case 5:
+            case 4:
                 // 退出账号
                 let alertView = UIAlertView(title: "", message: "您确定要退出吗", delegate: self, cancelButtonTitle: "确定", otherButtonTitles: "取消")
                 alertView.tag = 3000
