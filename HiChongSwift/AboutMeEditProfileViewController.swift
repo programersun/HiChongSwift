@@ -10,10 +10,10 @@ import UIKit
 import CoreData
 
 class AboutMeEditProfileViewController: UITableViewController {
-    
     var _userInfo: GetUserInfoUserInfo?
     private var userInfo: GetUserInfoUserInfo!
-    
+    typealias ModifyBlock = () -> Void
+    var afterSuccessModify: ModifyBlock?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,6 +70,11 @@ class AboutMeEditProfileViewController: UITableViewController {
                 if let result = object["result"]?.boolValue {
                     if result {
                         self?.alertWithDelegate("修改成功", tag: 9001, delegate: self)
+                        self?._userInfo = self?.userInfo
+                        if(self?.afterSuccessModify != nil)
+                        {
+                            self?.afterSuccessModify!()
+                        }
                     } else {
                         self?.alert("修改失败")
                     }

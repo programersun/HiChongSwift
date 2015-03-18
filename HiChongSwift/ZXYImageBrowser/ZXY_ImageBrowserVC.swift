@@ -387,6 +387,14 @@ class ZXY_ImageBrowserVC: UIViewController {
        
         //_titleLbl.text = "\(_currentIndex + 1) / \(photoItems.count) "
         //tempImageView?.setZoomScale(1, animated: true)
+        if(photoItems.count == 1)
+        {
+            for temp in _currentScroll.subviews
+            {
+                var currentTemp : UIView? = temp as? UIView
+                currentTemp?.removeFromSuperview()
+            }
+        }
         tempImageView?.setCurrentItem(photoItems[index])
         tempImageView?.tag = self.getTagFromIndex(index)
         _currentScroll.addSubview(tempImageView!)

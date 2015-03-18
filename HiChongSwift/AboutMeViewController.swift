@@ -226,6 +226,10 @@ class AboutMeViewController: UITableViewController {
             case "showEdit":
                 let destination = segue.destinationViewController as AboutMeEditProfileViewController
                 destination._userInfo = userInfo?.userInfo
+                destination.afterSuccessModify = {[weak self]() -> Void in
+                    self?.reloadInitData()
+                    ""
+                }   
             case "showMoePet":
                 let destination = segue.destinationViewController as MoePetViewController
                 if let indexPath = tableView.indexPathForSelectedRow() {
