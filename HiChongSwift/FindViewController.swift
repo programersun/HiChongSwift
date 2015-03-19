@@ -17,7 +17,9 @@ class FindViewController: UITableViewController {
             tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
             if let info = remindInfo {
                 if info.headImage != nil {
-                    navigationController?.tabBarItem.badgeValue = "1"
+                    //navigationController?.tabBarItem.badgeValue = "1"
+                    navigationController?.tabBarItem.selectedImage = UIImage(named: "0000Red")
+                    navigationController?.tabBarItem.image         = UIImage(named: "0000DRed")
                 } else {
                     navigationController?.tabBarItem.badgeValue = nil
                 }
@@ -56,6 +58,8 @@ class FindViewController: UITableViewController {
         remindInfo = nil
         tableView.reloadData()
         navigationController?.tabBarItem.badgeValue = nil
+        navigationController?.tabBarItem.selectedImage = UIImage(named: "find")
+        navigationController?.tabBarItem.image         = UIImage(named: "find")
     }
     
     func checkUpdate() {

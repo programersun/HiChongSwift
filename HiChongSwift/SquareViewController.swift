@@ -23,7 +23,11 @@ class SquareViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         
+        tableView.addHeaderWithCallback { [weak self]() -> Void in
+            self?.reloadInitData()
+            return
+        }
+
         self.reloadInitData()
         self.showHUD()
         LCYNetworking.sharedInstance.POST(LCYApi.SquareHome, parameters: nil, success: { [weak self](object) -> Void in
@@ -50,7 +54,7 @@ class SquareViewController: UITableViewController {
     
     private func reloadInitData() {
         var parameter: [String: String]
-        
+        tableView.headerEndRefreshing()
         parameter = ["user_name": LCYCommon.sharedInstance.userName!]
         LCYNetworking.sharedInstance.POST(LCYApi.UserGetInfo, parameters: parameter, success: { [weak self] (object) -> Void in
             self?.userInfo = GetUserInfoBase.modelObjectWithDictionary(object)
