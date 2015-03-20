@@ -12,7 +12,9 @@ import WebKit
 class WikiArticleViewController: UIViewController {
     
     @IBOutlet private weak var icyWebView: UIWebView!
+    typealias ZXY_AfterCollectionBlock = (isadd : Bool) -> Void
     
+    var afterCollection : ZXY_AfterCollectionBlock?
     var wikiArticleID: String?
     var wikiCollected: Bool? {
         didSet {
@@ -82,9 +84,18 @@ class WikiArticleViewController: UIViewController {
                 self?.hideHUD()
                 if let result = object["result"]?.boolValue {
                     if result {
-//                        if let msgs = object["msg"] as? String {
-//                            self?.alert(msgs)
-//                        }
+                        if(self?.afterCollection != nil)
+                        {
+                            if collect
+                            {
+                                self?.afterCollection!(isadd : true)
+                            }
+                            else
+                            {
+                                self?.afterCollection!(isadd : false)
+                            }
+                        }
+                        
                         if let collect = self?.wikiCollected {
                             self?.wikiCollected = !collect
                         }

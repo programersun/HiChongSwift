@@ -154,6 +154,33 @@ class WikiCollectionListViewController: UITableViewController {
                 let destination = segue.destinationViewController as WikiArticleViewController
                 if let index = tableView.indexPathForSelectedRow()?.row {
                     destination.wikiArticleID = infoData?[index].encyId
+                    var data = infoData?[index]
+                    destination.afterCollection = {[weak self] (isadd) -> Void in
+                    
+                        var collectString : NSString = NSString(format: "%@", data!.encyCollect)
+                        var collectInt    : Int      = collectString.integerValue
+                        if(!isadd)
+                        {
+                            data?.encyCollect = "\(collectInt + 1)"
+                        }
+                        else
+                        {
+                            data?.encyCollect = "\(collectInt - 1)"
+                            self?.infoData?.removeAtIndex(index)
+                            self?.tableView.reloadData()
+                            
+                        }
+                    }
+                    
+                    var readInt : Int = 0
+                    if let datas = data
+                    {
+                        var readString : NSString  = NSString(format: "%@", datas.encyRead)
+                        readInt         = readString.integerValue + 1
+                        data?.encyRead  = "\(readInt)"
+                        tableView.reloadRowsAtIndexPaths([tableView.indexPathForSelectedRow()!], withRowAnimation: UITableViewRowAnimation.None)
+                    }
+
                 }
             default:
                 break

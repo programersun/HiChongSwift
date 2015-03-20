@@ -85,6 +85,30 @@ class WikiesViewController: UITableViewController {
                 }
                 if let myData = info {
                     destination.wikiArticleID = myData.encyId
+                    var data = info
+                    var readInt : Int = 0
+                    var readString : NSString  = NSString(format: "%@", myData.encyRead)
+                    readInt         = readString.integerValue + 1
+                    data?.encyRead  = "\(readInt)"
+                    var indexPath : NSIndexPath = tableView.indexPathForSelectedRow()!
+                    tableView.reloadRowsAtIndexPaths([tableView.indexPathForSelectedRow()!], withRowAnimation: UITableViewRowAnimation.None)
+                    destination.afterCollection = {[weak self] (isadd) -> Void in
+                        
+                        var collectString : NSString = NSString(format: "%@", data!.encyCollect)
+                        var collectInt    : Int      = collectString.integerValue
+                        if(!isadd)
+                        {
+                            data?.encyCollect = "\(collectInt + 1)"
+                            self?.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                        }
+                        else
+                        {
+                            data?.encyCollect = "\(collectInt - 1)"
+                            self?.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                        }
+                    }
+
+
                 }
             case "wikiWeb":
                 let destination = segue.destinationViewController as WikiWebViewController

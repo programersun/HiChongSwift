@@ -217,7 +217,33 @@ class WikiListViewController: UIViewController {
                         data = trainData?[indexPath.row]
                     }
                     destination.wikiArticleID = data?.encyId
+                    var readInt : Int = 0
+                    if let datas = data
+                    {
+                        var readString : NSString  = NSString(format: "%@", datas.encyRead)
+                        readInt         = readString.integerValue + 1
+                        data?.encyRead  = "\(readInt)"
+                        icyTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                        destination.afterCollection = {[weak self] (isadd) -> Void in
+                            
+                            var collectString : NSString = NSString(format: "%@", data!.encyCollect)
+                            var collectInt    : Int      = collectString.integerValue
+                            if(!isadd)
+                            {
+                                data?.encyCollect = "\(collectInt + 1)"
+                                self?.icyTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                            }
+                            else
+                            {
+                                data?.encyCollect = "\(collectInt - 1)"
+                                self?.icyTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                            }
+                        }
+
+                    }
+
                 }
+                
             default:
                 break
             }
