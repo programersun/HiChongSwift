@@ -20,7 +20,7 @@ class FindTwitterCommentViewController: UITableViewController {
     
     private var replyData: TwitterCommentListComment?
     
-    
+    private var shareVC: ICYShareViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +75,8 @@ class FindTwitterCommentViewController: UITableViewController {
         }
         replyData = nil
     }
+    
+    
     
     @IBAction func sendButtonPressed(sender: UIButton) {
         
@@ -179,6 +181,9 @@ class FindTwitterCommentViewController: UITableViewController {
                 cell.timeLabel.text = data.addTime.toTwitterDeltaTime()
                 cell.delegate = self
                 cell.expand = true
+                cell.petSex = FindTwitterListCell.PetSex(rawValue: (data.petSex ?? "-1"))
+                cell.keeperSex = FindTwitterListCell.PetSex(rawValue: (data.sex ?? "-1"))
+                
             }
             
         case 1:
@@ -463,17 +468,109 @@ extension FindTwitterCommentViewController: FindCircleListCellDelegate {
             
         }
     }
+    
+    
+    
     func findCircleListCellCare(indexPath: NSIndexPath) {
-        
+//        if twitterData != nil {
+//            let data = twitterData!
+//            println("\(data)++++")
+//            var parameter = [
+//                "user_id"      : LCYCommon.sharedInstance.userName!,
+//                "to_user_id"    : data.twitterKeeper
+//            ]
+//            showHUD()
+//            var successBlock: ((NSDictionary) -> Void)
+//            if data.isRel == 0 {
+//                // 没有关注，开始加关注
+//                parameter.extend(
+//                    ["control"       : "1"]
+//                )
+//                successBlock = {
+//                    [weak self] object -> Void in
+//                    if let result = object["result"] as? Bool {
+//                        if result {
+//                            // 添加关注成功
+//                            data.isRel = 1
+//                            self?.twitters?.map({
+//                                (list) -> TwitterListMsg in
+//                                if list.twitterKeeper == data.twitterKeeper {
+//                                    list.isRel = 1
+//                                }
+//                                return list
+//                            })
+//                            self?.tableView.reloadData()
+//                        } else {
+//                            // 操作失败
+//                        }
+//                    } else {
+//                        // 操作失败
+//                    }
+//                    self?.hideHUD()
+//                }
+//            } else {
+//                // 已经关注啦，取消关注
+//                parameter.extend(
+//                    ["control"       : "2"]
+//                )
+//                successBlock = {
+//                    [weak self] object -> Void in
+//                    if let result = object["result"] as? Bool {
+//                        if result {
+//                            // 取消关注成功
+//                            data.isRel = 0
+//                            self?.twitters?.map({
+//                                (list) -> TwitterListMsg in
+//                                if list.twitterKeeper == data.twitterKeeper {
+//                                    list.isRel = 0
+//                                }
+//                                return list
+//                            })
+//                            self?.tableView.reloadData()
+//                        } else {
+//                            // 操作失败
+//                        }
+//                    } else {
+//                        // 操作失败
+//                    }
+//                    self?.hideHUD()
+//                }
+//            }
+//            LCYNetworking.sharedInstance.POST(LCYApi.UserAttention, parameters: parameter, success: successBlock) { [weak self](error) -> Void in
+//                self?.hideHUD()
+//                self?.alert("您的网络状态欠佳")
+//            }
+//
+//        }
+//
     }
     func findCilcleListCellExpand(indexPath: NSIndexPath) {
-        
+
     }
+    
     func findCircleListCellShare(indexPath: NSIndexPath) {
+        if twitterData != nil {
+            let data = twitterData!
+            shareVC = UIStoryboard(name: "ICYShare", bundle: nil).instantiateInitialViewController() as? ICYShareViewController
+            if let shareVC = shareVC {
+                shareVC.messageDescription = "向您推荐了 嗨宠宠物"
+                shareVC.weiboMessage = "嗨宠宠物：\(data.twitterContent)"
+                if data.images != nil && data.images.count > 1 {
+                    if let url = NSURL(string: (data.images[0] as TwitterListImages).cutPath.toAbsolutePath()) {
+                        let request = NSURLRequest(URL: url)
+                        let cachedImage = UIImageView.sharedImageCache().cachedImageForRequest(request)
+                        if cachedImage != nil {
+                            shareVC.weiboImage = cachedImage
+                        }
+                    }
+                }
+                UIApplication.sharedApplication().delegate?.window??.addSubview(shareVC.view)
+            }
+        }
         
     }
     
     func findCircleListCellClickImg(indexPath: NSIndexPath, currentClick: Int) {
-        
+
     }
 }

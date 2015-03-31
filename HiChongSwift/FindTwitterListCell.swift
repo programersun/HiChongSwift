@@ -272,11 +272,11 @@ class FindTwitterListCell: UITableViewCell {
     @IBOutlet private weak var genderImageView: UIImageView!
     var keeperSex: PetSex? {
         didSet {
-            if let petSex = petSex {
-                switch petSex {
-                case .Male:
-                    genderImageView.image = UIImage(named: "sqFemale")
+            if let keeperSex = keeperSex {
+                switch keeperSex {
                 case .Female:
+                    genderImageView.image = UIImage(named: "sqFemale")
+                case .Male:
                     genderImageView.image = UIImage(named: "sqMale")
                 }
             } else {

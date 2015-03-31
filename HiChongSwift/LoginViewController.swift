@@ -97,6 +97,7 @@ class LoginViewController: UITableViewController {
                 return
             }
         }
+        self.view.endEditing(true)
         showHUDWithTips("登录中")
         // 输入合法，登陆
         let parameter = ["user_name": userInfo.LoginName!,
@@ -143,6 +144,7 @@ class LoginViewController: UITableViewController {
             alert("请输入验证码")
             return
         }
+        self.view.endEditing(true)
         if userInfo.AuthCode != userInfo.RetrievedAuthCode {
             alert("验证码错误")
             return
