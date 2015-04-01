@@ -219,6 +219,10 @@ class FindCircleViewController: UITableViewController {
             let data = sender as? TwitterListMsg
             destination.twitterData = data
             destination.keeperInfo = keeperInfo
+            destination.requestBlock = {[weak self]() -> Void in
+                self?.tableView.reloadData()
+                ""
+            }
         }
     }
     
