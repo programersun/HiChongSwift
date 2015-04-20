@@ -56,13 +56,14 @@
     [WXApi sendReq:req];
 }
 
-- (void)sendWeiboContent:(WBMessageObject *)message {
+- (void)sendWeiboContent:(WBBaseMediaObject *)message {
     WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
     authRequest.redirectURI = @"";
     authRequest.scope = @"all";
-    
-    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:message authInfo:authRequest access_token:@"3704764004"];
-    request.userInfo = @{@"zombieKey": @"zombieValue"};
+    WBMessageObject *messageOb = (WBMessageObject *)[WBMessageObject message];
+    messageOb.mediaObject = message;
+    WBSendMessageToWeiboRequest *request = [WBSendMessageToWeiboRequest requestWithMessage:messageOb authInfo:authRequest access_token:@"3704764004"];
+    //request.userInfo = @{@"zombieKey": @"zombieValue"};
     //    request.shouldOpenWeiboAppInstallPageIfNotInstalled = NO;
     [WeiboSDK sendRequest:request];
 }

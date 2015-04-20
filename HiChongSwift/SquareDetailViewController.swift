@@ -89,12 +89,20 @@ class SquareDetailViewController: UIViewController {
             // 暂时屏蔽分享功能
             shareVC = UIStoryboard(name: "ICYShare", bundle: nil).instantiateInitialViewController() as? ICYShareViewController
             if let shareVC = shareVC {
+                shareVC.messageDescription = "向您推荐了 嗨宠宠物"
+                shareVC.weiboMessage = "嗨宠宠物：\(data.msg.businessDetail)"
+                
+                shareVC.wxTitle = data.msg.businessName
+                shareVC.wxDesciption = data.msg.businessDetail
+                shareVC.wxURL = "http://123.57.7.88/admin/index.php/Home/Home/square/business_id/" + data.msg.businessId
+
                 shareVC.messageDescription = "通过嗨宠宠物向您推荐商家：\n\(data.msg.businessName)"
                 if let url = NSURL(string: data.msg.businessImage.toAbsolutePath()) {
                     let request = NSURLRequest(URL: url)
                     let cachedImage = UIImageView.sharedImageCache().cachedImageForRequest(request)
                     if cachedImage != nil {
                         shareVC.weiboImage = cachedImage
+                        shareVC.wxImg      = cachedImage
                     }
                 }
                 UIApplication.sharedApplication().delegate?.window??.addSubview(shareVC.view)

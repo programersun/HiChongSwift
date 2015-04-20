@@ -13,6 +13,6 @@
 
 - (void)sendAppContent;
 
-- (void)sendWeiboContent:(WBMessageObject *)message;
+- (void)sendWeiboContent:(WBBaseMediaObject *)message;
 
 @end

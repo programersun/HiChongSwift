@@ -14,6 +14,10 @@ class ICYShareViewController: UIViewController {
     var weiboImage: UIImage?
     var weiboMessage: String?
     
+    var wxTitle : String?
+    var wxDesciption : String?
+    var wxImg : UIImage?
+    var wxURL  : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,19 +34,15 @@ class ICYShareViewController: UIViewController {
         
         
         let message = WXMediaMessage()
-        message.title = "嗨宠宠物"
+        message.title = wxTitle ?? "嗨宠宠物"
         message.description = messageDescription ?? "嗨宠宠物，为您服务。"
-        message.setThumbImage(UIImage(named: "placeholderLogo"))
+        message.setThumbImage(wxImg ?? UIImage(named: "placeholderLogo"))
         //        message.messageExt = "messageExt"
         //        message.messageAction = "<action>hichong</action>"
         
         let ext = WXAppExtendObject()
-        ext.extInfo = "ext info"
-        ext.url = "https://itunes.apple.com/us/app/hai-chong-chong-wu/id918809824?l=zh&ls=1&mt=8"
         
-        let data = "暂时不需要任何内容".dataUsingEncoding(NSUTF8StringEncoding)
-        ext.fileData = data
-        
+        ext.url = wxURL ?? "https://itunes.apple.com/us/app/hai-chong-chong-wu/id918809824?l=zh&ls=1&mt=8"
         message.mediaObject = ext
         
         let req = SendMessageToWXReq()
@@ -60,16 +60,12 @@ class ICYShareViewController: UIViewController {
     }
     @IBAction func weiboButtonPressed(sender: AnyObject) {
         let messageSender = MessageSender()
-        let wbMessage = WBMessageObject()
+        let wbMessage = WBWebpageObject()
         
-        wbMessage.text = weiboMessage ?? messageDescription ?? "嗨宠宠物，为您服务。"
-        
-        if let weiboImage = weiboImage {
-            let imageObject = WBImageObject()
-            imageObject.imageData = UIImageJPEGRepresentation(weiboImage, 1)
-            wbMessage.imageObject = imageObject
-        }
-        
+        wbMessage.title = wxTitle ?? "嗨宠宠物"
+        wbMessage.description = messageDescription ?? "嗨宠宠物，为您服务。"
+        wbMessage.thumbnailData = UIImageJPEGRepresentation(wxImg ?? UIImage(named: "placeholderLogo"), 1)
+        wbMessage.webpageUrl    = wxURL ?? "https://itunes.apple.com/us/app/hai-chong-chong-wu/id918809824?l=zh&ls=1&mt=8"
         messageSender.sendWeiboContent(wbMessage)
     }
     

@@ -618,12 +618,19 @@ extension FindCircleViewController: FindCircleListCellDelegate , FindTwitterList
         if let shareVC = shareVC {
             shareVC.messageDescription = "向您推荐了 嗨宠宠物"
             shareVC.weiboMessage = "嗨宠宠物：\(data.twitterContent)"
+            
+            shareVC.wxTitle = data.twitterContent
+            shareVC.wxDesciption = data.twitterContent
+            shareVC.wxURL = "http://123.57.7.88/admin/index.php/Home/Home/index/twitter_id/" + data.twitterId
+            
             if data.images != nil && data.images.count > 1 {
                 if let url = NSURL(string: (data.images[0] as TwitterListImages).cutPath.toAbsolutePath()) {
                     let request = NSURLRequest(URL: url)
                     let cachedImage = UIImageView.sharedImageCache().cachedImageForRequest(request)
                     if cachedImage != nil {
                         shareVC.weiboImage = cachedImage
+                        shareVC.wxImg      = cachedImage
+                        
                     }
                 }
             }
