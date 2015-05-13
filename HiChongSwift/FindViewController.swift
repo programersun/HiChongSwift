@@ -71,7 +71,7 @@ class FindViewController: UITableViewController {
                 "user_id": LCYCommon.sharedInstance.userName!
             ]
             LCYNetworking.sharedInstance.POST(LCYApi.TwitterRemindInfo, parameters: parameter, success: { [weak self](object) -> Void in
-                let base = TwitterRemindInfoBase.modelObjectWithDictionary(object)
+                let base = TwitterRemindInfoBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if base.result {
                     self?.remindInfo = base.msg
 //                    if(self?.remindInfo != nil)
@@ -106,7 +106,7 @@ class FindViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(FindViewCell.identifier, forIndexPath: indexPath) as FindViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(FindViewCell.identifier, forIndexPath: indexPath) as! FindViewCell
 
 //        cell.textLabel?.textColor = UIColor.LCYThemeDarkText()
         
@@ -198,7 +198,7 @@ class FindViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showSearchResult":
-                let destination = segue.destinationViewController as FindSearchResultViewController
+                let destination = segue.destinationViewController as! FindSearchResultViewController
                 if let sender = sender as? Bool {
                     destination.forFriend = sender
                 }

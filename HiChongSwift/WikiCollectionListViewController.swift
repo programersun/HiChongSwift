@@ -41,13 +41,13 @@ class WikiCollectionListViewController: UITableViewController {
             "user_name": LCYCommon.sharedInstance.userName!
         ]
         LCYNetworking.sharedInstance.POST(LCYApi.WikiCollectList, parameters: parameters, success: { [weak self](object) -> Void in
-            let retrived = WikiCollectListBase.modelObjectWithDictionary(object)
+            let retrived = WikiCollectListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if var list = self?.infoData {
                 if let data = retrived.data {
                     if data.count == 0 {
                         self?.alert("已经没有更多了")
                     } else {
-                        list.extend(data as [WikiCollectListData])
+                        list.extend(data as! [WikiCollectListData])
                         self?.infoData = list
                         self?.tableView.reloadData()
                         self?.currentPage++
@@ -71,10 +71,10 @@ class WikiCollectionListViewController: UITableViewController {
             "user_name": LCYCommon.sharedInstance.userName!
         ]
         LCYNetworking.sharedInstance.POST(LCYApi.WikiCollectList, parameters: parameters, success: { [weak self](object) -> Void in
-            let retrived = WikiCollectListBase.modelObjectWithDictionary(object)
+            let retrived = WikiCollectListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             self?.infoData = [WikiCollectListData]()
             if let data = retrived.data {
-                self?.infoData?.extend(data as [WikiCollectListData])
+                self?.infoData?.extend(data as! [WikiCollectListData])
                 self?.tableView.reloadData()
                 self?.currentPage++
             } else {
@@ -114,7 +114,7 @@ class WikiCollectionListViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier(), forIndexPath: indexPath) as WikiInfoCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier(), forIndexPath: indexPath) as! WikiInfoCell
         
         switch indexPath.row % 2 {
         case 0:
@@ -151,7 +151,7 @@ class WikiCollectionListViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showArticle":
-                let destination = segue.destinationViewController as WikiArticleViewController
+                let destination = segue.destinationViewController as! WikiArticleViewController
                 if let index = tableView.indexPathForSelectedRow()?.row {
                     destination.wikiArticleID = infoData?[index].encyId
                     var data = infoData?[index]

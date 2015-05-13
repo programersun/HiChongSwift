@@ -41,7 +41,7 @@ extension FindAddImageCell: UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(FindAddImageCollectionCell.identifier, forIndexPath: indexPath) as FindAddImageCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(FindAddImageCollectionCell.identifier, forIndexPath: indexPath) as! FindAddImageCollectionCell
         if let dataSource = collectionDataSource {
             if indexPath.row < dataSource.addImageCount() {
                 cell.icyImageView.contentMode = UIViewContentMode.ScaleAspectFill

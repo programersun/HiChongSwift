@@ -37,7 +37,7 @@ class RegionPickerViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         if let context = appDelegate.managedObjectContext {
             // 获取所有省份
             let fetchRequset = NSFetchRequest()
@@ -51,7 +51,7 @@ class RegionPickerViewController: UIViewController {
             let result = context.executeFetchRequest(fetchRequset, error: &error)
             if let entities = result {
                 provinces = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     provinces?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(0)
@@ -69,7 +69,7 @@ class RegionPickerViewController: UIViewController {
             let cityResult = context.executeFetchRequest(cityFetchRequset, error: &error)
             if let entities = cityResult {
                 cities = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     cities?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(1)
@@ -87,7 +87,7 @@ class RegionPickerViewController: UIViewController {
             let townResult = context.executeFetchRequest(townFetchRequset, error: &error)
             if let entities = townResult {
                 towns = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     towns?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(1)
@@ -177,7 +177,7 @@ extension RegionPickerViewController: UIPickerViewDataSource, UIPickerViewDelega
         case 0:
             // 改变省级区划
             let provinceID = provinces![row].region_id
-            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context = appDelegate.managedObjectContext!
             let fetchRequset = NSFetchRequest()
             let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)
@@ -188,7 +188,7 @@ extension RegionPickerViewController: UIPickerViewDataSource, UIPickerViewDelega
             let result = context.executeFetchRequest(fetchRequset, error: &error)
             if let entities = result {
                 cities = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     cities?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(1)
@@ -200,7 +200,7 @@ extension RegionPickerViewController: UIPickerViewDataSource, UIPickerViewDelega
         case 1:
             // 改变市级区划
             let cityID = cities![pickerView.selectedRowInComponent(1)].region_id
-            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context = appDelegate.managedObjectContext!
             let fetchRequset = NSFetchRequest()
             let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)
@@ -211,7 +211,7 @@ extension RegionPickerViewController: UIPickerViewDataSource, UIPickerViewDelega
             let result = context.executeFetchRequest(fetchRequset, error: &error)
             if let entities = result {
                 towns = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     towns?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(2)

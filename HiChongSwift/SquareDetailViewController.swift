@@ -112,7 +112,7 @@ class SquareDetailViewController: UIViewController {
     
     private func reload() {
         LCYNetworking.sharedInstance.POST(LCYApi.SquareMerchantInfo, parameters: ["business_id": merchantID!], success: { [weak self](object) -> Void in
-            let retrieved = SquareMerchantInfoBase.modelObjectWithDictionary(object)
+            let retrieved = SquareMerchantInfoBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if retrieved.result {
                 self?.merchantData = retrieved
                 self?.icyTableView.reloadData()
@@ -134,15 +134,15 @@ class SquareDetailViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showAdd":
-                let destination = segue.destinationViewController as SquareCommentViewController
+                let destination = segue.destinationViewController as! SquareCommentViewController
                 destination.businessID = merchantID
                 destination.businessName = merchantData?.msg.businessName
             case "showCommentList":
-                let destination = segue.destinationViewController as SquareCommentListViewController
+                let destination = segue.destinationViewController as! SquareCommentListViewController
                 destination.businessID = merchantID
                 destination.businessName = merchantData?.msg.businessName
             case "showMap":
-                let destination = segue.destinationViewController as SquareMapViewController
+                let destination = segue.destinationViewController as! SquareMapViewController
                 destination.businessData = merchantData?.msg
             default:
                 break
@@ -176,8 +176,8 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
         let data = merchantData!.msg
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailHeadCell.identifier()) as UITableViewCell
-            let cell = cell as SquareDetailHeadCell
+            cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailHeadCell.identifier()) as! UITableViewCell
+            let cell = cell as! SquareDetailHeadCell
             cell.imagePath = data.businessImage.toAbsolutePath()
             cell.icyTitleLabel.text = data.businessName
             cell.icyScore = CGFloat((data.businessScore as NSString).floatValue)
@@ -188,7 +188,7 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
                 cell.distanceLabel.text = "0.0km"
             }
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailMiddleCell.identifier()) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailMiddleCell.identifier()) as! UITableViewCell
             // 设置背景颜色
             switch indexPath.row % 2 {
             case 0:
@@ -199,7 +199,7 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
                 break
             }
             // 设置内容
-            let cell = cell as SquareDetailMiddleCell
+            let cell = cell as! SquareDetailMiddleCell
             switch indexPath.row {
             case 0:
                 cell.cellType = .Location
@@ -214,8 +214,8 @@ extension SquareDetailViewController: UITableViewDelegate, UITableViewDataSource
                 break
             }
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailDynamicCell.identifier()) as UITableViewCell
-            let cell = cell as SquareDetailDynamicCell!
+            cell = tableView.dequeueReusableCellWithIdentifier(SquareDetailDynamicCell.identifier()) as! UITableViewCell
+            let cell = cell as! SquareDetailDynamicCell!
             cell.icyLabel.text = data.businessDetail
         default:
             break

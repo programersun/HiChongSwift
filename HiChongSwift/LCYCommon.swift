@@ -113,7 +113,7 @@ class LCYCommon: NSObject {
     var userName: String? {
         get {
             let userDefault = NSUserDefaults.standardUserDefaults()
-            let name = userDefault.objectForKey(UserDefaultKeys.kUserName.rawValue) as String?
+            let name = userDefault.objectForKey(UserDefaultKeys.kUserName.rawValue) as! String?
             return name
         }
     }
@@ -121,7 +121,7 @@ class LCYCommon: NSObject {
     var userPhone: String? {
         get {
             let userDefault = NSUserDefaults.standardUserDefaults()
-            let phone = userDefault.objectForKey(UserDefaultKeys.kUserPhone.rawValue) as String?
+            let phone = userDefault.objectForKey(UserDefaultKeys.kUserPhone.rawValue) as! String?
             return phone
         }
     }
@@ -134,8 +134,8 @@ class LCYCommon: NSObject {
         userDefault.setBool(false, forKey: UserDefaultKeys.kUserLogin.rawValue)
         userDefault.synchronize()
         
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as UIViewController
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as! UIViewController
         appDelegate.window?.rootViewController = loginVC
     }
     
@@ -173,7 +173,7 @@ class LCYCommon: NSObject {
     var regionID: String? {
         get {
             let userDefault = NSUserDefaults.standardUserDefaults()
-            let regionID = userDefault.objectForKey(UserDefaultKeys.kRegionID.rawValue) as String?
+            let regionID = userDefault.objectForKey(UserDefaultKeys.kRegionID.rawValue) as! String?
             return regionID
         }
         set {

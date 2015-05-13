@@ -20,7 +20,7 @@ class MoePetPageViewController: UIPageViewController {
         // Do any additional setup after loading the view.
         if let data = data {
             let storyBoard = UIStoryboard(name: "Find", bundle: nil)
-            let startPage = storyBoard.instantiateViewControllerWithIdentifier("imageVC") as FindTwitterImageViewController
+            let startPage = storyBoard.instantiateViewControllerWithIdentifier("imageVC") as! FindTwitterImageViewController
             startPage.index = startIndex
             startPage.MoePetData = data[startIndex]
             setViewControllers([startPage], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
@@ -53,9 +53,9 @@ class MoePetPageViewController: UIPageViewController {
 
 extension MoePetPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let from = viewController as FindTwitterImageViewController
+        let from = viewController as! FindTwitterImageViewController
         let storyBoard = UIStoryboard(name: "Find", bundle: nil)
-        let startPage = storyBoard.instantiateViewControllerWithIdentifier("imageVC") as FindTwitterImageViewController
+        let startPage = storyBoard.instantiateViewControllerWithIdentifier("imageVC") as! FindTwitterImageViewController
         startPage.index = from.index - 1
         if startPage.index < 0 {
             return nil
@@ -65,9 +65,9 @@ extension MoePetPageViewController: UIPageViewControllerDataSource, UIPageViewCo
         }
     }
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let from = viewController as FindTwitterImageViewController
+        let from = viewController as! FindTwitterImageViewController
         let storyBoard = UIStoryboard(name: "Find", bundle: nil)
-        let startPage = storyBoard.instantiateViewControllerWithIdentifier("imageVC") as FindTwitterImageViewController
+        let startPage = storyBoard.instantiateViewControllerWithIdentifier("imageVC") as! FindTwitterImageViewController
         startPage.index = from.index + 1
         if startPage.index >= data!.count {
             return nil
@@ -77,7 +77,7 @@ extension MoePetPageViewController: UIPageViewControllerDataSource, UIPageViewCo
         }
     }
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
-        let vc = pendingViewControllers[0] as FindTwitterImageViewController
+        let vc = pendingViewControllers[0] as! FindTwitterImageViewController
         if let data = data {
             navigationItem.title = "\(vc.index + 1)/\(data.count)"
         }

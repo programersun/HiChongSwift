@@ -29,9 +29,9 @@ class PetSubTypeViewController: UITableViewController {
         if let uid = parentID{
             let parameter = ["f_id": uid]
             LCYNetworking.sharedInstance.POST(LCYApi.PetSubType, parameters: parameter, success: { [weak self] (object) -> Void in
-                var info = LCYPetSubTypeBase.modelObjectWithDictionary(object)
+                var info = LCYPetSubTypeBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if info.childStyle.count == 3 {
-                    info.childStyle = (info.childStyle as [LCYPetSubTypeChildStyle]).sorted({
+                    info.childStyle = (info.childStyle as! [LCYPetSubTypeChildStyle]).sorted({
                         func toSortInt(name: String) -> Int {
                             if name == "大型犬" {
                                 return 3
@@ -89,7 +89,7 @@ class PetSubTypeViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PetCateFilterCell.identifier(), forIndexPath: indexPath) as PetCateFilterCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(PetCateFilterCell.identifier(), forIndexPath: indexPath) as! PetCateFilterCell
 
         if let childInfo = subTypeInfo?.childStyle[indexPath.row] as? LCYPetSubTypeChildStyle {
             cell.icyImageView?.setImageWithURL(NSURL(string: childInfo.headImg.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
@@ -108,7 +108,7 @@ class PetSubTypeViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showLV3":
-                let destination = segue.destinationViewController as PetFinalFilterViewController
+                let destination = segue.destinationViewController as! PetFinalFilterViewController
                 if let indexPath = tableView.indexPathForSelectedRow()?.row {
                     let info = subTypeInfo?.childStyle[indexPath] as? LCYPetSubTypeChildStyle
                     destination.parentID = info?.catId

@@ -18,7 +18,7 @@ class FindTwitterPageViewController: UIPageViewController {
         // Do any additional setup after loading the view.
         
         if let data = data {
-            let startPage = storyboard?.instantiateViewControllerWithIdentifier("imageVC") as FindTwitterImageViewController
+            let startPage = storyboard?.instantiateViewControllerWithIdentifier("imageVC") as! FindTwitterImageViewController
             startPage.data = data
             setViewControllers([startPage], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
             dataSource = self
@@ -49,8 +49,8 @@ class FindTwitterPageViewController: UIPageViewController {
 
 extension FindTwitterPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let from = viewController as FindTwitterImageViewController
-        let startPage = storyboard?.instantiateViewControllerWithIdentifier("imageVC") as FindTwitterImageViewController
+        let from = viewController as! FindTwitterImageViewController
+        let startPage = storyboard?.instantiateViewControllerWithIdentifier("imageVC") as! FindTwitterImageViewController
         startPage.index = from.index - 1
         startPage.data = data
         if startPage.index < 0 {
@@ -60,8 +60,8 @@ extension FindTwitterPageViewController: UIPageViewControllerDataSource, UIPageV
         }
     }
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let from = viewController as FindTwitterImageViewController
-        let startPage = storyboard?.instantiateViewControllerWithIdentifier("imageVC") as FindTwitterImageViewController
+        let from = viewController as! FindTwitterImageViewController
+        let startPage = storyboard?.instantiateViewControllerWithIdentifier("imageVC") as! FindTwitterImageViewController
         startPage.index = from.index + 1
         startPage.data = data
         if startPage.index >= data!.images.count {
@@ -71,6 +71,6 @@ extension FindTwitterPageViewController: UIPageViewControllerDataSource, UIPageV
         }
     }
     func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
-        let vc = pendingViewControllers[0] as FindTwitterImageViewController
+        let vc = pendingViewControllers[0] as! FindTwitterImageViewController
     }
 }

@@ -47,7 +47,7 @@ class WikiViewController: UITableViewController {
         tableView.hideExtraSeprator()
         
         let nib = UINib(nibName: "WikiSectionHeader", bundle: nil)
-        sectionHeaderView = nib.instantiateWithOwner(self, options: nil).first as UIView
+        sectionHeaderView = nib.instantiateWithOwner(self, options: nil).first as! UIView
         sectionHeaderView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: sectionHeaderHeight)
         
         addRightButton("分类", action: "rightButtonPressed:")
@@ -85,14 +85,14 @@ class WikiViewController: UITableViewController {
     // MARK: - Actions
     func rightButtonPressed(sender: AnyObject) {
         let storyBoard = UIStoryboard(name: "PetCateFilter", bundle: nil)
-        let destination = storyBoard.instantiateInitialViewController() as PetCateFilterViewController
+        let destination = storyBoard.instantiateInitialViewController() as! PetCateFilterViewController
         destination.delegate = self
         destination.root = self
         navigationController?.pushViewController(destination, animated: true)
     }
     private func initAdData() {
         LCYNetworking.sharedInstance.GET(LCYApi.WikiGetAD, parameters: nil, success: { [weak self](object) -> Void in
-            let retrieved = WikiGetADBase.modelObjectWithDictionary(object)
+            let retrieved = WikiGetADBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             self?.adInfo = retrieved.data as? [WikiGetADData]
             self?.tableView.reloadData()
             return
@@ -106,8 +106,8 @@ class WikiViewController: UITableViewController {
             "p" : "\(currentPage)"
         ]
         LCYNetworking.sharedInstance.GET(LCYApi.WikiToday, parameters: parameters, success: { [weak self](object) -> Void in
-            let dataBase = WikiTodayBase.modelObjectWithDictionary(object)
-            self?.listInfo = (dataBase.data as [WikiTodayData])
+            let dataBase = WikiTodayBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
+            self?.listInfo = (dataBase.data as! [WikiTodayData])
             self?.tableView.reloadData()
             self?.currentPage++
             self?.hideHUD()
@@ -125,8 +125,8 @@ class WikiViewController: UITableViewController {
             "p": "\(currentPage)"
         ]
         LCYNetworking.sharedInstance.GET(LCYApi.WikiToday, parameters: parameters, success: { [weak self](object) -> Void in
-            let dataBase = WikiTodayBase.modelObjectWithDictionary(object)
-            self?.listInfo.extend(dataBase.data as [WikiTodayData])
+            let dataBase = WikiTodayBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
+            self?.listInfo.extend(dataBase.data as! [WikiTodayData])
             self?.tableView.reloadData()
             self?.currentPage++
             self?.hideHUD()
@@ -176,17 +176,17 @@ class WikiViewController: UITableViewController {
         var cell: UITableViewCell!
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier(WikiAdCell.identifier()) as UITableViewCell
-            let cell = cell as WikiAdCell
+            cell = tableView.dequeueReusableCellWithIdentifier(WikiAdCell.identifier()) as! UITableViewCell
+            let cell = cell as! WikiAdCell
             if let adInfo = adInfo {
                 cell.adImages = map(adInfo, { (element) -> String in
                     element.image.toAbsolutePath()
                 })
             }
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier(WikiMidCell.identifier()) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(WikiMidCell.identifier()) as! UITableViewCell
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier()) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier()) as! UITableViewCell
             switch indexPath.row % 2 {
             case 0:
                 cell.backgroundColor = UIColor.LCYTableLightBlue()
@@ -197,7 +197,7 @@ class WikiViewController: UITableViewController {
             }
             
             let data = listInfo[indexPath.row]
-            let cell = cell as WikiInfoCell
+            let cell = cell as! WikiInfoCell
             cell.icyTitle = data.title
             cell.keyWord = data.keyword
             cell.readCount = data.encyRead
@@ -255,12 +255,12 @@ class WikiViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showArticle":
-                let destination = segue.destinationViewController as WikiArticleViewController
+                let destination = segue.destinationViewController as! WikiArticleViewController
                 if let index = tableView.indexPathForSelectedRow()?.row {
                     destination.wikiArticleID = listInfo[index].encyId
                 }
             case "showWikiList":
-                let destination = segue.destinationViewController as WikiListViewController
+                let destination = segue.destinationViewController as! WikiListViewController
                 if let key = sender as? String {
                     switch key {
                     case WikiListType.More.rawValue:
@@ -282,7 +282,7 @@ class WikiViewController: UITableViewController {
                     }
                 }
             case "showWiki":
-                let destination = segue.destinationViewController as WikiesViewController
+                let destination = segue.destinationViewController as! WikiesViewController
                 if let child = childCategory {
                     destination.childCate = child
                 }

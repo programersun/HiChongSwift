@@ -106,7 +106,7 @@ class FindSearchViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
         switch indexPath.row % 2 {
         case 0:
@@ -179,7 +179,7 @@ class FindSearchViewController: UITableViewController {
         case 0:
             // 宠物种类
             let storyBoard = UIStoryboard(name: "PetCateFilter", bundle: nil)
-            let destination = storyBoard.instantiateInitialViewController() as PetCateFilterViewController
+            let destination = storyBoard.instantiateInitialViewController() as! PetCateFilterViewController
             destination.delegate = self
             destination.root = self
             navigationController?.pushViewController(destination, animated: true)
@@ -196,14 +196,14 @@ class FindSearchViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "chooseAge":
-                let destination = segue.destinationViewController as FindChooseAgeViewController
+                let destination = segue.destinationViewController as! FindChooseAgeViewController
                 destination.delegate = self
             case "showSingle":
-                let destination = segue.destinationViewController as FindChooseSingleSelectionViewController
+                let destination = segue.destinationViewController as! FindChooseSingleSelectionViewController
                 destination.indexPath = tableView.indexPathForSelectedRow()
                 destination.delegate = self
             case "showSearchResult":
-                let destination = segue.destinationViewController as FindSearchResultViewController
+                let destination = segue.destinationViewController as! FindSearchResultViewController
                 let parameter = sender as? [String: String]
                 destination.parameter = parameter
             default:

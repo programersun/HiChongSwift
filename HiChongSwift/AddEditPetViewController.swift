@@ -144,7 +144,7 @@ class AddEditPetViewController: UIViewController {
     private var QRCode: String? {
         didSet {
             if let code = QRCode {
-                if countElements(code) != 0 {
+                if count(code) != 0 {
                     bindSwitch.enabled = true
                     qrImageView.image = UIImage(named: "qrDuostec")
                 } else {
@@ -243,7 +243,7 @@ class AddEditPetViewController: UIViewController {
         if let info = startInfo {
             // 昵称
             let text = petNameTextField.text
-            if countElements(text) <= 0 {
+            if count(text) <= 0 {
                 alert("请输入宠物昵称")
                 return
             }
@@ -324,7 +324,7 @@ class AddEditPetViewController: UIViewController {
         
         // 昵称
         let text = petNameTextField.text
-        if countElements(text) <= 0 {
+        if count(text) <= 0 {
             alert("请输入宠物昵称")
             return
         }
@@ -439,10 +439,10 @@ class AddEditPetViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "container":
-                let destination = segue.destinationViewController as AgePickerViewController
+                let destination = segue.destinationViewController as! AgePickerViewController
                 destination.delegate = self
             case "presentScan":
-                let destination = segue.destinationViewController as QRScanViewController
+                let destination = segue.destinationViewController as! QRScanViewController
                 destination.delegate = self
             default:
                 break
@@ -480,7 +480,7 @@ extension AddEditPetViewController: UIImagePickerControllerDelegate, UINavigatio
         view.setNeedsLayout()
         showHUDWithTips("处理中")
         
-        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 300, height: 300))
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as! UIImage, scaledToFillToSize: CGSize(width: 300, height: 300))
         avatarImage = smallImage
         
         // 处理上传之后，隐藏HUD
@@ -490,9 +490,9 @@ extension AddEditPetViewController: UIImagePickerControllerDelegate, UINavigatio
         avatarBeingUploading = .Uploading
         let data = UIImagePNGRepresentation(smallImage)
         LCYNetworking.sharedInstance.POSTCommonFile("Filedata", fileData: data, fileName: "tiancailcy.png", mimeType: LCYMimeType.PNG, success: { [weak self] (object) -> Void in
-            let resultInfo = CommonUploadBase.modelObjectWithDictionary(object)
+            let resultInfo = CommonUploadBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if resultInfo.result {
-                self?.avatarSaveName = (resultInfo.images[0] as CommonUploadImages).savename
+                self?.avatarSaveName = (resultInfo.images[0] as! CommonUploadImages).savename
                 self?.avatarBeingUploading = .Success
             } else {
                 self?.avatarBeingUploading = .Failed
@@ -510,7 +510,7 @@ extension AddEditPetViewController: UITextFieldDelegate {
         if textField == petCateTextField {
             // 开始分类筛选
             let storyBoard = UIStoryboard(name: "PetCateFilter", bundle: nil)
-            let destination = storyBoard.instantiateInitialViewController() as PetCateFilterViewController
+            let destination = storyBoard.instantiateInitialViewController() as! PetCateFilterViewController
             destination.delegate = self
             destination.root = self
             navigationController?.pushViewController(destination, animated: true)

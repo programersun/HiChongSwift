@@ -107,12 +107,12 @@ class WikiListViewController: UIViewController {
         case .Health:
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
-                let retrived = WikiMoreBase.modelObjectWithDictionary(object)
+                let retrived = WikiMoreBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if !append {
                     self?.healthData = [WikiMoreData]()
                 }
                 if let data = retrived.data {
-                    self?.healthData?.extend(data as [WikiMoreData])
+                    self?.healthData?.extend(data as! [WikiMoreData])
                     self?.healthPage++
                     if self?.icySegmentControl.selectedSegmentIndex == 0 {
                         self?.icyTableView.reloadData()
@@ -125,12 +125,12 @@ class WikiListViewController: UIViewController {
         case .Keep:
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
-                let retrived = WikiMoreBase.modelObjectWithDictionary(object)
+                let retrived = WikiMoreBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if !append {
                     self?.keepData = [WikiMoreData]()
                 }
                 if let data = retrived.data {
-                    self?.keepData?.extend(data as [WikiMoreData])
+                    self?.keepData?.extend(data as! [WikiMoreData])
                     self?.keepPage++
                     if self?.icySegmentControl.selectedSegmentIndex == 1 {
                         self?.icyTableView.reloadData()
@@ -143,12 +143,12 @@ class WikiListViewController: UIViewController {
         case .Train:
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
-                let retrived = WikiMoreBase.modelObjectWithDictionary(object)
+                let retrived = WikiMoreBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if !append {
                     self?.trainData = [WikiMoreData]()
                 }
                 if let data = retrived.data {
-                    self?.trainData?.extend(data as [WikiMoreData])
+                    self?.trainData?.extend(data as! [WikiMoreData])
                     self?.trainPage++
                     if self?.icySegmentControl.selectedSegmentIndex == 2 {
                         self?.icyTableView.reloadData()
@@ -205,7 +205,7 @@ class WikiListViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showArticle":
-                let destination = segue.destinationViewController as WikiArticleViewController
+                let destination = segue.destinationViewController as! WikiArticleViewController
                 if let indexPath = icyTableView.indexPathForSelectedRow() {
                     var data: WikiMoreData?
                     switch type {
@@ -264,7 +264,7 @@ extension WikiListViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier()) as WikiInfoCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier()) as! WikiInfoCell
         var data: WikiMoreData?
         switch type {
         case .Health:

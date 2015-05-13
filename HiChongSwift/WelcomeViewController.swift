@@ -19,7 +19,7 @@ class WelcomeViewController: UIPageViewController {
         
         self.view.backgroundColor = UIColor.LCYThemeColor()
         
-        let startPage = self.storyboard?.instantiateViewControllerWithIdentifier(singlePageIdnetifier) as WelcomeSinglePageViewController
+        let startPage = self.storyboard?.instantiateViewControllerWithIdentifier(singlePageIdnetifier) as! WelcomeSinglePageViewController
         startPage.pageIndex = 0
         self.setViewControllers([startPage], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         self.dataSource = self
@@ -46,21 +46,21 @@ class WelcomeViewController: UIPageViewController {
 
 extension WelcomeViewController: UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let currentIndex = (self.viewControllers.first as WelcomeSinglePageViewController).pageIndex!
+        let currentIndex = (self.viewControllers.first as! WelcomeSinglePageViewController).pageIndex!
         if currentIndex >= 3 {
             return nil
         } else {
-            let nextPage = self.storyboard?.instantiateViewControllerWithIdentifier(singlePageIdnetifier) as WelcomeSinglePageViewController
+            let nextPage = self.storyboard?.instantiateViewControllerWithIdentifier(singlePageIdnetifier) as! WelcomeSinglePageViewController
             nextPage.pageIndex = currentIndex + 1
             return nextPage
         }
     }
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let currentIndex = (self.viewControllers.first as WelcomeSinglePageViewController).pageIndex!
+        let currentIndex = (self.viewControllers.first as! WelcomeSinglePageViewController).pageIndex!
         if currentIndex <= 0 {
             return nil
         } else {
-            let previousPage = self.storyboard?.instantiateViewControllerWithIdentifier(singlePageIdnetifier) as WelcomeSinglePageViewController
+            let previousPage = self.storyboard?.instantiateViewControllerWithIdentifier(singlePageIdnetifier) as! WelcomeSinglePageViewController
             previousPage.pageIndex = currentIndex - 1
             return previousPage
         }

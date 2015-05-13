@@ -54,7 +54,7 @@ class SquareMapViewController: UIViewController {
 extension SquareMapViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if let business = annotation as? SquareMapBusiness {
-            var view = mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as MKPinAnnotationView!
+            var view = mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as! MKPinAnnotationView!
             if view == nil {
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
                 view.canShowCallout = true

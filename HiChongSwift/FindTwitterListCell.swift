@@ -360,7 +360,7 @@ extension FindTwitterListCell: UICollectionViewDelegate, UICollectionViewDataSou
         return starPeople?.count ?? 0
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(FindAddImageCollectionCell.identifier, forIndexPath: indexPath) as FindAddImageCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(FindAddImageCollectionCell.identifier, forIndexPath: indexPath) as! FindAddImageCollectionCell
         if let data = starPeople?[indexPath.row] {
             //            cell.icyImageView.setImageWithURL(NSURL(string: data.headImage.toAbsolutePath()), placeholderImage: UIImage(named: "placeholderLogo"))
             cell.icyImageView.contentMode = .Center

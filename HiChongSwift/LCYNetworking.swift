@@ -116,7 +116,7 @@ class LCYNetworking {
         manager.GET(DianpingHost, parameters: mutpara, success: { (operation, object) -> Void in
             println("success in dianping ====> \(operation.responseString)")
             if let unwrappedSuccess = success {
-                unwrappedSuccess(object: object as NSDictionary)
+                unwrappedSuccess(object: object as! NSDictionary)
             }
         }) { (operation, error) -> Void in
             println("error \(error)")
@@ -152,7 +152,7 @@ class LCYNetworking {
     func POSTNONEJSON(Api: LCYApi, parameters: NSDictionary!, success: ((responseString: String) -> Void)?, failure: ((error: NSError!)->Void)?) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFHTTPResponseSerializer()
-        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain") as Set<NSObject>
         let absoluteURL = hostURL + Api.rawValue
         manager.POST(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
             println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
@@ -171,7 +171,7 @@ class LCYNetworking {
     private func requestWith(type: RequestType, Api: String, parameters: NSDictionary!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError!)->Void)?) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFJSONResponseSerializer()
-        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain") as Set<NSObject>
         let absoluteURL = hostURL + Api
         println("Request: \(absoluteURL)\nwith Parameters: \(parameters)")
         switch type {
@@ -179,7 +179,7 @@ class LCYNetworking {
             manager.GET(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
                 println("success in \"\(Api)\" ====> \(operation.responseString)")
                 if let unwrappedSuccess = success {
-                    unwrappedSuccess(object: object as NSDictionary)
+                    unwrappedSuccess(object: object as! NSDictionary)
                 }
                 }) { (operation, error) -> Void in
                     println("error \(error)")
@@ -191,7 +191,7 @@ class LCYNetworking {
             manager.POST(absoluteURL, parameters: parameters, success: { (operation, object) -> Void in
                 println("success in \"\(Api)\" ====> \(operation.responseString)")
                 if let unwrappedSuccess = success {
-                    unwrappedSuccess(object: object as NSDictionary)
+                    unwrappedSuccess(object: object as! NSDictionary)
                 }
                 }) { (operation, error) -> Void in
                     println("error \(error)")
@@ -206,7 +206,7 @@ class LCYNetworking {
     func POSTFile(Api: LCYApi, parameters: NSDictionary!, fileKey: String!, fileData: NSData!, fileName: String!, mimeType: LCYMimeType, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError) -> Void)?) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFJSONResponseSerializer()
-        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain") as Set<NSObject>
         let absoluteURL = hostURL + Api.rawValue
         manager.POST(absoluteURL, parameters: parameters, constructingBodyWithBlock: { (formData: AFMultipartFormData!) -> Void in
             formData.appendPartWithFileData(fileData, name: fileKey, fileName: fileName, mimeType: mimeType.rawValue)
@@ -214,7 +214,7 @@ class LCYNetworking {
             }, success: { (operation, object) -> Void in
                 println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
                 if let unwrappedSuccess = success {
-                    unwrappedSuccess(object: object as NSDictionary)
+                    unwrappedSuccess(object: object as! NSDictionary)
                 }
             }) { (operation, error) -> Void in
                 println("error \(error)")
@@ -227,7 +227,7 @@ class LCYNetworking {
     func POSTMultipleFile(Api: LCYApi, parameters: NSDictionary!, fileKey: String!, fileData: [NSData]!, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError) -> Void)?) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFJSONResponseSerializer()
-        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain") as Set<NSObject>
         let absoluteURL = hostURL + Api.rawValue
         println("posting file, please wait!")
         manager.POST(absoluteURL, parameters: parameters, constructingBodyWithBlock: { (formData: AFMultipartFormData!) -> Void in
@@ -238,7 +238,7 @@ class LCYNetworking {
             }, success: { (operation, object) -> Void in
                 println("success in \"\(Api.rawValue)\" ====> \(operation.responseString)")
                 if let unwrappedSuccess = success {
-                    unwrappedSuccess(object: object as NSDictionary)
+                    unwrappedSuccess(object: object as! NSDictionary)
                 }
             }) { (operation, error) -> Void in
                 println("error \(error)")
@@ -251,7 +251,7 @@ class LCYNetworking {
     func POSTCommonFile(fileKey: String!, fileData: NSData!, fileName: String!, mimeType: LCYMimeType, success: ((object: NSDictionary) -> Void)?, failure: ((error: NSError) -> Void)?) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = AFJSONResponseSerializer()
-        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain")
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html", "text/plain") as Set<NSObject>
         let absoluteURL = commonURL
         manager.POST(absoluteURL, parameters: nil, constructingBodyWithBlock: { (formData: AFMultipartFormData!) -> Void in
             formData.appendPartWithFileData(fileData, name: fileKey, fileName: fileName, mimeType: mimeType.rawValue)
@@ -259,7 +259,7 @@ class LCYNetworking {
             }, success: { (operation, object) -> Void in
                 println("success in upload ====> \(operation.responseString)")
                 if let unwrappedSuccess = success {
-                    unwrappedSuccess(object: object as NSDictionary)
+                    unwrappedSuccess(object: object as! NSDictionary)
                 }
             }) { (operation, error) -> Void in
                 println("error \(error)")

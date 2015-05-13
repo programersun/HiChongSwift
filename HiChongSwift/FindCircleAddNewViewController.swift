@@ -149,7 +149,7 @@ class FindCircleAddNewViewController: UITableViewController {
             return false
         }
         if let text = icyTextView?.text {
-            if countElements(text) == 0 {
+            if count(text) == 0 {
                 alert("请输入要发送的消息")
                 return false
             }
@@ -174,10 +174,10 @@ class FindCircleAddNewViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showLocation":
-                let destination = segue.destinationViewController as FindLocationViewController
+                let destination = segue.destinationViewController as! FindLocationViewController
                 destination.delegate = self
             case "showPet":
-                let destination = segue.destinationViewController as FindPetViewController
+                let destination = segue.destinationViewController as! FindPetViewController
                 destination.delegate = self
             default:
                 break
@@ -227,11 +227,11 @@ class FindCircleAddNewViewController: UITableViewController {
         var cell: UITableViewCell!
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier(FindCircleAddTextCell.identifier(), forIndexPath: indexPath) as UITableViewCell
-            let cell = cell as FindCircleAddTextCell
+            cell = tableView.dequeueReusableCellWithIdentifier(FindCircleAddTextCell.identifier(), forIndexPath: indexPath) as! UITableViewCell
+            let cell = cell as! FindCircleAddTextCell
             icyTextView = cell.icyTextView
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier("pickerCell") as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("pickerCell") as! UITableViewCell
             switch indexPath.row {
             case 0:
                 cell.imageView?.image = UIImage(named: "findCircle")
@@ -255,8 +255,8 @@ class FindCircleAddNewViewController: UITableViewController {
                 break
             }
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier(FindAddImageCell.identifier()) as UITableViewCell
-            let cell = cell as FindAddImageCell
+            cell = tableView.dequeueReusableCellWithIdentifier(FindAddImageCell.identifier()) as! UITableViewCell
+            let cell = cell as! FindAddImageCell
             cell.collectionDataSource = self
             imageCollectionView = cell.icyCollectionView
         default:
@@ -378,7 +378,7 @@ extension FindCircleAddNewViewController: UIImagePickerControllerDelegate, UINav
         picker.dismissViewControllerAnimated(true, completion: nil)
         self.showHUDWithTips("处理中")
         
-        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFitToSize: CGSize(width: 600, height: 600))
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as! UIImage, scaledToFitToSize: CGSize(width: 600, height: 600))
         if picker.sourceType == .Camera {
             UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
         }

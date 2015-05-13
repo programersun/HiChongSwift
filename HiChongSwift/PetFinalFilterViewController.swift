@@ -32,7 +32,7 @@ class PetFinalFilterViewController: UITableViewController {
         if let uid = parentID{
             let parameter = ["f_id": uid]
             LCYNetworking.sharedInstance.POST(LCYApi.PetSubType, parameters: parameter, success: { [weak self] (object) -> Void in
-                self?.subTypeInfo = LCYPetSubTypeBase.modelObjectWithDictionary(object)
+                self?.subTypeInfo = LCYPetSubTypeBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 self?.groupInfo()
                 self?.tableView.reloadData()
                 return
@@ -72,7 +72,7 @@ class PetFinalFilterViewController: UITableViewController {
             }
         }
         keyList = (groupedTypeInfo as NSDictionary).allKeys.sorted({ (a: AnyObject, b: AnyObject) -> Bool in
-            return (a as String) < (b as String)
+            return (a as! String) < (b as! String)
         }) as? [String]
     }
 
@@ -96,7 +96,7 @@ class PetFinalFilterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PetCateFilterCell.identifier(), forIndexPath: indexPath) as PetCateFilterCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(PetCateFilterCell.identifier(), forIndexPath: indexPath) as! PetCateFilterCell
 
         if let groupedData = groupedTypeInfo[keyList![indexPath.section]] {
             let childInfo = groupedData[indexPath.row]
@@ -135,7 +135,7 @@ class PetFinalFilterViewController: UITableViewController {
                 if myRoot.isKindOfClass(WikiViewController.classForCoder()) {
                     // 如果是百科，则直接跳转
                     let wikiStoryBoard = UIStoryboard(name: "Wiki", bundle: nil)
-                    let wikiVC = wikiStoryBoard.instantiateViewControllerWithIdentifier("catedWiki") as WikiesViewController
+                    let wikiVC = wikiStoryBoard.instantiateViewControllerWithIdentifier("catedWiki") as! WikiesViewController
                     wikiVC.childCate = childInfo
                     navigationController?.pushViewController(wikiVC, animated: true)
                     return

@@ -112,7 +112,7 @@ class AboutMeModifyTextViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(AboutMeModifyTextCell.identifier(), forIndexPath: indexPath) as AboutMeModifyTextCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(AboutMeModifyTextCell.identifier(), forIndexPath: indexPath) as! AboutMeModifyTextCell
 
         icyTextField = cell.icyTextField
         cell.icyTextField.text = defaultText

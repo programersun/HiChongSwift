@@ -14,7 +14,7 @@ class ZXY_ImageItem: NSObject {
     var itemIndex : Int?
     var itemImage : UIImage?
     
-    func setItemURL(itemURL : NSURL )
+    func setItemURLS(itemURL : NSURL )
     {
         self.itemURL = itemURL
         

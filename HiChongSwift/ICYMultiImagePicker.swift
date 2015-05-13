@@ -60,8 +60,8 @@ class ICYMultiImagePicker: UIViewController {
     }
     private var assetsResult: [CYAsset]?
     
-    override init() {
-        super.init(nibName: nil, bundle: nil)
+    convenience init() {
+        self.init(nibName:  nil , bundle : nil)
         let layout = UICollectionViewFlowLayout()
         icyCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         icyCollectionView?.backgroundColor = UIColor.purpleColor()
@@ -77,8 +77,15 @@ class ICYMultiImagePicker: UIViewController {
         
         icyCollectionView?.delegate = self
         icyCollectionView?.dataSource = self
+        
     }
 
+    
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -193,7 +200,7 @@ extension ICYMultiImagePicker: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ICYMultiImageCollectionCell.identifier, forIndexPath: indexPath) as ICYMultiImageCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ICYMultiImageCollectionCell.identifier, forIndexPath: indexPath) as! ICYMultiImageCollectionCell
         cell.indexPath = indexPath
         cell.delegate = self
         if let data = assetsResult?[indexPath.row]{

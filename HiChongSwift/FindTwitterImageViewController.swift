@@ -28,13 +28,13 @@ class FindTwitterImageViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let data = data {
             icyTextLabel.text = data.twitterContent
-            let imageData = data.images[index] as TwitterPersonalImages
+            let imageData = data.images[index] as! TwitterPersonalImages
             icyImageView.setImageWithURL(NSURL(string: imageData.imagePath.toAbsolutePath()))
         }
         
         if let listData = listData {
             icyTextLabel.text = listData.twitterContent
-            let imageData = listData.images[index] as TwitterListImages
+            let imageData = listData.images[index] as! TwitterListImages
             icyImageView.setImageWithURL(NSURL(string: imageData.imagePath.toAbsolutePath()))
         }
         

@@ -62,8 +62,8 @@ class ForgetPasswordViewController: UITableViewController {
         
         switch indexPath.row {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as UITableViewCell
-            let cell = cell as LoginInputCell
+            cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as! UITableViewCell
+            let cell = cell as! LoginInputCell
             cell.icyCellType = .PhoneNumber
             phoneNumberTextView = cell.icyTextField
             if lockPhoneNumber {
@@ -71,19 +71,19 @@ class ForgetPasswordViewController: UITableViewController {
                 phoneNumberTextView?.enabled = false
             }
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier(LoginCodeCell.identifier()) as UITableViewCell
-            let cell = cell as LoginCodeCell
+            cell = tableView.dequeueReusableCellWithIdentifier(LoginCodeCell.identifier()) as! UITableViewCell
+            let cell = cell as! LoginCodeCell
             cell.isReset = true
             cell.delegate = self
             authCodeTextView = cell.icyTextField
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as UITableViewCell
-            let cell = cell as LoginInputCell
+            cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as! UITableViewCell
+            let cell = cell as! LoginInputCell
             cell.icyCellType = .Password
             passwordTextView = cell.icyTextField
         case 3:
-            cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as UITableViewCell
-            let cell = cell as LoginSingleButtonCell
+            cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as! UITableViewCell
+            let cell = cell as! LoginSingleButtonCell
             cell.currentType = .Forget
             cell.delegate = self
         default:
@@ -129,7 +129,7 @@ extension ForgetPasswordViewController:LoginSingleButtonCellDelegate {
     }
     private func save() {
         if let phoneField = phoneNumberTextView {
-            if countElements(phoneField.text) == 0 {
+            if count(phoneField.text) == 0 {
                 alert("请输入手机号")
                 return
             }
@@ -139,7 +139,7 @@ extension ForgetPasswordViewController:LoginSingleButtonCellDelegate {
         }
         
         if let passwordField = passwordTextView {
-            if countElements(passwordField.text) > 16 || countElements(passwordField.text) < 6 {
+            if count(passwordField.text) > 16 || count(passwordField.text) < 6 {
                 alert("请输入6-18位的密码")
                 return
             }
@@ -154,7 +154,7 @@ extension ForgetPasswordViewController:LoginSingleButtonCellDelegate {
         }
         
         if let auth = authCodeTextView {
-            if countElements(auth.text) == 0 {
+            if count(auth.text) == 0 {
                 alert("请输入验证码")
                 return
             } else if auth.text != userInfo.RetrievedAuthCode {

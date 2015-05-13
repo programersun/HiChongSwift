@@ -32,7 +32,11 @@ class ICYImageBrowser: UIPageViewController {
     
     private var icyNavigation: UINavigationController!
     
-    override init() {
+    convenience init() {
+        self.init(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
+    }
+    
+    override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [NSObject : AnyObject]?) {
         super.init(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
         automaticallyAdjustsScrollViewInsets = false
     }

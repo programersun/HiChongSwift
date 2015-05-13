@@ -56,7 +56,7 @@ class FindTwitterCommentViewController: UITableViewController {
                 "twitter_id": twitterID
             ]
             LCYNetworking.sharedInstance.POST(LCYApi.TwitterCommentList, parameters: parameters, success: { [weak self](object) -> Void in
-                let retrieved = TwitterCommentListBase.modelObjectWithDictionary(object)
+                let retrieved = TwitterCommentListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
                     self?.infoData = retrieved.msg
                     self?.tableView.reloadData()
@@ -85,7 +85,7 @@ class FindTwitterCommentViewController: UITableViewController {
         
         if let data = twitterData {
             if let content = icyTextField?.text {
-                if countElements(content) == 0 {
+                if count(content) == 0 {
                     alert("不能回复空消息哦")
                     return
                 } else {
@@ -166,8 +166,8 @@ class FindTwitterCommentViewController: UITableViewController {
             //                //                cell.delegate = self
             //            }
             //            cell.sepratorImageView.image = LCYCommon.sharedInstance.graySepratorImage
-            cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterListCell.identifier) as FindTwitterListCell
-            let cell = cell as FindTwitterListCell
+            cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterListCell.identifier) as! FindTwitterListCell
+            let cell = cell as! FindTwitterListCell
             if let data = twitterData {
                 cell.indexPath = indexPath
                 cell.keeperAvatarPath = data.keeperImage != nil ? data.keeperImage.toAbsolutePath() : nil
@@ -190,10 +190,10 @@ class FindTwitterCommentViewController: UITableViewController {
             }
             
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterCommentListCell.identifier) as FindTwitterCommentListCell
-            let cell = cell as FindTwitterCommentListCell
+            cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterCommentListCell.identifier) as! FindTwitterCommentListCell
+            let cell = cell as! FindTwitterCommentListCell
             
-            let comment = infoData!.comment[indexPath.row] as TwitterCommentListComment
+            let comment = infoData!.comment[indexPath.row] as! TwitterCommentListComment
             
             cell.icyNameLabel.text = comment.keeperName
             cell.icyTimeLabel.text = comment.addTime.toTwitterDeltaTime()
@@ -201,8 +201,8 @@ class FindTwitterCommentViewController: UITableViewController {
             
             if comment.receiverName == nil {
                 var attributed = NSMutableAttributedString(string: "\(comment.keeperName):\(comment.content)")
-                let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
-                let contentRange = NSRange(location: countElements(comment.keeperName) + 1, length: countElements(comment.content))
+                let nameRange = NSRange(location: 0, length: count(comment.keeperName))
+                let contentRange = NSRange(location: count(comment.keeperName) + 1, length: count(comment.content))
                 attributed.addAttributes([
                     NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
                     NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
@@ -214,10 +214,10 @@ class FindTwitterCommentViewController: UITableViewController {
                 cell.icyLabel.attributedText = attributed
             } else {
                 var attributed = NSMutableAttributedString(string: "\(comment.keeperName)回复\(comment.receiverName):\(comment.content)")
-                let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
-                let replyRange = NSRange(location: countElements(comment.keeperName), length: 2)
-                let recieverRange = NSRange(location: countElements(comment.keeperName) + 2, length: countElements(comment.receiverName))
-                let contentRange = NSRange(location: countElements(comment.keeperName) + 2 + countElements(comment.receiverName) + 1, length: countElements(comment.content))
+                let nameRange = NSRange(location: 0, length: count(comment.keeperName))
+                let replyRange = NSRange(location: count(comment.keeperName), length: 2)
+                let recieverRange = NSRange(location: count(comment.keeperName) + 2, length: count(comment.receiverName))
+                let contentRange = NSRange(location: count(comment.keeperName) + 2 + count(comment.receiverName) + 1, length: count(comment.content))
                 attributed.addAttributes([
                     NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
                     NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
@@ -247,8 +247,8 @@ class FindTwitterCommentViewController: UITableViewController {
             //            }
             cell.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterCommentCell.identifier) as FindTwitterCommentCell
-            let cell = cell as FindTwitterCommentCell
+            cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterCommentCell.identifier) as! FindTwitterCommentCell
+            let cell = cell as! FindTwitterCommentCell
             icyTextField = cell.icyTextField
         default:
             break
@@ -316,11 +316,11 @@ class FindTwitterCommentViewController: UITableViewController {
             return 11.0 + textBlockHeight + 8.0 + imageBlockHeight + 8.0 + (data.starCount == "0" ? 0.0 : 35.0 + 8.0) + 24.0 + 8.0
         case 1:
             var height: CGFloat = 0.0
-            let comment = infoData!.comment[indexPath.row] as TwitterCommentListComment
+            let comment = infoData!.comment[indexPath.row] as! TwitterCommentListComment
             if comment.receiverName == nil {
                 var attributed = NSMutableAttributedString(string: "\(comment.keeperName):\(comment.content)")
-                let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
-                let contentRange = NSRange(location: countElements(comment.keeperName) + 1, length: countElements(comment.content))
+                let nameRange = NSRange(location: 0, length: count(comment.keeperName))
+                let contentRange = NSRange(location: count(comment.keeperName) + 1, length: count(comment.content))
                 attributed.addAttributes([
                     NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
                     NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
@@ -333,10 +333,10 @@ class FindTwitterCommentViewController: UITableViewController {
                     options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil).height
             } else {
                 var attributed = NSMutableAttributedString(string: "\(comment.keeperName)回复\(comment.receiverName):\(comment.content)")
-                let nameRange = NSRange(location: 0, length: countElements(comment.keeperName))
-                let replyRange = NSRange(location: countElements(comment.keeperName), length: 2)
-                let recieverRange = NSRange(location: countElements(comment.keeperName) + 2, length: countElements(comment.receiverName))
-                let contentRange = NSRange(location: countElements(comment.keeperName) + 2 + countElements(comment.receiverName) + 1, length: countElements(comment.content))
+                let nameRange = NSRange(location: 0, length: count(comment.keeperName))
+                let replyRange = NSRange(location: count(comment.keeperName), length: 2)
+                let recieverRange = NSRange(location: count(comment.keeperName) + 2, length: count(comment.receiverName))
+                let contentRange = NSRange(location: count(comment.keeperName) + 2 + count(comment.receiverName) + 1, length: count(comment.content))
                 attributed.addAttributes([
                     NSFontAttributeName             : UIFont.systemFontOfSize(12.0),
                     NSForegroundColorAttributeName  : UIColor.LCYThemeDarkText()
@@ -564,7 +564,7 @@ extension FindTwitterCommentViewController: FindCircleListCellDelegate {
                 shareVC.messageDescription = "向您推荐了 嗨宠宠物"
                 shareVC.weiboMessage = "嗨宠宠物：\(data.twitterContent)"
                 if data.images != nil && data.images.count > 1 {
-                    if let url = NSURL(string: (data.images[0] as TwitterListImages).cutPath.toAbsolutePath()) {
+                    if let url = NSURL(string: (data.images[0] as! TwitterListImages).cutPath.toAbsolutePath()) {
                         let request = NSURLRequest(URL: url)
                         let cachedImage = UIImageView.sharedImageCache().cachedImageForRequest(request)
                         if cachedImage != nil {

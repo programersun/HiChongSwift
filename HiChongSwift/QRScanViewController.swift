@@ -111,7 +111,7 @@ extension QRScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
         var stringValue: String?
         if metadataObjects.count > 0 {
-            let metadataObject = metadataObjects[0] as AVMetadataMachineReadableCodeObject
+            let metadataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
             stringValue = metadataObject.stringValue
         }
         

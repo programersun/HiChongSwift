@@ -106,7 +106,7 @@ extension String {
 
 extension Double {
     func format(f: String) -> String {
-        return NSString(format: "%\(f)f", self)
+        return NSString(format: "%\(f)f", self) as String
     }
     
     func toKM() -> String {
@@ -121,7 +121,7 @@ extension Double {
 
 extension CGFloat {
     func format(maxFloatCount: Int) -> String {
-        return NSString(format: "%\(maxFloatCount)f", self)
+        return NSString(format: "%\(maxFloatCount)f", self) as String
     }
 }
 
@@ -142,7 +142,7 @@ extension String {
         for byte in digest {
             output.appendFormat("%02X", byte)
         }
-        return output
+        return output as String
     }
 }
 
@@ -182,10 +182,12 @@ extension UIImage {
             break
         }
         
-        let context = CGBitmapContextCreate(nil, UInt(size.width), UInt(size.height),
+        let context = CGBitmapContextCreate(nil, Int(size.width), Int(size.height),
             CGImageGetBitsPerComponent(self.CGImage), 0,
             CGImageGetColorSpace(self.CGImage),
             CGImageGetBitmapInfo(self.CGImage))
+        
+       
         
         CGContextConcatCTM(context, transform)
         

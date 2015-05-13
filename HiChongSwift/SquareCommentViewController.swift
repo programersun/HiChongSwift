@@ -51,7 +51,7 @@ class SquareCommentViewController: UITableViewController {
     
     func rightButtonPressed(sender: AnyObject) {
         if let textView = icyTextView {
-            if countElements(textView.text) == 0 {
+            if count(textView.text) == 0 {
                 alert("请填写评论内容")
                 return
             } else {
@@ -109,7 +109,7 @@ class SquareCommentViewController: UITableViewController {
         
         switch indexPath.row {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier("title") as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("title") as! UITableViewCell
             dispatch_once(&cellOnceToken)
                 { () -> Void in
                     cell.textLabel?.textColor = UIColor.whiteColor()
@@ -124,12 +124,12 @@ class SquareCommentViewController: UITableViewController {
             }
             
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier(SquareAddStarCell.identifier()) as SquareAddStarCell
-            let cell = cell as SquareAddStarCell
+            cell = tableView.dequeueReusableCellWithIdentifier(SquareAddStarCell.identifier()) as! SquareAddStarCell
+            let cell = cell as! SquareAddStarCell
             self.starCell = cell
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier(SquareAddCommentCell.identifier()) as UITableViewCell
-            let cell = cell as SquareAddCommentCell
+            cell = tableView.dequeueReusableCellWithIdentifier(SquareAddCommentCell.identifier()) as! UITableViewCell
+            let cell = cell as! SquareAddCommentCell
             icyTextView = cell.icyTextView
         default:
             break

@@ -56,11 +56,11 @@ class FindLocationViewController: UITableViewController {
                 "longitude": "\(location.coordinate.longitude)",
             ]
             LCYNetworking.sharedInstance.Dianping(parameters, success: { [weak self](object) -> () in
-                let retrieved = DianpingBase.modelObjectWithDictionary(object)
+                let retrieved = DianpingBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.status == "OK" {
                     // 成功获取
                     self?.data = [DianpingBusinesses]()
-                    self?.data?.extend(retrieved.businesses as [DianpingBusinesses])
+                    self?.data?.extend(retrieved.businesses as! [DianpingBusinesses])
                     self?.tableView.reloadData()
                 } else {
                     // 获取失败
@@ -108,10 +108,10 @@ class FindLocationViewController: UITableViewController {
         // Configure the cell...
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier("noLocation") as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("noLocation") as! UITableViewCell
             cell.textLabel?.text = "不显示位置"
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier") as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier") as! UITableViewCell
             cell.textLabel?.text = data![indexPath.row].name.stringByReplacingOccurrencesOfString("(这是一条测试商户数据，仅用于测试开发，开发完成后请申请正式数据...)", withString: "", options: NSStringCompareOptions(0), range: nil)
             cell.detailTextLabel?.text = data![indexPath.row].address
         default:

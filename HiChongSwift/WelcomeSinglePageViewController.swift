@@ -35,8 +35,8 @@ class WelcomeSinglePageViewController: UIViewController {
     
     @IBAction func enterButtonPressed(sender: AnyObject) {
         LCYCommon.sharedInstance.welcomeGuide = true
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-        appDelegate.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController)
+        appDelegate.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
     }
 }

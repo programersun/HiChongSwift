@@ -54,7 +54,7 @@ class RegisterDetailViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showPicker":
-                let destination = segue.destinationViewController as RegionPickerViewController
+                let destination = segue.destinationViewController as! RegionPickerViewController
                 destination.delegate = self
             default:
                 break
@@ -164,9 +164,9 @@ class RegisterDetailViewController: UIViewController {
                      // 注册成功
                     let name = object["user_name"]!.stringValue
                     LCYCommon.sharedInstance.login(name, phoneNumber: self?.detailUserInfo.LoginName)
-                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                    appDelegate.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController)
+                    appDelegate.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
                 } else {
                     self?.alert("注册失败")
                 }
@@ -246,7 +246,7 @@ extension RegisterDetailViewController: UIImagePickerControllerDelegate, UINavig
         view.setNeedsLayout()
         showHUDWithTips("处理中")
         
-        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 300, height: 300))
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as! UIImage, scaledToFillToSize: CGSize(width: 300, height: 300))
         detailUserInfo.ImageData = UIImagePNGRepresentation(smallImage)
         avatarImageView.image = smallImage
         

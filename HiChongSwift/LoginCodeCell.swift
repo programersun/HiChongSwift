@@ -49,10 +49,10 @@ class LoginCodeCell: UITableViewCell {
             let parameter = ["user_name": phone]
             if !isReset {
                 LCYNetworking.sharedInstance.POST(LCYApi.UserAuthcode, parameters: parameter, success: {[weak self] (object) -> Void in
-                    if object["result"] as Bool {
-                        self?.delegate?.loginCodeCellGetGode((object["code"] as Int).description)
+                    if object["result"] as! Bool {
+                        self?.delegate?.loginCodeCellGetGode((object["code"] as! Int).description)
                     } else {
-                        self?.delegate?.loginCodeCellFailCode(object["msg"] as String)
+                        self?.delegate?.loginCodeCellFailCode(object["msg"] as! String)
                     }
                     return
                     }, failure: { (error) -> Void in
@@ -60,10 +60,10 @@ class LoginCodeCell: UITableViewCell {
                 })
             } else {
                 LCYNetworking.sharedInstance.POST(LCYApi.UserResetPasswordAuthcode, parameters: parameter, success: { [weak self](object) -> Void in
-                    if object["result"] as Bool {
-                        self?.delegate?.loginCodeCellGetGode((object["code"] as Int).description)
+                    if object["result"] as! Bool {
+                        self?.delegate?.loginCodeCellGetGode((object["code"] as! Int).description)
                     } else {
-                        self?.delegate?.loginCodeCellFailCode(object["msg"] as String)
+                        self?.delegate?.loginCodeCellFailCode(object["msg"] as! String)
                     }
                 }, failure: { (error) -> Void in
                     return

@@ -44,7 +44,7 @@ class WikiesViewController: UITableViewController {
         if let child = childCate {
             LCYNetworking.sharedInstance.POSTAndGET(LCYApi.WikiMore, GETParameters: ["cate_id": child.catId], POSTParameters: nil,
                 success: { [weak self](object) -> Void in
-                    let retrived = WikiMoreBase.modelObjectWithDictionary(object)
+                    let retrived = WikiMoreBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                     if let data = retrived {
                         self?.infoData = data
                         self?.tableView.reloadSections(NSIndexSet(index: 2), withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -75,9 +75,9 @@ class WikiesViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showArticle":
-                let destination = segue.destinationViewController as WikiArticleViewController
+                let destination = segue.destinationViewController as! WikiArticleViewController
                 var info: WikiMoreData?
-                for ps in (infoData!.data as [WikiMoreData]) {
+                for ps in (infoData!.data as! [WikiMoreData]) {
                     if ps.typeId == "\(currentType)" {
                         info = ps
                         break
@@ -111,7 +111,7 @@ class WikiesViewController: UITableViewController {
 
                 }
             case "wikiWeb":
-                let destination = segue.destinationViewController as WikiWebViewController
+                let destination = segue.destinationViewController as! WikiWebViewController
                 destination.wikiTitle = childCate?.name
                 destination.wikiID = childCate?.catId
             default:
@@ -149,16 +149,16 @@ class WikiesViewController: UITableViewController {
         var cell: UITableViewCell!
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier(WikiesHeadCell.identifier()) as UITableViewCell
-            let cell = cell as WikiesHeadCell
+            cell = tableView.dequeueReusableCellWithIdentifier(WikiesHeadCell.identifier()) as! UITableViewCell
+            let cell = cell as! WikiesHeadCell
             cell.imagePath = childCate?.headImg.toAbsolutePath()
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier(WikiesMidCell.identifier()) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(WikiesMidCell.identifier()) as! UITableViewCell
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier()) as UITableViewCell
-            let cell = cell as WikiInfoCell
+            cell = tableView.dequeueReusableCellWithIdentifier(WikiInfoCell.identifier()) as! UITableViewCell
+            let cell = cell as! WikiInfoCell
             var info: WikiMoreData?
-            for ps in (infoData!.data as [WikiMoreData]) {
+            for ps in (infoData!.data as! [WikiMoreData]) {
                 if ps.typeId == "\(currentType)" {
                     info = ps
                     break

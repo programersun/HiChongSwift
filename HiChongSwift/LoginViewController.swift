@@ -47,7 +47,7 @@ class LoginViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showDetail":
-                let destination = segue.destinationViewController as RegisterDetailViewController
+                let destination = segue.destinationViewController as! RegisterDetailViewController
                 destination.detailUserInfo.LoginName = userInfo.LoginName
                 destination.detailUserInfo.UserPassword = userInfo.UserPassword
             default:
@@ -103,7 +103,7 @@ class LoginViewController: UITableViewController {
         let parameter = ["user_name": userInfo.LoginName!,
             "password": userInfo.UserPassword!]
         LCYNetworking.sharedInstance.POST(LCYApi.UserLogin, parameters: parameter, success: { [weak self] (object) -> Void in
-            let result = UserLoginBaseClass.modelObjectWithDictionary(object)
+            let result = UserLoginBaseClass.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if result.result {
                 // 登录成功
                 self?.loginSuccess(result.userName)
@@ -119,9 +119,9 @@ class LoginViewController: UITableViewController {
     }
     
     private func loginSuccess(userName: String) {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        appDelegate.window?.rootViewController = (storyboard.instantiateInitialViewController() as UIViewController)
+        appDelegate.window?.rootViewController = (storyboard.instantiateInitialViewController() as! UIViewController)
         LCYCommon.sharedInstance.login(userName, phoneNumber: userInfo.LoginName)
     }
     
@@ -174,24 +174,24 @@ class LoginViewController: UITableViewController {
         
         switch indexPath.row {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as UITableViewCell
-            let cell = cell as LoginInputCell
+            cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as! UITableViewCell
+            let cell = cell as! LoginInputCell
             cell.icyCellType = .PhoneNumber
             cell.delegate = self
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as UITableViewCell
-            let cell = cell as LoginInputCell
+            cell = tableView.dequeueReusableCellWithIdentifier(LoginInputCell.identifier()) as! UITableViewCell
+            let cell = cell as! LoginInputCell
             cell.icyCellType = .Password
             cell.delegate = self
         case 2:
             switch currentType {
             case .register:
-                cell = tableView.dequeueReusableCellWithIdentifier(LoginCodeCell.identifier()) as UITableViewCell
-                let cell = cell as LoginCodeCell
+                cell = tableView.dequeueReusableCellWithIdentifier(LoginCodeCell.identifier()) as! UITableViewCell
+                let cell = cell as! LoginCodeCell
                 cell.delegate = self
             case .login:
-                cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as UITableViewCell
-                let cell = cell as LoginSingleButtonCell
+                cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as! UITableViewCell
+                let cell = cell as! LoginSingleButtonCell
                 cell.currentType = .Login
                 cell.delegate = self
             }
@@ -199,12 +199,12 @@ class LoginViewController: UITableViewController {
         case 3:
             switch self.currentType {
             case .register:
-                cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as UITableViewCell
-                let cell = cell as LoginSingleButtonCell
+                cell = tableView.dequeueReusableCellWithIdentifier(LoginSingleButtonCell.identifier()) as! UITableViewCell
+                let cell = cell as! LoginSingleButtonCell
                 cell.currentType = .Register
                 cell.delegate = self
             case .login:
-                cell = tableView.dequeueReusableCellWithIdentifier(LoginForgetCell.identifier()) as UITableViewCell
+                cell = tableView.dequeueReusableCellWithIdentifier(LoginForgetCell.identifier()) as! UITableViewCell
             }
             
         default:

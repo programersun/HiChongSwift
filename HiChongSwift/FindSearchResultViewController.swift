@@ -82,7 +82,7 @@ class FindSearchResultViewController: UITableViewController {
                 "latitude": "\(location!.coordinate.latitude)"
                 ])
             LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { [weak self](object) -> Void in
-                let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object)
+                let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
                     self?.infoData = retrieved.msg as? [UserSearchFriendMsg]
                 } else {
@@ -102,7 +102,7 @@ class FindSearchResultViewController: UITableViewController {
                     "latitude": "\(location!.coordinate.latitude)"
                 ]
                 LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend, parameters: parameter, success: { [weak self](object) -> Void in
-                    let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object)
+                    let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                     if retrieved.result {
                         self?.infoData = retrieved.msg as? [UserSearchFriendMsg]
                     } else {
@@ -122,7 +122,7 @@ class FindSearchResultViewController: UITableViewController {
                     "user_id": LCYCommon.sharedInstance.userName!
                 ]
                 LCYNetworking.sharedInstance.POST(LCYApi.UserSearchFriend2, parameters: parameter, success: { [weak self](object) -> Void in
-                    let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object)
+                    let retrieved = UserSearchFriendBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                     if retrieved.result {
                         self?.infoData = retrieved.msg as? [UserSearchFriendMsg]
                     } else {
@@ -168,7 +168,7 @@ class FindSearchResultViewController: UITableViewController {
         //        cell.icyTipLabel.text = data.tip
         //
         //        cell.location = (data.latitude, data.longitude, location)
-        let cell = tableView.dequeueReusableCellWithIdentifier(FindCatelogWhiteCell.identifier) as FindCatelogWhiteCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(FindCatelogWhiteCell.identifier) as! FindCatelogWhiteCell
         
         let data = infoData![indexPath.row]
         cell.keeperAvatarPath = data.headImage.toAbsolutePath()
@@ -195,7 +195,7 @@ class FindSearchResultViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showPersonal":
-                let destination = segue.destinationViewController as FindPersonalViewController
+                let destination = segue.destinationViewController as! FindPersonalViewController
                 if let indexPath = tableView.indexPathForSelectedRow() {
                     let data = infoData![indexPath.row]
                     destination.personID = data.userId

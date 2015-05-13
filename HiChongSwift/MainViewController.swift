@@ -28,21 +28,21 @@ class MainViewController: UITabBarController {
 
         // 发现
         let findStoryBoard = UIStoryboard(name: "Find", bundle: nil)
-        let findVC = findStoryBoard.instantiateInitialViewController() as UINavigationController
+        let findVC = findStoryBoard.instantiateInitialViewController() as! UINavigationController
         findVC.tabBarItem.title = "发现"
         findVC.tabBarItem.image = UIImage(named: "find")
         self.addChildViewController(findVC)
         
         // 广场
         let squareStoryBoard = UIStoryboard(name: "Square", bundle: nil)
-        let squareVC = squareStoryBoard.instantiateInitialViewController() as UINavigationController
+        let squareVC = squareStoryBoard.instantiateInitialViewController() as! UINavigationController
         squareVC.tabBarItem.title = "广场"
         squareVC.tabBarItem.image = UIImage(named: "square")
         self.addChildViewController(squareVC)
         
         // 发朋友圈（原特卖）
         let saleStoryBoard = UIStoryboard(name: "Sale", bundle: nil)
-        let saleVC = saleStoryBoard.instantiateInitialViewController() as UINavigationController
+        let saleVC = saleStoryBoard.instantiateInitialViewController() as! UINavigationController
         saleVC.tabBarItem.title = nil
         saleVC.tabBarItem.image = UIImage(named: "mainCross")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         saleVC.tabBarItem.imageInsets = UIEdgeInsetsMake(4.0, 0.0, -4.0, 0.0)
@@ -50,7 +50,7 @@ class MainViewController: UITabBarController {
         
         // 百科
         let wikiStoryBoard = UIStoryboard(name: "Wiki", bundle: nil)
-        let wikiVC = wikiStoryBoard.instantiateInitialViewController() as UINavigationController
+        let wikiVC = wikiStoryBoard.instantiateInitialViewController() as! UINavigationController
         wikiVC.tabBarItem.title = "百科"
         wikiVC.tabBarItem.image = UIImage(named: "wiki")
         self.addChildViewController(wikiVC)
@@ -59,7 +59,7 @@ class MainViewController: UITabBarController {
         
         // 我
         let aboutMeStoryBoard = UIStoryboard(name: "AboutMe", bundle: nil)
-        let aboutMeVC = aboutMeStoryBoard.instantiateInitialViewController() as UINavigationController
+        let aboutMeVC = aboutMeStoryBoard.instantiateInitialViewController() as! UINavigationController
         aboutMeVC.tabBarItem.title = "我"
         aboutMeVC.tabBarItem.image = UIImage(named: "me")
         self.addChildViewController(aboutMeVC)
@@ -111,7 +111,7 @@ class MainViewController: UITabBarController {
 
 extension MainViewController: UITabBarControllerDelegate {
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        if let index = find(tabBarController.viewControllers as [UIViewController], viewController) {
+        if let index = find(tabBarController.viewControllers as! [UIViewController], viewController) {
             if index == 2 {
                 // 弹出拍照，模糊背景
                 if dialogVC == nil {

@@ -92,14 +92,14 @@ class FindCatalogViewController: UITableViewController {
         switch currentType {
         case .fans:
             LCYNetworking.sharedInstance.POST(LCYApi.UserFansList, parameters: parameter, success: { [weak self](object) -> Void in
-                let retrieved = UserFansFriendsBase.modelObjectWithDictionary(object)
+                let retrieved = UserFansFriendsBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
 //                    self?.fansData = [UserFansFriendsMsg]()
 //                    self?.fansData?.extend(retrieved.msg as [UserFansFriendsMsg])
 
                     
                     self?.fansDataV2 = [catalogData]()
-                    self?.fansDataV2?.extend((retrieved.msg as [UserFansFriendsMsg]).map({
+                    self?.fansDataV2?.extend((retrieved.msg as! [UserFansFriendsMsg]).map({
                         let data = catalogData(fansData: $0)
                         if let location = self?.location {
                             let geoManager = GeoManager()
@@ -124,14 +124,14 @@ class FindCatalogViewController: UITableViewController {
             fallthrough
         case .care:
             LCYNetworking.sharedInstance.POST(LCYApi.UserFriendList, parameters: parameter, success: { [weak self](object) -> Void in
-                let retrieved = UserFansFriendsBase.modelObjectWithDictionary(object)
+                let retrieved = UserFansFriendsBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
 //                    self?.friendsData = [UserFansFriendsMsg]()
 //                    self?.friendsData?.extend(retrieved.msg as [UserFansFriendsMsg])
                     
                     
                     self?.friendsDataV2 = [catalogData]()
-                    self?.friendsDataV2?.extend((retrieved.msg as [UserFansFriendsMsg]).map({
+                    self?.friendsDataV2?.extend((retrieved.msg as! [UserFansFriendsMsg]).map({
                         let data = catalogData(fansData: $0)
                         if let location = self?.location {
                             let geoManager = GeoManager()
@@ -187,7 +187,7 @@ class FindCatalogViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCellWithIdentifier(FindCatalogCell.identifier(), forIndexPath: indexPath) as FindCatalogCell
-        let cell = tableView.dequeueReusableCellWithIdentifier(FindCatelogWhiteCell.identifier) as FindCatelogWhiteCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(FindCatelogWhiteCell.identifier) as! FindCatelogWhiteCell
         // Configure the cell...
 //        var data: UserFansFriendsMsg
         var data: catalogData
@@ -228,7 +228,7 @@ class FindCatalogViewController: UITableViewController {
         }
         
         let storyBoard = UIStoryboard(name: "AboutMe", bundle: nil)
-        let controller = storyBoard.instantiateViewControllerWithIdentifier("userInfo") as AboutMeViewController
+        let controller = storyBoard.instantiateViewControllerWithIdentifier("userInfo") as! AboutMeViewController
         
         controller.otherUserID = data.userId
 

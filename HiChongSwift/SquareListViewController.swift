@@ -114,7 +114,7 @@ class SquareListViewController: UIViewController {
         case .distance:
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
-                let retrieved = SquareGetListBase.modelObjectWithDictionary(object)
+                let retrieved = SquareGetListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
                     if !append {
                         self?.distanceData = retrieved.msg as? [SquareGetListMsg]
@@ -135,7 +135,7 @@ class SquareListViewController: UIViewController {
         case .star:
             successClosure = {
                 [weak self] (object: NSDictionary) -> Void in
-                let retrieved = SquareGetListBase.modelObjectWithDictionary(object)
+                let retrieved = SquareGetListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
                     if !append {
                         self?.starData = retrieved.msg as? [SquareGetListMsg]
@@ -185,7 +185,7 @@ class SquareListViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showDetail":
-                let destination = segue.destinationViewController as SquareDetailViewController
+                let destination = segue.destinationViewController as! SquareDetailViewController
                 if let indexPath = icyTableView.indexPathForSelectedRow() {
                     var data: SquareGetListMsg
                     switch currentType {
@@ -223,7 +223,7 @@ extension SquareListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(SquareListCell.identifier()) as SquareListCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(SquareListCell.identifier()) as! SquareListCell
         switch indexPath.row % 2 {
         case 0:
             cell.backgroundColor = UIColor.LCYTableLightGray()

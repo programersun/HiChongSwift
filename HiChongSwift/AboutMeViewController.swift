@@ -80,7 +80,7 @@ class AboutMeViewController: UITableViewController {
                         "my_user_id": LCYCommon.sharedInstance.userName!
                     ]
                     LCYNetworking.sharedInstance.POST(LCYApi.TwitterKeeperInfo, parameters: parameter, success: { [weak self](object) -> Void in
-                        let retrieved = TwitterKeeperInfoBase.modelObjectWithDictionary(object)
+                        let retrieved = TwitterKeeperInfoBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                         if retrieved.result {
                             self?.keeperInfo = retrieved.msg
                         }
@@ -95,13 +95,13 @@ class AboutMeViewController: UITableViewController {
         
         
         let nib = UINib(nibName: "AboutMePetHeaderView", bundle: nil)
-        clawHeaderView = nib.instantiateWithOwner(self, options: nil).first as UIView?
+        clawHeaderView = nib.instantiateWithOwner(self, options: nil).first as! UIView?
         clawHeaderLabel.textColor = UIColor.LCYThemeOrange()
         clawHeaderView.backgroundColor = UIColor.LCYTableLightGray()
         clawHeaderView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: 30.0)
         
         let addPetNib = UINib(nibName: "AboutMeFooter", bundle: nil)
-        addPetView = addPetNib.instantiateWithOwner(self, options: nil).first as UIView?
+        addPetView = addPetNib.instantiateWithOwner(self, options: nil).first as! UIView?
         addPetButton.layer.cornerRadius = 4.0
         addPetButton.backgroundColor = UIColor.LCYThemeOrange()
         addPetView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: 60.0)
@@ -129,7 +129,7 @@ class AboutMeViewController: UITableViewController {
             parameter = ["user_name": otherUserID!]
         }
         LCYNetworking.sharedInstance.POST(LCYApi.UserGetInfo, parameters: parameter, success: { [weak self] (object) -> Void in
-            self?.userInfo = GetUserInfoBase.modelObjectWithDictionary(object)
+            self?.userInfo = GetUserInfoBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if let result = self?.userInfo?.result {
                 if result {
                     self?.navigationItem.title = self?.userInfo?.userInfo.nickName
@@ -224,14 +224,14 @@ class AboutMeViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showEdit":
-                let destination = segue.destinationViewController as AboutMeEditProfileViewController
+                let destination = segue.destinationViewController as! AboutMeEditProfileViewController
                 destination._userInfo = userInfo?.userInfo
                 destination.afterSuccessModify = {[weak self]() -> Void in
                     self?.reloadInitData()
                     ""
                 }   
             case "showMoePet":
-                let destination = segue.destinationViewController as MoePetViewController
+                let destination = segue.destinationViewController as! MoePetViewController
                 if let indexPath = tableView.indexPathForSelectedRow() {
                     let petInfo = userInfo?.petInfo[indexPath.row] as? GetUserInfoPetInfo
                     destination.petId = petInfo?.petId
@@ -240,10 +240,10 @@ class AboutMeViewController: UITableViewController {
                     destination.editable = false
                 }
             case "showAdd":
-                let destination = segue.destinationViewController as AddEditPetViewController
+                let destination = segue.destinationViewController as! AddEditPetViewController
                 destination.delegate = self
             case "showSetting":
-                let destination = segue.destinationViewController as AboutMeSettingViewController
+                let destination = segue.destinationViewController as! AboutMeSettingViewController
             default:
                 break
             }
@@ -296,14 +296,14 @@ class AboutMeViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeHeaderCell.identifier()) as UITableViewCell
-            let cell = cell as AboutMeHeaderCell
+            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeHeaderCell.identifier()) as! UITableViewCell
+            let cell = cell as! AboutMeHeaderCell
             if let imagePath = userInfo?.userInfo.headImage {
                 cell.avatarImagePath = imagePath.toAbsolutePath()
             }
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeLikeCell.identifier()) as UITableViewCell
-            let cell = cell as AboutMeLikeCell
+            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeLikeCell.identifier()) as! UITableViewCell
+            let cell = cell as! AboutMeLikeCell
             if let info = userInfo {
                 let decimal = "."
                 cell.likeLabel.text = "\(info.userInfo.starCount.format(decimal))"
@@ -311,7 +311,7 @@ class AboutMeViewController: UITableViewController {
                 cell.careLabel.text = info.userInfo.friendCount
             }
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier("AboutMeProfileCellIdentifier") as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("AboutMeProfileCellIdentifier") as! UITableViewCell
             cell.textLabel?.textColor = UIColor.LCYThemeDarkText()
             switch indexPath.row % 2 {
             case 0:
@@ -327,7 +327,7 @@ class AboutMeViewController: UITableViewController {
                 cell.imageView?.image = UIImage(named: "AboutMeMid1")
                 if userInfo?.userInfo.fTip == "1" {
                     if let text = userInfo?.userInfo.tip {
-                        if countElements(text) == 0 {
+                        if count(text) == 0 {
                             cell.textLabel?.textColor = UIColor.lightGrayColor()
                             cell.textLabel?.text = didnotFill
                         } else {
@@ -350,7 +350,7 @@ class AboutMeViewController: UITableViewController {
                     var provinceText: String? = ""
                     var cityText: String? = ""
                     var townText: String? = ""
-                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     let context = appDelegate.managedObjectContext!
                     let fetchRequset = NSFetchRequest()
                     let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)
@@ -360,7 +360,7 @@ class AboutMeViewController: UITableViewController {
                     var error: NSError? = nil
                     let result = context.executeFetchRequest(fetchRequset, error: &error)
                     if let entities = result {
-                        for regionEntity in entities as [Region] {
+                        for regionEntity in entities as! [Region] {
                             switch regionEntity.region_id {
                             case province.toInt()!:
                                 provinceText = regionEntity.region_name
@@ -388,7 +388,7 @@ class AboutMeViewController: UITableViewController {
                 cell.imageView?.image = UIImage(named: "AboutMeMid3")
                 if userInfo?.userInfo.fTelephone == "1" {
                     if let text = userInfo?.userInfo.telephone {
-                        if countElements(text) == 0 {
+                        if count(text) == 0 {
                             cell.textLabel?.textColor = UIColor.lightGrayColor()
                             cell.textLabel?.text = didnotFill
                         } else {
@@ -406,7 +406,7 @@ class AboutMeViewController: UITableViewController {
                 cell.imageView?.image = UIImage(named: "AboutMeMid4")
                 if userInfo?.userInfo.fCellphone == "1" {
                     if let text = userInfo?.userInfo.userName {
-                        if countElements(text) == 0 {
+                        if count(text) == 0 {
                             cell.textLabel?.textColor = UIColor.lightGrayColor()
                             cell.textLabel?.text = didnotFill
                         } else {
@@ -424,9 +424,9 @@ class AboutMeViewController: UITableViewController {
                 break
             }
         case 3:
-            cell = tableView.dequeueReusableCellWithIdentifier(AboutMePetCell.identifier()) as UITableViewCell
-            let cell = cell as AboutMePetCell
-            let info = userInfo?.petInfo[indexPath.row] as GetUserInfoPetInfo
+            cell = tableView.dequeueReusableCellWithIdentifier(AboutMePetCell.identifier()) as! UITableViewCell
+            let cell = cell as! AboutMePetCell
+            let info = userInfo?.petInfo[indexPath.row] as! GetUserInfoPetInfo
             cell.avatarImagePath = info.headImage.toAbsolutePath()
             cell.detailText = " \(info.age.toAge()) \(info.name) "
             cell.gender = info.petSex == "0" ? .Male : .Female

@@ -36,7 +36,7 @@ class FindPetViewController: UITableViewController {
         showHUD()
         let parameter = ["user_name": LCYCommon.sharedInstance.userName!]
         LCYNetworking.sharedInstance.POST(LCYApi.UserGetInfo, parameters: parameter, success: { [weak self] (object) -> Void in
-            let retrieved = GetUserInfoBase.modelObjectWithDictionary(object)
+            let retrieved = GetUserInfoBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if retrieved.result {
                 self?.userInfo = retrieved.petInfo as? [GetUserInfoPetInfo]
                 self?.tableView.reloadData()
@@ -67,7 +67,7 @@ class FindPetViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
         cell.textLabel?.text = userInfo![indexPath.row].petName

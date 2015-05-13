@@ -59,7 +59,7 @@ class FindPersonalViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         let headerNib = UINib(nibName: "FindPersonalHeader", bundle: nil)
-        let headerView = headerNib.instantiateWithOwner(self, options: nil).first as UIView
+        let headerView = headerNib.instantiateWithOwner(self, options: nil).first as! UIView
         headerView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height:UIScreen.mainScreen().bounds.width / 320.0 * 200.0)
         tableView.tableHeaderView = headerView
         
@@ -92,7 +92,7 @@ class FindPersonalViewController: UITableViewController {
                 "my_user_id": LCYCommon.sharedInstance.userName!
             ]
             LCYNetworking.sharedInstance.POST(LCYApi.TwitterKeeperInfo, parameters: parameter, success: { [weak self](object) -> Void in
-                let retrieved = TwitterKeeperInfoBase.modelObjectWithDictionary(object)
+                let retrieved = TwitterKeeperInfoBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
                     self?.keeperInfo = retrieved.msg
                 }
@@ -109,10 +109,10 @@ class FindPersonalViewController: UITableViewController {
                 "twitter_keeper": personID
             ]
             LCYNetworking.sharedInstance.POST(LCYApi.twitterPersonal, parameters: parameter, success: { [weak self](object) -> Void in
-                let retrieved = TwitterPersonalBase.modelObjectWithDictionary(object)
+                let retrieved = TwitterPersonalBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
                     self?.infoData = [TwitterPersonalMsg]()
-                    self?.infoData?.extend(retrieved.msg as [TwitterPersonalMsg])
+                    self?.infoData?.extend(retrieved.msg as! [TwitterPersonalMsg])
                     self?.tableView.reloadData()
                 }
                 return
@@ -201,7 +201,7 @@ class FindPersonalViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(FindPersonalCell.identifier, forIndexPath: indexPath) as FindPersonalCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(FindPersonalCell.identifier, forIndexPath: indexPath) as! FindPersonalCell
         
         // Configure the cell...
         let data = infoData![indexPath.row]
@@ -250,7 +250,7 @@ class FindPersonalViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showPageView":
-                let destination = segue.destinationViewController as FindTwitterPageViewController
+                let destination = segue.destinationViewController as! FindTwitterPageViewController
                 destination.data = sender as? TwitterPersonalMsg
 
             default:
@@ -272,7 +272,7 @@ extension FindPersonalViewController: ICYImageBrowserDataSource {
     }
     func icyImageBrowser(icyImageBrowser: ICYImageBrowser, pathForIndex pathIndex: Int) -> String? {
         let index = tableView.indexPathForSelectedRow()!.row
-        let imageData = infoData![index].images as [TwitterPersonalImages]
+        let imageData = infoData![index].images as! [TwitterPersonalImages]
         return imageData[pathIndex].imagePath.toAbsolutePath()
     }
     func icyImageBrowser(icyImageBrowser: ICYImageBrowser, titleForIndex titleIndex: Int) -> String? {
@@ -291,7 +291,7 @@ extension FindPersonalViewController: FindPersonalCellDelegate, UIAlertViewDeleg
         if buttonIndex == 1 {
             // 删除
             showHUD()
-            let deletingtwitterID = infoForDelete!.twitterId.copy() as String
+            let deletingtwitterID = infoForDelete!.twitterId.copy() as! String
             let parameter = ["twitter_id": infoForDelete!.twitterId]
             LCYNetworking.sharedInstance.POST(
                 LCYApi.TwitterDelete,

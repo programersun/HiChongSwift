@@ -23,7 +23,7 @@ class AboutMeEditProfileViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         if _userInfo != nil {
-            userInfo = _userInfo?.copy() as GetUserInfoUserInfo
+            userInfo = _userInfo?.copy() as! GetUserInfoUserInfo
         } else {
             alert("无法获取个人信息")
         }
@@ -120,11 +120,11 @@ class AboutMeEditProfileViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeHeaderCell.identifier()) as UITableViewCell
-            let cell = cell as AboutMeHeaderCell
+            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeHeaderCell.identifier()) as! UITableViewCell
+            let cell = cell as! AboutMeHeaderCell
             cell.avatarImagePath = userInfo.headImage.toAbsolutePath()
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier") as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier") as! UITableViewCell
             cell.textLabel?.textColor = UIColor.LCYThemeDarkText()
             cell.detailTextLabel?.textColor = UIColor.darkTextColor()
             
@@ -159,7 +159,7 @@ class AboutMeEditProfileViewController: UITableViewController {
                 var provinceText: String?
                 var cityText: String?
                 var townText: String?
-                let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 let context = appDelegate.managedObjectContext!
                 let fetchRequset = NSFetchRequest()
                 let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)
@@ -169,7 +169,7 @@ class AboutMeEditProfileViewController: UITableViewController {
                 var error: NSError? = nil
                 let result = context.executeFetchRequest(fetchRequset, error: &error)
                 if let entities = result {
-                    for regionEntity in entities as [Region] {
+                    for regionEntity in entities as! [Region] {
                         switch regionEntity.region_id {
                         case province.toInt()!:
                             provinceText = regionEntity.region_name
@@ -194,8 +194,8 @@ class AboutMeEditProfileViewController: UITableViewController {
                 break
             }
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeSwitchCell.identifier()) as UITableViewCell
-            let cell = cell as AboutMeSwitchCell
+            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeSwitchCell.identifier()) as! UITableViewCell
+            let cell = cell as! AboutMeSwitchCell
             cell.backgroundColor = UIColor.LCYTableLightGray()
             cell.icyMajorLabel.text = "签名"
             cell.minorText = userInfo.tip
@@ -203,7 +203,7 @@ class AboutMeEditProfileViewController: UITableViewController {
             cell.delegate = self
             cell.indexPath = indexPath
         case 3:
-            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeSwitchCell.identifier()) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier(AboutMeSwitchCell.identifier()) as! UITableViewCell
             switch indexPath.row % 2 {
             case 0:
                 cell.backgroundColor = UIColor.LCYTableLightGray()
@@ -212,7 +212,7 @@ class AboutMeEditProfileViewController: UITableViewController {
             default:
                 break
             }
-            let cell = cell as AboutMeSwitchCell
+            let cell = cell as! AboutMeSwitchCell
             cell.delegate = self
             cell.indexPath = indexPath
             switch indexPath.row {
@@ -291,7 +291,7 @@ class AboutMeEditProfileViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showModifyText":
-                let destination = segue.destinationViewController as AboutMeModifyTextViewController
+                let destination = segue.destinationViewController as! AboutMeModifyTextViewController
                 destination.delegate = self
                 let indexPath = tableView.indexPathForSelectedRow()!
                 var cellType: aboutMeModityTextType!
@@ -327,13 +327,13 @@ class AboutMeEditProfileViewController: UITableViewController {
                 }
                 destination.icyType = cellType
             case "showModifyLocation":
-                let destination = segue.destinationViewController as AboutMeModifyLocationViewController
+                let destination = segue.destinationViewController as! AboutMeModifyLocationViewController
                 destination.province = userInfo.province
                 destination.city = userInfo.city
                 destination.town = userInfo.town
                 destination.delegate = self
             case "showModifyGender":
-                let destination = segue.destinationViewController as AboutMeModifyGenderController
+                let destination = segue.destinationViewController as! AboutMeModifyGenderController
                 destination.defaultGender = userInfo.sex == "0" ? .male : .female
                 destination.delegate = self
             default:
@@ -447,7 +447,7 @@ extension AboutMeEditProfileViewController: UIImagePickerControllerDelegate, UIN
         picker.dismissViewControllerAnimated(true, completion: nil)
         showHUDWithTips("处理中")
         
-        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 300, height: 300))
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as! UIImage, scaledToFillToSize: CGSize(width: 300, height: 300))
         
         // 处理上传之后，隐藏HUD
         

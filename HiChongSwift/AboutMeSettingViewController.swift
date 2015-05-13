@@ -51,7 +51,7 @@ class AboutMeSettingViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
         // Configure the cell...
         switch indexPath.section {
@@ -95,7 +95,7 @@ class AboutMeSettingViewController: UITableViewController {
         case 0:
             // 忘记密码
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("reset") as ForgetPasswordViewController
+            let viewController = storyboard.instantiateViewControllerWithIdentifier("reset") as! ForgetPasswordViewController
             viewController.lockPhoneNumber = true
             navigationController?.pushViewController(viewController, animated: true)
         case 1:

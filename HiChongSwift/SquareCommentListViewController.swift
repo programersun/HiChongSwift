@@ -58,7 +58,7 @@ class SquareCommentListViewController: UITableViewController {
         ]
         currentPage = 0
         LCYNetworking.sharedInstance.POST(LCYApi.SquareCommentList, parameters: parameter, success: { [weak self](object) -> Void in
-            let retrieved = SquareCommentListBase.modelObjectWithDictionary(object)
+            let retrieved = SquareCommentListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if retrieved.result {
                 self?.commentData = [SquareCommentListMsg]()
                 if let msg = retrieved.msg as? [SquareCommentListMsg] {
@@ -82,7 +82,7 @@ class SquareCommentListViewController: UITableViewController {
             "page":         "\(currentPage)"
         ]
         LCYNetworking.sharedInstance.POST(LCYApi.SquareCommentList, parameters: parameter, success: { [weak self](object) -> Void in
-            let retrieved = SquareCommentListBase.modelObjectWithDictionary(object)
+            let retrieved = SquareCommentListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if retrieved.result {
                 if let msg = retrieved.msg as? [SquareCommentListMsg] {
                     self?.commentData?.extend(msg)
@@ -113,7 +113,7 @@ class SquareCommentListViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showAdd":
-                let destination = segue.destinationViewController as SquareCommentViewController
+                let destination = segue.destinationViewController as! SquareCommentViewController
                 destination.businessID = businessID
                 destination.businessName = businessName
                 destination.delegate = self
@@ -143,7 +143,7 @@ class SquareCommentListViewController: UITableViewController {
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(SquareCommentListCell.identifier(), forIndexPath: indexPath) as SquareCommentListCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(SquareCommentListCell.identifier(), forIndexPath: indexPath) as! SquareCommentListCell
 
         let data = commentData![indexPath.row]
         let commentText = data.content

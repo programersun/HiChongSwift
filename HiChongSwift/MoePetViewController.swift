@@ -52,7 +52,7 @@ class MoePetViewController: UICollectionViewController {
             ]
             LCYNetworking.sharedInstance.POST(LCYApi.PetGetDetail, parameters: parameters,
                 success: { [weak self] (object) -> Void in
-                    let info = LCYPetDetailBase.modelObjectWithDictionary(object)
+                    let info = LCYPetDetailBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                     if info.result {
                         self?.detailInfo = info
                         self?.collectionView?.reloadData()
@@ -87,12 +87,12 @@ class MoePetViewController: UICollectionViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showEdit":
-                let destination = segue.destinationViewController as AddEditPetViewController
+                let destination = segue.destinationViewController as! AddEditPetViewController
                 destination.viewControllerType = .Edit
                 destination.startInfo = detailInfo
                 
             case "toPage":
-                let destination = segue.destinationViewController as MoePetPageViewController
+                let destination = segue.destinationViewController as! MoePetPageViewController
                 destination.data = detailInfo?.petImages as? [LCYPetDetailPetImages]
                 if let indexPath = collectionView?.indexPathsForSelectedItems().first as? NSIndexPath {
                     if editable {
@@ -134,10 +134,10 @@ class MoePetViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if editable && indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("camera", forIndexPath: indexPath) as UICollectionViewCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("camera", forIndexPath: indexPath) as! UICollectionViewCell
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MoePetImageCell", forIndexPath: indexPath) as MoePetImageCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MoePetImageCell", forIndexPath: indexPath) as! MoePetImageCell
             if editable {
                 if let info = detailInfo?.petImages[indexPath.row - 1] as? LCYPetDetailPetImages {
                     cell.imageView.setImageWithURL(NSURL(string: info.cutImg.toAbsolutePath()))
@@ -152,7 +152,7 @@ class MoePetViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let reView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "identifier", forIndexPath: indexPath) as MoePetHeaderReusable
+        let reView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "identifier", forIndexPath: indexPath) as! MoePetHeaderReusable
         if let detail = detailInfo {
             reView.avatarImagePath = detail.petInfo.headImage.toAbsolutePath()
             reView.detailText = " \(detail.petInfo.age.toAge()) \(detail.petInfo.cateName) "
@@ -247,7 +247,7 @@ extension MoePetViewController: UIImagePickerControllerDelegate, UINavigationCon
         picker.dismissViewControllerAnimated(true, completion: nil)
         showHUDWithTips("处理中")
         
-        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 500, height: 500))
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as! UIImage, scaledToFillToSize: CGSize(width: 500, height: 500))
         
         // 处理上传之后，隐藏HUD
         // 上传照片

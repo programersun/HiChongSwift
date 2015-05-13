@@ -26,7 +26,7 @@ class FindCircleViewController: UITableViewController {
             if let myInfo = keeperInfo {
                 avatarImageView.setImageWithURL(NSURL(string:myInfo.headImage.toAbsolutePath()))
                 nickNameLabel.text = myInfo.nickName
-                if myInfo.bgImage != nil && countElements(myInfo.bgImage) != 0 {
+                if myInfo.bgImage != nil && count(myInfo.bgImage) != 0 {
                     println("set bg url = \(myInfo.bgImage.toAbsolutePath())")
                     headerBackground.setImageWithURL(NSURL(string: myInfo.bgImage.toAbsolutePath()))
                     headerTipLabel.hidden = true
@@ -66,7 +66,7 @@ class FindCircleViewController: UITableViewController {
         self.tableView.hideExtraSeprator()
         
         let headerNib = UINib(nibName: "FindCircleHeader", bundle: nil)
-        let headerView = headerNib.instantiateWithOwner(self, options: nil).first as UIView
+        let headerView = headerNib.instantiateWithOwner(self, options: nil).first as! UIView
         headerView.bounds.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.width / 320.0 * 200.0 + 22.0)
         self.tableView.tableHeaderView = headerView
         
@@ -119,7 +119,7 @@ class FindCircleViewController: UITableViewController {
             "twitter_keeper"    : LCYCommon.sharedInstance.userName!
         ]
         LCYNetworking.sharedInstance.POST(LCYApi.TwitterKeeperInfo, parameters: parameters, success: { [weak self](object) -> Void in
-            let retrieved = TwitterKeeperInfoBase.modelObjectWithDictionary(object)
+            let retrieved = TwitterKeeperInfoBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if retrieved.result {
                 self?.keeperInfo = retrieved.msg
             } else {
@@ -136,11 +136,11 @@ class FindCircleViewController: UITableViewController {
             "user_id"   : LCYCommon.sharedInstance.userName!
         ]
         LCYNetworking.sharedInstance.POST(LCYApi.TwitterList, parameters: parameters, success: { [weak self](object) -> Void in
-            let retrieved = TwitterListBase.modelObjectWithDictionary(object)
+            let retrieved = TwitterListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             if retrieved.result {
                 self?.twitters = [TwitterListMsg]()
                 self?.expandedTwitters = [TwitterListMsg]()
-                self?.twitters?.extend(retrieved.msg as [TwitterListMsg])
+                self?.twitters?.extend(retrieved.msg as! [TwitterListMsg])
                 self?.tableView.reloadData()
             }
             self?.hideHUD()
@@ -161,7 +161,7 @@ class FindCircleViewController: UITableViewController {
                 "twitter_id": info.twitterId
             ]
             LCYNetworking.sharedInstance.POST(LCYApi.TwitterList, parameters: parameters, success: { [weak self](object) -> Void in
-                let retrieved = TwitterListBase.modelObjectWithDictionary(object)
+                let retrieved = TwitterListBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
                 if retrieved.result {
                     if let msg = retrieved.msg as? [TwitterListMsg] {
                         self?.twitters?.extend(msg)
@@ -186,8 +186,8 @@ class FindCircleViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showAdd" {
-            let destination = segue.destinationViewController as FindCircleAddNewViewController
-            let caseNumber = sender as Int
+            let destination = segue.destinationViewController as! FindCircleAddNewViewController
+            let caseNumber = sender as! Int
             destination.delegate = self
             
             switch caseNumber {
@@ -199,7 +199,7 @@ class FindCircleViewController: UITableViewController {
                 break
             }
         } else if segue.identifier == "showPersonal" {
-            let destination = segue.destinationViewController as FindPersonalViewController
+            let destination = segue.destinationViewController as! FindPersonalViewController
             if let data = sender as? TwitterListMsg {
                 destination.personID = data.twitterKeeper
                 destination.personNickname = data.nickName
@@ -211,11 +211,11 @@ class FindCircleViewController: UITableViewController {
             }
             destination.delegate = self
         } else if segue.identifier == "showPageView" {
-            let destination = segue.destinationViewController as FindTwitterListPageViewController
+            let destination = segue.destinationViewController as! FindTwitterListPageViewController
             let data = sender as? TwitterListMsg
             destination.listData = data
         } else if segue.identifier == "showComment" {
-            let destination = segue.destinationViewController as FindTwitterCommentViewController
+            let destination = segue.destinationViewController as! FindTwitterCommentViewController
             let data = sender as? TwitterListMsg
             destination.twitterData = data
             destination.keeperInfo = keeperInfo
@@ -264,7 +264,7 @@ class FindCircleViewController: UITableViewController {
 //        cell.stared = data.isStar != 0
         
 
-        let cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterListCell.identifier) as FindTwitterListCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(FindTwitterListCell.identifier) as! FindTwitterListCell
         cell.indexPath = indexPath
         let data = twitters![indexPath.row]
         cell.expand = contains(expandedTwitters, data)
@@ -438,7 +438,7 @@ extension FindCircleViewController: UIActionSheetDelegate {
     func willPresentActionSheet(actionSheet: UIActionSheet) {
         for subView in actionSheet.subviews {
             if subView is UIButton {
-                let button = subView as UIButton
+                let button = subView as! UIButton
                 if button.titleLabel?.text != "取消" {
                     button.setTitleColor(UIColor.LCYThemeDarkText(), forState: UIControlState.Normal)
                 }
@@ -624,7 +624,7 @@ extension FindCircleViewController: FindCircleListCellDelegate , FindTwitterList
             shareVC.wxURL = "http://123.57.7.88/admin/index.php/Home/Home/index/twitter_id/" + data.twitterId
             
             if data.images != nil && data.images.count > 1 {
-                if let url = NSURL(string: (data.images[0] as TwitterListImages).cutPath.toAbsolutePath()) {
+                if let url = NSURL(string: (data.images[0] as! TwitterListImages).cutPath.toAbsolutePath()) {
                     let request = NSURLRequest(URL: url)
                     let cachedImage = UIImageView.sharedImageCache().cachedImageForRequest(request)
                     if cachedImage != nil {
@@ -649,7 +649,7 @@ extension FindCircleViewController: FindCircleListCellDelegate , FindTwitterList
         var photos : [ZXY_ImageItem]! = []
         for var i = 0 ;i < data.images?.count ;i++
         {
-            var currentImg = data.images![i] as TwitterListImages
+            var currentImg = data.images![i] as! TwitterListImages
             print(currentImg.imagePath.toAbsolutePath())
             var currentURL : NSURL = NSURL(string: currentImg.imagePath.toAbsolutePath())!
             //println(currentURL.scheme)
@@ -670,7 +670,7 @@ extension FindCircleViewController: UIImagePickerControllerDelegate, UINavigatio
         picker.dismissViewControllerAnimated(true, completion: nil)
         self.showHUDWithTips("处理中")
         
-        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as UIImage, scaledToFillToSize: CGSize(width: 320, height: 200))
+        let smallImage = UIImage(image: info[UIImagePickerControllerOriginalImage] as! UIImage, scaledToFillToSize: CGSize(width: 320, height: 200))
         //        UIImageWriteToSavedPhotosAlbum(smallImage, nil, nil, nil)
         
         let imageData = UIImageJPEGRepresentation(smallImage, 0.95)

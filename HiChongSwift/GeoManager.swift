@@ -22,7 +22,7 @@ class GeoManager {
                     
                     println("city ===> \(city)")
                     
-                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     let context = appDelegate.managedObjectContext!
                     let fetchRequset = NSFetchRequest()
                     let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)

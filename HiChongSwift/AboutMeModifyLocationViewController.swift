@@ -49,7 +49,7 @@ class AboutMeModifyLocationViewController: UIViewController {
         var provinceText: String?
         var cityText: String?
         var townText: String?
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = appDelegate.managedObjectContext!
         let fetchRequset = NSFetchRequest()
         let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)
@@ -59,7 +59,7 @@ class AboutMeModifyLocationViewController: UIViewController {
         var error: NSError? = nil
         let result = context.executeFetchRequest(fetchRequset, error: &error)
         if let entities = result {
-            for regionEntity in entities as [Region] {
+            for regionEntity in entities as! [Region] {
                 switch regionEntity.region_id {
                 case province.toInt()!:
                     provinceText = regionEntity.region_name
@@ -96,7 +96,7 @@ class AboutMeModifyLocationViewController: UIViewController {
     }
     
     private func loadInitData() {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         if let context = appDelegate.managedObjectContext {
             // 获取所有省份
             let fetchRequset = NSFetchRequest()
@@ -110,7 +110,7 @@ class AboutMeModifyLocationViewController: UIViewController {
             let result = context.executeFetchRequest(fetchRequset, error: &error)
             if let entities = result {
                 provinces = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     provinces?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(0)
@@ -128,7 +128,7 @@ class AboutMeModifyLocationViewController: UIViewController {
             let cityResult = context.executeFetchRequest(cityFetchRequset, error: &error)
             if let entities = cityResult {
                 cities = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     cities?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(1)
@@ -146,7 +146,7 @@ class AboutMeModifyLocationViewController: UIViewController {
             let townResult = context.executeFetchRequest(townFetchRequset, error: &error)
             if let entities = townResult {
                 towns = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     towns?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(1)
@@ -296,7 +296,7 @@ extension AboutMeModifyLocationViewController: UIPickerViewDataSource, UIPickerV
         case 0:
             // 改变省级区划
             let provinceID = provinces![row].region_id
-            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context = appDelegate.managedObjectContext!
             let fetchRequset = NSFetchRequest()
             let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)
@@ -307,7 +307,7 @@ extension AboutMeModifyLocationViewController: UIPickerViewDataSource, UIPickerV
             let result = context.executeFetchRequest(fetchRequset, error: &error)
             if let entities = result {
                 cities = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     cities?.append(regionEntity)
                 }
                 icyPickerView.reloadComponent(1)
@@ -319,7 +319,7 @@ extension AboutMeModifyLocationViewController: UIPickerViewDataSource, UIPickerV
         case 1:
             // 改变市级区划
             let cityID = cities![pickerView.selectedRowInComponent(1)].region_id
-            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context = appDelegate.managedObjectContext!
             let fetchRequset = NSFetchRequest()
             let entity = NSEntityDescription.entityForName("Region", inManagedObjectContext: context)
@@ -330,7 +330,7 @@ extension AboutMeModifyLocationViewController: UIPickerViewDataSource, UIPickerV
             let result = context.executeFetchRequest(fetchRequset, error: &error)
             if let entities = result {
                 towns = [Region]()
-                for regionEntity in entities as [Region] {
+                for regionEntity in entities as! [Region] {
                     towns?.append(regionEntity)
                 }
                 if(!isSquare)

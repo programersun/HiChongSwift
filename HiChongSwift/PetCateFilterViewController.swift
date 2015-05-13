@@ -26,7 +26,7 @@ class PetCateFilterViewController: UITableViewController {
         
 //        let parameter = NSDictionary()
         LCYNetworking.sharedInstance.POST(LCYApi.PetAllType, parameters: nil, success: { [weak self](object) -> Void in
-            self?.allTypeBase = LCYPetAllTypeBase.modelObjectWithDictionary(object)
+            self?.allTypeBase = LCYPetAllTypeBase.modelObjectWithDictionary(object as [NSObject : AnyObject])
             self?.tableView.reloadData()
             return
         }) { [weak self](error) -> Void in
@@ -62,7 +62,7 @@ class PetCateFilterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(PetCateFilterCell.identifier(), forIndexPath: indexPath) as PetCateFilterCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(PetCateFilterCell.identifier(), forIndexPath: indexPath) as! PetCateFilterCell
 
         // Configure the cell...
         if let styleInfo = allTypeBase?.fatherStyle[indexPath.row] as? LCYPetAllTypeFatherStyle {
@@ -82,7 +82,7 @@ class PetCateFilterViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "showLv2":
-                let destination = segue.destinationViewController as PetSubTypeViewController
+                let destination = segue.destinationViewController as! PetSubTypeViewController
                 if let indexPath = tableView.indexPathForSelectedRow()?.row {
                     let info = allTypeBase?.fatherStyle[indexPath] as? LCYPetAllTypeFatherStyle
                     destination.parentID = info?.catId
